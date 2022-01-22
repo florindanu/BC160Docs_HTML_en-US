@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Field Mapping When Importing SEPA CAMT Files | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Field Mapping When Importing SEPA CAMT Files | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In European markets, you can import bank statement files in the regional SEPA standards (Single Euro Payments Area).">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="field-mapping-when-importing-sepa-camt-files">Field Mapping When Importing SEPA CAMT Files</h1>
+
+<p>Business Central supports the regional SEPA standards (Single Euro Payments Area) for importing SEPA bank statements (CAMT format). For more information, see <a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a>.</p>
+<p>The SEPA CAMT standard itself has local variations. Therefore, you may have to modify the generic data exchange definition (represented by the <strong>SEPA CAMT</strong> code on the <strong>Posting Exchange Definitions</strong> page) to adapt it to a local variation of the standard. The following tables show the element-to-field mapping for tables 81, 273, and 274 in the SEPA CAMT implementation in Business Central.</p>
+<p>For information about creating or adjusting a data exchange definition, see <a href="across-how-to-set-up-data-exchange-definitions.html">Set Up Data Exchange Definitions</a>.</p>
+<h2 id="camt-data-mapping-to-fields-in-the-general-journal-table-81">CAMT data mapping to fields in the General Journal table (81)</h2>
+<table>
+<thead>
+<tr>
+<th>Element Path</th>
+<th>Message Element</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Negative-Sign Identifier</th>
+<th>Field No.</th>
+<th>Field Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stmt/Ntry/Amt</td>
+<td>Amount</td>
+<td>Decimal</td>
+<td>The amount of money in the cash entry</td>
+<td></td>
+<td>13</td>
+<td>Amount</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/CdtDbtInd</td>
+<td>CreditDebitIndicator</td>
+<td>Text</td>
+<td>Indicates whether the entry is a credit or a debit entry</td>
+<td>DBIT</td>
+<td>13</td>
+<td>Amount</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/BookgDt/Dt</td>
+<td>Date</td>
+<td>Date</td>
+<td>The date when an entry is posted to an account on the account servicer's books</td>
+<td></td>
+<td>5</td>
+<td>Posting Date</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/BookgDt/DtTm</td>
+<td>DateTime</td>
+<td>DateTime</td>
+<td>The date and time when an entry is posted to an account on the account servicer's books</td>
+<td></td>
+<td>5</td>
+<td>Posting Date</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/NtryDtls/TxDtls/RltdPties/Dbtr/Nm</td>
+<td>Name</td>
+<td>Text</td>
+<td>The name of the party that owes an amount of money to the (ultimate) creditor</td>
+<td></td>
+<td>1221</td>
+<td>Payer Information</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/NtryDtls/TxDtls/RmtInf/Ustrd</td>
+<td>Unstructured</td>
+<td>Text</td>
+<td>Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts-receivable system, in an unstructured form</td>
+<td></td>
+<td>8</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/AddtlNtryInf</td>
+<td>AdditionalEntryInformation</td>
+<td>Text</td>
+<td>Additional information about the entry</td>
+<td></td>
+<td>1222</td>
+<td>Transaction Information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="camt-data-mapping-to-fields-in-the-bank-acc-reconciliation-table-273">CAMT data mapping to fields in the Bank Acc. Reconciliation table (273)</h2>
+<table>
+<thead>
+<tr>
+<th>Element Path</th>
+<th>Message Element</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Negative-Sign Identifier</th>
+<th>Field No.</th>
+<th>Field Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stmt/CreDtTm</td>
+<td>CreationDateTime</td>
+<td>Date</td>
+<td>The date and time when the message was created</td>
+<td></td>
+<td>3</td>
+<td>Statement Date</td>
+</tr>
+<tr>
+<td>Stmt/Bal/Amt</td>
+<td>Amount</td>
+<td>Decimal</td>
+<td>The amount resulting from the netted amounts for all debit and credit entries</td>
+<td></td>
+<td>4</td>
+<td>Statement Ending Balance</td>
+</tr>
+</tbody>
+</table>
+<h2 id="camt-data-mapping-to-fields-in-the-bank-acc-reconciliation-line-table-274">CAMT data mapping to fields in the Bank Acc. Reconciliation Line table (274)</h2>
+<table>
+<thead>
+<tr>
+<th>Element Path</th>
+<th>Message Element</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Negative-Sign Identifier</th>
+<th>Field No.</th>
+<th>Field Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stmt/Ntry/Amt</td>
+<td>Amount</td>
+<td>Decimal</td>
+<td>The amount of money in the cash entry</td>
+<td></td>
+<td>7</td>
+<td>Statement Amount</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/CdtDbtInd</td>
+<td>CreditDebitIndicator</td>
+<td>Text</td>
+<td>Indicates whether the entry is a credit or a debit entry</td>
+<td>DBIT</td>
+<td>7</td>
+<td>Statement Amount</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/BookgDt/Dt</td>
+<td>Date</td>
+<td>Date</td>
+<td>The date when an entry is posted to an account on the account servicer's books</td>
+<td></td>
+<td>5</td>
+<td>Transaction Date</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/BookgDt/DtTm</td>
+<td>DateTime</td>
+<td>DateTime</td>
+<td>The date and time when an entry is posted to an account on the account servicer's books</td>
+<td></td>
+<td>5</td>
+<td>Transaction Date</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/ValDt/Dt</td>
+<td>Date</td>
+<td>Date</td>
+<td>The date when assets become available to the account owner in case of a credit entry, or cease to be available to the account owner in case of a debit entry</td>
+<td></td>
+<td>12</td>
+<td>Value Date</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/ValDt/DtTm</td>
+<td>DateTime</td>
+<td>DateTime</td>
+<td>The date and time when assets become available to the account owner in case of a credit entry, or cease to be available to the account owner in case of a debit entry</td>
+<td></td>
+<td>12</td>
+<td>Value Date</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/NtryDtls/TxDtls/RltdPties/Dbtr/Nm</td>
+<td>Name</td>
+<td>Text</td>
+<td>The name of the party that owes an amount of money to the (ultimate) creditor</td>
+<td></td>
+<td>15</td>
+<td>Payer Information</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/NtryDtls/TxDtls/RmtInf/Ustrd</td>
+<td>Unstructured</td>
+<td>Text</td>
+<td>Information supplied to enable the matching/reconciliation of an entry with the items that the payment is intended to settle, such as commercial invoices in an accounts-receivable system, in an unstructured form</td>
+<td></td>
+<td>6</td>
+<td>Description</td>
+</tr>
+<tr>
+<td>Stmt/Ntry/AddtlNtryInf</td>
+<td>AdditionalEntryInformation</td>
+<td>Text</td>
+<td>Additional information about the entry</td>
+<td></td>
+<td>16</td>
+<td>Transaction Information</td>
+</tr>
+</tbody>
+</table>
+<p>Elements in the <strong>Ntry</strong> node that are imported into Business Central but not mapped to any fields are stored in the <strong>Posting Exch. Column Def</strong> table. Users can view these elements from the <strong>Payment Reconciliation Journal</strong>, <strong>Payment Application</strong>, and <strong>Bank Acc. Reconciliation</strong> pages by choosing the <strong>Bank Statement Line Details</strong> action. For more information, see <a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-set-up-data-exchange.html">Setting Up Data Exchange</a><br>
+<a href="across-data-exchange.html">Exchanging Data Electronically</a><br>
+<a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a><br>
+<a href="across-how-to-use-xml-schemas-to-prepare-data-exchange-definitions.html">Use XML Schemas to Prepare Data Exchange Definitions</a><br>
+<a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-field-mapping-when-importing-sepa-camt-files.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

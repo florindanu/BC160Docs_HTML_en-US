@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Post Inventory Costs to the General Ledger| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Post Inventory Costs to the General Ledger| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to manage the physical products that you trade in, for example, handling the stock in your warehouse.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="reconcile-inventory-costs-with-the-general-ledger">Reconcile Inventory Costs with the General Ledger</h1>
+
+<p>When you post inventory transactions, such as sales shipments, purchase invoices, or inventory adjustments, the changed item costs are recorded in item value entries. To reflect this change of inventory value in your financial books, the inventory costs are automatically posted to the related inventory accounts in the general ledger. For each inventory transaction that you post, the appropriate values are posted to the inventory account, adjustment account, and COGS account in the general ledger.</p>
+<p>Automatic cost posting is defined by the <strong>Automatic Cost Posting</strong> field on the <strong>Inventory Setup</strong> page.</p>
+<p>Even though inventory costs are automatically posted to the general ledger, it is still necessary to ensure that the costs of goods are forwarded to the related outbound sales transaction, especially in situations where you sell goods before you invoice the purchase of those goods. This is referred to as cost adjustment. Item costs are automatically adjusted when you post item transactions, but you can also adjust item costs manually. For more information, see <a href="inventory-how-adjust-item-costs.html">Adjust Item Costs</a>.</p>
+<h2 id="to-post-inventory-costs-manually">To post inventory costs manually</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> ico, enter <strong>Post Inventory Cost to G/L</strong>, and then choose the related link.</li>
+<li>Post inventory costs to the general ledger manually by running the batch job. When you run this batch job, general ledger entries are created on the basis of value entries. You can post the entries so that they are summarized per posting group.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you run this batch job, you might encounter errors having to do with missing setup or incompatible dimension setup. If the batch job encounters errors in the dimension setup, it overrides these errors and uses the dimensions of the value entry. For any other errors, the batch job skips posting the value entries and lists them at the end of the report in a section titled “Skipped Entries.” To post these entries, you must fix the errors.</p>
+</div>
+<p>To see a list of errors before running the posting batch job, you can run the <strong>Post Invt. Cost to G/L - Test</strong> report. The test report lists all the errors encountered during a test posting. You can then fix the errors, and run the inventory cost posting batch job without skipping any entries.</p>
+<p>If you would like to simply get an overview of what values could be posted to the general ledger without actually performing the posting, you can run the <strong>Post Inventory Cost to G/L</strong> batch job without actually posting the values to the general ledger. You do this by clearing the check mark from the <strong>Post</strong> field on the request page. This way, when you run the batch job, the report is produced showing the values that are ready to be posted to the general ledger, but they are not posted.</p>
+<h2 id="to-audit-the-reconciliation-between-the-inventory-ledger-and-the-general-ledger">To audit the reconciliation between the inventory ledger and the general ledger</h2>
+<p>The <strong>Inventory - G/L Reconciliation</strong> page provides the following:</p>
+<ul>
+<li>Exposes reconciliation differences by comparing what is recorded in G/L and what is recorded in the inventory ledger (value entries).</li>
+<li>Displays unreconciled cost amounts in the value entries in the inventory ledger as if they were mapped to corresponding inventory-related accounts in G/L and compares those to the totals actually recorded in the same accounts in G/L.</li>
+<li>Reflects the double entry structure of G/L by visually presenting data as such. For example, a COGS entry has a corresponding inventory entry.</li>
+<li>Lets users drill down and see the entries that make up the cost amounts.</li>
+<li>Includes filters to narrow the analysis by date, item, and location.</li>
+<li>Explains reasons for reconciliation differences in informative messages.</li>
+</ul>
+<p>The <strong>Name</strong> column on the far left in the grid lists the various G/L account types that are associated with inventory.</p>
+<p>The <strong>Inventory</strong>, <strong>Inventory (Interim)</strong>, and <strong>WIP Inventory</strong> columns show the invoiced, non-invoiced, and WIP totals of each G/L account type. These are calculated from value entries, that is, they are projected onto the G/L account types where they will end when they are eventually posted to G/L.</p>
+<p>The <strong>Total</strong> column shows the sum (in bold font) of the value entry amounts in the three inventory columns.</p>
+<p>The <strong>G/L Total</strong> column shows the amounts (in bold font) for each G/L account type that exists in G/L. These are calculated from G/L entries, that is, they represent inventory costs already posted to G/L.</p>
+<p>The <strong>Difference</strong> column represents the difference between the value in the <strong>G/L Total</strong> and <strong>Total</strong> fields.</p>
+<p>In the top of the <strong>Inventory - G/L Reconciliation</strong> page, you can enter filters to limit, for example, the period of time for which you want information.</p>
+<p>If you select the <strong>Show Warning</strong> check box and if there are any discrepancies between the inventory totals and G/L totals, application shows messages in the <strong>Warning</strong> field of the grid that explain the discrepancy. If you choose the Warning field, application gives you more information on what the warning means.</p>
+<p>When you have entered all relevant filters, choose the <strong>Show Matrix</strong> action. The data is calculated and the matrix page appears.</p>
+<p>On the far left column in the grid, you see the various general ledger account types that are associated with inventory. The grid then shows the invoiced, non-invoiced (interim), and WIP inventory totals for each of these account types. These totals are calculated from the value entries.</p>
+<p>The next columns show the totals for the same account types calculated from the general ledger entries.</p>
+<p>Choose the  amount in any of the total fields to see the inventory report entries that were used to calculate the totals. For inventory totals, the inventory report entries are the sums of the value entries for the items. For the G/L totals, the inventory report entries are the sums from the general ledger entries.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-to-post-inventory-costs-to-the-general-ledger.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

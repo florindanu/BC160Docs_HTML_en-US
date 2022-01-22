@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Item Units of Measure| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Item Units of Measure| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can set up multiple units of measure for an item so that you can assign units of measure to the item.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-item-units-of-measure">Set Up Item Units of Measure</h1>
+
+<p>You can set up multiple units of measure for an item so that you can assign units of measure to the item for the following purposes:</p>
+<ul>
+<li>Assign a base unit of measure on the item’s item card to define how it is stored in inventory and to serve as the conversion basis for alternate units of measure.</li>
+<li>Assign alternate units of measure to purchase, production, or sales documents to specify how many units of the base unit of measure you handle at a time in those processes. For example, you may buy the item on pallets and only use single pieces in your production.</li>
+</ul>
+<p>If an item is stocked in one unit of measure but produced in another, a production order is created that uses a manufacturing batch unit of measure to calculate the correct quantity of the components during the <strong>Refresh Production Order</strong> batch job. An example of a manufacturing batch unit of measure calculation is when a manufactured item is stocked in pieces but produced in tons. For more information, see <a href="production-how-to-use-the-manufacturing-batch-unit-of-measure.html">Work with Manufacturing Batch Units of Measure</a>.</p>
+<h2 id="to-set-up-a-unit-of-measure">To set up a unit of measure</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the card of the item for which you want to set up alternate units of measure.</li>
+<li>Choose the <strong>Units of Measure</strong> action. The <strong>Item Units of Measure</strong> page opens.</li>
+<li>If the <strong>Base Unit of Measure</strong> field on the item card is filled, then that unit of measure is already set up.</li>
+<li>Choose the <strong>New</strong> action. A new empty line is inserted.</li>
+<li>In the <strong>Code</strong> field, enter the name of the unit of measure. Alternatively, choose the field to select from the unit of measure codes that are in the database.</li>
+<li>In the <strong>Qty. per Unit of Measure</strong> field, enter how many units of the base unit of measure the new unit of measure contains.</li>
+<li>Repeat steps 5 through 7 to set up all the alternate units of measure that you want to use in different processes for this item.</li>
+</ol>
+<p>You can now use the alternate units of measure on purchase, production, and sales documents. For more information, see Enter Default Units of Measure Codes for Purchase Transactions and Sales Transactions or Use the Manufacturing Batch Unit of Measure.</p>
+<h2 id="to-set-up-unit-of-measure-translations">To set up unit of measure translations</h2>
+<p>When you sell items to foreign customers, you may want to specify the unit of measure in the customer’s language. You can do this after you have set up the necessary unit of measure translations.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Units of Measure</strong>, and then choose the related link.</li>
+<li>Select the code for which you want to set up translations, and then choose the <strong>Translations</strong> action.</li>
+<li>In the <strong>Language Code</strong> field, select the drop-down arrow to see a list of available language codes. Select the language code for which you want to enter a translation, and then choose the OK button to copy the code to the field.</li>
+<li>In the <strong>Description</strong> field, enter the appropriate text.</li>
+<li>Repeat steps 2 through 4 for the unit of measure codes and the languages for which you want to enter translations.</li>
+</ol>
+<h2 id="to-enter-a-default-unit-of-measure-code-for-sales-and-purchasing-transactions">To enter a default unit of measure code for sales and purchasing transactions</h2>
+<p>If you usually buy or sell in units different from the base unit of measure, you can specify separate units of measure for purchases and sales. To do this, the units of measure must be set up on the <strong>Item Units of Measure</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the relevant item card for which you want to specify a default sales or purchase unit of measure code.</li>
+<li>For sales, on the <strong>Invoicing</strong> FastTab, in the <strong>Sales Unit of Measure</strong> field, open the <strong>Item Units of Measure</strong> page.</li>
+<li>For purchasing, on the <strong>Replenishment</strong> FastTab, in the <strong>Purch. Unit of Measure</strong> field, open the <strong>Item Units of Measure</strong> page.</li>
+<li>Select the code you want to set up as the default unit of measure for sales or purchasing respectively, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-how-to-use-the-manufacturing-batch-unit-of-measure.html">Work with Manufacturing Batch Units of Measure</a><br>
+<a href="inventory-manage-inventory.html">Managing Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Managing Purchasing</a><br>
+<a href="sales-manage-sales.html">Managing Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/inventory-how-setup-units-of-measure.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

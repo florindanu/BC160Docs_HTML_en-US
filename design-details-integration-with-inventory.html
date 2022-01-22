@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Integration with Inventory | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Integration with Inventory | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The Warehouse Management application area and the Inventory application area interact with one another in physical inventory and in inventory or warehouse adjustment.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-integration-with-inventory">Design Details: Integration with Inventory</h1>
+
+<p>The Warehouse Management application area and the Inventory application area interact with one another in physical inventory and in inventory or warehouse adjustment.</p>
+<h2 id="physical-inventory">Physical Inventory</h2>
+<p>The <strong>Whse. Phys. Inventory Journal</strong> page is used with the <strong>Phys. Inventory Journal</strong> page for all advanced warehouse locations. The inventory on bin level is calculated, and a printed list is provided for the warehouse employee. The list shows which items in which bins must be counted.</p>
+<p>The warehouse employee enters the counted quantity on the <strong>Whse. Phys. Inventory Journal</strong> page and then posts the journal.</p>
+<p>If the counted quantity is greater than the quantity on the journal line, a movement is posted for this difference from the default adjustment bin to the counted bin. This increases the quantity in the counted bin and decreases the quantity in the default adjustment bin.</p>
+<p>If the quantity counted is less than the quantity on the journal line, a movement for this difference is posted from the counted bin to the default adjustment bin. This decreases the quantity in the counted bin and increases the quantity in the default adjustment bin.</p>
+<p>In advanced warehouse configurations, the value in the <strong>Quantity (Calculated)</strong> field is retrieved from item ledger entries and the value in the <strong>Quantity (Phys. Inventory)</strong> field is retrieved from warehouse entries, excluding the adjustment bin content. The <strong>Quantity</strong> field specifies the difference between the first two fields, which should be equal to the contents of the adjustment bin.</p>
+<p>When you post the physical inventory journal, the inventory and the default adjustment bin are updated.</p>
+<h3 id="warehouse-adjustments-to-the-item-ledger">Warehouse Adjustments to the Item Ledger</h3>
+<p>You use the <strong>Item Journal</strong> page and the <strong>Calculate Whse. Adjustment</strong> function to adjust inventory on the item ledger in accordance with an adjustment that has been made to the item quantity in a warehouse bin. To create a link between the inventory and the warehouse, you must define a default adjustment bin per location.</p>
+<p>The default adjustment bin registers items in the warehouse when you post an increase for the inventory. However, if you post a decrease, the quantity on the default bin is also decreased. In both cases, item ledger entries and warehouse entries are created.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The adjustment bin is not included in the availability calculation.</p>
+</div>
+<p>If you want to adjust the bin content, you can use the warehouse item journal, from which you can enter the item number, zone code, bin code, and quantity that you want to adjust.</p>
+<p>If you enter a positive quantity and post the line, then the inventory stored in the bin increases, and the quantity of the default adjustment bin decreases correspondingly.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="design-details-availability-in-the-warehouse.html">Design Details: Availability in the Warehouse</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-integration-with-inventory.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

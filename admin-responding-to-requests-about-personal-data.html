@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Responding to Requests About Personal Data </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Responding to Requests About Personal Data ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You must respond to data subject requests.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="responding-to-requests-about-personal-data">Responding to Requests About Personal Data</h1>
+
+<p>Data subjects can request several types of actions regarding their personal data. For example, under the General Data Protection Regulation (GDPR), EU residents have the right to request the export, deletion and modification of their personal data. This is known as a <em>Data Subject Request</em>. If you have classified the sensitivity of your data, and are sure they are correct, an administrator can respond to requests by using the options under <strong>Data Privacy</strong> tab in the <strong>IT Manager</strong> Role Center. For more information about classifying data and classifying data sensitivity in Dynamics 365 Business Central, see <a href="http://docs.microsoft.com/dynamics-nav/classifying-data?toc=/dynamics365/business-central/toc.json">Classifying Data</a> and <a href="admin-classifying-data-sensitivity.html">Classifying Data Sensitivity</a>.</p>
+<h2 id="types-of-requests">Types of Requests</h2>
+<p>The following table provides examples of the types of requests you can respond to.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While we provide capabilities for responding to these types of request, and thereby accessing, personal data, it is your responsibility to ensure that personal and sensitive data are located and classified appropriately.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Request Type</th>
+<th>Description and Suggested Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portability requests</td>
+<td>A data subject can make a data portability request, meaning, in part, that you must export the data subject's personal data from your systems and provide it in in a structured, commonly used format. To respond to these requests you can use the <strong>Data Privacy Utility</strong> to export personal data to an Excel file or a RapidStart configuration package. Using Excel, you can edit the personal data and save it in a commonly used, machine-readable format, such as .csv or .xml. For RapidStart configuration packages, you can configure master data tables and their related tables that contain personal data. <br><br> <strong>Note:</strong> When you export data you specify a minimum sensitivity level. The export will include the minimum and all sensitivity levels above it. For example, if you choose to export data that is classified as Personal, the export will also include data that is classified as Sensitive. <br><br>When exporting data related to a data subject, the <strong>Data Privacy Utility</strong> looks for direct relationships between the data subject and data related to the data subject. Indirect relationships between data related to the data subject and other data are not exported automatically by the <strong>Data Privacy Utility</strong>. For example, the Contact table has directly related Contact Profile Answers data, and the Contact Profile Answers table is further related to Profile Questions data. If you want to export Profile Questions as well, you must add this table manually as a row with the appropriate filters in the configuration package that the <strong>Data Privacy Utility</strong> creates.</td>
+</tr>
+<tr>
+<td>Requests for deletion</td>
+<td>A data subject can request that you delete their personal data. There are several ways to delete personal data using the customization capabilities, but the decision and implementation is your responsibility. In some cases, you may choose to directly edit your data, for example deleting a contact and then running the Delete Canceled Interaction batch job to delete interactions for the contact. <br><br> <strong>Note:</strong> If you have specified a date in the <strong>Allow Document Deletion Before</strong> field on the <strong>Sales &amp; Receivables Setup</strong> or <strong>Purchases &amp; Payables Setup</strong> pages, you might need to change the date so that you can delete posted sales and purchase documents that you have printed and that have posting dates on or before that date.</td>
+</tr>
+<tr>
+<td>Requests for correction</td>
+<td>A data subject can request that you correct inaccurate personal data. There are several ways to do so. In some cases, you can export lists to Excel to quickly bulk-edit multiple records, and then import the updated data. For more information, see <a href="about-export-data.html">Exporting your Business Data to Excel</a>. You can also manually edit fields that contain personal data, such as editing information about a customer in the Customer card. However, transaction records such as general, customer, and tax ledger entries are essential to the integrity of the enterprise resource planning system. If you store personal data in business transaction records, consider using the customization capabilities to modify such personal data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="restrict-data-processing-for-a-data-subject">Restrict Data Processing for a Data Subject</h2>
+<p>A data subject can request that you temporarily stop processing their personal data. To honor such requests, you can mark their record as blocked due to privacy to stop processing their data. When a record is marked as blocked, you cannot create new transactions that use that record. For example, you cannot create a new invoice for a customer when either the customer or the salesperson is blocked. To mark a data subject as blocked, open the card for the data subject, for example the Customer, Vendor, or Contact cards, and choose the <strong>Privacy Blocked</strong> check box. You may need to choose <strong>Show More</strong> to display the field.</p>
+<h2 id="handling-data-subject-requests-while-in-trial">Handling Data Subject Requests While in Trial</h2>
+<p>Certain types of personal data is part of your Office 365 account and requires administrative access to export, if you receive a data subject request from a user regarding this type of personal data under the General Data Protection Regulation (GDPR). The process for handling data subject requests is different depending on the type of Business Central tenant.</p>
+<p>If you have a paid subscription for Business Central, you must contact your organization's tenant administrator to make a data subject request. The administrator has the administrative rights and tools to fulfil your request.</p>
+<p>If you signed up for Business Central from the <a href="https://trials.dynamics.com/">Trials</a> page, and you have not moved out of this trial experience through a paid subscription by your organization’s tenant administrator, then you can fulfil your own data subject request in the <a href="https://portal.azure.com#blade/Microsoft_AAD_IAM/GDPRViralBlade">Work and School Privacy page in the Azure Portal</a>. Here, you can export and download your personal data.</p>
+<p>On the Work and School Privacy page, you can also close your account. However, we recommend that you make sure that you have exported and deleted all data first, since deleting your account means that you lose access to Business Central.</p>
+<p>You can still mark people as blocked due to privacy and export, edit, or delete transactions as explained elsewhere in this article.</p>
+<h2 id="exporting-data-from-tables-not-classified-by-data-subject">Exporting Data from Tables not Classified by Data Subject</h2>
+<p>If you have a situation where you have to export data that is not classified in a way so that it gets automatically exported, such as data from the Profile Answers table, you must do the following:</p>
+<ul>
+<li>Consider if you really want or have to export this supplemental data that is unrelated to the contact, meaning that it has no direct relationship to it</li>
+<li>Add this table and relationship manually to the Rapid Start package and export it directly from the Rapid Start package – that’s why we generate a Rapid Start package for you, so that you can tweak it in situations such as this.</li>
+</ul>
+<h2 id="handling-data-about-minors">Handling Data About Minors</h2>
+<p>If a contact person's age is below the age of legal consent according to the laws in your region, you can indicate that by choosing the <strong>Minor</strong> check box on the <strong>Contact</strong> card. When you do, the <strong>Privacy Blocked</strong> check box is automatically selected. When you receive consent from the minor's parent or legal guardian, you can choose the <strong>Parental Consent Received</strong> check box to unblock the contact. Though you can process personal data for minors, you cannot use the profiling functionality in Dynamics 365 Sales.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Change Log can record details such as when, and by whom, the <strong>Parental Consent Received</strong> check box was chosen. An administrator can set that up by using the <strong>Change Log Setup</strong> guide, and also choosing the <strong>Log Modification for Parental Consent Received</strong> check box on the <strong>Contact</strong> card. For more information, see <a href="across-log-changes.html">Logging Changes</a>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="http://docs.microsoft.com/dynamics-nav/classifying-data?toc=/dynamics365/business-central/toc.json">Classifying Data</a><br>
+<a href="admin-classifying-data-sensitivity.html">Classifying Data Sensitivity</a><br>
+<a href="about-export-data.html">Exporting your Business Data to Excel</a><br>
+<a href="across-log-changes.html">Logging Changes</a><br>
+<a href="http://docs.microsoft.com/microsoft-365/compliance/gdpr-data-subject-requests">Data Subject Requests for the GDPR</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-responding-to-requests-about-personal-data.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

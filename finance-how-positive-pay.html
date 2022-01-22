@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Export Positive Pay Files| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Export Positive Pay Files| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can ensure your bank only clears validated checks and amounts by exporting a Positive Pay file that contains vendor and payment information.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="export-a-positive-pay-file">Export a Positive Pay File</h1>
+
+<p>To make sure that your bank only clears validated checks and amounts, you can export a Positive Pay file that contains vendor information, check number, and payment amount, which you send to the bank for reference when you process payments.</p>
+<p>Business Central is preconfigured to support Positive Pay files for Bank of America and City Bank.</p>
+<h2 id="to-set-up-a-bank-account-for-positive-pay">To set up a bank account for Positive Pay</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</li>
+<li>Open the card for the bank that you want to use Positive Pay for.</li>
+<li>In the <strong>Positive Pay Export Code</strong> field, enter POSPAYBANK.</li>
+<li>Close the page.</li>
+</ol>
+<h2 id="to-export-a-positive-pay-file">To export a Positive Pay file</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the bank account that you want to export a Positive Pay file for.</p>
+</li>
+<li><p>Choose <strong>Positive Pay Export</strong> action.</p>
+<p>The <strong>Positive Pay Export</strong> page opens displaying payments that have been made for the bank account since the last upload date, as shown in the <strong>Last Upload Date</strong> and <strong>Last Upload Time</strong> fields.</p>
+</li>
+<li><p>In the <strong>Cutoff Upload Date</strong> field, specify a date before which payments are not included in the exported file.</p>
+</li>
+<li><p>Choose the <strong>Export</strong> action.</p>
+</li>
+<li><p>On the <strong>Export File</strong> page, choose the <strong>Save</strong> button, and then save the file to a convenient location.</p>
+</li>
+<li><p>Upload the file to your electronic bank site.</p>
+</li>
+<li><p>Write down or copy the confirmation number that is displayed when the file upload is successful.</p>
+</li>
+</ol>
+<p>To view exported Positive Pay records</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the bank account that you want to view Positive Pay export records for.</p>
+</li>
+<li><p>Choose the <strong>Positive Pay Entries</strong> action.</p>
+<p>On the <strong>Positive Pay Entries</strong> page, you can see all the Positive Pay export records for the bank account.</p>
+</li>
+<li><p>In the <strong>Confirmation Number</strong> field, enter, for each export record, the confirmation number that you receive when the file upload to the bank is successful.</p>
+</li>
+<li><p>To view the related payment lines, choose the <strong>Positive Pay Entry Details</strong> action.</p>
+</li>
+</ol>
+<p>To reexport Positive Pay files</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</li>
+<li>Select the bank account that you want to reexport Positive Pay files for.</li>
+<li>Choose the <strong>Positive Pay Entries</strong> action.</li>
+<li>Select the line for the Positive Pay export file that you want to reexport.</li>
+<li>On the <strong>Positive Pay Entries</strong> page, choose the <strong>Reexport Positive Pay to File</strong> action.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance.html">Finance</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="ui-work-general-journals.html">Working with General Journals</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-positive-pay.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

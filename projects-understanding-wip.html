@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>WIP Methods for Calculating and Recording Job Progress| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="WIP Methods for Calculating and Recording Job Progress| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes the different work in process (WIP) methods you can use to post, monitor, and calculate financial information for ongoing jobs that are in progress.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="understanding-wip-methods">Understanding WIP Methods</h1>
+
+<p>As a job progresses, materials, resources, and other expenses are consumed and must be posted to the job. Work in Process (WIP) is a feature that enables you to estimate the financial value of jobs in the general ledger while the jobs are ongoing. In many cases, you might post expenses for a job before invoicing a job. When only expenses have been posted, your financial statement will be inaccurate.</p>
+<p>To track the value in the general ledger, you can calculate WIP and post the value to the general ledger. For more information, see <a href="projects-how-monitor-progress-performance.html">Monitor Job Progress and Performance</a>.</p>
+<p>Business Central supports the following methods of calculating and recording the value of work in process.</p>
+<table>
+<thead>
+<tr>
+<th>WIP Method</th>
+<th>Calculation Formula</th>
+<th>Calculation Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cost Value</td>
+<td>Recognized Revenue = Billable Invoiced Price<br><br> Estimated Total Costs = Billable Total Price x Budget Cost Ratio<br><br> WIP Costs = (Percentage of Completion - Invoiced %) x Estimated Total Costs<br><br> Percentage of Completion = Usage Total Costs / Budget Total Costs<br> Invoiced % = Billable Invoiced Price<br><br> Billable Total Price Recognized Costs = Usage Total Costs - WIP</td>
+<td>Cost value calculations start by calculating the value of what has been provided by taking a proportion of the estimated total costs based on percentage of completion. Invoiced costs are subtracted by taking a proportion of the estimated total costs based on the invoiced percentage.<br><br> This calculation requires that the billable total price, budget total price, and budget total costs be correctly entered for the whole job.</td>
+</tr>
+<tr>
+<td>Cost of Sales</td>
+<td>Recognized Revenue = Billable Invoiced Price<br><br> Recognized Costs = Budget Total Cost x Invoiced Percentage<br><br> Invoiced % = Billable Invoiced Price / Billable Total Price<br><br> (Invoiced % exists as column on job task lines)<br><br> WIP Costs = Usage Total Costs – Recognized Costs</td>
+<td>Cost of sales calculations begin by calculating the recognized costs. Costs are recognized proportionally based on budget total costs.<br><br> This calculation requires that the billable total price and budget total costs be correctly entered for the whole job.</td>
+</tr>
+<tr>
+<td>Sales Value</td>
+<td>Recognized Costs = Usage Total Costs<br><br> Recognized Revenue = Usage Total Price x Expected invoicing ratio<br><br> Cost Recovery % = Billable Total Price / Budget Total Price<br><br> WIP Sales = Recognized Sales - Billable Invoiced Price</td>
+<td>Sales value calculations recognize revenue proportionally based on usage total costs and the expected cost recovery ratio.<br><br> This calculation requires that the billable total price and budget total price be correctly entered for the whole job.</td>
+</tr>
+<tr>
+<td>Percentage of Completion</td>
+<td>Recognized Costs = Usage Total Costs<br><br> Recognized Revenue = Billable Total Price x Percentage of Completion<br><br> Percentage of Completion = Usage Total Costs / Budget Total Costs<br> (Referred to as &quot;Cost Completion %&quot; on job task lines)<br><br> WIP Sales = Recognized Sales - Billable Invoiced Price</td>
+<td>Percentage of completion calculations recognize revenue proportionally based on the percentage of completion, that is, usage total costs vs. budget costs.<br><br> This calculation requires that the billable total price and budget total costs be correctly entered for the whole job.</td>
+</tr>
+<tr>
+<td>Completed Contract</td>
+<td>WIP Amount = WIP Cost Amount = Usage (Total Cost)<br><br> WIP Sales Amount = Billable (Invoiced Price)</td>
+<td>Completed contract does not recognize revenue and costs until the job is complete. You may want to do this when there is high uncertainty around the estimates of costs and revenue for the job.<br><br> All usage is posted to the WIP Costs account (asset) and all invoiced sales are posted to the WIP Invoiced Sales account (liability) until the job is complete.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="projects-manage-projects.html">Project Management</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/projects-understanding-wip.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

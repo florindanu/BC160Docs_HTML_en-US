@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Reconcile Bank Accounts and Apply Payments | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Reconcile Bank Accounts and Apply Payments | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Outlines tasks to reconcile your bank, receivables, and payables accounts, post cash receipts or expenses, and apply payments automatically.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="applying-payments-automatically-and-reconciling-bank-accounts">Applying Payments Automatically and Reconciling Bank Accounts</h1>
+
+<p>You must regularly reconcile your bank, receivables, and payables accounts by applying payments recorded in the bank to their related open (unpaid) invoices and credit memos or other open entries in Business Central.</p>
+<p>You can perform this task on the <strong>Payment Reconciliation Journal</strong> page, for example, by importing a bank statement file or feed to quickly register the payments. Payments are applied to open customer or vendor ledger entries based on matches between payment text and entry information. You can review and change automatic applications before you post the journal. You can choose to close any open bank account ledger entries related to the applied ledger entries when you post the journal. The bank account is automatically reconciled when all payments are applied.</p>
+<p>The logic that governs how payment text is automatically matched with entry information is set up on the <strong>Payment Application Rules</strong> page as a number of prioritized rules that you can edit.</p>
+<p>You can also reconcile bank accounts without simultaneously applying payments. You perform this work on the <strong>Bank Acc. Reconciliation</strong> page. For more information, see <a href="bank-how-reconcile-bank-accounts-separately.html">Reconcile Bank Accounts</a>.</p>
+<p>To import bank statements as a bank feed, you must first set up and enable the Envestnet Yodlee Bank Feed service, and then link your bank accounts to the related online bank accounts. For more information, see <a href="bank-how-setup-bank-statement-service.html">Set Up the Envestnet Yodlee Bank Feeds Service</a>.</p>
+<p>Alternatively, you can use the AMC Banking 365 Fundamentals extension to convert a bank statement file, from any format, to a data stream that you can import into Business Central. For more information, see <a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a>.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th>To</th>
+<th>See</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apply payments to open customer or vendor ledger entries by importing a bank statement, and reconcile the bank account when all payments are applied.</td>
+<td><a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a></td>
+</tr>
+<tr>
+<td>Manually apply payments by viewing detailed information about matched data and suggestions for candidate open entries to apply payments to.</td>
+<td><a href="receivables-how-review-apply-payments-auto-application.html">Review or Apply Payments After Automatic Application</a></td>
+</tr>
+<tr>
+<td>Resolve payments that cannot be applied automatically to their related open ledger entries. For example because the amounts differ, or because a related ledger entry does not exist.</td>
+<td><a href="receivables-how-reconcile-payments-cannot-apply-auto.html">Reconcile Payments that Cannot be Applied Automatically</a></td>
+</tr>
+<tr>
+<td>Link text on payments to specific customer, vendor, or general ledger accounts to always post recurring cash receipts or expenses to those accounts when no documents exist to apply to.</td>
+<td><a href="receivables-how-map-text-recurring-payments-accounts-auto-reconcilliation.html">Map Text on Recurring Payments to Accounts for Automatic Reconciliation</a></td>
+</tr>
+<tr>
+<td>Set up the rules to govern how payments/bank transactions should be automatically applied to their related open ledger entries when you use the <strong>Apply Automatically</strong> function on the <strong>Payment Reconciliation Journal</strong> page.</td>
+<td><a href="receivables-how-set-up-payment-application-rules.html">Set Up Rules for Automatic Application of Payments</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/use-journals-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="bank-how-reconcile-bank-accounts-separately.html">Reconcile Bank Accounts</a><br>
+<a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-apply-payments-auto-reconcile-bank-accounts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

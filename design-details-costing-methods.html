@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Costing Methods | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Costing Methods | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The costing method determines if an actual or a budgeted value is capitalized and used in the cost calculation. Together with the posting date and sequence, the costing method also influences how the cost flow is recorded.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-costing-methods">Design Details: Costing Methods</h1>
+
+<p>The costing method determines if an actual or a budgeted value is capitalized and used in the cost calculation. Together with the posting date and sequence, the costing method also influences how the cost flow is recorded.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot change an item's costing method if item ledger entries exist for the item.<br><br>
+Information will soon be published here about workarounds to changing a costing method in special situations.</p>
+</div>
+<p>The following methods are supported in Business Central:</p>
+<table>
+<thead>
+<tr>
+<th>Costing method</th>
+<th>Description</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FIFO</td>
+<td>An item’s unit cost is the actual value of any receipt of the item, selected by the FIFO rule.<br><br> In inventory valuation, it is assumed that the first items placed in inventory are sold first.</td>
+<td>In business environments where product cost is stable.<br><br> (When prices are rising, the balance sheet shows greater value. This means that tax liabilities increase, but credit scores and the ability to borrow cash improve.)<br><br> For items with a limited shelf life, because the oldest goods need to be sold before they pass their sell-by date.</td>
+</tr>
+<tr>
+<td>LIFO</td>
+<td>An item’s unit cost is the actual value of any receipt of the item, selected by the LIFO rule.<br><br> In inventory valuation, it is assumed that the last items placed in inventory are sold first.</td>
+<td>Disallowed in many countries/regions, as it can be used to depress profit.<br><br> (When prices are rising, the value on the income statement decreases. This means that tax liabilities decrease, but the ability to borrow cash deteriorates.)</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>An item’s unit cost is calculated as the average unit cost at each point in time after a purchase.<br><br> For inventory valuation, it is assumes that all inventories are sold simultaneously.</td>
+<td>In business environments where product cost is unstable.<br><br> When inventories are piled or mixed together and cannot be differentiated, such as chemicals.</td>
+</tr>
+<tr>
+<td>Specific</td>
+<td>An item’s unit cost is the exact cost at which the particular unit was received.</td>
+<td>In production or trade of easily identifiable items with fairly high unit costs.<br><br> For items that are subject to regulation.<br><br> For items with serial numbers.</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>An item’s unit cost is preset based on estimated.<br><br> When the actual cost is realized later, the standard cost must be adjusted to the actual cost through variance values.</td>
+<td>Where cost control is critical.<br><br> In repetitive manufacturing, to value the costs of direct material, direct labor, and manufacturing overhead.<br><br> Where there is discipline and staff to maintain standards.</td>
+</tr>
+</tbody>
+</table>
+<p>The following image shows how costs flow through the inventory for each costing method.</p>
+<p><img src="media/design_details_inventory_costing_7_costing_methods.png" alt="Costing methods" title="Costing methods"></p>
+<p>Costing methods differ in the way that they value inventory decreases and if they use actual cost or standard cost as the valuation base. The following table explains the different characteristics. (The LIFO method is excluded, as it is very similar to the FIFO method.)</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>FIFO</th>
+<th>Average</th>
+<th>Standard</th>
+<th>Specific</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General characteristic</td>
+<td>Easy to understand</td>
+<td>Based on period options: <strong>Day</strong>/<strong>Week</strong>/<strong>Month</strong>/<strong>Quarter</strong>/<strong>Accounting Period</strong>.<br><br> Can be calculated per item or per item/location/variant.</td>
+<td>Easy to use, but requires qualified maintenance.</td>
+<td>Requires item tracking on both inbound and outbound transaction.<br><br> Typically used for serialized items.</td>
+</tr>
+<tr>
+<td>Application/Adjustment</td>
+<td>Application keeps track of <strong>the remaining quantity</strong>.<br><br> Adjustment forwards costs according to quantity application.</td>
+<td>Application keeps track of the <strong>remaining quantity</strong>.<br><br> Costs are calculated and forwarded per the <strong>valuation date</strong>.</td>
+<td>Application keeps track of the <strong>remaining quantity</strong>.<br><br> Application is based on FIFO.</td>
+<td>All applications are fixed.</td>
+</tr>
+<tr>
+<td>Revaluation</td>
+<td>Revalues invoiced quantity only.<br><br> Can be done per item or per item ledger entry.<br><br> Can be done backward in time.</td>
+<td>Revalues invoiced quantity only.<br><br> Can be done per item only.<br><br> Can be done backward in time.</td>
+<td>Revalues invoiced and un-invoiced quantities.<br><br> Can be done per item or per item ledger entry.<br><br> Can be done backward in time.</td>
+<td>Revalues invoiced quantity only.<br><br> Can be done per item or per item ledger entry.<br><br> Can be done backward in time.</td>
+</tr>
+<tr>
+<td>Miscellaneous</td>
+<td>If you back-date an inventory decrease, then existing entries are NOT reapplied to provide a correct FIFO cost flow.</td>
+<td>If you back-date an inventory increase or decrease, then the average cost is recalculated, and all affected entries are adjusted.<br><br> If you change the period or calculation type, then all affected entries must be adjusted.</td>
+<td>Use the <strong>Standard Worksheet</strong> page to periodically update and roll up standard costs.<br><br> Is NOT supported per SKU.<br><br> No historic records exist for standard costs.</td>
+<td>You can use specific item tracking without using the Specific costing method. Then the cost will NOT follow the lot number, but the cost assumption of the selected costing method.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<p>This section gives examples of how different costing methods affect inventory value.</p>
+<p>The following table shows the inventory increases and decreases that the examples are based on.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The resulting quantity in inventory is zero. Consequently, the inventory value must also be zero, regardless of the costing method.</p>
+</div>
+<h3 id="effect-of-costing-methods-on-valuing-inventory-increases">Effect of Costing Methods on Valuing Inventory Increases</h3>
+<p><strong>FIFO</strong>/<strong>LIFO</strong>/<strong>Average</strong>/<strong>Specific</strong></p>
+<p>For items with costing methods that use actual cost as the valuation base (<strong>FIFO</strong>, <strong>LIFO</strong>, <strong>Average</strong>, or <strong>Specific</strong>), inventory increases are valued at the item’s acquisition cost.</p>
+<p>The following table shows how inventory increases are valued for all costing methods except <strong>Standard</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>10.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>20.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>30.00</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standard</strong></p>
+<p>For items using the <strong>Standard</strong> costing method, inventory increases are valued at the item’s current standard cost.</p>
+<p>The following table shows how inventory increases are valued for the <strong>Standard</strong> costing method.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>15.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>15.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>15.00</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="effect-of-costing-methods-on-valuing-inventory-decreases">Effect of Costing Methods on Valuing Inventory Decreases</h3>
+<p><strong>FIFO</strong></p>
+<p>For items using the <strong>FIFO</strong> costing method, items that were purchased first are always sold first (entry numbers 3, 2, and 1 in this example). Accordingly, inventory decreases are valued by taking the value of the first inventory increase.</p>
+<p>COGS is calculated using the value of the first inventory acquisitions.</p>
+<p>The following table shows how inventory decreases are valued for the <strong>FIFO</strong> costing method.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-20.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-30.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>LIFO</strong></p>
+<p>For items using the <strong>LIFO</strong> costing method, items that were purchased most recently are always sold first (entry numbers 3, 2, and 1 in this example). Accordingly, inventory decreases are valued by taking the value of the last inventory increase.</p>
+<p>COGS is calculated using the value of the most recent inventory acquisitions.</p>
+<p>The following table shows how inventory decreases are valued for the <strong>LIFO</strong> costing method.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-30.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-20.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Average</strong></p>
+<p>For items using the <strong>Average</strong> costing method, inventory decreases are valued by calculating a weighted average of the remaining inventory on the last day of the average cost period in which the inventory decrease was posted. For more information, see <a href="design-details-average-cost.html">Design Details: Average Cost</a>.</p>
+<p>The following table shows how inventory decreases are valued for the <strong>Average</strong> costing method.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-20.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-20.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-20.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Standard</strong></p>
+<p>For items using the <strong>Standard</strong> costing method, inventory decreases are valued similar to the <strong>FIFO</strong> costing method, except valuation is based on a standard cost, not on the actual cost.</p>
+<p>The following table shows how inventory decreases are valued for the <strong>Standard</strong> costing method.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-15.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-15.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-15.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Specific</strong></p>
+<p>Costing methods make an assumption about how cost flows from an inventory increase to an inventory decrease. However, if more accurate information about the cost flow exists, then you can override this assumption by creating a fixed application between entries. A fixed application creates a link between an inventory decrease and a specific inventory increase and directs the cost flow accordingly.</p>
+<p>For items using the <strong>Specific</strong> costing method, inventory decreases are valued according to the inventory increase that it is linked to by the fixed application.</p>
+<p>The following table shows how inventory decreases are valued for the <strong>Specific</strong> costing method.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Applies-to Entry</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-20.00</td>
+<td><strong>2</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td><strong>1</strong></td>
+<td>5</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-30.00</td>
+<td><strong>3</strong></td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-variance.html">Design Details: Variance</a><br>
+<a href="design-details-average-cost.html">Design Details: Average Cost</a><br>
+<a href="design-details-item-application.html">Design Details: Item Application</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-costing-methods.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

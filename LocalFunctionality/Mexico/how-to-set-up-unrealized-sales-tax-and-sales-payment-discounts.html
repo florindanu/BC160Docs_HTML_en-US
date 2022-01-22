@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Unrealized Sales Tax and Sales Payment Discounts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Unrealized Sales Tax and Sales Payment Discounts ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use the General Ledger Setup page to set up unrealized sales tax. You can also set up maximum correction tax amounts so that you can limit the tax correction amounts that are entered for sales and purchases. This allows you to overwrite the calculated tax when there are rounding differences between what is calculated on the purchase order, and what is calculated on the purchase invoice from the vendor.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-unrealized-sales-tax-and-sales-payment-discounts">Set Up Unrealized Sales Tax and Sales Payment Discounts</h1>
+
+<p>You can use the <strong>General Ledger Setup</strong> page to set up unrealized sales tax. You can also set up maximum correction tax amounts so that you can limit the tax correction amounts that are entered for sales and purchases. This allows you to overwrite the calculated tax when there are rounding differences between what is calculated on the purchase order, and what is calculated on the purchase invoice from the vendor.</p>
+<h2 id="to-set-up-unrealized-sales-tax">To set up unrealized sales tax</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>General Ledger Setup</strong> page, on the <strong>General</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pmt. Disc. Excl. Tax</strong></td>
+<td>Select to calculate the payment discount on amounts excluding sales tax.</td>
+</tr>
+<tr>
+<td><strong>Adjust for Payment Disc.</strong></td>
+<td>Select to recalculate the tax amounts when you post payments that trigger payment discounts.<br><br> This field is used in the context of VAT, not sales tax.</td>
+</tr>
+<tr>
+<td><strong>Unrealized VAT</strong></td>
+<td>Select if any of your sales tax jurisdictions allow you to pay your sales tax after you have been paid. If you do not select this check box this function will be blocked for all sales tax jurisdictions.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-set-up-unrealized-tax-for-jurisdictions">To set up unrealized tax for jurisdictions</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Tax Jurisdictions</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Tax Jurisdictions</strong> page, choose the <strong>Edit List</strong> action.</p>
+</li>
+<li><p>Fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Unrealized Tax Type</strong></td>
+<td><blank> – The unrealized tax feature is not used for this tax jurisdiction.<br><br> –or–<br><br> <strong>Percentage</strong> – Each payment covers both tax amounts and invoice amounts in proportion to the remaining invoice amount. The paid tax amount is transferred from the unrealized tax account to the tax account.<br><br> –or–<br><br> <strong>First</strong> – Payments cover the tax first, and then the invoice amount.<br><br> –or–<br><br> <strong>Last</strong> – Payments cover the invoice amount first, and then the tax amount. In this case, nothing will be transferred from the unrealized tax account to the tax account until the total invoice amount—exclusive of tax—has been paid.<br><br> –or–<br><br> <strong>First (Fully Paid)</strong> – Payments cover the tax first, but nothing is transferred to the tax account until the full tax amount has been paid.<br><br> –or–<br><br> <strong>Last (Fully Paid)</strong> – Payments cover the invoice amount first, but nothing is transferred to the tax account until the full tax amount has been paid. <strong>Important:</strong>  This field is available on the <strong>Tax Jurisdiction</strong> page, but it is not shown by default. To select the field, you must first add the column that shows this field. You can change how certain UI elements are displayed. For more information, see <a href="../../ui-personalization-user.html">Personalize Your Workspace</a>.</blank></td>
+</tr>
+<tr>
+<td><strong>Unreal. Tax Acc (Sales)</strong></td>
+<td>The general ledger account that you want to use to post calculated unrealized tax on sales transactions. <strong>Important:</strong>  This field is available on the <strong>Tax Jurisdiction</strong> page, but it is not shown by default. To select the field, you must first add the column that shows this field. You can change how certain UI elements are displayed. For more information, see <a href="../../ui-personalization-user.html">Personalize Your Workspace</a>.</td>
+</tr>
+<tr>
+<td><strong>Unreal. Tax Acc (Purchases)</strong></td>
+<td>The general ledger account that you want to use to post calculated unrealized tax on purchase transactions. <strong>Important:</strong>  This field is available on the <strong>Tax Jurisdiction</strong> page, but it is not shown by default. To select the field, you must first add the column that shows this field. You can change how certain UI elements are displayed. For more information, see <a href="../../ui-personalization-user.html">Personalize Your Workspace</a>.</td>
+</tr>
+<tr>
+<td><strong>Unreal. Rev. Charge (Purch.)</strong></td>
+<td>The general ledger account that you want to use for posting calculated unrealized reverse-charge tax on purchase transactions. <strong>Important:</strong>  This field is available on the <strong>Tax Jurisdiction</strong> page, but it is not shown by default. To select the field, you must first add the column that shows this field. You can change how certain UI elements are displayed. For more information, see <a href="../../ui-personalization-user.html">Personalize Your Workspace</a>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-set-up-adjustments-for-payment-discounts-in-a-tax-posting-group">To set up adjustments for payment discounts in a tax posting group</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Tax Posting Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Tax Posting Setup Card</strong> page, select the <strong>Adjust for Payment Discount</strong> check box.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This field is available on the <strong>VAT Posting Setup</strong> page, but it is not shown by default. To select the field, you must first add the column that shows this field. You can change how certain UI elements are displayed. For more information, see <a href="../../ui-personalization-user.html">Personalize Your Workspace</a>.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-set-up-maximum-tax-correction-amounts">To set up maximum tax correction amounts</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Sales &amp; Receivables Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Sales Receivables Setup</strong> page, on the <strong>General</strong> FastTab, select the <strong>Allow Tax Difference</strong> check box.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Purchases &amp; Payables Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Purchases &amp; Payables Setup</strong> page, on the <strong>General</strong> FastTab, select the <strong>Allow Tax Difference</strong> check box.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>General Ledger Setup</strong> page, in the <strong>Max. Tax Difference Allowed</strong> field, enter the maximum tax correction amount that is allowed for the local currency.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In this field, if you enter USD 5, you may correct tax amounts by up to five dollars. To use the tax difference function, an amount must be entered in the <strong>Max. Tax Difference Allowed</strong> field.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="mexico-local-functionality.html">Mexico Local Functionality</a><br>
+<a href="mexico-sales-tax.html">Reporting Sales Tax in Mexico</a><br>
+<a href="../../finance.html">Finance</a><br>
+<a href="../../finance.html">Setting Up Finance</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Mexico/how-to-set-up-unrealized-sales-tax-and-sales-payment-discounts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

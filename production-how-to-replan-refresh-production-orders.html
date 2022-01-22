@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Replan or Refresh Production Orders Directly| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Replan or Refresh Production Orders Directly| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The production order lines contain the items that are to be produced in the production order.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="replan-or-refresh-production-orders-directly">Replan or Refresh Production Orders Directly</h1>
+
+<p>The <strong>Replan</strong> function on production orders is typically used after you have added or changed components that constitute underlying production orders. The function calculates changes made to components and routings lines, and it includes items on lower production BOM levels for which it may generate new production orders.</p>
+<p>Based on the changes you have made to the components and routing lines, the Replan function calculates and plans for any new demand for the production order.</p>
+<p>The <strong>Refresh</strong> function on production orders is typically used after you have done one of the following:</p>
+<ul>
+<li>Created a production order header manually to calculate and create line data for the first time.</li>
+<li>Made changes to the production order header to recalculate all the line data.</li>
+</ul>
+<p>The Refresh function calculates changes made to a production order header and does not involve production BOM levels. The function calculates and initiates the values of the component lines and routing lines based on the master data defined in the assigned production BOM and routing, according to the order quantity and due date on the production order’s header.</p>
+<p>You can either insert the production order lines manually or use the function that calculates the production order lines from the header.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use the Refresh function to recalculate production order lines, the old production order lines are deleted and new lines are calculated.</p>
+</div>
+<h2 id="to-replan-a-production-order">To replan a production order</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Firm Planned Prod. Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the production order you want to replan.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, choose the <strong>Lines</strong> action, and then choose the <strong>Components</strong> action.</p>
+</li>
+<li><p>Add a component, which is a produced item or subassembly.</p>
+</li>
+<li><p>From the production order, choose the <strong>Replan</strong> action.</p>
+<p>On the <strong>Replan Production Order</strong> page, proceed to define how and what to replan.</p>
+</li>
+<li><p>In the <strong>Scheduling Direction</strong> field, select one of the following options.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Back</strong></td>
+<td>Calculates the operation sequence backwards from the earliest possible ending date, defined by due date and/or other scheduled orders, to the latest possible starting date. <strong>Note:</strong>  This default option is relevant in the majority of situations.</td>
+</tr>
+<tr>
+<td><strong>Forward</strong></td>
+<td>Calculates the operation sequence forward from the earliest latest possible starting date, defined by due date and/or other scheduled orders, to the earliest possible ending date. <strong>Note:</strong>  This option is only relevant for expedite orders.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>In the <strong>Plan</strong> field, select whether to calculate production requirements for produced items on the production BOM, as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No Levels</strong></td>
+<td>Do not consider lower level production. This only updates the item’s schedule, like refresh.</td>
+</tr>
+<tr>
+<td><strong>One Level</strong></td>
+<td>Plan for first-level production demand. First-level production orders may be created.</td>
+</tr>
+<tr>
+<td><strong>All Levels</strong></td>
+<td>Plan for all-level production demand. All-level production orders may be created.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Select <strong>One Level</strong>, and choose the <strong>OK</strong> button to replan the production order, and calculate and create a new underlying production order for the introduced subassembly, if it is not fully available.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changes implemented with the <strong>Replan</strong> function are very likely to change the capacity need of the production order and you may therefore have to reschedule operations afterwards.</p>
+</div>
+<h2 id="to-refresh-a-production-order">To refresh a production order</h2>
+<p>If you have amended production order lines, components, or routing lines, you must also refresh the information on the production order. In the following procedure, the components are calculated for a firm planned production order. The steps are similar for routing lines.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Firm Planned Prod. Order</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action. For more information, see <a href="production-how-to-create-production-orders.html">Create Production orders</a>.</p>
+</li>
+<li><p>Choose the <strong>Refresh</strong> action.</p>
+</li>
+<li><p>On the <strong>Refresh Production Order</strong> page, select one of the following options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Scheduling Direction</strong></td>
+<td><strong>Forward</strong></td>
+<td>Scheduling starts from the starting date and proceeds forward to the finishing date. You must fill in the starting date to use this option.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Backward</strong></td>
+<td>Scheduling starts from the ending date and proceeds backward to the starting date.</td>
+</tr>
+<tr>
+<td><strong>Calculate</strong></td>
+<td><strong>Lines</strong></td>
+<td>Select this field to calculate the production order lines.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Routings</strong></td>
+<td>This field has no influence on calculating the production lines.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Component Need</strong></td>
+<td>This field has no influence on calculating the production lines.</td>
+</tr>
+<tr>
+<td><strong>Warehouse</strong></td>
+<td><strong>Create Inbound Request</strong></td>
+<td>This field has no influence on calculating the production lines.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button to confirm your selection. Now the production order lines are calculated.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Calculating production order components deletes previous changes in the components.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-planning.html">Planning</a><br>
+<a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="design-details-supply-planning.html">Design Details: Supply Planning</a><br>
+<a href="setup-best-practices-supply-planning.html">Setup Best Practices: Supply Planning</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-how-to-replan-refresh-production-orders.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

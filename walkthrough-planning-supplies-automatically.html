@@ -1,0 +1,455 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough - Planning Supplies Automatically | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough - Planning Supplies Automatically | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Phrases like &#8220;run planning&#8221; and &#8220;run MRP&#8221; refer to the calculation of the master production schedule (MPS) and the material requirements plan (MRP) based on actual and forecasted demand.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-planning-supplies-automatically">Walkthrough: Planning Supplies Automatically</h1>
+
+<p><strong>Note</strong>: This walkthrough must be performed on a demonstration company with the <strong>Full Evaluation - Complete Sample Data</strong> option, which is available in the Sandbox environment. For more information, see <a href="across-how-create-sandbox-environment.html">Creating a Sandbox Environment</a>.</p>
+<p>Phrases like “run planning” and “run MRP” refer to the calculation of the master production schedule (MPS) and the material requirements plan (MRP) based on actual and forecasted demand.</p>
+<ul>
+<li>MPS is the calculation of a master production schedule based on actual demand and the demand forecast. The MPS calculation is used for end items that have a forecast or a sales order line. These items are called &quot;MPS items&quot; and are identified dynamically when the calculation starts.</li>
+<li>MRP is the calculation of material requirements based on actual demand for components and the demand forecast on the component level. MRP is calculated only for items that are not MPS items. The overall purpose of MRP is to provide time-phased formal plans, by item, to supply the right item at the right time, in the right place, in the right quantity.</li>
+</ul>
+<p>The planning algorithms used for both MPS and MRP are identical. The planning algorithms use netting, reuse of existing supply orders, and action messages. The planning system process examines what is needed or will be needed (demand) and what is available or expected (supply). When these quantities are netted against each other, action messages are displayed in the planning worksheet. Action messages are suggestions to create a new supply order, change a supply order (quantity or date), or cancel an existing supply order. Supply orders can be production orders, purchase orders, and transfer orders. For more information, see <a href="design-details-supply-planning.html">Design Details: Supply Planning</a>.</p>
+<p>The planning result is calculated partly from the demand-supply sets in the database and partly by the setup of stockkeeping unit cards or item cards, production BOMs, and routings.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>This walkthrough demonstrates how to use the supply planning system to automatically plan all the purchase and production orders required to produce 15 touring bicycles demanded on different sales orders. To provide a clear and realistic walkthrough, the number of planning lines is delimited by filtering out all other demand-supply sets in the CRONUS International Ltd. demonstration company except the sales demand at location BLUE.</p>
+<p>This walkthrough illustrates the following tasks:</p>
+<ul>
+<li>Creating the sales order and calculating a complete supply plan.</li>
+<li>Viewing planning parameters and order tracking entries behind the planning lines.</li>
+<li>Automatically creating the suggested supply orders.</li>
+<li>Creating new sales demand and replanning accordingly.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<ul>
+<li>Production Planner</li>
+<li>Purchasing Agent</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To complete this walkthrough, you will need:</p>
+<ul>
+<li>The CRONUS International Ltd. demonstration  company.</li>
+<li>To change various item setup values by following the steps in the “Preparing Sample Data” section, later in this walkthrough.</li>
+</ul>
+<h2 id="story">Story</h2>
+<p>The customer, Cannon Group PLC, orders five touring bikes for shipment on 02-05-2014 (February 5).</p>
+<p>Eduardo, the production planner, performs the routine supply planning for the first week of February 2014. He filters on his own location, BLUE, and enters a planning interval of the work date (01-23-2014) to 02-07-2014 before he calculates an initial supply plan.</p>
+<p>The only demand that week is for the Cannon Group sales order. Eduardo sees that none of the planning lines have warnings, and he proceeds to create supply orders without changes for the suggested planning lines.</p>
+<p>The next day, before any of the initial supply orders are started or posted, Eduardo is notified that another customer has ordered ten touring bikes for shipment on 02-12-2014. He recalculates to adjust the supply plan according to the change of demand. The recalculation gives you a net change plan that suggests changes to both time and quantity of some of the supply orders created in the first run.</p>
+<p>During the various planning steps, Eduardo looks up the involved orders, and uses the Order Tracking feature to see which demand is covered by which supply.</p>
+<h2 id="preparing-sample-data">Preparing Sample Data</h2>
+<p>Create stockkeeping units (SKUs) for the touring bike and a selection of its components, item numbers 1001 to 1300. (Some components are excluded to simplify the procedures.) Adjust the planning parameters of the selected components to provide a more transparent planning result.</p>
+<h3 id="to-create-stockkeeping-units">To create stockkeeping units</h3>
+<ol>
+<li>Open the item card for item 1001, Touring Bicycle.</li>
+<li>Choose the <strong>Create Stockkeeping Unit</strong> action.</li>
+<li>On the <strong>Create Stockkeeping Unit</strong> page, leave all options and filters unchanged, and then choose the <strong>OK</strong> button.</li>
+<li>Repeat steps 1 through 3 for all items in the number range between 1100 and 1300.</li>
+</ol>
+<h3 id="to-change-selected-planning-parameters">To change selected planning parameters</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Stockkeeping Units</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the BLUE stockkeeping unit card for item 1100, Front Wheel.</p>
+</li>
+<li><p>On the <strong>Planning</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Reordering Policy</th>
+<th>Safety Stock Quantity</th>
+<th>Lot Accumulation Period</th>
+<th>Rescheduling Period</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lot-for-Lot</td>
+<td>Blank</td>
+<td>2W</td>
+<td>2W</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Repeat steps 2 and 3 for all SKUs in the number range between 1100 and 1300.</p>
+</li>
+</ol>
+<p>This completes the preparation of sample data for the walkthrough.</p>
+<h2 id="creating-a-regenerative-supply-plan">Creating a Regenerative Supply Plan</h2>
+<p>In reaction to a new sales order for five touring bikes, Ricardo begins the planning process by setting options, filters, and planning interval to exclude all other demand except that of the first week of February at location BLUE. He begins by calculating a master production schedule (MPS), and then proceeds to calculate a complete supply plan for all lower-level demand (MRP).</p>
+<h3 id="to-create-the-sales-order">To create the sales order</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>Sales Order</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Sell-to Customer Name</th>
+<th>Shipment Date</th>
+<th>Item No.</th>
+<th>Location</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cannon Group</td>
+<td>02-05-2014</td>
+<td>1001</td>
+<td>BLUE</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Accept the availability warning and choose the <strong>Yes</strong> button to record the new demand quantity.</p>
+</li>
+</ol>
+<h3 id="to-create-a-regenerative-plan-to-fulfill-demand-at-location-blue">To create a regenerative plan to fulfill demand at location BLUE</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Planning Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Calculate Regenerative Plan</strong> action.</p>
+</li>
+<li><p>On the <strong>Calculate Plan - Plan. Wksh.</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Calculate Plan</th>
+<th>Starting Date</th>
+<th>Ending Date</th>
+<th>Show results:</th>
+<th>Limit totals to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MPS</strong> = Yes<br><br> <strong>MRP</strong> = No</td>
+<td>01-23-2014<br><br> (work date)</td>
+<td>02-07-2014</td>
+<td>1001..1300</td>
+<td>Location Filter = BLUE</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button to start the planning run.</p>
+<p>One planning line is created suggesting that a planned production order be issued to produce the ten touring bikes, item 1001, by 02-05-2014, the shipment date of the sales order.</p>
+<p>Next, verify that this planning line relates to the Cannon Group sales order by using the <strong>Order Tracking</strong> function, which dynamically links demand with its planned supply.</p>
+</li>
+<li><p>Select the new planning line, and then choose the <strong>Order Tracking</strong> action.</p>
+</li>
+<li><p>On the <strong>Order Tracking</strong> page, choose the <strong>Show</strong> action.</p>
+<p>The sales order for five touring bikes shipping to customer number 10000 on 02-05-2014, is shown.</p>
+</li>
+<li><p>Close the <strong>Sales Order</strong> and <strong>Order Tracking</strong> pages.</p>
+</li>
+</ol>
+<h3 id="to-calculate-mrp-to-include-underlying-component-needs">To calculate MRP to include underlying component needs</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Planning Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Calculate Regenerative Plan</strong> action.</p>
+</li>
+<li><p>On the <strong>Calculate Plan - Plan. Wksh.</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Calculate</th>
+<th>Starting Date</th>
+<th>Ending Date</th>
+<th>Show results:</th>
+<th>Limit totals to:</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MPS</strong> = Yes<br><br> <strong>MRP</strong> = Yes</td>
+<td>01-23-2014</td>
+<td>02-07-2014</td>
+<td>1001..1300</td>
+<td>Location Filter = BLUE</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button to start the planning run.</p>
+<p>A total of 14 planning lines are created suggesting supply orders for all the demand that the touring bike sales order at BLUE location represents.</p>
+</li>
+</ol>
+<h2 id="analyzing-the-planning-result">Analyzing the Planning Result</h2>
+<p>To analyze the suggested quantities, Eduardo drills down on selected planning lines to view order tracking entries and planning parameters.</p>
+<p>On the <strong>Planning Worksheet</strong> page, note in the <strong>Due Date</strong> column that the suggested supply orders are scheduled backward from the due date of the sales order, 02-05-2014. The timeline begins on the top planning line with the production order to produce the finished touring bikes. The timeline ends on the bottom planning line with the purchase order for one of the lowest-level items, 1255, Socket Back, due on 01-30-2014. Like the planning line for item 1251, Axle Back Wheel, this line represents a purchase order for components that are due on the starting date of its produced parent, subassembly item 1250, which in turn is due on 02-03-2014. Throughout the worksheet, you can see that all underlying items are due on the starting date of their parents.</p>
+<p>The planning line for item 1300, Chain Assy, suggests ten pieces. This deviates from the five pieces that we expect to need to fulfill the sales order. Proceed to view the order tracking entries.</p>
+<h3 id="to-view-order-tracking-entries-for-item-1300">To view order tracking entries for item 1300</h3>
+<ol>
+<li><p>Select the planning line for item 1300, and then choose the <strong>Order Tracking</strong> action.</p>
+<p>The two lines on the <strong>Order Tracking</strong> page show that five pieces are tracked from the planning line (first order tracking line) to sales order 1001 (second order tracking line). The last five pieces suggested on the planning line are not related to any document lines, but to a planning parameter, forecast entry, or blanket order entry. Such untracked quantities are summed in the <strong>Untracked Quantity</strong> field in the header of the <strong>Order Tracking</strong> page.</p>
+</li>
+<li><p>Choose the <strong>Untracked Quantity</strong> field.</p>
+<p>The <strong>Untracked Planning Elements</strong> page shows that item 1300 uses a planning parameter, Minimum Order Quantity, of 10.00. Therefore, the planning line is for ten pieces in total, of which only five can be tracked to a demand. The last five pieces are an untracked quantity to satisfy the planning parameter. Proceed to review the planning parameter.</p>
+</li>
+</ol>
+<h3 id="to-check-the-planning-parameter">To check the planning parameter</h3>
+<ol>
+<li>On the <strong>Untracked Planning Elements</strong> page, select the order tracking line for item 1300.</li>
+<li>Choose the <strong>Item No.</strong> field, and then choose the <strong>Advanced</strong> action.</li>
+<li>On the <strong>Item List</strong> page, choose the <strong>Stockkeeping Units</strong> action.</li>
+<li>On the <strong>Stockkeeping Unit List</strong> page, open the BLUE stockkeeping unit card.</li>
+<li>On the <strong>Planning</strong> FastTab, note that the <strong>Minimum Order Quantity</strong> field contains 10.</li>
+<li>Close all pages except the <strong>Planning Worksheet</strong> page.</li>
+</ol>
+<h3 id="to-view-more-order-tracking-entries">To view more order tracking entries</h3>
+<ol>
+<li><p>Select the planning line for item 1110, Rim, and then choose the <strong>Order Tracking</strong> action.</p>
+<p>The <strong>Order Tracking</strong> page shows that five rims are needed for each production order for front and back wheels respectively.</p>
+<p>The same order tracking applies to the planning lines for items 1120, 1160, and 1170. For item 1120, the <strong>Quantity per</strong> field on the production BOM of each wheel item is 50 PCS, which result in a total need of 100.</p>
+<p>The planning line for item 1150 for six pieces looks irregular. Proceed to analyze.</p>
+</li>
+<li><p>Select the planning line for item 1150, and then, on then choose the <strong>Order Tracking</strong> action.</p>
+<p>The <strong>Order Tracking</strong> page shows that five units are tracked to the front wheel, and one unit is untracked. Proceed to view the untracked quantity.</p>
+</li>
+<li><p>Choose the <strong>Untracked Quantity</strong> field.</p>
+<p>The <strong>Untracked Planning Elements</strong> page shows that item 1150 uses a planning parameter, Order Multiple, of 2.00, which specifies that when the item is ordered, it must be in a quantity that is divisible by 2. The closest number to 5 that is divisible by 2 is 6.</p>
+<p>The same order tracking applies to the planning lines for the Front Hub components, items 1151 and 1155, except that each need is multiplied by the scrap percentage that is defined for item 1150 in the <strong>Scrap Percentage</strong> field on the item card.</p>
+</li>
+</ol>
+<p>This completes the analysis of the initial supply plan. Notice that the <strong>Accept Action Message</strong> check box is selected in all planning lines indicating that they are ready to be converted to supply orders.</p>
+<h2 id="carrying-out-action-messages">Carrying Out Action Messages</h2>
+<p>Next, Eduardo converts the suggested planning lines to supply orders by using the <strong>Carry Out Action Msg.</strong> function.</p>
+<h3 id="to-automatically-create-the-suggested-supply-orders">To automatically create the suggested supply orders</h3>
+<ol>
+<li><p>Select the <strong>Accept Action Message</strong> check box on all planning lines with a warning of type Exception.</p>
+</li>
+<li><p>Choose the <strong>Carry Out Action Message</strong> action.</p>
+</li>
+<li><p>On the <strong>Carry Out Action Msg.-Plan.</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Production Order</th>
+<th>Purchase Order</th>
+<th>Transfer Order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Firm Planned</td>
+<td>Make Purch. Orders</td>
+<td>Make Trans. Orders</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button to automatically create all the suggested supply orders.</p>
+</li>
+<li><p>Close the empty <strong>Planning Worksheet</strong> page.</p>
+</li>
+</ol>
+<p>This completes the initial calculation, analysis, and creation of a supply plan for demand at location BLUE in the first week of February. In the following section, another customer orders ten touring bikes, and Eduardo must replan.</p>
+<h2 id="creating-a-net-change-plan">Creating a Net Change Plan</h2>
+<p>The next day, before any supply orders are started or posted, a new sales order arrives from Libros S.A. for ten touring bikes to be shipped on 02-12-2014. Eduardo is notified of the new demand, and he proceeds to replan in order to adjust the current supply plan. Eduardo uses the Net Change Plan function to calculate only the changes that are made to demand or supply since the last planning run. In addition, he expands the planning period to 02-14-2014 to include the new sales demand on 02-12-2014.</p>
+<p>The planning system calculates the best way to cover the demand for these two identical products, such as to consolidate some purchase and production orders, reschedule other orders, and create new orders where it is required.</p>
+<h3 id="to-create-the-new-sales-demand-and-replan-accordingly">To create the new sales demand and replan accordingly</h3>
+<ol>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>Sales Order</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Sell-to Customer Name</th>
+<th>Shipment Date</th>
+<th>Item No.</th>
+<th>Location</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Libros S.A.</td>
+<td>02-12-2014</td>
+<td>1001</td>
+<td>BLUE</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Accept the availability warning and choose the <strong>Yes</strong> button to record the demand quantity.</p>
+</li>
+<li><p>Proceed to replan to adjust the current supply plan.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Planning Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Calculate Net Change Plan</strong> action.</p>
+</li>
+<li><p>On the <strong>Calculate Plan - Plan. Wksh.</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Calculate Plan</th>
+<th>Starting Date</th>
+<th>Ending Date</th>
+<th>Show results:</th>
+<th>Limit totals to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MPS</strong> = Yes<br><br> <strong>MRP</strong> = Yes</td>
+<td>01-23-2014</td>
+<td>02-14-2014</td>
+<td>1001..1300</td>
+<td>Location Filter = BLUE</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button to start the planning run.</p>
+</li>
+</ol>
+<p>A total of 14 planning lines are created. Notice in the first planning line that the <strong>Action Message</strong> field contains <strong>New</strong>, the <strong>Quantity</strong> field 10, and the <strong>Due Date</strong> field 02-12-14. This new line for the top parent item, 1001, Touring Bike, is created because the item uses a reordering policy of <strong>Order</strong>, which means that it must be supplied in a one-to-one relationship to its demand, the sales order of ten pieces.</p>
+<p>The next two planning lines are the production orders for touring bike wheels. Each existing order of five, in the <strong>Original Quantity</strong> field, is increased to 15, in the <strong>Quantity</strong> field. Both production orders have unchanged due dates, as indicated in the <strong>Action Message</strong> field that contains <strong>Change Qty.</strong> This is also the case for the planning line for item 1300, except its order multiple of 10.00 rounds the tracked demand for 15 pieces up to the 20.</p>
+<p>All other planning lines have an action message of <strong>Resched. &amp; Chg. Qty.</strong>. This means that apart from being increased in quantity, the due dates are moved in relation to the supply plan to include the extra quantity in the available production time (capacity). Purchased components are rescheduled and increased to supply the production orders. Proceed to analyze the new plan.</p>
+<h2 id="analyzing-the-changed-planning-result">Analyzing the Changed Planning Result</h2>
+<p>Because all lot-for-lot-planned items within the filter, 1100 to 1300, have a rescheduling period of two weeks, their existing supply orders are all modified to meet the new demand, which occurs within the specified two weeks.</p>
+<p>Several planning lines are simply multiplied by three to provide 15 touring bikes instead of 5, and the due dates are moved back in time to provide the increased quantities by the shipment date of the sales order to the Cannon Group. For these planning lines, all quantities can be tracked. The remaining planning lines are increased by ten pieces in addition to moving their due dates. For these planning lines, a part of the quantities are untracked due to different planning parameters. Proceed to view some of these order tracking entries.</p>
+<h3 id="to-view-order-tracking-entries-for-item-1250">To view order tracking entries for item 1250</h3>
+<ol>
+<li><p>Select the planning line for item 1250, and then choose the <strong>Order Tracking</strong> action.</p>
+<p>The seven lines on the <strong>Order Tracking</strong> page show that five and ten pieces are tracked through the back wheel to the touring bikes on the two sales orders respectively.</p>
+<p>The last five pieces are untracked. Proceed to analyze.</p>
+</li>
+<li><p>Choose the <strong>Untracked Quantity</strong> field.</p>
+<p>The <strong>Untracked Planning Elements</strong> page shows that item 1250 uses a planning parameter, Order Multiple, of 10.00. Therefore, the planning line is for 20 pieces in total to round the actual need up to the nearest number divisible by 10. The last five pieces are an untracked quantity to satisfy the planning parameter.</p>
+</li>
+<li><p>Close all pages except the <strong>Planning Worksheet</strong> page.</p>
+</li>
+</ol>
+<h3 id="to-view-an-existing-order">To view an existing order</h3>
+<ol>
+<li>In the planning line for item 1250, choose the <strong>Ref. Order No.</strong> field.</li>
+<li>On the <strong>Firm Planned Prod. Order</strong> page for the Back Hub. The existing order for ten pieces, which you created in the first planning run, opens.</li>
+<li>Close the firm planned production order.</li>
+</ol>
+<p>This completes the walkthrough of how the planning system is used to automatically detect demand, calculate the appropriate supply orders according to demand and planning parameters, and then automatically create different types of supply orders with the appropriate dates and quantities.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a><br>
+<a href="walkthrough-planning-supplies-manually.html">Walkthrough: Planning Supplies Manually</a><br>
+<a href="design-details-supply-planning.html">Design Details: Supply Planning</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-planning-supplies-automatically.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

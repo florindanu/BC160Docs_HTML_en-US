@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Defining and Allocating Costs | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Defining and Allocating Costs | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Cost allocations move costs and revenues between cost types, cost centers, and cost objects. You can define as many allocations as you need.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="defining-and-allocating-costs">Defining and Allocating Costs</h1>
+
+<p>Cost allocations move costs and revenues between cost types, cost centers, and cost objects. You can define as many allocations as you need. Each allocation consists of:</p>
+<ul>
+<li>An allocation source.</li>
+<li>One or more allocation targets.</li>
+</ul>
+<p>The allocation source establishes which costs must be allocated, and the allocation targets determine where the costs must be allocated. For example, an allocation source can be the costs for the Electricity and Heating cost type. You allocate all electricity and heating costs to three cost centers: Workshop, Production, and Sales. These cost centers are your allocation targets.</p>
+<p>For each allocation source, you define an allocation level, a validity period, and a variant as grouping identifier. You can use a batch job to set filters to select allocation definitions and then run cost allocations automatically.</p>
+<p>For each allocation target, you define an allocation base. The allocation base can be either static or dynamic.</p>
+<ul>
+<li>Static allocation bases are based on a definite value, such as square footage or an established allocation ratio, such as 5:2:4.</li>
+<li>Dynamic allocation bases depend on changeable values, such as the number of employees in a cost center or sales revenue of a cost object throughout a certain time period.</li>
+</ul>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<h2 id="setting-up-allocation-source-and-targets">Setting Up Allocation Source and Targets</h2>
+<p>Each allocation consists of an allocation source and one or more allocation targets. The allocation source defines which costs will be allocated. The allocation targets determine where the costs will be allocated.</p>
+<h3 id="to-set-up-cost-allocations">To set up cost allocations</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cost Allocation</strong>, and then chose the related link.</li>
+<li>On the <strong>Cost Allocation</strong> page, choose the <strong>Edit</strong> action.</li>
+<li>Enter an ID for the allocation source in the <strong>ID</strong> field.</li>
+<li>Define a level as a number between 1 and 99 in the <strong>Level</strong> field. The allocation posting will follow the order of the levels.</li>
+<li>Enter a cost type to define which cost types will be allocated in the <strong>Cost Type Range</strong> field. If all costs for a cost type are allocated, no range is defined.</li>
+<li>Enter a cost center together with costs to be allocated in the <strong>Cost Center Code</strong> field.</li>
+<li>Enter a cost object together with costs to be allocated in the <strong>Cost Object Code</strong> field. Most often, this field stays empty, because cost objects are rarely allocated to other cost objects.</li>
+<li>Enter a cost type in the <strong>Credit to Cost Type</strong> field. The costs that are allocated will be credited to the source cost type. The credit posting will be posted to the cost type given here.</li>
+<li>On the <strong>Lines</strong> FastTab, define the allocation targets. On the first line, enter a cost type in the <strong>Target Cost Type</strong> field. It defines which cost type the allocation is debited to.</li>
+<li>On the first line, enter the first allocation target in the <strong>Target Cost Center</strong> field or <strong>Target Cost Object</strong> the field. These two fields define which cost center or cost object the allocation is debited to. You can only fill in one of these fields, but not both.</li>
+<li>Repeat the same steps on the second line to set up additional allocation targets.</li>
+<li>After you have set up the allocation target and sources, choose the <strong>Calculate Allocation Key</strong> action to calculate the total share values.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Select the <strong>Blocked</strong> check box to deactivate the allocation setup.</p>
+</div>
+<h2 id="setting-filters-for-dynamic-allocation-bases">Setting Filters for Dynamic Allocation Bases</h2>
+<p>The dynamic allocation method is based on changeable values. For example, the number of employees in a cost center or the items sold of a cost object in a specific time period. There are nine pre-defined allocation bases and twelve dynamic date ranges. You set different filters based on the allocation base.</p>
+<h3 id="setting-filters-for-dynamic-allocation-bases-1">Setting Filters for Dynamic Allocation Bases</h3>
+<p>The following table shows which filters are possible for different allocation bases and which values are valid in the <strong>No. Filter</strong> and <strong>Group Filter</strong> fields. Press F1 in the <strong>Date Filter Code</strong> field to read detailed descriptions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Base</strong></th>
+<th><strong>No. Filter</strong></th>
+<th><strong>Date Filter Code</strong></th>
+<th><strong>Cost Center Filter</strong></th>
+<th><strong>Cost Object Filter</strong></th>
+<th><strong>Group Filter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G/L Entries</td>
+<td>G/L Account</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>G/L Budget Entries</td>
+<td>G/L Account</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>G/L Budget Name</td>
+</tr>
+<tr>
+<td>Cost Type Entries</td>
+<td>Cost Type</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Cost Budget Entries</td>
+<td>Cost Type</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Budget Name</td>
+</tr>
+<tr>
+<td>No of Employees</td>
+<td>N/A</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>Items Sold (Qty)</td>
+<td>Item No.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Inventory Posting Group</td>
+</tr>
+<tr>
+<td>Items Purchased (Qty)</td>
+<td>Item No.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Inventory Posting Group</td>
+</tr>
+<tr>
+<td>Items Sold (Amount)</td>
+<td>Item No.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Inventory Posting Group</td>
+</tr>
+<tr>
+<td>Items Purchased (Amount)</td>
+<td>Item No.</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Inventory Posting Group</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scenario-1-defining-static-allocations-based-on-allocation-ratio">Scenario 1: Defining Static Allocations Based on Allocation Ratio</h2>
+<p>Static allocation method is based on a definite value, such as square meters used, or an established allocation ratio such as 5:2:4.</p>
+<p>This topic describes how to define three new allocation target cost objects for the allocation source PROD cost center using the established allocation ratio 5:2:4. The three target cost objects are ACCESSO, PAINT, and FITTINGS.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The example uses the demo data in the Business Central.</p>
+</div>
+<h3 id="to-define-the-allocation-source-prod-cost-center-on-the-general-fasttab">To define the allocation source PROD cost center on the General FastTab</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cost Allocation</strong>, and then choose the related link.</li>
+<li>On the <strong>Cost Allocation</strong> page, choose the <strong>New</strong> action.</li>
+<li>In the <strong>ID</strong> field, press Enter or enter an ID.</li>
+<li>In the <strong>Level</strong> field, enter <strong>1</strong>.</li>
+<li>In the <strong>Valid From</strong> and <strong>Valid To</strong> fields, enter appropriate dates.</li>
+<li>In the <strong>Cost Center Code</strong> field, enter <strong>PROD</strong>.</li>
+<li>In the <strong>Credit to Cost Type</strong> field, enter the cost type <strong>9903</strong>.</li>
+</ol>
+<h3 id="to-define-the-allocation-target-cost-objects-on-the-lines-fasttab">To define the allocation target cost objects on the Lines FastTab</h3>
+<ol>
+<li>On the first line, in the <strong>Target Cost Type</strong> field, enter <strong>9903</strong>.</li>
+<li>On the first line, in the <strong>Target Cost Object</strong> field, select <strong>ACCESSO</strong>.</li>
+<li>On the first line, in the <strong>Allocation Target Type</strong> field, select <strong>All Costs</strong> to define how all accrued costs are allocated.</li>
+<li>On the first line, in the <strong>Base</strong> field, select <strong>Static</strong> to use the static allocation method.</li>
+<li>On the first line, in the <strong>Share</strong> field, enter the allocation ratio <strong>5</strong>.</li>
+<li>On the second line, in the <strong>Target Cost Type</strong> field, enter <strong>9903</strong>.</li>
+<li>On the second line, in the <strong>Target Cost Object</strong> field, select <strong>PAINT</strong>.</li>
+<li>On the second line, in the <strong>Allocation Target Type</strong> field, select <strong>All Costs</strong> to define how all accrued costs are allocated.</li>
+<li>On the second line, in the <strong>Base</strong> field, select <strong>Static</strong> to use the static allocation method.</li>
+<li>On the second line, in the <strong>Share</strong> field, enter the allocation ratio <strong>2</strong>.</li>
+<li>On the third line, in the <strong>Target Cost Type</strong> field, enter <strong>9903</strong>.</li>
+<li>On the third line, in the <strong>Target Cost Object</strong> field, select <strong>FITTINGS</strong>.</li>
+<li>On the third line, in the <strong>Allocation Target Type</strong> field, select <strong>All Costs</strong> to define how all accrued costs are allocated.</li>
+<li>On the third line, in the <strong>Base</strong> field, select <strong>Static</strong> to use the static allocation method.</li>
+<li>On the third line, in the <strong>Share</strong> field, enter the allocation ratio <strong>4</strong>.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Business Central automatically calculates the <strong>Percent</strong> field using a percentage rate that is dependent on all three allocation ratios that are entered in the <strong>Share</strong> field for all three lines.</p>
+</div>
+<h2 id="scenario-2-defining-dynamic-allocations-based-on-items-sold">Scenario 2: Defining Dynamic Allocations Based on Items Sold</h2>
+<p>This topic shows an example of how to define allocations by using the dynamic allocation method. In the example, you change the dynamic allocation of the costs for the SALES cost center to support the new cost object IT EQUIPMENT. IT EQUIPMENT packages have item numbers in the range from 8904-W to 8924-W. You use the previous year’s sales figures to calculate the share. The allocation is posted to the helping cost type 9903.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The example uses the demo data in the Business Central.</p>
+</div>
+<h3 id="to-define-dynamic-allocations-based-on-items-sold-in-the-previous-year">To define dynamic allocations based on items sold in the previous year</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cost Allocations</strong>, and then choose the related link.</li>
+<li>On the <strong>Cost Allocation</strong> page, choose the <strong>New</strong> action.</li>
+<li>In the <strong>ID</strong> field, press Enter or enter an ID.</li>
+<li>In the <strong>Level</strong> field, enter <strong>1</strong>.</li>
+<li>In the <strong>Valid From</strong> and <strong>Valid To</strong> fields, enter appropriate dates.</li>
+<li>In the <strong>Cost Center Code</strong> field, enter <strong>SALES</strong>.</li>
+<li>In the <strong>Credit to Cost Type</strong> field, enter the cost type <strong>9903</strong>.</li>
+<li>In the <strong>Target Cost Type</strong> field, enter the cost type <strong>9903</strong>.</li>
+<li>In the <strong>Target Cost Object</strong> field, choose <strong>New</strong> to create a new cost object IT EQUIPMENT and fill in fields as necessary. Select <strong>IT EQUIPMENT</strong>. Leave the <strong>Target Cost Center</strong> field blank.</li>
+<li>In the <strong>Allocation Target Type</strong> field, select <strong>All Costs</strong> to define how all accumulated costs are allocated.</li>
+<li>In the <strong>Base</strong> field, select the allocation base <strong>Items Sold (Amount)</strong>.</li>
+<li>In the <strong>No. Filter</strong> field, enter <strong>8904-W..8924-W</strong>.</li>
+<li>In the <strong>Date Filter Code</strong> field, enter <strong>Last Year</strong>.</li>
+<li>Choose the <strong>Calculate Allocation Key</strong> action to calculate the share.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Business Central uses the previous years’ sales figures to calculate a share of 1596.50 LCY with 100 percent for the IT EQUIPMENT packages. This means that all of the items sold last year will be allocated to the cost object IT EQUIPMENT.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-set-up-cost-accounting.html">Setting Up Cost Accounting</a><br>
+<a href="finance-transfer-and-post-cost-entries.html">Transferring and Posting Cost Entries</a><br>
+<a href="finance-manage-cost-accounting.html">Accounting for Costs</a><br>
+<a href="finance-terminology-in-cost-accounting.html">Terminology in Cost Accounting</a><br>
+<a href="finance-about-cost-accounting.html">About Cost Accounting</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-define-and-allocate-costs.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>About the Data Exchange Framework | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="About the Data Exchange Framework | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The format of files for exchange of data in bank files, electronic documents, currency exchange rates, and other with ERP systems vary depending on the provider of the data file or stream and on the country/region.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="about-the-data-exchange-framework">About the Data Exchange Framework</h1>
+
+<p>You can use the Data Exchange Framework to manage the exchange of business documents, bank files, currency exchange rates, and any other data files with your business partners.</p>
+<p>As an administrator or Microsoft partner, you can use the framework in new integration features by setting up which data to exchange and how. For example, the format of files for exchange of data in bank files, electronic documents, currency exchange rates, and other with ERP systems vary depending on the provider of the data file or stream and on the country/region. Business Central supports various bank file formats and data service standards. To provide support for other electronic document formats, you use the data exchange framework.</p>
+<p>The following diagrams show the architecture of the data exchange framework.</p>
+<p><img src="media/across-data-exchange/dataexchangeframework_import.png" alt="Data Exchange Framework - Import"></p>
+<p><img src="media/across-data-exchange/dataexchangeframework_export.png" alt="Data Exchange Framework - Export"></p>
+<h2 id="electronic-documents">Electronic Documents</h2>
+<p>As an alternative to emailing as file attachments, you can send and receive business documents electronically. By electronic document is meant a standard-compliant file representing a business document, such as an invoice from a vendor that you can receive and convert to a purchase invoice in Business Central . The exchange of electronic documents between two trading partners is performed by an external provider of document exchange services. The generic version of Business Central  supports sending and receiving electronic invoices and credit memos in the PEPPOL format, which is supported by the largest providers of document exchange services. A major provider of document exchange services is preconfigured and ready to be set up for your company. To provide support for other electronic document formats, you must create new date exchange definitions using the Data Exchange Framework.</p>
+<p>From PDF or image files representing incoming documents, you can have an external OCR service (Optical Character Recognition) create electronic documents that you can then convert to document records in Business Central, like for electronic PEPPOL documents. For example, when you receive an invoice in PDF format from your vendor, you can send it to the OCR service from the <strong>Incoming Documents</strong> page. After a few seconds, you receive the file back as an electronic invoice that can be converted to a purchase invoice for the vendor. If you send the file to the OCR service by email, then a new incoming document record is automatically created when you receive the electronic document back.</p>
+<p>To send, for example, a sales invoice as an electronic PEPPOL document, you select the <strong>Electronic Document</strong> option in the <strong>Post and Send</strong> dialog box. From here, you can also set up the customer’s default document sending profile. First, you must set up various master data, such as company information, customers, items, and units of measure. These are used to identify the business partners and items when you convert data in fields in Business Central  to elements in the outgoing document file. The data conversion and sending of the PEPPOL sales invoice are performed by dedicated codeunits and XMLports, represented by the <strong>PEPPOL</strong> electronic document format.</p>
+<p>To receive, for example, an invoice from a vendor as an electronic PEPPOL document, you process the document on the <strong>Incoming Documents</strong> page to convert it to a purchase invoice in Business Central. You can either set up the Job Queue feature to process such files regularly or you can start the process manually. First, you must set up various master data, such as company information, vendors, items, and units of measure. These are used to identify the business partners and items when you convert data in elements in the incoming document file to fields in Business Central. The receiving and data conversion of PEPPOL invoices are performed by the Data Exchange Framework, represented by the <strong>PEPPOL - Invoice</strong> data exchange definition.</p>
+<p>To receive, for example, an invoice as an electronic OCR document, you process it as when you receive an electronic PEPPOL document. The receiving and conversion of electronic documents from OCR are performed by the Data Exchange Framework, represented by the <strong>OCR – Invoice</strong> data exchange definition.</p>
+<h2 id="bank-files">Bank Files</h2>
+<p>The formats of files for exchanging bank data with ERP systems vary depending on the supplier of the file and the country or region. Business Central supports import and export of SEPA bank files (Single Euro Payments Area) and the AMC Banking 365 Fundamentals extension lets you connect to a AMC Banking 365 Fundamentals extension provided by external provider, AMC Consult. To provide support for other electronic document formats, you use the Data Exchange Framework.</p>
+<p>To export SEPA credit transfers, you choose <strong>Export Payments to File</strong> button on the <strong>Payment Journal</strong> page and then upload the file to process the payments in your bank. First you must set up various master data, such as bank account, vendors, and payment methods. The data conversion and export of SEPA bank data is performed by a dedicated codeunit and XMLport, represented by the <strong>SEPA Credit Transfer</strong> bank export/import setup. Alternatively, you can set up the AMC Banking 365 Fundamentals extension to perform the export, represented by the <strong>AMC Banking 365 Fundamentals extension - Credit Transfer</strong> data exchange definition.</p>
+<p>To export SEPA direct debit instructions, you choose the <strong>Export Direct Debit File</strong> button on the <strong>Direct Debit Collections</strong> page and then send to your bank to automatically collect the involved customer payments. First you must set up bank accounts, customers, direct-debit mandates, and payment methods. The data conversion and export of SEPA bank data is performed by dedicated a codeunit and XMLport, represented by the <strong>SEPA Direct Debit</strong> bank export/import setup.</p>
+<p>To import SEPA bank statements, you choose the Import Bank Statement button in the <strong>Payment Reconciliation Journal</strong> and <strong>Bank Acc. Reconciliation</strong> pages and then you proceed to apply each bank statement entry to payments or bank ledger entries, manually or automatically. First you must set up bank accounts. The import and data conversion of SEPA bank data is performed by the Data Exchange Framework, represented by the <strong>SEPA CAMT</strong> data exchange definition. Alternatively, you can set up the AMC Banking 365 Fundamentals extension to perform the import, represented by the <strong>AMC Banking 365 Fundamentals extension – Bank Statement</strong> data exchange definition.</p>
+<p>In addition, the local versions of Business Central support various other file formats for importing and exporting bank data, payroll transactions, and other data. For more information, see the “Local Functionality” Help section in your country version of Business Central.</p>
+<h2 id="currency-exchange-rates">Currency Exchange Rates</h2>
+<p>You can set up an external service to keep your for currency exchange rates up to date. The service that provides updated currency exchange rates is enabled by a data exchange definition. Accordingly, the <strong>Exch. Rate Update Setup Card</strong> page is a condensed view of the <strong>Data Exchange Definition</strong> page for the data exchange definition in question.</p>
+<p>For all exchanges of data in XML files, you can prepare the data exchange setup by loading the related XML schema file on the <strong>XML Schema Viewer</strong> page. Here you select the data elements that you want to exchange with Business Central  and then you either initialize a data exchange definition or generate an XMLport.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-data-exchange.html">Exchanging Data Electronically</a><br>
+<a href="across-how-to-use-xml-schemas-to-prepare-data-exchange-definitions.html">Use XML Schemas to Prepare Data Exchange Definitions</a><br>
+<a href="across-set-up-data-exchange.html">Setting Up Data Exchange</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-about-the-data-exchange-framework.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

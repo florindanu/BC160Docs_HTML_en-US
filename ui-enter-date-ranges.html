@@ -1,0 +1,725 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Entering dates and times in Business Central  | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Entering dates and times in Business Central  | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to enter dates and times including various productivity tips such as shorthand, expressions and ranges. Filter lists or reports down to specific date or time periods.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="working-with-calendar-dates-and-times">Working with Calendar Dates and Times</h1>
+
+<p>Dynamics 365 Business Central offers multiple ways to enter dates and times, including powerful features that accelerate data entry, or help you write complex calendar expressions. There are various places throughout the application where you can enter dates and times in fields. For example, on a sales order, you can set the shipment date. When filtering lists or report data, you can enter dates and times to pinpoint only the data that you are interested in.</p>
+<h2 id="check-your-region-and-language-settings">Check your region and language settings</h2>
+<p>The <strong>My Settings</strong> page specifies the <strong>Region</strong> and <strong>Language</strong> that you are using in the application. These settings influence how you enter dates and times.</p>
+<ul>
+<li><p>The <strong>Region</strong> setting determines how dates, times, numbers, and currencies are shown or formatted.</p>
+</li>
+<li><p>For date patterns that involve words, the language of the words that you use must correspond to the <strong>Language</strong> setting.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Dynamics 365 Business Central uses the Gregorian calendar system.</p>
+</div>
+<!--
+The following sections describe how you can enter dates, times, datetimes, durations, date ranges, and how you use date formulas.
+-->
+<h2 id="entering-dates">Entering Dates</h2>
+<p>In a date field, you can enter a date using the standard format for your region setting. Different regions can use different separators between the days, months and years. For example, some regions use dashes (mm-dd-yyyy) and others use forward slashes (mm/dd/yyyy). However, you can use any separators, even a space, and the date will automatically be changed to use separators that match your region.</p>
+<p>Note that the format in which dates are displayed on printed reports or emailed documents is not influenced by your personal choice of region setting.</p>
+<p>To work more productively with dates and times, you can use any of the methods or formats that are described in the following sections.</p>
+<h3 id="picking-dates-from-the-calendar">Picking dates from the calendar</h3>
+<p>Any field displaying a calendar icon can be set using the calendar date picker. To display the calendar date picker, activate the calendar icon or press the Ctrl + Home keyboard shortcut in the field.</p>
+<p><img src="media/ui-date-field.png" alt="Date fields" title="Example of a date field"></p>
+<p>See also <a href="keyboard-shortcuts.html#calendarshortcuts">Keyboard Shortcuts in the calendar date picker</a>.</p>
+<h3 id="day-week-year-pattern">Day-week-year pattern</h3>
+<p>You can enter a date as a weekday followed by a week number and, optionally, a year. For example, Mon25 or mon25 means Monday in week 25. If you do not enter a year, the year of the work date is used.</p>
+<p>Instead of entering the entire word for the day of the week, you can enter part of the word, starting from the beginning. In case of conflicts (such as with s which could be Saturday or Sunday), the days are evaluated according to the region setting. The input is first evaluated against workdate and today as well, so keep this in mind when abbreviating. For example, t already means today, so it cannot mean Tuesday or Thursday.</p>
+<p>The week number scheme is always ISO 8601, where week 1 is the week with 4 January in it, or the week with the first Thursday of the year.</p>
+<h3 id="digit-patterns">Digit patterns</h3>
+<p>In a date field you can enter two, four, six, or eight digits:</p>
+<ul>
+<li><p>If you enter only two digits, this is interpreted as the day, and it will add the month and the year of the work date.</p>
+</li>
+<li><p>If you enter four digits, this is interpreted as the day and the month, and it will add the year of the work date. The order of the day and month is determined by your region settings. Even if your region settings have the year before the day and month, four digits are interpreted as the day and month.</p>
+</li>
+<li><p>If the date you want to enter is in the range 01/01/1930 through 12/31/2029, you can enter the year with two digits; otherwise, enter the year with four digits.</p>
+</li>
+</ul>
+<h3 id="today">Today</h3>
+<p>Enter the word for today, in the language set by <strong>Language</strong> setting, that will set the date to the current date. Instead of entering the entire word, you can enter part of the word, starting from the beginning, such as t or tod, as long as it is not also the start of another word.</p>
+<h3 id="period">Period</h3>
+<p>To filter on a specific accounting period, in a date field enter the letter p, or the word period, followed by a number that identifies the accounting period, like p2 or period4. The accounting period is relative to the fiscal year of the current work date that set in your Role Center. For example, if the work date is <strong>03/21/20</strong>, then p1, or just p, filters on the first accounting period of the fiscal year 2020 (such as 01/01/20..01/31/20). p15 filters on the fifteenth accounting period from the start of fiscal year 2020 (such as 03/01/21..03/31/21).</p>
+<p>The accounting periods are defined on the <strong>Accounting Periods</strong> page. To view or change the accounting periods, open the page <a href="https://businesscentral.dynamics.com/?page=100">here</a>.</p>
+<h3 id="current-work-date">Current work date</h3>
+<p>The work date feature allows you to record transactions using a date that is different from the current date.</p>
+<p>The word for 'workdate', in the language set by <strong>Language</strong> setting, will set the date to the currently set work date that is specified on the <strong>My Settings</strong> page. Instead of entering the entire word, you can enter part of the word, starting from the beginning, such as 'w' or 'work'.</p>
+<p>If you have not defined a work date, the current date will be used as the work date. You may want to use a work date if you have many transactions with a date other than today's date.</p>
+<p>See also <a href="ui-change-basic-settings.html#work-date">Change Basic Settings, such as the Work Date</a>.</p>
+<h3 id="closing-date">Closing Date</h3>
+<p>When you close a fiscal year, you can use closing dates to indicate that an entry is a closing entry. A closing date technically is between two dates, for example between Dec 31 and Jan 1.</p>
+<p>To specify that a date is a closing date, put C just before the date, such as C123101. This can be used in combination with all the date patterns.</p>
+<h3 id="examples">Examples</h3>
+<p>The following table contains examples of dates using all the formats. It assumes region settings that format dates according to: <strong>year.month.day.</strong>, a week starting on Monday, and the English language.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Entry</strong></th>
+<th><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2018.12.31.</td>
+<td>2018.12.31.</td>
+</tr>
+<tr>
+<td>181231</td>
+<td>2018.12.31.</td>
+</tr>
+<tr>
+<td>18.12.31.</td>
+<td>2018.12.31.</td>
+</tr>
+<tr>
+<td>18.12.31.</td>
+<td>2018.12.31.</td>
+</tr>
+<tr>
+<td>20181231</td>
+<td>2018.12.31.</td>
+</tr>
+<tr>
+<td>18/12,31</td>
+<td>2018.12.31.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>work date year.work date month.11.</td>
+</tr>
+<tr>
+<td>1112</td>
+<td>work date year.11.12.</td>
+</tr>
+<tr>
+<td>t or today</td>
+<td>today's date</td>
+</tr>
+<tr>
+<td>p4</td>
+<td>date range that includes the fourth accounting period, such as 04/01/20..04/30/20</td>
+</tr>
+<tr>
+<td>w or workdate</td>
+<td>the working date</td>
+</tr>
+<tr>
+<td>m or Monday</td>
+<td>Monday of the work date week</td>
+</tr>
+<tr>
+<td>tu or Tuesday</td>
+<td>Tuesday of the work date week</td>
+</tr>
+<tr>
+<td>sa or Saturday</td>
+<td>Saturday of the work date week</td>
+</tr>
+<tr>
+<td>s or Sunday</td>
+<td>Sunday of the work date week</td>
+</tr>
+<tr>
+<td>t23</td>
+<td>Tuesday of week 23 of the work date year</td>
+</tr>
+<tr>
+<td>t 23</td>
+<td>Tuesday of week 23 of the work date year</td>
+</tr>
+<tr>
+<td>t-1</td>
+<td>Tuesday of week 1 of the work date year</td>
+</tr>
+</tbody>
+</table>
+<h2 id="BKMK_SettingDateRanges"> Setting Ranges</h2>
+<p>On lists, totals and reports, you can set filters on dates, times and datetimes containing a start value and optionally an end value to display only the data contained in that range. The standard rules apply to the way you set date ranges.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Meaning</strong></th>
+<th><strong>Sample expression (Date)</strong></th>
+<th><strong>Data included in the filter</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Interval</td>
+<td>12 15 00..01 15 01<br><br>..12 15 00<br><br>p1..p4</td>
+<td>Records with dates between and including 12 15 00 and 01 15 01.<br><br>Records with dates of 12 15 00 or earlier.<br><br>Date range that includes the second, third, and fourth accounting periods, such as 01/01/20..04/30/20.</td>
+</tr>
+<tr>
+<td>Either/or</td>
+<td>12 15 00|12 16 00</td>
+<td>Records with dates of either 12 15 00 or 12 16 00. If there are records with dates on both days, they will all be displayed.</td>
+</tr>
+<tr>
+<td>Combination</td>
+<td>12 15 00|12 01 00..12 10 00  <br><br>..12 14 00|12 30 00..</td>
+<td>Records with dates of 12 15 00 or on dates between and including 12 01 00 and 12 10 00.  <br><br>Records with dates of 12 14 00 or earlier, or dates of 12 30 00 or later, that is, all records except those with dates between and including 12 15 00 and 12 29 00.</td>
+</tr>
+</tbody>
+</table>
+<p>You can use any of the valid formats in date range filters. For example, mon14 3..t 4p applied on a datetime field results in a filter from 3 AM on Monday in week 14 of the current work date year, inclusive, until today at 4PM, inclusive.</p>
+<h2 id="using-date-formulas">Using Date Formulas</h2>
+<p>A date formula is a short, abbreviated combination of letters and numbers that specifies how to calculate dates. You can enter date formulas in various date calculation fields or filters.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In all data formula fields, one day is automatically included to cover today as the day when the period starts. Accordingly, for example, if you enter 1W, then the period is actually eight days because today is included. To specify a period of seven days (one true week) including the period starting date, then you must enter 6D or 1W-1D.</p>
+</div>
+<p>Here are some examples of how date formulas can be used:</p>
+<ul>
+<li><p>The date formula in the recurring frequency field in recurring journals determines how often the entry on the journal line will be posted.</p>
+</li>
+<li><p>The date formula in the <strong>Grace Period</strong> field for a specified reminder level determines the period of time that must pass from the due date (or from the date of the previous reminder) before a reminder will be created.</p>
+</li>
+<li><p>The date formula in the <strong>Due Date Calculation</strong> field determines how to calculate the due date on the reminder.</p>
+</li>
+</ul>
+<p>The date formula can contain a maximum of 20 characters, both numbers and letters. You can use the following letters, which are abbreviations for calendar units.</p>
+<table>
+<thead>
+<tr>
+<th>Letter</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C</td>
+<td>Current</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Day(s)</td>
+</tr>
+<tr>
+<td>W</td>
+<td>Week(s)</td>
+</tr>
+<tr>
+<td>M</td>
+<td>Month(s)</td>
+</tr>
+<tr>
+<td>Q</td>
+<td>Quarter(s)</td>
+</tr>
+<tr>
+<td>Y</td>
+<td>Year(s)</td>
+</tr>
+</tbody>
+</table>
+<p>You can construct a date formula in three ways.</p>
+<p>The following example shows how to use C, for current, and a time unit.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CW</td>
+<td>Current week</td>
+</tr>
+<tr>
+<td>CM</td>
+<td>Current month</td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows how to use a number and a time unit. A number cannot be larger than 9999.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10D</td>
+<td>10 days from today</td>
+</tr>
+<tr>
+<td>2W</td>
+<td>2 weeks from today</td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows how to use a time unit and a number.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D10</td>
+<td>The next 10th day of a month</td>
+</tr>
+<tr>
+<td>WD4</td>
+<td>The next 4th day of a week (Thursday)</td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows how you can combine these three forms as needed.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CM+10D</td>
+<td>Current month + 10 days</td>
+</tr>
+</tbody>
+</table>
+<p>The following example shows how you can use a minus sign to indicate a date in the past.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-1Y</td>
+<td>1 year ago from today</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If the location uses a base calendar, then the date formula that you enter in, for example, the <strong>Shipping Time</strong> field is interpreted according to the calendar working days. For example, 1W  means seven working days.</p>
+</div>
+<!--
+# Entering Date Ranges
+You can set filters containing a start date and an end date to display only the data contained in that date range or time interval. Special rules apply to the way you set date ranges. Let's take the **Customer Top 10** as an example:
+
+![Setting a date range in the request page for the Customer Top 10 list](./media/ui-enter-date-ranges/customer-top10-list.png)
+
+Here you can limit the report to a date range such as the past 2 weeks, or a total of 6 weeks, or whatever range you want. To set date ranges, you enter dates and then use either **..** or **|** to set the range. In our example, to show the top 10 customers for the first two weeks of May, you would set the date filter to *05 01 17..05 14 17*.
+Here are a couple of other examples:
+
+| Meaning | Example | Entries included |
+|---|---|---|
+|Equal to| 12 15 16 |Only those posted on December 15 2016.|
+|Interval| 12 15 16..01 15 17<br /><br />..12 15 16|Those posted on dates between and including December 15 2016 and January 15 2017.<br /><br />Those posted on December 15 2016 or earlier.|
+|Either/or|12 15 16&#124;12 16 16|Those posted on either December 15 or December 16 2016. If there are entries posted on both days, they will all be displayed.|
+
+You can also combine the various format types.
+
+| Example | Entries included |
+|---|---|
+|12 15 16&#124;12 01 16..05 31 17 | Entries posted either on December 15 2016 or on dates between and including December 01 2016 and May 31 2017. |
+|..12 14 16&#124;12 30 16.. | Entries posted on December 14 or earlier, or entries posted on December 30 or later - that is, all entries except those posted on dates between and including December 15 and 29. |
+
+Note that we have used the US date format MMDDYY here. As [!INCLUDE[d365fin](includes/d365fin_md.md)] becomes available in other markets, you'll be able to use the formats that you are used to.
+
+## Using Date Formulas
+A date formula is a short, abbreviated combination of letters and numbers that specifies how to calculate dates. You can enter date formulas in various date calculation fields and in recurring frequency fields in recurring journals.
+
+> [!NOTE]
+>  In all data formula fields, one day is automatically included to cover today as the day when the period starts. Accordingly, for example, if you enter **1W**, then the period is actually eight days because today is included. To specify a period of seven days (one true week) including the period starting date, then you must enter **6D** or **1W\-1D**.
+
+Here are some examples of how date formulas can be used:
+
+-   The date formula in the recurring frequency field in recurring journals determines how often the entry on the journal line will be posted.
+
+-   The date formula in the **Grace Period** field for a specified reminder level determines the period of time that must pass from the due date (or from the due date of the previous reminder) before a reminder will be created.
+
+-   The date formula in the **Due Date Calculation** field determines how to calculate the due date on the reminder.
+
+The date calculation formula can contain a maximum of 20 characters, both numbers and letters. You can use the following letters, which are abbreviations for time specifications.
+
+|  Letter  |  Time specification  |
+|----------|----------------------|
+|C|Current|
+|D|Day\(s\)|
+|W|Week\(s\)|
+|M|Month\(s\)|
+|Q|Quarter\(s\)|
+|Y|Year\(s\)|
+
+You can construct a date formula in three ways.
+
+The following example shows how to use **C**, for current, and a time unit.
+
+|  Expression  |  Meaning  |
+|--------------|-----------|
+|CW|Current week|
+|CM|Current month|
+
+The following example shows how to use a number and a time unit. A number cannot be larger than 9999.
+
+|  Expression  |  Meaning  |
+|--------------|-----------|
+|10D|10 days from today|
+|2W|2 weeks from today|
+
+The following example shows how to use a time unit and a number.
+
+|  Expression  |  Meaning  |
+|--------------|-----------|
+|D10|The next 10th day of a month|
+|WD4|The next 4th day of a week \(Thursday\)|
+
+The following example shows how you can combine these three forms as needed.
+
+|  Expression  |  Meaning  |
+|--------------|-----------|
+|CM\+10D|Current month \+ 10 days|
+
+The following example shows how you can use a minus sign to indicate a date in the past.
+
+|  Expression  |  Meaning  |
+|--------------|-----------|
+|-1Y|1 year ago from today|
+
+> [!IMPORTANT]
+>  If the location uses a base calendar, then the date formula that you enter in, for example, the **Shipping Time** field is interpreted according to the calendar working days. For example, **1W**  means seven working days.
+
+-->
+<h2 id="entering-times">Entering Times</h2>
+<p>When you enter times, you can insert any non-space separators that you want between the units, but if you use double digits for each unit up to milliseconds, then it is not required.</p>
+<p>You only have to write the largest units that you require; the rest will be set to zero. You can also leave out any AM/PM indicator.</p>
+<p>The following table lists the various ways in which times can be entered and how they are interpreted. It assumes region settings that format times according to: <strong>Hours:Minutes:Seconds.Milliseconds.</strong> and use the AM and PM indicators of 'AM' and 'PM', respectively.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Entry</strong></th>
+<th><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>05:23:17</td>
+<td>05:23:17</td>
+</tr>
+<tr>
+<td>5</td>
+<td>05:00:00</td>
+</tr>
+<tr>
+<td>5AM</td>
+<td>05:00:00</td>
+</tr>
+<tr>
+<td>5P</td>
+<td>17:00:00</td>
+</tr>
+<tr>
+<td>12</td>
+<td>12:00:00</td>
+</tr>
+<tr>
+<td>12A</td>
+<td>00:00:00</td>
+</tr>
+<tr>
+<td>12P</td>
+<td>12:00:00</td>
+</tr>
+<tr>
+<td>17</td>
+<td>17:00:00</td>
+</tr>
+<tr>
+<td>5:30</td>
+<td>05:30:00</td>
+</tr>
+<tr>
+<td>0530</td>
+<td>05:30:00</td>
+</tr>
+<tr>
+<td>5:30:5</td>
+<td>05:30:05</td>
+</tr>
+<tr>
+<td>053005</td>
+<td>05:30:05</td>
+</tr>
+<tr>
+<td>5:30:5,50</td>
+<td>05:30:05.5</td>
+</tr>
+<tr>
+<td>053005050</td>
+<td>05:30:05.05</td>
+</tr>
+</tbody>
+</table>
+<p>You should be aware that milliseconds are interpreted as decimal notation. So, for example, 3, 30, and 300 all mean 300 milliseconds, while 03 means 30 and 003 means 3 milliseconds.</p>
+<p>You cannot use 24:00 to mean midnight, or use any value greater than 24:00.</p>
+<p>The word for 'time' in the language used by Dynamics 365 Business Central will be evaluated to the current time on your computer or mobile device. You can enter any part of the word, starting from the beginning, such as t or TIM.</p>
+<h2 id="entering-combined-dates-and-times">Entering combined Dates and Times</h2>
+<p>When you enter datetimes, which are a date and time combined into one field, you must enter a space between the date and the time. The date part can only contain spaces in the form of the official date separator of your region settings. The time can contain spaces around the AM/PM indicator.</p>
+<p>It is also possible to enter only a date in a datetime field, but it is not possible to enter only a time.</p>
+<p>The following table lists some examples of date/time combinations. The region settings in the examples displays dates in the day-month-year format, using AM/PM designators, English language, and Sunday as the start of the week.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Entry</strong></th>
+<th><strong>Interpretation</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>08-01-2016 05:48:12 PM</td>
+<td>08-01-2016 05:48:12 PM</td>
+</tr>
+<tr>
+<td>131202 132455</td>
+<td>13-12-2002 13:24:55</td>
+</tr>
+<tr>
+<td>1-12-02 10</td>
+<td>01-12-2002 10:00:00</td>
+</tr>
+<tr>
+<td>1.12.02 5</td>
+<td>01-12-2002 05:00:00</td>
+</tr>
+<tr>
+<td>1.12.02</td>
+<td>01-12-2002 00:00:00</td>
+</tr>
+<tr>
+<td>11 12</td>
+<td>11-work date month-work date year 12:00:00</td>
+</tr>
+<tr>
+<td>1112 12</td>
+<td>11-12-work date year 12:00:00</td>
+</tr>
+<tr>
+<td>t or today</td>
+<td>today's date 00:00:00</td>
+</tr>
+<tr>
+<td>t 10:30</td>
+<td>today's date 10:30:00</td>
+</tr>
+<tr>
+<td>t 3:3:3</td>
+<td>today's date 03:03:03</td>
+</tr>
+<tr>
+<td>w or workdate</td>
+<td>the working date 00:00:00</td>
+</tr>
+<tr>
+<td>m or Monday</td>
+<td>Monday of the work date week 00:00:00</td>
+</tr>
+<tr>
+<td>tu or Tuesday</td>
+<td>Tuesday of the work date week 00:00:00</td>
+</tr>
+<tr>
+<td>sa or Saturday</td>
+<td>Saturday of the work date week 00:00:00</td>
+</tr>
+<tr>
+<td>s or Sunday</td>
+<td>Sunday of the work date week 00:00:00</td>
+</tr>
+<tr>
+<td>tu 10:30</td>
+<td>Tuesday of the work date week 10:30:00</td>
+</tr>
+<tr>
+<td>tu 3:3:3</td>
+<td>Tuesday of the work date week 03:03:03</td>
+</tr>
+<tr>
+<td>t23 t</td>
+<td>Tuesday of week 23 of the work date year, current time of day</td>
+</tr>
+<tr>
+<td>t23</td>
+<td>Tuesday of week 23 of the work date year</td>
+</tr>
+<tr>
+<td>t 23</td>
+<td>Today 23:00:00</td>
+</tr>
+<tr>
+<td>t-1</td>
+<td>Tuesday of week 1 of the work date year</td>
+</tr>
+</tbody>
+</table>
+<h2 id="entering-duration">Entering Duration</h2>
+<p>Some fields in the application represent a duration, or amount of elapsed time, instead of a specific date or time. You enter a duration as a number followed by its unit of measure.</p>
+<p>Here are some examples.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Duration</strong></th>
+<th><strong>Unit of measure</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2h</td>
+<td>2 hrs</td>
+</tr>
+<tr>
+<td>6h 30 m</td>
+<td>6 hrs 30 mins</td>
+</tr>
+<tr>
+<td>6.5h</td>
+<td>6 hrs 30 mins</td>
+</tr>
+<tr>
+<td>90m</td>
+<td>1 hr 30 mins</td>
+</tr>
+<tr>
+<td>2d 6h 30m</td>
+<td>2 days 6 hrs 30 mins</td>
+</tr>
+<tr>
+<td>2d 6h 30m 56s 600ms</td>
+<td>2 days 6 hrs 30 mins 56 secs 600 msecs</td>
+</tr>
+</tbody>
+</table>
+<p>You can also enter a number, which will be automatically converted to a duration. The number you enter is converted according to the default unit of measure that has been specified for the duration field.</p>
+<p>To see what unit of measure is being used in a duration field, enter a number and see which unit of measure it is converted to.</p>
+<p>For example, if the unit of measure is hours, the number 5 is converted to 5 hrs.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-work-product.html">Working with Dynamics 365 Business Central</a><br>
+<a href="purchasing-date-calculation-for-purchases.html">Date Calculation for Purchases</a><br>
+<a href="ui-enter-criteria-filters.html">Entering Criteria in Filters </a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-enter-date-ranges.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

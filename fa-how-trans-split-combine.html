@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Reclassify Fixed Assets| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Reclassify Fixed Assets| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You reclassify a fixed asset to transfer it to a different department, split it up, or combine it with other fixed assets.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="transfer-split-or-combine-fixed-assets">Transfer, Split, or Combine Fixed Assets</h1>
+
+<p>You use the fixed asset reclassification journal to transfer, split up, and combine fixed assets. You view or print the results of fixed asset reclassification with the <strong>Fixed Asset-Book Value 02</strong> report.</p>
+<h2 id="to-transfer-a-fixed-asset-to-a-different-department">To transfer a fixed asset to a different department</h2>
+<p>You may need to transfer a fixed asset to a different department when, for example, you place an asset in the production department while it is under construction and then move it to the administration department when it is finished.</p>
+<ol>
+<li><p>Set up a new fixed asset. Enter the new department in the <strong>Department Code</strong> field.</p>
+</li>
+<li><p>Assign a fixed asset depreciation book to the new fixed asset. For more information, see <a href="fa-how-acquire.html">Acquire Fixed Assets</a>.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Reclass. Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a reclassification journal where the <strong>FA No.</strong> field contains the original fixed asset, and the <strong>New FA No.</strong> field contains the new fixed asset to be moved.</p>
+</li>
+<li><p>Choose the <strong>Reclassify</strong> action.</p>
+<p>Two lines are now created in the fixed asset G/L journal using the template and batch that you have specified on the <strong>FA Journal Setup</strong> page for the specified depreciation book. For more information, see <a href="fa-how-setup-depreciation.html">Set Up Fixed Asset Depreciation</a>.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Fixed Asset G/L Journal</strong> page, choose the <strong>Post</strong> action to post the reclassification that you performed in steps 4 and 5.</p>
+</li>
+</ol>
+<p>If you have posted an acquisition cost for one asset, you can use the fixed asset reclassification journal to split the acquisition cost among several assets.</p>
+<h2 id="to-split-a-fixed-asset-into-three-fixed-assets">To split a fixed asset into three fixed assets</h2>
+<p>You can split one fixed asset into multiple fixed assets, for example when you need to distribute a fixed asset onto three different departments. In that case, you can move, for example, 25 percent of the acquisition cost and depreciation for the original fixed asset to the second fixed asset and 45 percent to the third asset. The remaining 30 percent will remain on the original fixed asset.</p>
+<ol>
+<li><p>Set up two new fixed assets. Enter the new department in the <strong>Department Code</strong> field.</p>
+</li>
+<li><p>Assign fixed asset depreciation books to the new fixed assets. For more information, see <a href="fa-how-acquire.html">Acquire Fixed Assets</a>.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Reclass. Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create two reclassification journal lines, one for each new fixed asset.</p>
+</li>
+<li><p>On the first line, enter the second fixed asset in the <strong>New FA No.</strong> field and 25 in the <strong>Reclassify Acq. Cost %</strong> field.</p>
+</li>
+<li><p>On the second line, enter the third fixed asset in the <strong>New FA No.</strong> field and 40 in the <strong>Reclassify Acq. Cost %</strong> field.</p>
+</li>
+<li><p>On both lines, select the <strong>Reclassify Acquisition Cost</strong> and <strong>Reclassify Depreciation</strong> check boxes.</p>
+</li>
+<li><p>Choose the <strong>Reclassify</strong> action.</p>
+<p>Two lines are now created in the fixed asset G/L journal using the template and batch that you have specified on the <strong>FA Journal Setup</strong> page for the specified depreciation book. For more information, see <a href="fa-how-setup-depreciation.html">Set Up Fixed Asset Depreciation</a>.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Fixed Asset G/L Journal</strong> page, choose the <strong>Post</strong> action to post the reclassification that you performed in steps 4 through 8.</p>
+</li>
+</ol>
+<h2 id="to-combine-two-fixed-assets-into-one">To combine two fixed assets into one</h2>
+<p>You can combine multiple fixed assets into one fixed asset, for example when you move distributed fixed assets into one department. If you have posted acquisition costs and depreciation for the fixed asset to be moved, those values will be combined in the single fixed asset.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Reclass. Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a reclassification journal where the <strong>FA No.</strong> field contains the fixed asset to be moved/combined, and the <strong>New FA No.</strong> field contains the fixed asset that it will be combined with.</p>
+</li>
+<li><p>Leave the <strong>Reclassify Acq. Cost %</strong> field empty to move/combine the entire acquisition cost.</p>
+</li>
+<li><p>Select the <strong>Reclassify Acquisition Cost</strong> and <strong>Reclassify Depreciation</strong> check boxes.</p>
+</li>
+<li><p>Choose the <strong>Reclassify</strong> action.</p>
+<p>Two lines are now created in the fixed asset G/L journal using the template and batch that you have specified on the <strong>FA Journal Setup</strong> page for the specified depreciation book. For more information, see <a href="fa-how-setup-depreciation.html">Set Up Fixed Asset Depreciation</a>.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Fixed Asset G/L Journal</strong> page, choose the <strong>Post</strong> action to post the reclassification that you performed in steps 2 through 5.</p>
+</li>
+</ol>
+<h2 id="to-view-changed-depreciation-book-values-due-to-fixed-asset-reclassification">To view changed depreciation book values due to fixed asset reclassification</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Book Value 02</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+<li>Choose the <strong>Print</strong> or <strong>Preview</strong> button.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-trans-split-combine.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

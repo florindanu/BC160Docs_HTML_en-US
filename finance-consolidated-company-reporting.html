@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Consolidate Data from Multiple Companies | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Consolidate Data from Multiple Companies | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Get an summary view of the financial health accross your businesses.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="consolidating-financial-data-from-multiple-companies">Consolidating Financial Data from Multiple Companies</h1>
+
+<p>If you have more than one company in Business Central, the Consolidated Trial Balance report on the Accountant Role Center can give you an overview of the financial health of your overall business.</p>
+<p>The report combines general ledger entries from each of your companies in a new company that you create to contain the consolidated data. This company is typically referred to as the &quot;consolidated company&quot;. The consolidated company is just a container for the consolidated data, and does not have any live business data. The companies that you include in the consolidated company become <strong>Business Units</strong> in the report.</p>
+<p>Consolidating financial data may especially be relevant in connection with intercompany processes. For more information, see <a href="intercompany-manage.html">Managing Intercompany Transactions</a>.</p>
+<p>You can consolidate:</p>
+<ul>
+<li>Across companies that have different charts of accounts.</li>
+<li>Companies that use different fiscal years and different currencies.</li>
+<li>Either the full amount or a percentage of a company's financial information</li>
+<li>Using different currency exchange rates in individual G/L accounts</li>
+</ul>
+<p>Depending on the complexity of your businesses, there are two ways to set up the report:</p>
+<ul>
+<li>If you do not need advanced settings, such as including a company that you only own part of, you can use the <strong>Company Consolidation</strong> assisted setup guide to quickly set up a consolidation. The guide helps you through the basic steps.</li>
+<li>If you do need more advanced settings, you can set up the consolidated company and business units yourself.</li>
+</ul>
+<h2 id="to-do-a-simple-consolidation-setup">To do a simple consolidation setup</h2>
+<p>If your consolidation is straightforward, for example because you wholly-own the business units to consolidate, the <strong>Company Consolidation</strong> assisted setup guide will help you through the following steps:</p>
+<ul>
+<li>Choose whether to create a new consolidated company, or whether to consolidate the data in a company that you have already created for the consolidation. The company should not contain transactions.</li>
+<li>Preview the results. Business Central verifies that the master data and transactions can be successfully transferred to the consolidated company.</li>
+</ul>
+<p>To use the assisted setup guide, follow these steps:</p>
+<ol>
+<li>On the <strong>Accountant</strong> Role Center, choose the <strong>Assisted Setup</strong> action.</li>
+<li>Choose <strong>Set up consolidation reporting</strong>, and then complete each step in the assisted setup guide.</li>
+</ol>
+<h2 id="to-do-an-advanced-consolidation-setup">To do an advanced consolidation setup</h2>
+<p>If you need more advanced settings for your consolidation, you can set up consolidation manually. For example, if you have companies that you own only partially, or you have companies that you do not want to include in the consolidation. You set up the consolidated company in the same way that you set up other companies. For more information, see <a href="ui-get-ready-business.html">Getting Ready for Doing Business</a>.</p>
+<p>Business Central lets you set up a list of companies to consolidate, verify the accounting data before you consolidate it, import files, and generate consolidation reports.</p>
+<ol>
+<li>Sign in to the consolidated company.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Business Units</strong>, and then choose the related link.</li>
+<li>Choose <strong>New</strong>, and then fill in the required fields. Hover over a field to read a short description.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When you fill in the <strong>Starting Date</strong> and <strong>Ending Date</strong> fields, make sure you comply with GAAP rules concerning the fiscal periods of the business unit versus the parent company.</p>
+</div>
+<p>If your business unit uses a foreign currency, you must specify the exchange rate to use in the consolidation. You must also enter consolidation information about the business unit's general ledger accounts. These processes are described in the following sections.</p>
+<h3 id="to-prepare-general-ledger-accounts-for-consolidation">To prepare general ledger accounts for consolidation</h3>
+<p>If the chart of accounts in the business unit differs from the consolidated company, you must prepare general ledger accounts for consolidation. You can specify the accounts to post debits and credits to, and the method to use to translate currencies in the consolidated company. For example, this is useful if you frequently run the report.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Accounts</strong>, and then choose the related link.</li>
+<li>Open the card for the account, and then fill in the fields on the <strong>Consolidation</strong> FastTab.</li>
+</ol>
+<h3 id="to-specify-exchange-rates-for-consolidations">To specify exchange rates for consolidations</h3>
+<p>If a business unit uses a different currency than the consolidated company, you must specify exchange rate methods for each account before you consolidate. For each account, the content of the <strong>Consol. Translation Method</strong> field determines the exchange rate. On each business unit card, in the <strong>Currency Exchange Rate Table</strong> field, you specify whether consolidation will use exchange rates from the business unit or the consolidated company. If you use exchange rates from the consolidated company, you can change the exchange rates for a business unit. For business units, if the <strong>Currency Exchange Rate Table</strong> field on the business unit card contains <strong>Local</strong>, you can change the exchange rate from the business unit card. The exchange rates are copied from the <strong>Currency Exchange Rate</strong> table, but you can change them before consolidating.</p>
+<p>The following table describes the exchange rate methods you can use for accounts.</p>
+<table>
+<thead>
+<tr>
+<th>Exchange rate</th>
+<th>Typical use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Average Rate (Manual)</td>
+<td>You manually calculate the average rate for the period to consolidate. Calculate the average either as an arithmetic average or as a best estimate, and specify the result for each business unit. Used for income statement accounts.</td>
+</tr>
+<tr>
+<td>Closing Rate</td>
+<td>Used for balance sheet accounts.</td>
+</tr>
+<tr>
+<td>Last Closing Rate</td>
+<td>The rate that was valid in the foreign exchange market on the date for which the balance sheet or income statement is being prepared. You enter this rate for each business unit. Used for balance sheet accounts.</td>
+</tr>
+<tr>
+<td>Historical Rate</td>
+<td>The exchange rate that was valid when the transaction occurred.</td>
+</tr>
+<tr>
+<td>Composite Rate</td>
+<td>The current period amounts are translated at the average rate and added to the previously recorded balance in the consolidated company. This method is typically used for retained earnings accounts because they include amounts from different periods and are therefore a composite of amounts translated with different exchange rates.</td>
+</tr>
+<tr>
+<td>Equity Rate</td>
+<td>This is similar to <strong>Composite</strong>. Differences are posted to separate general ledger accounts.</td>
+</tr>
+</tbody>
+</table>
+<p>To specify exchange rates for business units, follow these steps:</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Business Units</strong>, and then choose the related link.</li>
+<li>On the <strong>Business Unit List</strong> page, choose the business unit, and then choose the <strong>Average Rate (Manual)</strong> action.</li>
+<li>On the <strong>Change Exchange Rate</strong> page, the contents of the <strong>Relational Exch. Rate</strong> field have been copied from the <strong>Currency Exchange Rate</strong> table, but you can modify them. Close the page.</li>
+<li>Choose the <strong>Closing Rate</strong> action.</li>
+<li>In the <strong>Relational Exch. Rate Amount</strong> field, enter the exchange rate.</li>
+</ol>
+<!-- ### To include or exclude dimensions
+
+COMMENTING THIS OUT BECAUSE i CANNOT REPRODUCE THE SETTINGS. tHERE IS NO CONSOLIDATION CODE FIELD ON DIMENSIONS OR DIMENSIOIN VALUES.
+
+You can consolidate dimension information and general ledger accounts, as follows:
+
+* To exclude dimension information in the consolidation, leave the **Consolidation Code** field blank, and do not choose dimensions in the **Copy Dimensions** fields in any consolidation functions or reports described later in this topic.
+* To include dimension information in the consolidation, leave the **Consolidation Code** field blank. However, the consolidation will only work if the dimension values in the business unit are the same as the consolidated company.
+* To consolidate the dimension value code in the business unit with a different dimension value code in the consolidated company, fill in the **Consolidation Code**. -->
+<h3 id="to-exclude-a-company-from-consolidation">To exclude a company from consolidation</h3>
+<p>If you do not want to include a business unit in the consolidation, you can exclude it. To do that, go to the business unit card, and clear the <strong>Consolidate</strong> check box.</p>
+<h3 id="to-include-a-partially-owned-company-in-consolidation">To include a partially-owned company in consolidation</h3>
+<p>If you own only part of a company, you can include a percentage of each transaction that corresponds to the percentage of the company you own. For example, if you own 70% of the company, consolidation will include $70 of an invoice for $100. To specify the percentage of the company you own, go to the business unit card, and enter the percentage in the <strong>Consolidation %</strong> field.</p>
+<h3 id="to-test-the-data-before-you-consolidate">To test the data before you consolidate</h3>
+<p>You can test your data before you transfer it to the consolidated company. Business Central looks for differences in the information in the business units and the consolidated company. For example, whether account numbers or dimension codes are different. You must correct errors before you can run the report. You can test the database or, if you are importing data from an XML file, you can test the file.</p>
+<ol>
+<li><p>Open the consolidated company.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Business Units</strong>, and then choose the related link.</p>
+</li>
+<li><p>Do one of the following:</p>
+<ul>
+<li>To test a file, choose the <strong>Test File</strong> action, enter the name of the file to test, and then choose <strong>Print</strong>.</li>
+<li>To test the database, choose <strong>Test Database</strong>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="to-run-the-consolidation">To run the consolidation</h2>
+<p>After you have tested the data, you can transfer it to the consolidated company.</p>
+<ol>
+<li>Sign in to the consolidated company.</li>
+<li>On the <strong>Accountant Role Center</strong>, choose the <strong>Run Consolidation</strong> action.</li>
+<li>Fill in the required fields.</li>
+<li>In the <strong>Where</strong> field, choose <strong>Company Name</strong>, and then choose the consolidated company in the <strong>is</strong> field.</li>
+</ol>
+<h2 id="to-eliminate-repeated-transactions">To eliminate repeated transactions</h2>
+<p>After you have consolidated all the companies, you must find any transactions that are recorded more than once across companies and then post elimination entries to remove them.</p>
+<p>Processing consolidation eliminations is a manual process. You can follow these steps:</p>
+<ol>
+<li>Find transactions that potentially need to be adjusted and enter general journal lines to eliminate them.</li>
+<li>Run the <strong>G/L Consolidation Eliminations</strong> report to help you assess the effect of the general journal lines before posting.</li>
+<li>Post the adjusting transactions.</li>
+</ol>
+<p>The <strong>G/L Consolidation Eliminations</strong> report displays a tentative trial balance where you can simulate the consequences of eliminating entries by comparing the entries in the consolidated company with the eliminations that have been entered in the general journal.</p>
+<p>Before a business unit can be included in the report, it must be set up on the <strong>Business Units</strong> page and the <strong>Consolidate</strong> field must be selected.</p>
+<p>Each account appears on a line by itself, following the structure of the chart of accounts. An account is not shown if all the amounts on the line are 0. The following information is shown for each account:</p>
+<ul>
+<li>Account number</li>
+<li>Account name.</li>
+<li>If you have selected one or more business unit codes in the <strong>Business Unit Code</strong> field on the request page, a total is shown for the consolidated company excluding the selected business units and eliminations. If you have not filled in the <strong>Business Unit Code</strong> field, a total is shown for the consolidated company excluding eliminations.</li>
+<li>If you have selected a business unit code in the <strong>Business Unit Code</strong> field on the request page, a total is shown for the imported entries from the business unit. If you have not filled in the <strong>Business Unit Code</strong> field, a total is shown for the posted eliminations in the consolidated company.</li>
+<li>The total for the consolidated company with all the business units and all posted eliminations.</li>
+<li>The eliminations to be made in the consolidated company, that is, the entries in the general journal that is selected on the request page.</li>
+<li>The posting text copied from the general journal.</li>
+<li>The consolidated company's total after the eliminations, if they are posted.</li>
+</ul>
+<h2 id="to-export-and-import-consolidated-data-between-databases">To export and import consolidated data between databases</h2>
+<p>If data for a business unit is in another database, you must export the data to a file before you can include it in the consolidation. Each company must be exported separately. For this purpose, use the <strong>Export Consolidation</strong> batch job.</p>
+<p>After you run the batch job, all entries in general ledger accounts are processed. For every combination of selected dimensions and date, the contents of the entries' <strong>Amount</strong> fields are totaled and exported. The next combination of selected dimensions and date with the same account number is processed, then the combinations in the next account number are processed, and so on.</p>
+<p>The exported entries contain the following fields: <strong>Account No.</strong>, <strong>Posting Date</strong>, and <strong>Amount</strong>. If dimensions information was also exported, dimension codes and dimension values are also included.</p>
+<ol>
+<li>For each exported line, if the total of the <strong>Amount</strong> fields is a debit, the account number that is set up in the business unit's <strong>Consol. Debit Acc.</strong> field is exported to the line. If the total is a credit, the corresponding number in the <strong>Consol. Credit Acc.</strong> field is exported to the line.</li>
+<li>The date used for each exported line is either the period's ending date or, if the transfer occurs each day, the exact date of the calculation.</li>
+<li>The dimension value exported for the entry will be the consolidated company dimension value that is set up in the <strong>Consolidation Code</strong> field for that dimension value. If no consolidated company dimension value has been entered in the <strong>Consolidated Code</strong> field for that dimension value, the dimension value itself will be exported to the line.</li>
+<li>The XML files also contain the currency exchange rates in the consolidation period. These rates are included in a separate section at the beginning of the file.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="intercompany-manage.html">Managing Intercompany Transactions</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="about-export-data.html">Exporting Your Business Data to Excel</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-consolidated-company-reporting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

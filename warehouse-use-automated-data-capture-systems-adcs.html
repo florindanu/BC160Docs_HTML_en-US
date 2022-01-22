@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use Automated Data Capture Systems (ADCS) | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use Automated Data Capture Systems (ADCS) | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use your automatic data capture system (ADCS) to register the movement of items in the warehouse and to register some journal activities, such as quantity adjustments in the warehouse item journal and physical inventories.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="use-automated-data-capture-systems-adcs">Use Automated Data Capture Systems (ADCS)</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Automated Data Capture System (ADCS) solution provides a way for Business Central to communicate with handheld devices through web services. You must work with a Microsoft partner who can provide the link between the web service and the specific handheld device.</p>
+</div>
+<p>You can use your automatic data capture system (ADCS) to register the movement of items in the warehouse and to register some journal activities, such as quantity adjustments in the warehouse item journal and physical inventories. ADCS typically involves scanning a barcode.</p>
+<p>To use ADCS, you must give each item stored in the warehouse an item identifier. You must also set up miniforms, handheld functions, data exchanges, and specify settings for fields that control ADCS. You specify whether to use ADCS on the location card of a warehouse.</p>
+<p>Based on the needs of your warehouse, you define the amount of information displayed in the miniform setup for the particular handheld device. The following are examples of information that you can display:</p>
+<ul>
+<li>Data from tables within Business Central, such as a list of pick documents from which the user can select.</li>
+<li>Text information.</li>
+<li>Messages to show confirmations or errors about activities performed and registered by the handheld device user.</li>
+</ul>
+<h2 id="to-enable-web-services-for-adcs">To enable Web Services for ADCS</h2>
+<p>To use Automated Data Capture System, you must enable the ADCS web service.</p>
+<h2 id="to-enable-and-publish-the-adcs-web-service">To enable and publish the ADCS web service</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Web Services</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>Web Services</strong> page, enter the following information on a new line:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Object Type</strong></td>
+<td>Codeunit</td>
+</tr>
+<tr>
+<td><strong>Object ID</strong></td>
+<td>7714</td>
+</tr>
+<tr>
+<td><strong>Service Name</strong></td>
+<td>ADCS <strong>Important:</strong> It is required that you name the service <strong>ADCS</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Select the <strong>Published</strong> check box.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-set-up-a-warehouse-to-use-adcs">To set up a warehouse to use ADCS</h2>
+<p>To use ADCS, you must specify which warehouse locations use the technology.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend that you do not set up a warehouse to use ADCS if the warehouse also has a bin capacity policy.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and choose the related link.</li>
+<li>Select a warehouse from the list for which you want to enable ADCS, and then choose the <strong>Edit</strong> action.</li>
+<li>On the <strong>Location Card</strong> page, select the <strong>Use ADCS</strong> check box.</li>
+</ol>
+<h2 id="to-specify-an-item-to-use-adcs">To specify an item to use ADCS</h2>
+<p>Each warehouse item that you want to use with ADCS must be assigned an identifier code to link it with its item number. For example, you can use the item's bar code as the identifier code. An item can also have multiple identifier codes. You may find this useful in the case where an item is available in various units of measures, such as pieces and pallets. In this case, assign an identifier code to each.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select an item from the list that is part of your ADCS solution, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Card</strong> page, choose the <strong>Identifiers</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Identifiers</strong> page, choose the <strong>New</strong> action.</p>
+</li>
+<li><p>In the <strong>Code</strong> field, specify the identifier for the item. For example, the identifier could be the item's bar code number.</p>
+<p>You can also enter a <strong>Variant Code</strong> and a <strong>Unit of Measure</strong> code.</p>
+</li>
+<li><p>If needed, enter multiple codes for each item.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>To review the information, choose the <strong>Identifier Code</strong> field to open the <strong>Item Identifiers</strong> page.</p>
+</li>
+</ol>
+<h2 id="to-add-an-adcs-user">To add an ADCS user</h2>
+<p>You can add any user as a user of an Automated Data Capture System (ADCS). When you do this, the user must also provide a password. Optionally, you can also provide a connection that identifies the ADCS user as a warehouse employee. The ADCS user password can be different from the Windows logon password of the user. For more information, see <a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>ADCS Users</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>In the <strong>Name</strong> field, enter a name for the user. The name cannot contain more than 20 characters, including spaces.</li>
+<li>In the <strong>Password</strong> field, enter a password. The password is masked.</li>
+</ol>
+<h3 id="to-specify-that-a-warehouse-employee-is-an-adcs-user">To specify that a warehouse employee is an ADCS user</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Employees</strong>, and then choose the related link.</li>
+<li>If needed, add a new warehouse employee. For more information, see <a href="warehouse-how-to-set-up-warehouse-employees.html">Set Up Warehouse Employees</a>.</li>
+<li>Choose the <strong>Edit List</strong> action.</li>
+<li>Select a warehouse employee from the list. In the <strong>ADCS User</strong> field, choose the drop-down arrow, and then select the name of an ADCS user from the list.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The default warehouse for the employee must be one that uses ADCS.</p>
+</div>
+<h2 id="to-create-and-customize-miniforms">To create and customize miniforms</h2>
+<p>You use miniforms to describe the information that you want to present on a handheld device. For example, you can create miniforms to support the warehouse activity of picking items. After you create a miniform, you can add functions to it for the common actions that a user takes with handheld devices, such as moving up or down a line.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To implement or change the functionality of a miniform function, you must create a new codeunit for the <strong>Handling Codeunit</strong> field to perform the required action or response. You can learn more about ADCS functionality by examining codeunits, such as 7705, 7706, 7712, and 7713.</p>
+</div>
+<h3 id="to-create-a-miniform-for-adcs">To create a miniform for ADCS</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Miniforms</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>In the <strong>Code</strong> field, enter a code for the miniform. Optionally, enter values in all other fields.</p>
+<p>Select the <strong>Start Miniform</strong> check box to indicate that the miniform is the first form that the user sees at logon.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, define the fields that appear on the miniform. The order in which you enter lines is the order in which the lines appear on the handheld device.</p>
+</li>
+</ol>
+<p>When you have created a miniform, the next steps are to create functions and to associate functionality for various keyboard inputs.</p>
+<h3 id="to-customize-miniform-functions">To customize miniform functions</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Miniforms</strong>, and then choose the related link.</li>
+<li>Select a miniform from the list, and then choose the <strong>Edit</strong> action.</li>
+<li>Choose the <strong>Functions</strong> action.</li>
+<li>In the <strong>Function Code</strong> drop-down list, select a code to represent the function that you want to associate with the miniform. For example, you can select ESC, which associates functionality with the press of the ESC key.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-use-automated-data-capture-systems-adcs.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

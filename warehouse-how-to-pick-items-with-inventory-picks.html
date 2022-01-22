@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Pick Items with Inventory Picks | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Pick Items with Inventory Picks | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="If a location is set up to require pick processing but not shipment processing, you use the inventory pick documents to record and post picking and shipping information for your source documents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="pick-items-with-inventory-picks">Pick Items with Inventory Picks</h1>
+
+<p>When your location is set up to require pick processing but not shipment processing, you use the <strong>Inventory Pick</strong> page to record and post picking and shipping information for your source documents. The outbound source document can be a sales order, a purchase return order, an outbound transfer order, or a production order whose components are ready to be picked.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Components for assembly orders cannot be picked or posted with inventory picks. Instead, use the <strong>Inventory Movement</strong> page. For more information, see <a href="warehouse-how-to-move-components-to-an-operation-area-in-basic-warehousing.html">Move Components to an Operation Area in Basic Warehousing</a>.</p>
+</div>
+<blockquote>
+<p>When picking and shipping sales line quantities that are assembled to the order, you must follow certain rules when creating the inventory pick lines. For more information, see the “Handling Assemble-to-Order Items in Inventory Picks” section.</p>
+</blockquote>
+<p>You can create an inventory pick in three ways:</p>
+<ul>
+<li>Create the pick in two steps by first requesting an inventory pick by releasing the source document. This signals to the warehouse that the source document is ready for picking. The inventory pick can then be created on the <strong>Inventory Pick</strong> page based on the source document.</li>
+<li>Create the inventory pick directly from the source document itself.</li>
+<li>You can create inventory picks for several source documents at the same time by using the batch job.</li>
+</ul>
+<h2 id="to-request-an-inventory-pick-by-releasing-the-source-document">To request an inventory pick by releasing the source document</h2>
+<p>For sales orders, purchase return orders, and outbound transfer orders, you create the warehouse request by releasing the order. The following describes how to do this from a sales order.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</li>
+<li>Select the sales order that you want to release, and then choose the <strong>Release</strong> action.</li>
+</ol>
+<p>For production orders, you automatically create the warehouse request for the picking of components, called <em>flushing</em>, when the production order status is changed to <strong>Released</strong> or when the released production order is created. For more information, see <a href="warehouse-how-to-pick-for-production.html">Pick for Production or Assembly</a>.</p>
+<p>After the warehouse request has been created, a warehouse employee assigned to picking items can see that the source document is ready to be picked and can create a new pick document based on the warehouse request.</p>
+<h2 id="to-create-an-inventory-pick-based-on-the-source-document">To create an inventory pick based on the source document</h2>
+<p>Now that the request is created, the warehouse employee can create a new inventory pick based on the released source document.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Picks</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>In the <strong>Source Document</strong> field, select the type of source document you are picking for.</li>
+<li>In the <strong>Source No.</strong> field, select the source document.</li>
+<li>Alternatively, choose the <strong>Get Source Document</strong> action to select the document from a list of outbound source documents that are ready for picking at the location.</li>
+<li>Choose the <strong>OK</strong> button to fill the pick lines according to the selected source document.</li>
+</ol>
+<h2 id="to-create-an-inventory-pick-from-the-source-document">To create an inventory pick from the source document</h2>
+<ol>
+<li>In the source document, which can be a sales order, purchase return order, outbound transfer order, or production order, choose the <strong>Create Inventory Put-away/Pick</strong> action.</li>
+<li>Select the <strong>Create Invt. Pick</strong> check box.</li>
+<li>Choose the <strong>OK</strong> button. A new inventory pick will be created.</li>
+</ol>
+<h2 id="to-create-multiple-inventory-picks-with-a-batch-job">To create multiple inventory picks with a batch job</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Create Invt. Put-away / Pick</strong>, and then choose the related link.</li>
+<li>On the <strong>Warehouse Request</strong> FastTab, use the <strong>Source Document</strong> and <strong>Source No.</strong> fields to filter on certain types of documents  or ranges of document numbers. For example, you can create picks only for sales orders.</li>
+<li>On the <strong>Options</strong> FastTab, select the <strong>Create Invt. Pick</strong> check box.</li>
+<li>Choose the <strong>OK</strong> button. The specified inventory picks are created.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If picking and shipping sales line quantities that are assembled to the order you should follow certain rules when creating the inventory pick lines. For more information, see the “Handling Assemble-to-Order Items in Inventory Picks” section.</p>
+<p>In basic warehouse configurations, items that are assembled to sales orders are picked from the related sales order, as explained in this topic. For more information, see “Handling Assemble-to-Order Items in Inventory Picks” in Inventory Pick.</p>
+</div>
+<h2 id="to-record-the-inventory-picks">To record the inventory picks</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Pick</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the <strong>Bin Code</strong> field on the pick lines, the bin that the items must be picked from is suggesting per the item's default bin. You can change the bin in this page if necessary.</p>
+</li>
+<li><p>Perform the pick and enter the information for the actual quantity put away in the <strong>Qty. to Handle</strong> field.</p>
+<p>If it is necessary to pick the items for one line from more than one bin, for example because they are not available in the designated bin, then use the <strong>Split Line</strong> function on the <strong>Lines</strong> FastTab. For more information about splitting lines, see <a href="warehouse-how-to-split-warehouse-activity-lines.html">Split Warehouse Activity Lines</a>.</p>
+</li>
+<li><p>When you have performed the pick, choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<p>The posting process will post the shipment of the source document lines that have been picked, or in the case of production orders, the posting process will post the consumption. If the location uses bins, the posting will also create warehouse entries to post the bin quantity changes.</p>
+<h2 id="to-delete-inventory-pick-lines">To delete inventory pick lines</h2>
+<p>If items on the inventory pick are not available, then you can delete those inventory pick lines after posting and then delete the inventory pick document. The source document, such as a sales order or a production order, will have remaining items to be picked, which can be obtained through a new inventory pick later when the items become available.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>This process is not possible if serial/lot numbers are specified on the source document. For example, if a sales order line contains a serial/lot number, then that item tracking specification will be deleted if an inventory pick line for the serial/lot number is deleted.</p>
+<p>If inventory pick lines have serial/lot numbers that are not available, you must not delete the lines in question. Instead, you must change the <strong>Qty. to Handle</strong> field to zero, post the actual picks, and then delete the inventory pick document. This ensures that the inventory pick lines for those serial/lot numbers can be recreated from the sales order later.</p>
+</div>
+<h2 id="handling-assemble-to-order-items-with-inventory-picks">Handling Assemble-to-Order Items with Inventory Picks</h2>
+<p>The <strong>Inventory Pick</strong> page is also used to pick and ship for sales where items must be assembled before they can be shipped. For more information, see <a href="assembly-how-to-sell-items-assembled-to-order.html">Sell Items Assembled to Order</a>.</p>
+<p>Items to be shipped are not physically present in a bin until they are assembled and posted as output to a bin in the assembly area. This means that picking assemble-to-order items for shipment follows a special flow. From a bin, warehouse workers take the assembly items to the shipping dock and then post the inventory pick. The posted inventory pick then posts the assembly output, the component consumption, and the sales shipment.</p>
+<p>You can set up Business Central to automatically create an inventory movement when the inventory pick for the assembly item is created. To enable this, you must select the <strong>Create Movements Automatically</strong> field on the <strong>Assembly Setup</strong> page. For more information, see <a href="warehouse-how-to-move-components-to-an-operation-area-in-basic-warehousing.html">Move Components to an Operation Area in Basic Warehousing</a>.</p>
+<p>Inventory pick lines for sales items are created in different ways depending on whether none, some, or all of the sales line quantities are assembled to order.</p>
+<p>In regular sales where you use inventory picks to post shipment of inventory quantities, one inventory pick line, or several if the item is placed in different bins, is created for each sales order line. This pick line is based on the quantity in the <strong>Qty. to Ship</strong> field.</p>
+<p>In assemble-to-order sales where the full quantity on the sales order line is assembled to order, one inventory pick line is created for that quantity. This means that the value in the Quantity to Assemble field is the same as the value in the <strong>Qty. to Ship</strong> field. The <strong>Assemble to Order</strong> field is selected on the line.</p>
+<p>If an assembly output flow is set up for the location, then the value in the <strong>Asm.-to-Order Shpt. Bin Code</strong> field or the value in the <strong>From-Assembly Bin Code</strong> field, in that order, is inserted in the <strong>Bin Code</strong> field on the inventory pick line.</p>
+<p>If no bin code is specified on the sales order line, and no assembly output flow is set up for the location, then the <strong>Bin Code</strong> field on the inventory pick line is empty. The warehouse worker must open the <strong>Bin Contents</strong> page and select the bin where the assembly items are assembled.</p>
+<p>In combination scenarios, where a part of the quantity must first be assembled and another must be picked from inventory, a minimum of two inventory pick lines are created. One pick line is for the assemble-to-order quantity. The other pick line depends on which bins can fulfill the remaining quantity from inventory. Bin codes on the two lines are filled in different ways as described for the two different sales types respectively. For more information, see the “Combination Scenarios” section in <a href="assembly-assemble-to-order-or-assemble-to-stock.html">Understanding Assemble to Order and Assemble to Stock</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-pick-items-with-inventory-picks.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the Image Analyzer Extension | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the Image Analyzer Extension | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This extensions lets you analyze images of contact persons and items to find attributes, so you can quickly assign them in Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="the-image-analyzer-extension">The Image Analyzer Extension</h1>
+
+<p>The Image Analyzer extension uses powerful image analytics provided by the Computer Vision API for Microsoft Cognitive Services to detect attributes in the images that you import for items and contact persons, so you can easily review and assign them. For items, attributes could be whether the item is a table or a car, and whether it is red or blue. For contact persons, attributes can be gender or age.</p>
+<p>Image Analyzer suggests attributes based on tags that the Computer Vision API finds, and a confidence level. By default, it suggests attributes only if it is at least 80% sure that the attribute is correct. You can set another confidence level, if needed. To learn more about how the tags and confidence level are determined, see <a href="https://go.microsoft.com/fwlink/?linkid=851476">Computer Vision API</a>.</p>
+<p>Image Analyzer is free in Business Central, but there is a limit to the number of items that you can analyze during a certain period of time. By default, you can analyze 100 images per month.</p>
+<p>After you enable the extension, Image Analyzer runs each time you import an image to an item or contact person. You will see the attributes, confidence level, and details right away, and can decide what to do with each attribute. If you imported images before you enabled the Image Analyzer extension, you must go to the item or contact cards and choose the <strong>Analyze Picture</strong> action.</p>
+<h2 id="privacy-notice">Privacy Notice</h2>
+<p>This extension uses the Computer Vision API from Microsoft Cognitive Services, which may have varying levels of compliance commitments than Business Central. When you enable the Image Analyzer extension, Customer Data such as a contact image or an item image will be sent to the Computer Vision API. By installing this extension you agree for this limited set of data to be sent to the Computer Vision API. Note that you may disable, as well as uninstall, the Image Analyzer extension at any time to discontinue use of this functionality. For more information, see <a href="https://go.microsoft.com/fwlink/?linkid=851463">Microsoft Trust Center</a>.</p>
+<h2 id="requirements">Requirements</h2>
+<p>There are a few requirements for the images:</p>
+<ul>
+<li>Image formats: JPEG, PNG, GIF, BMP</li>
+<li>Maximum file size: Less than 4 MB</li>
+<li>Image dimensions: Greater than 50 x 50 pixels</li>
+</ul>
+<h2 id="to-enable-image-analyzer">To enable Image Analyzer</h2>
+<p>The Image Analyzer extension is built-in to Business Central. You just need to turn it on.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To enable the Image Analyzer extension, you must be an administrator. Make sure that you are assigned the <strong>SUPER</strong> user permission set.</p>
+</div>
+<ol>
+<li>To enable the Image Analyzer extension, do one of the following:</li>
+</ol>
+<ul>
+<li><p>Open an item or contact card. In the notification bar, choose <strong>Analyze Images</strong>, and then follow the steps in the assisted setup guide.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Connections</strong>, and then choose <strong>Image Analysis Setup</strong>. Choose the <strong>Enable Image Analyzer</strong> check box, and then complete the steps in the assisted setup guide.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <strong>Image Analysis Setup</strong> page is also where you can change the degree of confidence for attribute suggestions. For example, if you want to require a greater degree of confidence, you can enter a higher percentage.</p>
+</div>
+</li>
+</ul>
+<h2 id="to-analyze-an-image-of-an-item">To analyze an image of an item</h2>
+<p>The following steps describe how to analyze an image that was imported before you enabled the Image Analyzer extension.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the item, and then choose the <strong>Analyze Picture</strong> action.</p>
+</li>
+<li><p>The <strong>Image Analyzer Attributes</strong> page displays the detected attributes, the confidence level, and other details about the attribute. Use the <strong>Action to perform</strong> options to specify what to do with the attribute.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can add the name of the attribute to the item description by choosing <strong>Add to item description</strong>. For example, this can be useful for quickly adding detail.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-analyze-a-picture-of-a-contact-person">To analyze a picture of a contact person</h2>
+<p>The following steps describe how to analyze an image that was imported before you enabled the Image Analyzer extension.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Contacts</strong>, and then choose the related link.</li>
+<li>Choose the contact person, and then choose the <strong>Analyze Picture</strong> action.</li>
+<li>On the <strong>Profile Questionnaire</strong> FastTab, review the suggestions, and make corrections if needed.</li>
+</ol>
+<h2 id="blacklisting-suggested-attributes">Blacklisting suggested attributes</h2>
+<p>If the analysis suggests an attribute that you do not want to see you can blacklist the attribute. Use caution, however. Blacklisted attributes are not suggested for other items or contact persons either. If you regret blacklisting an attribute, you can choose <strong>Blacklisted Attributes</strong>, and then delete the attribute from the list.</p>
+<h2 id="to-use-your-own-account-for-the-computer-vision-api">To use your own account for the Computer Vision API</h2>
+<p>You can also use your own account for the Computer Vision API, for example, if you want to analyze more images than we allow.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Image Analyzer Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>Enter the <strong>API URI</strong> and <strong>API Key</strong> that you received for Computer Vision API.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must add <strong>/analyze</strong> at the end of the API URI, if it isn't already there. For example: <code>https://cronus.api.cognitive.microsoft.com/vision/v1.0/analyze</code>.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-see-how-many-analyses-you-have-left-in-the-current-period">To see how many analyses you have left in the current period</h2>
+<p>You can view the number of analyses you've done, and how many you can still do, in the current period.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Image Analyzer Setup</strong>, and then choose the related link.</li>
+<li>The <strong>Limit type</strong>, <strong>Limit value</strong>, and <strong>Analyzes performed</strong> provide the usage information.</li>
+</ol>
+<h2 id="to-stop-using-the-image-analyzer-extension">To stop using the Image Analyzer extension</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Connections</strong>, and then choose <strong>Image Analyzer Setup</strong>.</li>
+<li>Clear the <strong>Enable Image Analyzer</strong> check box.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-how-work-item-attributes.html">Work with Item Attributes</a><br>
+<a href="ui-extensions.html">Customizing Business Central Using Extensions</a><br>
+<a href="product-get-started.html">Getting Started</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-image-analyzer.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

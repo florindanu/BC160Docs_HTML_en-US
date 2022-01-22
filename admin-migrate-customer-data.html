@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Migrate Customer Data | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Migrate Customer Data | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can migrate existing customer data from an existing ERP system to Business Central using RapidStart Services. You can use Excel .xlsx files as the data carrier. You can also manually move the data by entering it directly into the company.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="migrate-customer-data">Migrate Customer Data</h1>
+
+<p>You can migrate existing customer data from an existing ERP system to Business Central using the data migration tools of RapidStart Services. You can use Excel files as the data carrier. You can also manually move the data by entering it directly in the company.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Fields of type Blob cannot be exported/imported using Excel.</p>
+</div>
+<p>The <strong>Migration Overview</strong> and <strong>Config. Worksheet</strong> pages provide access to the functions and views to perform all the tasks that relate to data migration. We recommend that you migrate one table at a time, to handle dependencies in your data. In migration, you will also touch the master data tables, which contain information about customers, vendors, items, contacts, and the general ledger.</p>
+<h2 id="to-import-configuration-packages">To import configuration packages</h2>
+<p>When you create a new company, you can import company settings for the new company. You import the settings from a .rapidstart file, which delivers the package contents in a compressed format. A corresponding set of default data migration tables are imported. The data set contains master data tables and the setup data tables. Your first task in data migration is to evaluate if the default migration setup meets the needs of the new company.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot rename a file that is not already a RapidStart Services configuration package as a .rapidstart configuration package file and then try to import it. If you try to do so, you will receive an error message.</p>
+</div>
+<p>Before you start, you must make sure that you have permission to run the RapidStart Services objects. For example, you can have the SUPER or D365 RAPIDSTART permission sets. We also recommend that you are on a Role Center with links to RapidStart Services, such as the Administration Role Center. For more information, see <a href="ui-change-basic-settings.html#to-change-the-role">To change the role</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When exporting and importing configuration packages between two company databases, the databases should have the same schema to make sure that all data is transferred successfully. This means that the databases should have the same table and field structure, in which the tables have the same primary keys and fields have the same IDs and data types.</p>
+<p>You can import a configuration package that has been exported from a database that has a different schema than that target database. However, any tables or fields in the configuration package that are missing in the target database will not be imported.</p>
+<p>Tables that have different primary keys and fields that have different data types will also not be successfully imported. For example, if the configuration pack includes table <strong>50000 Customer</strong> that has primary key <strong>Code20</strong> and the database to which you import the pack includes table <strong>50000 Customer Bank Account</strong> that has the primary key <strong>Code20 + Code 20</strong>, data will not be imported.</p>
+</div>
+<ol>
+<li><p>Open the new company.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Import Package</strong> action. Navigate to the .rapidstart package file that you want to import, and then choose the <strong>Open</strong> action. During import, the package contents are decompressed and the package record is created.</p>
+<p>When the import is complete, you can see the number of configuration tables that have been imported in the <strong>No. of Tables</strong> field.</p>
+</li>
+<li><p>To review the list of configuration tables, choose the <strong>View</strong> action.</p>
+</li>
+<li><p>To apply the package, choose the <strong>Apply Package</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The data migration information is based on configuration templates, if you specify one. You must update the template first to change the list of fields.</p>
+</div>
+</li>
+<li><p>To review the field selections, select a table, and then, on the <strong>Lines</strong> tab, choose the <strong>Fields</strong> action. Compare and review the number of fields that are available to the number of fields whose data has been applied.</p>
+</li>
+</ol>
+<p>If the selection of tables does not meet your needs, you can create one or more new data migration files. If the files are sufficient, you can continue with the data migration using Excel or XML files.</p>
+<h2 id="to-create-a-data-migration-file">To create a data migration file</h2>
+<p>You can create new data migration files and customize them to support your business.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>A file can only be used to migrate a field that has its <strong>FieldClass</strong> property set to <strong>Normal</strong>.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Package</strong>, and then choose the related link.</li>
+<li>Select and open the package that you want to use to migrate data, and then choose the <strong>Get Tables</strong> action. The <strong>Get Package Table</strong> page opens.</li>
+<li>In the <strong>TableID</strong> field, enter a table number or select a table from the list, for example, table 18, <strong>Customer</strong>. The <strong>Table Name</strong> field is automatically filled in.</li>
+<li>Select the new migration table, and then, on the <strong>Tables</strong> tab, choose the <strong>Fields</strong> action. The <strong>Migration Fields</strong> page opens.</li>
+<li>Clear the <strong>Include Field</strong> check box for any field that you do not want to import, and then choose the <strong>Set Included</strong> or the <strong>Clear Included</strong> action.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If the <strong>Include Field</strong> check box is selected by default, that field is part of the primary key. The selection should not be cleared, or errors will be introduced and the record cannot be imported.</p>
+<p>If you include a field that has a relationship with another table, the <strong>Validate Field</strong> check box is automatically selected. Validation can result in the update of other fields in this and other tables and is executed in the order of the field number.</p>
+</div>
+<p>A new migration table is created.</p>
+<h2 id="to-export-data-migration-files">To export data migration files</h2>
+<p>When you have determined the tables that you want to transfer customer data to, you export the files.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then choose the related link.</li>
+<li>Select and open the package that you want to use for export.</li>
+<li>Select the table or tables that you want to export, and then choose the <strong>Export to Excel</strong> action.</li>
+<li>Save the exported Excel file.</li>
+<li>Repeat this procedure for all the relevant data migration tables. If you select multiple tables at the same time, the export of their data is into a common workbook.</li>
+</ol>
+<p>If the table is empty, the resulting data migration file contains empty cells for the fields you selected when you chose or created migration tables for your new company. If the selected data migration table contains data, it will be exported.</p>
+<h2 id="to-map-values-to-be-used-during-import">To map values to be used during import</h2>
+<p>When you apply data that you have imported from Excel or from a RapidStart package, Business Central treats and handles the mapping based on table relations:</p>
+<ul>
+<li><p>If you define a mapping directly for a field in a table, then Business Central uses it.</p>
+</li>
+<li><p>If the field has a relation to another table, Business Central searches for the mapping defined for the primary key field in the related table. The related table, however, must be part of the configuration package.</p>
+</li>
+<li><p>If mapping information is defined in both places, for the field directly and for the primary key in the related table, then Business Central will search for the mapping in both places.</p>
+</li>
+<li><p>If the same mappings are defined directly for a field and in the related table, but have different new values, the mapping that is defined directly for the field takes priority over the mapping that is defined for the table that the field is referencing.</p>
+</li>
+</ul>
+<p>In the following procedures, you should review in advance which values you want to retain during the migration process. To perform the following procedures, you need data migration files (.xlsx) that you have exported from Business Central. For more information, see <a href="admin-migrate-customer-data.html#to-export-data-migration-files">To export data migration files</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then choose the related link.</li>
+<li>Open the package for the company in question.</li>
+<li>Select the table for which you want to map values, and then, on the <strong>Tables</strong> tab, choose the <strong>Fields</strong> action.</li>
+<li>For each field that you want to map, choose the <strong>Mapping</strong> action.</li>
+<li>In the <strong>Old Value</strong> field, enter the value that you want to change. In the <strong>New Value</strong> field, enter the value that you want the old value to be changed to. Choose the <strong>OK</strong> button.</li>
+<li>Import the customer data. For more information, see <a href="admin-migrate-customer-data.html#to-import-customer-data">To import customer data</a>.</li>
+<li>In the <strong>No. of Package Errors</strong> field, see if there are any errors reported. If there are, drill down to see the errors. The <strong>Config. Package Records</strong> page opens.</li>
+<li>Choose the <strong>Show Error</strong> action. You will receive the following error: <strong>XX is not a valid option. Valid options are: XX</strong>. Choose the <strong>OK</strong> button.</li>
+<li>To apply the mapping that you have set up, choose the <strong>Apply Data</strong> action.</li>
+</ol>
+<h3 id="mapping-example">Mapping Example</h3>
+<p>The following example illustrates how Business Central implements mapping definitions.</p>
+<ol>
+<li>Create a configuration table that has a <strong>Salesperson/Purchaser</strong> table. Define a mapping for the <strong>Code</strong> field.</li>
+<li>Add additional tables to the package, for example, <strong>Customer</strong> and <strong>Vendor</strong>. These tables both reference the <strong>Salesperson/Purchaser</strong> table through the <strong>Salesperson Code</strong> and <strong>Purchaser Code</strong> fields respectively.</li>
+<li>When you apply data, the mapping that you provided for the <strong>Code</strong> field in the the <strong>Salesperson/Purchaser</strong> table will also be considered during the processing of the <strong>Salesperson Code</strong> and <strong>Purchaser Code</strong> fields.</li>
+</ol>
+<h2 id="to-add-additional-values-to-">To add additional values to Business Central</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then choose the related link.</li>
+<li>Select the table for which you want to add additional values, and then, on the <strong>Tables</strong> tab, choose the <strong>Fields</strong> action.</li>
+<li>For the fields for which you want Business Central to permit additional values during migration, select the <strong>Create Missing Codes</strong> check box.</li>
+<li>Import the customer data. For more information, see <a href="admin-migrate-customer-data.html#to-import-customer-data">To import customer data</a>.</li>
+</ol>
+<h2 id="to-clean-up-and-process-data-before-applying-data">To clean up and process data before applying data</h2>
+<p>In some cases, you may want to clean up customer data and process it before you apply it to the database. To do that, you can use the <strong>Config. Package - Process</strong> batch job to fix issues, such as:</p>
+<ul>
+<li>Convert dates and decimals to the format required by the regional settings on a user's computer.</li>
+<li>Remove leading/trailing spaces or special characters.</li>
+</ul>
+<p>When you have run the batch job, use the following procedure to process the data.</p>
+<ol>
+<li>Open the configuration package for the company.</li>
+<li>Choose the <strong>Process Data</strong> action.</li>
+<li>To apply the mapping that you have set up, choose the <strong>Apply Data</strong> action.</li>
+</ol>
+<h2 id="to-migrate-customer-data">To migrate customer data</h2>
+<p>When you have exported a migration table, your next step is to enter the customer's legacy data. To simplify your tasks, you can take advantage of the XML manipulation tools that are built into Excel. You can also use Excel built-in functions to help with data formatting and to put data in the correct cell.</p>
+<p>For assistance with XML, enable the <strong>Developer</strong> tab of the Excel ribbon, and then choose the <strong>Source</strong> action to see the XML schema of your migration table as represented in Excel.</p>
+<p>The following procedure is based on an Excel worksheet that you have created for migration. For more information, see <a href="admin-migrate-customer-data.html#to-export-data-migration-files">To export data migration files</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Do not change the columns in the Excel worksheets. If they are moved, changed, or deleted, the worksheet cannot be imported into Business Central.</p>
+</div>
+<ol>
+<li>In Excel, open the exported data file. There is a worksheet with the name of the table.</li>
+<li>Rename Sheet1 to indicate that the worksheet will be used to transform the data. Copy the header row without its formatting from the exported table to the new worksheet.</li>
+<li>On a third worksheet, copy all your customer data. Rename the sheet to be called e.g. Legacy Data.</li>
+<li>Make an Excel formula to map data in the transformation worksheet between the fields in the exported worksheet and customer legacy data.</li>
+<li>When you have mapped all of the data, copy the range of data onto the table worksheet.</li>
+<li>Save the file and make sure that you do not change the file type.</li>
+</ol>
+<p>You are now ready to import the data migration files that contain customer legacy data into Business Central.</p>
+<h2 id="to-import-customer-data">To import customer data</h2>
+<p>When the customer data has been entered in the data migration files in Excel, you import the files into Business Central.</p>
+<ol>
+<li><p>Open the <strong>Config. Package Card</strong> page.</p>
+</li>
+<li><p>Select the table for which you want to import data, and then, on the <strong>Tables</strong> tab, choose the <strong>Import from Excel</strong> action.</p>
+</li>
+<li><p>Locate and open the file that you want to import data from.</p>
+</li>
+<li><p>On the <strong>Config. Package Import Preview</strong> page, review the content that will be imported.</p>
+<p>The <strong>Config. Package Import Preview</strong> page provides an overview of the Excel file content to be imported. It also indicates if a new configuration package is created or the existing one is updated, and if new configuration package lines (tables) are created or existing ones are updated.</p>
+</li>
+<li><p>Choose the <strong>Import</strong> action</p>
+</li>
+</ol>
+<p>Data from the file is imported into the configuration package tables. In the <strong>No. of Package Records</strong> field, you can see the number of records that have been imported. In addition, you can see the number of migration errors.</p>
+<h2 id="to-validate-customer-data">To validate customer data</h2>
+<p>Customer data must be validated before you apply the records to the Business Central database.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In most cases, invalid data is not created in the database. However, the application can occasionally be blocked if an imported migration table contains errors.</p>
+</div>
+<ol>
+<li><p>On the <strong>Migration Overview</strong> page, review the <strong>No. of Migration Errors</strong> field to see whether any errors occurred during import.</p>
+</li>
+<li><p>If there are errors, select the migration table, and then, on the <strong>Tables</strong> tab, choose the <strong>Errors</strong> action. The <strong>Invalid</strong> check box is selected for each record that has an error.</p>
+</li>
+<li><p>To review errors, select a line, and then choose the <strong>Show Error</strong> action.</p>
+<p>The <strong>Error Text</strong> field contains the reason for the error. The <strong>Field Caption</strong> field contains the caption of the field that contains the error.</p>
+</li>
+<li><p>To correct an error or otherwise make an update, on the <strong>Migration Overview</strong> page, choose the <strong>Migration Record</strong> action, and then, on the <strong>Migration Record</strong> page, correct the record with the error.</p>
+</li>
+</ol>
+<p>When you make a correction, the record is removed from the list of records on the <strong>Migration Data Errors</strong> page.</p>
+<p>You are now ready to apply the customer's data to the database.</p>
+<h2 id="to-apply-customer-data">To apply customer data</h2>
+<p>When you have imported all data migration records that are valid and have no errors, you can apply the records to the Business Central database.</p>
+<ol>
+<li>Open the <strong>Configuration Packages</strong> page.</li>
+<li>Select the table for the data migration file that you want to apply, and then choose the <strong>Apply Data</strong> action.</li>
+</ol>
+<p>You can see the number of database records that have been created in the <strong>No. of Database Records</strong> field. You can verify that the correct records have been created by choosing the link in the <strong>No. of Database Records</strong> field.</p>
+<p>The customer's company database is now set up and basic data is imported. Your next steps in the implementation process are to train users, define processes, create additional data, customize reports, and so on.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-migrate-customer-data.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

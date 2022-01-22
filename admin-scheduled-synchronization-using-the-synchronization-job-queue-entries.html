@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Synchronizing Business Central and Common Data Service | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Synchronizing Business Central and Common Data Service | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about synchronizing data between Business Central and Common Data Service.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="scheduling-a-synchronization-between-business-central-and-common-data-service">Scheduling a Synchronization between Business Central and Common Data Service</h1>
+
+<p>You can synchronize Business Central with Common Data Service on scheduled intervals by setting up jobs in the job queue. The synchronization jobs synchronize data in Business Central records and Common Data Service records that have been previously coupled together. Or for records that are not already coupled, depending on the synchronization direction and rules, the synchronization jobs can create and couple new records in the destination system.</p>
+<p>There are several synchronization jobs that are available out-of-the-box. The jobs are run in the following order to avoid coupling dependencies between entities. For more information, see <a href="/dynamics365/business-central/admin-job-queues-schedule-tasks.md">Use Job Queues to Schedule Tasks</a>.</p>
+<ol>
+<li>CURRENCY - Common Data Service synchronization job.</li>
+<li>VENDOR - Common Data Service synchronization job.</li>
+<li>CONTACT - Common Data Service synchronization job.</li>
+<li>CUSTOMER - Common Data Service synchronization job.</li>
+<li>SALESPEOPLE - Common Data Service synchronization job.</li>
+</ol>
+<p>You can view the jobs on the <strong>Job Queue Entries</strong> page. For more information, see <a href="admin-job-queues-schedule-tasks.html">Use Job Queues to Schedule Tasks</a>.</p>
+<h3 id="default-synchronization-job-queue-entries">Default Synchronization Job Queue Entries</h3>
+<p>The following table describes the default synchronization jobs for Common Data Service.</p>
+<table>
+<thead>
+<tr>
+<th>Job Queue Entry</th>
+<th>Description</th>
+<th>Direction</th>
+<th>Integration Table Mapping</th>
+<th>Default Synchronization Frequency (mins)</th>
+<th>Default inactivity sleep time (mins)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CONTACT - Common Data Service synchronization job</td>
+<td>Synchronizes Common Data Service contacts with Business Central contacts.</td>
+<td>Bidirectional</td>
+<td>CONTACT</td>
+<td>30</td>
+<td>720 <br>(12 hours)</td>
+</tr>
+<tr>
+<td>CURRENCY - Common Data Service synchronization job</td>
+<td>Synchronizes Common Data Service transaction currencies with Business Central currencies.</td>
+<td>From Business Central to Common Data Service</td>
+<td>CURRENCY</td>
+<td>30</td>
+<td>720 <br> (12 hrs)</td>
+</tr>
+<tr>
+<td>CUSTOMER - Common Data Service synchronization job</td>
+<td>Synchronizes Common Data Service accounts with Business Central customers.</td>
+<td>Bidirectional</td>
+<td>CUSTOMER</td>
+<td>30</td>
+<td>720<br> (12 hrs)</td>
+</tr>
+<tr>
+<td>VENDOR - Common Data Service synchronization job</td>
+<td>Synchronizes Common Data Service accounts with Business Central customers.</td>
+<td>Bidirectional</td>
+<td>VENDOR</td>
+<td>30</td>
+<td>720<br> (12 hrs)</td>
+</tr>
+<tr>
+<td>SALESPEOPLE - Common Data Service synchronization job</td>
+<td>Synchronizes Business Central salespeople with Common Data Service users.</td>
+<td>From Common Data Service to Business Central</td>
+<td>SALESPEOPLE</td>
+<td>30</td>
+<td>1440<br> (24 hrs)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="synchronization-process">Synchronization Process</h2>
+<p>Each synchronization job queue entry uses a specific integration table mapping that specifies which Business Central table and Common Data Service entity to synchronize. The table mappings also include some settings that control which records in the Business Central table and Common Data Service entity to synchronize.</p>
+<p>To synchronize data, Common Data Service entity records must be coupled to Business Central records. For example, a Business Central customer must be coupled to a Common Data Service account. You can set up couplings manually, before running the synchronization jobs, or let the synchronization jobs set up couplings automatically. The following list describes how data is synchronized between Common Data Service and Business Central when you are using the synchronization job queue entries. For more information, see <a href="admin-how-to-couple-and-synchronize-records-manually.html">Couple and Synchronize Records Manually</a>.</p>
+<ul>
+<li><p>The <strong>Sync. Only Coupled Records</strong> check box controls whether new records are created when you synchronize. By default, the check box is selected, which means that only records that are coupled will be synchronized. In the integration table mapping, you can change the table mapping between a Common Data Service entity and a Business Central table so that the integration synchronization jobs will create new records in the destination database for each record in the source database that is not coupled. For more information, see <a href="admin-how-to-modify-table-mappings-for-synchronization.html#creating-new-records">Creating New Records</a>.</p>
+<p><strong>Example</strong>
+If you clear the <strong>Sync. Only Coupled Records</strong> check box, when you synchronize customers in Business Central with accounts in Common Data Service, a new account is created for each customer in Business Central and automatically coupled. Additionally, because the synchronization is bidirectional in this case, a new customer is created and coupled for each Common Data Service account that is not already coupled.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There are rules and filters that determine what data is synchronized. For more information, see <a href="admin-synchronizing-business-central-and-sales.html">Synchronization Rules</a>.</p>
+</div>
+</li>
+<li><p>When new records are created in Business Central, the records use the either the template that is defined for the integration table mapping or the default template that is available for the record type. Fields are populated with data from Business Central or Common Data Service depending on the synchronization direction. For more information, see <a href="admin-how-to-modify-table-mappings-for-synchronization.html">Modify Table Mappings for Synchronization</a>.</p>
+</li>
+<li><p>With subsequent synchronizations, only records that have been modified or added after the last successful synchronization job for the entity will be updated.</p>
+<p>New records in Common Data Service are added in Business Central. If data in fields in Common Data Service records has changed, the data is copied to the corresponding field in Business Central.</p>
+</li>
+<li><p>With bidirectional synchronization, the job synchronizes from Business Central to Common Data Service, and then from Common Data Service to Business Central.</p>
+</li>
+</ul>
+<h2 id="about-inactivity-timeouts">About Inactivity Timeouts</h2>
+<p>Some job queue entries, such as those that schedule synchronization between Business Central and Common Data Service, use the <strong>Inactivity Timeout</strong> field on the Job Queue Entry card to prevent the job queue entry from running unnecessarily.<br>
+<br><br></p>
+<blockquote>
+<p><img src="media/on-hold-with-inactivity-timeout.png" alt="Flowchart for when job queue entries are put on hold due to inactivity."></p>
+</blockquote>
+<p>When the value in this field is not zero, and the job queue did not find any changes during the last run, Business Central puts the job queue entry on hold. When that happens, the <strong>Status of Job Queue</strong> field will show <strong>On Hold Due to Inactivity</strong>, and Business Central will wait for the period of time specified in <strong>Inactivity Timeout</strong> field before it runs the job queue entry again.</p>
+<p>For example, by default, the CURRENCY job queue entry, which synchronizes currencies in Common Data Service with exchange rates in Business Central, will look for changes to exchange rates every 30 minutes. If no changes are found, Business Central puts the CURRENCY job queue entry on hold for 720 minutes (six hours). If an exchange rate is changed in Business Central while the job queue entry is on hold, Business Central will automatically reactivate the job queue entry and restart the job queue.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Business Central will automatically activate job queue entries that are on hold only when changes happen in Business Central. Changes in Common Data Service will not activate job queue entries.</p>
+</div>
+<h2 id="to-view-the-synchronization-job-log">To view the synchronization job log</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Integration Synchronization Log</strong>, and then choose the related link.</p>
+</li>
+<li><p>If one or more error occurred for a synchronization job, the number of errors appears in the <strong>Failed</strong> column. To view the errors for the job, choose the number.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can view all synchronization job errors by opening the synchronization job error log directly.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-view-the-synchronization-job-log-from-the-table-mappings">To view the synchronization job log from the table mappings</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Integration Table Mappings</strong>, and then choose the related link.</li>
+<li>In the <strong>Integration Table Mappings</strong> page, select an entry, and then choose <strong>Integration Synch. Job Log</strong>.</li>
+</ol>
+<h2 id="to-view-the-synchronization-error-log">To view the synchronization error log</h2>
+<ul>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Integration Synchronization Errors</strong>, and then choose the related link.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-synchronizing-business-central-and-sales.html">Synchronizing Data in Business Central and Common Data Service</a><br>
+<a href="admin-manual-synchronization-of-table-mappings.html">Manually Synchronize Table Mappings</a><br>
+<a href="admin-scheduled-synchronization-using-the-synchronization-job-queue-entries.html">Scheduling a Synchronization between Business Central and Common Data Service</a><br>
+<a href="admin-prepare-dynamics-365-for-sales-for-integration.html">About Integrating Dynamics 365 Business Central with Common Data Service</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-scheduled-synchronization-using-the-synchronization-job-queue-entries.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

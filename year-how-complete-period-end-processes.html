@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Optional Activities for Closing Periods | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Optional Activities for Closing Periods | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic outlines the optional processes and activities for closing accounting periods in Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="overview-of-tasks-to-close-accounting-periods">Overview of Tasks to Close Accounting Periods</h1>
+
+<p>Business Central does not force you to close periods, however, there are many period-end (month-end) activities that you can do. This topic provides an overview of optional processes and activities for closing periods.</p>
+<h2 id="general-ledger">General Ledger</h2>
+<ul>
+<li><p>Specify system-wide and user-specific posting periods.</p>
+<p>This specifies the dates between which you allow posting. Depending on your business, you may want to allow posting at the start of the period, or toward the end. For more information, see <a href="finance-how-specify-posting-periods.html">Specify Posting Periods</a>.</p>
+</li>
+<li><p>Make all necessary G/L adjustments.</p>
+</li>
+<li><p>Update and post Recurring Journals.</p>
+<!--* Process Consolidations-->
+</li>
+<li><p>Run account schedules as follows:</p>
+<ul>
+<li>Open the <strong>Account Schedule</strong> page, and then choose the <strong>Print</strong> action.</li>
+</ul>
+</li>
+</ul>
+<h2 id="sales-and-receivables">Sales and Receivables</h2>
+<ul>
+<li>Post all sales orders, invoices, credit memos, and return orders.</li>
+<li>Post all cash receipt journals.</li>
+<li>Update and post recurring journals that are related to sales and receivables.</li>
+<li>Reconcile accounts receivable to the general ledger.</li>
+<li>Run the <strong>Delete Invoiced Sales Orders</strong> batch job.</li>
+</ul>
+<h2 id="purchases-and-payables">Purchases and Payables</h2>
+<ul>
+<li>Post all purchase orders, invoices, credit memos, and return orders.</li>
+<li>Post all payment journals.</li>
+<li>Update and post recurring journals that are related to purchases &amp; payables.</li>
+<li>Run the <strong>Aged Accounts Payable</strong> report and reconcile accounts payable to the general ledger.</li>
+<li>Run the <strong>Delete Invoiced Purchase Orders</strong> batch job.</li>
+</ul>
+<p>Fixed Assets</p>
+<ul>
+<li>Post all maintenance costs have been posted through the fixed asset journals or invoices.</li>
+<li>Post adjustments.</li>
+<li>Post appreciation.</li>
+<li>Post depreciation.</li>
+<li>Update and post the recurring fixed asset journal.</li>
+</ul>
+<p>Intercompany</p>
+<ul>
+<li>Process Intercompany Transactions</li>
+</ul>
+<h2 id="calculate-and-process-sales-tax">Calculate and Process Sales Tax</h2>
+<ul>
+<li>Complete Tax Statements.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="year-close-years-periods.html">Closing Years and Periods</a><br>
+<a href="year-close-books.html">Closing Books</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/year-how-complete-period-end-processes.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

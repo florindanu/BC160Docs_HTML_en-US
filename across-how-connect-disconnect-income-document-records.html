@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create Incoming Documents From Documents| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create Incoming Documents From Documents| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can create records of incoming documents, such as e-invoices, and manage OCR tasks, eCommerce, and document exchange.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-incoming-document-records-directly-from-documents-and-entries">Create Incoming Document Records Directly from Documents and Entries</h1>
+
+<p>You can store external business documents in Business Central by attaching the document files to the related incoming document records. If the document, such as a purchase invoice, did not start its existence as an incoming document record, you can still create and connect an incoming document record to it later. You can also attach incoming document files to posted purchase and sales documents and to vendor, customer, and general ledger entries by using the <strong>Incoming Document Files</strong> FactBox in, for example, the <strong>Posted Purchase Invoices</strong> and <strong>Vendor Ledger Entries</strong> pages.</p>
+<p>From the <strong>Chart of Accounts</strong> and <strong>General Ledger Entries</strong> pages, you can use a search function to find general ledger entries for posted purchase and sales documents that do not have incoming document records and then centrally link to existing records or create new ones with attached document files. For more information, see <a href="across-how-find-posted-documents-without-income-document-records.html">Find Posted Documents without Incoming Document Records</a>.</p>
+<p>The following procedures show how to attach a file to an existing purchase invoice that was not created from an incoming document record and how to attach a file to a vendor ledger entry. Attaching a file to posted purchase or sales documents works in a similar way.</p>
+<h2 id="to-create-and-connect-an-incoming-document-record-from-a-purchase-invoice">To create and connect an incoming document record from a purchase invoice</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Invoices</strong>, and then choose the related link.</li>
+<li>Select the line for a purchase invoice that you want to attach a file to, and then choose the <strong>Create Incoming Document from File</strong> action.</li>
+<li>Alternatively, select the line for a purchase invoice that you want to attach a file to, and then choose the <strong>Attach File</strong> action.</li>
+<li>On the <strong>Insert File</strong> page, select the file that represents the incoming document in question, and then choose the <strong>Open</strong> button.</li>
+</ol>
+<h2 id="to-create-and-connect-an-incoming-document-record-from-a-vendor-ledger-entry">To create and connect an incoming document record from a vendor ledger entry</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Vendor Ledger Entries</strong>, and then choose the related link.</li>
+<li>Select a line for a vendor ledger entry that you want to attach a file to, and then choose the <strong>Create Incoming Document from File</strong> action.</li>
+<li>Alternatively, select a line for a vendor ledger entry that you want to attach a file to, and then choose the <strong>Attach File</strong> action.</li>
+<li>On the <strong>Insert File</strong> page, select the file that represents the incoming document in question, and then choose the <strong>Open</strong> button.</li>
+</ol>
+<h2 id="to-remove-a-connection-from-an-incoming-document-record-to-a-posted-document">To remove a connection from an incoming document record to a posted document</h2>
+<p>You can remove file attachments from non-posted documents at any time by deleting the related incoming document record. If the document is posted, then you must first remove the connection from the incoming document record.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Incoming Documents</strong>, and then choose the related link.</li>
+<li>Select the line for an incoming document record connected to a posted document that you want to remove, and then choose the <strong>Remove Reference to Record</strong> action.</li>
+</ol>
+<p>The connection to the posted document is removed. You can now proceed to connect another incoming document record to the posted document as described in this topic.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-process-income-documents.html">Process Incoming Documents</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-connect-disconnect-income-document-records.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

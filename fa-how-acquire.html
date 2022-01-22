@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Acquire Fixed Assets| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Acquire Fixed Assets| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can set up a fixed asset, assign a depreciation book, and record the fixed asset&#8217;s acquisition cost.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="acquire-fixed-assets">Acquire Fixed Assets</h1>
+
+<p>For each fixed asset, you must set up a card containing information about the asset. You can set up buildings or production equipment as a main asset with a component list, and you can group them in various ways, such as by class, department, or location. A depreciation book must be set up and assigned to each fixed asset before you can acquire it.</p>
+<p>When a fixed asset is set up and a depreciation book assigned, you must acquire the fixed asset. To acquire a fixed asset, you record its acquisition cost in the relevant G/L account, bank account, or vendor by posting an acquisition transaction from the <strong>Fixed Asset G/L Journal</strong> page. You can use the <strong>Assisted Fixed Asset Acquisition</strong> page to create and post the required general journal lines automatically.</p>
+<p>The salvage value is the residual value of a fixed asset when it can no longer be used. You can post the salvage value at the same time as you post the acquisition cost. For more information, see <a href="fa-how-depreciate-amortize.html">Depreciate or Amortize Fixed Assets</a>.</p>
+<p>Indexation is used to adjust values for general price-level changes. The <strong>Index Fixed Assets</strong> batch job can be used to calculate the acquisition costs at replacement costs.</p>
+<h2 id="to-create-a-fixed-asset-and-acquire-it-automatically">To create a fixed asset and acquire it automatically</h2>
+<p>The following procedure describes how to create a fixed asset and then acquire it by using the <strong>Assisted Fixed Asset Acquisition</strong> page to create and post the required fixed asset G/L journal lines. You can also create and post the journal lines manually. For more information, see <a href="fa-how-acquire.html#to-post-a-fixed-asset-acquisition-manually-with-the-fixed-asset-gl-journal">To post a fixed asset acquisition manually with the fixed asset G/L journal</a>.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action, and then fill in the fields on the <strong>General</strong> FastTab as necessary. Hover over a field to read a short description.</p>
+</li>
+<li><p>On the <strong>Depreciation Book</strong> FastTab, fill in the fields as necessary. This step assigns a depreciation book to the fixed asset.</p>
+</li>
+<li><p>If you need to assign more than one depreciation book to the fixed asset, choose the <strong>Add More Depreciation Books</strong> action. For more information, see <a href="fa-how-setup-depreciation.html#to-assign-a-depreciation-book-to-a-fixed-asset">To assign a depreciation book to a fixed asset</a>.</p>
+<p>When all fields required to acquire a fixed asset are filled in, the <strong>You are ready to acquire the fixed asset. Acquire</strong> notification appears at the top of the page.</p>
+</li>
+<li><p>Choose the <strong>Acquire</strong> action in the notification.</p>
+</li>
+<li><p>Follow the steps on the <strong>Assisted Fixed Asset Acquisition</strong> page to complete the automatic acquisition of the fixed asset.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also post acquisition cost as credits. In that case, remember that the value in the <strong>Acquisition Cost Incl. VAT</strong> field must be with a minus sign to indicate a credit.</p>
+</div>
+<p>When you choose <strong>Finish</strong>, the <strong>Book Value</strong> field on the <strong>Fixed Asset Card</strong> page is filled, indicating that the fixed asset has been acquired at the specified acquisition cost.</p>
+<h2 id="to-set-up-a-component-list-for-a-main-asset">To set up a component list for a main asset</h2>
+<p>You can group your fixed assets into main assets and their components. For example, you may have a production machine that consists of many parts that you want to group in this manner.</p>
+<p>Both the main asset and all its components must be set up as individual fixed asset cards. After you have set up a component list, Business Central automatically fills in the <strong>Main Assets/Component</strong> and <strong>Components of Main Asset</strong> fields on the fixed asset cards.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</li>
+<li>Select the fixed asset that is the main asset, and then choose the <strong>Main Asset Components</strong> action.</li>
+<li>On the <strong>Main Asset Components</strong> page, choose the <strong>FA No</strong>. field, and then select the fixed asset that you want to add as a component of the main asset.</li>
+<li>Close the page.</li>
+<li>Repeat steps 3 and 4 for each component asset that you want to add.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Asset Setup</strong>, and then choose the related link.</li>
+<li>Select the <strong>Allow Posting to Main Assets</strong> check box.</li>
+</ol>
+<h2 id="to-post-a-fixed-asset-acquisition-manually-with-the-fixed-asset-gl-journal">To post a fixed asset acquisition manually with the fixed asset G/L journal</h2>
+<p>The following procedure describes how to acquire a fixed asset manually by creating and posting lines on the <strong>Fixed Asset G/L Journal</strong> page. You can also acquire a fixed asset automatically by using the <strong>Assisted Fixed Asset Acquisition</strong> page. For more information, see step 5 in <a href="fa-how-acquire.html#to-create-a-fixed-asset-and-acquire-it-automatically">To create a fixed asset and acquire it automatically</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also post acquisition cost as credits. In that case, remember that the value in the <strong>Amount</strong> field must be with a minus sign to indicate a credit.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</li>
+<li>On the <strong>Fixed Asset G/L Journal</strong> page, in the <strong>FA Posting Type</strong> field, select <strong>Acquisition Cost</strong>.</li>
+<li>Fill in the remaining fields as necessary.</li>
+<li>Choose the <strong>Post</strong> action.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you fill in the <strong>Insurance No.</strong> field in the fixed asset G/L journal when you post an acquisition cost, then Business Central will also post the acquisition cost of the fixed asset to the insurance coverage ledger. For more information, see <a href="fa-how-insure.html">Insure Fixed Assets</a>.</p>
+</div>
+<h2 id="to-cancel-an-acquisition-cost-posting-for-one-fixed-asset">To cancel an acquisition cost posting for one fixed asset</h2>
+<p>If you make an error when posting an acquisition cost, you can remove the entry with the <strong>Cancel FA Entries</strong> batch job and then post the correct acquisition entry. The erroneous entries are transferred to the <strong>FA Error Ledger Entries</strong> page.</p>
+<p>For example, if you post an acquisition with the wrong date, you must correct it as soon as possible because the fixed asset posting date is used is many critical calculations.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You cannot use the <strong>Reverse Transactions</strong> function for fixed asset entries.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cancel FA Entries</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Choose the <strong>OK</strong> button to run the batch job.</li>
+<li>When the incorrect entry or entries are canceled, proceed to post the correct acquisition cost.</li>
+</ol>
+<p>To cancel ledger entries for multiple fixed assets at a time, use the <strong>Cancel FA Ledger Entries</strong> batch job.</p>
+<h2 id="to-post-the-salvage-value-together-with-the-acquisition-cost">To post the salvage value together with the acquisition cost</h2>
+<p>You can post the salvage value together with the acquisition cost from a fixed asset journal.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Journals</strong>, and then choose the related link.</li>
+<li>On the <strong>Fixed Asset Journals</strong> page, create the acquisition line. For more information, see <a href="fa-how-acquire.html#to-post-a-fixed-asset-acquisition-manually-with-the-fixed-asset-gl-journal">To post a fixed asset acquisition manually with the fixed asset G/L journal</a>.</li>
+<li>In the <strong>Salvage Value</strong> field on the journal line, enter the salvage value amount as a credit (with a minus sign).</li>
+<li>Choose the <strong>Post</strong> action.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If a salvage value exists for a fixed asset, then that value will be used in depreciation posting instead of the value in the <strong>Ending Book Value</strong> field on the <strong>FA Depreciation Books</strong> page. For more information, see <a href="fa-how-depreciate-amortize.html#to-manage-the-ending-book-value">To manage the ending book value</a>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-acquire.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Production BOMs | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Production BOMs | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="A production BOM holds master data that describes the components and subassemblies used in the production of a parent item. Once a production order is created for that parent item, its production BOM will govern the calculation of material requirements as represented on the **Prod. Order Components** page.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-production-boms">Create Production BOMs</h1>
+
+<p>A production bill of material (BOM) holds master data that describes the components and subassemblies used in the production of a parent item. Once a production order is created for that parent item, its production BOM will govern the calculation of material requirements as represented on the <strong>Prod. Order Components</strong> page.</p>
+<p>Business Central  also support assembly BOMs. You use assembly orders for making end items from components in a simple process that can be performed by one or more basic resources, which are not machine or work centers, or without any resources. For example, an assembly process could be to pick two wine bottles and one coffee sack and then pack them as a gift item. For more information, see <a href="inventory-how-work-BOMs.html#assembly-boms-or-production-boms">Assembly BOMs or Production BOMs</a>.</p>
+<p>Before you can set up a routing, the following must be in place:</p>
+<ul>
+<li>Item cards are created for parent items that take part in manufacturing. For more information, see <a href="inventory-how-register-new-items.html">Register New Items</a>.</li>
+<li>Production resources are set up. For more information, see <a href="production-how-to-set-up-work-and-machine-centers.html">Set Up Work Centers and Machine Centers</a>.</li>
+</ul>
+<h2 id="to-create-a-production-bom">To create a production BOM</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Production BOM</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the fields as necessary. Hover over a field to read a short description.</p>
+</li>
+<li><p>To edit the BOM, set the <strong>Status</strong> field to <strong>New</strong> or <strong>Under Development</strong>. To activate it, set the <strong>Status</strong> field to <strong>Certified</strong>.</p>
+<p>Proceed to fill in the production BOM lines.</p>
+</li>
+<li><p>In the <strong>Type</strong> field, select whether the item on this BOM line is an ordinary item or a production BOM. If the item on the line is a production BOM, then it must already exist as a certified production BOM.</p>
+</li>
+<li><p>In the <strong>No.</strong> field, look up and select the item or production BOM in question, or type it in the field.</p>
+</li>
+<li><p>In the <strong>Quantity Per</strong> field, enter how many units of the item go into the parent item, for example, 4 wheels for 1 car.</p>
+</li>
+<li><p>In the <strong>Scrap %</strong> field you can enter a fixed percentage of components that are scrapped during production. When the components are ready to be consumed in a released production order, this percentage will be added to the expected quantity in the <strong>Consumption Quantity</strong> field in a production journal. For more information, see <a href="production-how-to-register-consumption-and-output.html">Register Consumption and Output</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This scrap percentage represents components that are scrapped during production when picking from inventory, whereas the scrap percentage on routing lines represents scrapped output before putting on inventory.</p>
+</div>
+</li>
+<li><p>In the <strong>Routing Link Code</strong> field, enter a code to connect the component to a specific operation. For more information, see <a href="production-how-to-create-routings.html#to-create-routing-links">To create routing links</a>.</p>
+</li>
+<li><p>To copy lines from an existing production BOM, choose the <strong>Copy BOM</strong> action to select existing lines.</p>
+</li>
+<li><p>Certify the production BOM.</p>
+</li>
+<li><p>You can now attach the new production BOM to the card of the parent item in question. For more information, see <a href="inventory-how-register-new-items.html">Register New Items</a>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To recalculate the item’s standard cost from the item card, choose the <strong>Manufacturing</strong> action, and then choose the <strong>Calc. Standard Cost</strong> action.</p>
+</div>
+<h2 id="to-create-a-new-versions-of-a-production-bom">To create a new versions of a production BOM</h2>
+<p>New versions of production BOMs are used when, for example, an item is replaced by another item, or when a customer requires a special version of a product. The version principle enables various versions of a production BOM to be managed. The structure of the production BOM version corresponds to the structure of the production BOM. The basic difference is in the time validity of the versions. The validity is defined by the starting date.</p>
+<p>The starting date indicates the start of the period in which this version is valid. For all other considerations, the starting date is a filter criterion for calculations and evaluations. The BOM version is valid until the next version becomes valid for its starting date.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Production BOM</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the production BOM to be copied, and then choose the <strong>Versions</strong> action.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the fields as necessary.</p>
+</li>
+<li><p>In the <strong>Version Code</strong> field, enter the unique identification of the version. Any combination of numbers and letters is permitted.</p>
+<p>The newly created version is automatically assigned the status <strong>New</strong>.</p>
+</li>
+<li><p>When the BOM version is completed, setting the <strong>Status</strong> field to <strong>Certified</strong>.</p>
+</li>
+</ol>
+<p>The time validity of the version is specified by the <strong>Starting Date</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Select the <strong>Item</strong> option in the <strong>Type</strong> field to use an item from your item master data in the production BOM. If the item also has a production BOM, whereby the <strong>Production BOM No.</strong> field is filled in on the item card, this production BOM is also considered.</p>
+<p>Select the <strong>Production BOM</strong> option if you want to use a phantom production BOM on the line.</p>
+<p>Phantom production BOMs serve for structuring products. This production BOM type never leads to a finished product, but is used exclusively for determining the dependent demand. Phantom production BOMs do not have their own item master data.</p>
+</div>
+<h2 id="quantity-calculation-formula-on-production-boms">Quantity Calculation Formula on Production BOMs</h2>
+<p>The quantity is calculated taking into consideration different dimensions which are also entered on the production BOM lines. The dimensions refer to an order unit of the respective item. The length, width, depth and weight can be entered as dimensions.</p>
+<p>The Calculation Formula, Length, Width, Depth and Weight columns are not displayed, because they are only used by some users. If you wish to use the calculation of the quantity, you must first display these columns.</p>
+<p>The relation of the individual components is defined by the calculation formula. The following possibilities are available as a calculation formula:</p>
+<ul>
+<li><strong>Empty</strong> - No consideration of dimensions. (Quantity = Quantity per.)</li>
+<li><strong>Length</strong> - Quantity = Quantity per * Length</li>
+<li><strong>Length x Width</strong> - Quantity = Quantity per * Length x Width</li>
+<li><strong>Length x Width x Depth</strong> - Quantity = Quantity per x Length x Width x Depth</li>
+<li><strong>Weight</strong> - Quantity = Quantity per x Weight</li>
+</ul>
+<h3 id="example">Example</h3>
+<p>In a production BOM, seventy metal parts with the dimensions length = 0.20 m and width = 0.15 m are required. The values are entered as follows: Calculation Formula = Length x Width, Length = 20, Width = 15, Quantity per = 70. The quantity is given by the Quantity per x Length * Width, that is, Quantity = 70 x 0.20 m x 0.15 m = 2.1 m2.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-how-to-create-routings.html">Create Routings</a><br>
+<a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="production-planning.html">Planning</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-how-to-create-production-boms.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Sorting, Searching, and Filtering Lists | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Sorting, Searching, and Filtering Lists | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Work efficiently in lists by searching across your data, sorting columns, and refining results using powerful filter symbols and keyboard shortcuts.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="sorting-searching-and-filtering">Sorting, Searching, and Filtering</h1>
+
+<p>There are a few things that you can do that will help you scan, find, and limit records on a list or in a report or XMLport. These include sorting, searching, and filtering. You can apply some or all of these simultaneously to quickly find or analyze your data.</p>
+<p>For reports and XMLports, you can set filters as on lists to delimit which data to include in the report or XMLport, but you cannot sort and search.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When viewing your data as tiles, you can search and use basic filtering. To use the full set of powerful features for sorting, searching, and filtering, choose the <img src="media/ui_show_as_list_icon.png" alt="Show as list" title="Show as list arrow left"> icon to view the records as a list.</p>
+</div>
+<!--
+When you want to search for data, such as customer names, addresses, or product groups, you enter criteria. In search criteria, you can use all the numbers and letters that you normally use in the specific field. In addition, you can use special symbols to further filter the results. There are two ways to search: using the Quick Filter or column filters.
+-->
+<h2 id="sorting">Sorting</h2>
+<p>Sorting makes it easy for you to get a quick overview of your data. If you have many customers, for example, you can choose to sort them by <strong>Customer No.</strong>, <strong>Customer Posting Group</strong>, <strong>Currency Code</strong>, <strong>Country Region Code</strong>, or <strong>Sales Tax Registration No.</strong> to get the overview you need.</p>
+<p>To sort a list, you can either choose a column heading text to toggle between ascending and descending order, or choose the drop-down arrow in the column heading, and then choose the <strong>Ascending</strong> or <strong>Descending</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Sorting is not supported on images, BLOB fields, FlowFilters, and fields that do not belong to a table.</p>
+</div>
+<h2 id="searching">Searching</h2>
+<!--## Searching by using the Quick Filter -->
+<p>At the top of each list page, there is a <img src="media/ui-search/search-list.png" alt="Search list" title="Search list icon"> <strong>Search</strong> action that provides a quick and easy way to reduce the records in a list and display only those records that contain the data that you are interested in seeing.</p>
+<p>To search, simply choose the <strong>Search</strong> action, and then in the box, type the text that you are looking for. You can enter letters, numbers, and other symbols.</p>
+<h3 id="fine-tuning-the-search">Fine-tuning the Search</h3>
+<p>In general, search will attempt to match text across all fields. It does not distinguish between uppercase and lowercase characters (case insensitive) and will match text placed anywhere in the field, at the beginning, end, or in the middle.</p>
+<p>However, you can make a more exact search by using special characters.</p>
+<ul>
+<li><p>To find only field values that match the entire text and case exactly, place the search text between single quotes <code>''</code> (for example, <code>'man'</code>).</p>
+</li>
+<li><p>To find field values that start with a certain text and match the case, place <code>*</code> after the search text (for example <code>man*</code>).</p>
+</li>
+<li><p>To find field values that end with a certain text and match the case, place <code>*</code> before the search text (for example <code>*man</code>).</p>
+</li>
+<li><p>When using  <code>''</code> or <code>*</code>, the search is case sensitive. If you want to make the search case insensitive, place <code>@</code> before the search text (for example <code>@man*</code>).</p>
+</li>
+</ul>
+<p>The following table provides some examples to explain how you can use the search.</p>
+<table>
+<thead>
+<tr>
+<th>Search Criteria</th>
+<th>Finds...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>man</code><br>or <br><code>Man</code></td>
+<td>All records with fields that contain the text <strong>man</strong>, regardless of the case. For example, <strong>Manchester</strong>, <strong>manual</strong>, or <strong>Sportsman</strong>.</td>
+</tr>
+<tr>
+<td><code>'Man'</code></td>
+<td>All records with fields that contain only <strong>Man</strong>, matching the case.</td>
+</tr>
+<tr>
+<td><code>Man*</code></td>
+<td>All records with fields that start with the text <b>Man</b>, matching the case. For example, <strong>Manchester</strong> but not <strong>manual</strong> or <strong>Sportsman</strong>.</td>
+</tr>
+<tr>
+<td><code>@Man*</code></td>
+<td>All records with fields that start with <strong>man</strong>, regardless of the case. For example, <strong>Manchester</strong> and <strong>manual</strong>, but not <strong>Sportsman</strong>.</td>
+</tr>
+<tr>
+<td><code>@*man</code></td>
+<td>All records that end with <strong>man</strong>, regardless of the case. For example <strong>Sportsman</strong>, but not <strong>Manchester</strong> or <strong>manual</strong>.</td>
+</tr>
+</tbody>
+</table>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can press <strong>F3</strong> to activate and deactivate the search box. For more information see <a href="keyboard-shortcuts.html#KeyboardFilter">Keyboard Shortcuts</a>.</p>
+</div>
+<h2 id="filtering">Filtering</h2>
+<p>Filtering provides a more advanced and versatile way of controlling which records display on a list or include in a report or XMLport. There are two major differences between searching and filtering, as described in the table below.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Searching</strong></th>
+<th><strong>Filtering</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applicable Fields</strong></td>
+<td>Searches across all fields that are visible on the page.</td>
+<td>Filters one or more fields individually, selecting from any field on the table, including fields that are not visible on the page.</td>
+</tr>
+<tr>
+<td><strong>Matching</strong></td>
+<td>Displays records with fields that match the search text, irrespective of casing or placement of that text.</td>
+<td>Displays records where the field matches the filter exactly and is case sensitive, unless special filter symbols are entered.</td>
+</tr>
+</tbody>
+</table>
+<p>Filtering enables you to display records for specific accounts or customers, dates, amounts, and other information by specifying filter criteria. Only records that match the criteria are displayed on the list or included in the report, batch job, or XMLport. If you specify criteria for multiple fields, then only records that match all criteria will be displayed.</p>
+<p>For lists, the filters are displayed on a filter pane that appears to the left of the list when you activate it. For reports, batch jobs, and XMLports, the filters are visible directly on the request page.</p>
+<h3 id="filtering-with-option-fields">Filtering with Option Fields</h3>
+<p>For &quot;ordinary&quot; fields that hold data, setup date or business data, you can set filters both by selecting data and by typing filter values, and you can use symbols to define advanced filter criteria. For more information, see <a href="ui-enter-criteria-filters.html#entering-filter-criteria">Entering Filter Criteria</a>.</p>
+<p>For fields of type <strong>Option</strong>, however, you can only set a filter by selecting one or more options from a drop-down list of the available options. An example of an option field is the <strong>Status</strong> field on the <strong>Sales Orders</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you select multiple options as a filter value, the relationship between the options is defined as <em>OR</em>. For example, if you select both the <strong>Open</strong> and the <strong>Released</strong> check box in the <strong>Status</strong> filter field on the <strong>Sales Orders</strong> page, it means that sales orders that are either open or released are displayed.</p>
+</div>
+<h3 id="setting-filters-on-lists">Setting Filters on Lists</h3>
+<p>On lists, you set filters by using the filter pane. To display the filter pane for a list, choose the drop-down arrow next to the name of the page, and then choose the <strong>Show filter pane</strong> action. Alternatively, press <strong>Shift+F3</strong>.</p>
+<p>To display the filter pane for a column on a list, choose the drop-down arrow, and then choose the <strong>Filter</strong> action. Alternatively, press <strong>Shift+F3</strong>. The filter pane opens with the selected column shown as a filter field in the <strong>Filter list by</strong> section.</p>
+<p>The filter pane displays the current filters for a list, and enables you to set your own custom filters on one or more fields by choosing the <strong>+ Filter</strong> action.</p>
+<p>A filter pane is divided in three sections: <strong>Views</strong>, <strong>Filter list by</strong>, and <strong>Filter totals by</strong>:</p>
+<ul>
+<li><p><strong>Views</strong></p>
+<p>Some lists include the <strong>Views</strong> section. Views are variations of the list that have been preconfigured with filters. You can define and save as many views as you want per list, and the views will be available to you on any device you sign into. For more information, see <a href="ui-views.html">Save and Personalize List Views</a>.</p>
+</li>
+<li><p><strong>Filter list by</strong></p>
+<p>This is where you add filters on specific fields to reduce the number of displayed records. To add a filter, choose the <strong>+ Filter</strong> action, type the name of the field that you want to filter the list by, or pick a field from the drop-down list.</p>
+</li>
+<li><p><strong>Filter totals by</strong></p>
+<p>Some lists that display calculated fields, such as amounts and quantities, will include the <strong>Filter totals by</strong> section where you can adjust various dimensions that influence calculations. To add a filter, choose the <strong>+ Filter</strong> action, type the name of the field that you want to filter the list by, or pick a field from the drop-down list.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Filters in the <strong>Filter totals by</strong> section are controlled by FlowFilters on the page design. For technical information, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-flowfilter-overview">FlowFilters</a>.</p>
+</div>
+</li>
+</ul>
+<p>You can set a simple filter directly on a list within using the filter pane, namely a filter that displays only records with the same value as in the selected cell. Select a cell on the list, choose the drop-down arrow, and then choose the <strong>Filter to This Value</strong> action. Alternatively, press <strong>Alt+F3</strong>.</p>
+<h3 id="setting-filters-in-reports-batch-jobs-and-xmlports">Setting Filters in Reports, Batch Jobs, and XMLports</h3>
+<p>For reports and XMLports, the filters are visible directly on the request page. The request page displays the last used filters according to your selection in the <strong>Use default values from</strong> field. For more information, see <a href="ui-work-report.html#SavedSettings">Using Saved Settings</a>.</p>
+<p>The main <strong>Filter</strong> section shows the default filter fields that you use to delimit which records to include in the report or XMLport. To add a filter, choose the <strong>+ Filter</strong> action, type the name of the field that you want to filter by, or pick a field from the drop-down list.</p>
+<p>In the <strong>Filter totals by</strong> section, you can adjust various dimensions that influence calculations in the report or XMLport. To add a filter, choose the <strong>+ Filter</strong> action, type the name of the field that you want to filter by, or pick a field from the drop-down list.</p>
+<h2 id="entering-filter-criteria">Entering Filter Criteria</h2>
+<p>Both in the filter pane and on a request page, you enter your filter criteria in the box under the filter field.</p>
+<p>The type of the filter field determines which criteria you can enter. For example, filtering a field that has fixed values will only let you choose from those values. For more information about special filter symbols, see <a href="#FilterCriteria">Filter criteria</a> and <a href="#FilterTokens">Filter tokens</a>.</p>
+<p>Columns that already have filters are indicated by the <img src="media/ui-search/filter-icon.png" alt="Filter icon" title="Filter icon"> icon in the column heading. To remove a filter, choose the drop-down arrow, and then choose the <strong>Clear Filter</strong> action.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Accelerate finding and analyzing your data by using combinations of keyboard shortcuts. For example, select a field, use <strong>Shift+Alt+F3</strong> to add that field to the filter pane, type the filter criteria, use <strong>Ctrl+Enter</strong> to return to the rows, select another field, and use <strong>Alt+F3</strong> to filter to that value. For more information see <a href="keyboard-shortcuts.html#KeyboardFilter">Keyboard Shortcuts</a>.</p>
+</div>
+<h3 id="-filter-criteria-and-symbols"><a name="FilterCriteria"> </a>Filter Criteria and Symbols</h3>
+<p>When you enter criteria, you can use all the numbers and letters that you can normally use in the field. In addition, you can use special symbols (or operators) to further filter the results. The following tables show the symbols that can be used in filters. For dates and times, you can also refer to <a href="ui-enter-date-ranges.html">Working with Calendar Dates and Times</a> for more detailed information.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>There may be instances where field values contain these symbols and you want to filter on them. To do this, you must include the filter expression that contains the symbol in quotation marks (''). For example, if you want to filter on records that start with the text <em>S&amp;R</em>, the filter expression is <code>'S&amp;R*'</code>.</p>
+</div>
+<p>The following sections describe how to use the different operators.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If there are more than 200 operators in a single filter, the system will automatically group some expressions in parentheses <code>()</code> for the purpose of processing. This has no effect on the filter or the results.</p>
+</div>
+<h4 id="-interval">(..) Interval</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1100..2100</code></td>
+<td>Numbers 1100 through 2100</td>
+</tr>
+<tr>
+<td><code>..2500</code></td>
+<td>Up to and including 2500</td>
+</tr>
+<tr>
+<td><code>..12 31 00</code></td>
+<td>Dates up to and including 12 31 00</td>
+</tr>
+<tr>
+<td><code>P8..</code></td>
+<td>Information for accounting period 8 and thereafter</td>
+</tr>
+<tr>
+<td><code>..23</code></td>
+<td>From the beginning date until 23-current month-current year 23:59:59</td>
+</tr>
+<tr>
+<td><code>23..</code></td>
+<td>From 23-current month-current year 0:00:00 until the end of time</td>
+</tr>
+<tr>
+<td><code>22..23</code></td>
+<td>From 22-current month-current year 0:00:00 until 23-current month-current year 23:59:59</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-eitheror">(|) Either/or</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1200|1300</code></td>
+<td>Numbers with 1200 or 1300</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-not-equal-to">(&lt;&gt;) Not equal to</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;&gt;0</code></td>
+<td>All numbers except 0<br><br> The SQL Server Option allows you to combine this symbol with a wild card expression. For example, &lt;&gt;A* meaning not equal to any text that starts with A.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-greater-than">(&gt;) Greater than</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;1200</code></td>
+<td>Numbers greater than 1200</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-greater-than-or-equal-to">(&gt;=) Greater than or equal to</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;=1200</code></td>
+<td>Numbers greater than or equal to 1200</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-less-than">(&lt;) Less than</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;1200</code></td>
+<td>Numbers less than 1200</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-less-than-or-equal-to">(&lt;=) Less than or equal to</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;=1200</code></td>
+<td>Numbers less than or equal to 1200</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-and">(&amp;) And</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&gt;200&amp;&lt;1200</code></td>
+<td>Numbers greater than 200 and less than 1200</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-an-exact-character-match">('') An exact character match</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'man'</code></td>
+<td>Text that matches man exactly and is case sensitive.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-case-insensitive">(@) Case insensitive</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@man*</code></td>
+<td>Text that starts with man and is case insensitive.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-an-indefinite-number-of-unknown-characters">(*) An indefinite number of unknown characters</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*Co*</code></td>
+<td>Text that contains &quot;Co&quot; and is case sensitive.</td>
+</tr>
+<tr>
+<td><code>*Co</code></td>
+<td>Text that ends with &quot;Co&quot; and is case sensitive.</td>
+</tr>
+<tr>
+<td><code>Co*</code></td>
+<td>Text that begins with &quot;Co&quot; and is case sensitive.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-one-unknown-character">(?) One unknown character</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Hans?n</code></td>
+<td>Text such as Hansen or Hanson</td>
+</tr>
+</tbody>
+</table>
+<h4 id="combined-format-expressions">Combined Format Expressions</h4>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>5999|8100..8490</code></td>
+<td>Include any records with the number 5999 or a number from the interval 8100 through 8490.</td>
+</tr>
+<tr>
+<td><code>..1299|1400..</code></td>
+<td>Include records with a number less than or equal to 1299 or a number equal to 1400 or greater (all numbers except 1300 through 1399).</td>
+</tr>
+<tr>
+<td><code>&gt;50&amp;&lt;100</code></td>
+<td>Include records with numbers that are greater than 50 and less than 100 (numbers 51 through 99).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-filter-tokens"><a name="FilterTokens"> </a>Filter Tokens</h3>
+<p>When entering filter criteria, you can also type words that have special meaning, called filter tokens. After entering the token word, the word is replaced by the value or values that it represents. This makes filtering easier by reducing the need to navigate to other pages to look up values you want to add to your filter. The tables below describe some of the tokens you can type as filter criteria.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Your organization may use custom tokens. To learn about the complete set of tokens available to you or to add more custom tokens, talk to your administrator. For technical information see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-adding-filter-tokens">Adding Filter Tokens</a>.</p>
+</div>
+<h4 id="me-or-userid-records-assigned-to-you">(%me or %userid) Records Assigned to You</h4>
+<p>Use <code>%me</code> or <code>%userid</code> when filtering fields that contain the user ID, such as <strong>Assigned to User ID</strong> field, to display all records that are assigned to you.</p>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%me</code><br>or<br><code>%userid</code></td>
+<td>Records that are assigned to your user account.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="mycustomers-customers-in-my-customers">(%mycustomers) Customers in My Customers</h4>
+<p>Use <code>%mycustomers</code> in the customer <strong>No</strong> field to display all records for customers that are included in the <strong>My Customers</strong> list on your Role Center.</p>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%mycustomers</code></td>
+<td>Customers in the <strong>My Customers</strong> on your Role Center.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="myitems-items-in-my-items">(%myitems) Items in My Items</h4>
+<p>Use <code>%myitems</code> in the item <strong>No</strong> field to display all records for items that are included in the <strong>My Items</strong> list on your Role Center.</p>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%myitems</code></td>
+<td>Items in the <strong>My Items</strong> on your Role Center.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="myvendors-vendors-in-my-vendors">(%myvendors) Vendors in My Vendors</h4>
+<p>Use <code>%myvendors</code> in the vendor <strong>No</strong> field to display all records for vendors that are included in the <strong>My Vendors</strong> list on your Role Center.</p>
+<table>
+<thead>
+<tr>
+<th>Sample Expression</th>
+<th>Records Displayed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%myvendors</code></td>
+<td>Vendors in the <strong>My Vendors</strong> on your Role Center.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-search-filter-faq.html">Searching and Filtering FAQ</a><br>
+<a href="ui-views.html">Save and Personalize List Views</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-enter-criteria-filters.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

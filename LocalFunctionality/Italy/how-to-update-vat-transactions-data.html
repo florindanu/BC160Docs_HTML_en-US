@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Update VAT Transactions Data </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Update VAT Transactions Data ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Before you create the first VAT transaction report, you should prepare the existing data in the Italian version of Business Central.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="update-vat-transactions-data">Update VAT Transactions Data</h1>
+
+<p>Before you create the first VAT transaction report, you should prepare the existing data by running the <strong>Update VAT Transaction Data</strong> report. You should also run this report if you have made changes to the setup based on new requirements from the tax authorities.</p>
+<p>You can run the <strong>Update VAT Transaction Data</strong> report as a test before you change any data. When you have verified that the filters meet your expectations and the requirements of the tax authorities, you should run the report again to make the appropriate changes to data.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Before you run the <strong>Update VAT Transaction Data</strong> report, you should activate the change log on the <strong>Change Log Setup</strong> page. Also, you should enable logging for modifications to the <strong>Include in VAT Transac. Report</strong> field on the <strong>VAT Entry</strong> table.</p>
+</div>
+<h2 id="to-update-vat-transaction-data">To update VAT transaction data</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Update VAT Transaction Data</strong>, and then choose the related link.</p>
+</li>
+<li><p>Optionally, on the <strong>VAT Entry</strong> FastTab, set the appropriate filters.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Compare against Threshold</strong></td>
+<td>Select to compare VAT entries against the threshold amounts that are specified in the VAT posting setup.</td>
+</tr>
+<tr>
+<td><strong>Show List Only</strong></td>
+<td>Select if you do not want to update data.<br><br> If you select this field, Business Central prints a report so that you can verify the changes before data is modified. The report contains a line for each document where the VAT base is equal to or greater than the threshold amounts. <strong>Warning:</strong>  Do not select both this field and the <strong>Set Include in VAT Transaction Report</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Set Include in VAT Transaction Report</strong></td>
+<td>Select to set the <strong>Include in VAT Trans. Report</strong> to <strong>Yes</strong> on all VAT entries where the amounts meet the threshold amounts that are specified in the VAT posting setup. <strong>Warning:</strong>  If you select this field, your data is updated. You should run the report as a test before you run it to change data.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Print</strong> button to update VAT transaction data, or choose the <strong>Preview</strong> button to view the changes.</p>
+</li>
+</ol>
+<p>When you run the report, Business Central processes VAT entries based on the filters that you set. The following rules are also applied:</p>
+<ul>
+<li>The <strong>Blacklisted</strong> field for the VAT entry must be blank.</li>
+<li>The <strong>Type</strong> field for the VAT entry must not be <strong>Settlement</strong>.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="../../finance-setup-vat.html">Set Up VAT</a><br>
+<a href="how-to-prepare-for-vat-transactions-reports.html">Prepare for VAT Transactions Reports</a><br>
+<a href="italian-vat.html">Italian VAT</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Italy/how-to-update-vat-transactions-data.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

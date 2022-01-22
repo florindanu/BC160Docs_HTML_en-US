@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Synchronization and Data Integration | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Synchronization and Data Integration | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The synchronization copies data between Common Data Service entities and Business Central records, and keeps the data in both systems up-to-date.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="synchronizing-data-in-business-central-with-common-data-service">Synchronizing Data in Business Central with Common Data Service</h1>
+
+<p>When you integrate Common Data Service with Business Central, you can decide whether to synchronize data in selected fields of Business Central records (such as customers, contacts, and sales people) with equivalent records in Common Data Service (such as accounts, contacts, and users). Depending on the type of record, you can synchronize data from Common Data Service to Business Central, or vice versa. For more information, see <a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Integrating with Dynamics 365 Sales</a>.</p>
+<p>Synchronization uses the following elements:</p>
+<ul>
+<li>Integration table mappings</li>
+<li>Integration field mappings</li>
+<li>Synchronization rules</li>
+<li>Coupled records</li>
+</ul>
+<p>When synchronization is set up you can couple Business Central records to Common Data Service records to synchronize their data. You can start a synchronization manually, or based on a schedule. The following table provides on overview of the ways you can synchronize records.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Method</th>
+<th>See</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manual synchronization</td>
+<td>Synchronize on a record-by-record basis.<br><br> You can synchronize individual records in Business Central, such as a customer, with a corresponding Common Data Service record, such as an account. This is typically how users will work with Common Data Service data in Business Central.</td>
+<td><a href="admin-manual-synchronization-of-table-mappings.html#synchronize-individual-table-mappings">Couple and Synchronize Records Manually</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Synchronize on a table mapping basis.<br><br> You can synchronize all records in a Business Central table with an entity Common Data Service entity.</td>
+<td><a href="admin-manual-synchronization-of-table-mappings.html#synchronize-individual-table-mappings">Synchronize Individual Table Mappings</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Synchronize all modified records for all table mappings.<br><br> You can synchronize all of the records that have been modified in Business Central tables since the last synchronization.</td>
+<td><a href="admin-manual-synchronization-of-table-mappings.html#synchronizing-all-modified-records">Synchronizing All Modified Records</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Full synchronization of all data for all table mappings.<br><br> You can synchronize all of the data in Business Central tables and Common Data Service entities that are mapped, and create new records in the destination solution for uncoupled records in the source solution.<br><br> Full synchronization synchronizes all data and ignores coupling. Typically, you do a full synchronization when you set up the integration and only one of solutions contains data. A full synchronization can also be useful in a demonstration environment.</td>
+<td><a href="admin-manual-synchronization-of-table-mappings.html#run-a-full-synchronization">Run a Full Synchronization</a></td>
+</tr>
+<tr>
+<td>Scheduled synchronization</td>
+<td>Synchronize all changes to data for all table mappings.<br><br> You can synchronize Business Central with Common Data Service on scheduled intervals by setting up jobs in the job queue.</td>
+<td><a href="admin-scheduled-synchronization-using-the-synchronization-job-queue-entries.html">Schedule a Synchronization</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="standard-entity-mapping-for-synchronization">Standard Entity Mapping for Synchronization</h2>
+<p>Entities in Common Data Service, such as accounts, are integrated with equivalent types of entities in Business Central, such as customers. To work with Common Data Service data you set up links, called couplings, between entities in Business Central and Common Data Service.</p>
+<p>The following table lists the standard mapping between entities in Business Central and Common Data Service that Business Central provides.</p>
+<table>
+<thead>
+<tr>
+<th>Business Central</th>
+<th>Common Data Service</th>
+<th>Synchronization Direction</th>
+<th>Default Filter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Salesperson/Purchaser</td>
+<td>User</td>
+<td>Common Data Service -&gt; Business Central</td>
+<td>Sales contact filter: <strong>Status</strong> is <strong>No</strong>, <strong>User Licensed</strong> is <strong>Yes</strong>, Integration user mode is <strong>No</strong></td>
+</tr>
+<tr>
+<td>Customer</td>
+<td>Account</td>
+<td>Business Central -&gt; Dynamics 365 Sales and Dynamics 365 Sales -&gt; Business Central</td>
+<td>Sales account filter: <strong>Relationship Type</strong> is <strong>Customer</strong> and <strong>Status</strong> is <strong>Active</strong>.</td>
+</tr>
+<tr>
+<td>Vendor</td>
+<td>Account</td>
+<td>Business Central -&gt; Dynamics 365 Sales and Dynamics 365 Sales -&gt; Business Central</td>
+<td>Sales account filter: <strong>Relationship Type</strong> is <strong>Vendor</strong> and <strong>Status</strong> is <strong>Active</strong>.</td>
+</tr>
+<tr>
+<td>Contact</td>
+<td>Contact</td>
+<td>Business Central -&gt; Dynamics 365 Sales and Dynamics 365 Sales -&gt; Business Central</td>
+<td>Business Central contact filter: <strong>Type</strong> is <strong>Person</strong> and the contact is assigned to a company. Sales contact filter: The contact is assigned to a company and the parent customer type is <strong>Account</strong></td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>Transaction Currency</td>
+<td>Business Central -&gt; Dynamics 365 Sales</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tip-for-admins-viewing-entity-mappings">Tip for Admins: Viewing Entity Mappings</h3>
+<p>You can view the mapping between the entities in Common Data Service and the tables in Business Central on the <strong>Integration Table Mappings</strong> page, where you can also apply filters. You define the mapping between the fields in Business Central tables and the fields in Common Data Service entities on the <strong>Integration Field Mapping</strong> page, where you can add additional mapping logic. For example, this can be useful if you need to troubleshoot synchronization.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-how-to-couple-and-synchronize-records-manually.html">Couple and Synchronize Records Manually</a><br>
+<a href="admin-scheduled-synchronization-using-the-synchronization-job-queue-entries.html">Schedule a Synchronization</a><br>
+<a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Integrating with Dynamics 365 Sales</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-synchronizing-business-central-and-sales.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

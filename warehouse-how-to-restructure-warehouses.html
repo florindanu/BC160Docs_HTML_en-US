@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Restructure Warehouses | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Restructure Warehouses | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You may want to restructure your warehouse with new bin codes and new bin characteristics.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="restructure-warehouses">Restructure Warehouses</h1>
+
+<p>You may want to restructure your warehouse with new bin codes and new bin characteristics. You will not undertake this kind of activity very often, but situations can occur where a reclassification is necessary to achieve or maintain a more efficient operation. For example:</p>
+<ul>
+<li>You might want to switch to bin codes that support the use of automatic data capture, for example, with hand-held devices.</li>
+<li>The warehouse may have purchased a new rack system that gives new possibilities in item storage.</li>
+<li>The company may have altered its item assortment and moved the warehouse to a new physical location to accommodate this change.</li>
+</ul>
+<p>If your warehouse is set up to use bins but not directed put-away and pick, restructure your warehouse by creating the new bins that you want to use in the future.</p>
+<h2 id="to-restructure-a-basic-warehouse-that-uses-bins-only">To restructure a basic warehouse that uses bins only</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Warehouse</strong> FastTab, set the <strong>Default Bin Selection</strong> field to <strong>Last-Used Bin</strong>.</p>
+</li>
+<li><p>Move all the contents of your current bins to the new bins that you have just created.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item Reclassification Journal</strong>, and then choose the related link.</li>
+<li>Select a journal line, and then choose the <strong>Get Bin Content</strong> action.</li>
+<li>On the <strong>Bin Content</strong> FastTab, set filters in the <strong>Location Code</strong>, <strong>Bin Code</strong>, and <strong>Item No.</strong> fields to specify the content that you want to move.</li>
+<li>Choose the <strong>OK</strong> button to fill a journal line.</li>
+<li>In the <strong>New Bin Code</strong> field, select the bin to which the items should be moved.</li>
+<li>Repeat steps b through e for all bin content that you want to move.</li>
+<li>Choose the <strong>Post</strong> action.</li>
+</ol>
+</li>
+</ol>
+<p>You have now emptied the bins where the items used to be. The default bins for your items have now been changed to the new bins.</p>
+<h2 id="to-restructure-an-advanced-warehouse-that-uses-directed-put-away-and-pick">To restructure an advanced warehouse that uses directed put-away and pick</h2>
+<ol>
+<li><p>Create the new bins that you want to use in the future. For more information, see <a href="warehouse-how-to-create-individual-bins.html">Create Bins</a>.</p>
+</li>
+<li><p>Move all the contents of your current bins to the new bins that you just created.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Reclassification Journal</strong>, and then choose the related link.</li>
+<li>For the bins where no real movement of items is involved, create a line for each of your current bins in the <strong>Warehouse Reclassification Journal</strong> with the old bin code, <strong>From Bin Code</strong>, and the new bin code, <strong>To Bin Code</strong>.</li>
+<li>If some of the movements involve actual physical movements that you want employees to perform, use <strong>Movement Worksheets</strong> to prepare movement instructions instead of using the warehouse reclassification journal. For more information, see <a href="warehouse-how-to-move-items-in-advanced-warehousing.html">Move Items in Advanced Warehouse Configurations</a>.</li>
+</ol>
+</li>
+<li><p>When the old bins are emptied, reclassify them as <strong>QC</strong> type bins to ensure that they are not included in item flows.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Select the line with the location, and then choose the <strong>Bins</strong> action.</li>
+<li>On the <strong>Bins</strong> page, in the <strong>Bin Type Code</strong> field, enter <strong>QC</strong> for each of the old bins that you emptied in step 3 in the previous procedure.</li>
+</ol>
+</li>
+</ol>
+<p>You have now removed the bins from the warehouse flow, and reclassified them as QC bins. QC bins have none of the activity fields on the <strong>Bin Types</strong> page selected and are therefore not considered by the item flow. For more information, see <a href="warehouse-how-to-set-up-bin-types.html">Set Up Bin Types</a>.</p>
+<h2 id="to-delete-a-bin">To delete a bin</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Select the location where you want to delete bins. Choose the <strong>Bins</strong> action.</li>
+<li>Select the lines for the bins that you want to delete.</li>
+<li>Choose the <strong>Delete</strong> action.</li>
+</ol>
+<p>If you choose the <strong>Yes</strong> button, the bin is deleted for use in the future, but the bin code in all warehouse entries remains the same.</p>
+<p>If you want to rename a bin so that all records associated with the bin are also renamed, including bin contents, warehouse activity lines, registered warehouse activity lines, warehouse worksheet lines, warehouse receipt lines, posted warehouse receipt lines, warehouse shipment lines, posted warehouse shipment lines, and warehouse entries, you can do so on the <strong>Bins</strong> page.</p>
+<h2 id="to-rename-a-bin-and-change-the-bin-code-in-all-records">To rename a bin and change the bin code in all records</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Select the location where you want to rename a bin or change the bin code, and then choose the <strong>Bins</strong> action.</li>
+<li>Select the bin that you want to change and enter a new bin code in the <strong>Code</strong> field.</li>
+<li>Choose the <strong>Yes</strong> button.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose <strong>Yes</strong> and there are many entries concerning this bin, for example, because you have not deleted warehouse documents for some time, it may take some time to rename all the records. Therefore, if you use this method, consider running the batch job <strong>Delete Registered Whse. Documents</strong> before you start the renaming process. Also note that the only documents that are deleted in this batch job are put-aways, picks, and movements.</p>
+<p>If you are renaming a receiving bin or a shipping bin, all the posted receipts or shipments that refer to the bin in question are renamed.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-restructure-warehouses.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

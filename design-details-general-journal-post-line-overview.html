@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>General Journal Post Line Overview | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="General Journal Post Line Overview | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic introduces changes to Codeunit 12, **Gen. Jnl.-Post Line**, which is the major application object for general ledger posting and is the only place to insert general ledger, VAT, and customer and vendor ledger entries.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="general-journal-post-line-overview">General Journal Post Line Overview</h1>
+
+<p>Codeunit 12, <strong>Gen. Jnl.-Post Line</strong>, is the major application object for general ledger posting and is the only place to insert general ledger, VAT, and customer and vendor ledger entries. This codeunit is also used for all Apply, Unapply and Reverse operations.</p>
+<p>While the codeunit has been improved in each release over the last ten years, its architecture remained essentially unchanged. The codeunit became very large, with approximately 7,600 code lines. With this release of Business Central, the architecture is changed and the codeunit has been made simpler and more maintainable. This documentation introduces the changes and provides information that you will need for upgrade.</p>
+<h2 id="old-architecture">Old Architecture</h2>
+<p>The old architecture had the following features:</p>
+<ul>
+<li>There was extensive use of global variables, which increased the possibility of hidden errors due to use of variables with the wrong scope.</li>
+<li>There were many long procedures (with more than 100 code lines) that also had high cyclomatic complexity (that is, a lot of CASE, REPEAT, IF nested statements), which made the code very difficult to read and maintain.</li>
+<li>Several procedures that were only used locally and were only meant to be used locally were not marked as local.</li>
+<li>Most procedures had no parameters and used global variables. Some used parameters and overrode global variables with locals.</li>
+<li>Code patterns for searching the general ledger accounts and creating general ledger and VAT entries was not standardized and varied from place to place. In addition, there was a lot of code duplication and broken symmetry between customer and vendor code.</li>
+<li>A large part of the code in codeunit 12, approximately 30 percent, related to payment discount and tolerance calculations, although these features are not needed in many countries or regions.</li>
+<li>Posting, Apply, Unapply, Reverse, Payment Discount and Tolerance, and Exchange Rate Adjustment were married together in codeunit 12 using a long list of global variables.</li>
+</ul>
+<h3 id="new-architecture">New Architecture</h3>
+<p>In Business Central, codeunit 12 has had the following improvements:</p>
+<ul>
+<li>Codeunit 12 has been refactored into smaller procedures (all less than 100 code lines).</li>
+<li>Standardized patterns for the search of general ledger accounts have been implemented by using helper functions from Posting Group tables.</li>
+<li>A Posting Engine Framework has been implemented to manage the start and finish of transactions and to isolate the creation to general ledger and VAT entries, the collection of VAT adjustment, and the calculation of additional currency amounts.</li>
+<li>Code duplication has been eliminated.</li>
+<li>Many helper functions have been transferred to corresponding customer and vendor ledger entry tables.</li>
+<li>The use of global variables has been minimized, so that each procedure uses parameters and encapsulates its own application logic.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-posting-interface-structure.html">Design Details: Posting Interface Structure</a><br>
+<a href="design-details-posting-engine-structure.html">Design Details: Posting Engine Structure</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-general-journal-post-line-overview.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

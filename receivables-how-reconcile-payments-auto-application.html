@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use Automatic Application to Reconcile Payments | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use Automatic Application to Reconcile Payments | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to use the automatic application function to apply payments or cash receipts to their related open entries, and reconcile payments.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="reconcile-payments-using-automatic-application">Reconcile Payments Using Automatic Application</h1>
+
+<p>The <strong>Payment Reconciliation Journal</strong> page specifies payments, either incoming or outgoing, that have been recorded as transactions on your online bank account and that you can apply to their related open customer, vendor, and bank account ledger entries. The lines in the journal are filled by importing a bank statement as a bank feed or file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The page offers automatic matching functionality that applies payments to their related open entries based on a matching of text on a bank statement line (journal line) with text on one or more open entries. Note that you can overwrite the suggested automatic applications, and you can choose to not use automatic application at all. For more information, see step 7.</p>
+</div>
+<p>A payment reconciliation journal is related to one bank account in Business Central that reflects the online bank account where the payment transactions are recorded. Any open bank account ledger entries related to the applied customer or vendor ledger entries will be closed when you choose the <strong>Post Payments and Reconcile Bank Account</strong> action. This means that the bank account is automatically reconciled for payments that you post with the journal.</p>
+<p>If you want to import bank statements as bank feeds, you must first enable the Envestnet Yodlee Bank Feeds service and then link the bank account to its related online bank account. The payment reconciliation journal will then automatically detect bank feeds when you choose the <strong>Import Bank Transactions</strong> action. In addition, you can set a bank account up to automatically import new bank statement feeds every hour. Transactions for payments that have already been posted as applied and/or reconciled will not be imported. For more information, see <a href="bank-how-setup-bank-statement-service.html">Set Up the Envestnet Yodlee Bank Feeds Service</a>.</p>
+<p>With the <strong>Map Text to Account</strong> action, you can set up mappings between text on payments and specific debit, credit, and balancing accounts so that such payments are posted to the specified accounts when you post the payment reconciliation journal. See step 8. For more information, see <a href="receivables-how-map-text-recurring-payments-accounts-auto-reconcilliation.html">Map Text on Recurring Payments to Accounts for Automatic Reconciliation</a>.</p>
+<p>Similar functionality exists to reconcile excess amounts on payment reconciliation journal lines on an ad-hoc basis. For more information, see <a href="receivables-how-reconcile-payments-cannot-apply-auto.html">Reconcile Payments That Cannot be Applied.</a></p>
+<p>You use the <strong>Apply Automatically</strong> function, either automatically when you import a bank file or feed with payment transactions or when you activate it, to apply payments to their related open entries based on a matching of text on a bank statement line (journal line) with text on one or more open entries. For more information, see <a href="receivables-how-set-up-payment-application-rules.html">Set Up Rules for Automatic Application of Payments</a>.</p>
+<p>On journal lines where a payment has been applied automatically to one or more open entries, the <strong>Match Confidence</strong> field has a value between Low and High to indicate the quality of the data matching that the suggested payment application is based on. In addition, the <strong>Account Type</strong> and <strong>Account No.</strong> fields are filled with information about the customer or vendor that the payment is applied to. If you have set up a text-to-account mapping, the automatic application can result in a match confidence value of <strong>High - Text-to-Account Mapping</strong>.</p>
+<p>For each journal line on the <strong>Payment Reconciliation Journal</strong> page, you can open the <strong>Payment Application</strong> page to see all candidate open entries for the payment and view detailed information for each entry about the data matching that a payment application is based on. Here, you can manually apply payments or reapply payments that were applied automatically to a wrong entry. For more information, see <a href="receivables-how-review-apply-payments-auto-application.html">Review or Apply Payments After Automatic Application</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can start the bank transactions import at the same time as you open the <strong>Payment Reconciliation</strong> Journal page for an existing payment reconciliation journal on the <strong>Payment Reconciliation Journals</strong> page. The following procedure describes how to import bank transactions into the <strong>Payment Reconciliation Journal</strong> page after you have created a new journal.</p>
+</div>
+<h2 id="to-reconcile-payments-using-automatic-application">To reconcile payments using automatic application</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Reconciliation Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>To work in a new payment reconciliation journal, choose the <strong>New Journal</strong> action.</p>
+</li>
+<li><p>On the <strong>Payment Bank Account List</strong> page, select the bank account that you want to reconcile payments for, and then choose the <strong>OK</strong> button.
+The <strong>Payment Reconciliation Journal</strong> page opens prepared for the selected bank account.</p>
+</li>
+<li><p>Choose the <strong>Import Bank Transactions</strong> action.
+If the bank account for the selected journal is not set up for import of bank transactions, then a dialog box will open to help you fill in the relevant fields.</p>
+</li>
+<li><p>On the <strong>Select a file to import</strong> page, select the file that contains the bank transactions for payments that you want to reconcile, and then choose the <strong>Open</strong> button.</p>
+</li>
+<li><p>If the Bank Statement service is enabled, on the <strong>Bank Statement Filter</strong> page that opens automatically, specify the date interval for the bank statements to be imported.</p>
+<p>The <strong>Payment Reconciliation Journal</strong> page is filled with lines for payments representing bank transactions in the imported bank statement.</p>
+<p>On lines for payments that have been automatically applied to their related open entries, the <strong>Match Confidence</strong> field has a value between <strong>Low</strong> and <strong>High</strong> to indicate the quality of the data matching that the suggested payment application is based on. In addition, the <strong>Account Type</strong> and <strong>Account No.</strong> fields are filled with information about the customer or vendor that the payment is applied to.</p>
+</li>
+<li><p>Select a journal line, and then, choose the <strong>Apply Manually</strong> action to review, reapply, or apply the payment manually on the <strong>Payment Application</strong> page. For more information, see <a href="receivables-how-review-apply-payments-auto-application.html">Review or Apply Payments After Automatic Application</a>.</p>
+<p>When you have finished your manual application, the <strong>Match Confidence</strong> field on the journal line that you have processed manually contains <strong>Accepted</strong>.</p>
+</li>
+<li><p>Select an unapplied journal line for a recurring cash receipt or expense, such as a car gasoline purchase, and then choose the <strong>Map Text to Account</strong> action. For more information, see <a href="receivables-how-map-text-recurring-payments-accounts-auto-reconcilliation.html">Map Text on Recurring Payments to Accounts for Automatic Reconciliation</a></p>
+</li>
+<li><p>When you have finished your mapping of payment text to accounts, choose the <strong>Apply Manually</strong> action.</p>
+</li>
+<li><p>When you are content that all payments on the journal lines are correctly applied or set to direct posting, choose the <strong>Post</strong> action, and then choose one of the options:</p>
+<ul>
+<li><strong>Post Payments and Reconcile Bank Accounts</strong> - To post the payments as applied and also close the related bank account ledger entries as reconciled.</li>
+<li><strong>Post Payments Only</strong> - To only post the payments as applied, but leave the related bank account ledger entries open. Required that you reconcile the bank account separately,  for example: For more information, see <a href="bank-how-reconcile-bank-accounts-separately.html">Reconcile Bank Accounts</a>.</li>
+<li><strong>Test Report</strong> - To review the result of posting before you post. The <strong>Bank Account Statement</strong> report opens and shows the same fields as at the bottom of the <strong>Payment Reconciliation Journal</strong> page.</li>
+</ul>
+</li>
+</ol>
+<p>When you post the payment reconciliation journal, the applied open entries memos are closed, and the related customer, vendor, or general ledger accounts are updated. For payments on journal lines based on text-to-account mapping, the specified customer, vendor, and general ledger accounts are updated. For all journal lines, bank account ledger entries are created. If you choose the <strong>Post Payments and Reconcile Bank Account</strong> action, any open bank account ledger entries related to the applied customer or vendor ledger entries will be closed. This means that the bank account is automatically reconciled for payments that you post with the journal.</p>
+<p>You can compare the value in the <strong>Balance on Bank Account After Posting</strong> field together with the value in the <strong>Statement Ending Balance</strong> field to track when the bank account is reconciled based on payments that you post.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you do not want to reconcile the bank account from the <strong>Payment Reconciliation Journal</strong> page, then you must use the <strong>Bank Acc. Reconciliation</strong> page. For more information, see <a href="bank-how-reconcile-bank-accounts-separately.html">Reconcile Bank Accounts</a>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-how-reconcile-payments-auto-application.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

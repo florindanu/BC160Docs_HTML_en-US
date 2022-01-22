@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Validate a VAT Registration Number | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Validate a VAT Registration Number | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Validate a VAT Registration Number">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="validate-a-vat-registration-number">Validate a VAT Registration Number</h1>
+
+<h2 id="to-verify-vat-registration-numbers">To verify VAT registration numbers</h2>
+<p>It is important that the VAT registration numbers you have for customers, vendors, and contacts are valid. For example, companies sometimes change their tax liability status, and in some countries tax authorities might ask you to provide reports, such as the EC Sales List report, that list the VAT registration numbers you use when you do business.</p>
+<p>The European Commission provides the VIES VAT Number Validation service on its website, which is public and free. Business Central can save you a step and let you use the VIES service to validate and track VAT numbers for customers, vendors, and contacts straight from the customer, vendor, and contact cards. The service in Business Central is named <strong>EU VAT Reg. No. Validation Service</strong>. The service is available on the <strong>Service Connections</strong> page, and you can start using it right away. The service connection is free, and signup is not required.</p>
+<p>In order to enable the <strong>EU VAT Reg. No. Validation Service</strong> open the entry in the <strong>Service Connection</strong> page. The <strong>Service Endpoint</strong> field should already be populated. If not, you can use the <strong>Set Default Endpoint</strong> action. Then set the <strong>Enabled</strong> field and you are good to go.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To enable the EU VAT Reg. No. Validation Service, you must have administrator permissions.</p>
+</div>
+<p>When you use our service connection, we record a history of VAT numbers and verifications for each customer, vendor, or contact, in the <strong>VAT Registration Log</strong>, so you can easily track them. The log is specific to each customer. For example, the log is useful for proving that you have verified that the current VAT number is correct. When you verify a VAT number, the <strong>Request Identifier</strong> column in the log will reflect that you have taken action.</p>
+<p>You can view the VAT Registration log on the Customer, Vendor, or Contact cards, on the <strong>Invoicing</strong> FastTab, by choosing the lookup button in the <strong>VAT Registration No.</strong> field.</p>
+<p>Our service can also save you time when you create a customer or vendor. If you know the customer's VAT number, you can enter it in the <strong>VAT Registration No.</strong> field on the Customer or Vendor cards, and we will fill out the customer name for you. Some countries also provide company addresses in a structured format. In those countries, we fill in the address too.</p>
+<p>There are a couple of things to note about the VIES VAT Number Validation service:</p>
+<ul>
+<li>The service uses the http protocol, which means that data transferred through the service is not encrypted.</li>
+<li>You may experience downtime for this service for which Microsoft is not responsible. The service is part of a broad EU network of national VAT registers.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-setup-vat.html">Set Up Value-Added Tax</a><br>
+<a href="finance-setup-unrealized-vat.html">Setting Up Unrealized Value Added Tax</a><br>
+<a href="finance-how-report-vat.html">Report VAT to a Tax Authority</a><br>
+<a href="finance-work-with-vat.html">Work with VAT on Sales and Purchases</a><br>
+<a href="about-localization.html">Local functionality in Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-validate-vat-registration-number.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

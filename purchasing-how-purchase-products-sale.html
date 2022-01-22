@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Purchase Items for a Sale by Creating Purchase Invoices | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Purchase Items for a Sale by Creating Purchase Invoices | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="From a sales invoice, to purchase products, you can create a purchase invoice for a vendor or supplier.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="purchase-items-for-a-sale">Purchase Items for a Sale</h1>
+
+<p>From sales orders and sales invoices, you can use functions to quickly create purchase documents for missing item quantities that are required by the sale. You can use two different functions depending on the document type.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This functionality is for replenishing sales items into your own inventory. To purchase items for direct delivery from your vendor to your customer, you must create a drop shipment. For more information, see <a href="sales-how-drop-shipment.html">Make Drop Shipments</a>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Create Purchase Orders</strong></td>
+<td>From a sales order, this function creates a purchase order for each vendor of items on the sales order. You can edit the purchase quantity before you create the purchase orders. Only unavailable sales quantities are suggested.</td>
+</tr>
+<tr>
+<td><strong>Create Purchase Invoice</strong></td>
+<td>From a sales order and from a sales invoice, this function creates a purchase invoice for a selected vendor for all lines or selected lines on the sales document. The full sales quantity is suggested.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="to-create-one-or-more-purchase-orders-from-a-sales-order">To create one or more purchase orders from a sales order</h2>
+<p>To create a purchase order for each unavailable item quantity on the sales order, you use the <strong>Create Purchase Orders</strong> function.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open a sales order that you want to purchase items for.</p>
+</li>
+<li><p>Choose the <strong>Create Purchase Orders</strong> action.</p>
+<p>The <strong>Create Purchase Orders</strong> page opens showing a line for each different item on the sales order. Lines for both fully available sales quantities and unavailable sales quantities (grayed) are shown by default. You can choose the <strong>Show Unavailable</strong> action to only see lines for unavailable sales quantities.</p>
+<p>The <strong>Quantity to Purchase</strong> field contains the unavailable sales quantity by default.</p>
+</li>
+<li><p>To purchase another quantity than the unavailable sales quantity, edit the value in the <strong>Quantity to Purchase</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also change the <strong>Quantity to Purchase</strong> field on grayed lines even though they represent fully available sales quantities.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+<p>A purchase order is created for each vendor of items on the sales order, including any quantity changes that you made on the <strong>Create Purchase Orders</strong> page.</p>
+</li>
+<li><p>Proceed to process the purchase order or orders, for example, by editing or adding purchase order lines. For more information, see <a href="purchasing-how-record-purchases.html">Record Purchases</a>.</p>
+</li>
+</ol>
+<h2 id="to-create-a-purchase-invoice-from-a-sales-order-or-sales-invoice">To create a purchase invoice from a sales order or sales invoice</h2>
+<p>To create a single purchase invoice for one or more lines on a sales document by first selecting which vendor to buy from, you use the <strong>Create Purchase Invoice</strong> function.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This function creates a purchase invoice for the exact item quantity on the selected sales document. To change the purchase quantity, you must edit the purchase invoice after it is created.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open a sales invoice that you want to purchase items for.</p>
+</li>
+<li><p>Select one or more sales invoice lines that you want to use on the purchase invoice. To use all the sales invoice lines, select either all of them or do not select any lines.</p>
+</li>
+<li><p>Choose the <strong>Create Purchase Invoice</strong> action.</p>
+</li>
+<li><p>Select either <strong>All Lines</strong> or <strong>Selected Lines</strong>, and then choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>In the list of vendors that appears, select the vendor that you want to buy all the items from, and then choose the <strong>OK</strong> button.</p>
+<p>A purchase invoice is created that contains one, more than one, or all the lines on the sales invoice.</p>
+</li>
+<li><p>Proceed to process the purchase invoice, for example, by editing or adding purchase invoice lines. For more information, see <a href="purchasing-how-record-purchases.html">Record Purchases</a>.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="purchasing-how-record-purchases.html">Record Purchases</a><br>
+<a href="sales-how-invoice-sales.html">Invoice Sales</a><br>
+<a href="purchasing-how-register-new-vendors.html">Register New Vendors</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/purchasing-how-purchase-products-sale.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

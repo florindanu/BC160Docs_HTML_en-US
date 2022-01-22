@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Change the Way a Report Looks by Selecting a Different Layout | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Change the Way a Report Looks by Selecting a Different Layout | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use different layouts for a report, and switch between layouts to change how a report looks.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="change-the-current-report-layout">Change the Current Report Layout</h1>
+
+<p>A report can be set up with more than one report layout, which you can then switch among as needed.</p>
+<p>Depending on the layouts that are available for a report, you can choose to use a built-in RDLC report layout, a built-in Word report layout, or a custom layout. For more information about RDLC and Word report layouts, built-in and custom layouts, and more, see <a href="ui-manage-report-layouts.html">Manage Report Layouts</a>.</p>
+<p>When custom report layouts are defined, you can select them from customer and vendor cards to specify that the selected layouts will be used for documents that you crate for the customer or vendor in question. For more information, see <a href="ui-define-customer-vendor-document-layouts.html">Define Document Layouts for Customers and Vendors</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Document reports (not lists) that use a Word report layout are typically faster than those that use an RDLC report layout. So if you have the option to choose between a Word or RDLC report layout for a document report, use the Word report layout for the best performance.</p>
+</div>
+<h2 id="to-change-which-report-layout-to-use-for-a-report-or-document">To change which report layout to use for a report or document</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Report Layout Selection</strong>, and then choose the related link.<br>
+The <strong>Report Layout Selection</strong> page lists all the reports that are available for the company that is specified in the <strong>Company</strong> field at the top of the page. The <strong>Selected Layout</strong> field specifies the layout that is currently used on the report.</li>
+<li>Set the <strong>Company</strong> field at the top of the page to the company that includes the report.</li>
+<li>To change the layout that is used by a report, on the row for the report, set the <strong>Selected Layout</strong> field to one of the following options:
+<ul>
+<li><strong>RDLC (built-in)</strong>, uses the built-in RDLC report layout on the report.</li>
+<li><strong>Word (built-in)</strong>, uses the built-in Word report layout on the report.</li>
+<li><strong>Custom</strong>, uses a custom layout on the report.</li>
+</ul>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose a report layout of type <strong>RDLC (built-in)</strong> or <strong>Word (built-in)</strong> and you get an error message that the report does not have a layout of the specified type, then you must choose another layout option or create a custom report layout of the type that you want to use. See the next procedure.</p>
+</div>
+<p>If you selected a built-in RDLC or Word report layout, then no further action is required, and the layout will be used the next time the report is run.</p>
+<h2 id="to-change-the-custom-layout-to-use-for-a-report-layout">To change the custom layout to use for a report layout</h2>
+<p>You may also want to change the currently used custom layout. For more information, see <a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a>.</p>
+<p>All custom report layouts that exist for report layouts in a company are listed on the <strong>Custom Report Layouts</strong> page. On the <strong>Report Layout Selection</strong> page, you can see which custom layouts are available for each report in the <strong>Custom Layouts</strong> FactBox.</p>
+<ol>
+<li>On the <strong>Report Layout Selection</strong> page, on the line for the report layout that you want to change, choose the lookup button in the <strong>Custom Layout Description</strong> field.</li>
+<li>On the <strong>Custom Report Layouts</strong> page, select the row for the custom layout that you want to use, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<p>The name of the selected custom layout is now shown in the <strong>Custom Layout Description</strong> field and will be used the next time the report or document is previewed, printed, or sent.</p>
+<p>You can now go to your customer and vendor cards to specify which of the layouts to use for different documents that you crate for the customer or vendor in question, such as order confirmations or payment reminders. For more information, see <a href="ui-define-customer-vendor-document-layouts.html">Define Document Layouts for Customers and Vendors</a>.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/change-documents-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-manage-report-layouts.html">Managing Report Layouts</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-how-change-layout-currently-used-report.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Working with account schedules in Russia </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Working with account schedules in Russia ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Russian enhancements include additional functionality around account schedules.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-with-account-schedules">Work with Account Schedules</h1>
+
+<p>Use account schedules to get insight into the financial data stored in your chart of accounts. Account schedules analyze figures in G/L accounts, and compare general ledger entries with general ledger budget entries. The results display in charts on your Home page, such as the Cash Flow chart.</p>
+<p>Business Central provides a few sample account schedules that you can use right away, or you can set up your own rows and columns to specify the figures to compare. For example, you can create account schedules to calculate profit margins on dimensions like departments or customer groups. You can create as many customized financial statements as you want.</p>
+<p>Setting up account schedules requires an understanding of the financial data in the chart of accounts. For example, you can view general ledger entries as percentages of budget entries. This requires that budgets are created. For more information, see <a href="../../finance-how-create-budgets.html">Create Budgets</a>.</p>
+<h2 id="account-categories-and-account-schedules">Account Categories and Account Schedules</h2>
+<p>You can use account categories to change the layout of your financial statements. After you set up your account categories in the <strong>G/L Account Categories</strong> window, and you choose the <strong>Generate Account Schedules</strong> action, the underlying account schedules for the core financial reports are updated. The next time you run one of these reports, such as the balance statement, new totals and subentries are added, based on your changes.</p>
+<h2 id="to-create-new-account-schedules">To create new account schedules</h2>
+<p>You use account schedules to analyze figures in general ledger accounts or to compare general ledger entries with general ledger budget entries. For example, you can view the general ledger entries as percentages of the budget entries.</p>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Account Schedules</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the <strong>Account Schedule Names</strong> window, choose the <strong>New</strong> action to create a new account schedule name.</p>
+</li>
+<li><p>Fill in the fields as necessary. Choose a field to read a short description of the field or link to more information.</p>
+</li>
+<li><p>Choose the <strong>Edit Account Schedule</strong> action.</p>
+</li>
+<li><p>In the <strong>Account Schedule</strong> window, fill in the fields as necessary.</p>
+<p>When you have created a new account schedule and set up the rows, you must set up columns. You can either set them up manually or assign a predefined column layout to your account schedule.</p>
+</li>
+<li><p>Choose the <strong>Edit Column Layout Setup</strong> action.</p>
+</li>
+<li><p>In the <strong>Column Layout</strong> window, fill in the fields as necessary.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you did not assign a default column layout to the account schedule, you must set the columns up manually.</p>
+</div>
+<h3 id="to-create-a-column-that-calculates-percentages">To create a column that calculates percentages</h3>
+<p>Sometimes you may want to include a column in an account schedule to calculate percentages of a total. For example, if you have a number of rows that break down sales by dimension, you may want a column to indicate the percentage of total sales that each row represents.</p>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Account Schedules</strong>, and then choose the related link.</li>
+<li>In the <strong>Account Schedule Names</strong> window, select an account schedule.</li>
+<li>Choose the <strong>Edit Account Schedule</strong> action to set up an account schedule row to calculate the total on which the percentages will be based.</li>
+<li>Insert a line immediately above the first row for which you want to display a percentage.</li>
+<li>Fill in the fields on the line as follows: In the <strong>Totaling Type</strong> field, enter <strong>Set Base for Percent</strong>. In the <strong>Totaling</strong> field, enter a formula for the total that the percentage will be based on. For example, if row 11 contains the total sales, enter <strong>11</strong>.</li>
+<li>Choose the <strong>Edit Column Layout Setup</strong> action to set up a column.</li>
+<li>Fill in the fields on the line as follows: In the <strong>Column Type</strong> field, select <strong>Formula</strong>. In the <strong>Formula</strong> field, enter a formula for the amount that you want to calculate a percentage for, followed by %. For example, if column number N contains the net change, enter <strong>N%</strong>.</li>
+<li>Repeat steps 4 through 7 for each group of rows that you want to break down by percentage.</li>
+</ol>
+<h2 id="to-set-up-account-schedules-with-overviews">To set up account schedules with overviews</h2>
+<p>You can use an account schedule to create a statement comparing general ledger figures and general leger budget figures.</p>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Account Schedules</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the <strong>Account Schedule Names</strong> window, select an account schedule.</p>
+</li>
+<li><p>Choose the <strong>Edit Account Schedule</strong> action</p>
+</li>
+<li><p>In the <strong>Account Schedule</strong> window, in the <strong>Name</strong> field, select the default account schedule name.</p>
+</li>
+<li><p>Choose the <strong>Insert Accounts</strong> action.</p>
+</li>
+<li><p>Select the accounts that you want to include in your statement, and then choose the <strong>OK</strong> button.</p>
+<p>The accounts are now inserted into your account schedule. If you want you can also change the column layout.</p>
+</li>
+<li><p>Choose the <strong>Overview</strong> action.</p>
+</li>
+<li><p>On the <strong>Dimension Filters</strong> FastTab, set the budget filter to the desired filter name.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>Now you can copy and paste your budget statement into a spreadsheet.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="../../finance.html">Finance</a><br>
+<a href="../../finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="../../finance-general-ledger.html">The General Ledger and the Chart of Accounts</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Russia/How-to-Work-with-Account-Schedules.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

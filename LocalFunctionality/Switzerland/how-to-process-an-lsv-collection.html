@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Process an LSV Collection </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Process an LSV Collection ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use LSV journals to create and process payments from Lastschrift Verfahren (LSV+) customers. You can register these payments in the cash receipt journal, create an LSV file, and then print the collection order.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="process-an-lsv-collection">Process an LSV Collection</h1>
+
+<p>You can use the <strong>LSV Journal</strong> page to create and process payments from Lastschrift Verfahren (LSV+) customers. You can register these payments in the cash receipt journal, create an LSV file, and then print the collection order. For more information, see the Cash Receipt Journal page and <a href="how-to-export-payments-using-lsv.html">Export Payments Using LSV</a>.</p>
+<p>When you run the <strong>LSV Suggest Collection</strong> batch job, each suggested collection is registered on an LSV journal line, and the open invoices are transferred to the LSV journals. For more information, see the LSV Journal table.</p>
+<p>You can view, edit, or delete the suggested payment lines. If you correct the suggested amount, then the difference is marked as a discount. You can run the batch job multiple times for different customer groups. The suggestion lines can be placed in the same journal.</p>
+<h2 id="to-create-an-lsv-collection">To create an LSV collection</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>LSV Journal List</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>LSV Journal List</strong> page, fill in the required fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LSV Bank Code</strong></td>
+<td>Select the LSV bank code for the bank that will perform the collection.</td>
+</tr>
+<tr>
+<td><strong>LSV Journal Description</strong></td>
+<td>Enter a description for the entry.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Select the required LSV journal entry, and then choose the <strong>LSV Suggest Collection</strong> action to create the payments to be collected automatically by LSV+.</p>
+</li>
+<li><p>On the <strong>LSV Suggest Collection</strong> page, on the <strong>Options</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No.</strong></td>
+<td>Enter the LSV journal number.</td>
+</tr>
+<tr>
+<td><strong>From due date</strong></td>
+<td>Specify the starting due date of open entries to be suggested for collection.</td>
+</tr>
+<tr>
+<td><strong>To due date</strong></td>
+<td>Specify the ending due date of open entries to be suggested for collection.</td>
+</tr>
+<tr>
+<td><strong>Collection date</strong></td>
+<td>Specify the date on which the collection closes. The LSV+ order must be submitted at least three banking days before the collection date.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>All related lines are transferred to the LSV journal. After processing the LSV collection, you can view, check, or edit the suggested payments on the <strong>LSV Journal</strong> page. For more information, see the LSV Journal Line table.</p>
+<h2 id="to-manage-suggested-payments">To manage suggested payments</h2>
+<ol>
+<li><p>On the <strong>LSV Journal List</strong> page, select the required journal entry, and then choose the <strong>LSV Journal Line</strong> action.</p>
+<p>You can view and modify the suggested payments in this page. You can enter the required payments manually. For new journal lines, the <strong>LSV Status</strong> field is set to <strong>Open</strong> to indicate that the invoice is unpaid.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="swiss-electronic-payments-using-lsv-.html">Swiss Electronic Payments Using LSV+</a><br>
+<a href="how-to-close-an-lsv-collection.html">Close an LSV Collection</a><br>
+<a href="how-to-post-lsv-payments.html">Post LSV+ Payments</a><br>
+<a href="how-to-export-payments-using-lsv.html">Export Payments Using LSV</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Switzerland/how-to-process-an-lsv-collection.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

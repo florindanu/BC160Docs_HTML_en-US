@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Electronic Accounting Regulations in Mexico </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Electronic Accounting Regulations in Mexico ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how Business Central helps you comply with electronic accounting requirements in Mexico.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="complying-with-electronic-accounting-regulations-in-mexico">Complying with Electronic Accounting Regulations in Mexico</h1>
+
+<p>In Mexico, individuals and businesses must do their bookkeeping electronically and forward their monthly results to the Mexican Tax Authorities (SAT) as separate XML files at the end of each month. The XML files must contain the following:</p>
+<ul>
+<li>The chart of accounts. This file is to be submitted whenever the chart of accounts has been modified.</li>
+<li>The trial balance, including opening balances, movements (debit / credit), and final balances.</li>
+<li>All journal transactions, including all actual movements, such as purchases, sales, and so on. This file is to be submitted upon request from the authorities.</li>
+</ul>
+<p>For more information about the structure of these files (also referred to as Annex 24), see the Secretaria de Gobernación website. The <strong>Export Elect. Accounting</strong> functionality has been developed to meet this regulatory requirement.</p>
+<h2 id="setup-data-required-to-export-successfully">Setup Data Required to Export Successfully</h2>
+<p>To export the G/L balance information successfully, you must first set up certain data. Missing data will result in a warning message that some mandatory fields are blank, but the export will not be canceled. If in doubt, you can submit the file to the authorities to get more details about the missing values. The following describes the fields to fill in before you export the XML files.</p>
+<p>For the files that contain the chart of accounts and the trial balance:</p>
+<ol>
+<li>For each account, you must specify an account in the <strong>SAT Account Code</strong> field. Only accounts with a SAT account code are included in the files for the chart of accounts and trial balance.</li>
+<li>Every G/L account that is used for export must be defined as either <strong>Debit</strong> or <strong>Credit</strong>. You cannot choose the <strong>Both</strong> option.</li>
+</ol>
+<p>For the file that contains journal transactions:</p>
+<ul>
+<li>On the <strong>Customer Bank Account Card</strong>, <strong>Vendor Bank Account Card</strong>, and <strong>Bank Account</strong> pages you must choose a bank in the <strong>Bank Code</strong> field. This is required if the bank account is used in a transaction.</li>
+<li>On the <strong>Customer</strong> and <strong>Vendor</strong> pages, you must choose an account in the <strong>Preferred Bank Account</strong> field. When a preferred bank account is set for a customer or vendor, that bank account is copied to the Recipient Bank Account field whenever a payment to a vendor or a cash receipt from a customer is created. This default value can be changed on the journal lines before posting.</li>
+<li>The <strong>Fiscal Invoice Number PAC</strong> field on all purchase documents is used to register the UUID of an electronic invoice. You can import electronic invoices (response) when you create a purchase invoice, order, or credit memo. Only the UUID is imported, but this functionality can easily be expanded. After data is imported it appears on the invoice after posting.</li>
+<li>On the <strong>Payment Method</strong> page, in the <strong>SAT Method of Payment</strong> field you must specify how payment was made.</li>
+</ul>
+<h2 id="to-generate-the-xml-files">To generate the XML files</h2>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Export Elect. Accounting</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="mexico-local-functionality.html">Mexico Local Funcationality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Mexico/electronic-accounting-regulations.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

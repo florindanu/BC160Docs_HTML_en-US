@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Special Sales Prices and Discounts for Customers | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Special Sales Prices and Discounts for Customers | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to define the alternate pricing and discount agreements that you want to apply to sales documents when selling to different customers.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="record-special-sales-prices-and-discounts">Record Special Sales Prices and Discounts</h1>
+
+<p>The different price and discount agreements that apply when selling to different customers must be defined so that the agreed rules and values are applied to sales documents that you create for the customers.</p>
+<p>When you have recorded special prices and line discounts for sales and purchases, Business Central ensures that your profit on item trade is always optimal by automatically calculating the best price on sales and purchase documents and on job and item journal lines. For more information, see <a href="sales-how-record-sales-price-discount-payment-agreements.html#best-price-calculation">Best Price Calculation</a>.</p>
+<p>Concerning prices, you can have a special sales price inserted on sales lines if a certain combination of customer, item, minimum quantity, unit of measure, or starting/ending date exists.</p>
+<p>Concerning discounts, you can set up and use two types of sales discounts:</p>
+<table>
+<thead>
+<tr>
+<th>Discount Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sales Line Discount</strong></td>
+<td>An amount discount that is inserted on sales lines if a certain combination of customer, item, minimum quantity, unit of measure, or starting/ending date exists. This works in the same way as for sales prices.</td>
+</tr>
+<tr>
+<td><strong>Invoice Discount</strong></td>
+<td>A percentage discount that is subtracted from the document total if the value amount of all lines on a sales document exceeds a certain minimum.</td>
+</tr>
+</tbody>
+</table>
+<p>Because sales prices and sales line discounts are based on a combination of item and customer, you can also perform this configuration from the item card of the item where the rules and values apply.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you do not want an item to ever be sold at a discounted price, simply leave discount fields on the item card empty, and do not include the item in any line discount setup.</p>
+</div>
+<h2 id="to-set-up-a-sales-price-for-a-customer">To set up a sales price for a customer</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customers</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the relevant customer card, and then choose the <strong>Prices</strong> action.</p>
+<p>On the <strong>Sales Prices</strong> page, the <strong>Sales Type</strong> field is prefilled with <strong>Customer</strong>, and the <strong>Sales Code</strong> field is prefilled with the customer number.</p>
+</li>
+<li><p>Fill in the fields on the line as necessary. Hover over a field to read a short description. Fill a line for each combination that will grant a special sales price to the customer.</p>
+</li>
+</ol>
+<h2 id="to-set-up-a-sales-line-discount-for-a-customer">To set up a sales line discount for a customer</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customers</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the relevant customer card, and then choose the <strong>Line Discounts</strong> action.</p>
+<p>On the <strong>Sales Line Discounts</strong> page, the <strong>Sales Type</strong> field is prefilled with <strong>Customer</strong>, and the <strong>Sales Code</strong> field is prefilled with the customer number.</p>
+</li>
+<li><p>Fill in the fields on the line as necessary. Hover over a field to read a short description. Fill a line for each combination that will grant a sales line discount to the customer.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you open the <strong>Sales Prices</strong> and <strong>Sales Line Discounts</strong> windows from a specific customer, the <strong>Sales Type Filter</strong> and <strong>Sales Code Filter</strong> fields are set for the customer and cannot be changed or removed, indicated by the grayed value in the <strong>Sales Code Filter</strong> field.<br><br>
+To set up prices or line discounts for all customers, a customer price group, or a campaign, you must open the windows from an item card. Alternatively, for sales prices, use the <strong>Sales Price Worksheet</strong> page. For more information, see <a href="sales-how-record-sales-price-discount-payment-agreements.html#to-bulk-update-item-prices">To bulk update item prices</a>.</p>
+</div>
+<h2 id="to-set-up-an-invoice-discount-for-a-customer">To set up an invoice discount for a customer</h2>
+<p>When you have decided which customers are eligible for invoice discounts, enter the invoice discount code on the customer cards and set up the terms for each code.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customers</strong>, and then choose the related link.</li>
+<li>Open the customer card for a customer that will be eligible for invoice discounts.</li>
+<li>In the <strong>Invoice Disc. Code</strong> field, select a code for the relevant invoice discount terms to use to calculate invoice discounts for the customer.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Invoice discount codes are represented by existing customer cards. This enables you to quickly assign invoice discount terms to customers by picking the name of another customer who will have the same terms.</p>
+</div>
+<p>Proceed to set up new the sales invoice discount terms.</p>
+<ol>
+<li>On the <strong>Customer Card</strong> page, choose the <strong>Invoice Discounts</strong> action. The <strong>Cust. Invoice Discounts</strong> page opens.</li>
+<li>In the <strong>Currency Code</strong> field, enter the code for a currency that the invoice discount terms on the line applies to. Leave the field blank to set up invoice discount terms in USD.</li>
+<li>In the <strong>Minimum Amount</strong> field, enter the minimum amount that an invoice must have to be eligible for the discount.</li>
+<li>In the <strong>Discount %</strong> field, enter the invoice discount as a percentage of the invoice amount.</li>
+<li>Repeat steps 5 through 7 for each currency that the customer will receive a different invoice discount for.</li>
+</ol>
+<p>The invoice discount is now set up and assigned to the customer in question. When you select the customer code in the <strong>Invoice Disc. Code</strong> field on other customer cards, the same invoice discount is assigned to those customers.</p>
+<h2 id="to-work-with-sales-invoice-discounts-and-service-charges">To work with sales invoice discounts and service charges</h2>
+<p>When you use invoice discounts, the size of the invoice amount determines the size of the discount that is granted.</p>
+<p>On the <strong>Cust. Invoice Discounts</strong> page, you can also add a service charge to invoices over a certain amount.</p>
+<p>Before you can use invoice discounts with sales, you must enter certain information in application. You must decide:</p>
+<ul>
+<li>which customers will be granted this type of discount.</li>
+<li>which discount percentages you will use.</li>
+</ul>
+<p>If you invoice discounts to be calculated automatically, you can specify this on the <strong>Sales &amp; Receivables Setup</strong> page.</p>
+<p>For each customer, you can specify whether you will grant invoice discounts if the requirement is satisfied (that is, if the invoice amount is large enough). You can define the terms of the invoice discount in local currency for domestic customers and in foreign currency for foreign customers.</p>
+<p>You link discount percentages to specific invoice amounts in <strong>Cust. Invoice Discounts</strong> pages. You can enter any number of percentages in each page. Each customer can have its own page, or you can link several customers to the same page.</p>
+<p>In addition to (or instead of) a discount percentage, you can link a service charge amount to a specific invoice amount.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Before you start entering this information, it is a good idea to prepare an outline of the discount structure that you want to use. This makes it easier to see which customers can be linked to the same invoice discount page. The fewer pages you have to set up, the faster you can enter the basic information.</p>
+</div>
+<p>For more information about discounts in sales, see <a href="http://docs.microsoft.com/learn/modules/customer-discounts-dynamics-365-business-central/index">Set up discounts for your customers</a> at Microsoft Learn.</p>
+<h2 id="best-price-calculation">Best Price Calculation</h2>
+<p>When you have recorded special prices and line discounts for sales and purchases, Business Central ensures that your profit on item trade is always optimal by automatically calculating the best price on sales and purchase documents and on job and item journal lines.</p>
+<p>The best price is the lowest permissible price with the highest permissible line discount on a given date. Business Central automatically calculates this when it inserts the unit price and the line discount percentage for items on new document and journal lines.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The following describes how the best price is calculated for sales. The calculation is the same for purchases.</p>
+</div>
+<ol>
+<li><p>Business Central checks the combination of the bill-to customer and the item and then calculates the applicable unit price and line discount percentage, using the following criteria:</p>
+<ul>
+<li>Does the customer have a price/discount agreement, or does the customer belong to a group that does?</li>
+<li>Is the item or the item discount group on the line included in any of these price/discount agreements?</li>
+<li>Is the order date (or the posting date for the invoice and credit memo) within the starting and ending date of the price/discount agreement?</li>
+<li>Is a unit of measure code specified? If so, Business Central checks for prices/discounts with the same unit of measure code, and prices/discounts with no unit of measure code.</li>
+</ul>
+</li>
+<li><p>Business Central checks if any price/discount agreements apply to information on the document or journal line, and then inserts the applicable unit price and line discount percentage, using the following criteria:</p>
+<ul>
+<li>Is there a minimum quantity requirement in the price/discount agreement that is fulfilled?</li>
+<li>Is there a currency requirement in the price/discount agreement that is fulfilled? If so, the lowest price and the highest line discount for that currency are inserted, even if local currency would provide a better price. If there is no price/discount agreement for the specified currency code, Business Central inserts the lowest price and the highest line discount in your local currency.</li>
+</ul>
+</li>
+</ol>
+<p>If no special price can be calculated for the item on the line, then either the last direct cost or the unit price from the item card is inserted.</p>
+<h2 id="to-copy-sales-prices">To copy sales prices</h2>
+<p>If you want to copy sales prices, such as an individual customer's sales prices to use for a customer price group, you must run the <strong>Suggest Sales Price on Wksh.</strong> batch job, which you launch from the <strong>Sales Price Worksheet</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Price Worksheet</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Suggest Sales Price on Wksh.</strong> action.</li>
+<li>On the <strong>Sales Prices</strong> FastTab, fill in the <strong>Sales Type</strong> and <strong>Sales Code</strong> fields with the original sales prices you want to copy.</li>
+<li>In the top section of the request page, fill in the <strong>Sales Type</strong> and <strong>Sales Code</strong> fields with the type and name you want the sales prices copied to.</li>
+<li>If you want the batch job to create new prices, select the <strong>Create New Prices</strong> check box.</li>
+<li>Choose the <strong>OK</strong> button to fill in the lines on the <strong>Sales Price Worksheet</strong> page with the suggested new prices, indicating that they are valid for the selected sales type.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This batch job only creates suggestions and it does not implement the suggested changes. If you are satisfied with the suggestions and want to implement them, that is insert them on the <strong>Sales Prices</strong> page, choose the <strong>Implement Price Changes</strong> action on the <strong>Sales Price Worksheet</strong> page.</p>
+</div>
+<h2 id="to-bulk-update-item-prices">To bulk update item prices</h2>
+<p>If you want to bulk update item prices, such as increase all item prices by some percentage, you must run the <strong>Suggest Item Price on Wksh.</strong> batch job. You can find a link to the batch job on the <strong>Sales Price Worksheet</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Price Worksheet</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Suggest Item Price on Wksh.</strong> action.</li>
+<li>On the <strong>Item</strong> FastTab, fill in the <strong>No.</strong> or <strong>Invenotry Posting Group</strong> or other fields with the original item prices you want to update.</li>
+<li>In the top section of the request page, fill in the <strong>Sales Type</strong> and <strong>Sales Code</strong> with the type and name you want the sales prices copied to.</li>
+<li>If you want the batch job to automatically adjust suggested item prices, enter adjustment in <strong>Adjustment Factor</strong> field. For example, you would enter 1.15 in <strong>Adjustment Factor</strong> for 15% increase in item price.</li>
+<li>If you want the batch job to create new prices, select the <strong>Create New Prices</strong> field.</li>
+<li>Choose the <strong>OK</strong> button to fill in the lines on the <strong>Sales Price Worksheet</strong> page with the suggested new prices, indicating that they are valid for the selected <strong>Item</strong>.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This batch job only creates suggestions and it does not implement the suggested changes. If you are satisfied with the suggestions and want to implement them, that is insert them in the <strong>Sales Prices</strong> table, you can use the <strong>Implement Price Changes</strong> batch job, which is found on the <strong>Actions</strong> tab, in the <strong>Functions</strong> group, on the <strong>Sales Price Worksheet</strong> page.</p>
+</div>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/manage-sales-prices-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-setup-sales.html">Setting Up Sales</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/sales-how-record-sales-price-discount-payment-agreements.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

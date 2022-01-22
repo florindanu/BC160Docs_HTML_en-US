@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Statutory reports in Russia </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Statutory reports in Russia ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Russian enhancements include support for statutory reports.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="statutory-reports">Statutory Reports</h1>
+
+<p>Business Central lets you set up statutory reports so that you can import and export data for electronic tax reporting and other required documents.</p>
+<p>After you have set up a report and specified the required information, you can export the report to Excel, and then print the report.</p>
+<h2 id="getting-started-with-statutory-reports">Getting Started with Statutory Reports</h2>
+<p>Use the windows based on the following key tables to set up and create statutory reports.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tables</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Statutory Report Setup</td>
+<td style="text-align: left;">Specifies information that is used to set up statutory reports including templates, formats, number series, and export destinations.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Format Version</td>
+<td style="text-align: left;">Specifies setup information about the different report formats. This includes when to use which report, the XML schema to use, and the required data format.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Statutory Report</td>
+<td style="text-align: left;">Specifies a list of statutory reports with detailed information, such as type, format version, and if the statutory report is currently active. From this window, you can define statutory report tables, requisites groups, the XML element lines, and you can export data.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Statutory Report Table</td>
+<td style="text-align: left;">Specifies information that is required to set up reporting tables including scalability limits, templates, and standard text.   From this window, you can define table rows, columns, individual requisites, and data source mapping.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stat. Report Table Row</td>
+<td style="text-align: left;">Allows you to define row formats and functions for your statutory report tables.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stat. Report Table Column</td>
+<td style="text-align: left;">Allows you to define column formats for your statutory report tables.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stat. Report Requisites Group</td>
+<td style="text-align: left;">Specifies the conditions used to format and process statutory reports including export type, Microsoft Excel mapping, and cell quantity.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-for-statutory-reports">Data for Statutory Reports</h2>
+<p>The statutory reports are based on account schedules and tax registers. For each statutory report that you set up in the <strong>Statutory Reports</strong> window, you define how the data maps to fields on tables in Dynamics NAV by creating table mappings. In the <strong>Statutory Report Tables</strong> window, in the <strong>Int. Source Type</strong> field, you specify the area that the data comes from as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Option</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Acc. Schedule</strong></td>
+<td style="text-align: left;">The data is based on an account schedule.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tax Register</strong></td>
+<td style="text-align: left;">The data is based on a tax register. For more information, see <a href="tax-registers.html">Tax Registers</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tax Difference</strong></td>
+<td style="text-align: left;">The data is based on a tax difference. For more information, see <a href="tax-differences.html">Tax Differences</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Payroll Analysis Report</strong></td>
+<td style="text-align: left;">The data is based on payroll analysis.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="tax-differences.html">Tax Accounting</a><br>
+<a href="tax-accounting.html">Tax Differences</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Russia/statutory-reports.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

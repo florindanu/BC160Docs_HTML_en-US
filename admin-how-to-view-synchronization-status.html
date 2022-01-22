@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>View the Status of Synchronization Jobs | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="View the Status of Synchronization Jobs | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to view the status after synchronizing coupled records.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="view-the-status-of-synchronization-jobs">View the Status of Synchronization Jobs</h1>
+
+<p>Use the <strong>Coupled Data Synchronization Errors</strong> page to view the status of synchronization jobs that have been run for coupled records in a Common Data Service or Dynamics 365 Sales integrations. This includes jobs that were run from the job queue and manual synchronization jobs that ran on records from Business Central. For example, viewing their status is helpful when troubleshooting because it gives you access to details about errors related to coupled records. Typically, these types of errors are caused by user actions, for example, when:</p>
+<ul>
+<li>Two people made a change to the same record in both business apps.</li>
+<li>Someone deleted a record in one of the apps, but not both.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Coupled Data Synchronization Errors</strong> page shows information about jobs related to coupled records. If you resolve all of the errors but records are still not synchronizing, it might have something to do with a setting for the integration. Typically, your administrator will need to resolve those types of errors.</p>
+</div>
+<div class="embeddedvideo"><iframe src="https://go.microsoft.com/fwlink/?linkid=2098171" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="to-view-and-resolve-synchronization-errors-for-coupled-records">To view and resolve synchronization errors for coupled records</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Coupled Data Synchronization Errors</strong>, and then choose the related link.</li>
+<li>The <strong>Coupled Data Synchronization Errors</strong> page shows issues that occurred when you synchronized coupled records. The following table includes actions that you can use to resolve issues one by one:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Remove Coupling</strong></td>
+<td>Uncouples the records and they will no longer synchronize. To resume synchronizing the records, you must couple them again.</td>
+</tr>
+<tr>
+<td><strong>Retry</strong></td>
+<td>For each record where an error is found, synchronization is skipped unless you fix the issue manually. Retry will include the record in the next synchronization.</td>
+</tr>
+<tr>
+<td><strong>Synchronize</strong></td>
+<td>The app will try to resolve a conflict where a record was changed in both business apps. You can choose the version of the record to use in both apps.</td>
+</tr>
+<tr>
+<td><strong>Restore Records</strong> and <strong>Delete Records</strong></td>
+<td>These are useful when a record was deleted in one of the business apps. Delete Records deletes the record in the app where it still exists. Restore recreates the record in the business app where it was deleted.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="to-view-the-synchronization-log-for-a-specific-manually-synchronized-record">To view the synchronization log for a specific (manually synchronized) record</h2>
+<ol>
+<li>Open, for example, a customer, item or any other record that is synchronizing data between Business Central and Common Data Service or Dynamics 365 Sales.</li>
+<li>Choose the <strong>Synchronization Log</strong> action to view the synchronization log for a selected record. For example, a specific customer you synchronized manually.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Dynamics 365 Sales</a><br>
+<a href="marketing-integrate-dynamicscrm.html">Using Dynamics 365 Sales from Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-view-synchronization-status.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

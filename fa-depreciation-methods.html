@@ -1,0 +1,900 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Depreciation Methods| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Depreciation Methods| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about the different methods to depreciate or write-down fixed assets.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="depreciation-methods">Depreciation Methods</h1>
+
+<p>There are eight methods of depreciation available:</p>
+<ul>
+<li><p>Straight-Line</p>
+</li>
+<li><p>Declining-Balance 1</p>
+</li>
+<li><p>Declining-Balance 2</p>
+</li>
+<li><p>DB1/SL</p>
+</li>
+<li><p>DB2/SL</p>
+</li>
+<li><p>User-defined</p>
+</li>
+<li><p>Manual</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Use this method for assets that are not subject to depreciation, for example, land. You must enter depreciation in the fixed asset G/L journal. The <strong>Calculate Depreciation</strong> batch job omits fixed assets that use this depreciation method.</p>
+</div>
+</li>
+<li><p>Half-Year Convention</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you use this method, a fixed asset is depreciated by the same amount each year.</p>
+</div>
+</li>
+</ul>
+<h2 id="straight-line-depreciation">Straight-Line Depreciation</h2>
+<p>When you use the straight-line method, you must specify one of the following options in the fixed asset depreciation book:</p>
+<ul>
+<li>The depreciation period (years or months) or a depreciation ending date</li>
+<li>A fixed yearly percentage</li>
+<li>A fixed yearly amount</li>
+<li>Depreciation period</li>
+</ul>
+<h3 id="depreciation-period">Depreciation Period</h3>
+<p>If you enter the depreciation period (the number of depreciation years, the number of depreciation months, or the depreciation ending date), the following formula calculates the depreciation amount:</p>
+<p><em>Depreciation Amount = ((Book value - Salvage Value) x Number of Depreciation Days) / Remaining Depreciation Days</em></p>
+<p>Remaining depreciation days are calculated as the number of depreciation days minus the number of days between the depreciation starting date and the last fixed asset entry date.</p>
+<p>Book value may be reduced by posted appreciation, write-down, custom 1 or custom 2 amounts, depending on whether the <strong>Include in Depr. Calculation</strong> field is deactivated and whether the <strong>Part of Book Value</strong> field is activated on the <strong>FA Posting Type Setup</strong> page. This calculation ensures that the fixed asset is fully depreciated at the depreciation ending date.</p>
+<h3 id="fixed-yearly-percentage">Fixed Yearly Percentage</h3>
+<p>If you enter a fixed yearly percentage, application uses the following formula to calculate the depreciation amount:</p>
+<p>Depreciation Amount = (Straight-Line % x Depreciable Basis x Number of Depr. Days) / (100 x 360)</p>
+<h3 id="fixed-yearly-amount">Fixed Yearly Amount</h3>
+<p>If you enter a fixed yearly amount, application uses this formula to calculate the depreciation amount:</p>
+<p>Depreciation Amount = (Fixed Depreciation Amount x Number of Depreciation Days) / 360</p>
+<h3 id="example---straight-line-depreciation">Example - Straight-Line Depreciation</h3>
+<p>A fixed asset has an acquisition cost of LCY 100,000. The estimated life is eight years. The <strong>Calculate Depreciation</strong> batch job is run biannually.</p>
+<p>For this example, the fixed asset ledger entry looks like this:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/01/10</td>
+<td>Acquisition Cost</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>06/30/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-6,250.00</td>
+<td>93,750.00</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-6,250.00</td>
+<td>87,500.00</td>
+</tr>
+<tr>
+<td>06/30/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-6,250.00</td>
+<td>81,250.00</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-6,250.00</td>
+<td>75,000.00</td>
+</tr>
+<tr>
+<td>06/30/17</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-6,250.00</td>
+<td>6,250.00</td>
+</tr>
+<tr>
+<td>12/31/17</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-6,250.00</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Depreciation starting date</li>
+</ul>
+<h2 id="declining-balance-1-depreciation">Declining-Balance 1 Depreciation</h2>
+<p>This accelerated depreciation method allocates the largest portion of the cost of an asset to the early years of its useful lifetime. If you use this method, you must enter a fixed yearly percentage.</p>
+<p>The following formula calculates depreciation amounts:</p>
+<p><em>Depreciation Amount = (Declining-Bal. % x Number of Depreciation Days x Depr. Basis) / (100 x 360)</em></p>
+<p>The depreciable basis is calculated as the book value less posted depreciation since the starting date of the current fiscal year.</p>
+<p>The posted depreciation amount can contain entries with various posting types (write-down, custom1, and custom2) posted since the starting date of the current fiscal year. These posting types are included in the posted depreciation amount if there are check marks in the <strong>Depreciation Type</strong> and the <strong>Part of Book Value</strong> fields on the <strong>FA Posting Type Setup</strong> page.</p>
+<h3 id="example---declining-balance-1-depreciation">Example - Declining-Balance 1 Depreciation</h3>
+<p>A fixed asset has an acquisition cost of LCY 100,000. The <strong>Declining-Balance %</strong> field is 25. The <strong>Calculate Depreciation</strong> batch job is run biannually.</p>
+<p>The following table shows how the fixed asset ledger entries look.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/01/10</td>
+<td>Acquisition Costs</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>06/30/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-12,500.00</td>
+<td>87,500.00</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-12,500.00</td>
+<td>75,000.00</td>
+</tr>
+<tr>
+<td>06/30/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-9,375.00</td>
+<td>65,625.00</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-9,375.00</td>
+<td>56,250.00</td>
+</tr>
+<tr>
+<td>06/30/12</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-7,031.25</td>
+<td>49,218.75</td>
+</tr>
+<tr>
+<td>12/31/12</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-7,031.25</td>
+<td>42,187.50</td>
+</tr>
+<tr>
+<td>06/30/13</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-5,273.44</td>
+<td>36,914.06</td>
+</tr>
+<tr>
+<td>12/31/13</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-5,273.44</td>
+<td>31,640.62</td>
+</tr>
+<tr>
+<td>06/30/14</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>27,685.54</td>
+</tr>
+<tr>
+<td>12/31/14</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>23,730.46</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Depreciation starting date</p>
+<p>Calculation Method:</p>
+<p><em>1st Year: 25% of 100,000 = 25,000 = 12,500 + 12,500</em></p>
+<p><em>2nd Year: 25% of 75,000 = 18,750 = 9,375 + 9,375</em></p>
+<p><em>3rd Year: 25% of 56,250 = 14,062.50 = 7,031.25 + 7,031.25</em></p>
+<p>The calculation continues until the book value equals the final rounding amount or the salvage value that you entered.</p>
+</li>
+</ul>
+<h2 id="declining-balance-2-depreciation">Declining-Balance 2 Depreciation</h2>
+<p>The Declining-Balance 1 and Declining-Balance 2 methods calculate the same total depreciation amount for each year. However, if you run the <strong>Calculate Depreciation</strong> batch job more than once a year, the Declining-Balance 1 method will result in equal depreciation amounts for each depreciation period. The Declining-Balance 2 method, on the other hand, will result in depreciation amounts that decline for each period.</p>
+<h3 id="example---declining-balance-2-depreciation">Example - Declining-Balance 2 Depreciation</h3>
+<p>A fixed asset has an acquisition cost of LCY 100,000. The <strong>Declining-Balance %</strong> field is 25. The <strong>Calculate Depreciation</strong> batch job is run biannually. The fixed asset ledger entries look like this:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/01/10</td>
+<td>Acquisition Costs</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>06/30/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-13,397.46</td>
+<td>86,602.54</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-11,602.54</td>
+<td>75,000.00</td>
+</tr>
+<tr>
+<td>06/30/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-10,048.09</td>
+<td>64,951.91</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-8,701.91</td>
+<td>56,250.00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Depreciation starting date</li>
+</ul>
+<p>Calculation Method:</p>
+<ul>
+<li>BV = Book value</li>
+<li>ND = Number of depreciation days</li>
+<li>DBP = Declining-balance percent</li>
+<li>P = DBP/100</li>
+<li>D = ND/360</li>
+</ul>
+<p>The formula for calculating the depreciation amounts is:</p>
+<p><em>DA = BV x (1 – (1 –P)<sup>D<sup></sup></sup></em></p>
+<p>The depreciation values are:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>06/30/10</td>
+<td>DA = 100,000.00 x (1 -(1 - 0.25)<sup>0.5<sup>) = 13,397.46</sup></sup></td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>DA = 86,602.54 x (1 - (1 - 0.25)<sup>0.5<sup>) = 11,602.54</sup></sup></td>
+</tr>
+<tr>
+<td>06/30/11</td>
+<td>DA = 75,000.00 x (1 - (1 - 0.25)<sup>0.5<sup>) = 10,048.09</sup></sup></td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>DA = 64,951.91 x (1 - (1 - 0.25)<sup>0.5<sup>) = 8,701.91</sup></sup></td>
+</tr>
+</tbody>
+</table>
+<h2 id="db1sl-depreciation">DB1/SL Depreciation</h2>
+<p>DB1/SL is an abbreviated combination of Declining-Balance 1 and Straight-Line. The calculation continues until the book value equals the final rounding amount, or the salvage value that you entered.</p>
+<p>The <strong>Calculate Depreciation</strong> batch job calculates a straight-line amount and a declining balance amount, but only the greater of the two amounts is transferred to the journal.</p>
+<p>You can use various percentages to calculate declining-balance.</p>
+<p>If you use this method, you must enter the estimated useful lifetime and a declining balance percentage on the <strong>FA Depreciation Books</strong> page.</p>
+<h3 id="example---db1-sl-depreciation">Example - DB1-SL Depreciation</h3>
+<p>A fixed asset has an acquisition cost of LCY 100,000. On the <strong>FA Depreciation Books</strong> page, the <strong>Declining-Balance %</strong> field contains 25 and the <strong>No. of Depreciation Years</strong> field contains 8. The <strong>Calculate Depreciation</strong> batch job is run biannually.</p>
+<p>The fixed asset ledger entries look like this:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/01/10</td>
+<td>Acquisition Costs</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>06/30/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-12,500.00</td>
+<td>87,500.00</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-12,500.00</td>
+<td>75,000.00</td>
+</tr>
+<tr>
+<td>06/30/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-9,375.00</td>
+<td>65,625.00</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-9,375.00</td>
+<td>56,250.00</td>
+</tr>
+<tr>
+<td>06/30/12</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-7,031.25</td>
+<td>49,218.75</td>
+</tr>
+<tr>
+<td>12/31/12</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-7,031.25</td>
+<td>42,187.50</td>
+</tr>
+<tr>
+<td>06/30/13</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-5,273.44</td>
+<td>36,914.06</td>
+</tr>
+<tr>
+<td>12/31/13</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-5,273.44</td>
+<td>31,640.62</td>
+</tr>
+<tr>
+<td>06/30/14</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>27,685.54</td>
+</tr>
+<tr>
+<td>12/31/14</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>23,730.46</td>
+</tr>
+<tr>
+<td>06/30/15</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>19,775.38 SL</td>
+</tr>
+<tr>
+<td>12/31/15</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>15,820.30 SL</td>
+</tr>
+<tr>
+<td>06/30/16</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>11,865.22 SL</td>
+</tr>
+<tr>
+<td>12/31/16</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.07</td>
+<td>7,910.15 SL</td>
+</tr>
+<tr>
+<td>06/30/17</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.08</td>
+<td>3,955.07 SL</td>
+</tr>
+<tr>
+<td>12/31/17</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-3,955.07</td>
+<td>0.00 SL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Depreciation starting date</li>
+</ul>
+<p>&quot;SL&quot; after the book value means that the straight-line method has been used.</p>
+<p>Calculation method:</p>
+<p>1st year:</p>
+<p><em>Declining-balance amount: 25% of 100,000 = 25,000 = 12,500 + 12,500</em></p>
+<p><em>Straight-line amount = 100,000 / 8 = 12,500 = 6,250 + 6,250</em></p>
+<p>The declining-balance amount is used because it is the greater amount.</p>
+<p>6th year (2015):</p>
+<p><em>Declining-balance amount: 25% of 23,730.46 = 4,943.85= 2,471.92 + 2,471.92</em></p>
+<p><em>Straight-line amount = 23,730.46/3 = 7,910.15 = 3,995.07 + 3,995.08</em></p>
+<p>The straight-line amount is used because it is the greater amount.</p>
+<h2 id="user-defined-depreciation">User-defined Depreciation</h2>
+<p>The application has a facility that allows you to set up user-defined depreciation methods.</p>
+<p>With a user-defined method, you use the <strong>Depreciation Tables</strong> page, where you must enter a depreciation percentage for each period (month, quarter, year, or accounting period).</p>
+<p>The formula for calculating the depreciation amounts is:</p>
+<p>Depreciation Amount = (Depreciation % x Number of Depreciation Days x Depr. Basis) / (100 x 360)</p>
+<h3 id="depreciation-based-on-number-of-units">Depreciation Based on Number of Units</h3>
+<p>This user-defined method can also be used to depreciate based on number of units, for example, in the case of production machines with an established lifetime capacity. On the <strong>Depreciation Tables</strong> page, you can enter the number of units that can be produced in each period (month, quarter, year,or accounting period).</p>
+<h3 id="to-set-up-user-defined-depreciation-methods">To set up user-defined depreciation methods</h3>
+<p>On the <strong>Depreciation Table</strong> page, you can set up user-defined depreciation methods. For example, you can set up depreciation based on number of units.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Tables</strong>, and then choose the related link.</li>
+<li>On the <strong>Depreciation Table List</strong> page, choose the <strong>New</strong> action.</li>
+<li><strong>Depreciation Table Card</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h3 id="example---user-defined-depreciation">Example - User-defined Depreciation</h3>
+<p>You use a depreciation method that allows you to depreciate assets in an accelerated manner for income tax purposes.</p>
+<p>You would use the following depreciation rates for a fixed asset with a three-year lifetime for tax purposes:</p>
+<ul>
+<li>year 1: 25%</li>
+<li>year 2: 38%</li>
+<li>year 3: 37%</li>
+</ul>
+<p>The acquisition cost is LCY 100,000, and the depreciable lifetime is five years. Depreciation is calculated annually.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/01/10</td>
+<td>Acquisition Cost</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-25,000.00</td>
+<td>75,000.00</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-38,000.00</td>
+<td>37,000.00</td>
+</tr>
+<tr>
+<td>12/31/12</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-37,000.00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>12/31/13</td>
+<td>Depreciation</td>
+<td>None</td>
+<td>None</td>
+<td>0</td>
+</tr>
+<tr>
+<td>12/31/14</td>
+<td>Depreciation</td>
+<td>None</td>
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Depreciation starting date</li>
+</ul>
+<p>If you use a user-defined method, the <strong>First User-Defined Depr. Date</strong> and <strong>Depreciation Starting Date</strong> fields must be filled in on the <strong>FA Depreciation Books</strong> page. The <strong>First User-Defined Depr. Date</strong> field and the contents in the <strong>Period Length</strong> field on the <strong>Depreciation Tables</strong> page are used to determine the time intervals to be used for depreciation calculations. This ensures that application will start using the specified percentage on the same day for all assets. The <strong>Depreciation Starting Date</strong> field is used to calculate the number of depreciation days.</p>
+<p>In the previous example, both the <strong>First User-Defined Depr. Date</strong> and <strong>Depreciation Starting Date</strong> fields contain 01/01/01. If, however, the <strong>First User-Defined Depr. Date</strong> field contained 01/01/10 and the <strong>Depreciation Starting Date</strong> field contained 04/01/11, the result would be:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01/01/10</td>
+<td>Acquisition Cost</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>270</td>
+<td>-18,750.00</td>
+<td>81,250.00</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-38,000.00</td>
+<td>42,250.00</td>
+</tr>
+<tr>
+<td>12/31/12</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-37,000.00</td>
+<td>6,250.00</td>
+</tr>
+<tr>
+<td>12/31/13</td>
+<td>Depreciation</td>
+<td>90</td>
+<td>-6,250.00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>12/31/14</td>
+<td>Depreciation</td>
+<td>None</td>
+<td>None</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Depreciation starting date</li>
+</ul>
+<h2 id="half-year-convention-depreciation">Half-Year Convention Depreciation</h2>
+<p>The Half-Year Convention method will only be applied if you have placed a check mark in the <strong>Use Half-Year Convention</strong> field in the fixed <strong>FA Depreciation Book</strong> page.</p>
+<p>This depreciation method can be used in conjunction with the following depreciation methods in application:</p>
+<ul>
+<li>Straight-Line</li>
+<li>Declining-Balance 1</li>
+<li>DB1/SL</li>
+</ul>
+<p>When you apply the Half-Year Convention, a fixed asset has six months of depreciation in the first fiscal year, regardless of the contents of the <strong>Depreciation Starting Date</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The estimated life of the fixed asset that is remaining after the first fiscal year will always contain a half-year using the Half-Year Convention Method. Thus, for the Half-Year Convention method to be applied correctly, the <strong>Depreciation Ending Date</strong> field on the <strong>FA Depreciation Book</strong> page must always contain a date which is exactly six months before the final date of the fiscal year in which the fixed asset will fully depreciate.</p>
+</div>
+<h3 id="example---half-year-convention-depreciation">Example - Half-Year Convention Depreciation</h3>
+<p>A fixed asset has an acquisition cost of LCY 100,000. The <strong>Depreciation Starting Date</strong> is 03/01/10. The estimated life is five years, so the <strong>Depreciation Ending Date</strong> must be 06/30/15. The <strong>Calculate Depreciation</strong> batch job is run annually. This example is based on a calendar fiscal year.</p>
+<p>The fixed asset ledger entries look like this:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>03/01/10</td>
+<td>Acquisition Cost</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>270</td>
+<td>-10,000.00</td>
+<td>90,000.00</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-20,000.00</td>
+<td>70,000.00</td>
+</tr>
+<tr>
+<td>12/31/12</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-20,000.00</td>
+<td>50,000.00</td>
+</tr>
+<tr>
+<td>12/31/13</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-20,000.00</td>
+<td>30,000.00</td>
+</tr>
+<tr>
+<td>12/31/14</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-20,000.00</td>
+<td>10,000.00</td>
+</tr>
+<tr>
+<td>12/31/15</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-10,000.00</td>
+<td>0.00</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Depreciation starting date</li>
+</ul>
+<h2 id="example---db1sl-depreciation-using-half-year-convention">Example - DB1/SL Depreciation Using Half-Year Convention</h2>
+<p>A fixed asset has an acquisition cost of LCY 100,000. The <strong>Depreciation Starting Date</strong> is 11/01/10. The estimated life is five years, so the <strong>Depreciation Ending Date</strong> must be 06/30/15. On the <strong>FA Depreciation Books</strong> page, the <strong>Declining-Balance %</strong> field contains 40. The <strong>Calculate Depreciation</strong> batch job is run annually. This example is based on a calendar fiscal year.</p>
+<p>The fixed asset ledger entries look like this:</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>FA Posting Type</th>
+<th>Days</th>
+<th>Amount</th>
+<th>Book Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11/01/10</td>
+<td>Acquisition Cost</td>
+<td>*</td>
+<td>100,000.00</td>
+<td>100,000.00</td>
+</tr>
+<tr>
+<td>12/31/10</td>
+<td>Depreciation</td>
+<td>60</td>
+<td>-20,000.00</td>
+<td>80,000.00</td>
+</tr>
+<tr>
+<td>12/31/11</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-32,000.00</td>
+<td>48,000.00</td>
+</tr>
+<tr>
+<td>12/31/12</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-19,200.00</td>
+<td>28,800.00</td>
+</tr>
+<tr>
+<td>12/31/13</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-11,520.00</td>
+<td>17,280.00</td>
+</tr>
+<tr>
+<td>12/31/14</td>
+<td>Depreciation</td>
+<td>360</td>
+<td>-11,520.00</td>
+<td>5,760.00 SL</td>
+</tr>
+<tr>
+<td>12/31/15</td>
+<td>Depreciation</td>
+<td>180</td>
+<td>-5,760.00</td>
+<td>0.00 SL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Depreciation starting date</li>
+</ul>
+<p>&quot;SL&quot; after the book value means that the straight-line method has been used.</p>
+<p>Calculation method:</p>
+<p>1st year:</p>
+<p><em>Declining-balance amount = Full year amount = 40% of 100,000 = 40,000. Thus, for half a year 40,000 / 2 = 20,000</em></p>
+<p><em>Straight-line amount = Full year amount = 100,000 / 5 = 20,000. Thus, for half a year = 20,000 / 2 = 10,000</em></p>
+<p>The declining-balance amount is used because it is the greater amount.</p>
+<p>5th year (2004):</p>
+<p><em>Declining-balance amount = 40% of 17,280.00 = 6,912.00</em></p>
+<p><em>Straight-line amount = 28,800 / 1.5 = 11,520.00</em></p>
+<p>The straight-line amount is used because it is the greater amount.</p>
+<h2 id="duplicating-entries-to-more-depreciation-books">Duplicating Entries to More Depreciation Books</h2>
+<p>If you have three depreciation books, B1, B2 and B3, and you want to duplicate entries from B1 to B2 and B3, you can place a check mark in the <strong>Part of Duplication List</strong> field on the depreciation book cards for B2 and B3. This can be useful if depreciation book B1 is integrated with the general ledger and uses the fixed asset G/L journal, and depreciation books B2 and B3 are not integrated with the general ledger and use the fixed asset journal.</p>
+<p>When you enter an entry in B1 in the fixed asset G/L journal and place a check mark in the <strong>Use Duplication List</strong> field, application will duplicate the entry in book B2 and B3 in the fixed asset journal when the entry is posted.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot duplicate in the same journal and journal batch as you are duplicating from. If you post entries in the fixed asset G/L journal, you can duplicate them in the fixed asset journal or in the fixed asset G/L journal using another batch.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot use the same number series in the fixed asset G/L journal and the fixed asset journal. When you post entries in the fixed asset G/L journal, you must leave the <strong>Document No.</strong> field empty. If you enter a number in the field, the the number is duplicated in the fixed asset journal. You'll have to manually change the document number before you can post the journal.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-depreciation-methods.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

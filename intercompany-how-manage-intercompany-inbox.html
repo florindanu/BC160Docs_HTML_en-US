@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Process Incoming and Outgoing IC Transactions| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Process Incoming and Outgoing IC Transactions| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Intercompany transactions that you receive from your intercompany partners are listed in the intercompany inbox where you process them manually or automatically.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="manage-the-intercompany-inbox-and-outbox">Manage the Intercompany Inbox and Outbox</h1>
+
+<p>All of the intercompany transactions that you receive electronically from your intercompany partners are listed in the intercompany Inbox.</p>
+<h2 id="organizing-the-inbox">Organizing the Inbox</h2>
+<p>You can use the filter fields at the top of the inbox page to determine which transactions are shown on the page. For example, if you only want to look at transactions a particular partner created, you can enter filters in the <strong>Transaction Source</strong> and <strong>Intercompany Partner Code</strong> filters.</p>
+<h3 id="transaction-source">Transaction Source</h3>
+<p>What you can do with a transaction depends whether it was:</p>
+<ul>
+<li>Created by your intercompany partner</li>
+<li>Rejected by your intercompany partner and returned to you</li>
+</ul>
+<p>You can use the <strong>Show Transaction Source</strong> field to filter the <strong>Intercompany Inbox Transactions</strong> page so that it displays only one of these types of transactions. (You can also filter by intercompany partner, or by the contents of the <strong>Line Action</strong> field.)</p>
+<h4 id="created-by-intercompany-partner">Created by Intercompany Partner</h4>
+<p>When you receive a new transaction that was created by your partner, you can choose to either:</p>
+<ul>
+<li>Accept the transaction</li>
+<li>Reject the transaction (Return to partner)</li>
+<li>Cancel the transaction (Delete the transaction but do not return it to your partner)</li>
+</ul>
+<h4 id="returned-from-intercompany-partner">Returned from Intercompany Partner</h4>
+<p>If the transaction was rejected by your intercompany partner, your only choice is to cancel the transaction in the inbox. Then you must create correction lines or reverse the journal or document in your company.</p>
+<h2 id="recreating-inbox-entries">Recreating Inbox Entries</h2>
+<p>If you accepted a transaction in your inbox but then deleted the document or journal instead of posting it, you can re-create the inbox entry and accept it again.</p>
+<h2 id="getting-an-overview-of-intercompany-transactions-for-a-period">Getting an Overview of Intercompany Transactions for a Period</h2>
+<p>You can get an overview of all of the intercompany transactions that you have sent and received in a period. The <strong>Intercompany Transactions</strong> report lists all intercompany G/L entries, customer ledger entries, and vendor ledger entries.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the intercompany partners are in the same database, then transactions are transferred without the need for file or email. See the <strong>Transfer Type</strong> field on the <strong>Intercompany Partner</strong> page. <br><br>
+In that case, you can set the system up to bypass the inbox and outbox by selecting the <strong>Auto. Accept Transactions</strong> check box on the <strong>Intercompany Partner</strong> page and the <strong>Auto. Send Transactions</strong> check box on the <strong>Intercompany Setup</strong> page respectively.</p>
+</div>
+<h2 id="to-import-intercompany-transactions-from-a-file">To import intercompany transactions from a file</h2>
+<p>If you have an intercompany partner that is not in the same database as your company, you can receive intercompany transactions from that partner in an .xml file. Then you must import the transactions into your inbox.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Company Information</strong> , and then choose the related link.</li>
+<li>Save the file to the location that you specified in the <strong>Intercompany Inbox Details</strong> field on the <strong>Company Information</strong> page.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intercompany Inbox Transactions</strong>, and then choose the related link.</li>
+<li>On the <strong>Intercompany Inbox Transactions</strong> page, choose the <strong>Import Transaction File</strong> action.</li>
+<li>on the page that appears, select the .xml file that contains the transactions, and then choose the <strong>Open</strong> button.</li>
+</ol>
+<p>The transactions are imported into the inbox and you can now process them.</p>
+<h2 id="to-process-incoming-intercompany-transactions">To process incoming intercompany transactions</h2>
+<p>When your intercompany partners send you intercompany transactions, the transactions end up in your intercompany inbox. You must evaluate each transaction in your inbox and act upon it.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intercompany Inbox Transactions</strong>, and then choose the related link.</li>
+<li>On the <strong>Intercompany Inbox Transactions</strong> page, select a line, and then choose an action, such as <strong>Accept</strong>, to process the line.</li>
+<li>On the <strong>Complete IC Inbox Action</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<p>For lines that you processed with the <strong>Accept</strong> action, document or journal lines will be created in your company. Open each document or journal, make any necessary changes, and then post them.</p>
+<p>Lines that you processed with the <strong>Return to Partner</strong> action will be moved to the outbox from where you can then send them to your partner.</p>
+<p>For lines that you processed with the <strong>Returned by Partner</strong> action, you must now post a correction to the original transaction that you posted in your company.</p>
+<h2 id="to-process-outgoing-intercompany-transactions">To process outgoing intercompany transactions</h2>
+<p>When you post an intercompany journal or document, or send an intercompany order confirmation, the transactions are sent to your intercompany outbox. In order for them to be sent on to your intercompany partners, you must open the outbox and process them.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intercompany Outbox Transactions</strong>, and then choose the related link.</li>
+<li>On the <strong>Intercompany Outbox Transactions</strong> page, select a line, and then choose an action, such as <strong>Return to Inbox</strong>, to process the line.</li>
+</ol>
+<p>Lines that you processed with the <strong>Send to Intercompany Partner</strong> action will be sent to the relevant partner's inbox.</p>
+<p>Lines that you processed with the <strong>Return to Inbox</strong> action will be moved to the inbox where you can then accept them to create documents or journal lines in your company.</p>
+<p>For lines that you processed with the <strong>Cancel</strong> action, you must now post a correction to the original transaction that you posted in your company.</p>
+<h2 id="to-recreate-intercompany-inbox-transactions">To recreate intercompany inbox transactions</h2>
+<p>Occasionally, you may want to re-create a transaction in the inbox or outbox. For example, if you accepted a transaction in your inbox but then deleted the document or journal instead of posting it, you can re-create the inbox entry and accept it again.</p>
+<p>The following procedure describes to re-create inbox transactions, but the same steps also apply to the outbox.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Handled IC Inbox Transactions</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Handled IC Inbox Transactions</strong> page, select the line with the transaction that you want to re-create in the inbox, and then choose the <strong>Re-create Inbox Transaction</strong> action.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="intercompany-manage.html">Managing Intercompany Transactions</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="ui-work-general-journals.html">Working with General Journals</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/intercompany-how-manage-intercompany-inbox.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

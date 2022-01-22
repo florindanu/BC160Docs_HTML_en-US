@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough - Making Cash Flow Forecasts by Using Account Schedules | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough - Making Cash Flow Forecasts by Using Account Schedules | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This walkthrough describes how you can use account schedules to make cash flow forecasts. Account schedules perform calculations that cannot be done directly in the chart of cash flow accounts. In the account schedules, you can set up subtotals for cash flow receipts and disbursements. These subtotals can be included in new totals that can then be used in making cash flow forecasts.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-making-cash-flow-forecasts-by-using-account-schedules">Walkthrough: Making Cash Flow Forecasts by Using Account Schedules</h1>
+
+<p>This walkthrough describes how you can use account schedules to make cash flow forecasts. Account schedules perform calculations that cannot be done directly in the chart of cash flow accounts. In the account schedules, you can set up subtotals for cash flow receipts and disbursements. These subtotals can be included in new totals that can then be used in making cash flow forecasts.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>This walkthrough describes the following tasks:</p>
+<ul>
+<li>Setting up a new cash flow account schedule name.</li>
+<li>Setting up account schedule lines.</li>
+<li>Setting up a new column layout.</li>
+<li>Assigning a column layout to an account schedule.</li>
+<li>Viewing and printing the cash flow forecast.</li>
+</ul>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>To complete this walkthrough, you will need:</p>
+<ul>
+<li>Business Central installed.</li>
+<li>The cash flow worksheet lines are registered.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<p>This walkthrough demonstrates tasks that are performed by the following user role:</p>
+<ul>
+<li>Controller</li>
+</ul>
+<h2 id="story">Story</h2>
+<p>Ken is a controller at CRONUS who makes monthly cash flow forecasts. He includes finance, sales, purchase, and fixed assets in the forecast, and then he presents it to CFO Sara for business insight.</p>
+<h2 id="setting-up-a-new-account-schedule-name">Setting Up a New Account Schedule Name</h2>
+<p>An account schedule consists of a cash flow account schedule name with a series of lines and a column layout.</p>
+<h3 id="to-set-up-a-new-account-schedule-name">To set up a new account schedule name</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Account Schedules</strong>, and then choose the related link.</li>
+<li>On the <strong>Account Schedule Names</strong> page, choose the <strong>New</strong> to create a new cash flow account schedule name.</li>
+<li>In the <strong>Name</strong> field, enter <strong>Forecast</strong>.</li>
+<li>In the <strong>Description</strong> field, enter <strong>Cash Flow Forecast</strong>.</li>
+<li>Leave the <strong>Default Column Layout</strong> and <strong>Analysis View Name</strong> fields blank.</li>
+</ol>
+<h2 id="setting-up-account-schedule-lines">Setting Up Account Schedule Lines</h2>
+<p>After an account schedule name is set up, Ken defines each line that appears in the cash flow account schedule. Ken defines lines that can be shown in reports in addition to lines that are only for calculation purposes.</p>
+<h3 id="to-set-up-account-schedule-lines">To set up account schedule lines</h3>
+<ol>
+<li><p>On the <strong>Account Schedule Names</strong> page, select the new <strong>Forecast</strong> account schedule name that you have created, and then choose the <strong>Edit Account Schedule</strong> action.</p>
+</li>
+<li><p>On the <strong>Account Schedule</strong> page, enter each line exactly as shown in the following table.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Using the <strong>Insert CF Accounts</strong> function, you can quickly mark the cash flow accounts from the chart of cash flow accounts and copy them to account schedule lines.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Row No.</th>
+<th>Description</th>
+<th>Totaling Type</th>
+<th>Totaling</th>
+<th>Row Type</th>
+<th>Amount Type</th>
+<th>Show</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C10</td>
+<td>Amount</td>
+<td>Net Change</td>
+<td>Entries</td>
+<td>Net Amount</td>
+<td>Always</td>
+<td></td>
+</tr>
+<tr>
+<td>C20</td>
+<td>Amount until Date</td>
+<td>Balance at Date</td>
+<td>Entries</td>
+<td>Net Amount</td>
+<td>Always</td>
+<td></td>
+</tr>
+<tr>
+<td>C30</td>
+<td>Entire Fiscal Year</td>
+<td>Entire Fiscal Year</td>
+<td>Entries</td>
+<td>Net Amount</td>
+<td>Always</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="assigning-the-column-layout-to-the-account-schedule-name">Assigning the Column Layout to the Account Schedule Name</h2>
+<p>Ken is now ready to assign the column layout to the account schedule name.</p>
+<h3 id="to-assign-the-column-layout-to-the-account-schedule-name">To assign the column layout to the account schedule name</h3>
+<ol>
+<li>On the <strong>Account Schedule Names</strong> page, select <strong>Forecast</strong> in the <strong>Name</strong> field.</li>
+<li>In the <strong>Default Column Layout</strong> field, choose the column layout <strong>Cash Flow</strong> to assign as the default column layout.</li>
+</ol>
+<h3 id="to-view-and-print-the-cash-flow-forecast">To view and print the cash flow forecast</h3>
+<ol>
+<li>On the <strong>Account Schedule Names</strong> page, choose the <strong>Overview</strong> action to view the cash flow forecast.</li>
+<li>On the <strong>Acc. Schedule Overview</strong> page, you can select an amount and then view the cash flow forecast entries that make up the amount. In addition, you can view the formula that is used to calculate the amount. You can also filter the amounts by date and dimension.</li>
+<li>Choose the <strong>Print</strong> action to print the cash flow forecast.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="bi-how-work-account-schedule.html">Work with Account Schedules</a><br>
+<a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-making-cash-flow-forecasts-by-using-account-schedules.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

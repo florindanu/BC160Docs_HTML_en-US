@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Issue, Print, Cancel, and Void Checks| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Issue, Print, Cancel, and Void Checks| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to issue checks using the payment journal, print checks, and void or view check ledger entries in Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="make-check-payments">Make Check Payments</h1>
+
+<p>You can issue electronic and manual checks in Business Central. Both methods use the payment journal to issue checks to vendors. You can also void checks and view check ledger entries.</p>
+<p>The following procedure shows how to pay a vendor with a computer checks by applying the payment to the relevant vendor invoice, printing the check, and then posting the payment as paid. This results in positive vendor ledger entries, applied to negative bank ledger entries, and physical checks for processing in the bank.</p>
+<p>You can pay with two types of checks. For both types, the <strong>Bal. Account Type</strong> or the <strong>Account Type</strong> field must contain <strong>Bank Account</strong>.</p>
+<ul>
+<li><strong>Computer Check</strong>: Select this option if you want to print a check for the amount on the payment journal line. You must print the checks before you can post the journal lines.</li>
+<li><strong>Manual Check</strong>: Select this option if you have created a check manually and want to create a corresponding check ledger entry for this amount. By using this option, you cannot print the check.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To make sure that your bank only clears validated checks and amounts, you can send them a file that contains vendor, check, and payment information. For more information, see <a href="finance-how-positive-pay.html">Export a Positive Pay file</a>.</p>
+</div>
+<p>Your printer must be correctly set up with the check forms, and you must define which check layout to use. For more information, see <a href="finance-how-define-check-layouts.html">Select a Check Layout</a></p>
+<p>You can print up to 10 invoices on a page for a check stub. If a check applies to more than 10 invoices, when you print the stub we void the check on the first page and print the word VOID on the check. We then print the remainder of the invoices and the total check amount on the second page.</p>
+<h2 id="to-pay-a-vendor-invoice-with-a-computer-check">To pay a vendor invoice with a computer check</h2>
+<p>The following describes how to pay a vendor by check. The steps are similar to refund a customer by check.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the payment journal lines. For more information, see <a href="payables-how-post-payments-refunds.html">Record Payments and Refunds</a>.</p>
+</li>
+<li><p>In the <strong>Payment Method Code</strong> field, select <strong>Check</strong>.</p>
+</li>
+<li><p>In the <strong>Bank Payment Type</strong> field, select <strong>Computer Check</strong>.</p>
+</li>
+<li><p>Choose the <strong>Print Check</strong> action.</p>
+</li>
+<li><p>On the <strong>Check</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</p>
+</li>
+<li><p>Choose the <strong>Send to</strong> button, select the <strong>PDF Document</strong> option, and then choose the <strong>OK</strong> button.</p>
+<p>The physical checks can now be brought to the bank for processing. Proceed to post the payment as applied to the vendor and thereby paid in the system.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<p>Fully applied vendor ledger entries and bank ledger entries are created.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to print and pay checks in more than one currency from different bank accounts, you must run the <strong>Print Check</strong> batch job separately for each currency and specify the appropriate bank account.</p>
+</div>
+<h2 id="to-cancel-printed-checks-that-are-not-posted">To cancel printed checks that are not posted</h2>
+<p>You can cancel non-posted checks after they have been printed by using the <strong>Void Check</strong> action on the <strong>Payment Journal</strong> page.</p>
+<ol>
+<li>On the <strong>Payment Journal</strong> page, choose the <strong>Void Check</strong>, and then choose which checks to cancel.</li>
+</ol>
+<h2 id="to-void-checks">To void checks</h2>
+<p>When check payment have been posted, you can only cancel (void) checks from the resulting bank ledger entries.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</li>
+<li>Select the relevant bank account, choose the <strong>Edit</strong> action, and then choose the <strong>Check Ledger Entries</strong> action.</li>
+<li>On the <strong>Check Ledger Entries</strong> page, choose the <strong>Void Check</strong> action.</li>
+<li>Select the <strong>Void Check Only</strong> check box.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="to-view-a-summary-of-posted-checks">To view a summary of posted checks</h2>
+<p>If you want to review posted checks, for example to verify multiple checks paid to one vendor, you can use the <strong>Bank Account - Check Details</strong> report.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Account - Check Details</strong>, and then choose the related link.</li>
+<li>Set filters as relevant, and then choose the <strong>Preview</strong> button.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="payables-make-payments.html">Making Payments</a><br>
+<a href="payables-manage-payables.html">Managing Payables</a><br>
+<a href="bank-setup-banking.html">Setting Up Banking</a><br>
+<a href="finance-how-positive-pay.html">Export a Positive Pay file</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/payables-how-work-checks.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

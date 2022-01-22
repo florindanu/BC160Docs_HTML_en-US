@@ -1,0 +1,751 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Item Application | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Item Application | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic describes where inventory quantity and value are recorded when you post an inventory transaction.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-item-application">Design Details: Item Application</h1>
+
+<p>When you post an inventory transaction, the quantity posting is recorded in the item ledger entries, the value posting in the value entries. For more information, see <a href="design-details-inventory-posting.html">Design Details: Inventory Posting</a>.</p>
+<p>In addition, an item application is made to link the cost recipient to its cost source to provide cost forwarding according to the costing method. For more information, see <a href="design-details-costing-methods.html">Design Details: Costing Methods</a>.</p>
+<p>Business Central makes two types of item application.</p>
+<table>
+<thead>
+<tr>
+<th>Application type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quantity application</td>
+<td>Created for all inventory transactions</td>
+</tr>
+<tr>
+<td>Cost application</td>
+<td>Created for inbound entries together with a quantity application as a result of user interaction in special processes.</td>
+</tr>
+</tbody>
+</table>
+<p>Item applications can be made in the following ways.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Application type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Automatic</td>
+<td>Occurs as general cost forwarding according to the costing method</td>
+<td>Quantity application</td>
+</tr>
+<tr>
+<td>Fixed</td>
+<td>Made by the user when:<br><br> -   Processing returns<br>-   Posting corrections<br>-   Undoing quantity postings<br>-   Creating drop shipments <strong>Note:</strong>  The fixed application can be  made either manually by entering an entry number in the <strong>Appl.-from Item Entry</strong> field or by using a function, such as the <strong>Get Posted Document Lines to Reverse</strong>.</td>
+<td>Quantity application<br><br> Cost application <strong>Note:</strong>  Cost application only occurs in inbound transactions where the <strong>Appl.-from Item Entry</strong> field is filled to create a fixed application. See the next table.</td>
+</tr>
+</tbody>
+</table>
+<p>Whether quantity applications or cost applications are made depends on the direction of the inventory transaction and whether the item application is made automatically or fixed, in connection with special processes.</p>
+<p>The following table shows, based on the central application fields on inventory transaction lines, how costs flow depending on the transaction direction. It also indicates when and why the item application is of type quantity or cost.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Appl.-to Item Entry field</th>
+<th>Appl.-from Item Entry field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application for outbound entry</td>
+<td>The outbound entry pulls the cost from the open inbound entry.<br><br> <strong>Quantity application</strong></td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>Application for inbound entry</td>
+<td>The inbound entry pushes the cost onto the open outbound entry.<br><br> The inbound entry is the cost source.<br><br> <strong>Quantity application</strong></td>
+<td>The inbound entry pulls the cost from the outbound entry. <strong>Note:</strong>  When making this fixed application, the inbound transaction is treated as a sales return. Therefore, the applied outbound entry remains open. <br><br> The inbound entry is NOT the cost source.<br><br> <strong>Cost application</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>A sales return is NOT considered a cost source when fixed applied.</p>
+<p>The sales entry remains open until the real source is posted.</p>
+</div>
+<p>An item application entry records the following information.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Item Ledger Entry No.</strong></td>
+<td>The number of the item ledger entry for the transaction that this application entry is created for.</td>
+</tr>
+<tr>
+<td><strong>Inbound Item Entry No.</strong></td>
+<td>The item ledger entry number of the inventory increase to which the transaction should be linked, if applicable.</td>
+</tr>
+<tr>
+<td><strong>Outbound Item Entry No.</strong></td>
+<td>The item ledger entry number of the inventory decrease to which the transaction should be linked, if applicable.</td>
+</tr>
+<tr>
+<td><strong>Quantity</strong></td>
+<td>The quantity being applied.</td>
+</tr>
+<tr>
+<td><strong>Posting Date</strong></td>
+<td>The posting date of the transaction.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="inventory-increase">Inventory Increase</h2>
+<p>When you post an inventory increase, then a simple item application entry is recorded without an application to an outbound entry.</p>
+<h3 id="example">Example</h3>
+<p>The following table shows the item application entry that is created when you post a purchase receipt of 10 units.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Inbound Item Entry No.</th>
+<th>Outbound Item Entry No.</th>
+<th>Quantity</th>
+<th>Item Ledger Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>0</td>
+<td>10</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="inventory-decrease">Inventory Decrease</h2>
+<p>When you post an inventory decrease, an item application entry is created that links the inventory decrease to an inventory increase. This link is created by using the item’s costing method as a guideline. For items using FIFO, Standard, and Average costing methods, the linking is based on the first-in-first-out principle. The inventory decrease is applied to the inventory increase with the earliest posting date. For items using the LIFO costing method, the linking is based on the last-in-first-out principle. The inventory decrease is applied to the inventory increase with the most recent posting date.</p>
+<p>In the  <strong>Item Ledger Entry</strong> table, the <strong>Remaining Quantity</strong> field shows the quantity that has not yet been applied. If the remaining quantity is more than 0, then the <strong>Open</strong> check box is selected.</p>
+<h3 id="example-1">Example</h3>
+<p>The following example shows the item application entry that is created when you post a sales shipment of 5 units of the items that were received in the previous example. The first item application entry is the purchase receipt. The second application entry is the sales shipment.</p>
+<p>The following table shows the two item application entries that result from the inventory increase and the inventory decrease, respectively.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Inbound Item Entry No.</th>
+<th>Outbound Item Entry No.</th>
+<th>Quantity</th>
+<th>Item Ledger Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>0</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-03-20</td>
+<td>1</td>
+<td>2</td>
+<td>-5</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fixed-application">Fixed Application</h2>
+<p>You make a fixed application when you specify that the cost of an inventory increase should apply to a specific inventory decrease, or vice versa. The fixed application affects the remaining quantities of the entries, but the fixed application also reverses the exact cost of the original entry that you are applying to, or from.</p>
+<p>To make a fixed application, you use the <strong>Appl.-to Item Entry</strong> field or the <strong>Appl.-from Item Entry</strong> field in the document lines to specify the item ledger entry that you want the transaction line to apply to, or from. For example, you might make a fixed application when you want to create a cost application that specifies that a sales return should apply to a specific sales shipment to reverse the cost of the sales shipment. In this case, Business Central ignores the costing method and applies the inventory decrease, or increase, for a sales return, to the item ledger entry that you specify. The advantage of making a fixed application is that the cost of the original transaction is passed to the new transaction.</p>
+<h3 id="example--fixed-application-in-purchase-return">Example – Fixed Application in Purchase Return</h3>
+<p>The following example, which illustrates the effect of fixed application of a purchase return of an item using the FIFO costing method, is based on the following scenario:</p>
+<ol>
+<li>In entry 1, the user posts a purchase at a cost of LCY 10.00.</li>
+<li>In entry 2, the user posts a purchase at a cost of LCY 20.00.</li>
+<li>In entry 3, the user posts a purchase return. The user makes a fixed application to the second purchase by entering the item ledger entry number in the <strong>Appl.-to Item Entry</strong> field on the purchase return order line.</li>
+</ol>
+<p>The following table shows item ledger entries resulting from the scenario.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Posting Date</strong></th>
+<th><strong>Item Ledger Entry Type</strong></th>
+<th><strong>Quantity</strong></th>
+<th><strong>Cost Amount (Actual)</strong></th>
+<th><strong>Item Ledger Entry No.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-04-20</td>
+<td>Purchase</td>
+<td>10</td>
+<td>10.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-05-20</td>
+<td>Purchase</td>
+<td>10</td>
+<td>20.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-06-20</td>
+<td>Purchase (Return)</td>
+<td>-10</td>
+<td>-20.00</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Because a fixed application is made from the purchase return to the second purchase entry, the items are returned at the correct cost. If the user had not performed the fixed application, then the returned item would be incorrectly valued at LCY 10.00 because the return would have been applied to the first purchase entry according to the FIFO principle.</p>
+<p>The following table shows the item application entry that results from the fixed application.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Inbound Item Entry No.</th>
+<th>Outbound Item Entry No.</th>
+<th>Quantity</th>
+<th>Item Ledger Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-06-20</td>
+<td>2</td>
+<td>3</td>
+<td>10</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>The cost of the second purchase, LCY 20.00, is passed correctly to the purchase return.</p>
+<h3 id="example--fixed-application-with-average-cost">Example – Fixed Application with Average Cost</h3>
+<p>The following example, which illustrates the effect of fixed application, is based on the following scenario for an item that uses the Average costing method:</p>
+<ol>
+<li>In entry numbers 1 and 2, the user posts two purchase invoices. The second invoice has the incorrect direct unit cost of LCY 1000.00.</li>
+<li>In entry number 3, the user posts a purchase credit memo, with a fixed application applied to the purchase entry with the wrong direct unit cost. The sum of the <strong>Cost Amount (Actual)</strong> field for the two fixed applied value entries becomes 0.00</li>
+<li>In entry number 4, the user posts another purchase invoice with the correct direct unit cost of LCY 100.00</li>
+<li>In entry number 5, the user posts a sales invoice.</li>
+<li>The inventory quantity is 0, and the inventory value is also 0.00</li>
+</ol>
+<p>The following table shows the result of the scenario on the item’s value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Appl.-to Item Entry</th>
+<th>Valued by Average Cost</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>200.00</td>
+<td></td>
+<td>No</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>1000.00</td>
+<td></td>
+<td>No</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>-1</td>
+<td>-1000</td>
+<td>2</td>
+<td>No</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>100.00</td>
+<td></td>
+<td>No</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Sale</td>
+<td>-2</td>
+<td>-300.00</td>
+<td></td>
+<td>Yes</td>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>If the user had not made the fixed application between the purchase credit memo and the purchase with the incorrect direct unit cost (step 2 in the previous scenario), then the cost would have been adjusted differently.</p>
+<p>The following table shows the result on the item’s value entries if step 2 in the previous scenario is performed without a fixed application.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Appl.-to Item Entry</th>
+<th>Valued by Average Cost</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>200.00</td>
+<td></td>
+<td>No</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>1000.00</td>
+<td></td>
+<td>No</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>-1</td>
+<td>433,33</td>
+<td></td>
+<td>Yes</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>100.00</td>
+<td></td>
+<td>No</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Sale</td>
+<td>-2</td>
+<td>866,67</td>
+<td></td>
+<td>Yes</td>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>In entry number 3, the value in the <strong>Cost Amount (Actual)</strong> field is valued by average and therefore includes the erroneous posting of 1000.00. Accordingly, it becomes -433,33, which is an inflated cost amount. The calculation is 1300 / 3 = .-433,33.</p>
+<p>In entry number 5, the value of the <strong>Cost Amount (Actual)</strong> field for this entry is also inaccurate for the same reason.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you create a fixed application for an inventory decrease for an item that uses the Average costing method, then the decrease will not receive the average cost for the item as usual, but will instead receive the cost of the inventory increase that you specified. That inventory decrease is then no longer part of the average cost calculation.</p>
+</div>
+<h3 id="example--fixed-application-in-sales-return">Example – Fixed Application in Sales Return</h3>
+<p>Fixed applications are also a very good means of reversing cost exactly, such as with sales returns.</p>
+<p>The following example, which illustrates how a fixed application ensures exact cost reversal, is based on the following scenario:</p>
+<ol>
+<li>The user posts a purchase invoice.</li>
+<li>The user posts a sales invoice.</li>
+<li>The user posts a sales credit memo for the returned item, which applies to the sales entry, to reverse the cost correctly.</li>
+<li>A freight cost, related to the purchase order that was posted earlier, arrives. The user posts it as an item charge.</li>
+</ol>
+<p>The following table shows the result of scenario steps 1 through 3 on the item’s value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Appl.-from Item Entry</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>1000.00</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>1000.00</td>
+<td></td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>Sale (Credit Memo)</td>
+<td>1</td>
+<td>1000</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows the value entry resulting from scenario step 4, posting the item charge.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Appl.-from Item Entry</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>04-01-20</td>
+<td>(Item Charge)</td>
+<td>1</td>
+<td>100.00</td>
+<td></td>
+<td>1</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows the effect of the exact cost reversal on the item’s value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Appl.-from Item Entry</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>1000.00</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>1100.00</td>
+<td></td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>Sale (Credit Memo)</td>
+<td>1</td>
+<td>1100.00</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>(Item Charge)</td>
+<td>1</td>
+<td>100.00</td>
+<td></td>
+<td>1</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>When you run the <strong>Adjust Cost - Item Entries</strong> batch job, the increased cost of the purchase entry, due to the item charge, is forwarded to the sales entry (entry number 2). The sales entry then forwards this increased cost to the sales credit entry (entry number 3). The final result is that the cost is correctly reversed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are working with returns or credit memos and you have set up the <strong>Exact Cost Reversing Mandatory</strong> field in either the <strong>Purchases &amp; Payables Setup</strong> page or the <strong>Sales &amp; Receivables Setup</strong> page, as appropriate for your situation, then Business Central automatically fills the various application entry fields when you use the <strong>Copy from Document</strong> function. If you use the <strong>Get Posted Document Lines to Reverse</strong> function, then the fields are always filled automatically.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you post a transaction with a fixed application, and the item ledger entry that you are applying to is closed, meaning that the remaining quantity is zero, then the old application is automatically undone and reapplies the item ledger entry using the fixed application that you specified.</p>
+</div>
+<h2 id="transfer-application">Transfer Application</h2>
+<p>When an item is transferred from one location to another, inside the company inventory, then an application is created between the two transfer entries. Valuing a transfer entry depends on the costing method. For items using the Average costing method, valuation is made using the average cost in the average cost period in which the valuation date of the transfer occurs. For items using other costing methods, valuation is made by tracing back to the cost of the original inventory increase.</p>
+<h3 id="example--average-costing-method">Example – Average Costing Method</h3>
+<p>The following example, which illustrates how transfer entries are applied, is based on the following scenario for an item using Average costing method and an average cost period of Day.</p>
+<ol>
+<li>The user purchases the item at a cost of LCY 10.00.</li>
+<li>The user purchases the item again at a cost of LCY 20.00.</li>
+<li>The user transfers the item from BLUE to RED location.</li>
+</ol>
+<p>The following table shows the effect of the transfer on the item’s value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Location Code</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>BLUE</td>
+<td>1</td>
+<td>10.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>BLUE</td>
+<td>1</td>
+<td>20.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Transfer</td>
+<td>BLUE</td>
+<td>-1</td>
+<td>15.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Transfer</td>
+<td>RED</td>
+<td>1</td>
+<td>15.00</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example--standard-costing-method">Example – Standard Costing Method</h3>
+<p>The following example, which illustrates how transfer entries are applied, is based on the following scenario for an item using Standard costing method and an average cost period of Day.</p>
+<ol>
+<li>The user purchases the item at a standard cost of LCY 10.00.</li>
+<li>The user transfers the item from BLUE to RED location at a standard cost of LCY 12.00.</li>
+</ol>
+<p>The following table shows the effect of the transfer on the item’s value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Location Code</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>BLUE</td>
+<td>1</td>
+<td>10.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Transfer</td>
+<td>BLUE</td>
+<td>-1</td>
+<td>10.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Transfer</td>
+<td>RED</td>
+<td>1</td>
+<td>10.00</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Since the value of the original inventory increase is LCY 10.00, the transfer is valued at that cost, not at LCY 12.00.</p>
+<h2 id="reapplication">Reapplication</h2>
+<p>Because of the way an item’s unit cost is calculated, an incorrect item application could lead to a skewed average cost and unit cost. The following scenarios may cause incorrect item applications, which require that you undo item applications and reapply item ledger entries:</p>
+<ul>
+<li>You have forgotten to make a fixed application.</li>
+<li>You have made an incorrect fixed application.</li>
+<li>You want to overrule the application created automatically when posting, according to the item’s costing method.</li>
+<li>You have to return an item to which a sale has already been manually applied, without using the <strong>Get Posted Document Lines to Reverse</strong> function, and you must therefore undo the application.</li>
+</ul>
+<p>Business Central offers a feature for analyzing and correcting item applications. This work is performed on the <strong>Application Worksheet</strong> page.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-zero-level-open-item-ledger-entries.html">Design Details: Known Item Application Issue</a><br>
+<a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-costing-methods.html">Design Details: Costing Methods</a><br>
+<a href="design-details-average-cost.html">Design Details: Average Cost</a><br>
+<a href="design-details-cost-adjustment.html">Design Details: Cost Adjustment</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-item-application.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

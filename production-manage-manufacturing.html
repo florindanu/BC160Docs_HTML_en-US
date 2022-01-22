@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Execute Production | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Execute Production | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When demand is planned for and the materials have been issued according to production BOMs, then the actual production operations can start and be executed in the sequence defined by the production order routing.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="manufacturing">Manufacturing</h1>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Functionality described in this topic and sub topics is only visible in the user interface if you have the <strong>Premium</strong> experience. For more information, see <a href="ui-experiences.html">Change Which Features are Displayed</a>.</p>
+</div>
+<p>When demand is planned for and the materials have been issued according to production BOMs, then the actual production operations can start and be executed in the sequence defined by the production order routing.</p>
+<p>An important part of executing production, from a system point of view, is to post production output to the database to report progress and to update inventory with the finished items. Output posting can be done manually, by filling and posting journal lines after production operations. Or, it can be done automatically with the use of backward flushing. In that case material consumption is automatically posted along with output when the production order changes to finished.</p>
+<p>As an alternative to the batch journal for output posting for multiple production orders, you can use the <strong>Production Journal</strong> page to post consumption and/or output for one production order line.</p>
+<p>Before you can begin to produce items, you must make various setup, such as work centers, routings, and production BOMs. For more information, see <a href="production-configure-production-processes.html">Setting Up Manufacturing</a>.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Understand how production orders work.</td>
+<td><a href="production-about-production-orders.html">About Production Orders</a></td>
+</tr>
+<tr>
+<td>Create production orders manually.</td>
+<td><a href="production-how-to-create-production-orders.html">Create Production Orders</a></td>
+</tr>
+<tr>
+<td>Outsource all or selected operations in a production order to a subcontractor.</td>
+<td><a href="production-how-to-subcontract-manufacturing.html">Subcontract Manufacturing</a></td>
+</tr>
+<tr>
+<td>Record and post production output along with material and time consumption for a single released production order line.</td>
+<td><a href="production-how-to-register-consumption-and-output.html">Post Consumption and Output for One Released Production Order Line</a></td>
+</tr>
+<tr>
+<td>Batch post the quantity of components used per operation in a journal that can processes multiple planned production orders.</td>
+<td><a href="production-how-to-post-consumption.html">Batch Post Consumption</a></td>
+</tr>
+<tr>
+<td>Post the quantity of finished items and the time spent per operation in a journal that can processes multiple released production orders.</td>
+<td><a href="production-how-to-post-output-quantity.html">Batch Post Output and Run Times</a></td>
+</tr>
+<tr>
+<td>Undo output, for example because of a data entry error occurred and incorrect amount.</td>
+<td><a href="production-how-to-reverse-output-posting.html">Reverse Output Posting</a></td>
+</tr>
+<tr>
+<td>Post the number of items produced in each finished operation which do not qualify as finished output, but as scrapped material.</td>
+<td><a href="production-how-to-post-scrap.html">Post Scrap</a></td>
+</tr>
+<tr>
+<td>View the shop floor load as a result of planned and released production orders.</td>
+<td><a href="production-how-to-view-the-load-on-work-centers.html">View the Load in Work and Machine Centers</a></td>
+</tr>
+<tr>
+<td>Use the <strong>Capacity Journal</strong> page to post consumed capacities that are not assigned to a production order, such as maintenance work.</td>
+<td><a href="production-how-to-post-capacities.html">Post Capacities</a></td>
+</tr>
+<tr>
+<td>Calculate and adjust the cost of finished production items and consumed components for financial reconciliation.</td>
+<td><a href="finance-about-finished-production-order-costs.html">About Finished Production Order Costs</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-planning.html">Planning</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-manage-manufacturing.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

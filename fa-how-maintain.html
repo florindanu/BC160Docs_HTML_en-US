@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Maintain Fixed Assets| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Maintain Fixed Assets| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You keep a maintenance record of any repairs and service on a fixed asset.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="maintain-fixed-assets">Maintain Fixed Assets</h1>
+
+<p>Maintenance expenses are routine periodic costs undertaken to preserve the value of fixed assets. Unlike capital improvements, they do not increase values.</p>
+<p>You can record and maintain an up-to-date file on maintenance and service of your fixed assets to have complete maintenance records on a fixed asset easily accessible. Each time a fixed asset is sent to service, you record all relevant information such as date of service, vendor number and service agent's phone number. Maintenance registration is recorded for each fixed asset from the relevant fixed asset card.</p>
+<p>Indexation is used to adjust values for general price-level changes. The <strong>Index Fixed Assets</strong> batch job can be used to recalculate the maintenance costs.</p>
+<h2 id="to-record-maintenance-work-on-a-fixed-asset">To record maintenance work on a fixed asset</h2>
+<p>Every time maintenance has been performed, such as a service visit, you can record it for the relevant fixed asset on the <strong>Maintenance Registrations</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</li>
+<li>Select the fixed asset that you want to record maintenance for, and then choose the <strong>Maintenance Registration</strong> action.</li>
+<li>On the <strong>Maintenance Registration</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h2 id="to-post-maintenance-costs-from-a-fixed-asset-gl-journal">To post maintenance costs from a fixed asset G/L journal</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Book List</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the depreciation book that is assigned to the fixed asset, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Depreciation Book Card</strong> page, make sure the <strong>Maintenance</strong> check box is not selected. This ensures that maintenance costs are not posted to the general ledger.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create an initial journal line and fill in the fields as necessary.</p>
+</li>
+<li><p>In the <strong>FA Posting Type</strong> field, select <strong>Maintenance</strong>.</p>
+</li>
+<li><p>Choose the <strong>Insert FA Bal. Account</strong> action. A second journal line is created for the balancing account that is set up for maintenance posting.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Step 7 only works if you have set up the following: On the <strong>FA Posting Group Card</strong> page for the posting group of the fixed asset, the <strong>Maintenance Account</strong> field contains the general ledger debit account and the <strong>Maintenance Bal. Account</strong> field contains the general ledger account to which you want to post balancing entries for appreciation. For more information, see <a href="fa-how-setup-general.html#to-set-up-fixed-asset-posting-groups">To set up fixed asset posting groups</a>.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<h2 id="to-follow-up-on-fixed-assets-service-visits">To follow up on fixed assets service visits</h2>
+<p>You can print the <strong>Maintenance - Next Service</strong> report to see which assets you have scheduled a service visit for. You can also use this report when you are updating the <strong>Next Service Date</strong> field on fixed asset cards.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Maintenance Next Service</strong>, and then choose the related link.</li>
+<li>Fill in the <strong>Starting Date</strong> and <strong>Ending Date</strong> fields.</li>
+<li>Choose the <strong>Print</strong> or <strong>Preview</strong> button.</li>
+</ol>
+<h2 id="to-monitor-maintenance-costs">To monitor maintenance costs</h2>
+<p>You can view the maintenance costs when you look at the statistics of a fixed asset.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</li>
+<li>Select the fixed asset you want to view maintenance costs for, and then choose the <strong>Depreciation Books</strong> action.</li>
+<li>On the <strong>FA Depreciation Books</strong> page, select the relevant fixed asset depreciation book, and then choose the <strong>Statistics</strong> action.</li>
+<li>On the <strong>Fixed Asset Statistics</strong> page, choose the <strong>Maintenance</strong> field.</li>
+</ol>
+<p>The <strong>Maintenance Ledger Entries</strong> page opens showing the entries that make up the amount in the <strong>Maintenance</strong> field.</p>
+<h2 id="to-view-or-print-maintenance-costs-for-multiple-fixed-assets">To view or print maintenance costs for multiple fixed assets</h2>
+<p>In the <strong>Maintenance - Analysis</strong> report, you can select to see maintenance based on one, two, or three maintenance codes for a specified date or period. You can see the total of all selected assets or a total for each asset.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Maintenance Analysis</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+<li>Choose the <strong>Print</strong> or <strong>Preview</strong> button.</li>
+</ol>
+<h2 id="to-view-maintenance-ledger-entries">To view maintenance ledger entries</h2>
+<p>You can also study maintenance costs by viewing the maintenance ledger entries.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</li>
+<li>Select the fixed asset that you want to view ledger entries for, and then choose the <strong>Depreciation Books</strong> action.</li>
+<li>On the <strong>FA Depreciation Books</strong> page, select the relevant fixed asset depreciation book, and then choose the <strong>Maintenance Ledger Entries</strong> action.</li>
+</ol>
+<h2 id="to-view-or-print-maintenance-ledger-entries-for-multiple-fixed-assets">To view or print maintenance ledger entries for multiple fixed assets</h2>
+<p>In the <strong>Maintenance - Details</strong> report, you can view or print maintenance ledger entries for one or many fixed assets.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Maintenance Details</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+<li>Choose the <strong>Print</strong> or <strong>Preview</strong> button.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-maintain.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

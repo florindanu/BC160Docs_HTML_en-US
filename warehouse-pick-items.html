@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Pick Items | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Pick Items | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The warehouse activity of picking items before they are shipped or consumed is performed in different ways, depending on how warehouse management features are configured. The [setup](../configure-warehouse-processes.md) complexity can rank from no warehouse features, through basic warehouse configurations for order-by-order handling in one or more activities only, to advanced configurations where all warehouse activities must be performed in a directed workflow.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="pick-items">Pick Items</h1>
+
+<p>The warehouse activity of picking items before they are shipped or consumed is performed in different ways, depending on how warehouse management features are configured. The complexity can rank from no warehouse features, through basic warehouse configurations for order-by-order handling in one or more activities only, to advanced configurations where all warehouse activities must be performed in a directed workflow. For more information, see <a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a>.</p>
+<p>If you decide to organize and record your picking activity with warehouse documents, you place a check mark in the <strong>Require Pick</strong> field on the location card. This indicates that when you have items that need to be picked for an outbound source document you want the picking of those items to be controlled by the system. An outbound source document can be a sales order, a purchase return order, an outbound transfer order, a service order, or a production order whose components should be picked.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Even though the setting is called <strong>Require Pick</strong>, you can still post shipments directly from the source business document at location where you select this check box.</p>
+</div>
+<p>If your location is set up to require pick processing but not shipment processing, you use the <strong>Inventory Pick</strong> page to organize the picking information, print the picking information, enter the result of the pick, and post the picking information, which in turn posts the shipment of the items. In the case of picking components for a production order, the posting of the pick also posts the consumption.</p>
+<p>If your location is set up to require both pick and shipment processing, so that you have placed check marks in both the <strong>Require Pick</strong> and <strong>Require Shipment</strong> field on the location card, you use the <strong>Warehouse Pick</strong> page to handle the pick. The warehouse pick functions similarly to the inventory pick, except that instead of posting the picking information, you register the pick. This registering process does not post the shipment, but merely makes the items available for shipment. As a warehouse manager, you can use a pick worksheets to organize pick information before creating the individual warehouse pick instructions.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Post the shipment of items directly in the outbound order document because no warehouse features exist. (Works the same for sales orders, outbound transfer orders, and return shipments.)</td>
+<td><a href="warehouse-how-ship-items.html">Ship Items</a></td>
+</tr>
+<tr>
+<td>Pick items order by order and post the shipment in the same activity, in a basic warehouse configuration.</td>
+<td><a href="warehouse-how-to-pick-items-with-inventory-picks.html">Pick Items with Inventory Picks</a></td>
+</tr>
+<tr>
+<td>Pick items for multiple orders in an advanced warehouse configuration.</td>
+<td><a href="warehouse-how-to-pick-items-for-warehouse-shipment.html">Pick Items with Warehouse Picks</a></td>
+</tr>
+<tr>
+<td>Pick components for production or assembly in a basic warehouse configuration.</td>
+<td><a href="warehouse-how-to-pick-for-production.html">Pick for Production or Assembly in Basic Warehouse Configurations</a></td>
+</tr>
+<tr>
+<td>Pick components for production or assembly in an advanced warehouse configuration.</td>
+<td><a href="warehouse-how-to-pick-for-internal-operations-in-advanced-warehousing.html">Pick for Production or Assembly in Advanced Warehouse Configurations</a></td>
+</tr>
+<tr>
+<td>Plan optimized pick instructions for a number of shipments rather than have warehouse workers act directly on posted shipments.</td>
+<td><a href="warehouse-how-to-plan-picks-in-worksheets.html">Plan Picks in Worksheets</a></td>
+</tr>
+<tr>
+<td>Pick items technically for a special purpose, such as a production unit in need of extra components, in such a way that the items do not technically leave the warehouse.</td>
+<td><a href="warehouse-how-to-create-put-aways-from-internal-put-aways.html">Pick and Put Away Without a Source Document</a></td>
+</tr>
+<tr>
+<td>Understand how to automatically pick items according to their expiration date, for example perishable goods.</td>
+<td><a href="warehouse-picking-by-fefo.html">Picking By FEFO</a></td>
+</tr>
+<tr>
+<td>Split a pick line into multiple lines, for example because there are not enough items to take from in the designated bin.</td>
+<td><a href="warehouse-how-to-split-warehouse-activity-lines.html">Split Warehouse Activity Lines</a></td>
+</tr>
+<tr>
+<td>Get immediate access to picks that are assigned to you as a warehouse worker.</td>
+<td><a href="warehouse-how-to-find-your-warehouse-assignments.html">Find Your Warehouse Assignments</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-pick-items.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

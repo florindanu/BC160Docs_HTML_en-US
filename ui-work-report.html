@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Scheduling a Report to Run at a Specific Date and Time | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Scheduling a Report to Run at a Specific Date and Time | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about entering a report into a job queue and scheduling it to be processed at a specific date and time.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="working-with-reports-batch-jobs-and-xmlports">Working with Reports, Batch Jobs, and XMLports</h1>
+
+<p>A report gathers information based on a specified set of criteria, and organizes and presents the information in an easy-to-read format that you can print or save as a file. There are many reports that you can access throughout the application. The reports typically provide information relative to the context of the page you are on. For example, the <strong>Customer</strong> page includes reports for the top 10 customers, sales statistics, and more.</p>
+<p>Batch jobs and XMLports do more or less the same as reports, but for the purpose of performing a process or exporting data. For example, the <strong>Create Reminders</strong> batch job creates reminder documents for customers with overdue payments.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This topic refers mainly to &quot;report&quot;, but similar information applies to batch jobs and XMLports.</p>
+</div>
+<p>You can find reports in the <strong>Reports</strong> tab on selected pages, or you can use search <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> to find reports by name.</p>
+<h2 id="specifying-the-data-to-include-in-reports">Specifying the Data to Include in Reports</h2>
+<p>When you open a report, batch job, or XMLport, you are typically presented with a request page where you set various options and filters that determine what to include in the report.</p>
+<p>You set filters in a report in more or less the same way as you set filters on lists. For more information, see <a href="ui-enter-criteria-filters.html#filtering">Filtering</a>.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>The <strong>Filter list by</strong> section on a request page provides a generic filtering capability for reports. These filters are optional.<br><br> Some reports will ignore any such filters, meaning that no matter what filter is set in the <strong>Filter list by</strong> section, the output of the report is the same. It is not possible to provide a list of which fields are ignored in which reports, so you will have to experiment with the filters when using them.<br><br>
+<strong>Example</strong>: When you use the <strong>Create Reminders</strong> batch job, a filter for the <strong>Customer Ledger Entries</strong> field of <strong>Last Issued Reminder Level</strong> will be ignored because filters are fixed for that batch job.</p>
+</div>
+<h2 id="SavedSettings">Using Saved Settings</h2>
+<p>The request page can include the <strong>Saved Settings</strong> section that contains one or more entries in the <strong>Use default value from</strong> box. A saved setting is basically a predefined group of options and filters that you can apply to the report before previewing or sending the report to a file. The saved settings entry called <strong>Last used options and filters</strong> is always available. This entry sets the report to use options and filters that were used the last time you used the report.</p>
+<p>Using saved settings is a fast and reliable way to consistently generate reports that contain the correct data. After you set the <strong>Use default value from</strong> box to a saved settings entry, you can change any of the options and filters before previewing or saving the report. The changes that you make will not be saved to the saved settings entry you selected, but they will be saved to the <strong>Last used options and filters</strong> entry.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are an administrator, you can create and manage the saved settings for reports for all users. For more information, see <a href="reports-saving-reusing-settings.html">Manage Saved Settings for Reports and Batch Jobs</a>.</p>
+</div>
+<h2 id="previewing-a-report">Previewing a Report</h2>
+<p>Choose the <strong>Preview</strong> button to view the report in the. Use the menu bar on the report preview to:</p>
+<ul>
+<li><p>Move through pages</p>
+</li>
+<li><p>Zoom in and out</p>
+</li>
+<li><p>Resize to fit the page</p>
+</li>
+<li><p>Select text</p>
+<p>You can copy text from a report, and then paste it somewhere else, like a page in Business Central or Microsoft Word.  Using a mouse, for example, you press and hold where you want to start, and then move the mouse to select one or more words, sentences, or paragraphs. You can then press the right mouse button and select <strong>Copy</strong>. You can then paste the selected text where ever you want it.</p>
+</li>
+<li><p>Pan the document</p>
+<p>You can move the visible area of the report in any direction so you can view other areas or the report. This is helpful when you have zoomed in to see details.  Using your mouse, for example, press and hold the mouse button anywhere in the report preview, and then move your mouse.</p>
+</li>
+<li><p>Download to a PDF file on your computer or network.</p>
+</li>
+<li><p>Print</p>
+</li>
+</ul>
+<h2 id="saving-a-report">Saving a Report</h2>
+<p>You can save a report to a PDF document, Microsoft Word document, or Microsoft Excel document by choosing the <strong>Send to</strong> button, and then making your selection.</p>
+<h2 id="ScheduleReport"> Scheduling a Report to Run</h2>
+<p>You can schedule or batch job a report to run at a specific date and time. Scheduled reports and batch jobs are entered in the job queue and processed at the scheduled time, similar to other jobs. You choose the <strong>Schedule</strong> option after you choose the <strong>Send to</strong> button, and then you enter information such as printer, and time and date. The report is then added to the job queue and will be run at the specified time. When the report is processed, the item will be removed from the job queue. For more information, see <a href="admin-job-queues-schedule-tasks.html">Use Job Queues to Schedule Tasks</a>.</p>
+<p>You can choose to save the processed report to a file, such as an Excel, Word, or PDF, print it to a selected printer, or process the report only. If you choose to save the report to a file, then the processed report is sent to the <strong>Report Inbox</strong> area on your Role Center, where you can view it.</p>
+<h2 id="PrintReport">Printing a Report</h2>
+<p>You can print a report by choosing the <strong>Print</strong> button on the report request page or on the menu bar on the <strong>Preview</strong> page.</p>
+<p>Because Business Central is a cloud service, it cannot reach local printers connected to users' machines. However, it can connect to cloud-enabled printers. In the generic version of Business Central, a cloud printer named <strong>Email Printer</strong> is installed as an extension and is ready to use after initial setup.</p>
+<p>If a cloud printer is not installed and set up, or if an installed printer fails, then printing will default to the printing options for the browser. This is indicated by this value in the <strong>Printer</strong> field on the report request page: <em>(none, handled by the browser)</em>.</p>
+<p>On the <strong>Printer Management</strong> page, you can see the printers that are set up. For more information, see <a href="ui-specify-printer-selection-reports.html">Set Up Printers</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot change the <strong>Printer</strong> field on the report request page. To use another printer, you must select it from the <strong>Printer Management</strong> page.</p>
+</div>
+<h3 id="printing-reports-in-thai">Printing Reports in Thai</h3>
+<p>Specifically for the Thai version of Business Central, the <strong>Print</strong> button cannot print reports correctly due to limitations in the service that generates the printable PDF file. Instead, you can open the report in Word and then save the report as a printable PDF.</p>
+<p>Alternatively, you can ask your administrator to create a Word report layout for your most used reports. For more information, see <a href="ui-manage-report-layouts.html">Managing Report and Document Layouts</a>.</p>
+<h2 id="changing-report-layouts">Changing Report Layouts</h2>
+<p>A report layout controls what is shown on a report, how it is arranged, and how it is styled. If you want to switch to a different layout, see <a href="ui-how-change-layout-currently-used-report.html">Change the Current Report Layout</a>. Or, if you want to customize your own report layout, see <a href="ui-how-create-custom-report-layout.html">Create and Modify a Custom Report Layout</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-specify-printer-selection-reports.html">Set Up Printers</a><br>
+<a href="ui-enter-date-ranges.html">Working with Calendar Dates and Times</a><br>
+<a href="ui-manage-report-layouts.html">Managing Report and Document Layouts</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-work-report.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

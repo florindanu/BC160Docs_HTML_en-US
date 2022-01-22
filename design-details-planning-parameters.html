@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Planning Parameters | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Planning Parameters | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic describes the different planning parameters that you can use in Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-planning-parameters">Design Details: Planning Parameters</h1>
+
+<p>This topic describes the different planning parameters that you can use in Business Central.</p>
+<p>The way in which the planning system controls item supply is determined by various settings on the item card or SKU, and settings in manufacturing setup. The following table shows how these parameters are used for planning.</p>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Parameter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Define if the item is to be planned</td>
+<td>Reordering Policy = Blank</td>
+</tr>
+<tr>
+<td>Define when to reorder</td>
+<td>Time Bucket<br><br> Reorder Point<br><br> Safety Lead Time</td>
+</tr>
+<tr>
+<td>Define how much to reorder</td>
+<td>Safety Stock Quantity<br><br> Reordering Policy:<br><br> -   Fixed Reorder Qty. plus Reorder Quantity<br>-   Maximum Qty. plus Maximum Inventory<br>-   Order<br>-   Lot-for-Lot</td>
+</tr>
+<tr>
+<td>Optimize when and how much to reorder</td>
+<td>Rescheduling Period<br><br> Lot Accumulation Period<br><br> Dampener Period</td>
+</tr>
+<tr>
+<td>Modify the supply orders</td>
+<td>Minimum Order Quantity<br><br> Maximum Order Quantity<br><br> Order Multiple</td>
+</tr>
+<tr>
+<td>Delimit the planned item</td>
+<td>Manufacturing Policy:<br><br> -   Make-to-Stock<br>-   Make-to-Order</td>
+</tr>
+</tbody>
+</table>
+<h2 id="define-if-the-item-will-be-planned">Define If the Item Will Be Planned</h2>
+<p>To include an item/SKU in the planning process, it must have a reordering policy otherwise it must be planned manually, for example, with the Order Planning feature.</p>
+<h2 id="define-when-to-reorder">Define When to Reorder</h2>
+<p>Reorder proposals are generally released only when the projected available quantity has fallen to or below a given quantity. This quantity is defined by the reorder point. Otherwise, it will be zero. Zero can be adjusted by entering a safety stock quantity. If the user has defined a safety lead time, it will cause the proposal to be delivered in the period prior to the required due date.</p>
+<p>The <strong>Time Bucket</strong> field is used by reorder point policies (<strong>Fixed Reorder Qty.</strong> and <strong>Maximum Qty.</strong>), where the inventory level is checked after each time bucket. The first time bucket begins on the planning starting date.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When calculating time buckets, the planning system ignores any working calendars that are defined in the <strong>Base Calendar Code</strong> field in the <strong>Company Information</strong> and <strong>Location Card</strong> pages.</p>
+</div>
+<p>The default safety lead time, on the <strong>Manufacturing Setup</strong> page, should be set to at least one day. The due date of the demand may be known, but not the due time. The planning schedules backward to meet gross demand, and, if no safety lead time is defined, the goods may arrive too late to meet the demand.</p>
+<p>Three additional reorder period fields, <strong>Rescheduling Period</strong>, <strong>Lot Accumulation Period</strong>, and <strong>Dampener Period</strong>, also play a role in defining when to reorder. For more information, see <a href="design-details-planning-parameters.html#optimize-when-and-how-much-to-reorder">Optimize When and How Much to Reorder</a>.</p>
+<h2 id="define-how-much-to-reorder">Define How Much to Reorder</h2>
+<p>If the planning system detects the need to reorder, the selected reordering policy is used to determine when and how much to order.</p>
+<p>Independent of the reordering policy, the planning system usually follows this logic:</p>
+<ol>
+<li><p>The quantity of the order proposal is calculated to meet the specified minimum inventory level of the item, usually the safety stock quantity. If nothing is specified, the minimum inventory level is zero.</p>
+</li>
+<li><p>If the projected available inventory is below the safety stock quantity, a backward-scheduled supply order is suggested. The order quantity will at least fill the safety stock quantity, and can be increased by gross demand within the time bucket, by the reordering policy, and by the order modifiers.</p>
+</li>
+<li><p>If the projected inventory is on or below the reorder point (calculated from aggregated changes within the time bucket) and above the safety stock quantity, a forward-scheduled exception order is suggested. Both the gross demand to be met and the reordering policy will determine the order quantity. At minimum, the order quantity will meet the reorder point.</p>
+</li>
+<li><p>If there is more gross demand due before the ending date of the forward-scheduled order proposal, and this demand brings the currently calculated projected available inventory below the safety stock quantity, the order quantity is increased to make up the deficit. The suggested supply order is then scheduled backward from the due date of the gross demand that would have violated the safety stock quantity.</p>
+</li>
+<li><p>If the <strong>Time Bucket</strong> field is not filled in, only the gross demand on the same due date will be added.</p>
+<p>The following reorder period fields also play a role in defining how much to reorder: <strong>Rescheduling Period</strong>, <strong>Lot Accumulation Period</strong>, and <strong>Dampener Period</strong>. For more information, see <a href="design-details-planning-parameters.html#optimize-when-and-how-much-to-reorder">Optimize When and How Much to Reorder</a>.</p>
+</li>
+</ol>
+<h3 id="reordering-policies">Reordering Policies</h3>
+<p>The following reordering policies affect the quantity that is being reordered.</p>
+<table>
+<thead>
+<tr>
+<th>Reordering policy</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fixed Reorder Qty.</strong></td>
+<td>At a minimum, the order quantity will be equal to the reorder quantity. It can be increased to meet the demand or the desired inventory level. This reordering policy is usually used with a reorder point.</td>
+</tr>
+<tr>
+<td><strong>Maximum Qty.</strong></td>
+<td>The order quantity will be calculated to meet the maximum inventory. If quantity modifiers are used, then maximum inventory can be violated. We do not recommend that you use the time bucket together with maximum quantity. The time bucket will usually be overruled. This reordering policy is usually used with a reorder point.</td>
+</tr>
+<tr>
+<td><strong>Order</strong></td>
+<td>The order quantity will be calculated to meet each single demand event and the demand-supply set will remain linked until execution. No planning parameters are considered.</td>
+</tr>
+<tr>
+<td><strong>Lot-for-Lot</strong></td>
+<td>The quantity is calculated to meet the sum of the demand that comes due in the time bucket.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="optimize-when-and-how-much-to-reorder">Optimize When and How Much to Reorder</h2>
+<p>To obtain a rational supply plan, a planner will fine-tune planning parameters to limit rescheduling suggestions, accumulate demand (dynamic reorder quantity), or to avoid insignificant planning actions. The following reorder period fields help optimize when and how much to reorder.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rescheduling Period</strong></td>
+<td>This field is used to determine whether the action message should reschedule an existing order or cancel it and create a new order. The existing order will be rescheduled within one rescheduling period before the current supply and until one rescheduling period after the current supply.</td>
+</tr>
+<tr>
+<td><strong>Lot Accumulation Period</strong></td>
+<td>With the reordering policy Lot-for-Lot, this field is used to accumulate multiple supply needs into one supply order. From the first planned supply, the system accumulates all supply needs in the following lot accumulation period into one supply, which is placed on the date of the first supply. Demand outside the lot accumulation period is not covered by this supply.</td>
+</tr>
+<tr>
+<td><strong>Dampener Period</strong></td>
+<td>This field is used to avoid minor rescheduling of existing supply out in time. Changes from the supply date until one dampener period from the supply date will not generate any action messages.<br><br> The dampener period specifies a period of time during which you do not want the planning system to propose to reschedule existing supply orders forward. This limits the number of insignificant rescheduling of existing supply to a later date if the rescheduled date is within the dampener period.<br><br> As a result, a positive delta between the suggested new supply date and the original supply date will always be larger than the dampener period.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>With the reordering policy Lot-for-Lot, the value of the <strong>Lot Accumulation Period</strong> field must be equal to or larger than the value of the <strong>Dampener Period</strong> field. Otherwise, the dampener period will be automatically reduced during the planning routine to match the lot accumulation period.</p>
+</div>
+<p>The timing of rescheduling period, dampener period, and lot accumulation period is based on a supply date. The time bucket is based on the planning start date, as shown in the following illustration.</p>
+<p><img src="media/supply_planning_5_time_bucket_elements.png" alt="Time bucket elements" title="Time bucket elements"></p>
+<p>In the following examples, the black arrows represent existing supply (up) and demand (down). Red, green, and orange arrows are planning suggestions.</p>
+<p><strong>Example 1</strong>: The changed date is outside the rescheduling period, which causes the existing supply to be canceled. A new supply is suggested to cover the demand in the lot accumulation period.</p>
+<p><img src="media/supply_planning_5_recheduling_period_lot_accumulation_period.png" alt="Rescheduling Period and Lot Accumulation Period" title="Rescheduling Period and Lot Accumulation Period"></p>
+<p><strong>Example 2</strong>: The changed date is in the rescheduling period, which causes the existing supply to be rescheduled. A new supply is suggested to cover the demand outside the lot accumulation period.</p>
+<p><img src="media/supply_planning_5_recheduling_period_lot_accum_period_reschedule.png" alt="Rescheduling Period, Lot Accumulation Period, and Reschedule" title="Rescheduling Period, Lot Accumulation Period, and Reschedule"></p>
+<p><strong>Example 3</strong>: There is a demand in the dampener period and the supply quantity in the lot accumulation period matches the supply quantity. The next demand is uncovered and a new supply is suggested.</p>
+<p><img src="media/supply_planning_5_dampener_period_lot_accumulation_period.png" alt="Dampener Period and Lot Accumulation Period" title="Dampener Period and Lot Accumulation Period"></p>
+<p><strong>Example 4</strong>: There is a demand in the dampener period and the supply remains on the same date. However, the current supply quantity is not enough to cover the demand in the lot accumulation period, so a change quantity action for the existing supply order is suggested.</p>
+<p><img src="media/supply_planning_5_dampener_period_lot_accum_period_change_qty.png" alt="Dampener Period, Lot Accumulation Period, and Change Quantity" title="Dampener Period, Lot Accumulation Period, and Change Quantity"></p>
+<p><strong>Default values:</strong> The default value of the <strong>Time Bucket</strong> field and the three reorder period fields is blank. For all fields, except the <strong>Dampener Period</strong> field, this means 0D (zero days). If the <strong>Dampener Period</strong> field is blank, the global value in the <strong>Default Dampener Period</strong> field on the <strong>Manufacturing Setup</strong> page will be used.</p>
+<h2 id="modify-the-supply-orders">Modify the Supply Orders</h2>
+<p>When the quantity of the order proposal has been calculated, one or more of the order modifiers can adjust it. For example, the maximum order quantity is larger than or equal to the minimum order quantity, which is larger than or equal to the order multiple.</p>
+<p>The quantity is decreased if it exceeds the maximum order quantity. Then, it is increased if it is below the minimum order quantity. Finally, it is rounded up so that it matches a specified order multiple. Any remaining quantity uses the same adjustments until the total demand has been converted into order proposals.</p>
+<h2 id="delimit-the-item">Delimit the Item</h2>
+<p>The <strong>Manufacturing Policy</strong> option defines which additional orders the MRP calculation will propose.</p>
+<p>If the <strong>Make-to-Stock</strong> option is used, the orders concern only the item in question.</p>
+<p>If the <strong>Make-to-Order</strong> option is used, the planning system will analyze the production BOM of the item and create additional linked order proposals for those lower-level items that are also defined as make-to-order. This continues as long as there are make-to-order items in the descending BOM structures.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-handling-reordering-policies.html">Design Details: Handling Reordering Policies</a><br>
+<a href="design-details-balancing-demand-and-supply.html">Design Details: Balancing Demand and Supply</a><br>
+<a href="design-details-central-concepts-of-the-planning-system.html">Design Details: Central Concepts of the Planning System</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-planning-parameters.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

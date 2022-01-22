@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create Analysis Reports| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create Analysis Reports| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to create new analysis reports for sales, purchases, and inventory, and set up analysis templates.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-analysis-reports">Create Analysis Reports</h1>
+
+<p>Sales managers need to analyze turnover, gross profit and other key sales performance indicators on a regular basis. Purchasers, are more interested in the dynamics of purchase volumes, vendors' performance and purchase prices. Whereas logistics/inventory managers need information on inventory turnover, analysis of inventory movement, and statistics on inventory value.</p>
+<p>You can use analysis reports to create customized reports based on records of your posted transactions, for example, sales, purchases, transfers and inventory adjustments. In a customizable report, the source data, which is derived from the item ledger (with associated value entries), can be combined, compared and presented in meaningful user-defined ways. In this sense, the analysis report is very similar to a PivotTable report in Microsoft Excel.</p>
+<p>You can create your personalized report that focuses on your key accounts in terms of total turnover both in amounts and quantities sold, gross profit and gross profit percentage during the current month, and have it compare those figures with the results from previous months or the same month last year, and calculate deviations. All this can be done in one and the same view, with the possibility to navigate to the cause of identified problem areas by choosing the drop-down button to access details on the level of individual transactions.</p>
+<p>The analysis report consists of the objects that you want to analyze, such as customers, customer groups, sales people and so on, represented as lines, and the analysis parameters, that is, the way you want to analyze the object, represented as columns, such as profit calculations, periodic comparisons of sales amounts and volumes or periodic comparisons of actual and budgeted figures.</p>
+<p>In addition to analysis reports, you can create and view similar information in analysis views, which are based on dimensions. For more information, see <a href="bi-how-analyze-data-dimension.html">Analyze Data by Dimensions</a>.</p>
+<h2 id="example">Example</h2>
+<p>You can set up lines like these:</p>
+<ul>
+<li>Computers</li>
+<li>Displays</li>
+<li>Spare Parts</li>
+</ul>
+<p>Then you can set up columns like these:</p>
+<ul>
+<li>Sales Current Month</li>
+<li>Sales Last Month</li>
+<li>Sales in Pct. of last Month</li>
+</ul>
+<h2 id="setting-up-line-and-column-layouts">Setting Up Line and Column Layouts</h2>
+<p>On the <strong>Analysis Report</strong> page, you can view different line and column layouts according to what you have set up. You set up your lines or line templates on the <strong>Analysis Line Templates</strong> page. In this page, you can define the name of the report and the objects you want to show in the lines of your report. You set up your columns on the <strong>Analysis Column Templates</strong> page. In this page, you can define the name of the column template and the analysis parameters that you want to show in the report as columns. On the <strong>Analysis Column Templates</strong> page, each line represents a column in your report. Note that analysis lines and analysis columns are independent from each other.</p>
+<p>Based on the lines and columns you have set up, application will aggregate the result of your report in the <strong>Analysis Report</strong> matrix page, such as in this example:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sales Current Month</th>
+<th>Sales Last Month</th>
+<th>Sales Last Month %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Computers</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Displays</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Spare parts</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Total</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>You can, for example, set up one set of lines and several sets of column layouts to show monthly and annual reports respectively.</p>
+<h2 id="to-set-up-analysis-column-templates">To set up analysis column templates</h2>
+<p>The following procedure is based on analysis views for sales. The steps are similar for purchase and inventory analysis views.</p>
+<p>In an analysis report, your analysis parameters are shown as columns. You can define the columns that you want to include in your analysis report by setting up analysis column templates.</p>
+<p>A template contains a set of lines each representing the analysis columns that you see in the analysis report. To define a column you must assign an analysis type code to a line. This analysis type code determines the type of source data in the item ledger entries that the analysis will be based on. Source data includes cost, sales amount, or quantity, and their associated value entries. You can set up as many column templates as you like, and then use them to create new analysis reports.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Column Templates</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the first empty line, and then fill in the fields as necessary.</p>
+</li>
+<li><p>Choose the <strong>Columns</strong> action.</p>
+</li>
+<li><p>On the <strong>Analysis Columns</strong> page, fill in the fields to specify the columns that you want to include in your analysis report.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To define a column, you must fill in the <strong>Analysis Type Codes</strong> field for all column types except <strong>Formula</strong>. Set up the analysis type codes on the <strong>Analysis Types</strong> page.<br>
+Also, in the <strong>Ledger Entry Type</strong> field, if you select <strong>Item Entries</strong>, the actual figures from the item ledger entry are copied. If you select <strong>Item Budget Entries</strong>, the budgeted figures from the budget are copied.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button to save your changes.</p>
+</li>
+</ol>
+<h2 id="to-set-up-analysis-line-templates">To set up analysis line templates</h2>
+<p>The following procedure is based on analysis reports for sales. The steps are similar for purchase and inventory analysis reports.</p>
+<p>In an analysis report your analysis objects are shown on the lines. You can define the lines that you want to include in your analysis report by setting up analysis line templates.</p>
+<p>A template contains a set of lines representing the analysis lines that you see in the analysis report. A line can specify one or a range of items, customers, vendors, or groups. You can also create a formula in a line to sum up the other lines. You can set up as many line templates as you like, and then use them to create new analysis reports.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Line Templates</strong>, and then choose the related link.</li>
+<li>Select the first empty line, and then fill in the fields as necessary.</li>
+<li>Choose the <strong>Lines</strong> action.</li>
+<li>On the <strong>Analysis Lines</strong> page, create lines for the items, customers, vendors, or salespeople you want to view figures for in your analysis report. You must fill in the <strong>Type</strong>, <strong>Range</strong>, and the <strong>Description</strong> fields.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Alternatively, when you want to create many individual lines for each item, customer, and so on, you can select the appropriate insert option to fill in all the relevant fields on the line. If you need to, you can then edit the lines manually. To insert lines, choose the <strong>Insert Items</strong> action or the <strong>Insert Item Groups</strong> action.</p>
+</div>
+<h2 id="to-create-a-new-sales-analysis-report">To create a new sales analysis report</h2>
+<p>The following procedure is based on analysis reports for sales. The steps are similar for purchase and inventory analysis reports.</p>
+<p>You use analysis reports to analyze the dynamics of your sales according to key sales performance indicators that you select, for example, sales turnover in both amounts and quantities, contribution margin, or progress of actual sales against the budget. You can also use the report to analyze your average sales prices and evaluate the sales performance of your sales force.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Analysis Reports</strong>, and then choose the related link.</li>
+<li>On the <strong>Analysis Report Sale</strong> page, choose the <strong>New</strong> action.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Choose the <strong>Edit Analysis Report</strong> action.</li>
+<li>On the <strong>Sales Analysis Report</strong> page, choose the <strong>Show Matrix</strong> action</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Building combinations of line and column templates to create reports and assigning them unique names is optional. If you do this, selecting a report name means that you will not need to select line and column templates on the <strong>Sales Analysis Report</strong> page. After you have chosen a report name, you can change line and column templates independently and then later select the report name again to restore the original combination.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="bi.html">Business Intelligence</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="finance-general-ledger.html">The General Ledger and the Chart of Accounts</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/bi-how-create-analysis-views-reports.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

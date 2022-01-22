@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Sell Inventory Items in Assemble-to-Order Flows | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Sell Inventory Items in Assemble-to-Order Flows | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="If the item is set up for card of assemble-to-order, then the default sales order process assumes that the item is not in inventory and must be assembled for that specific sales order. Therefore, a linked assembly order is automatically created when you add the item to a sales order line.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="sell-inventory-items-in-assemble-to-order-flows">Sell Inventory Items in Assemble-to-Order Flows</h1>
+
+<p>If the <strong>Assembly Policy</strong> field on the item card of an assembly item contains <strong>Assemble-to-Order</strong>, then the default sales order process assumes that the item is not in inventory and must be assembled for that specific sales order. Therefore, a linked assembly order is automatically created when you add the item to a sales order line. For more information, see <a href="assembly-how-to-sell-items-assembled-to-order.html">Sell Items Assembled to Order</a>. However, if a part of the sales order quantity is already available in inventory, then you can decrease the assembly order quantity by changing the <strong>Qty. to Assemble to Order</strong> field on the sales order line.</p>
+<p>This scenario is rare because assemble-to-order items are expected to always be customized, and the chance that they are in inventory in the configuration that is requested by another customer is low. However, if a company does have assemble-to-order quantities in inventory because of returns or order cancellations, then these quantities should be picked and sold before new ones are assembled.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>No functionality exists on sales orders that automatically alerts or helps you deduct assembly order quantities that are already available. Instead, you must monitor availability information, such as in the <strong>Sales Line Details</strong> FactBox.</p>
+</div>
+<p>Similar functionality is available when you are selling assembly items from inventory and a part or all of the quantity is unavailable and can be supplied by an assembly order. For more information, see <a href="assembly-how-to-sell-assemble-to-order-items-and-inventory-items-together.html">Sell Assemble-to-Order Items and Inventory Items Together</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Certain rules apply to the <strong>Qty. to Ship</strong> field on sales order lines that contain a combination of assemble-to-order quantities and inventory quantities. For more information, see the Combination Scenarios section in <a href="assembly-assemble-to-order-or-assemble-to-stock.html">Understanding Assemble to Order and Assemble to Stock</a>.</p>
+</div>
+<p>In this procedure, you replace assemble-to-order quantities with inventory quantities on a sales order line. The steps include detecting that availability exists, deducting that quantity from the linked assembly order, and then reserving the inventory quantity to make sure that it is picked and shipped for the order.</p>
+<h2 id="to-sell-inventory-items-in-assemble-to-order-flows">To sell inventory items in assemble-to-order flows</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a sales order. For more information, see <a href="sales-how-sell-products.html">Sell Products</a>.</p>
+</li>
+<li><p>On a sales order line for an assemble-to-order item, in the <strong>Quantity</strong> field, enter the demanded quantity.</p>
+</li>
+<li><p>In the <strong>Sales Line Details</strong> FactBox, determine if all or some of the demanded quantity is available.</p>
+</li>
+<li><p>In the <strong>Qty. to Assemble to Order</strong> field, deduct the available quantity so that only the unavailable quantity is assembled to the order. The <strong>Reserved Quantity</strong> field is decreased accordingly to reflect that the order-to-order link, or reservation, only applies to the quantity to be assembled.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, choose <strong>Functions</strong>, and then choose the <strong>Reserve</strong> action.</p>
+</li>
+<li><p>On the <strong>Reservation</strong> page, select the item ledger entry line or lines that contain the available quantities, choose the <strong>Reserve from Current Line</strong> action, and then choose the <strong>OK</strong> button.</p>
+<p>On the <strong>Sales Order</strong> page, the <strong>Reserved Quantity</strong> field now shows that the whole order line quantity is reserved. The <strong>Qty. to Assemble to Order</strong> field still reflects the subquantity that has to be assembled.</p>
+</li>
+<li><p>Release the sales order for picking of the inventory items and for assembly of the unavailable items. For more information, see <a href="assembly-how-to-assemble-items.html">Assemble Items</a>.</p>
+</li>
+</ol>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>The <strong>Bin Code</strong> field on the sales order may be prefilled according to the <strong>Assemble-to-Order Shpt. Bin Code</strong> or the <strong>From-Assembly Bin Code</strong> field on the location card. In that case, the <strong>Bin Code</strong> field on the sales order line may be incorrect in this combination of assemble-to-order and assemble-to-stock quantities. It is a good idea to look in the <strong>Bin Code</strong> field and ensure that the placement works for all quantities. Alternatively, enter the two different quantities on separate sales order lines.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="inventory-how-to-reserve-items.html">Reserve Items</a><br>
+<a href="inventory-how-work-BOMs.html">Work with Bills of Material</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/assembly-how-to-sell-inventory-items-in-assemble-to-order-flows.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

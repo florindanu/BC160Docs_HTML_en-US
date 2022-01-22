@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Trace Item-Tracked Items | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Trace Item-Tracked Items | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can see where an item-tracked item was used, including how and when it was received or produced, transferred, sold, consumed, or returned. You can also find all current instances of a specific serial or lot number in the database. You do this by using the Item Tracing and the Navigate features.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="trace-item-tracked-items">Trace Item-Tracked Items</h1>
+
+<p>You can see where an item-tracked item was used, including how and when it was received or produced, transferred, sold, consumed, or returned. You can also find all current instances of a specific serial or lot number in the database. You do this by using the Item Tracing and the Navigate features.</p>
+<p>These features can be particularly useful in quality control when you need to find out which customers received products with a particular lot number or when you need to find out which lot a defective component came from.</p>
+<p>On the <strong>Item Tracing</strong> page, you can trace forwards and backwards in a sequence of posted inventory transactions for the serial or lot number.</p>
+<p>On the <strong>Navigate</strong> page, you cannot see the sequence of transactions, but you can see all records of the serial or lot number, both posted entries and open records.</p>
+<p>The two features can be used in combination by transferring a traced serial or lot number to the <strong>Navigate</strong> page to finish a complete trace scenario. For more information, see <a href="walkthrough-tracing-serial-lot-numbers.html">Walkthrough: Tracing Serial-Lot Numbers</a>.</p>
+<h2 id="to-trace-item-tracked-items">To trace item-tracked items</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item Tracing</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the filter fields at the top of the page, enter the specific item numbers or a filter on the item numbers that you would like to trace.</p>
+</li>
+<li><p>In the <strong>Show Components</strong> field, select whether you would like to also see where the components for the items came from. Your options in this field are as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No</strong></td>
+<td>Select this option if you do not want to see any components.</td>
+</tr>
+<tr>
+<td><strong>Item-tracked Only</strong></td>
+<td>Select this option if you want to see only components that have lot or serial numbers.</td>
+</tr>
+<tr>
+<td><strong>All</strong></td>
+<td>Select this option if you want to see all components.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>In the <strong>Trace Method</strong> field, select the method you would like to use for tracing the item. The options are as follows</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Usage-&gt;Origin</strong></td>
+<td>This method traces the item starting from where it was used to where it came from. For instance, if a manufactured item was sold to a customer, the <strong>Item Tracing</strong> page shows this with the sales shipment line first, which you can then expand to see from which production order it came.</td>
+</tr>
+<tr>
+<td><strong>Origin-&gt;Usage</strong></td>
+<td>This method traces the item starting from where it came into inventory to where it was used. For instance, if a manufactured item was sold to a customer, the <strong>Item Tracing</strong> page shows this with the finished production order first, which you can then expand to see sale shipment lines where the item was used.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Trace</strong> action to run the trace.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have received the same lot on more transactions, then the <strong>Item Tracing</strong> page may not show all transactions. Only applied transactions are shown.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If additional transaction history under an item tracing line has already been traced by another line above it, then the <strong>Already Traced</strong> check box is selected. To provide a simpler view, such underlying lines are not shown.</p>
+<p>To find the item tracing lines where the transaction history has already been traced, choose the <strong>Go to Already Traced</strong> button. The item tracing line in question is selected, and all underlying lines are expanded.</p>
+</div>
+<h2 id="to-find-item-tracked-items-with-navigate">To find item-tracked items with Navigate</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Navigate</strong>, and then select the related link.</li>
+<li>On the <strong>Item Tracking</strong> FastTab, in the <strong>Serial No.</strong> and <strong>Lot No.</strong> fields, enter the item tracking numbers that you want to trace.</li>
+<li>Choose the <strong>Find</strong> action to find all instances of the serial or lot number in the database.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="design-details-item-tracking.html">Design Details: Item Tracking</a>
+<a href="design-details-item-tracking-and-reservations.html">Design Details - Item Tracking and Reservations</a><br>
+<a href="inventory-how-to-reserve-items.html">Reserve Items</a><br>
+<a href="ui-work-product.html">Working with Business Central</a>
+<a href="walkthrough-tracing-serial-lot-numbers.html">Walkthrough: Tracing Serial-Lot Numbers</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/inventory-how-to-trace-item-tracked-items.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

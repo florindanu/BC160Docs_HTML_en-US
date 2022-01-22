@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>About Production Orders | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="About Production Orders | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Production orders are used to manage the conversion of purchased materials into manufactured items. Production orders (job or work orders) route work through various facilities (work or machine centers) on the shop floor.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="about-production-orders">About Production Orders</h1>
+
+<p>Production orders are used to manage the conversion of purchased materials into manufactured items. Production orders route work through various work or machine centers on the shop floor.</p>
+<p>Before proceeding with production, most companies perform supply planning, typically once a week, to calculate how many production orders and purchase orders to execute to fulfill that week’s sales demand. Purchase orders supply the components that are required according to the production BOM to produce the end items.</p>
+<p>Production orders are the central components of application's manufacturing functionality and they contain the following information:</p>
+<ul>
+<li>Products planned for manufacturing</li>
+<li>Materials required for the planned production orders</li>
+<li>Products that have just been manufactured</li>
+<li>Materials that have already been selected</li>
+<li>Products that have been manufactured in the past</li>
+<li>Materials that were used in previous manufacturing operations</li>
+</ul>
+<p>Production orders are the starting points for:</p>
+<ul>
+<li>Planning future manufacturing</li>
+<li>Controlling current manufacturing</li>
+<li>Tracking of finished manufacturing</li>
+</ul>
+<h2 id="production-order-creation">Production Order Creation</h2>
+<p>Production orders can be created on an order-by-order basis manually from the <strong>Production Order</strong> page, or generated from the <strong>Sales Order Planning</strong> or <strong>Order Planning</strong> pages. Multiple orders are created from the <strong>Planning Worksheet</strong> page.</p>
+<p>Production orders are created using information from:</p>
+<ul>
+<li>Items</li>
+<li>Production BOMs</li>
+<li>Routings</li>
+<li>Machine centers</li>
+<li>Work centers</li>
+</ul>
+<h2 id="limitations-on-production-order-creation">Limitations on Production Order Creation</h2>
+<p>Production orders are automatically reserved and tracked to their source when:</p>
+<ul>
+<li>Created from the <strong>Planning Worksheet</strong></li>
+<li>Created with the Order function on the <strong>Sales Order Planning</strong> page</li>
+<li>Created from the <strong>Order Planning</strong> page</li>
+<li>Using the <strong>Replan</strong> function on production orders</li>
+</ul>
+<p>For more information, see <a href="production-how-track-demand-supply.html">Track Relations Between Demand and Supply</a>.</p>
+<p>Production orders created through other means are not automatically reserved and tracked.</p>
+<h2 id="production-order-status">Production Order Status</h2>
+<p>The production order status controls how the production order behaves within application. The form and content of the production are dictated by the order's status. The production orders are displayed in different pages according to their status. You cannot change the status of a production order manually; you must use the <strong>Change Status</strong> function.</p>
+<h3 id="simulated-production-order">Simulated Production Order</h3>
+<p>The Simulated Production Order is unique based on the following characteristics:</p>
+<ul>
+<li>As its name implies, it is a simulation and its main purpose is for quoting and costing - such as when the Research and Development department wants to get a cost estimate on a proposed item. A simulated production order serves as an example of a production order.</li>
+<li>It does not influence the planning of orders. Planning (MPS and MRP) neither considers nor is affected by simulated production orders. Also, a simulated production order cannot be used as a template because it disappears when you change its status.</li>
+</ul>
+<h3 id="planned-production-order">Planned Production Order</h3>
+<p>The Planned Production Order is unique because of the following characteristics:</p>
+<ul>
+<li>You can automatically create a planned production order from a sales order.</li>
+<li>Planned production orders are like released production orders and provide input to capacity requirements planning by showing the total capacity requirements by work center or machine center.</li>
+<li>A planned production order represents the best estimate of the future load for the work center or machine center load based on available information. Typically, they are generated from planning, but can also be created manually. Because they are erased during subsequent planning generations, manual creation is not practical.</li>
+<li>Their generation in planning results in a suggested &quot;planned order release&quot; that includes quantity, release date, and due date. The planning system logic is based on the replenishment system, reorder policies, and order modifiers that it encounters in the net requirements planning process.</li>
+<li>To view their impact, look at the load for each work center or machine center on the planned production order's routing.</li>
+</ul>
+<h3 id="firm-planned-production-order">Firm Planned Production Order</h3>
+<p>The Firm Planned Production Order is unique because of the following characteristics:</p>
+<ul>
+<li>You can automatically create a firm planned production order from a sales order.</li>
+<li>A firm planned production order acts as a placeholder in the planning schedule for some future job released to the floor.</li>
+<li>A firm planned production order can be generated from planning or created manually or from sales orders. They are not erased during subsequent planning.</li>
+<li>Their generation in planning results in a suggested &quot;planned order release&quot; that includes: quantity, release date, and due date. The planning system logic is based on the replenishment system, reorder policies, and order modifiers that it encounters in the net requirements planning process.</li>
+<li>To view their impact, look at the load for each work center or machine center on the firm planned production order's routing.</li>
+</ul>
+<h3 id="released-production-order">Released Production Order</h3>
+<p>The Released Production Order is unique based on the following characteristics:</p>
+<ul>
+<li>You can automatically create a released production order from a sales order.</li>
+<li>When a production order has been released, it does not necessarily mean that materials have been picked or the job has physically moved to its first operation.</li>
+<li>In a MTO (Make-to-Order) environment, it is not unusual to create a released production order immediately after the entry of the sales order.</li>
+<li>Actual material consumption and product output can be recorded manually with a released production order. In addition, automatic flushing of consumption and product output only occurs for released production orders.</li>
+</ul>
+<h3 id="finished-production-order">Finished Production Order</h3>
+<p>The Finished Production Order is unique based on the following characteristics:</p>
+<ul>
+<li>A finished production order is typically one that has been manufactured.</li>
+<li>Finishing the production order is an important task in completing the costing lifecycle of the item that is being produced. By finishing a production order, costing can be adjusted and reconciled.</li>
+<li>Finished production orders are used for statistical reporting and to support the ability to track back to other orders (sales, production, and purchase, for example). The ability to track back to a finished production order allows you to review the detailed history.</li>
+<li>Finished production orders can never be changed.</li>
+</ul>
+<h2 id="production-order-execution">Production Order Execution</h2>
+<p>Once a production order has been created and scheduled, it has to be released to the shop floor to be executed. During execution of the order, you record:</p>
+<ul>
+<li>Materials picked or consumed</li>
+<li>How much time was spent working on the order</li>
+<li>Quantity of the parent item produced</li>
+</ul>
+<p>This information can be recorded manually or through automatic reporting, according to the items setup in the Flushing Method field.</p>
+<h3 id="material-consumption">Material Consumption</h3>
+<p>The application offers a variety of options for how a manufacturing company might want to record material consumption. For example, material consumption may be recorded manually, which might be desirable if there are frequent component substitutions or greater than expected scrap.</p>
+<p>Consumption of materials may be processed through the consumption journal, but also may be recorded automatically by application, known as automatic reporting. The reporting methods are:</p>
+<ul>
+<li>Manual</li>
+<li>Forward</li>
+<li>Backward</li>
+</ul>
+<p>Manual consumption reporting uses the consumption journal to specify material picking.</p>
+<p>Forward consumption reporting assumes the expected quantity of all materials for the entire order is consumed at the release of a production order, unless using routing link codes. When using routing link codes, the material consumed after the start of the operational step is recorded in the Output Journal. To forward flush the entire production order, you need to do two things:</p>
+<ul>
+<li>All items in the top-level production BOM need to have forward flushing selected on their respective item card.</li>
+<li>All routing link codes on the production BOM must be removed.</li>
+</ul>
+<p>Backward consumption reporting records the actual quantity of all material picked or consumed when the status of a production order is changed to <em>Finished,</em> unless using routing link codes. When using routing link codes, the material is consumed after a quantity of the parent item is recorded for the operational step in the Output Journal.</p>
+<p>When the Production Order is refreshed, the flushing method is copied from the item card. Because the flushing method for each production order component controls how and when the consumption is recorded, it is important to note that you can change flushing method for specific items directly on the Production Order.</p>
+<h4 id="automatic-consumption-posting-flushing">Automatic Consumption Posting (Flushing)</h4>
+<p>The advantage of automatic flushing is that it greatly reduces data entry. With the ability to automatically flush an operation, the entire consumption and output recording process can be automated. The disadvantage of using automatic flushing is that you may not be accurately recording, or even aware of, scrap. The Automatic Reporting methods are:</p>
+<ul>
+<li>Forward Flush the Entire Order</li>
+<li>Forward Flushing by Operation</li>
+<li>Back Flushing by Operation</li>
+<li>Back Flushing the Entire Order</li>
+</ul>
+<h4 id="automatic-reporting---forward-flush-the-entire-order">Automatic Reporting - Forward Flush the Entire Order</h4>
+<p>If you forward flush the production order at the start of the job, the behavior of application is very similar to a manual consumption. The major difference is that consumption happens automatically.</p>
+<ul>
+<li>The entire contents of the production BOM are consumed and deducted from inventory at the time the released production order is refreshed.</li>
+<li>The consumption quantity is the quantity per assembly stated on the production BOM, multiplied by the number of parent items you are building.</li>
+<li>There is no need to record any information in the consumption journal if all of the items are to be flushed.</li>
+<li>When consuming items from inventory, it does not matter when output journal entries are made, because the output journal has no effect on this mode of consumption posting.</li>
+<li>No routing link codes can be set.</li>
+</ul>
+<p>Forward flushing an entire order is suited in production environments with:</p>
+<ul>
+<li>A low number of defects</li>
+<li>A low number of operations</li>
+<li>High component consumption in early operations</li>
+</ul>
+<h4 id="automatic-reporting---forward-flushing-by-operation">Automatic Reporting - Forward Flushing by Operation</h4>
+<p>Flushing by operation allows you to deduct inventory during a specific operation in the routing of the parent item. Material is tied to the routing using routing link codes, which correspond to routing link codes applied to components in the production BOM.</p>
+<p>The flush takes place when the operation that has the same routing link code is started. Started means that some activity is recorded in the output journal for that operation. And that activity might just be that a setup time is entered.</p>
+<p>The amount of the flush is for the quantity per assembly stated on the production BOM multiplied by the number of parent items being built (expected quantity).</p>
+<p>This technique is best employed when there are many operations and certain components are not needed until late in the assembly sequence. In fact, a Just-in-Time (JIT) setup might not even have the items on hand when the RPO is begun.</p>
+<p>Material can be consumed during operations by using routing link codes. Some components may not be used until final assembly operations and should not be withdrawn from stock until that time.</p>
+<h4 id="automatic-reporting---back-flushing-by-operation">Automatic Reporting - Back Flushing by Operation</h4>
+<p>Back flushing by operation records consumption after the operation is posted in the output journal.</p>
+<p>The advantage of this method is that the number of parent parts finished in the operation is known.</p>
+<p>Material in the production BOM is linked to the routing records using routing link codes. The back flush takes place when an operation with a particular routing link code is posted with a finished quantity.</p>
+<p>The amount of the flush is for the quantity per assembly stated on the production BOM multiplied by the number of parent items that were posted as output quantity at that operation. This might be different from the expected quantity.</p>
+<h4 id="automatic-reporting---back-flushing-the-entire-order">Automatic Reporting - Back Flushing the Entire Order</h4>
+<p>This reporting method does not consider routing link codes.</p>
+<p>No components are picked until the released production order status is changed to <em>Finished</em>. The amount of the flush is the quantity per assembly stated on the production BOM multiplied by the number of parent items that were finished and placed into inventory.</p>
+<p>Backward flushing the entire production order requires the same setup as for forward flushing: The reporting method must be set to backward on each item card for all items within the parent BOM to be reported. In addition, all routing link codes must be removed from the production BOM.</p>
+<h3 id="production-output">Production Output</h3>
+<p>The application provides you with the capability to track how much time is spent working on a production order, in addition to recording the quantity produced. This information can help you more accurately determine the costs of production. Also, manufacturers using a standard costing system may want to record actual information in order to help them develop better standards.</p>
+<p>Output may be processed through the output journal, but also may be recorded automatically by application. The application copies the flushing method from the machine center or work center card to the production order routing when refreshing. As with material consumption, there are three reporting methods for output:</p>
+<ul>
+<li>Manual</li>
+<li>Forward</li>
+<li>Backward</li>
+</ul>
+<p>Manual method uses the Output Journal to specify time consumed and quantity produced.</p>
+<p>Forward method records the expected output (and time), which is automatically recorded at the release of a Production Order. Routing link codes are not a factor in the forward flushing of the output.</p>
+<p>Backward method records the expected output (and time), which is automatically recorded at the finish of a Production Order. Routing link codes are not a factor in the back flushing of the output.</p>
+<h3 id="posting-consumption-and-output">Posting Consumption and Output</h3>
+<p>You can use any combination of automatic flushing and manually recorded information for both consumption and output. For example, you may want to automatically forward flush components, but still use the Consumption Journal to record scrap. Similarly, you may want to automatically record output, but use the Output Journal to record scrap of the parent item or additional time spent on the order.</p>
+<p>Finally, if you enter consumption and output manually, you need to determine the sequence in which you are going to record this information. You can record consumption first and use a shortcut method to enter the information, which is based on expected quantity of output. Or, you can enter output first, using the <strong>Explode Routing</strong> function. You would then record consumption based on actual quantity of output.</p>
+<h3 id="production-journal">Production Journal</h3>
+<p>The Production Journal combines the functions of the Consumption Journal and Output Journals into one journal, which is accessed directly from the Released Production Order.</p>
+<p>The purpose of the Production Journal is to provide a single interface for you to register consumption and output from a Production Order.</p>
+<p>The Production Journal has a simple view and provides you with the ability to:</p>
+<ul>
+<li>Easily record output and consumption related to a Production Order</li>
+<li>Relate the components to operations</li>
+<li>Relate actual operation data with the standard estimates on the Production Order routing and component lines</li>
+<li>Post and print an overview of registered operation data for the Production Order</li>
+</ul>
+<p>The Production Journal performs many of the same functions as the Consumption and Output journals. Dimensions, Item Tracking, and Bin Contents are handled in the same way as on the Consumption and Output journals.</p>
+<p>However, the Production Journal differs from the Consumption and Output journals in the following ways:</p>
+<ul>
+<li>It is called directly from a released production order line and preset with the relevant data.</li>
+<li>It allows you to define which types of components to handle based on a flushing method filter on the journal.</li>
+<li>Quantities and times already posted for the order are displayed at the bottom of the journal as actual entries.</li>
+<li>Fields where data entry is irrelevant are blank and non-editable.</li>
+<li>The user can set up the way output quantities are preset in the journal - for example, that the last operation must have zero as Output Quantity.</li>
+<li>If you happen to exit the journal without posting your changes, a request message is displayed allowing you to stay in the journal.</li>
+<li>It displays operations and components together in a logical structure that provides an overview of the production process.</li>
+</ul>
+<p>In the production journal, consumption quantities are posted as negative item ledger entries, output quantities are posted as positive ledger entries, and times spent are posted as capacity ledger entries.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-planning.html">Planning</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-about-production-orders.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

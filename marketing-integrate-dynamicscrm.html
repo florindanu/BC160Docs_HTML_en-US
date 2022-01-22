@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Manage Customers Using Dynamics 365 Sales| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Manage Customers Using Dynamics 365 Sales| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use Dynamics 365 Sales from inside Business Central to map data and have seamless integration and synchronization in the lead-to-cash process.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="using-dynamics-365-sales-from-business-central">Using Dynamics 365 Sales from Business Central</h1>
+
+<p>If you use Dynamics 365 Sales for customer engagement, you can enjoy seamless integration in the lead-to-cash process by using Business Central for backend activities such as processing orders, managing inventory, and doing your finances.</p>
+<p>Before you can use the integration capabilities, your system administrator must set up the connection and define users in Dynamics 365 Sales. For more information, see <a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Integrating with Dynamics 365 Sales</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These steps describe the process of integrating online versions of Dynamics 365 Sales and Business Central. For information about on-premises configuration, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/administration/prepare-dynamics-365-for-sales-for-integration">Preparing Dynamics 365 Sales for Integration on-premises</a>.</p>
+</div>
+<p>Integrating the applications lets you access data in Sales from Business Central, and in some cases the other way around. You can work with and synchronize data that both services have in common, such as customers, contacts, and sales information, and keep the data up to date in both applications.</p>
+<p>For example, a sales person in Dynamics 365 Sales can use the price lists from Business Central when they create a sales order. When they add the item to the sales order line in Dynamics 365 Sales, they can see the inventory level (availability) of the item from Business Central.</p>
+<p>Conversely, order processors in Business Central can handle sales orders that are automatically or manually transferred from Dynamics 365 Sales. For example, they can create and post sales order lines for items or resources that were entered in Dynamics 365 Sales as write-in products. For more information, see <a href="marketing-integrate-dynamicscrm.html#handling-sales-order-data">Handling Sales Order Data</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Business Central integrates only with Dynamics 365 Sales. Other Dynamics 365 applications that change the standard workflow or data model in Dynamics 365 Sales, for example Project Service Automation, can break the integration between Business Central and Dynamics 365 Sales.</p>
+</div>
+<h2 id="coupling-records">Coupling Records</h2>
+<p>The assisted setup guide lets you choose the data to synchronize. Later, you can also set up synchronization for specific records. This is referred to as <em>coupling</em>. For example, you can couple a specific account in Dynamics 365 Sales with a specific customer in Business Central. This section describes what to take into consideration when you couple records.</p>
+<p>For example, if you want to see accounts in Dynamics 365 Sales as customers in Business Central, you must couple the two types of records. To do that, on the <strong>Customers</strong> list page in Business Central, use the <strong>Set Up Coupling</strong> action. Then specify which Business Central customers to match to which accounts in Dynamics 365 Sales.</p>
+<p>You can also create (and couple) an account in Dynamics 365 Sales based on, for example, a customer record in Business Central using <strong>Create Account in Dynamics 365 Sales</strong>, or vice versa, using <strong>Create Customer in Business Central</strong>.</p>
+<p>When you set up coupling between two records, you can also manually request current record, for example a customer, to be overwritten immediately by account data from Sales (or from Business Central) using <strong>Synchronize Now</strong> action. <strong>Synchronize Now</strong> action which will ask whether to overwrite Sales or Business Central record data.</p>
+<p>In some cases you must couple certain sets of data before other sets of data, as shown in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>What to couple first</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customers and accounts</td>
+<td>Couple salespeople with Dynamics 365 Sales users</td>
+</tr>
+<tr>
+<td>Items and resources</td>
+<td>Couple units of measure with Dynamics 365 Sales unit groups</td>
+</tr>
+<tr>
+<td>Items and resource prices</td>
+<td>Couple customer price groups with Dynamics 365 Sales prices</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If your prices or customers use foreign currencies, make sure that you couple currencies to Sales transaction currencies.</p>
+</div>
+<p>In Dynamics 365 Sales, sales orders depend on information such as customers, units of measure, currencies, customer price groups, and items and/or resources. For the integration with sales orders to work you must couple customers, units of measure, currencies, customer price groups, and items and/or resources.</p>
+<h2 id="fully-synchronizing-records">Fully Synchronizing Records</h2>
+<p>At the end of the assisted setup guide you can choose the <strong>Run Full Synchronization</strong> action to start synchronizing all Business Central records with all related records in Dynamics 365 Sales. On the <strong>Dynamics 365 Sales Full Synch Review</strong> page, you choose the <strong>Start</strong> action. Full synchronization can take some time to complete, but you can continue to work in Business Central while it runs in the background.</p>
+<p>To check the progress of individual jobs in a full synchronization, on the <strong>Dynamics 365 Sales Full Synch Review</strong> page choose an record to view details. To update the status during synchronization, refresh the page.</p>
+<p>From the <strong>Microsoft Dynamics 365 Connection Setup</strong> page, you can get details about full synchronization at any time. From here, you can also open the <strong>Integration Table Mappings</strong> page to see details about the tables in Business Central and Sales that must be synchronized.</p>
+<h2 id="handling-sales-order-data">Handling Sales Order Data</h2>
+<p>Sales orders that people submit in Dynamics 365 Sales will be automatically transferred to Business Central if you select the <strong>Automatically Create Sales Orders</strong> check box on the <strong>Microsoft Dynamics 365 Connection Setup</strong> page.
+Alternatively, you can manually convert submitted sales orders from Dynamics 365 Sales by using the <strong>Create in Business Central</strong> action available on <strong>Sales Orders - Dynamics 365 for Sales</strong> page.
+On such sales orders, the <strong>Name</strong> field on the original order is transferred and mapped to the <strong>External Document Number</strong> field on the sales order in Business Central.</p>
+<p>This can also work if the original sales order contains write-in products, meaning items or resources that are not registered in either app. In that case, you must fill in the <strong>Write-in Product Type</strong> and <strong>Write-in Product No.</strong> fields on the <strong>Sales &amp; Receivables Setup</strong> page so that such non-registered product sales are mapped to a specified item/resource number for financial analysis.</p>
+<p>If the description of the item on the original sales order is long, an additional sales order line of the type <strong>Comment</strong> is created to hold the full text on the sales order in Business Central.</p>
+<p>Updates to fields on sales order headers, such as the Last Shipment Date or Requested Delivery Date fields, that are mapped in SALESORDER-ORDER <strong>Integration table mapping</strong> are periodically synchronized to Dynamics 365 Sales. Processes such as releasing a sales order and shipping or invoicing a sales order are posted to the sales order timeline in Dynamics 365 Sales. For more information, see <a href="http://docs.microsoft.com/dynamics365/sales-enterprise/developer/introduction-activity-feeds">Introduction to activity feeds</a>. <!--The link is broken. Should this actually point to https://docs.microsoft.com/en-us/dynamics365/sales-enterprise/manage-activities--></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Periodical synchronization based on the SALESORDER-ORDER <strong>Integration table mapping</strong> will work only when sales order integration is enabled. For more information, see <a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Connection settings on the Sales Connection Setup Page</a>. Only sales orders created from submitted sales orders in Dynamics 365 Sales are synchronized. For more information, see <a href="http://docs.microsoft.com/dynamics365/sales-enterprise/developer/enable-sales-order-processing-integration">Enable Sales Order Processing Integration</a>.</p>
+</div>
+<div class="embeddedvideo"><iframe src="https://go.microsoft.com/fwlink/?linkid=2098170" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="handling-sales-quotes-data">Handling Sales Quotes Data</h2>
+<p>Sales quotes that are activated in Dynamics 365 Sales will be transferred to Business Central if you select the <strong>Automatically Process Quotes</strong> check box on the <strong>Microsoft Dynamics 365 Connection Setup</strong> page.
+Alternatively, you can manually convert activated sales quotes from Dynamics 365 Sales by using the <strong>Process in Business Central</strong> action on the <strong>Sales Quotes - Dynamics 365 Sales</strong> page.
+On such sales quotes, the <strong>Name</strong> field on the original quote is transferred and mapped to the <strong>External Document Number</strong> field on the sales order in Business Central. Also <strong>Effective To</strong> field on quote is transferred and mapped to the  <strong>Quote Valid Until</strong> field on sales quote in Business Central.</p>
+<p>Sales quotes go through many revisions while they are being finalized. Both manual and automatic processing of sales quotes in Business Central ensures that previous versions of sales quotes are archived before processing new revisions of sales quotes from Dynamics 365 Sales.</p>
+<h2 id="handling-posted-sales-invoices-customer-payments-and-statistics">Handling Posted Sales Invoices, Customer Payments, and Statistics</h2>
+<p>After fulfilling a sales order, invoices will be created for it. When you invoice a sales order, you can transfer the posted sales invoice to Dynamics 365 Sales if you select the <strong>Create Invoice in Dynamics 365 Sales</strong> check box on the <strong>Posted Sales Invoice</strong> page. Posted invoices are transferred to Dynamics 365 Sales with the status, <strong>Billed</strong>.</p>
+<p>When the customer payment is received for the sales invoice in Business Central, the sales invoice status will be changed to <strong>Paid</strong> with the <strong>Status Reason</strong> field set to <strong>Partial</strong>, if partially paid, or <strong>Complete</strong> if completely paid, when you choose the <strong>Update Account Statistics</strong> action on the customer page in Business Central. The <strong>Update Account Statistics</strong> function will also refresh values, such as the <strong>Balance</strong> and <strong>Total Sales</strong> fields in the <strong>Business Central Account Statistics</strong> FactBox in Dynamics 365 Sales. Alternatively, you can have the scheduled jobs, Customer Statistics and POSTEDSALESINV-INV automatically run both of these processes in the background.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Integrating with Dynamics 365 Sales</a><br>
+<a href="marketing-relationship-management.html">Relationship Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="ui-experiences.html">Change Which Features are Displayed</a><br>
+<a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a><br>
+<a href="http://docs.microsoft.com/dynamics365/customer-engagement/sales-enterprise/overview">Overview of Sales and Sales Hub</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/marketing-integrate-dynamicscrm.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

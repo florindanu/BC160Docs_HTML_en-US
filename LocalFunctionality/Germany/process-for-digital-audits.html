@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Digital Audits (GoBD/GDPdU) </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Digital Audits (GoBD/GDPdU) ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can export data according to the process for digital audits (GoBD/GDPdU), which is based on German tax law.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="process-for-digital-audits-gobdgdpdu">Process for Digital Audits (GoBD/GDPdU)</h1>
+
+<p>You can export data from Business Central according to the process for digital audits (GoBD/GDPdU), which is based on German tax law.</p>
+<h2 id="overview">Overview</h2>
+<p>Section 146 and 147 of the German Fiscal Code (Abgabenordnung, AO) allows tax authorities to assess the data of electronic accounting systems digitally. They may do this with a data storage device submitted to them or by direct or indirect access to the system. In the data storage device scenario, the tax liable company (or the person or entity entrusted with accounting and tax duties) must provide appropriate data storage devices with the data in computer-readable form. This means for the tax authorities that they will be able to access at will all stored data, including the master data and connections with sort and filter functions. To provide data that can be used and evaluated in this manner, you must define and standardize the file formats for submission by data storage device.</p>
+<p>Tax authorities in Germany use analysis software, IDEA, which imports data from ASCII files. The IDEA software can import data in variable length or fixed length format. It requires an XML file, index.xml, that describes the structure of the data files. For more information, see the <a href="https://go.microsoft.com/fwlink/?LinkId=245841">Audicon website for GDPdU</a>.</p>
+<h2 id="defining-gdpdu-export-data">Defining GDPdU Export Data</h2>
+<p>You can configure Business Central to export data to meet your needs. You can export large sets of data, and you can export small sets of data. You can export data from a single table or a table and related tables.</p>
+<p>For each data export, you define the tables and fields that you want to export. This depends on the auditor's requests. The selected information is exported to the ASCII files. A corresponding XML file, INDEX.XML, is also created to describe the ASCII file structure.</p>
+<p>The elements in the INDEX.XML file define the names of the tables and fields that are exported. Because the current auditing tool has restrictions on these field names, such as the length and the characters that are used, Business Central removes spaces and special characters and then truncates the names to match the 20 character limitation. You can change the suggested table and field names when you add fields to a table definition.</p>
+<p>In most cases, you will set up GDPdU data export one time, and then a person in your company can run the export when the auditor requests new data. It is recommended that the setup is handled by people with an understanding of the database structure and the technical hardware in your company, but also in collaboration with people who understand the business data, such as the accountant.</p>
+<h2 id="configuration">Configuration</h2>
+<p>You can set up different GDPdU data exports depending on the type of data that you want to be able to export. For example, you can create two GDPdU data exports:</p>
+<ul>
+<li>One exports high-level information about all general ledger entries, customer ledger entries, vendor ledger entries, and VAT entries.</li>
+<li>The other exports detailed information about the general ledger entries.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>How to set up the GDPdU data exports depends on your company’s needs and the auditor’s requests.</p>
+</div>
+<p>For an example of how to set up data exports for GDPdU, see <a href="walkthrough-exporting-data-for-a-digital-audit.html">Walkthrough: Exporting Data for a Digital Audit</a>.</p>
+<h3 id="data-export-filters">Data Export Filters</h3>
+<p>When you set up a data export, you can filter data on different levels as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Filter level</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Period filters</td>
+<td>You can specify a start date and end date for the data that will be exported. You can then use this period filter to filter the data. For example, if you set a period filter for the export, you can then set table filters that use the period.</td>
+</tr>
+<tr>
+<td>Table filters</td>
+<td>You can set filters on each table in the export. For example, you can include only open ledger entries, or entries that have a posting date in the specified filter. You can also set a filter that is based on FlowFields, such as <strong>Net Change (LCY)</strong>, to only export customers where there has been a change, for example. <strong>Important:</strong>  You cannot set a table filter that is based on a FlowFilter. <br><br> When you add table filters, you can increase performance by specifying the fields that the exported data will be sorted by the value of the <strong>Key No.</strong> field for the record definition. Which keys to use depends on the table. For example, if the table only has two key fields and relatively few entries, then the sort order does not affect the speed of the export. But for a table such as G/L Entry, the export is faster if you specify the key in advance, such as the <code>G/L Account No.,Posting Date</code> key. If you do not specify a key, then the primary key is used, which might not be the best choice.<br><br> Other tables in which it can be useful to specify the key include the Cust. Ledger Entry and Vendor Ledger Entry tables.</td>
+</tr>
+<tr>
+<td>FlowField filters</td>
+<td>You can include FlowFields in the export and set filters based on the period. For example, you can apply the period filter to the <strong>Balance at Date</strong> field on the <strong>G/L Account</strong> table.</td>
+</tr>
+</tbody>
+</table>
+<p>If you include a FlowField such as the <strong>Net Change (LCY)</strong> field on the <strong>Customer</strong> table, you can specify that the entries must be filtered based on the remaining amount at the end date of the GDPdU period. If you add this as a field filter, then the calculation formulas are based on the dates that are specified during the export.</p>
+<p>For more information, see <a href="gdpdu-filter-examples.html">GDPdU Filter Examples</a>.</p>
+<h2 id="export-performance">Export Performance</h2>
+<p>If you want to export large sets of data, it can take a very long time. We recommend that you set up data exports based on advice from your tax advisor to establish your business needs, and the requirements of the tax auditor. The number of records in a table is also something that you should consider.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="how-to-set-up-data-exports-for-digital-audits.html">Set Up Data Exports for Digital Audits</a><br>
+<a href="how-to-export-data-for-a-digital-audit.html">Export Data for a Digital Audit</a><br>
+<a href="walkthrough-exporting-data-for-a-digital-audit.html">Walkthrough: Exporting Data for a Digital Audit</a><br>
+<a href="germany-local-functionality.html">Germany Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Germany/process-for-digital-audits.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

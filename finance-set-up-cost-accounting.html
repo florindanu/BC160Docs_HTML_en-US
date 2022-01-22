@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setting Up Cost Accounting | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setting Up Cost Accounting | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Before you start working with cost accounting, you must perform setup tasks.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="setting-up-cost-accounting">Setting Up Cost Accounting</h1>
+
+<p>Before you start working with cost accounting, you must perform setup tasks.</p>
+<h2 id="balances-between-cost-type-cost-center-and-cost-object">Balances Between Cost Type, Cost Center, and Cost Object</h2>
+<p>When you set up cost accounting, you must make sure that all entries are assigned to a cost type as well as a cost center or a cost object. The means that each cost entry must have a cost type assigned and a cost center code or a cost object assigned. This rule ensures that each cost entry appears in either the cost centers or the cost objects, but never in both places.</p>
+<p>By doing this, you create the following accounting equation:</p>
+<p><em>Cost Type Balance</em> = <em>Cost Center Balance</em> + <em>Cost Object Balance</em></p>
+<p>When you print the chart of cost type, the chart of cost centers, and the chart of cost objects reports, you can analyze this relationship.</p>
+<h2 id="setting-up-cost-types">Setting Up Cost Types</h2>
+<p>The chart of cost types is similar to the chart of accounts in the general ledger. You can set up the chart of cost types in the following ways:</p>
+<ul>
+<li>Structure the chart of cost types similar to the income statement accounts in the general ledger chart of accounts. Then, you can transfer the general ledger chart of accounts to the chart of cost types. You can make any necessary adjustments after the transfer.</li>
+<li>Create new chart of cost types or add new cost types to existing chart of cost types. You must create each new cost type individually.</li>
+</ul>
+<h3 id="to-transfer-the-general-ledger-chart-of-accounts-to-the-chart-of-cost-types">To transfer the general ledger chart of accounts to the chart of cost types</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Cost Types</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Get Cost Types from Chart of Accounts</strong> action. In the dialog box, choose the <strong>Yes</strong> button to confirm the transfer. The function uses the chart of accounts to create a chart of cost types.</p>
+<p>The chart of cost types now contain all income statement accounts in the general ledger and include headings and subtotals. You can change the chart of cost types, as necessary. For example, you can delete duplicate existing cost types.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The <strong>Register Cost Types in Chart of Accounts</strong> function updates the relationship between the chart of accounts and the chart of cost types. The <strong>No.</strong> field is filled and verified to make sure that each general ledger account is related to only one cost type. The function runs automatically before transferring general ledger entries to cost accounting.</p>
+</div>
+</li>
+</ol>
+<h3 id="to-set-up-new-cost-types-in-the-chart-of-cost-types-page">To set up new cost types in the Chart of Cost Types page</h3>
+<ol>
+<li><p>Open the <strong>Chart of Cost Types</strong> page in edit mode.</p>
+</li>
+<li><p>Fill in the fields as described as necessary. Hover over a field to read a short description.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can set up and maintain cost types in either the <strong>Cost Type Card</strong> page or on the <strong>Chart of Cost Types</strong> page. In this procedure, you set up cost types on the <strong>Chart of Cost Types</strong> page.</p>
+</div>
+</li>
+<li><p>After you have created all cost types, choose the <strong>Indent Cost Types</strong> action. In the dialog box, choose the <strong>Yes</strong> button.</p>
+</li>
+<li><p>Link the new cost type to the corresponding general ledger account.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you have entered definitions in the <strong>Totaling</strong> fields for the line type of <strong>End-Total</strong> before you run the <strong>Indent Cost Types</strong> function, then you must enter the definitions again because the function overwrites the values in all <strong>End-Total</strong> fields.</p>
+</div>
+</li>
+</ol>
+<h3 id="to-update-cost-types">To update cost types</h3>
+<ol>
+<li>On the <strong>Cost Accounting Setup</strong> page, select if you want the chart of cost types to be automatically updated when the chart of accounts is changed.</li>
+<li>In the <strong>Align G/L Account</strong> field, you can choose from the following options.</li>
+</ol>
+<ul>
+<li><strong>No Alignment</strong> - There is no corresponding change in the chart of cost types when you change the chart of accounts.</li>
+<li><strong>Automatic</strong> - A corresponding change is made in the chart of cost types when you change the chart of accounts.</li>
+<li><strong>Prompt</strong> - A message is displayed asking if you want to make a corresponding change in the chart of cost types when you change the chart of accounts.</li>
+</ul>
+<h2 id="defining-the-relationship-between-cost-types-and-general-ledger-accounts">Defining the Relationship Between Cost Types and General Ledger Accounts</h2>
+<p>The relationship between the cost type and the general ledger account is created in the cost type and in the general ledger account.</p>
+<ul>
+<li>The <strong>G/L Account Range</strong> field in the <strong>Cost Type</strong> table establishes which general ledger accounts belong to a cost type.</li>
+<li>The <strong>Cost Type No.</strong> field in the chart of accounts establishes which cost type a general ledger account belongs to.</li>
+</ul>
+<p>These two fields are filled automatically when you use the <strong>Get Cost Types from Chart of Accounts</strong> function.</p>
+<h3 id="relationship-between-general-ledger-accounts-and-cost-types">Relationship Between General Ledger Accounts and Cost Types</h3>
+<p>There is an n:1 relationship between general ledger accounts and cost types. Several general ledger accounts can belong to one cost type, but each general ledger account belongs to only one cost type. The following table describes the details in the relationship.</p>
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th><strong>G/L Account Range</strong></th>
+<th><strong>Cost Type No.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One general ledger account for each cost type</td>
+<td>One general ledger account</td>
+<td>One cost type</td>
+</tr>
+<tr>
+<td>Several general ledger accounts for one cost type</td>
+<td>General ledger account range, for example, 7110..7193 for each general ledger account</td>
+<td>For each general ledger account in the range, there is only one cost type</td>
+</tr>
+<tr>
+<td>Cost types without corresponding general ledger accounts</td>
+<td><empty></empty></td>
+<td></td>
+</tr>
+<tr>
+<td>General ledger accounts whose entries will not be transferred</td>
+<td></td>
+<td><empty></empty></td>
+</tr>
+</tbody>
+</table>
+<h3 id="cost-types-without-a-relationship-to-the-general-ledger">Cost Types Without a Relationship to the General Ledger</h3>
+<p>A cost type may not have a relationship to general ledger accounts if one of the following conditions is true:</p>
+<ul>
+<li>Accounts for operational accounting, such as Calc. Interest and Depreciation, only take costs from the operational accounting.</li>
+<li>Helping cost types, such as cost types 9901, 9902, and 9903 in the Business Central database, are used as credit and debit accounts for allocations.</li>
+<li>The helping account, 9920 in the Business Central database, contains actual accruals that show the difference between costs and the expense from the general ledger.</li>
+</ul>
+<h2 id="setting-up-cost-centers">Setting Up Cost Centers</h2>
+<p>Cost centers are departments that are responsible for costs and income. The chart of cost centers is similar to the dimension information for the general ledger. You can set up the chart of cost centers in the following ways:</p>
+<ul>
+<li>Transfer dimension values in the general ledger to the chart of cost centers. You can make any necessary adjustments after the transfer.</li>
+<li>Create a new chart of cost center that is independent of the general ledger or add a new cost center to an existing chart of cost center. You must create each cost center individually.</li>
+</ul>
+<h3 id="to-transfer-dimension-values-in-the-general-ledger-to-the-chart-of-cost-centers">To transfer dimension values in the general ledger to the chart of cost centers</h3>
+<ol>
+<li><p>Set up a dimension to be the cost center dimension on the <strong>Update Cost Acctg. Dimensions</strong> page. Only the values from this dimension are transferred.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Cost Centers</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Actions</strong> tab, in the <strong>Functions</strong> group, choose <strong>Get Cost Centers from Dimension</strong> to transfer dimension values to the chart of cost centers. The function transfers the dimension values that you defined in step 1.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can set up the <strong>Align Cost Center Dimension</strong>  field to define a one-way synchronization of dimension values from the general ledger to the chart of cost centers. You cannot define a synchronization of the chart of cost centers to dimension values from the general ledger.</p>
+</div>
+</li>
+</ol>
+<p>The chart of cost centers now contains all specified dimension values from the general ledger and includes titles and subtotals.</p>
+<h3 id="to-create-new-cost-centers-in-the-chart-of-cost-centers-page">To create new cost centers in the Chart of Cost Centers page</h3>
+<p>You can set up and maintain cost centers in either the <strong>Cost Center Card</strong> card or on the <strong>Chart of Cost Centers</strong> page. In this procedure, you set up cost centers on the <strong>Chart of Cost Centers</strong> page.</p>
+<ol>
+<li><p>Open the <strong>Chart of Cost Centers</strong> page in edit mode.</p>
+</li>
+<li><p>In the <strong>Code</strong> field, enter the cost center code. All cost centers must have a code.</p>
+</li>
+<li><p>In the <strong>Name</strong> field, enter the cost center name.</p>
+</li>
+<li><p>Choose the drop-down arrow in the <strong>Line Type</strong> field to specify the purpose of the cost center.</p>
+<ul>
+<li>For cost centers of the <strong>Total</strong> type, you must fill in the <strong>Totaling</strong> field. Use the <strong>or</strong> operator, which is a vertical line (<strong>|</strong>) to set ranges of cost centers.</li>
+<li>For cost centers of the <strong>End-Total</strong> line type, this field is filled in automatically when you use the indent function.</li>
+</ul>
+</li>
+<li><p>Fill in the <strong>Sorting Order</strong> and <strong>Cost Subtype</strong> fields.</p>
+</li>
+<li><p>Choose the next empty line to create a new cost center, and then repeat steps 2 through 5.</p>
+</li>
+<li><p>After you have set up all the cost centers, choose the <strong>Indent Cost Centers</strong> action. Choose the <strong>Yes</strong> button.</p>
+</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you have entered definitions in the <strong>Totaling</strong> fields for <strong>End-Total</strong> cost centers before you run the indent function, then you must enter them again. The function overwrites the values in all <strong>End-Total</strong> fields.</p>
+</div>
+<h2 id="setting-up-cost-objects">Setting Up Cost Objects</h2>
+<p>Cost objects are projects, products, or services of a company. The chart of cost objects is similar to the dimension information for the general ledger. You can set up the chart of cost objects in the following ways:</p>
+<ul>
+<li>Transfer dimension values in the general ledger to the chart of cost objects. You can make any necessary adjustments after the transfer.</li>
+<li>Create a new chart of cost object that is independent of the general ledger or add a new cost object to an existing chart of cost objects. You must create each cost object individually.</li>
+</ul>
+<h3 id="to-transfer-dimension-values-from-the-general-ledger-to-the-chart-of-cost-objects">To transfer dimension values from the general ledger to the chart of cost objects</h3>
+<ol>
+<li><p>Set a dimension to be the cost object dimension on the <strong>Update CA Dimensions</strong> page. Only the values from this dimension are transferred.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Cost Objects</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Get Cost Objects from Dimension</strong> action to transfer dimension values to the chart of cost objects. The function transfers the dimension values that you defined in step 1.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can set up the <strong>Align Cost Object Dimension</strong>  field to define a one-way synchronization of dimension values from the general ledger to the chart of cost objects. You cannot define a synchronization of the chart of cost objects to dimension values from the general ledger.</p>
+</div>
+</li>
+</ol>
+<p>The chart of cost objects now contains all specified dimension values from the general ledger and includes titles and subtotals.</p>
+<h3 id="to-create-new-cost-objects-in-the-chart-of-cost-objects-page">To create new cost objects in the Chart of Cost Objects page</h3>
+<p>You can set up and maintain cost objects in either the <strong>Cost Object Card</strong> card or on the <strong>Chart of Cost Objects</strong> page. In this procedure, you set up cost objects on the <strong>Chart of Cost Objects</strong> page.</p>
+<ol>
+<li><p>Open the <strong>Chart of Cost Objects</strong> page in edit mode.</p>
+</li>
+<li><p>In the <strong>Code</strong> field, enter the cost object code. All cost objects must have a code.</p>
+</li>
+<li><p>In the <strong>Name</strong> field, enter the cost object name.</p>
+</li>
+<li><p>Choose the drop-down arrow in the <strong>Line Type</strong> field to specify the purpose of the cost object.</p>
+<ul>
+<li>For cost objects of the <strong>Total</strong> line type, fill in the <strong>Total From/To</strong> field. Use the <strong>or</strong> operator, which is a vertical line (<strong>|</strong>), to set ranges of cost objects.</li>
+<li>For cost objects of the <strong>End-Total</strong> line type, this field is filled in automatically when you use  the indent function.</li>
+</ul>
+</li>
+<li><p>Fill in the <strong>Sorting Order</strong> field.</p>
+</li>
+<li><p>Chose the next empty line to create a new cost object, and then repeat steps 2 through 5.</p>
+</li>
+<li><p>After you have set up all the cost objects, choose the <strong>Indent Cost Objects</strong> action. Choose the <strong>Yes</strong> button.</p>
+</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you have entered definitions in the <strong>Total From/To</strong> fields for <strong>End-Total</strong> cost objects before you run the indent function, then you must enter them again. The function overwrites the values in all <strong>End-Total</strong> fields.</p>
+</div>
+<h2 id="defining-cost-centers-and-cost-objects-for-chart-of-accounts">Defining Cost Centers and Cost Objects for Chart of Accounts</h2>
+<p>You can automatically transfer the expense and income entries from the general ledger to cost accounting either for each general ledger posting or with a batch job. When you do the transfer, Business Central only transfers the entries that are already linked to a cost center or a cost object. To establish a meaningful transfer, you must ensure that the cost centers and cost objects are correctly defined.</p>
+<h3 id="defining-default-dimension-values-for-general-ledger-accounts">Defining Default Dimension Values for General Ledger Accounts</h3>
+<p>For each general ledger account, you can define default dimension values in the <strong>Default Dimension</strong> table. The following example shows how to define that there should always be a DEPARTMENT cost center, but never be a PROJECT cost object when posting to a general ledger account.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Dimension Code</strong></th>
+<th><strong>Value Posting</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Department</td>
+<td>Code Mandatory</td>
+</tr>
+<tr>
+<td>Project</td>
+<td>No Code</td>
+</tr>
+</tbody>
+</table>
+<h3 id="defining-dimension-values-for-overhead-costs-and-direct-costs">Defining Dimension Values for Overhead Costs and Direct Costs</h3>
+<p>You can transfer overhead costs to a cost center and direct costs to a cost object. The following table shows the optimal combination of the dimension setup values.</p>
+<table>
+<thead>
+<tr>
+<th>Transfer To</th>
+<th>Cost Center Posting</th>
+<th>Cost Object Posting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cost Center</td>
+<td>Code Mandatory</td>
+<td>No Code</td>
+</tr>
+<tr>
+<td>Cost Object</td>
+<td>No Code</td>
+<td>Code Mandatory</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To make sure that the predefined cost center and cost object that you set up in the general ledger are automatically carried over to cost accounting, select the <strong>Check G/L Postings</strong> check box in the Cost Accounting Setup page.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-manage-cost-accounting.html">Accounting for Costs</a><br>
+<a href="finance-transfer-and-post-cost-entries.html">Transferring and Posting Cost Entries</a><br>
+<a href="finance-define-and-allocate-costs.html">Defining and Allocating Costs</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-set-up-cost-accounting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

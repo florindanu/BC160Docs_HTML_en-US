@@ -1,0 +1,955 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Codeunit 12 Changes in General Journal Post Procedures | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Codeunit 12 Changes in General Journal Post Procedures | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The following changes have been implemented in this release of Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="codeunit-12-changes-changes-in-general-journal-post-procedures">Codeunit 12 Changes: Changes in General Journal Post Procedures</h1>
+
+<p>The following changes have been implemented in this release of Business Central.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Microsoft Dynamics NAV 2009 R2</strong></th>
+<th><strong>Microsoft Dynamics NAV 2013 R2</strong></th>
+<th><strong>Comment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetGLReg</td>
+<td>GetGLReg</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>RunWithCheck</td>
+<td>RunWithCheck</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>RunWithoutCheck</td>
+<td>RunWithoutCheck</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>Code</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PostGenJnlLine</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InitAmounts</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InitLastDocDate</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>InitVAT</td>
+<td>InitVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostVAT</td>
+<td>PostVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>InsertVAT</td>
+<td>InsertVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>SummarizeVAT</td>
+<td>SummarizeVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>InsertSummarizedVAT</td>
+<td>InsertSummarizedVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostGLAcc</td>
+<td>PostGLAcc</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostCust</td>
+<td>PostCust</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostVend</td>
+<td>PostVend</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostBankAcc</td>
+<td>PostBankAcc</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostFixedAsset</td>
+<td>PostFixedAsset</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostICPartner</td>
+<td>PostICPartner</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>InitCodeUnit</td>
+<td>StartPosting</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>ContinuePosting</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>FinishCodeunit</td>
+<td>FinishPosting</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PostUnrealizedVAT</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CheckPostUnrealizedVAT</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>ExchangeAccounts</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>InitGLEntry</td>
+<td>InitGLEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>InitGLEntryVAT</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InitGLEntryVATCopy</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>InsertGLEntry</td>
+<td>InsertGLEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>CreateGLEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CreateGLEntryBalAcc</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CreateGLEntryVAT</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CreateGLEntryVATCollectAdj</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CreateGLEntryFromVATEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>UpdateCheckAmounts</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>ApplyCustLedgEntry</td>
+<td>ApplyCustLedgEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>CalcPmtDiscPossible</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CalcPmtTolerancePossible</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>CalcPmtTolerance</td>
+<td>CalcPmtTolerance</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcPmtDisc</td>
+<td>CalcPmtDisc</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcPmtDiscIfAdjVAT</td>
+<td>CalcPmtDiscIfAdjVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcPmtDiscTolerance</td>
+<td>CalcPmtDiscTolerance</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>CalcPmtDiscVATBases</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CalcPmtDiscVATAmounts</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InsertPmtDiscVATForVATEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InsertPmtDiscVATForGLEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>CalcCurrencyApplnRounding</td>
+<td>CalcCurrencyApplnRounding</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>FindAmtForAppln</td>
+<td>FindAmtForAppln</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcCurrencyUnrealizedGainLoss</td>
+<td>CalcCurrencyUnrealizedGainLoss</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcCurrencyRealizedGainLoss</td>
+<td>CalcCurrencyRealizedGainLoss</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcApplication</td>
+<td>CalcApplication</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcRemainingPmtDisc</td>
+<td>CalcRemainingPmtDisc</td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>CalcAmtLCYAdjustment</td>
+<td>CalcAmtLCYAdjustment</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>InitNewCVLedgEntry</td>
+<td>InitFromGenJnlLine</td>
+<td>Moved to Table 383 Detailed CV Ledg. Entry Buffer</td>
+</tr>
+<tr>
+<td>InitOldCVLedgEntry</td>
+<td>CopyFromCVLedgEntryBuf</td>
+<td>Moved to Table 383 Detailed CV Ledg. Entry Buffer</td>
+</tr>
+<tr>
+<td>InsertDtldCVLedgEntry</td>
+<td>InsertDtldCVLedgEntry</td>
+<td>Moved to Table 383 Detailed CV Ledg. Entry Buffer</td>
+</tr>
+<tr>
+<td></td>
+<td>InitBankAccLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InitCheckLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InitCustLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InitVendLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InsertDtldCustLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InsertDtldVendLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>CustUnrealizedVAT</td>
+<td>CustUnrealizedVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CustPostApplyCustLedgEntry</td>
+<td>CustPostApplyCustLedgEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PrepareTempCustLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>UnapplyCustLedgEntry</td>
+<td>UnapplyCustLedgEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>TransferCustLedgEntry</td>
+<td>CopyFromGenJnlLine</td>
+<td>Moved to Table 21 Cust. Ledger Entry</td>
+</tr>
+<tr>
+<td>PostDtldCustLedgEntries</td>
+<td>PostDtldCustLedgEntries</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldCustLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldCustLedgEntryUnapply</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>GetDtldCustLedgEntryAccNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>ZeroTransNoDtldCustLedgEntries</td>
+<td>SetZeroTransNo</td>
+<td>Moved to Table 379 Detailed Cust. Ledg. Entry</td>
+</tr>
+<tr>
+<td>AutoEntrForDtldCustLedgEntries</td>
+<td></td>
+<td>Refactored to PostDtldCustLedgEntryUnapply</td>
+</tr>
+<tr>
+<td>CustUpdateDebitCredit</td>
+<td>UpdateDebitCredit</td>
+<td>Moved to Table 379 Detailed Cust. Ledg. Entry</td>
+</tr>
+<tr>
+<td>ApplyVendLedgEntry</td>
+<td>ApplyVendLedgEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PrepareTempVendLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>VendPostApplyVendLedgEntry</td>
+<td>VendPostApplyVendLedgEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>UnapplyVendLedgEntry</td>
+<td>UnapplyVendLedgEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>TransferVendLedgEntry</td>
+<td>CopyFromGenJnlLine</td>
+<td>Moved to Table 25 Vendor Ledger Entry</td>
+</tr>
+<tr>
+<td>PostDtldVendLedgEntries</td>
+<td>PostDtldVendLedgEntries</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldVendLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldVendLedgEntryUnapply</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>GetDtldVendLedgEntryAccNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldCVLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldCustVATAdjustment</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldVendVATAdjustment</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>ZeroTransNoDtldVendLedgEntries</td>
+<td>SetZeroTransNo</td>
+<td>Moved to Table 380 Detailed Vend. Ledg. Entry</td>
+</tr>
+<tr>
+<td>AutoEntrForDtldVendLedgEntries</td>
+<td></td>
+<td>Refactored to PostDtldVendLedgEntryUnapply</td>
+</tr>
+<tr>
+<td>VendUpdateDebitCredit</td>
+<td>UpdateDebitCredit</td>
+<td>Moved to Table 380 Detailed Vend. Ledg. Entry</td>
+</tr>
+<tr>
+<td>VendUnrealizedVAT</td>
+<td>VendUnrealizedVAT</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PostUnrealVATEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>PostApply</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>PostUnrealVATByUnapply</td>
+<td>PostUnrealVATByUnapply</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>PostUnapply</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InsertDtldCustLedgEntryUnapply</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InsertDtldVendLedgEntryUnapply</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>InsertTempVATEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>ProcessTempVATEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>UpdateCustLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>UpdateVendLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>UpdateCalcInterest</td>
+<td>UpdateCalcInterest</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>UpdateCalcInterest2</td>
+<td>UpdateCalcInterest2</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>GLCalcAddCurrency</td>
+<td>GLCalcAddCurrency</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>HandleAddCurrResidualGLEntry</td>
+<td>HandleAddCurrResidualGLEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcLCYToAddCurr</td>
+<td>CalcLCYToAddCurr</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcAddCurrFactor</td>
+<td></td>
+<td>Deleted</td>
+</tr>
+<tr>
+<td>GetCurrencyExchRate</td>
+<td>GetCurrencyExchRate</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>ExchAmount</td>
+<td>ExchangeAmount</td>
+<td>Moved to Table 330 Currency Exchange Rate</td>
+</tr>
+<tr>
+<td>ExchangeAmtLCYToFCY2</td>
+<td>ExchangeAmtLCYToFCY2</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalcAddCurrForUnapplication</td>
+<td>CalcAddCurrForUnapplication</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CheckNonAddCurrCodeOccurred</td>
+<td>CheckNonAddCurrCodeOccurred</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CheckCalcPmtDisc</td>
+<td></td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>CheckCalcPmtDiscCVCust</td>
+<td></td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>CheckCalcPmtDiscCust</td>
+<td></td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>CheckCalcPmtDiscGenJnlCust</td>
+<td></td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>CheckCalcPmtDiscCVVend</td>
+<td></td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>CheckCalcPmtDiscVend</td>
+<td></td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>CheckCalcPmtDiscGenJnlVend</td>
+<td></td>
+<td>Moved to Codeunit 426 Payment Tolerance Management</td>
+</tr>
+<tr>
+<td>Reverse</td>
+<td>Reverse</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>ReverseCustLedgEntry</td>
+<td>ReverseCustLedgEntry</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>ReverseVendLedgEntry</td>
+<td>ReverseVendLedgEntry</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>ReverseBankAccLedgEntry</td>
+<td>ReverseBankAccLedgEntry</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>ReverseVAT</td>
+<td>ReverseVAT</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>SetReversalDescription</td>
+<td>SetReversalDescription</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>ApplyCustLedgEntryByReversal</td>
+<td>ApplyCustLedgEntryByReversal</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>ApplyVendLedgEntryByReversal</td>
+<td>ApplyVendLedgEntryByReversal</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>PostPmtDiscountVATByUnapply</td>
+<td>PostPmtDiscountVATByUnapply</td>
+<td>Moved to Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td></td>
+<td>CheckDimComb</td>
+<td>Added in Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td></td>
+<td>CopyCustLedgEntry</td>
+<td>Added in Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td></td>
+<td>CopyVendLedgEntry</td>
+<td>Added in Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td></td>
+<td>CopyBankAccLedgEntry</td>
+<td>Added in Codeunit 17 Gen. Jnl.-Post Reverse</td>
+</tr>
+<tr>
+<td>HandlDtlAddjustment</td>
+<td>HandleDtldAdjustment</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CollectAddjustment</td>
+<td>CollectAdjustment</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>SetOverDimErr</td>
+<td>SetOverDimErr</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>PostJob</td>
+<td>PostJob</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>InsertVATEntriesFromTemp</td>
+<td>InsertVATEntriesFromTemp</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CaptureOrRefundCreditCardPmnt</td>
+<td>CaptureOrRefundCreditCardPmnt</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>UpdateDOPaymentTransactEntry</td>
+<td>UpdateDOPaymentTransactEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>ABSMin</td>
+<td>ABSMin</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>GetApplnRoundPrecision</td>
+<td>GetApplnRoundPrecision</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CheckDimValueForDisposal</td>
+<td>CheckDimValueForDisposal</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>CalculateCurrentBalance</td>
+<td>CalculateCurrentBalance</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td>IncludeVATAmount</td>
+<td></td>
+<td>Moved to Table 81 Gen. Journal Line</td>
+</tr>
+<tr>
+<td>CalcVATAmountFromVATEntry</td>
+<td>CalcVATAmountFromVATEntry</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td></td>
+<td>TotalVATAmountOnJnlLines</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>SetGLRegReverse</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>GetGLSetup</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>ReadGLSetup</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CheckSalesExtDocNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CheckPurchExtDocNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CheckGLAccDimError</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>GetCurrency</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>PostDtldAdjustment</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>GetNextEntryNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>GetNextTransactionNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>GetNextVATEntryNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>IncrNextVATEntryNo</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>IsNotPayment</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>IsTempGLEntryBufEmpty</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>IsVATAdjustment</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>IsVATExcluded</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>UpdateDimensions</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>UpdateDimensionsFromCustLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>UpdateDimensionsFromVendLedgEntry</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>UpdateTotalAmounts</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CreateGLEntriesForTotalAmounts</td>
+<td>Added</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-codeunit-12-changes-mapping-global-variables-for-general-journal-post-line.html">Design Details: Codeunit 12 Changes: Mapping Global Variables for General Journal Post Line</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-codeunit-12-changes-changes-in-general-journal-post-procedures.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

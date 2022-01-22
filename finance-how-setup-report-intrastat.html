@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up and Report Intrastat| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up and Report Intrastat| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to set up Intrastat reporting features, and how to report trade with companies in other EU countries.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-and-report-intrastat">Set Up and Report Intrastat</h1>
+
+<p>All companies in the European Union must report their trade with other EU countries/regions. You must report the movement of goods to the statistics authorities in your country/region every month, and the report must be delivered to the tax authorities. This is referred to as Intrastat Reporting. You use the <strong>Intrastat Journal</strong> page to complete periodic Intrastat reports.</p>
+<h2 id="required-and-optional-setups">Required and Optional Setups</h2>
+<p>Before you can use the Intrastat journal to report Intrastat information, there are several things you must set up:</p>
+<ul>
+<li><strong>Intrastat Setup</strong>: Intrastat Setup page is used to enable intrastat reporting and set defaults for it. You can specify whether you need to report Intrastat from shipments (dispatches), receipts (arrivals) or both depending on thresholds set by your local regulations. You can also set default transaction types for regular and return documents, used for nature of transaction reporting.</li>
+<li><strong>Intrastat journal templates</strong>: You must set up the Intrastat journal templates and batches you will use. Because Intrastat is reported monthly, you must create 12 Intrastat journal batches based on the same template.</li>
+<li><strong>Commodity codes</strong>: Customs and tax authorities have established numerical codes that classify items and services. You specify these codes on items.</li>
+<li><strong>Transaction nature codes</strong>: Countries and regions have different codes for types of Intrastat transactions, such as ordinary purchase and sale, exchange of returned goods, and exchange of non-returned goods. Set up all of the codes that apply to your country/region. You use these codes on sales and purchase documents, and when you process returns.</li>
+<li><strong>Transport methods</strong>: There are seven, one-digit codes for Intrastat transport methods. <strong>1</strong> for sea, <strong>2</strong> for rail, <strong>3</strong> for road, <strong>4</strong> for air, <strong>5</strong> for post, <strong>7</strong> for fixed installations, and <strong>9</strong> for own propulsion (for eample, transporting a car by driving it). Business Central does not require these codes, however, we recommend that the descriptions provide a similar meaning.</li>
+</ul>
+<p>Optionally, you can also set up:</p>
+<ul>
+<li><strong>Transaction specifications</strong>: Use these to supplement the descriptions from the transaction types.</li>
+<li><strong>Areas</strong>: Use these to supplement information about countries and regions.</li>
+<li><strong>Entry/exit points</strong>: Use these to specify the locations where you ship or receive items to or from other countries. Heathrow Airport is an example of an entry or exit point. You enter entry or exit points on sales and purchase documents on the <strong>Foreign Trade</strong> FastTab. This information will also be copied from the item entries when you create the Intrastat journal.</li>
+</ul>
+<h3 id="to-set-up-intrastat-templates-and-batches">To set up Intrastat templates and batches</h3>
+<p>The Intrastat batch jobs include only item entries, and not general ledger entries. If you have general ledger entries that qualify for Intrastat reporting, you must enter them manually. For example, if you purchase a computer from another EU country or region, the computer is not placed in inventory, but is posted to a general ledger account. You must manually enter this type of entry in the Intrastat journal.</p>
+<p>You can export the entries to a file that you can send to your Intrastat authorities. You can also print a report, manually enter the information on the forms from your authorities, and then submit the information.</p>
+<blockquote>
+<p>[!Note]
+We recommended that you set up an Intrastat journal batch for each month.</p>
+</blockquote>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intrastat Journal Templates</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.. Create a template for each Intrastat form you use.</li>
+<li>To create batches, choose the <strong>Batches</strong> action.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.. Create a template for each Intrastat form you use..</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the <strong>Statistics Period</strong> field, enter the statistics period as a four-digit number, where the first two digits represent the year and the next two digits represent the month. For example, enter 1706 for June, 2017.</p>
+</div>
+<h3 id="to-set-up-commodity-codes">To set up commodity codes</h3>
+<p>All items that you buy or sell must have a commodity code.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Commodity Codes</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>To assign a commodity code to an item, go to the <strong>Item Card</strong> page, expand the <strong>Costs &amp; Posting</strong> FastTab, and then enter the code in the <strong>Commodity Code</strong> field.</li>
+</ol>
+<h3 id="to-set-up-transaction-nature-codes">To set up transaction nature codes</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Transaction Nature Codes</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you frequently use a particular transaction nature code, you can make it the default. To do this, go to the <strong>Intrastat Setup</strong> page, and choose the code.</p>
+</div>
+<h3 id="to-set-up-transport-methods">To set up transport methods</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Transport Methods</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h3 id="to-set-up-which-intrastat-report-fields-are-mandatory">To set up which Intrastat report fields are mandatory</h3>
+<p>In some countries, such as Spain and UK, the authorities require that Intrastat reports include, for example, the shipment method for purchases or some other values when sales is over a certain threshold. On the <strong>Intrastat Setup</strong> page, you can select to make <strong>Intrastat Checkist Setup</strong> to set mandatory fields on the <strong>Intrastat Journal</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intrastat Setup</strong>, and then choose the related link.</li>
+<li>Chooes the <strong>Intrastat Checklist Setup</strong> action.</li>
+<li>On the <strong>Intrastat Checklist Setup</strong> page, click in the <strong>Field Name</strong> to pick Intrastat report field you want to make mandatory.</li>
+</ol>
+<h2 id="to-report-intrastat">To Report Intrastat</h2>
+<p>After you fill in the Intrastat journal, you can run the <strong>Checklist report</strong> action to make sure that that all information in the journal is correct. Mandatory fields you have set in <strong>Intrastat Checklist Setup</strong> page that are missing values, will be shown in Errors and warning factbox on <strong>Intrastat Journal</strong> page. Afterward, you can print an Intrastat report as a form, or create a file to submit to the tax authority in your country/region.</p>
+<h3 id="to-fill-in-intrastat-journals">To fill in Intrastat journals</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intrastat Journal</strong> and then choose the related link.</li>
+<li>On the <strong>Intrastat Journal</strong> page, in the <strong>Batch Name</strong> field, choose the relevant journal batch, and then choose <strong>OK</strong>.</li>
+<li>Choose the <strong>Suggest Lines</strong> action. The <strong>Starting Date</strong> and <strong>Ending Date</strong> fields will already contain the dates specified for the statistics period on the journal batch.</li>
+<li>In the <strong>Cost Regulation %</strong> field, you can enter a percentage to cover transport and insurance. If you enter a percentage, the content of the <strong>Statistical Value</strong> field in the journal is proportionally higher.</li>
+<li>Choose <strong>OK</strong> to start the batch job.</li>
+</ol>
+<p>The batch job retrieves all the item entries in the statistics period and inserts them as lines in the Intrastat journal. You can edit the lines if needed.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The batch job retrieves only the entries that contain a country/region code for which an Intrastat code has been entered on the <strong>Countries/Regions</strong> page. Therefore, you must enter Intrastat codes for the country/region codes for which you will run the batch job.</p>
+</div>
+<h3 id="report-intrastat-on-a-form-or-a-file">Report Intrastat on a form or a file</h3>
+<p>To get the information that is required on the Intrastat form from the statistical authorities, you must print the <strong>Intrastat – Form</strong> report. Before you can do this, you must prepare the Intrastat journal and fill it in. If you have both sales and purchase transactions, you must complete a separate form for each type, so that you must print the report two times.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intrastat Journals</strong>, and then choose the related link.</li>
+<li>On the <strong>Intrastat Journal</strong> page, choose the relevant journal batch in the <strong>Batch Name</strong> field.</li>
+<li>If you have not already done this, fill in the journal manually or choose <strong>Suggest Lines</strong> action.</li>
+<li>Choose the <strong>Prints Intrastat Journal</strong> action.</li>
+<li>On the <strong>Intrastat Jnl. Line</strong> FastTab, add a <strong>Type</strong> filter and then specify whether this is a <strong>Receipt</strong> or a <strong>Shipment</strong>.</li>
+<li>Choose <strong>Send to</strong> to print the report.</li>
+</ol>
+<h3 id="report-intrastat-in-a-file">Report Intrastat in a file</h3>
+<p>You can submit the Intrastat report as a file. Before creating the file, you can print a checklist that contains the same information that will be in the file.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intrastat Journal</strong>, and then choose the related link.</li>
+<li>On the <strong>Intrastat Journal</strong> page, select the relevant journal batch in the <strong>Batch Name</strong> field.</li>
+<li>If you have not already done this, fill in the journal manually or by choosing the <strong>Suggest Lines</strong> action.</li>
+<li>Choose the <strong>Create File</strong> action.</li>
+<li>On the batch job page, choose the <strong>OK</strong> button.</li>
+<li>Choose <strong>Save</strong>.</li>
+<li>Browse to the location where you want to save the file, enter the file name, and then choose <strong>Save</strong>.</li>
+</ol>
+<h2 id="reorganize-intrastat-journals">Reorganize Intrastat Journals</h2>
+<p>Because you must submit an Intrastat report every month, and you create a new journal batch for each report, you will eventually have many journal batches. The journal lines are not deleted automatically. You may want to reorganize the journal batch names periodically. You do this by deleting the journal batches that you no longer need. The journal lines in these batches are also deleted.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Intrastat Journals</strong>, and then choose the related link.</li>
+<li>To view the options, choose the <strong>Batch Name</strong> field.</li>
+<li>Choose the journal batches to deleted, and then choose the <strong>Delete</strong> button.</li>
+</ol>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/process-intrastat-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance.html">Financial Management</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-setup-report-intrastat.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

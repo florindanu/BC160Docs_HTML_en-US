@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Bank Reference Files </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Bank Reference Files ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="To process electronic payments, you must first set up bank reference files to determine how payment data should be imported or exported.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-bank-reference-files">Set Up Bank Reference Files</h1>
+
+<p>To process electronic payments, you must first set up bank reference files to determine how payment data should be imported or exported.</p>
+<h2 id="to-set-up-a-bank-reference-file">To set up a bank reference file</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Bank Reference File Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No.</strong></td>
+<td>Specifies a bank account code.</td>
+</tr>
+<tr>
+<td><strong>Inform. of Appl. Cr. Memos</strong></td>
+<td>Select to display credits applied to invoices on the payment recipient's account statement.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>Foreign Payments</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Due Date Handling</strong></td>
+<td>Select how due date processing should be applied to foreign payments.<br><br> <strong>Batch</strong> – All payments in the file receive the same payment date.<br><br> –or–<br><br> <strong>Transaction</strong> – Each payment in the file receives a transaction-specific payment date. Contact your bank to determine whether this setting should be used.</td>
+</tr>
+<tr>
+<td><strong>Default Service Fee Code</strong></td>
+<td>Select a default service fee code for foreign banks.</td>
+</tr>
+<tr>
+<td><strong>Default Payment Method</strong></td>
+<td>Select a default payment method for foreign payments.</td>
+</tr>
+<tr>
+<td><strong>Exchange Rate Contract No.</strong></td>
+<td>Enter the exchange rate contract number.</td>
+</tr>
+<tr>
+<td><strong>Allow Comb. Foreign Pmts.</strong></td>
+<td>Select to combine all foreign payments made to one recipient in one day from the same bank account.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>SEPA</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bank Party ID</strong></td>
+<td>Enter a SEPA bank party ID. <strong>Note:</strong>  This field is only used for the SEPA pain.001.001.02 standard.</td>
+</tr>
+<tr>
+<td><strong>File Name</strong></td>
+<td>Enter the full path of the SEPA payment file. <strong>Note:</strong>  This field is only used for the SEPA pain.001.001.02 standard.</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>To export vendor payments using the SEPA standard, you must fill the <strong>Payment Export Format</strong> field on the <strong>Bank Account Card</strong> page.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="electronic-banking-in-finland.html">Electronic Banking in Finland</a><br>
+<a href="how-to-generate-payment-files.html">Generate Payment Files</a><br>
+<a href="how-to-disregard-payment-discounts.html">Disregard Payment Discounts</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Finland/how-to-set-up-bank-reference-files.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

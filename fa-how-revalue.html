@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Revalue Fixed Assets| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Revalue Fixed Assets| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to adjust the value of fixed assets, recording new amounts as a write-down or appreciation, and post additional acquisition costs.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="revalue-fixed-assets">Revalue Fixed Assets</h1>
+
+<p>Revaluation of fixed assets can consist of appreciations, write-downs, or general value adjustments.</p>
+<p>When the value of a fixed asset has increased, you post a journal line with a higher amount, an appreciation, to the depreciation book. The new amount is recorded as an appreciation according to the fixed asset posting setup.</p>
+<p>When the value of a fixed asset has decreased, you post a journal line with a lower amount, a write-down, to the depreciation book. The new amount is recorded as a write-down according to the fixed asset posting setup.</p>
+<p>Indexation is used to adjust multiple fixed asset values, for example per general price changes. The <strong>Index Fixed Assets</strong> batch job can be used to change various amounts, such as write-down and appreciation amounts.</p>
+<h2 id="to-post-an-appreciation-from-the-fixed-asset-gl-journal">To post an appreciation from the fixed asset G/L journal</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create an initial journal line and fill in the fields as necessary.</p>
+</li>
+<li><p>In the <strong>FA Posting Type</strong> field, select <strong>Revaluation</strong>.</p>
+</li>
+<li><p>Choose the <strong>Insert FA Bal. Account</strong> action. A second journal line is created for the balancing account that is set up for appreciation posting.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Step 4 only works if you have set up the following: On the <strong>FA Posting Group Card</strong> page for the posting group of the fixed asset, the <strong>Appreciation Account</strong> field contains the general ledger debit account and the <strong>Appreciation Bal. Account</strong> field contains the general ledger account to which you want to post balancing entries for appreciation. For more information, see <a href="fa-how-setup-general.html#to-set-up-fixed-asset-posting-groups">To set up fixed asset posting groups</a>.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<h2 id="to-post-a-write-down-from-the-fixed-asset-gl-journal">To post a write-down from the fixed asset G/L journal</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create an initial journal line, and fill in the fields as necessary.</p>
+</li>
+<li><p>In the <strong>FA Posting Type</strong> field, select <strong>Write-Down</strong>.</p>
+</li>
+<li><p>Choose the <strong>Insert FA Bal. Account</strong> action. A second journal line is created for the balancing account that is set up for write-down posting.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Step 4 only works if you have set up the following: On the <strong>FA Posting Group Card</strong> page for the posting group of the fixed asset, the <strong>Write-Down Account</strong> field contains the general ledger credit account and the <strong>Write-Down Expense Account</strong> field contains the general ledger debit account to which you want to post balancing entries for write-downs. For more information, see <a href="fa-how-setup-general.html#to-set-up-fixed-asset-posting-groups">To set up fixed asset posting groups</a>.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<h2 id="to-perform-general-revaluation-of-fixed-assets">To perform general revaluation of fixed assets</h2>
+<p>Indexation is used to adjust multiple fixed asset values, for example per general price changes. The <strong>Index Fixed Assets</strong> batch job can be used to change various amounts, such as write-down and appreciation amounts. The <strong>Allow Indexation</strong> check box on the <strong>Depreciation Book</strong> page must be selected.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Index Fixed Assets</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the fields as necessary.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+<p>Revaluation lines are created per your settings in step 2. The lines are created in either the fixed asset journal or the fixed asset G/L journal, depending on your template and batch setup on the <strong>FA Journal Setup</strong> page. For more information, see <a href="fa-how-setup-general.html">Set Up General Fixed Asset Information</a>.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the journal with the fixed assets that you want to revalue, and then choose the <strong>Ledger Entries</strong> action.</p>
+</li>
+<li><p>Check the created entries, and then choose the <strong>Post</strong> action to post the journal.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If the index figures are for simulation purposes only, you can create a special depreciation book to store them in. Then these entries will not affect any of the other depreciation books.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-post-additional-acquisition-costs">To post additional acquisition costs</h2>
+<p>You post additional acquisition cost for a fixed asset in the same way as you post the original acquisition cost: from a purchase invoice or from a fixed asset journal. For more information, see <a href="fa-how-acquire.html">Acquire Fixed Assets</a>.</p>
+<p>If depreciation has already been calculated for the fixed asset, select the <strong>Depr. Acquisition Cost</strong> check box to have the additional acquisition cost less the salvage value depreciated in proportion to the amount by which the previously acquired fixed asset has already been depreciated. This ensures that the depreciation period is not changed.</p>
+<p>The depreciation percentage is calculated as:</p>
+<p><em>P = (total depreciation x 100) / depreciable basis</em></p>
+<p><em>Depreciation amount = (P/100) x (extra acquisition cost - salvage value)</em></p>
+<p>Remember to select the <strong>Depr. until FA Posting Date</strong> check box on the invoice, the fixed asset G/L journal, or the fixed asset journal lines to ensure that depreciation is calculated from the last fixed asset posting date to the posting date of the additional acquisition cost.</p>
+<h3 id="example---posting-additional-acquisition-costs">Example - Posting Additional Acquisition Costs</h3>
+<p>A machine is purchased on August 1, 2000. The acquisition cost is 4,800. The depreciation method is straight-line over four years.</p>
+<p>On August 31, 2000, the <strong>Calculate Depreciation</strong> batch job is run. Depreciation is calculated as:</p>
+<p><em>book value x number of depreciation days / total number of depreciation days = 4800 x 30 / 1440 = 100</em></p>
+<p>On September 15, 2000, an invoice is posted for painting the machine. The invoice amount is 480.</p>
+<p>If you selected the <strong>Depr. until FA Posting Date</strong> check box on the invoice before posting, the following calculation is made:</p>
+<p>15 days of depreciation (from 09/01/00 to 09/15/00) is calculated as:</p>
+<p><em>book value x number of depreciation days / remaining number of depreciation days = (4800 - 100) x 15 / 1410 = 50</em></p>
+<p>If you selected the <strong>Depr. Acquisition Cost</strong> check box on the invoice before posting, the following calculation is made:</p>
+<p><em>The additional acquisition cost is depreciated by ((150 x 100) / 4800) / 100 x 480 = 15</em></p>
+<p>The depreciable basis is now <em>5280 = (4800 + 480)</em>, and the accumulated depreciation is <em>165 = (100 + 50 + 15)</em>, corresponding to 45 days of depreciation of the total acquisition cost. This means that the asset will be totally depreciated within the estimated lifetime of four years.</p>
+<p>When the <strong>Calculate Depreciation</strong> batch job is run on 09/30/00, the following calculation is made:</p>
+<p><em>Remaining depreciable life is 3 years, 10 months and 15 days = 1395 days</em></p>
+<p><em>Book value is (5280 - 165) = 5115</em></p>
+<p><em>Depreciation amount for September 2000: 5115 x 15 / 1395 = 55.00</em></p>
+<p><em>Total of depreciation = 165 + 55 = 220</em></p>
+<p>If you did not select the <strong>Depr. until FA Posting Date</strong> check box, the asset would lose 15 days of depreciation because the <strong>Calculate Depreciation</strong> batch job run on 09/30/00 would calculate depreciation from 09/15/00 to 09/30/00. This means that when the <strong>Calculate Depreciation</strong> batch job is run on 09/30/00, the calculation is as follows:</p>
+<p><em>Remaining life time is 3 years, 10 months and 15 days = 1395 days</em></p>
+<p><em>Book value is (4800 + 480 - 100 - 15) = 5165</em></p>
+<p><em>Depreciation amount for September 2000: 5165 x 15 / 1395 = 55.54</em></p>
+<p><em>Total of depreciation = 100 + 15 + 55.54 = 170.54</em></p>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-revalue.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

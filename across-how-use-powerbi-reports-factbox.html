@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Display Custom Power BI Reports| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Display Custom Power BI Reports| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use Power BI reports to gain additional insight into data in lists.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="viewing-list-data-in-power-bi-reports-in-business-central">Viewing List Data in Power BI Reports in Business Central</h1>
+
+<p>Dynamics 365 Business Central includes a FactBox control element on a number of key list pages that provides additional insight into the data in the list. As you move between rows in the list, the report is updated and filtered for the selected entry. You can create custom reports to display in this control, but there are a few rules to follow when creating the reports to ensure they provide the desired behavior.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must have a valid account with Business Central and with Power BI. Also, to build custom reports, you must download <a href="https://powerbi.microsoft.com/desktop/">Power BI Desktop</a>. For more information, see <a href="across-how-use-financials-data-source-powerbi.html">Using Business Central as a Power BI Data Source</a>.</p>
+</div>
+<h2 id="report-data-set">Report Data Set</h2>
+<p>When you create the report in Power BI Desktop, specify the data source or web service that contains the data related to the list that you want to associate the report with. For example, if you want to create a report for the Sales List, ensure that the data set contains information related to sales.</p>
+<p>To filter data on the reports based upon the record selected from the list page, the primary key must be used as a report filter. The primary keys will need to be part of your data set in order for the reports to filter correctly. In most cases, the primary key for a list is the <strong>No.</strong> field.</p>
+<h2 id="defining-the-report-filter">Defining the Report Filter</h2>
+<p>The report is required to have a basic report filter (not a page or visual filter and not advanced filter) to filter correctly in the Power BI Fact Box Control. The filter that is passed to the Power BI report from each list page will be based on the primary key as described in the previous section.</p>
+<p>To define a filter for the report, select the primary key from the list of available fields, and then drag and drop that field into the <strong>Report Filter</strong> section.</p>
+<p><img src="media/across-how-use-powerbi-reports-factbox/financials-powerbi-report-filter.png" alt="Setting the report filter for the Sales Invoice Activity report"></p>
+<h2 id="report-size-and-color">Report Size and color</h2>
+<p>The size of the report must be set to 325 pixels by 310 pixels. This is required for the proper scaling of the report in the available space allowed by the Power BI Fact Box control. To define the size of the report, place focus outside of the report layout area, and then choose the paint roller icon.</p>
+<p><img src="media/across-how-use-powerbi-reports-factbox/financials-powerbi-report-sizing.png" alt="Setting the report width and height for the Sales Invoice Activity report"></p>
+<p>You can change the width and height of the report by choosing <strong>Custom</strong> in the <strong>Type</strong> field.</p>
+<p>Similarly, if you want to have the background of the report blend into the background color of the Power BI Fact Box control, define a custom report background color of <em>E5E5E5</em>. This is optional.</p>
+<h2 id="reports-with-multiple-pages">Reports with Multiple Pages</h2>
+<p>With Power BI, you can create a single report with multiple pages. The visuals that you want to see in the Business Central list pages must be on the first page of the report in Power BI.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Power BI Fact Box can show only the first page of your report; if you want to see other pages, you must expand the report and use tabs at the bottom of the report to navigate to other pages.</p>
+</div>
+<h2 id="saving-your-report">Saving Your Report</h2>
+<p>When you save your report, it's a best practice that the name of the report contains the name of the list page that you want to display the report in. For example, the word <em>Vendor</em> must be contained somewhere in the report name for reports that you want to make available on the Vendor list.</p>
+<p>This is not a requirement; however, it will make the process of selecting reports quicker. When the report selection page is opened from a list page, we will pass in a filter based on the page name to limit the reports that are displayed.  You may remove the filter to get a full list of reports available to you in Power BI.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>This section provides a workaround for the most typical issues that can occur when you create the Power BI report.</p>
+<p><strong>User does not see a report on the Select Report page they want to select</strong>
+If you cannot select a report, a possible solution is to verify the name of the report to ensure it contains the name of the list page. You can also clear the filter to get a full list of Power BI reports available.</p>
+<p><strong>Report is loaded but blank, not filtered or filtered incorrectly</strong>
+Verify that the report filter contains the right primary key. In most cases, this is the <strong>No.</strong> field, but in the <strong>G/L Entry</strong> table, for example, you must use the <strong>Entry No.</strong> field  .</p>
+<p><strong>Report is loaded, but it shows the page you have not expected</strong>
+Verify that the page you want displayed is the first page in your report.</p>
+<p><strong>Report appears with unwanted gray boarders, is too small or too large</strong></p>
+<p>Verify that the report size is set to 325 pixels x 310 pixels. Save the report, and then refresh the list page.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/configure-powerbi-excel-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-powerbi.html">Enabling Your Business Data for Power BI</a><br>
+<a href="across-how-use-financials-data-source-powerbi.html">Using Business Central as a Power BI Data Source</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="setup.html">Setting Up Business Central</a><br>
+<a href="finance.html">Finance</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-use-powerbi-reports-factbox.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

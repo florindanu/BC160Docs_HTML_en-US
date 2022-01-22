@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Field mapping for exporting bank payment files | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Field mapping for exporting bank payment files | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When you export payment files using the AMC Banking 365 Fundamentals extension, the data that you export is exposed to the service provider.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="field-mapping-when-exporting-payment-files-using-the-amc-banking-365-fundamentals-extension">Field Mapping When Exporting Payment Files Using the AMC Banking 365 Fundamentals extension</h1>
+
+<p>When you export payment files using the AMC Banking 365 Fundamentals extension, the data that you export is exposed to the service provider. The service provider is responsible for the privacy of this data. For more information about the AMC Banking 365 Fundamentals extension, see <a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a>.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>When you export payment files by using the AMC Banking 365 Fundamentals extension, some of your business data will be exposed to the provider of the service. The service provider, AMC Consult A/S, is responsible for the privacy of this data. For more information, see <a href="https://go.microsoft.com/fwlink/?LinkId=510158">AMC Privacy Policy</a>.</p>
+</div>
+<p>The following table lists the fields in Business Central from which you can export data.</p>
+<table>
+<thead>
+<tr>
+<th>Mapped Field</th>
+<th>Field in Table</th>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Creditor No.</td>
+<td>Creditor No.</td>
+<td>Bank Account</td>
+<td>The identifier assigned to your company by your bank to collect payments</td>
+</tr>
+<tr>
+<td>Sender Bank Account No.</td>
+<td>Bank Account No./IBAN</td>
+<td>Bank Account</td>
+<td>Your company's bank account number (IBAN or other) that is specified on the bank account card</td>
+</tr>
+<tr>
+<td>Sender Bank Clearing Standard</td>
+<td>Bank Clearing Standard</td>
+<td>Bank Account</td>
+<td>The national bank names register used for the sender bank account</td>
+</tr>
+<tr>
+<td>Sender Bank Clearing Code</td>
+<td>Bank Clearing Code</td>
+<td>Bank Account</td>
+<td>The identifier of the sender's bank in relation to the bank names register used</td>
+</tr>
+<tr>
+<td>Sender Bank BIC</td>
+<td>SWIFT Code</td>
+<td>Bank Account</td>
+<td>The SWIFT identifier of the sender bank account</td>
+</tr>
+<tr>
+<td>Sender Bank Account Currency</td>
+<td>Currency Code</td>
+<td>Bank Account</td>
+<td>The sender bank account Currency Code</td>
+</tr>
+<tr>
+<td>Document No.</td>
+<td>Document No.</td>
+<td>General Journal Line</td>
+<td>The document number of the payment line</td>
+</tr>
+<tr>
+<td>Applies-to Ext. Doc. No.</td>
+<td>Applies-to Ext. Doc. No.</td>
+<td>General Journal Line</td>
+<td>The external document number of the invoice or credit memo that the payment line is applied to</td>
+</tr>
+<tr>
+<td>Recipient ID</td>
+<td>Account No.</td>
+<td>General Journal Line</td>
+<td>The customer or vendor number that is specified on the payment line</td>
+</tr>
+<tr>
+<td>Payment Type</td>
+<td>Bank Data Conversion Pmt. Type</td>
+<td>Payment Method</td>
+<td>The type of bank transfer, such as domestic or international</td>
+</tr>
+<tr>
+<td>Payment Reference</td>
+<td>Payment Reference</td>
+<td>General Journal Line</td>
+<td>The payment reference of the payment line</td>
+</tr>
+<tr>
+<td>Recipient Address</td>
+<td>Address</td>
+<td>Customer/Vendor</td>
+<td>The recipient address that is specified on the customer or vendor card</td>
+</tr>
+<tr>
+<td>Recipient City</td>
+<td>City</td>
+<td>Customer/Vendor</td>
+<td>The recipient city that is specified on the customer or vendor card</td>
+</tr>
+<tr>
+<td>Recipient Name</td>
+<td>Name</td>
+<td>Customer/Vendor</td>
+<td>The recipient name that is specified on the customer or vendor card</td>
+</tr>
+<tr>
+<td>Recipient Country/Region Code</td>
+<td>Country/Region Code</td>
+<td>Customer/Vendor</td>
+<td>The recipient country/region code that is specified on the customer or vendor card</td>
+</tr>
+<tr>
+<td>Recipient Post Code</td>
+<td>Post Code</td>
+<td>Customer/Vendor</td>
+<td>The recipient post code that is specified on the customer or vendor card</td>
+</tr>
+<tr>
+<td>Recipient Bank Acc. No.</td>
+<td>Bank Account No./IBAN</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The recipient bank account number (IBAN or other) that is specified on the customer or vendor bank account card</td>
+</tr>
+<tr>
+<td>Recipient Bank Clearing Code</td>
+<td>Bank Clearing Standard</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The national bank names register used for the recipient bank account</td>
+</tr>
+<tr>
+<td>Recipient Bank Clearing Std.</td>
+<td>Bank Clearing Code</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The identifier of the recipient bank account in relation to the bank names register that is used</td>
+</tr>
+<tr>
+<td>Recipient Email Address</td>
+<td>E-Mail</td>
+<td>Customer/Vendor</td>
+<td>The email address of the recipient</td>
+</tr>
+<tr>
+<td>Message To Recipient 1</td>
+<td>Message to Recipient</td>
+<td>General Journal Line</td>
+<td>The message to recipient that is specified on the payment line</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Amount</td>
+<td>General Journal Line</td>
+<td>The amount on the payment line</td>
+</tr>
+<tr>
+<td>Currency Code</td>
+<td>Currency Code</td>
+<td>General Journal Line</td>
+<td>The currency code on the payment line</td>
+</tr>
+<tr>
+<td>Transfer Date</td>
+<td>Posting Date</td>
+<td>General Journal Line</td>
+<td>The posting date of the payment line</td>
+</tr>
+<tr>
+<td>Invoice Amount</td>
+<td>Original Amount</td>
+<td>Customer/Vendor Ledger Entry</td>
+<td>The amount on the entry that the payment is applied to</td>
+</tr>
+<tr>
+<td>Invoice Date</td>
+<td>Document Date</td>
+<td>Customer/Vendor Ledger Entry</td>
+<td>The invoice date on the entry that the payment is applied to</td>
+</tr>
+<tr>
+<td>Recipient Bank Address</td>
+<td>Address</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The recipient bank account address that is specified on the customer or vendor bank account card</td>
+</tr>
+<tr>
+<td>The recipient bank account address that is specified on the customer or vendor bank account card</td>
+<td>City</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The recipient bank account city that is specified on the customer or vendor bank account card</td>
+</tr>
+<tr>
+<td>Recipient Bank Name</td>
+<td>Name</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The recipient bank account name that is specified on the customer or vendor bank account card</td>
+</tr>
+<tr>
+<td>Recipient Bank Country/Region</td>
+<td>Country/Region Code</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The recipient bank account country/region that is specified on the customer or vendor bank account card</td>
+</tr>
+<tr>
+<td>Recipient Bank Post Code</td>
+<td>Post Code</td>
+<td>Customer Bank Account/Vendor Bank Account</td>
+<td>The recipient bank account post code that is specified on the customer or vendor bank account card</td>
+</tr>
+<tr>
+<td>Sender Bank Address</td>
+<td>Address</td>
+<td>Bank Account</td>
+<td>The sender bank account address that is specified on the bank account card</td>
+</tr>
+<tr>
+<td>Sender Bank City</td>
+<td>City</td>
+<td>Bank Account</td>
+<td>The sender bank account city that is specified on the bank account card</td>
+</tr>
+<tr>
+<td>Sender Bank Name</td>
+<td>Name</td>
+<td>Bank Account</td>
+<td>The sender bank account name that is specified on the bank account card</td>
+</tr>
+<tr>
+<td>Sender Bank Country/Region</td>
+<td>Country/Region Code</td>
+<td>Bank Account</td>
+<td>The sender bank account country/region that is specified on the bank account card</td>
+</tr>
+<tr>
+<td>Sender Bank Post Code</td>
+<td>Post Code</td>
+<td>Bank Account</td>
+<td>The sender bank account post code that is specified on the bank account card</td>
+</tr>
+<tr>
+<td>General Journal Template</td>
+<td>Journal Template Name</td>
+<td>General Journal Line</td>
+<td>The general journal template that is used for the payment line</td>
+</tr>
+<tr>
+<td>General Journal Batch Name</td>
+<td>Journal Batch Name</td>
+<td>General Journal Line</td>
+<td>The general journal batch name that is used for the payment line</td>
+</tr>
+<tr>
+<td>Sender Bank Name - Data Conv.</td>
+<td>Bank Name – Data Conv.</td>
+<td>Bank Account</td>
+<td>The sender bank account name that is requested by the AMC Banking 365 Fundamentals extension and specified on the bank account card</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-set-up-data-exchange.html">Setting Up Data Exchange</a><br>
+<a href="across-data-exchange.html">Exchanging Data Electronically</a>
+<a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a><br>
+<a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html">Make Payments with AMC Banking 365 Fundamentals extension or SEPA Credit Transfer</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-field-mapping-when-exporting-payment-files-using-bank-data-conversion-service.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

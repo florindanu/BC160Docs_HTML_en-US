@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Rounding | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Rounding | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Rounding residuals can occur when you value the cost of an inventory decrease that is measured in a different quantity than the corresponding inventory increase. Rounding residuals are calculated for all costing methods when you run the **Adjust Cost - Item Entries** batch job.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-rounding">Design Details: Rounding</h1>
+
+<p>Rounding residuals can occur when you value the cost of an inventory decrease that is measured in a different quantity than the corresponding inventory increase. Rounding residuals are calculated for all costing methods when you run the <strong>Adjust Cost - Item Entries</strong> batch job.</p>
+<p>When you use the average costing method, the rounding residual is calculated and recorded on a cumulative, entry-by-entry basis.</p>
+<p>When you use a costing method other than Average, the rounding residual is calculated when the inventory increase has been fully applied, that is when the remaining quantity for the inventory increase is equal to zero. A separate entry is then created for the rounding residual, and the posting date on this rounding entry is the posting date of the last invoiced value entry of the inventory increase.</p>
+<h2 id="example">Example</h2>
+<p>The following example illustrates how different rounding residuals are handled for the average costing method and non-Average costing method, respectively. In both cases, the <strong>Adjust Cost - Item Entries</strong> batch job has been run.</p>
+<p>The following table shows the item ledger entries that the example is based on.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>For an item using the Average costing method, the rounding residual (1/300) is calculated with the first decrease (entry number 2) and is carried forward to entry number 3. Therefore, entry number 3 is valued at –3.34.</p>
+<p>The following table shows the resulting value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>3</td>
+<td>10</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-3.33</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-3.34</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-3.33</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>For an item using a costing method other than Average, the rounding residual (0.01) is calculated when the remaining quantity for the inventory increase is zero. The rounding residual has a separate entry (number 5).</p>
+<p>The following table shows the resulting value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>3</td>
+<td>10</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-3.33</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-3.33</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-3.33</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>0</td>
+<td>-0.01</td>
+<td>1</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-cost-adjustment.html">Design Details: Cost Adjustment</a><br>
+<a href="design-details-costing-methods.html">Design Details: Costing Methods</a>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-rounding.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Use the Manufacturing Batch Unit of Measure | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Use the Manufacturing Batch Unit of Measure | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="If an item is stocked in one unit of measure but produced in another, then the production order must be use a manufacturing batch unit of measure to calculate the correct quantity of components. An example of a manufacturing batch unit of measure calculation is when a manufactured item is stocked in pieces but produced in tons.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-with-manufacturing-batch-units-of-measure">Work with Manufacturing Batch Units of Measure</h1>
+
+<p>If an item is stocked in one unit of measure but produced in another, a production order is created that uses a manufacturing batch unit of measure to calculate the correct quantity of the components during the <strong>Refresh Production Order</strong> batch job. An example of a manufacturing batch unit of measure calculation is when a manufactured item is stocked in pieces but produced in tons.</p>
+<h2 id="to-create-a-production-bom-using-a-batch-unit-of-measure">To create a production BOM using a batch unit of measure</h2>
+<ol>
+<li><p>The manufacturing batch unit of measure is set up as an alternative unit of measure on the <strong>Item Units of Measure</strong> page on the item to be produced. The batch unit of measure will not replace the base unit of measure on the item.</p>
+</li>
+<li><p>Create a production BOM for the item set up with the manufacturing batch unit of measure. For more information, see <a href="production-how-to-create-production-boms.html">Create Production BOMs</a>.</p>
+</li>
+<li><p>In the <strong>Unit of Measure Code</strong> field, select the manufacturing batch unit of measure.</p>
+</li>
+<li><p>For each production BOM line, in the <strong>Quantity Per</strong> field, enter the quantity of this component item that is required to create this batch unit of measure.</p>
+</li>
+<li><p>Open the <strong>Item Card</strong> for the related item.</p>
+<p>On the <strong>Replenishment</strong> FastTab, in the <strong>Production BOM No.</strong> field, select the production BOM created above.</p>
+</li>
+<li><p>Create a production order header using the item set up with the manufacturing batch unit of measure. For more information, see <a href="production-how-to-create-production-orders.html">Create Production Orders</a>.</p>
+</li>
+<li><p>Choose the <strong>Refresh</strong> action, and then choose  the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>On the <strong>Lines</strong> FastTab, choose the <strong>Line</strong> action, and then choose the <strong>Components</strong> action to view the result. The application calculates the correct quantity of the components needed to satisfy the production BOM based on the manufacturing batch unit of measure.</p>
+<h2 id="to-calculate-a-manufacturing-batch-unit-of-measure-on-a-production-order">To calculate a manufacturing batch unit of measure on a production order</h2>
+<ol>
+<li>Create a production order header using the item set up with the manufacturing batch unit of measure.</li>
+<li>In the <strong>Item No.</strong> field in the Production Order line, type the same item number used in the header.</li>
+<li>In the <strong>Quantity</strong> field, enter the same quantity used in the header.</li>
+<li>In the <strong>Unit of Measure Code</strong> field, select the manufacturing batch unit of measure code.</li>
+<li>Choose the <strong>Refresh</strong> action.</li>
+<li>On the <strong>Calculate</strong> FastTab, clear the <strong>Lines</strong> check box.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+<li>On the <strong>Lines</strong> FastTab, choose the <strong>Line</strong> action, and then choose the <strong>Components</strong> action to view the result. The correct quantity of the components needed to satisfy the production BOM is calculated based on the manufacturing batch unit of measure.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-how-to-create-routings.html">Create Routings</a><br>
+<a href="production-how-to-create-production-boms.html">Create Production BOMs</a><br>
+<a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="production-planning.html">Planning</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-how-to-use-the-manufacturing-batch-unit-of-measure.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

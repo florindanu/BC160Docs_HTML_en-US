@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough - Calculating Work in Process for a Job | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough - Calculating Work in Process for a Job | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="With jobs, you can schedule the usage of your company's resources and keep track of the various costs associated with the usage of resources on a specific project. Jobs involve the consumption of employee hours, machine hours, inventory items, and other types of usage that have to be tracked as a job progresses.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-calculating-work-in-process-for-a-job">Walkthrough: Calculating Work in Process for a Job</h1>
+
+<p><strong>Note</strong>: This walkthrough must be performed on a demonstration company with the <strong>Full Evaluation - Complete Sample Data</strong> option, which is available in the Sandbox environment. For more information, see <a href="across-how-create-sandbox-environment.html">Creating a Sandbox Environment</a>.</p>
+<p>With jobs, you can schedule the usage of your company's resources and keep track of the various costs associated with the usage of resources on a specific project. Jobs involve the consumption of employee hours, machine hours, inventory items, and other types of usage that have to be tracked as a job progresses. If a job runs over a long period, you may want to transfer these costs to a Work in Process (WIP) account on the balance sheet while the job is being completed. You can then recognize the costs and sales in your income statement accounts when it is appropriate.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>This walkthrough illustrates the following tasks:</p>
+<ul>
+<li>Calculating WIP.</li>
+<li>Selecting a WIP calculation method.</li>
+<li>Excluding part of a job from the WIP.</li>
+<li>Posting the WIP to the general ledger.</li>
+<li>Reversing a WIP posting.</li>
+</ul>
+<p>Each step of the process calculates the value and moves the job transactions to the general ledger. The calculation and posting steps are separated to help you review your data and to make modifications before posting to the general ledger. Therefore, you should make sure that all information is correct after you run the calculation batch jobs and before you run the posting batch jobs.</p>
+<h2 id="roles">Roles</h2>
+<p>This walkthrough uses the project team member (Tricia) as the persona.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you can perform the tasks in the walkthrough, the Business Central must be installed on your computer.</p>
+<h2 id="story">Story</h2>
+<p>This walkthrough focuses on CRONUS International Ltd., a design and consultancy firm that designs and fits new infrastructures, such as conference halls and offices, with furniture, accessories, and storage units. Most of the work at CRONUS is project-oriented and Tricia, a project team member, uses jobs to have an overview of each ongoing job that CRONUS has started and also the jobs that are completed. Some of the jobs can be very lengthy and can run over months. Tricia can use a WIP account to record the work in process and to track the costs throughout the job.</p>
+<h2 id="calculating-wip">Calculating WIP</h2>
+<p>CRONUS has taken on a lengthy project that has now extended across reporting periods. Tricia, a project team member, calculates the work in process (WIP) to make sure that the financial statement of the company will be accurate.</p>
+<p>During this procedure, Tricia will select a specific group of tasks that will be included in the WIP calculation. On the <strong>Job Task Lines</strong> page, she can specify these lines in the <strong>WIP-Total</strong> column.</p>
+<p>The following table describes the three options.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><blank></blank></strong></td>
+<td>Leave blank if the job task is a part of a group of tasks.</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td>Defines the range or group of tasks that are included in the WIP and recognition calculation. Within the group, any job task with <strong>Job Task Type</strong> set to <strong>Posting</strong> will be included in the WIP Total, unless its <strong>WIP-Total</strong> field is set to <strong>Excluded</strong>.</td>
+</tr>
+<tr>
+<td><strong>Excluded</strong></td>
+<td>Applies only to a task with <strong>Job Task Type</strong> of <strong>Posting</strong>. The task is not included when WIP and recognition are calculated.</td>
+</tr>
+</tbody>
+</table>
+<p>In the following walkthrough, Tricia applies the Cost Value method, her company standard, to calculate WIP. She specifies what part of the job will be included in the WIP calculation by assigning WIP-Total values to various job task lines.</p>
+<h3 id="to-calculate-wip">To calculate WIP</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Jobs</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the <strong>Jobs</strong> list, select the <strong>Deerfield</strong> job, and then choose the <strong>Edit</strong> action. This will open the job card in edit mode.</p>
+<p>WIP can be calculated based on Cost Value, Sales Value, Cost of Sales, Percentage of Completion, or Completed Contract. In this example, CRONUS uses the Cost Value method.</p>
+</li>
+<li><p>On the <strong>Posting</strong> FastTab, choose the <strong>WIP Method</strong> field, and then select <strong>Cost Value</strong>.</p>
+</li>
+<li><p>Choose the <strong>Job Task Lines</strong> action and set the following values in the <strong>WIP-Total</strong> field.</p>
+<p>The following table describes the values.</p>
+<table>
+<thead>
+<tr>
+<th>Job Task No.</th>
+<th>WIP-Total Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1130</td>
+<td>Excluded</td>
+</tr>
+<tr>
+<td>1190</td>
+<td>Total</td>
+</tr>
+<tr>
+<td>1210</td>
+<td>Excluded</td>
+</tr>
+<tr>
+<td>1310</td>
+<td>Excluded</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>WIP</strong> action, and then choose the <strong>Calculate WIP</strong> action.</p>
+</li>
+<li><p>On the <strong>Job Calculate WIP</strong> page, you can select a job that you want to calculate WIP. On the <strong>Job</strong> FastTab, select <strong>Deerfield</strong> in the <strong>No.</strong> field.</p>
+</li>
+<li><p>In the <strong>Posting Date</strong> field, enter a date that is later than the work date.</p>
+</li>
+<li><p>In the <strong>Document No.</strong> field, enter <strong>1</strong>. This creates a document that you can refer to later for traceability.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to run the batch job. A message is displayed. Choose the <strong>OK</strong> button to continue. Close the <strong>Job Task Lines</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The message states that there are warnings associated with the WIP calculation. You will review the warnings in the next procedure.</p>
+</div>
+</li>
+<li><p>On the <strong>Job</strong> card, expand the <strong>WIP and Recognition</strong> FastTab to see the calculated values. You can also see the <strong>WIP Posting Date</strong> and the values that have been posted to the general ledger, if any.</p>
+</li>
+</ol>
+<p>Notice that the value for <strong>Recog. Costs Amount</strong> is 215.60 in the <strong>To Post</strong> column. This reflects the total costs of two of the items in the group of job tasks 1110 – 1130. The third item was set to <strong>Excluded</strong>, and therefore is not included in the WIP calculation.</p>
+<h3 id="to-review-wip-warnings">To review WIP warnings</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Job WIP Cockpit</strong>, and then choose the related link.</li>
+<li>Select the <strong>Deerfield</strong> job, and then choose the <strong>Show Warnings</strong> action.</li>
+<li>On the <strong>Job WIP Warnings</strong> page, review the warning associated with the job.</li>
+</ol>
+<p>After the accounting period ends, Tricia has to recalculate the WIP to include completed work to this point.</p>
+<h3 id="to-recalculate-wip">To recalculate WIP</h3>
+<ol>
+<li><p>On the <strong>Job</strong> card, choose the <strong>WIP Entries</strong> action to view the WIP calculation.</p>
+<p>The <strong>Job WIP Entries</strong> page shows the WIP entries that were last calculated on a job, even if WIP has not yet been posted to the general ledger.</p>
+</li>
+<li><p>You can follow the steps in the procedure that explains how to calculate WIP to recalculate WIP. Every time WIP is calculated, an entry is created on the <strong>Job WIP Entries</strong> page.</p>
+</li>
+<li><p>Close the page.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Work in Process and Recognition is only calculated. It is not posted to the general ledger. To do so, you must run <strong>Post WIP to G/L</strong> batch job after you have calculated the WIP and Recognition.</p>
+</div>
+<h2 id="posting-wip-to-general-ledger">Posting WIP to General Ledger</h2>
+<p>Now that Tricia has calculated WIP for this job, she can post it to the general ledger.</p>
+<h3 id="to-post-wip-to-general-ledger">To post WIP to general ledger</h3>
+<ol>
+<li><p>From the <strong>Jobs</strong> list, select the <strong>Deerfield</strong> job.</p>
+</li>
+<li><p>Choose the <strong>WIP</strong> action, and then choose the <strong>Post WIP to G/L</strong> action.</p>
+</li>
+<li><p>On the <strong>Job Post WIP to G/L</strong> page, on the <strong>Job</strong> FastTab, select <strong>Deerfield</strong> in the <strong>No.</strong> field.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, in the <strong>Reversal Document No.</strong> field, enter <strong>1</strong>.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to post WIP to the general ledger.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to close the confirmation page.</p>
+<p>After you have completed the posting, you can view the posting information on the <strong>WIP G/L Entries</strong> page.</p>
+</li>
+<li><p>In the <strong>Jobs</strong> list, select the <strong>Deerfield</strong> job, and then choose the <strong>WIP G/L Entries</strong> action.</p>
+<p>On the <strong>Job WIP G/L Entries</strong> page, verify that the WIP has been posted to the general ledger.</p>
+</li>
+<li><p>Close the page.</p>
+</li>
+<li><p>Open the <strong>Job</strong> card for the <strong>Deerfield</strong> job.</p>
+</li>
+<li><p>On the <strong>WIP and Recognition</strong> FastTab, notice that in the <strong>Posted</strong> column, the <strong>Recog. Costs G/L Amount</strong> field is now filled in, which indicates that WIP was posted to the general ledger successfully.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to close the card.</p>
+</li>
+</ol>
+<h2 id="reversing-a-wip-posting">Reversing a WIP Posting</h2>
+<p>Tricia determines that the job tasks that were excluded from the calculation of WIP should have been calculated in WIP. She can reverse the incorrect postings without having to post new WIP postings.</p>
+<h3 id="to-reverse-a-wip-posting">To reverse a WIP posting</h3>
+<ol>
+<li><p>From the <strong>Jobs</strong> list, select the <strong>Deerfield</strong> job.</p>
+</li>
+<li><p>Choose the <strong>WIP</strong> action, and then choose the <strong>Post WIP to G/L</strong> action.</p>
+</li>
+<li><p>On the <strong>Job Post to WIP to G/L</strong> page, on the <strong>Job</strong> FastTab, select <strong>Deerfield</strong> in the <strong>No.</strong> field.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, in the <strong>Reversal Document No.</strong> field, enter <strong>1</strong>.</p>
+</li>
+<li><p>In the <strong>Reversal Posting Date</strong> field, enter the original posting date. It should be the same date that you used to calculate WIP the first time.</p>
+</li>
+<li><p>Select the <strong>Reverse Only</strong> check box. This will reverse previously posted WIP, but does post new WIP to the general ledger.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to run the batch job, and choose the <strong>OK</strong> button to close the confirmation page.</p>
+</li>
+<li><p>Open the <strong>Job</strong> card for <strong>Deerfield</strong>.</p>
+</li>
+<li><p>On the <strong>WIP and Recognition</strong> FastTab, verify that there are no posted WIP entries.</p>
+</li>
+<li><p>Close this page.</p>
+</li>
+<li><p>In the <strong>Jobs</strong> list, select the <strong>Deerfield</strong> job, choose the <strong>WIP</strong> action, and then choose the <strong>WIP G/L Entries</strong> action. The WIP entries have the <strong>Reversed</strong> check box selected.</p>
+</li>
+<li><p>Close this page.</p>
+</li>
+<li><p>Open <strong>Job Task Lines</strong> for the job, include the parts of the job that should be in the WIP calculation, and then recalculate and post the new value to the general ledger.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Suppose Tricia calculated and posted WIP for a job with incorrect dates. Following the method that was discussed earlier, she can reverse the incorrect postings, correct the dates, and repost to the general ledger.</p>
+</div>
+</li>
+</ol>
+<h2 id="next-steps">Next Steps</h2>
+<p>This walkthrough has taken you through the steps of calculating WIP in Business Central. In larger jobs, it may be useful to transfer the costs to a WIP account periodically while the job is being completed. This walkthrough has shown you how to exclude task lines from a calculation. It also shows you when you would have to recalculate. And finally, this walkthrough demonstrates how to post the WIP to the general ledger. An example of how to reverse a WIP posting to the general ledger is also included.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a><br>
+<a href="walkthrough-managing-projects-with-jobs.html">Walkthrough: Managing Projects with Jobs</a><br>
+<a href="projects-understanding-wip.html">Understanding WIP Methods</a><br>
+<a href="projects-how-monitor-progress-performance.html">Monitor Progress and Performance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-calculating-work-in-process-for-a-job.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

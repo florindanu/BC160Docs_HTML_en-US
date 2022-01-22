@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>CODA Bank Statements </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="CODA Bank Statements ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The Coded Statement of Account (CODA) is a national banking standard, designed by the Belgian Banker's Association, which allows you to automatically process electronic bank statements.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="coda-bank-statements">CODA Bank Statements</h1>
+
+<p>The Coded Statement of Account (CODA) is a national banking standard, designed by the Belgian Banker's Association, which allows you to automatically process electronic bank statements.</p>
+<p>Each type of transaction in a CODA statement is assigned a unique code. Business Central uses this code to interpret transactions and apply them to the corresponding ledger entries.</p>
+<h2 id="applying-statement-lines">Applying Statement Lines</h2>
+<p>When you have imported a CODA statement, you can apply the statement lines to existing ledger entries, based on the information in the <strong>Transaction Coding</strong> table.</p>
+<p>If the transaction coding of the statement line is not found, Business Central will stop processing and continue with the next statement line. If you select the <strong>Default Posting</strong> field, the statement line will be used as a default posting.</p>
+<p>If the transaction coding of the statement line is found, the statement lines will be matched to the following account types and corresponding account numbers:</p>
+<ul>
+<li><p>General ledger - If the account type is a general ledger account, the statement line is posted on the corresponding general ledger account.</p>
+</li>
+<li><p>Customer or vendor - If the account type is customer or vendor, a matching customer or vendor ledger entry is found based on the following criteria:</p>
+<ul>
+<li><p>If a ledger entry is found using the standard format, the ledger entry will be matched to the statement line, and the application status will be set to <strong>Applied</strong>. If the ledger entry does not use the standard format, the bank account number of the customer or vendor is used to find the customer or vendor.</p>
+</li>
+<li><p>If no ledger entry with a matching remaining amount is found, the customer or vendor account is used, and the application status will be set to <strong>Partly Applied</strong>.</p>
+</li>
+<li><p>If the bank account number is used to find the customer or vendor, a matching ledger entry is found based on the amount of the statement line. If the amount is found, the statement line is matched to the corresponding ledger entry, and the application status will be set to <strong>Applied</strong>.</p>
+</li>
+<li><p>If the bank account number cannot be used to find the customer or vendor, Business Central will either stop processing the current line or use the line as a default posting, before continuing with the next statement line.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>You can run the process as many times as you like. Only statement lines with a blank application status will be applied.</p>
+<p>When you have applied all statement lines to a general ledger account or to a matching customer ledger entry or vendor ledger entry, you are ready to post the CODA statement lines. For more information, see <a href="how-to-manually-transfer-and-post-coda-statements.html">Automatically Transfer and Post CODA Statements</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="belgian-electronic-banking.html">Belgian Electronic Banking</a><br>
+<a href="how-to-set-up-bank-accounts-for-coda.html">Set Up Bank Accounts for CODA</a><br>
+<a href="how-to-set-up-iblc-blwi-transaction-codes.html">Set Up IBLC-BLWI Transaction Codes</a><br>
+<a href="how-to-import-coda-statements.html">Import CODA Statements</a><br>
+<a href="how-to-apply-coda-statements.html">Apply CODA Statements</a><br>
+<a href="how-to-create-financial-journals.html">Create Financial Journals</a><br>
+<a href="how-to-automatically-transfer-and-post-coda-statements.html">Automatically Transfer and Post CODA Statements</a><br>
+<a href="how-to-manually-transfer-and-post-coda-statements.html">Manually Transfer and Post CODA Statements</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Belgium/coda-bank-statements.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

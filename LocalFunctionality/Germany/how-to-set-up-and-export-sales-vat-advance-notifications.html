@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up and Export Sales VAT Advance Notifications </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up and Export Sales VAT Advance Notifications ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In Business Central, to create valid sales VAT advance notifications, you must perform certain setup.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="sales-vat-advance-notifications">Sales VAT Advance Notifications</h1>
+
+<p>A Sales VAT Advance Notification in Business Central is an XML file that you can use to report VAT to the German tax authorities on the Elektronische Steuererklärungen (ELSTER) online portal. The XML file includes tax and base amounts, and information about your company, and is created in the format and layout that German tax authorities require.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Most of the functionality is included in the <strong>ELSTER VAT Localization for Germany</strong> Extension. Make sure that this is installed in your Business Central.</p>
+</div>
+<h2 id="set-up-and-export-sales-vat-advance-notifications">Set Up and Export Sales VAT Advance Notifications</h2>
+<p>To create valid sales VAT advance notifications, you must set up the following:</p>
+<ul>
+<li>The company registration information and tax office information.</li>
+<li>Basic sales VAT advance notification on the <strong>Electronic VAT Decl. Setup</strong> page.</li>
+<li>The VAT statement.</li>
+</ul>
+<h3 id="to-set-up-company-information">To set up company information</h3>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Company Information</strong>, and then choose the related link.</li>
+<li>On the <strong>Company Information</strong> page, in the <strong>VAT Representative</strong> field, enter the contact person for VAT related information.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<h3 id="to-set-up-the-electronic-vat-decl-setup">To set up the Electronic VAT Decl. Setup</h3>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Electronic VAT Decl. Setup</strong>, and then choose the related link.</li>
+<li>Fill in the fields as described in the following table.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sales VAT Adv. Notif. Nos.</strong></td>
+<td>Choose the number series to use to assign identification numbers to new sales VAT advance notifications.</td>
+</tr>
+<tr>
+<td><strong>Sales VAT Adv. Notif. Path</strong></td>
+<td>Enter the path and name of the folder where you want to store the XML files.</td>
+</tr>
+<tr>
+<td><strong>XML File Default Name</strong></td>
+<td>Enter the name of the file.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="to-set-up-a-vat-statement-for-sales-vat-advance-notifications">To set up a VAT statement for sales VAT advance notifications</h3>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>VAT Statement</strong>, and then choose the related link.</li>
+<li>On the <strong>VAT Statement</strong> page, in the <strong>Name</strong> field, choose the drop-down arrow.</li>
+<li>On the <strong>VAT Statement Names</strong> page, in the line for the appropriate VAT statement name, select the <strong>Sales VAT Adv. Notification</strong> check box.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The VAT statement must have a VAT statement line for each key figure required by the tax authority, where the <strong>Row No.</strong> field contains the key figure and the <strong>Amount Type</strong> field specifies whether this is a base amount or a tax amount. Ask your tax office if you have questions concerning the key figures and their definition.</p>
+</div>
+<ol start="4">
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="to-create-an-xml-document-for-sales-vat-advance-notification">To create an XML document for Sales VAT advance notification</h2>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Sales Vat Advanced Notification List</strong>, and then choose the related link.</li>
+<li>On the <strong>Sales Vat Advanced Notification List</strong> page, choose the <strong>New</strong> action.</li>
+<li>On the <strong>Sales VAT Adv. Notif. Card</strong> page, fill in the fields.</li>
+<li>Choose <strong>Process</strong>, and then choose the <strong>Create XML-File</strong> action.</li>
+<li>On the <strong>Create XML - VAT Adv. Notif.</strong> page, in the <strong>XML-File</strong> field, choose either the <strong>Create</strong> or the <strong>Create and Export</strong> option.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="vat-reporting.html">VAT Reporting</a><br>
+<a href="germany-local-functionality.html">Germany Local Functionality</a><br>
+<a href="../../ui-extensions.html">Customizing Business Central Using Extensions</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Germany/how-to-set-up-and-export-sales-vat-advance-notifications.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

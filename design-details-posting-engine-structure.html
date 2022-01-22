@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Posting Engine Structure | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Posting Engine Structure | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Posting interface and some other functions in codeunit 12 use posting engine functions to prepare and insert general ledger entry and VAT entry records. The posting engine is also responsible for general ledger register creation.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-posting-engine-structure">Design Details: Posting Engine Structure</h1>
+
+<p>Posting interface and some other functions in codeunit 12 use posting engine functions to prepare and insert general ledger entry and VAT entry records. The posting engine is also responsible for general ledger register creation.</p>
+<p>The functions in the following table provide a standard framework for designing posting procedures (such as Code, CustPostApplyCustledgEntry, VendPostApplyVendLedgEntry, UnapplyCustLedgEntry, UnapplyVendLedgEntry, and Reverse) and exclusive access to table 17, G/L Entry.</p>
+<table>
+<thead>
+<tr>
+<th>Routine</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StartPosting</td>
+<td>Initializes posting buffer TempGLEntryBuf, locks G/L Entry and VAT Entry tables, and initializes Accounting Period, G/L Register, and Exchange Rate. Should be called only once, then NextEntryNo is 0.</td>
+</tr>
+<tr>
+<td>ContinuePosting</td>
+<td>Checks and posts unrealized VAT for previous transaction increment NextTransactionNo and prepares post of next line.</td>
+</tr>
+<tr>
+<td>FinishPosting</td>
+<td>Completes posting by inserting G/L entries from temporary buffer into database table. Always used together with StartPosting. Checks for inconsistencies.</td>
+</tr>
+<tr>
+<td>InitGLEntry</td>
+<td>Used to initialize new G/L entry for Gen. Jnl Line. Returns GLEntry as parameter.</td>
+</tr>
+<tr>
+<td>InitGLEntryVAT</td>
+<td>Same as InitGLEntry, but also assigns Bal. Account No. and SummarizeVAT.</td>
+</tr>
+<tr>
+<td>InitGLEntryVATCopy</td>
+<td>Similar to InitGLEntryVAT, but also copies posting groups data from VAT Entry before SummarizeVAT.</td>
+</tr>
+<tr>
+<td>InsertGLEntry</td>
+<td>The only function that inserts G/L entry into global TempGLEntryBuf table. Always use this function for insert.</td>
+</tr>
+<tr>
+<td>CreateGLEntry</td>
+<td>Performs an InitGLEntry, assigns Additional Currency Amount, and then performs InsertGLEntry. Replaces several lines of code with a single function call.</td>
+</tr>
+<tr>
+<td>CreateGLEntryBalAcc</td>
+<td>Same as CreateGLEntry, but also assigns Bal. Account Type and Bal. Account No.</td>
+</tr>
+<tr>
+<td>CreateGLEntryVAT</td>
+<td>Same as CreateGLEntry, but with additional processing for posting groups and saving to temporary VAT buffer:<br><br> <code>GLEntry.CopyPostingGroupsFromDtldCVBuf(DtldCVLedgEntryBuf,GenJnlLine.&quot;Gen. Posting Type&quot;);</code><br><br> <code>InsertVATEntriesFromTemp(DtldCVLedgEntryBuf,GLEntry);</code></td>
+</tr>
+<tr>
+<td>CreateGLEntryVATCollectAdj</td>
+<td>Same as CreateGLEntry, but with additional collection of adjustments and saving to temporary VAT buffer:<br><br> <code>CollectAdjustment(AdjAmount,GLEntry.Amount,GLEntry.&quot;Additional-Currency Amount&quot;,OriginalDateSet);</code><br><br> <code>InsertVATEntriesFromTemp(DtldCVLedgEntryBuf,GLEntry);</code></td>
+</tr>
+<tr>
+<td>CreateGLEntryFromVATEntry</td>
+<td>Same as CreateGLEntry, but also copies posting groups from VAT entry.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-posting-interface-structure.html">Design Details: Posting Interface Structure</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-posting-engine-structure.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

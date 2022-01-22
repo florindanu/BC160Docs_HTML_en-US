@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Expected Cost Posting | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Expected Cost Posting | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Expected costs represent the estimation of, for example, a purchased item&#8217;s cost that you record before you receive the invoice for the item.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-expected-cost-posting">Design Details: Expected Cost Posting</h1>
+
+<p>Expected costs represent the estimation of, for example, a purchased item’s cost that you record before you receive the invoice for the item.</p>
+<p>You can post expected cost to inventory and to the general ledger. When you post a quantity that is only received or shipped but not invoiced, then a value entry is created with the expected cost. This expected cost affects the inventory value, but is not posted to the general ledger unless you set up the system up to do so.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Expected costs are only managed for item transactions. Expected costs are not for immaterial transaction types, such as capacity and item charges.</p>
+</div>
+<p>If only the quantity part of an inventory increase has been posted, then the inventory value in the general ledger does not change unless you have selected the <strong>Expected Cost Posting to G/L</strong> check box on the <strong>Inventory Setup</strong> page. In that case, the expected cost is posted to interim accounts at the time of receipt. After the receipt has been fully invoiced, the interim accounts are then balanced and the actual cost is posted to the inventory account.</p>
+<p>To support reconciliation and traceability work, the invoiced value entry shows the expected cost amount that has been posted to balance the interim accounts.</p>
+<h2 id="example">Example</h2>
+<p>The following example shows expected cost if the <strong>Automatic Cost Posting</strong> check box and the <strong>Expected Cost Posting to G/L</strong> check box are selected on the <strong>Inventory Setup</strong> page.</p>
+<p>You post a purchase order as received. The expected cost is LCY 95.00.</p>
+<p><strong>Value Entries</strong></p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Entry Type</th>
+<th>Cost Amount (Expected)</th>
+<th>Expected Cost Posted to G/L</th>
+<th>Expected Cost</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Direct Cost</td>
+<td>95.00</td>
+<td>95.00</td>
+<td>Yes</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relation Entries in the G/L – Item Ledger Relation Table</strong></p>
+<table>
+<thead>
+<tr>
+<th>G/L Entry No.</th>
+<th>Value Entry No.</th>
+<th>G/L Register No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>General Ledger Entries</strong></p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>G/L Account</th>
+<th>Account No. (En-US Demo)</th>
+<th>Amount</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Inventory Accrual Account (Interim)</td>
+<td>5530</td>
+<td>-95.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Inventory Account (Interim)</td>
+<td>2131</td>
+<td>95.00</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>At a later date, you post the purchase order as invoiced. The invoiced cost is LCY 100.00.</p>
+<p><strong>Value Entries</strong></p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Cost Amount (Actual)</th>
+<th>Cost Amount (Expected)</th>
+<th>Cost Posted to G/L</th>
+<th>Expected Cost</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-15-20</td>
+<td>100.00</td>
+<td>-95.00</td>
+<td>100.00</td>
+<td>No</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relation Entries in the G/L – Item Ledger Relation Table</strong></p>
+<table>
+<thead>
+<tr>
+<th>G/L Entry No.</th>
+<th>Value Entry No.</th>
+<th>G/L Register No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>General Ledger Entries</strong></p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>G/L Account</th>
+<th>Account No. (En-US Demo)</th>
+<th>Amount</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-15-20</td>
+<td>Inventory Accrual Account (Interim)</td>
+<td>5530</td>
+<td>95.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>01-15-20</td>
+<td>Inventory Account (Interim)</td>
+<td>2131</td>
+<td>-95.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>01-15-20</td>
+<td>Direct Cost Applied Account</td>
+<td>7291</td>
+<td>-100</td>
+<td>6</td>
+</tr>
+<tr>
+<td>01-15-20</td>
+<td>Inventory Account</td>
+<td>2130</td>
+<td>100</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-cost-adjustment.html">Design Details: Cost Adjustment</a><br>
+<a href="design-details-reconciliation-with-the-general-ledger.html">Design Details: Reconciliation with the General Ledger</a><br>
+<a href="design-details-inventory-posting.html">Design Details: Inventory Posting</a><br>
+<a href="design-details-variance.html">Design Details: Variance</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-expected-cost-posting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

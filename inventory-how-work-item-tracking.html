@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Assign Serial and Lot Numbers to Items for Tracking | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Assign Serial and Lot Numbers to Items for Tracking | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can add serial numbers and lot numbers to any outbound or inbound document, and its posted item tracking entries are displayed in the related item ledger entries.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-with-serial-and-lot-numbers">Work with Serial and Lot Numbers</h1>
+
+<p>You can assign serial numbers and lot numbers to any outbound or inbound document, and its posted item tracking entries are displayed in the related item ledger entries. You perform the work on the <strong>Item Tracking Lines</strong> page, which you can open from an inbound or outbound document.</p>
+<p>The matrix of quantity fields at the top of the <strong>Item Tracking Lines</strong> page displays the quantities and sums of item tracking numbers being defined on the lines. The quantities must correspond to those of the document line, which is indicated by 0 in the <strong>Undefined</strong> fields.</p>
+<p>As a performance measure, application collects the availability information on the <strong>Item Tracking Lines</strong> page only once, when you open the page. This means that application does not update the availability information during the time that you have the page open, even if changes occur in inventory or on other documents during that time.</p>
+<p>Items with serial or lot numbers can be traced both backwards and forward in the supply chain. This is useful for general quality assurance and for product recalls. For more information, see <a href="inventory-how-to-trace-item-tracked-items.html">Trace Item-Tracked Items</a>.</p>
+<h2 id="about-picking-serial-or-lot-numbers-in-the-warehouse">About Picking Serial or Lot Numbers in the Warehouse</h2>
+<p>Outbound handling of serial or lot numbers is a frequent task in different warehouse processes.</p>
+<p>In some processes, the inventory items do not carry serial or lot numbers, and the warehouse worker must assign new during the outbound handling, typically from a predefined number series.</p>
+<p>In simple processes, the inventory items already carry serial or lot numbers, for example assigned during the put-away, and these numbers are automatically transferred through all outbound warehouse activities without interaction by warehouse workers.</p>
+<p>In special situations for serial- or lot-numbered inventory, specific serial or lot numbers are defined on the source document, such as a sales order, which the warehouse worker must respect during the outbound warehouse handling. This may be because the customer requested a specific lot during the order process. When the inventory pick or warehouse pick document is created from an outbound source document where serial or lot numbers are already defined, then all fields on the <strong>Item Tracking Lines</strong> page under the inventory pick are locked for writing, except the <strong>Qty. to Handle</strong> field. In that case, the inventory pick lines specify the item tracking numbers on individual take and place lines. The quantity is already split into unique serial or lot number combinations because the sales order specifies the item tracking numbers to ship.</p>
+<h2 id="item-tracking-availability">Item Tracking Availability</h2>
+<p>When you work with serial and lot numbers, Business Central calculates availability information for lot and serial numbers and shows it in the various item tracking pages. This lets you see how much of a lot or serial number is currently being used on other documents. This reduces errors and uncertainty caused by double allocations.</p>
+<p>On the <strong>Item Tracking Lines</strong> page, a warning icon is shown in the <strong>Availability, Lot No.</strong> or <strong>Availability, Serial No.</strong> field if some or all of the quantity you have selected is already being used in other documents or if the lot or serial number is not available.</p>
+<p>On the <strong>Lot No./Serial No.-List</strong> page, the <strong>Lot No./Serial No.-Availability</strong> page, and the <strong>Item Tracking - Select Entries</strong> page, information is displayed about how much quantity of an item is being used. This includes the following information.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total Quantity</strong></td>
+<td>The total number of item currently in inventory</td>
+</tr>
+<tr>
+<td><strong>Total Requested Quantity</strong></td>
+<td>The total number of items that are requested that will be used in this and other documents</td>
+</tr>
+<tr>
+<td><strong>Current Pending Quantity</strong></td>
+<td>The number of items that are requested that will be used on the current document but that is not yet committed to the database</td>
+</tr>
+<tr>
+<td><strong>Current Requested Quantity</strong></td>
+<td>The number of items that are requested that will be used on the current document</td>
+</tr>
+<tr>
+<td><strong>Total Available Quantity</strong></td>
+<td>The total number of items in inventory, minus the quantity of the item that are requested on this and other documents (total requested quantity), and minus the quantity that is requested but not yet committed on this document (current pending quantity)</td>
+</tr>
+</tbody>
+</table>
+<p>If you work on the <strong>Item Tracking Lines</strong> page for a long period of time or if there is a great deal of activity with the item you are working with, then you can choose the <strong>Refresh Availability</strong> action. In addition, the availability of the item is automatically rechecked when you close the page to confirm that there are no availability problems.</p>
+<h2 id="to-set-up-item-tracking-codes">To set up item tracking codes</h2>
+<p>An item tracking code reflects the different considerations a company has regarding the use of serial and lot numbers for items moving through the inventory.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item Tracking Codes</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>On the <strong>Serial No.</strong> and the <strong>Lot No.</strong> FastTabs, define policies of item tracking by serial and lot numbers respectively.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to track specific items or specific lots throughout their lifetime, you must choose the <strong>SN Specific Tracking</strong> and <strong>Lot Specific Tracking</strong> fields, respectively. As a result, when handling an outbound unit of an item with this item tracking code, you must always specify which existing serial number or which existing lot number to handle. This means that when selling a unit of the item, it must be applied against a specific pool of serial numbers or a specific lot number in inventory. Or in other words, a serial number or lot number assigned to the item when entering into inventory must follow that item type out of inventory.</p>
+</div>
+<p>As this particular setup field covers all possible transactions with the item, the individual inbound/outbound fields will also be selected. However, the individual inbound/outbound fields have nothing to do with application across inventory - they merely define your company's work flow concerning when to assign item tracking numbers.</p>
+<h3 id="to-set-up-expiration-rules-for-serial-or-lot-numbers">To set up expiration rules for serial or lot numbers</h3>
+<p>For some items you might want to set up specific expiration dates and rules in the item tracking code. This functionality allows you to keep track of when specific serial numbers and lot numbers expire.</p>
+<ol>
+<li><p>Select an existing item tracking code, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Misc.</strong> FastTab, select the following check boxes.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Strict Expiration Posting</strong></td>
+<td>Specifies that an expiration date assigned to the item tracking number as it entered inventory must be respected when it exits inventory.</td>
+</tr>
+<tr>
+<td><strong>Man. Expir. Date Entry Reqd.</strong></td>
+<td>Specifies that you must manually enter an expiration date on the item tracking line.</td>
+</tr>
+<tr>
+<td><strong>Ignore Expiration Dates</strong></td>
+<td>Specifies that you do not want to calculate expiration dates.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h3 id="to-set-up-warranties-for-serial-or-lot-numbers">To set up warranties for serial or lot numbers</h3>
+<p>For some items, you might want to set up specific warranties in the item tracking code. This functionality allows you to keep track of when the warranties on specific serial or lot numbers in your inventory will run out.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item Tracking Codes</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select an existing item tracking code, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Misc.</strong> FastTab, fill in the <strong>Warranty Date Formula</strong> field, and then select the check box as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Warranty Date Formula</strong></td>
+<td>Specifies the last day of warranty for the item.</td>
+</tr>
+<tr>
+<td><strong>Man. Warranty Date Entry Reqd.</strong></td>
+<td>Specifies that you must manually enter a warranty date on the item tracking line.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="to-record-serial-or-lot-number-information">To record serial or lot number information</h2>
+<p>If you need to link special information to a specific item tracking number, for example, for quality assurance, you can do so in a serial or lot number information card.</p>
+<ol>
+<li><p>Open a document that has serial or lot numbers assigned.</p>
+</li>
+<li><p>Open the <strong>Item Tracking Lines</strong> page for the document.</p>
+</li>
+<li><p>Choose, for example, the <strong>Serial No. Information Card</strong> action.</p>
+<p>The <strong>Serial No.</strong> and <strong>Lot No.</strong> fields are prefilled from the item tracking line.</p>
+</li>
+<li><p>Enter a short piece of information in the <strong>Description</strong> field, for example about the condition of the item.</p>
+</li>
+<li><p>Choose the <strong>Comment</strong> action to create a separate comment record.</p>
+</li>
+<li><p>Select the <strong>Blocked</strong> check box to exclude the serial or lot number from any transactions.</p>
+</li>
+</ol>
+<h2 id="to-modify-existing-serial-or-lot-number-information">To modify existing serial or lot number information</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Select an item that has an item tracking code and has serial or lot number information.</li>
+<li>From the <strong>Item Card</strong> page, choose the <strong>Entries</strong> action, and then choose <strong>Ledger Entries</strong>.</li>
+<li>Choose the <strong>Lot No.</strong> or <strong>Serial No.</strong> field. If information exists for the item tracking number, then the <strong>Lot No. Information List</strong> or <strong>Serial No. Information List</strong> page opens.</li>
+<li>Select a card, and then choose the <strong>Lot No./Serial No. Information Card</strong> action.</li>
+<li>Modify the short description text, the comment record, or the <strong>Blocked</strong> field.</li>
+</ol>
+<p>You cannot modify the serial or lot numbers or quantities. To do so, you must reclassify the item ledger entry in question. For more information, see <a href="inventory-how-work-item-tracking.html#to-reclassify-serial-or-lot-numbers">To reclassify lot or serial numbers</a>.</p>
+<h2 id="to-assign-serial-or-lot-numbers-during-an-inbound-transaction">To assign serial or lot numbers during an inbound transaction</h2>
+<p>Companies may want to keep track of items from the moment they enter the company. In this situation, the purchase order is often the central document, although item tracking may be handled from any inbound document and its posted entries displayed in the related item ledger entries.</p>
+<p>The exact rules for handling item tracking numbers across your company are governed by the setup on the <strong>Item Tracking Code Card</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use item tracking numbers in warehouse activities, the <strong>Lot Warehouse Tracking</strong> and <strong>SN Warehouse Tracking</strong> setup fields must be selected, as they define the special principles in handling serial and lot numbers in warehouse activities.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant document line and on the <strong>Lines</strong> FastTab, choose the <strong>Line</strong> action, and then choose the <strong>Item Tracking Lines</strong> action.</p>
+<p>You can assign serial or lot numbers in the following ways:</p>
+<ul>
+<li>Automatically, by choosing <strong>Assign Serial No.</strong> or <strong>Assign Lot No.</strong> to assign serial/lot numbers from predefined number series.</li>
+<li>Automatically, by choosing <strong>Create Customized SN</strong> to assign serial/lot numbers based on number series you define specifically for the arrived items.</li>
+<li>Manually, by entering serial or lot numbers directly, for example, the vendor's numbers.</li>
+<li>Manually, by assigning a specific number to each item unit.</li>
+</ul>
+</li>
+<li><p>To assign automatically, choose the <strong>Create Customized SN</strong> action.</p>
+</li>
+<li><p>In the <strong>Customized SN</strong> field, enter the starting number of a descriptive serial number series, for example <strong>S/N-Vend0001</strong>.</p>
+</li>
+<li><p>In the <strong>Increment</strong> field, enter 1 to define that each sequential number increases by one.</p>
+<p>The <strong>Quantity to Create</strong> field contains the line quantity by default, but you can modify it.</p>
+</li>
+<li><p>Select the <strong>Create New Lot No.</strong> check box to organize the new serial numbers in a distinct lot.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>A lot number with individual serial numbers is created according to the item quantity of the document line, starting from <strong>S/N-Vend0001</strong>.</p>
+<p>The matrix of quantity fields in the header displays dynamically the quantities and sums of the item tracking numbers you define on the page. The quantities must correspond to those of the document line, which is signified by 0 in the <strong>Undefined</strong> fields.</p>
+<p>When the document is posted, the item tracking entries are carried to the associated item ledger entries.</p>
+<h2 id="to-assign-a-serial-or-lot-number-during-an-outbound-transaction">To assign a serial or lot number during an outbound transaction</h2>
+<p>There are two ways to add serial and lot numbers to outbound transactions:</p>
+<ul>
+<li>Selecting from existing serial or lot numbers. This applies when item tracking numbers have already been assigned during an inbound transaction. For more information, see <a href="inventory-how-work-item-tracking.html#to-select-from-existing-serial-or-lot-numbers">To select from existing serial numbers and lot numbers</a>.</li>
+<li>Assigning new serial or lot numbers during outbound transactions. This applies when item tracking numbers are not assigned to items until they are sold and ready to be shipped.</li>
+</ul>
+<p>The different rules for item tracking numbers are set up on the <strong>Item Tracking Code Card</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To assign item tracking numbers in warehouse activities, the <strong>SN Warehouse Tracking</strong> and <strong>Lot Warehouse Tracking</strong> check boxes must be selected on the item’s item tracking code card.</p>
+</div>
+<ol>
+<li><p>Select the relevant document and, on the <strong>Lines</strong> FastTab, choose the <strong>Order</strong> action, and then choose the <strong>Item Tracking Lines</strong> action.</p>
+<p>You can assign item tracking numbers in the following ways:</p>
+<ul>
+<li>Automatically, from predefined number series: Choose the <strong>Assign Serial No.</strong> or <strong>Assign Lot No.</strong> action.</li>
+<li>Automatically, based on parameters you define specifically for the outbound item: Choose the <strong>Create Customized SN</strong> action.</li>
+<li>Manually, by entering serial or lot numbers, without using a number series.</li>
+</ul>
+</li>
+<li><p>For this procedure, assign a serial number automatically by choosing <strong>Assign Serial No.</strong></p>
+<p>The <strong>Quantity to Create</strong> field contains the line quantity by default, but you can modify it.</p>
+</li>
+<li><p>Select the <strong>Create New Lot No.</strong> field to organize the new serial numbers in a distinct lot.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to create a lot number and new individual serial numbers according to the quantity to handle on the related document line.</p>
+</li>
+</ol>
+<p>The matrix of quantity fields at the top displays dynamically the quantities and sums of the item tracking numbers that you define on the page. The quantities must correspond to those of the document line, which is signified by <strong>0</strong> in the <strong>Undefined</strong> fields.</p>
+<p>When the document is posted, the item tracking entries are carried to the associated item ledger entries.</p>
+<h2 id="to-select-from-existing-serial-or-lot-numbers">To select from existing serial or lot numbers</h2>
+<p>When you are working with items that require item tracking and you are creating outbound transactions, where the items go out of inventory, you typically need to select the lot or serial numbers from those that already exist in inventory.</p>
+<p>The exact rules for handling item tracking numbers across your company are governed by the setup of the <strong>Item Tracking Code</strong> table.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To handle item tracking numbers in warehouse activities, the item must be set up with SN/Lot Warehouse Tracking, as this dictates the special principles governing serial and lot numbers in the warehouse.</p>
+</div>
+<ol>
+<li><p>From any outbound document, select the line that you want to select serial or lot numbers for.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, choose the <strong>Actions</strong> action, choose the <strong>Line</strong> or the <strong>Item</strong> action, and then choose the <strong>Item Tracking Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Tracking Lines</strong> page, you have three options for specifying lot or serial number:</p>
+<ul>
+<li>Select the <strong>Lot No.</strong> or <strong>Serial No.</strong> field, and then select a number from the <strong>Item Tracking Summary</strong> page.</li>
+<li>Choose the <strong>Select Entries</strong> action. The <strong>Select Entries</strong> page shows all lot or serial numbers along with availability information.</li>
+</ul>
+</li>
+<li><p>In the <strong>Selected Quantity</strong> field, enter the quantity of each lot or serial number that you would like to use.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button, and the selected item tracking information is transferred to the <strong>Item Tracking Lines</strong> page.</p>
+</li>
+<li><p>Type or scan in the item tracking number.</p>
+</li>
+</ol>
+<p>The matrix of quantity fields in the header dynamically displays the quantities and sums of the item tracking numbers you define on the page. The quantities must correspond to those of the document line, which is signified by <strong>0</strong> in the <strong>Undefined</strong> fields.</p>
+<p>When you post the document line, the item tracking information is transferred to the associated item ledger entries.</p>
+<h2 id="to-handle-serial-and-lot-numbers-on-transfer-orders">To handle serial and lot numbers on transfer orders</h2>
+<p>Procedures for handling serial and lot numbers that are being transferred between different locations are similar to those applied when items are sold and purchased.</p>
+<p>However, the transfer order is unique in that shipment and receipt are both done from the same transfer line and, therefore, use the same instance of the <strong>Item Tracking Lines</strong> page. This means that item tracking numbers shipped from one location must be received unchanged at the other location.</p>
+<p>The exact rules for handling item tracking numbers across your company are governed by the setup of the  <strong>Item Tracking Code</strong> table.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Transfer Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the transfer order you want to process. On the <strong>Lines</strong> FastTab, choose choose the <strong>Line</strong> action, choose the <strong>Item Tracking Lines</strong> action, and then choose the <strong>Shipment</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Tracking Lines</strong> page, assign or select serial or lot numbers as for any other outbound item transaction.</p>
+<p>When handling serial and lot numbers for transfer items, the items typically have numbers already assigned to them. Therefore, the process typically consists of selecting from existing serial or lot numbers.</p>
+</li>
+<li><p>Post the transfer order, first ship and then receive, to record that the items are transferred carrying their item tracking entries.</p>
+</li>
+</ol>
+<p>During the transfer, the <strong>Item Tracking Lines</strong> page remains locked for writing.</p>
+<h2 id="to-handle-serial-and-lot-numbers-when-getting-receipt-lines-from-a-purchase-invoice">To handle serial and lot numbers when getting receipt lines from a purchase invoice</h2>
+<p>When you use functionality to get posted receipt or shipment lines from related invoices or credit memos, then any item tracking lines on the warehouse documents are transferred automatically, however, they are processed in a special way.</p>
+<p>The functionality supports the following inbound processes:</p>
+<ul>
+<li><strong>Get Receipt Lines</strong> - from a purchase invoice.</li>
+<li><strong>Get Return Shipment Lines</strong> - from a purchase credit memo.</li>
+</ul>
+<p>The functionality supports the following outbound processes:</p>
+<ul>
+<li><strong>Get Shipment Lines</strong> - from a sales invoice or combined shipments.</li>
+<li><strong>Get Return Receipt Lines</strong> - from a sales credit memo.</li>
+</ul>
+<p>In these situations, the existing item tracking lines are copied automatically to the invoice or credit memo, but the <strong>Item Tracking Lines</strong> page does not permit changes to the serial or lot numbers. Only the quantities can be changed.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Invoices</strong>, and then select the related link.</p>
+</li>
+<li><p>Open a purchase invoice for items that are purchase with serial or lot numbers.</p>
+</li>
+<li><p>From a purchase invoice line, on the <strong>Lines</strong> FastTab, choose the <strong>Get Receipt Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Get Receipt Lines</strong> page, select a receipt lines that has item tracking lines, and then choose the <strong>OK</strong> button.</p>
+<p>The source document is copied to the purchase invoice as a new line, and its item tracking lines are copied to the underlying <strong>Item Tracking Lines</strong> page.</p>
+</li>
+<li><p>In the purchase invoice, select the transferred receipt line.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, choose the <strong>Line</strong> action, and then choose the <strong>Item Tracking Lines</strong> action to see the transferred item tracking lines.</p>
+</li>
+</ol>
+<p>The contents of the <strong>Serial No.</strong> and <strong>Lot No.</strong> fields are not editable. However, you can delete complete lines or change the quantities to match changes being made on the source line.</p>
+<h2 id="to-reclassify-serial-or-lot-numbers">To reclassify serial or lot numbers</h2>
+<p>Reclassifying item tracking for an item means changing a lot or serial number to a new lot or serial number or changing the expiration date to a new expiration date. If you are working with lots, you can also merge multiple lots into one. You perform these tasks using the item reclassification journal.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item Reclass. Journal</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the line with the relevant information. For more information, see <a href="inventory-how-count-inventory-with-documents.html">Count Inventory Using Documents</a> or <a href="inventory-how-count-adjust-reclassify.html">Count, Adjust, and Reclassify Inventory Using Journals</a>.</p>
+</li>
+<li><p>Choose the <strong>Item Tracking Lines</strong> action.</p>
+</li>
+<li><p>In the <strong>Serial No.</strong> or <strong>Lot No.</strong> field, select the current serial or lot number.</p>
+</li>
+<li><p>If you want to enter a new item tracking number, enter it in the <strong>New Serial No.</strong> or <strong>New Lot No.</strong> field. If you want, you can merge one or more lots to one new or existing lot.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Be aware that when you reclassify expiration dates, then the items with the earliest expiration dates for outbound transactions are suggested first. For more information, see <a href="warehouse-picking-by-fefo.html">Picking by FEFO</a>.</p>
+</div>
+</li>
+<li><p>If you would like to enter a new expiration date for the serial or lot number, enter it in the <strong>New Expiration Date</strong> field.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you are reclassifying a lot to the same lot number but with a different expiration date, you must reclassify the entire lot, using one item reclassification journal line. If you are reclassifying more than one lot to one new lot number, meaning that you are merging more than one lot into one new lot, you must enter the same new expiration date for all the lots. If you are reclassifying one existing lot to a second existing lot that has a different expiration date, you must use the expiration date from the second lot. If you leave the <strong>New Expiration Date</strong> field blank, the lot or serial number will be reclassified with a blank expiration date.</p>
+</div>
+</li>
+<li><p>If you have existing information on the old serial or lot number, you can copy it to the new serial or lot number.</p>
+<ol>
+<li>On the <strong>Item Tracking Lines</strong> page, choose the <strong>New Serial No. Information</strong> action or the <strong>New Lot No. Information</strong> action.</li>
+<li>To copy information from the old lot or serial number, choose the <strong>Copy Info</strong> action.</li>
+<li>In the information list page, select the lot or serial number that you would like to copy from, and choose the <strong>OK</strong> button.</li>
+</ol>
+</li>
+<li><p>If you want to modify the existing information for the lot or serial number, you can record lot or serial information.</p>
+</li>
+<li><p>Post the journal to link the renewed item tracking numbers or expiration dates to the associated item ledger entry</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-how-to-trace-item-tracked-items.html">Trace Item-Tracked Items</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="design-details-item-tracking.html">Design Details: Item Tracking</a>
+<a href="design-details-item-tracking-and-reservations.html">Design Details - Item Tracking and Reservations</a><br>
+<a href="inventory-how-to-reserve-items.html">Reserve Items</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/inventory-how-work-item-tracking.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

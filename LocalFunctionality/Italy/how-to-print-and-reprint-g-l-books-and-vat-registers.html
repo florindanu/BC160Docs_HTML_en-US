@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Print and Reprint G-L Books and VAT Registers </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Print and Reprint G-L Books and VAT Registers ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The tax authorities require that you submit two fiscal reports that list all of the posted ledger entries, the G/L Book - Print report and the VAT Register - Print report.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="print-and-reprint-gl-books-and-vat-registers">Print and Reprint GL Books and VAT Registers</h1>
+
+<p>The tax authorities require that you submit two fiscal reports that list all of the posted ledger entries, the <strong>G/L Book - Print</strong> report and the <strong>VAT Register - Print</strong> report. Each printed page must have its own progressive number, and therefore, you must update Business Central with the last printed page number before you run these reports again.</p>
+<p>The following procedure describes how to print or reprint the <strong>G/L Book - Print</strong> report, but the same steps apply to printing or reprinting the <strong>VAT Register - Print</strong> report.</p>
+<h2 id="to-print-the-general-ledger-book-report">To print the general ledger book report</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>G/L Book - Print</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Report Type</strong></td>
+<td>Select the type of report to create.<br><br> If you select <strong>Reprint</strong>, the <strong>From Progressive No.</strong> field becomes enabled.</td>
+</tr>
+<tr>
+<td><strong>Starting Date</strong></td>
+<td>Enter the first date in the period from which posted entries will be shown.</td>
+</tr>
+<tr>
+<td><strong>Ending Date</strong></td>
+<td>Enter the last date in the period from which posted entries will be shown.</td>
+</tr>
+<tr>
+<td><strong>From Progressive No.</strong></td>
+<td>Specifies the progressive number for the report.</td>
+</tr>
+<tr>
+<td><strong>Print Company Information</strong></td>
+<td>Select to print company information on the report.<br><br> The remaining fields are populated based on the <strong>Company Information</strong> page.</td>
+</tr>
+</tbody>
+</table>
+<p>When you print the report, you will be reminded to update the <strong>General Ledger Setup</strong> page with the page number on the last page.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Business Central does not save the page number automatically when you run the reports. After you run the G/L Book - Print report or the VAT Register - Print report, you must update Business Central with the last printed page number..</p>
+</div>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</p>
+<p>To set the last printed page number for the VAT register report, search for <strong>VAT Register</strong>, and choose the link for the page under <strong>VAT Posting Group</strong>.</p>
+</li>
+<li><p>In the <strong>Fiscal Reporting</strong> FastTab, in the <strong>Last Printed G/L Book Page</strong> field, specify the page number that is on the last page of the <strong>G/L Book - Print</strong> report that you just printed.</p>
+</li>
+</ol>
+<p>Both official reports can be reprinted. When you reprint a report, the first page of the report must have the same page number as it did when the report was printed the first time. If you want to reprint one of the reports, and the page number is incorrect, you can change the reprinting information for the report</p>
+<p>The following procedure describes how to view or change the page numbering for previously printed versions of the <strong>G/L Book - Print</strong> report, but the same steps apply to the <strong>VAT Register - Print</strong> report.</p>
+<h2 id="to-view-or-change-page-numbering-for-reprinting-the-general-ledger-book-report">To view or change page numbering for reprinting the general ledger book report</h2>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Change G/L Book Reprint Info.</strong> action. On the <strong>G/L Book Reprint Info</strong> page, the <strong>First Page Number</strong> field specifies the first page number of the previously printed reports.</li>
+</ol>
+<p>When you update the <strong>General Ledger Setup</strong> page or the <strong>VAT Registers</strong> page with the page number of the last page of the printed report, make sure that you specify the correct page number. If the reprinted report starts with the wrong page number, the report will not be accepted by the tax authorities. The <strong>G/L Book Reprint Info</strong> page and the <strong>VAT Register Reprint Info</strong> can help you identify the correct page number.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="italy-local-functionality.html">Italy Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Italy/how-to-print-and-reprint-g-l-books-and-vat-registers.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

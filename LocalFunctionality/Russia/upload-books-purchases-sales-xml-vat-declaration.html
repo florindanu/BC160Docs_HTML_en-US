@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Upload books of purchases and sales in Russia </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Upload books of purchases and sales in Russia ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Russian enhancements include books of purchases and sales VAT in XML format.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="upload-books-of-purchases-and-sales-and-the-vat-declaration-in-xml-format">Upload Books of Purchases and Sales and the VAT Declaration in XML Format</h1>
+
+<p>To upload VAT reports to XML files, you must configure the folder where the files will be uploaded.</p>
+<p>Go to <strong>Statutory Report Setup</strong> and fill <strong>Excel Reports Folder Name</strong> and <strong>Electronic Files Folder Name</strong>.</p>
+<h2 id="vat-declaration">VAT Declaration</h2>
+<p>The VAT Declaration file is formed on the basis of the generated data on VAT Purchase Ledgers or VAT Sales Ledgers, additional sheets and the journal of invoices.</p>
+<p>For the correct formation of the VAT Declaration is necessary:</p>
+<ol>
+<li><p>Generate VAT Purchase Ledgers or VAT Sales Ledgers, additional sheets for the required period (see <a href="how-to-create-vat-ledgers.html">Create VAT Ledgers</a>).</p>
+</li>
+<li><p>Correct the data of VAT Purchase Ledgers or VAT Sales Ledgers, if necessary.</p>
+</li>
+<li><p>Generate and check the journal of invoices.</p>
+</li>
+<li><p>Upload purchase and sales books, as well as additional sheets in XML format.</p>
+</li>
+<li><p>Upload the journal of issued and received invoices (if there are operations for the period) in XML format.</p>
+</li>
+<li><p>Generate the VAT Declaration in XML format.</p>
+</li>
+<li><p>The generated files will be located in the folder specified in the setting <strong>Statutory Report Setup, Electronic Files Folder Name.</strong></p>
+</li>
+</ol>
+<h2 id="upload-purchase-and-sales-books-and-additional-sheets-to-xml-files">Upload purchase and sales books, and additional sheets to XML files</h2>
+<p>To upload VAT Purchase Ledgers or VAT Sales Ledgers to XML, you need to stand on the line with the generated VAT Ledger, click Print, Export XML (to upload the book).</p>
+<p>The system will generate an XML file in the folder specified in the settings and fill the Name of XML file field for the book.</p>
+<p>You should upload additional sheets to XML only if they are not empty.</p>
+<p>For unloading of additional sheets of VAT Purchase Ledgers or VAT Sales Ledgers in the XML you need to stand on the line with the generated  VAT Ledger, click Print, Export additional sheet XML (for upload of additional sheet in the workbook in XML).</p>
+<p>The system will generate an XML file in the folder specified in the settings and fill the Name of XML file field for the additional sheet.</p>
+<h2 id="uploading-vat-declaration-to-xml">Uploading VAT Declaration to XML</h2>
+<p>To generate a Declaration file, go to <strong>Departments -&gt; VAT Declaration -&gt; Export VAT Declaration to XML</strong>:</p>
+<p>To calculate and upload a file, you must specify:</p>
+<ul>
+<li><strong>Year</strong></li>
+<li><strong>Period type</strong> – Quarter if the Declaration is submitted quarterly</li>
+<li><strong>Period number</strong></li>
+</ul>
+<p>In the <strong>VAT purchase ledgers</strong> and <strong>VAT sales ledgers</strong> fields, you must select the generated purchase and sales books.</p>
+<p>If the books do not appear in the selected period, you can remove the filter and all the books will be available for selection.</p>
+<p>The system automatically completes the data on the names of XML files for VAT Purchase Ledgers, VAT Sales Ledgers and additional sheets on the basis of previously unloaded files:</p>
+<ul>
+<li>XML Purchase Ledgers name</li>
+<li>XML Sales Ledgers name</li>
+<li>XML Sales Ledgers additional sheet name</li>
+<li>XML Purchase Ledgers additional sheet name</li>
+</ul>
+<p><strong>Place Code</strong> – you must specify the location code of the organization.</p>
+<p><strong>SignatoryNo</strong> – choose the code of the employee.</p>
+<p><strong>Tax Auth No</strong> – specify the code of the tax authority where the Declaration is submitted.</p>
+<p>To upload the Declaration, click OK in the lower right corner of the form.</p>
+<p>The generated file will be located in the folder specified in the configuration <strong>Statutory Report Setup, Electronic Files Folder Name</strong>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="russia-local-functionality.html">Russia Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Russia/upload-books-purchases-sales-xml-vat-declaration.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

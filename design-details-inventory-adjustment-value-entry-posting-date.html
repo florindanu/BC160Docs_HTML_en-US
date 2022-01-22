@@ -1,0 +1,345 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Posting date on value entries </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Posting date on value entries ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how the Adjust Cost - Item Entries batch job identifies and assigns a posting date to the value entries that the batch job is about to create.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-posting-date-on-adjustment-value-entry">Design Details: Posting Date on Adjustment Value Entry</h1>
+
+<p>This article provides guidance for users of the Inventory Costing functionality in Business Central. The specific article is providing guidance in how the <strong>Adjust Cost - Item Entries</strong> batch job identifies and assigns a posting date to the value entries that the batch job is about to create.</p>
+<p>First the concept of the process is reviewed, how the batch job identifies and assigns the Posting Date to the Value Entry to be created. Thereafter there are some scenarios shared that we in the support team come across from time to time and finally there is a summary of the concepts used from version 3.0.</p>
+<h2 id="the-concept">The Concept</h2>
+<p>From version 5.0, the <strong>Adjust Cost – Item Entries</strong> batch job assigns a posting date to the value entry it is about to create in the following steps:</p>
+<ol>
+<li><p>Initially the Posting Date of the entry to be created is the same date as the entry it adjusts.</p>
+</li>
+<li><p>The Posting Date is validated against Inventory Periods and/or General Ledger Setup.</p>
+</li>
+<li><p>Assignment of Posting Date; If the initial Posting Date is not within allowed posting date range the batch job will assign an allowed Posting Date from either General Ledger Setup or Inventory Period. If both Inventory Periods and allowed posting dates in General Ledger Setup are defined, the later date of the two will be assigned to the Adjustment Value Entry.</p>
+</li>
+</ol>
+<p>Let’s review this process more in practice. Assume we have an Item Ledger Entry of Sale. The item was shipped on September 5th, 2013 and it was invoiced the day after.</p>
+<p><img src="media/helene/TechArticleAdjustcost1.png" alt="State of item ledger entries in the scenario" title="State of item ledger entries in the scenario"></p>
+<p>Below, the first Value Entry (379) represents the shipment and carry the same Posting Date as the parent Item ledger Entry.</p>
+<p>The second Value Entry (381) represents the invoice.</p>
+<p>The third Value Entry (391) is an Adjustment of the invoicing Value Entry (381)</p>
+<p><img src="media/helene/TechArticleAdjustcost2.png" alt="State of value entries in the scenario" title="State of value entries in the scenario"></p>
+<p>Step 1: Adjustment Value Entry to be created is assigned same Posting Date as the entry it adjusts, illustrated above by Value entry 391.</p>
+<p>Step 2: Validation of initial assigned Posting Date.</p>
+<p>The <strong>Adjust Cost – Item Entries</strong> batch job determines if the initial Posting Date of the Adjustment Value Entry is within allowed posting date range based upon Inventory Periods and/or General Ledger Setup.</p>
+<p>Let’s review the above mentioned Sale by adding setup of allowed posting date ranges.</p>
+<p>Inventory Periods:</p>
+<p><img src="media/helene/TechArticleAdjustcost3.png" alt="Inventory periods in the scenario" title="Inventory periods in the scenario"></p>
+<p>First allowed posting date is the first day in the first open period. September 1st, 2013.</p>
+<p>General Ledger Setup:</p>
+<p><img src="media/helene/TechArticleAdjustcost4.png" alt="G/L Setup in the scenario" title="G/L Setup in the scenario"></p>
+<p>First allowed posting date is the date stated in field Allow Posting From: September 10th, 2013.</p>
+<p>If both Inventory Periods and allowed posting dates in General Ledger Setup are defined, the later date of the two will define the allowed posting date range.</p>
+<p>Step 3: Assignment of an allowed posting date;</p>
+<p>The initial assigned Posting Date was September 6th as illustrated in step 1. However, in the 2nd step the Adjust Cost – Item entries batch job identifies that earliest allowed Posting Date is September 10th and thereby assigns September 10th to the Adjustment Value Entry, below.</p>
+<p><img src="media/helene/TechArticleAdjustcost5.png" alt="State of value entries in the scenario 2" title="State of value entries in the scenario 2"></p>
+<p>We have now reviewed the concept for assigning Posting Dates to Value Entries created by the Adjust Cost - Item entries batch job.</p>
+<p>Let’s continue to review some scenarios that we in the support team comes across from time to time in relation to assigned Posting Dates in the Adjust Cost – Item entries batch job and related setups.</p>
+<h2 id="scenarios">Scenarios</h2>
+<h3 id="scenario-i-posting-date-is-not-within-your-range-of-allowed-posting-dates">Scenario I: “Posting Date is not within your range of allowed posting dates…”</h3>
+<p>This is a scenario where a user is experiencing mentioned error message when the Adjust Cost – Item entries batch job is run.</p>
+<p>In the previous section, describing the concept of assigning posting dates, the intention of the Adjust Cost – Item entries batch job is to create a Value Entry with Posting Date September 10th.</p>
+<p><img src="media/helene/TechArticleAdjustcost6.png" alt="Error message about posting date" title="Error message about posting date"></p>
+<p>We follow up on the User Setup:</p>
+<p><img src="media/helene/TechArticleAdjustcost7.png" alt="User's allowed posting dates setup" title="User's allowed posting dates setup"></p>
+<p>The user in this case has an allowed posting date range from September 11th to September 30th and is thereby not allowed to post the Adjustment Value Entry with Posting Date September 10th.</p>
+<p><img src="media/helene/TechArticleAdjustcost8.png" alt="Overview of involved posting date setup" title="Overview of involved posting date setup"></p>
+<p>Knowledge Base article <a href="https://mbs2.microsoft.com/Knowledgebase/kbdisplay.aspx?WTNTZSMNWUKNTMMYXUPYZQPOUXNXSPSYOQQYYMLUQLOYYMWP">952996</a> discusses additional scenarios related to mentioned error message.</p>
+<h3 id="scenario-ii-posting-date-on-adjustment-value-entry-versus-posting-date-on-entry-causing-the-adjustment-such-as-revaluation-or-item-charge">Scenario II: Posting Date on Adjustment Value Entry versus Posting Date on entry causing the adjustment such as Revaluation or Item charge.</h3>
+<h3 id="revaluation-scenario">Revaluation scenario:</h3>
+<p>Prerequisites:</p>
+<p>Inventory setup:</p>
+<ul>
+<li><p>Automatic Cost Posting = Yes</p>
+</li>
+<li><p>Automatic Cost Adjustment=Always</p>
+</li>
+<li><p>Average Cost Calc. Type=item</p>
+</li>
+<li><p>Average Cost Period=Day</p>
+</li>
+</ul>
+<p>General Ledger Setup:</p>
+<ul>
+<li><p>Allow Posting From = January 1st, 2014</p>
+</li>
+<li><p>Allow Posting To = empty</p>
+</li>
+</ul>
+<p>User Setup:</p>
+<ul>
+<li><p>Allow Posting From = December 1st, 2013.</p>
+</li>
+<li><p>Allow Posting to = empty</p>
+</li>
+</ul>
+<h5 id="to-test-the-scenario">To test the scenario</h5>
+<ol>
+<li><p>Create item TEST:</p>
+<p>Base unit of measure = PCS</p>
+<p>Costing Method = Average</p>
+<p>Select optional posting groups.</p>
+</li>
+<li><p>Open Item Journal, create and post a line as follows:</p>
+<p>Posting Date = December 15th, 2013</p>
+<p>Item = TEST</p>
+<p>Entry Type = Purchase</p>
+<p>Quantity = 100</p>
+<p>Unit Amount = 10</p>
+</li>
+<li><p>Open Item Journal, create and post a line as follows:</p>
+<p>Date = December 20th, 2013</p>
+<p>Item = TEST</p>
+<p>Entry Type = Negative Adjustment</p>
+<p>Quantity = 2</p>
+</li>
+<li><p>Open Item Journal, create and post a line as follows:</p>
+<p>Date = January 15th, 2014</p>
+<p>Item = TEST</p>
+<p>Entry Type = Negative Adjustment</p>
+<p>Quantity = 3</p>
+</li>
+<li><p>Open Revaluation Journal, create and post a line as follows:</p>
+<p>Item = TEST</p>
+<p>Applies-to Entry = select Purchase entry posted at step 2. The Posting Date of the revaluation will be the same as the entry it adjusts.</p>
+<p>Unit Cost Revalued = 40</p>
+</li>
+</ol>
+<p>The following Item Ledger and Value Entries have been posted:</p>
+<p><img src="media/helene/TechArticleAdjustcost9.png" alt="Overview of resulting item ledger and value entries 1" title="Overview of resulting item ledger and value entries 1"></p>
+<p><img src="media/helene/TechArticleAdjustcost10.png" alt="Overview of resulting item ledger and value entries 2" title="Overview of resulting item ledger and value entries 2"></p>
+<p>The Adjust Cost – Item entries batch job has recognized a change in cost and adjusted the Negative Adjustments.</p>
+<p><strong>Review of Posting Dates on created Adjustment Value Entries:</strong> The earliest allowed Posting Date the Adjust Cost - Item Entries batch job has to relate to is January 1st, 2014 as stated in the General Ledger Setup.</p>
+<p><strong>Negative Adjustment in step 3:</strong> assigned Posting Date is January 1st, provided by General Ledger Setup. The Posting Date of the Value Entry in scope for adjustment is December 20, 2013. According to General Ledger Setup the date is not within allowed posting date range. Therefore the Posting Date stated in the Allow Posting From field in the General Ledger Setup is assigned to the Adjustment Value Entry.</p>
+<p><strong>Negative Adjustment in step 4:</strong> assigned Posting Date is January 15th. The Value Entry in scope of adjustment has Posting Date January 15th, which is within the allowed posting date range according to General Ledger Setup.</p>
+<p>The adjustment made for the Negative Adjustment in step 3 causes discussion. The favorable Posting Date for the Adjustment Value Entry would have been December 20th or at least within December as the revaluation causing the change in COGS was posted in December.</p>
+<p>To achieve adjustment in December of the Negative Adjustment in step 3, the General Ledger Setup, Allow Posting From field, need to state a date in December.</p>
+<p><strong>Conclusion:</strong></p>
+<p>With the experiences from this scenario, considering most suitable setup of allowed posting date range for a company, the following might be useful: As long as changes in inventory value is allowed to be posted in a period, December in this case, the setup the company uses for allowed posting date ranges should be aligned with this decision. The Allow Posting From in the General Ledger Setup, stating December 1st  would allow the revaluation made in December to be forwarded to affected outbound entries in the same period.</p>
+<p>User groups not allowed to post in December but in January, which was probably intended to be limited by the General Ledger Setup in this scenario, should instead be addressed via the User setup.</p>
+<h3 id="item-charge-scenario">Item charge scenario:</h3>
+<p>Prerequisites:</p>
+<p>Inventory setup:</p>
+<ul>
+<li><p>Automatic Cost Posting = Yes</p>
+</li>
+<li><p>Automatic Cost Adjustment=Always</p>
+</li>
+<li><p>Average Cost Calc. Type=item</p>
+</li>
+<li><p>Average Cost Period=Day</p>
+</li>
+</ul>
+<p>General Ledger Setup:</p>
+<ul>
+<li><p>Allow Posting From = December 1st, 2013.</p>
+</li>
+<li><p>Allow Posting To = empty</p>
+</li>
+</ul>
+<p>User Setup:</p>
+<ul>
+<li><p>Allow Posting From = December 1st, 2013.</p>
+</li>
+<li><p>Allow Posting to = empty</p>
+</li>
+</ul>
+<h5 id="to-test-the-scenario-1">To test the scenario</h5>
+<ol>
+<li><p>Create item charge:</p>
+<p>Base unit of measure = PCS</p>
+<p>Costing Method = Average</p>
+<p>Select optional posting groups.</p>
+</li>
+<li><p>Create new purchase order</p>
+<p>Buy-from Vendor No.: 10000</p>
+<p>Posting Date = December 15th, 2013</p>
+<p>Vendor Invoice No.: 1234</p>
+<p>On the purchase order line:</p>
+<p>Item = CHARGE</p>
+<p>Quantity = 1</p>
+<p>Direct Unit Cost = 100</p>
+<p>Post Receive and Invoice.</p>
+</li>
+<li><p>Create new sales order:</p>
+<p>Sell-to Customer No.: 10000</p>
+<p>Posting Date = December 16th, 2013</p>
+<p>On the sales order line:</p>
+<p>Item = CHARGE</p>
+<p>Quantity = 1</p>
+<p>Unit Price = 135</p>
+<p>Post Ship and Invoice.</p>
+</li>
+<li><p>General Ledger Setup:</p>
+<p>Allow Posting From = January 1st, 2014</p>
+<p>Allow Posting To = blank</p>
+</li>
+<li><p>Create new purchase order:</p>
+<p>Buy-from Vendor No.: 10000</p>
+<p>Posting Date = January 2nd, 2014</p>
+<p>Vendor Invoice No.: 2345</p>
+<p>On the purchase order line:</p>
+<p>Item Charge = JB-FREIGHT</p>
+<p>Quantity = 1</p>
+<p>Direct Unit Cost = 3</p>
+<p>Assign Item Charge to Purchase Receipt from step 2.</p>
+<p>Post Receipt and Invoice.</p>
+<p><img src="media/helene/TechArticleAdjustcost11.png" alt="Overview of resulting item ledger and value entries 3" title="Overview of resulting item ledger and value entries 3"></p>
+</li>
+<li><p>On work date January 3rd a purchase invoice arrives, containing an additional item charge to the purchase made in step 2. This invoice has document date December 30th and is therefore posted with Posting Date December 30th, 2013.</p>
+<p>Create new purchase order:</p>
+<p>Buy-from Vendor No.: 10000</p>
+<p>Posting Date = December 30th, 2013</p>
+<p>Vendor Invoice No.: 3456</p>
+<p>On the purchase order line:</p>
+<p>Item Charge = JB-FREIGHT</p>
+<p>Quantity = 1</p>
+<p>Direct Unit Cost = 2</p>
+<p>Assign Item Charge to Purchase Receipt from step 2</p>
+<p>Post Receipt and Invoice.</p>
+</li>
+</ol>
+<p><img src="media/helene/TechArticleAdjustcost12.png" alt="Overview of resulting item ledger and value entries 4" title="Overview of resulting item ledger and value entries 4"></p>
+<p>Inventory Valuation report is printed as of Date December 31st , 2013</p>
+<p><img src="media/helene/TechArticleAdjustcost13.png" alt="Content of the Inventory Valuation report" title="Content of the Inventory Valuation report"></p>
+<p><strong>Summary of scenario:</strong></p>
+<p>The described scenario ends up with an Inventory Valuation report demonstrating Quantity = 0 while the Value = 2. The Item charge posted in step 11 is part of the Inventory Increase value of December while the Inventory Decrease of the same period is not affected.</p>
+<p>Having the General Ledger Setup stating Allow Posting From January 1st was a good thing for the first Item charge. The costs of the Inventory Increase and Decrease was recorded in the same period. For the second Item charge however, the General Ledger Setup causes the change in COGS to be recognized in the period after.</p>
+<p><strong>Conclusion:</strong></p>
+<p>It’s a challenge to have the Inventory Valuation report to demonstrate Quantity = 0 while the Value &lt;&gt; 0. In this case it’s also more difficult to express the optimal settings, having purchase invoices arriving the same day but addressing different periods or even fiscal years. Crossing to a new fiscal year usually requires some planning and as part of that the insight of Adjust Cost – Item entries process, recognizing COGS, is to be considered.</p>
+<p>In this scenario one option could have been to have the General Ledger Setup, field Allow Posting From, stating a date in December for a couple of more days and the posting of the first item charge postponed to allow all costs for the previous period/fiscal year to be recognized for the period they belong to first, having the Adjust Cost – Item entries batch job run and thereafter move the allowed posting date to the new period/fiscal year. The first item charge with posting date January 2nd could then be posted.</p>
+<h2 id="history-of-adjust-cost--item-entries-batch-job">History of Adjust Cost – Item entries batch job</h2>
+<p>Below is a summary of the concept assigning Posting Dates to Adjustment Value Entries by the Adjust Cost – Item entries batch job since version 3.0.</p>
+<h3 id="from-version-30370a">From version 3.0..3.70.A</h3>
+<p>In the request form of the Adjust Cost - Item Entries batch job there is a Posting Date to be entered by the user. The batch job runs through all necessary changes and creates value entries with the posting date entered in the request form. Suggested posting date to use is today’s date.</p>
+<h3 id="version-370b40">Version 3.70.B..4.0</h3>
+<p>In the request form of the Adjust Cost - Item Entries batch job there is a Closed Period Entry Posting Date to be entered by the user. The batch job runs through all necessary changes and creates value entries with the posting date of the parent item ledger entry (shipment date of the sale that the adjustment address). If the posting date of the parent item ledger entry is not within allowed posting date range the posting date stated as Closed Period Entry Posting Date will be assigned the Adjustment Value Entry. A date is considered to be in a closed period when it is earlier than the date in the Allow Posting From field in the General Ledger Setup.</p>
+<h3 id="from-version-50">From version 5.0:</h3>
+<p>There is no longer a posting date to be stated in the request form of the Adjust Cost - Item entries batch job. The batch job runs through all necessary changes and creates value entries with the posting date of the value entry it adjusts. If the posting date is not within allowed posting date range the posting date in the Allow Posting From field in the General Ledger Setup, OR if the Inventory periods are used, the later date of the two will be used. See described concept above.</p>
+<h2 id="history-of-post-inventory-cost-to-gl-batch-job">History of Post Inventory cost to G/L batch job</h2>
+<p>The Post Inventory Cost to G/L batch job is closely related to the Adjust Cost – Item entries batch job why the history of this batch job is summarized and shared here as well.</p>
+<h3 id="from-version-30370a-1">From version 3.0..3.70.A</h3>
+<p>In the request form of the Post Inventory Cost to G/L there is a Posting Date to be entered by the user. The batch job runs through all value entries within the filter, if any, and creates General Ledger Entries with Posting Date entered in the request form.</p>
+<h3 id="version-370b40-1">Version 3.70.B..4.0</h3>
+<p>In the request form of the Post Inventory Cost to G/L the Closed Period Entry Posting Date field is available. The application uses the date you enter in this field as the posting date for the general ledger entries it creates for value entries whose posting dates are in closed accounting periods. Otherwise, the general ledger entries will have the same posting date as the original value entries. A date is considered to be in a closed period when it is earlier than the date in the Allow Posting From field in the General Ledger Setup. If posting to G/L Per Posting Group, the general ledger entries will have the posting date that is specified in the Posting Date field in the request form.</p>
+<p>In version 3 and 4 the batch job scans all value entries to detect if there are any value entries where Cost Amount (Actual) differs from Cost Posted to G/L. If there is a difference detected the differing amount will be posted in a G/L entry. If expected cost posting is used corresponding fields are processed in the same way.</p>
+<p><img src="media/helene/TechArticleAdjustcost14.png" alt="Actual cost versus expected cost" title="Actual cost versus expected cost"></p>
+<h3 id="from-version-50-1">From version 5.0:</h3>
+<p>There is no longer a posting date to be stated in the request form of the Post Inventory Cost to G/L batch job. The G/L entry is created with the same Posting Date as the related value entry. In order to complete the batch job the allowed posting date range must allow the Posting Date of the created G/L entry. If not, the allowed posting date range must be temporarily re-opened by changing or removing the dates in the Allow Posting From and To fields in the General Ledger Setup. To avoid reconciliation issues it is required that Posting Date of the G/L Entry corresponds to the Posting Date of the Value Entry.</p>
+<p>The batch job scans Table 5811 - Post Value Entry to G/L, to identify the Value Entries in scope for posting to General Ledger. After successful run the table is emptied.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-item-application.html">Design Details: Item Application</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-inventory-adjustment-value-entry-posting-date.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

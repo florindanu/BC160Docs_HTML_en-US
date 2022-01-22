@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Reports with XBRL | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Reports with XBRL | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="XBRL, which stands for eXtensible Business Reporting Language, is an XML-based language for tagging financial data, and enabling businesses to efficiently and accurately process and share their data.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-reports-with-xbrl">Create Reports with XBRL</h1>
+
+<p>XBRL, which stands for eXtensible Business Reporting Language, is an XML-based language for tagging financial data, and enabling businesses to efficiently and accurately process and share their data. The XBRL initiative enables global financial reporting by numerous ERP software companies and international accounting organizations. The goal of the initiative is to provide a standard for the uniform reporting of financial information for banks, investors, and government authorities. Such business reporting can include:</p>
+<p>• Financial statements<br>
+• Financial information<br>
+• Non-financial information<br>
+• Regulatory filings, such as annual and quarterly financial statements</p>
+<p>Business Central enables companies to implement data in XBRL, and take advantage of the flexibility and automation it provides for both collecting and sharing data.</p>
+<h2 id="extensible-business-reporting-language">eXtensible Business Reporting Language</h2>
+<p>XBRL (e <strong>X</strong>tensible <strong>B</strong>usiness <strong>R</strong>eporting <strong>L</strong>anguage) is an XML-based language for financial reporting. XBRL provides a standard for uniform reporting for all users of the financial information supply chain; such as public and private companies, the accounting profession, regulators, analysts, the investment community, capital markets and lenders, as well as key third parties such as software developers and data aggregators.</p>
+<p>Taxonomies are maintained by <a href="http://www.xbrl.org">www.xbrl.org</a>. You can download taxonomies or read more detailed information on the XBRL website.</p>
+<p>Someone who wants financial information from you, provides you with a taxonomy (an XML document) containing one or more schemas, each with one or more lines to fill out. The lines correspond to the individual financial facts required by the sender. You import this taxonomy into application and then fill out the schema(s) by entering which account or accounts correspond to each line, what kind of timeframe to use, for example net change or balance at date. In some cases you can enter a constant instead, for example, number of employees. You are now ready to send the instance document (an XML document) to the someone who requests the information. The idea is that this might be a recurring event, so unless changes have been made to the taxonomy, you just export new instance documents for new periods on request.</p>
+<h2 id="xbrl-is-comprised-of-the-following-components">XBRL is comprised of the following components</h2>
+<p>The XBRL <strong>Specification</strong> explains what XBRL is, how to build XBRL instance documents and XBRL taxonomies. The XBRL Specification explains XBRL in technical terms and is intended for a technical audience.</p>
+<p>The XBRL <strong>Schema</strong> are the core low-level components of XBRL. The schema is the physical XSD file which express how instance documents and taxonomies are to be built.</p>
+<p>The XBRL <strong>Linkbases</strong> are the physical XML files which contain various information about the elements defined in the XBRL Schema, such as labels in one or more languages, how they relate to each other, how to sum up elements, etc.</p>
+<p>An XBRL <strong>Taxonomy</strong> is a &quot;vocabulary&quot; or &quot;dictionary&quot; created by a group, compliant with the XBRL Specification, in order to exchange business information.</p>
+<p>An XBRL <strong>Instance document</strong> is a business report, such as a financial statement prepared to the XBRL specification. The meaning of the values in the instance document is explained by the taxonomy. An instance document is somewhat useless unless you know the taxonomy to which it is prepared.</p>
+<h2 id="layered-taxonomies">Layered Taxonomies</h2>
+<p>A taxonomy can consist of a base taxonomy, for example, us-gaap or IAS, and then have one or more extensions. To reflect this, a taxonomy refers to one or more schemas which all are separate taxonomies. When the additional taxonomies are loaded into the database, the new elements are simply added to the end of the existing elements.</p>
+<h2 id="linkbases">Linkbases</h2>
+<p>In XBRL Spec. 2, the taxonomy is described in several XML-files. The primary XML file is the taxonomy schema file itself (.xsd file) which only contains an unordered list of elements or facts to be reported. In addition to this, there are usually associated some linkbase files (.xml). The linkbase files contain data which is complementary to the raw taxonomy (.xsd file). There are six types of linkbases files of which four have relevance for Product Name XBRL. These are:</p>
+<ul>
+<li><p>Label linkbase: This linkbase contains labels or names for the elements. The file may contain labels in different languages which are identified with an XML property called 'lang'. The XML language identifier usually contains a two-letter abbreviation, and although it should be easy to guess what the abbreviation means, there is no connection to the Windows language code or to the language codes defined in the demo data. Therefore, when the user looks up the languages for a specific taxonomy, he will see all the labels for the first element in the taxonomy, meaning that he can then see an example of each language. A taxonomy can have several label linkbases attached to it as long as these linkbases contain different languages.</p>
+</li>
+<li><p>Presentation linkbase: This linkbase contains information about the structure of the elements, or more precisely; how the issuer of the taxonomy suggests that application presents the taxonomy to the user. The linkbase contains a series of links that each connect two elements as parent and child. When applying all these links, the elements can be shown in a hierarchical way. Note that the presentation linkbase deals with just that: the presentation of elements to the user.</p>
+</li>
+<li><p>Calculation linkbase: This linkbase contains information about which elements roll up to which. The structure is quite similar to the presentation linkbase, except that each link or ‘arc’, as they are called, has a weight property. The weight can be either 1 or –1 indicating whether the element should be added to or subtracted from its parent. Note that the rollups are not necessarily in keeping with the visual presentation.</p>
+</li>
+<li><p>Reference linkbase: This linkbase is an xml file that contains supplementary information about the data that is required by the taxonomy issuer.</p>
+</li>
+</ul>
+<h2 id="to-set-up-xbrl-lines">To set up XBRL lines</h2>
+<p>After you import or update the taxonomy, the lines of the schemas must be supplied with all the information that is required. This information will include basic company information, the actual financial statements, notes to the financial statements, supplemental schedules, and other information that is required to satisfy the particular financial reporting requirements.</p>
+<p>You set up the XBRL Lines by mapping the data in the taxonomy to the data in your general ledger.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>XBRL Taxonomies</strong>, and then choose the related link.</li>
+<li>On the <strong>XBRL Taxonomies</strong> page, select a taxonomy from the list.</li>
+<li>Choose the <strong>Lines</strong> action.</li>
+<li>Select a line and fill in the fields.</li>
+<li>To read detailed information about what to fill in, choose the <strong>Information</strong> action.</li>
+<li>To set up the mapping of the general ledger accounts in the chart of accounts to the XBRL lines, choose the <strong>G/L Map Lines</strong> action.</li>
+<li>To add notes to the financial statement, choose the <strong>Notes</strong> action.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only export data that correspond to the source type you have selected in the <strong>Source Type</strong> field that includes description and notes.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Lines that are not relevant can be marked as line type <strong>NOT APPLICABLE</strong> so the lines are not exported.</p>
+</div>
+<h2 id="to-import-an-xbrl-taxonomy">To import an XBRL taxonomy</h2>
+<p>The first step in working with the XBRL functionality is to import the taxonomy into your company database. A taxonomy consists of one or more schemas and some linkbases. After you have completed the import of both schemas and linkbases and have applied the linkbases to the schema, you can set up the lines and map the general ledger accounts in the chart of accounts to the appropriate taxonomy lines.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>XBRL Taxonomies</strong>, and then choose the related link.</li>
+<li>On the <strong>XBRL Taxonomies</strong> page, create a new line and enter the name and description of the taxonomy.</li>
+<li>Choose the <strong>Schemas</strong> action, and then insert the description of the schema.</li>
+<li>To import the schema, on the <strong>XBRL Schemas</strong> page, choose the <strong>Import</strong> action, and the select a folder and an XSD file. Choose the <strong>Open</strong> button.</li>
+<li>To import the linkbase, on the <strong>XBRL Schemas</strong> page, choose the <strong>Linkbases</strong> action, and then select a folder and an XML file. Choose the <strong>Open</strong> button..</li>
+<li>You can now choose to apply the linkbase to the schema. Repeat until you have imported all linkbases.</li>
+<li>Choose the <strong>Apply to Taxonomy</strong> action to apply the linkbase to the schema.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Instead of individually applying the linkbases after the import, you can wait until you have imported all linkbases and then apply them at the same time. To do this, choose the <strong>NO</strong> button when you are prompted to apply the newly imported linkbase to the schema. Then select the lines with the linkbases that you want to apply.</p>
+</div>
+<h2 id="to-update-an-xbrl-taxonomy">To update an XBRL taxonomy</h2>
+<p>When a taxonomy changes you need to update the current taxonomy accordingly. The reason for the update can be an altered schema, an altered linkbase, or a new linkbase. After updating the taxonomy, you only need to map the lines for the changed or new lines.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>XBRL Taxonomies</strong>, and then choose the related link.</li>
+<li>On the <strong>XBRL Taxonomies</strong> page, choose the <strong>Schemas</strong> action.</li>
+<li>To update a schema, select the schema you want to update, and then choose the <strong>Import</strong> action.</li>
+<li>To update or add a new linkbase, choose the <strong>Linkbases</strong> action.</li>
+<li>Select the relevant linkbase or press Ctrl+N for a new line, select the type of linkbase, and then insert a description.</li>
+<li>To import the linkbase, choose the <strong>Import</strong> action.</li>
+<li>Choose the <strong>Yes</strong> button to apply the linkbase to the schema.</li>
+</ol>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/xbrl-reports-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance.html">Finance</a><br>
+<a href="bi.html">Business Intelligence</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/bi-create-reports-with-xbrl.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

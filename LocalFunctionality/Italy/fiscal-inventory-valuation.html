@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Fiscal Inventory Valuation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Fiscal Inventory Valuation ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You must submit an annual report that shows the monetary value of inventory items for the fiscal year.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="fiscal-inventory-valuation">Fiscal Inventory Valuation</h1>
+
+<p>You must submit an annual report that shows the monetary value of inventory items for the fiscal year. According to the Italian requirements for fiscal inventory valuation, you must calculate the following cost types:</p>
+<ul>
+<li>Year average cost</li>
+<li>Weighted average cost</li>
+<li>First in, First Out (FIFO) cost</li>
+<li>Last in, First Out (LIFO) cost</li>
+<li>Discrete LIFO cost</li>
+</ul>
+<h2 id="fiscal-inventory-valuation-in-">Fiscal Inventory Valuation in Business Central</h2>
+<p>Initially, you must set up the fiscal inventory valuation for all cost types on the <strong>Item Costing Setup</strong> page and the <strong>Item Card</strong> page. For more information, see <a href="how-to-set-up-fiscal-inventory-valuation.html">Set Up Fiscal Inventory Valuation</a>.</p>
+<p>When you set up Business Central, you must enter the inventory item ledger entries for the first year in order to calculate the item’s valuation. You can do this in the Before Start Item Cost page.</p>
+<p>To calculate discrete LIFO cost, you must set up information on the <strong>Item Card</strong> page and the <strong>Subcontracting Prices</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The discrete LIFO cost can only be calculated for items for which the <strong>Inventory Valuation</strong> field is set to <strong>Discrete LIFO</strong> on the <strong>Item Card</strong> page.</p>
+</div>
+<p>After you set up the discrete LIFO cost calculation, you can post sales and purchase transactions based on year-end costs.</p>
+<h2 id="end-of-year">End of Year</h2>
+<p>At the end of the fiscal year, you can run the Calculate End Year Costs batch job to calculate the fiscal inventory value of each inventory item according to the required valuation methods. The results are shown in the Item Cost History List page. Then, you can run the <strong>Fiscal Inventory Valuation</strong> report and the <strong>LIFO Valuation</strong> report to show the inventory valuation.</p>
+<p>For year-end operations, such as calculating the profit and loss during a fiscal year, there is a definitive period and a non-definitive period. If the <strong>Competence Year</strong> field on the <strong>Item Cost History List</strong> page is equal to the fiscal year end date, it is a definitive period, and you cannot recalculate data for a definitive period. If the definitive data differs from the fiscal year end date, then it is a non-definitive period. There should be data for at least one non-definitive period to perform calculations or partial calculations.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="italy-local-functionality.html">Italy Local Functionality</a><br>
+<a href="how-to-set-up-fiscal-inventory-valuation.html">Set Up Fiscal Inventory Valuation</a><br>
+<a href="how-to-set-up-initial-item-costs.html">Set Up Initial Item Costs</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Italy/fiscal-inventory-valuation.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

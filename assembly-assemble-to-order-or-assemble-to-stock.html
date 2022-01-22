@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Understanding Assemble to Order and Assemble to Stock | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Understanding Assemble to Order and Assemble to Stock | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Assembly items can be supplied either by assembling them when they are ordered or by assembling them to be kept in inventory until they are need on a sales order.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="understanding-assemble-to-order-and-assemble-to-stock">Understanding Assemble to Order and Assemble to Stock</h1>
+
+<p>Assembly items can be supplied in the following two processes:</p>
+<ul>
+<li>Assemble to order.</li>
+<li>Assemble to stock.</li>
+</ul>
+<h2 id="assemble-to-order">Assemble to Order</h2>
+<p>You typically use <em>assemble to order</em> for items that you do not want to stock because you expect to customize them to customer requests or because you want to minimize the inventory carrying cost. The supporting functionality includes:</p>
+<ul>
+<li>Ability to customize assembly items when taking a sales order.</li>
+<li>Overview of availability of the assembly item and its components.</li>
+<li>Ability to reserve assembly components immediately to guarantee order fulfillment.</li>
+<li>Function to determine profitability of the customized order by rolling up price and cost.</li>
+<li>Integration to the warehouse to make assembly and shipping easier.</li>
+<li>Ability to assemble to order at the point of making a sales quote or a blanket sales order.</li>
+<li>Ability to combine inventory quantities with assemble-to-order quantities.</li>
+</ul>
+<p>In the assemble-to-order process, the item is assembled in response to a sales order and with a one-to-one link between the assembly order and the sales order.</p>
+<p>When you enter an assemble-to-order item on a sales line, an assembly order is automatically created with a header that is based on the sales line and with lines that are based on the item’s assembly BOM multiplied by the order quantity. You can use the <strong>Assemble-to-Order Lines</strong> page to see the linked assembly order lines to support you in customizing the assembly item and in a delivery date that is based on component availability information. For more information, see <a href="assembly-how-to-sell-items-assembled-to-order.html">Sell Items Assembled to Order</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although it is not part of the default process, you can sell inventory quantities with the assemble-to-order quantities. For more information, see <a href="assembly-how-to-sell-inventory-items-in-assemble-to-order-flows.html">Sell Inventory Items in Assemble-to-Order Flows</a>.</p>
+</div>
+<p>To enable this process, the <strong>Assembly Policy</strong> field on the item card must be <strong>Assemble-to-Order</strong>.</p>
+<h2 id="assemble-to-stock">Assemble to Stock</h2>
+<p>You typically use <em>assemble to stock</em> for items that you want to assemble ahead of sales, such as to prepare for a kit campaign, and keep in stock until they are ordered. These items are usually standard items such as packaged kits that you do not offer to customize to customer requests.</p>
+<p>In the assemble-to-stock process, the item is assembled without an immediate sales demand and is stocked in the warehouse as an inventory item for later sale or consumption as a subassembly. For more information, see <a href="assembly-how-to-assemble-items.html">Assemble Items</a>. From this point, the item is picked and processed as a single item and is treated like a finished production item.</p>
+<p>When you enter an assemble-to-stock item on a sales line, the line like any other item sold from inventory. For example, availability is checked for the assembly item only.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although it is not part of the default process, you can assemble an item to order even if it is set up to be assembled to stock. For more information, see <a href="assembly-how-to-sell-assemble-to-order-items-and-inventory-items-together.html">Sell Assemble-to-Order Items and Inventory Items Together</a>.</p>
+</div>
+<p>To enable this process, the <strong>Assembly Policy</strong> field on the item card must be <strong>Assemble-to-Stock</strong>.</p>
+<h2 id="combination-scenarios">Combination Scenarios</h2>
+<p>A general principle in Assembly Management is that when combined on a sales order line, assemble-to-order quantities must be shipped before inventory quantities.</p>
+<p>If an assembly order is linked to a sales order line, then the value in the <strong>Qty. to Assemble to Order</strong> field on the sales order line is copied to the <strong>Quantity to Assemble</strong> field, via the <strong>Quantity</strong> field on the assembly order header. For more information, see <a href="assembly-how-to-sell-items-assembled-to-order.html">Sell Items Assembled to Order</a>.</p>
+<p>In addition, the value in the <strong>Quantity to Assemble</strong> field is related to the <strong>Qty. to Ship</strong> field on the sales order line, and this relation manages the shipping of assemble-to-order quantities, both partially and completely. This is true both when the full sales line quantity is assembled to order and in combination scenarios where one part of the sales line quantity is assembled to order and another part is shipped from inventory. However, in the combination scenario, you have additional flexibility when shipping partially in that you can modify the <strong>Quantity to Assemble</strong> field, within predefined rules, to specify how many units to ship partially from inventory and how many to ship partially by assembling to order.</p>
+<p>If the full sales line quantity must be assembled to order and shipped, then the value in the <strong>Qty. to Ship</strong> field is copied to <strong>Quantity to Assemble</strong> field on the linked assembly order when you change the quantity to ship. This ensures that the quantity being shipped is fully supplied by the assemble-to-order quantity.</p>
+<p>However, in combination scenarios, the full value in the <strong>Qty. to Ship</strong> is not copied to the <strong>Quantity to Assemble</strong> field on the assembly order header. Instead, a default value is inserted in the <strong>Quantity to Assemble</strong> field that is calculated from the <strong>Qty. to Ship</strong> field according to a predefined rule that ensures shipment of assemble-to-order quantities first.</p>
+<p>If you want to deviate from this default, for example because you only want to assemble more or less of the quantity in the <strong>Qty. to Ship</strong> field, then you can modify the <strong>Quantity to Assemble</strong> field, but only within predefined rules, as illustrated below</p>
+<p>An example why you would want to modify the quantity to assemble is that you want to partially post shipment of inventory quantities before the assembly output can be shipped.</p>
+<p>The following explains the rules that define the minimum and maximum values that you can enter manually in the <strong>Quantity to Assemble</strong> to deviate from the default value in a combination scenario. The table shows a combination scenario where the <strong>Qty. to Ship</strong> field on the linked sales order line is changed from 7 to 4, and the <strong>Quantity to Assemble</strong> is therefore defaulted to 4.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Sales Order Line</th>
+<th>Assembly Order Hheader</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Quantity</strong></td>
+<td><strong>Qty. to Ship</strong></td>
+<td><strong>Qty. to Assemble to Order</strong></td>
+<td><strong>Quantity Shipped</strong></td>
+<td><strong>Quantity</strong></td>
+<td><strong>Quantity to Assemble</strong></td>
+<td><strong>Assembled Quantity</strong></td>
+<td><strong>Remaining Quantity</strong></td>
+</tr>
+<tr>
+<td>Initial</td>
+<td>10</td>
+<td>7</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+<td>7</td>
+<td>0</td>
+<td>7</td>
+</tr>
+<tr>
+<td>Change</td>
+<td></td>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td>4 (inserted by default)</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Based on the above situation, you can only modify the <strong>Quantity to Assemble</strong> field as follows:</p>
+<ul>
+<li>The minimum quantity that you can enter is 1. This is because you must at least assemble one unit to be able to sell the four units, assuming that the remaining three are available in the inventory.</li>
+<li>The maximum quantity that you can enter is 4. This is to ensure that you do not assemble more of this assemble-to-order item than what is needed on the sale.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="inventory-how-work-BOMs.html">Work with Bills of Material</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/assembly-assemble-to-order-or-assemble-to-stock.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

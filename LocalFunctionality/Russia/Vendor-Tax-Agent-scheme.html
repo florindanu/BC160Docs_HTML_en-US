@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Vendor tax agent scheme in Russia </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Vendor tax agent scheme in Russia ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Russian enhancements include vendor tax agent schemes.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="vendor-tax-agent-scheme">Vendor Tax Agent Scheme</h1>
+
+<h2 id="vat-from-internal-funds">VAT from Internal Funds</h2>
+<p>Fill in the fields on the vendor card.</p>
+<ol>
+<li><p><strong>Agreement</strong> FastTab:</p>
+<ul>
+<li><p>Agreement posting - mandatory.</p>
+</li>
+<li><p>Agreement numbers required.</p>
+</li>
+</ul>
+</li>
+<li><p>On the agreement card:</p>
+<ul>
+<li>VAT Bus. Posting Group</li>
+<li>VAT Agent Prod. Posting Group</li>
+<li>VAT Payment Source Type - Internal Funds</li>
+</ul>
+</li>
+</ol>
+<h2 id="prepayment-and-payment-vat">Prepayment and Payment VAT</h2>
+<ol>
+<li>Create and release an invoice</li>
+</ol>
+<p>Agreement No. (with settings for Vendor with VAT Payment from internal funds) should be specified.</p>
+<ol start="2">
+<li><p>Create a line in Payment Journal:</p>
+<ul>
+<li>Document Type - Payment</li>
+<li>Prepayment - yes</li>
+<li>Prepayment Document No is required.</li>
+</ul>
+</li>
+<li><p>Post lines of Journal</p>
+<p>Operations with VAT are automatically generated in rubles.</p>
+</li>
+<li><p>Create and post line in Payment Journal for Tax Authority with VAT Amount of prepayment.</p>
+</li>
+<li><p>Ship and post invoice.</p>
+</li>
+<li><p>Create a line in Payment Journal</p>
+<ul>
+<li>Document Type - Payment</li>
+<li>Initial Document No. - No. of posted invoice</li>
+<li>Applies-to Doc. No. - No. of posted invoice</li>
+</ul>
+</li>
+<li><p>Create and post payment to the Tax Authority.</p>
+</li>
+<li><p>Go to VAT Settlement Worksheet. Post VAT (see <a href="Settlement-VAT.html">Settlement VAT</a>).</p>
+</li>
+</ol>
+<h2 id="vat-from-vendor-funds">VAT from Vendor Funds</h2>
+<p>Fill the fields in Vendor Card.</p>
+<ol>
+<li><p>On Agreement tab:</p>
+<ul>
+<li>Agreement posting - mandatory.</li>
+<li>Agreement Nos is required.</li>
+</ul>
+</li>
+<li><p>In Agreement card:</p>
+<ul>
+<li>VAT Bus. Posting Group</li>
+<li>VAT Agent Prod. Posting Group</li>
+<li>VAT Payment Source Type - Vendor Funds</li>
+</ul>
+</li>
+</ol>
+<h2 id="prepayment-and-payment-vat-1">Prepayment and Payment VAT</h2>
+<ol>
+<li><p>Create and release an invoice.</p>
+</li>
+<li><p>For the payment in the currency for the bank and in rubles for the vendor it is necessary to create two lines in the <strong>payment journal</strong>.</p>
+<p><strong>For vendor:</strong></p>
+<pre><code> - Posting Date,
+ - Document Type - Payment
+ - Prepayment - yes
+ - Account Type - Vendor
+ - Account No.
+ - Agreement No.
+ - Bal. Account Type - G/L Account
+ - Bal. Account - “ ”
+ - Currency Code - “ “
+ - Prepayment Document No. is required
+ - Amount - in rubles
+</code></pre>
+<p><strong>For Bank:</strong></p>
+<pre><code> - Posting Date,
+ - Document Type - Payment
+ - Prepayment - yes
+ - Account Type - Bank Account
+ - Account No.
+ - Agreement No.
+ - Bal. Account Type -  G/L Account
+ - Bal. Account - “ ”
+ - Currency Code
+ - Amount - in USD/EUR
+</code></pre>
+</li>
+<li><p>Post the lines of Journal.</p>
+</li>
+<li><p>Ship.</p>
+<p>You can change the Currency Code and Amount in the Invoice.</p>
+</li>
+<li><p>Post the invoice.</p>
+</li>
+<li><p>Apply Entry.</p>
+</li>
+<li><p>Go to VAT Settlement Worksheet. Post VAT (see <a href="Settlement-VAT.html">Settlement VAT</a>).</p>
+<p>At the end of the period will be formed entries as a result of revaluation of debt.</p>
+</li>
+<li><p>Create and post lines in Payment Journal.</p>
+<p>For the payment in the currency for the bank and in rubles for the vendor it is necessary to create two lines in the payment journal.</p>
+<p><strong>For vendor:</strong></p>
+<pre><code> - Posting Date
+ - Document Type - Payment
+ - Account Type - Vendor
+ - Account No.
+ - External Document No.
+ - Internal Document No.
+ - Agreement No.
+ - Bal. Account Type - G/L Account
+ - Bal. Account - “ ”
+ - Currency Code - “ “
+ - Prepayment Document No. is required
+ - Amount - in rubles
+</code></pre>
+<p><strong>For Bank:</strong></p>
+<pre><code> - Posting Date,
+ - Document Type - Payment
+ - Account Type - Bank Account
+ - Account No.
+ - Agreement No.
+ - Bal. Account Type -  G/L Account
+ - Bal. Account - “ ”
+ - Currency Code
+ - Amount - in USD/EUR
+</code></pre>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="russia-local-functionality.html">Russia Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Russia/Vendor-Tax-Agent-scheme.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

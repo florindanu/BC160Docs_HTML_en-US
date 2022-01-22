@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Service Order Status and Repair Status | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Service Order Status and Repair Status | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The Status field in the Service Order page and the service item repair status, which is represented by the Repair Status Code field in the Service Order page have a certain relationship in Service Management. The service order status reflects the repair status of all the service items in the service order.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="service-order-status-and-repair-status">Service Order Status and Repair Status</h1>
+
+<p>The <strong>Status</strong> field on the <strong>Service Order</strong> page and the service item repair status, which is represented by the <strong>Repair Status Code</strong> field on the <strong>Service Order</strong> page have a certain relationship in Service Management. The service order status reflects the repair status of all the service items in the service order.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These two status field are not related to the <strong>Release Status</strong> field on the service order header, which determines how the warehouse handles service items.</p>
+</div>
+<p>Each time the repair status of a service item is changed in a service order, the status of the order is updated. To display the status that reflects the overall repair status of the individual service items, you must specify the following:</p>
+<ul>
+<li>The service order status that each repair status is linked to. For more information, see Service Order Status.</li>
+<li>The level of priority of each service order status option. For more information, see Priority.</li>
+</ul>
+<p>When you convert a service quote to a service order, the repair status of each service item is changed in the order to <strong>Initial</strong> and the service order status is changed to <strong>Pending</strong>.</p>
+<h2 id="specifying-service-order-status-for-repair-status">Specifying Service Order Status for Repair Status</h2>
+<p>Each repair status is linked to a particular service order status. The options for the service order status are as follows: <strong>Pending</strong>, <strong>In Process</strong>, <strong>On Hold</strong>, and <strong>Finished</strong>. The repair status options are as follows: <strong>Initial</strong>, <strong>In Process</strong>, <strong>Referred</strong>, <strong>Partly Serviced</strong>, <strong>Quote Finished</strong>, <strong>Waiting for Customer</strong>, <strong>Spare Part Ordered</strong>, <strong>Spare Part Received</strong>, and <strong>Finished</strong>.</p>
+<h3 id="pending">Pending</h3>
+<p>The service order status <strong>Pending</strong> indicates that the service can start or continue at any time. Therefore, the repair status options of <strong>Initial</strong>, <strong>Referred</strong>, <strong>Partly Serviced</strong>, and <strong>Spare Part Received</strong> can be linked to this service order status.</p>
+<h3 id="in-process">In Process</h3>
+<p>The service order status <strong>In Process</strong> indicates that the service is in process. Therefore, the repair status options <strong>In Process</strong> and <strong>Spare Part Ordered</strong> can both be linked to this service order status. If you link the <strong>Spare Part Ordered</strong> status to an <strong>In Process</strong> service order status, you must also link the <strong>Spare Part Received</strong> status to this service order status.</p>
+<h3 id="on-hold">On Hold</h3>
+<p>The service order status <strong>On Hold</strong> indicates that the service is temporarily on hold because you are waiting for a customer response or spare parts before the service can start. Therefore, the repair status options of <strong>Quote Finished</strong>, <strong>Spare Part Ordered</strong>, and <strong>Waiting for Customer</strong> can be linked to this service order status.</p>
+<h3 id="finished">Finished</h3>
+<p>The service order status <strong>Finished</strong> indicates that the service has been completed. Therefore, the <strong>Finished</strong> repair status is linked to this status.</p>
+<h2 id="assigning-priority-to-service-order-status">Assigning Priority to Service Order Status</h2>
+<p>When a repair status of a service item is changed, the service order status options linked to the different repair status options of all the service items in the order are identified. If the service items are linked to two or more service order status options, the service order status option with the highest priority is selected.</p>
+<p>You must decide which service order status contains the most important information about the status of the service order and assign that status the highest priority, and so on.</p>
+<h3 id="example">Example</h3>
+<p>A typical priority level assignment could be as follows:</p>
+<ul>
+<li>In Process - High</li>
+<li>Pending - Medium high</li>
+<li>On Hold - Medium low</li>
+<li>Finished - Low</li>
+</ul>
+<p>For example, if one service item has the repair status <strong>Initial</strong>, linked to the service order status <strong>Pending</strong>, another has the repair status <strong>In Process</strong>, linked to the service order status <strong>In Process</strong>, and a third has the repair status <strong>Spare Part Ordered</strong>, linked to the service order status <strong>On Hold</strong>, the resulting service order status will be <strong>In Process</strong> because this has the highest priority.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-order-repair-status.html">Set Up Statuses for Service Orders and Repairs</a><br>
+<a href="service-setup-service.html">Setting Up Service Management</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-service-order-status-and-repair-status.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

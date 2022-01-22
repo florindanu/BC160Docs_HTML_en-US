@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Bank Data Conversion| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Bank Data Conversion| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can set up bank accounts to keep track of transactions and import or export bank feeds, such as Yodlee.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-the-amc-banking-365-fundamentals-extension">Set Up the AMC Banking 365 Fundamentals extension</h1>
+
+<p>A global provider of services to convert payment information to any data format that your bank requires is connected and ready to be enabled in Business Central. This is referred to in Business Central as the AMC Banking 365 Fundamentals extension.</p>
+<p>You can export payment lines from the <strong>Payment Journal</strong> page to a file or a data stream that you then upload to your bank for automatic processing so that you do not have to make electronic payments individually. For more information, see <a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#exporting-payments-to-a-bank-file">Export Payments to a Bank File</a>.</p>
+<p>You can import bank statement files into the <strong>Payment Reconciliation Journal</strong> page by using the AMC Banking 365 Fundamentals extension to convert a file that you receive from your bank to a data stream that Business Central can import. For more information, see <a href="receivables-apply-payments-auto-reconcile-bank-accounts.html">Applying Payments Automatically and Reconciling Bank Accounts</a>.</p>
+<p>As an alternative to importing bank statements with the AMC Banking 365 Fundamentals extension, you can use the Envestnet Yodlee Bank Feeds service. For more information, see <a href="bank-how-setup-bank-statement-service.html">Set Up the Envestnet Yodlee Bank Feeds Service</a>.</p>
+<p>To import or export bank files, you must set up your own bank account and your vendors' bank accounts. For more information, see <a href="bank-how-setup-bank-accounts.html">Set Up Bank Accounts</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The AMC Banking 365 Fundamentals extension may impose a limit on the number of lines that can be exported in one file. You will receive an error message if the limit is exceeded. It is recommended that bank statement files do not exceed 1000 lines as the processing time in the AMC Banking 365 Fundamentals extension may otherwise increase significantly.</p>
+</div>
+<h2 id="to-sign-your-company-up-for-the-amc-banking-365-fundamentals-extension">To sign your company up for the AMC Banking 365 Fundamentals extension</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Data Conv. Service Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>The <strong>Bank Data Conv. Service Setup</strong> page opens with three fields prefilled with relevant URLs of the provider of AMC Banking 365 Fundamentals extension.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the CRONUS International Ltd. demonstration database, the User Name and Password fields are prefilled with demonstration logon information, which you will replace with your company’s actual information as you sign up for the AMC Banking 365 Fundamentals extension.</p>
+</div>
+</li>
+<li><p>In the <strong>Sign-up URL</strong> field, choose the browser button to open the service provider’s sign-up page.</p>
+</li>
+<li><p>On the sign-up page of the bank data service provider, enter the user name and password for your company’s subscription to the service, and then complete the sign-up process as instructed by the service provider.</p>
+<p>Your company is now signed up for the AMC Banking 365 Fundamentals extension. Proceed to enter the user name and password that you specified for the service in the related setup fields in Business Central.</p>
+</li>
+<li><p>On the <strong>Bank Data Conv. Service Setup</strong> page, in the User <strong>Name</strong> field, enter the same value that you entered as logon name on the service provider’s page in step 4.</p>
+</li>
+<li><p>In the <strong>Password</strong> field, enter the same value that you entered in the <strong>Password</strong> field on the service provider’s page in step 4.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You login data is automatically encrypted.</p>
+</div>
+<h2 id="to-view-or-update-the-list-of-currently-supported-bank-data-formats">To view or update the list of currently supported bank data formats</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Data Conv. Service Setup</strong> , and then choose the related link.</li>
+<li>On the <strong>Bank Data Conv. Service Setup</strong> page, choose the <strong>Bank Name - Data Conversion List</strong> action to open the list of bank names representing bank data formats that are supported by the conversion service.</li>
+<li>On the <strong>Bank Name - Data Conversion List</strong> page, choose the <strong>Update Bank Name List</strong> action.</li>
+</ol>
+<p>The list of bank data formats that are supported by the AMC Banking 365 Fundamentals extension is now updated. This is the list of bank names, filtered by the country/region, that you can select from in the <strong>Bank Name - Data Conversion</strong> field on the <strong>Bank Account Card</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The update of supported bank data formats also occurs when you select or enter a value in the <strong>Bank Name - Data Conversion</strong> field on the bank account.</p>
+</div>
+<p>You have now signed up for the AMC Banking 365 Fundamentals extension. Proceed to reflect the sign-up information on every bank account that will use the service.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="bank-setup-banking.html">Setting Up Banking</a><br>
+<a href="bank-manage-bank-accounts.html">Reconciling Bank Accounts</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/bank-how-setup-bank-data-conversion-service.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

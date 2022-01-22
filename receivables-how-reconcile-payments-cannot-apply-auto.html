@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the Transfer Difference to Account Feature to Reconcile Payments | Microsoft Docs' </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the Transfer Difference to Account Feature to Reconcile Payments | Microsoft Docs' ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to process payments that cannot be applied to a document, for example, when an exchange rate causes amounts to differ.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="reconcile-payments-that-cannot-be-applied-automatically">Reconcile Payments that Cannot be Applied Automatically</h1>
+
+<p>You may sometimes have to handle payments to your bank account that cannot be applied to a related open customer, vendor or bank account ledger entry. Reasons may be that no document exists in Business Central that the payment can be applied to, or the related document in Business Central has a different amount than the transaction amount, for example, because of currency exchange. On the <strong>Payment Reconciliation Journal</strong> page, all transaction amounts for payments that are not yet applied appear in the <strong>Difference</strong> field, including amounts that cannot be applied because of reasons such as the above.</p>
+<p>Payments that cannot be applied can appear on payment reconciliation journal lines in the following different ways:</p>
+<ul>
+<li>The value in the <strong>Difference</strong> field is equal to the value in the <strong>Transaction Amount</strong> field, which indicates that no part of the payment can be applied to a related open customer, vendor, or bank account ledger entry.</li>
+<li>The value in the <strong>Difference</strong> field is lower than the value in the <strong>Transaction Amount</strong> field, which indicates that a part of the payment can be applied to a related open customer, vendor, or bank account ledger entry. The remaining part of the payment cannot be applied and must be reconciled manually or by posting it directly to an account.</li>
+</ul>
+<p>To reconcile such payments, you can choose the <strong>Transfer Difference to Account</strong> button and then specify to which account the amount in the <strong>Difference</strong> field will be posted when you post the payment reconciliation journal.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Similar functionality exists to set up automatic reconciliation of recurring payments that cannot be applied to related open customer, vendor, or bank account ledger entries. For more information, see <a href="receivables-how-map-text-recurring-payments-accounts-auto-reconcilliation.html">Map Text on Recurring Payments to Accounts for Automatic Reconciliation</a>.</p>
+</div>
+<h2 id="to-reconcile-payments-that-cannot-be-applied-automatically">To reconcile payments that cannot be applied automatically</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Reconciliation Journals</strong>, and then choose the related link.</li>
+<li>Open a payment reconciliation journal. For more information, see <a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a>.</li>
+<li>Choose the <strong>Transfer Difference to Account</strong>. The <strong>Transfer Difference to Account</strong> page opens.</li>
+<li>In the <strong>Account Type</strong> field, specify if the type of account that the payment amount will be posted to.</li>
+<li>In the <strong>Account No.</strong> field, specify the account that the payment amount will be posted to.</li>
+<li>In the <strong>Description</strong> field, specify text that describes this direct payment posting. By default, the text in the <strong>Transaction Text</strong> field on the payment reconciliation journal line is inserted.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<p>If the value in the <strong>Difference</strong> field was equal to the value in the <strong>Transaction Amount</strong> field when you post the payment reconciliation journal, the whole payment on the journal line will be posted directly to the specified balancing account.</p>
+<p>If the value in the <strong>Difference</strong> field was lower than the value in the <strong>Transaction Amount</strong> field, then an additional journal line will be created with the same text and date and with the difference inserted in the <strong>Transaction Amount</strong> field. On the original journal line, the difference will be deducted from the value in the <strong>Transaction Amount</strong> field, and the payment will remain applied to its related customer, vendor, or bank account ledger entry. When you post the payment reconciliation journal, one part of the payment will be posted as an applied payment. The other part of the payment will be posted directly to the specified account.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-how-reconcile-payments-cannot-apply-auto.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

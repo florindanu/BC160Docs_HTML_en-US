@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Learn About General Ledger and COA| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Learn About General Ledger and COA| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes the general ledger, the chart of accounts, and account categories.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="understanding-the-general-ledger-and-the-coa">Understanding the General Ledger and the COA</h1>
+
+<p>The general ledger stores your financial data, and the chart of accounts shows the accounts that all general ledger entries are posted to. Business Central includes a standard chart of accounts that is ready to support your business.</p>
+<h2 id="general-ledger-setup-and-general-posting-setup">General Ledger Setup and General Posting Setup</h2>
+<p>The setup of the general ledger is at the core of financial processes because it defines how you post data.</p>
+<p>On the <strong>General Ledger Setup</strong> page, you specify how to handle certain accounting issues in your company, such as:</p>
+<ul>
+<li>Invoice rounding details</li>
+<li>Address formats</li>
+<li>Financial reporting</li>
+</ul>
+<p>Similarly, on the <strong>General Posting Setup</strong> page, you specify how you want to set up combinations of general business and general product posting groups. Posting groups map entities like customers, vendors, items, resources, and sales and purchase documents to general ledger accounts. You fill in a line for each combination of business posting group and product posting group. For more information, see <a href="finance-posting-groups.html">Posting Group Setups</a></p>
+<h2 id="the-chart-of-accounts">The Chart of Accounts</h2>
+<p>The chart of accounts shows all general ledger accounts. From the chart of accounts, you can do things like:</p>
+<ul>
+<li>View reports that show general ledger entries and balances.</li>
+<li>Close your income statement.</li>
+<li>Open the G/L account card to add or change settings.</li>
+<li>See a list of posting groups that post to that account.</li>
+<li>View separate debit and credit balances for a single account</li>
+</ul>
+<p>You can add, change, or delete general ledger accounts. However, to prevent discrepancies, you can't delete a general ledger account if it's data is used in the chart of accounts.</p>
+<h2 id="account-categories">Account Categories</h2>
+<p>You can personalize the structure of your financial statements by mapping general ledger accounts to account categories.</p>
+<p>The <strong>G/L Account Categories</strong> page shows your categories and subcategories, and the G/L accounts that are assigned to them. You can create new subcategories and assign those categories to existing accounts.</p>
+<p>You create a category group by indenting other subcategories under a line on the <strong>G/L Account Categories</strong> page. This makes it easy for you to get an overview, because each grouping shows a total balance. For example, you can create subcategories for different types of assets, and then create category groups for fixed assets versus current assets.</p>
+<p>You can specify whether the accounts in each subcategory must be included in specific types of reports. The account categories help define the layout of your financial statements.</p>
+<p>For example, the default balance statement has a subcategory for Cash under Current Assets. If you want the balance statement consider petty cash and checking, you can:</p>
+<ol>
+<li>Add two new subcategories. One for petty cash, and one for your checking account.</li>
+<li>Specify the additional report definition <strong>Cash Accounts</strong> for these subcategories.</li>
+<li>Indent them under the <strong>Cash</strong> subcategory.</li>
+</ol>
+<p>The next time you generate account schedules your balance statement will show a total balance for cash and two lines with balances for petty cash and the checking account.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance.html">Finance</a><br>
+<a href="finance-setup-chart-accounts.html">Setting Up or Changing the Chart of Accounts</a><br>
+<a href="bi.html">Business Intelligence</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-general-ledger.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Electronic Invoicing </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Electronic Invoicing ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Mexican companies must be able to send invoices electronically as Comprobante Fiscal Digital por Internet (CFDI) files. Business Central supports CFDI so that you can export sales and service invoices and credit memos as electronic documents that have the required digital signature.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="electronic-invoicing">Electronic Invoicing</h1>
+
+<p>Mexican companies must be able to send invoices electronically as Comprobante Fiscal Digital por Internet (CFDI) files. Business Central supports CFDI so that you can export sales and service invoices and credit memos as electronic documents that have the required digital signature.</p>
+<p>The CFDI file is an XML file that contains:</p>
+<ul>
+<li>Name of issuing company.</li>
+<li>Fiscal address of issuing company.</li>
+<li>Tax scheme of the issuing company.</li>
+<li>Federal tax registration number (RFC) of issuing company.</li>
+<li>RFC of the receiving company.</li>
+<li>Quantity and description of the goods or services.</li>
+<li>Unit price.</li>
+<li>Tax amounts listed by tax type.</li>
+<li>Currency code.</li>
+<li>Customs location, which includes the date and number of the customs document, if the transaction is an import.</li>
+<li>Digital stamp of the issuing company, which is assigned by the tax authorities (SAT).</li>
+<li>Digital stamp of an authorized service provider, PAC, that you choose.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You will be submitting the electronic invoices to a PAC, which is an authorized service provider appointed by the Mexican tax authorities (SAT).</p>
+</div>
+<h2 id="getting-started">Getting Started</h2>
+<p>Before you can use Business Central for electronic invoicing, you must obtain the appropriate certification, digital stamp, and control numbers from the tax authorities. You must install the certificate on the computer where the CFDI files will be generated. For more information, see <a href="how-to-set-up-electronic-invoicing.html">Set Up Electronic Invoicing</a>. For information about SAT certificates and keys, see the <a href="https://go.microsoft.com/fwlink/?LinkId=242772">Servicio de Administracíon Tributaria</a> website.</p>
+<p>You also must specify the web services that you will use to communicate with the PAC in order to obtain digital stamps. For more information, see <a href="how-to-set-up-pac-web-services.html">Set Up PAC Web Services</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>SAT has certified more than one PAC in Mexico, and you must obtain the appropriate information to communicate with the PAC of your choice.</p>
+</div>
+<h2 id="sending-electronic-invoices">Sending Electronic Invoices</h2>
+<p>When you have posted an invoice or credit memo, you can send it to your customer. But first you must obtain a digital stamp from a PAC. Business Central communicates with the PAC through web services to request a stamp, and the document is automatically digitally signed by your company and the PAC.</p>
+<p>When you send an electronic invoice or credit memo to your customer, Business Central uses the email address that you have specified on the <strong>Company Information</strong> page. The document is sent to the email address that you have specified on the <strong>Customer Card</strong> page for the bill-to customer on the invoice or credit memo. On the <strong>General Ledger Setup</strong> page, you also can choose to include the documents as PDF files in the email that is sent.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The users who will send electronic invoices must be able to send mail using the Simple Mail Transfer Protocol (SMTP). Depending on the configuration in your company, you may have to grant explicit permissions to each relevant user and computer.</p>
+</div>
+<p>If you also want to print the documents, the documents will include a Quick Response (QR) bar code and other information that identifies the related electronic invoice. This information makes the printed document computer-readable and provides a link between the electronic document and the printed document.</p>
+<p>For more information, see <a href="how-to-generate-electronic-invoices.html">Generate Electronic Invoices</a>.</p>
+<h2 id="communication-component">Communication Component</h2>
+<p>The Business Central component for electronic invoicing deploys in a library assembly, Microsoft.Dynamics.NAV.MX.dll, which is installed automatically when you install the Business Central pages client. The component handles the communication with the PAC web services and also generates the QR codes that are included in the printed documents. For examples of how to use the Microsoft.Dynamics.NAV.MX.dll assembly, see codeunit 10145 <strong>E-Invoice Mgt.</strong> and codeunit 10147 <strong>E-Invoice Object Factory</strong>.</p>
+<p>When you generate an electronic document to request a stamp, Business Central creates an XML document and sends it to the PAC for processing. The original XML document contains the same information as the original string field that is shown on the printed document. The original string includes the following information:</p>
+<ul>
+<li>Document date</li>
+<li>Document type</li>
+<li>Payment terms</li>
+<li>Name, address, and federal registration number of your company</li>
+<li>Name, address, and federal registration number of the customer</li>
+<li>Line amounts and quantities</li>
+</ul>
+<p>The PAC returns an XML document that has the original string, but this file also includes a section for the digital stamp. In Business Central, you can export the XML files for documents that have a digital stamp and learn more about the data that goes into each XML element.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="how-to-set-up-electronic-invoicing.html">Set Up Electronic Invoicing</a><br>
+<a href="how-to-set-up-pac-web-services.html">Set Up PAC Web Services</a><br>
+<a href="how-to-generate-electronic-invoices.html">Generate Electronic Invoices</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Mexico/electronic-invoicing.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

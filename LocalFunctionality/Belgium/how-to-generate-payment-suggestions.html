@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Generate Payment Suggestions </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Generate Payment Suggestions ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="After you have set up electronic banking, you can start generating payment suggestions. You can do this in the payment journal.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="generate-payment-suggestions">Generate Payment Suggestions</h1>
+
+<p>After you have set up electronic banking, you can start generating payment suggestions. You can do this in the payment journal.</p>
+<h2 id="to-generate-payment-suggestions">To generate payment suggestions</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the appropriate journal batch, and then choose the <strong>Suggest Vendor Payments</strong> action.</p>
+</li>
+<li><p>On the <strong>Suggest Vendor Payments EB</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Last Due Date</strong></td>
+<td>Enter the last due date that can appear on the vendor ledger entries to be included in the batch job.</td>
+</tr>
+<tr>
+<td><strong>Take Credit Memos</strong></td>
+<td>Select to include outstanding credit memos for vendors. The credit memos will be subtracted from the amount due. When selecting credit memos, the due date is not used.</td>
+</tr>
+<tr>
+<td><strong>Take Payment Discounts</strong></td>
+<td>Select to include vendor ledger entries for which you can receive a payment discount.</td>
+</tr>
+<tr>
+<td><strong>Payment Discount Date</strong></td>
+<td>Enter the date that will be used to calculate a payment discount.</td>
+</tr>
+<tr>
+<td><strong>Available Amount</strong></td>
+<td>If there is a maximum amount available for payments, you can enter it here. The batch job will then create a payment suggestion based on this amount and the priority of vendors.</td>
+</tr>
+<tr>
+<td><strong>Posting Date</strong></td>
+<td>Enter the date that will appear as the posting date on the lines that the batch job inserts in the payment journal.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Enter the filter criteria.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to start the batch job.</p>
+</li>
+</ol>
+<p>When the batch job is finished, the payment journal contains all vendor ledger entries that match the filters.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="belgian-electronic-payments.html">Belgian Electronic Payments</a><br>
+<a href="how-to-set-up-vendors-for-automatic-payment-suggestions.html">Set Up Vendors for Automatic Payment Suggestions</a><br>
+<a href="how-to-create-payment-journal-templates-and-batches.html">Create Payment Journal Templates and Batches</a><br>
+<a href="how-to-test-electronic-payments.html">Test Electronic Payments</a><br>
+<a href="how-to-manage-electronic-payment-lines.html">Manage Electronic Payment Lines</a><br>
+<a href="how-to-print-payment-files.html">Print Payment Files</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Belgium/how-to-generate-payment-suggestions.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Exchange Data | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Exchange Data | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can exchange data between Business Central and external files or streams in connection with common business tasks, such as sending and receiving electronic documents and importing and exporting bank files.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="exchanging-data">Exchanging Data</h1>
+
+<p>You can exchange data between Business Central and external files or streams in connection with common business tasks, such as sending and receiving electronic documents and importing and exporting bank files.</p>
+<p>Before you can send and receive electronic documents or import and export bank files, you must set up the data exchange framework to process the data files or streams. In addition, you must set up related areas, such as the customers that you send electronic invoices to, and the AMC Banking 365 Fundamentals extension if you distribute bank file conversions to an external service provider. For more information, see <a href="across-set-up-data-exchange.html">Setting Up Data Exchange</a>.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Convert sales document records in Business Central to a standardized format and send them as electronic documents that your customers can receive into their system.</td>
+<td><a href="sales-how-to-send-electronic-documents.html">Send Electronic Documents</a></td>
+</tr>
+<tr>
+<td>Send PDF or image files to a provider of OCR services, and receive them back as electronic documents that can be converted to document records in Business Central.</td>
+<td><a href="across-how-use-ocr-pdf-images-files.html">Use OCR to Turn PDF and Image Files into Electronic Documents</a></td>
+</tr>
+<tr>
+<td>Receive electronic documents, either from the OCR service or the document exchange service, in a standardized format that you convert to the relevant document records in Business Central.</td>
+<td><a href="purchasing-how-to-receive-and-convert-electronic-documents.html">Receive and Convert Electronic Documents</a></td>
+</tr>
+<tr>
+<td>Prepare to import a bank statement file into the <strong>Payment Reconciliation Journal</strong> page as the first step in reconciling payments or into the <strong>Bank Acc. Reconciliation</strong> page as the first step in reconciling bank accounts.</td>
+<td><a href="bank-how-setup-bank-statement-service.html">Set Up the Envestnet Yodlee Bank Feeds Service</a></td>
+</tr>
+<tr>
+<td>Export payments from the <strong>Payment Journal</strong> page to a bank file that you upload to your electronic bank account for processing.</td>
+<td><a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#exporting-payments-to-a-bank-file">Export Payments to a Bank File</a></td>
+</tr>
+<tr>
+<td>Make electronic payments according to the EU SEPA Credit Transfer standard.</td>
+<td><a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html">Making Payments with AMC Banking 365 Fundamentals extension or SEPA Credit Transfer</a></td>
+</tr>
+<tr>
+<td>Instruct your bank to transfer payment amounts from your customers’ bank accounts to your company’s account according to your setup of SEPA direct debit.</td>
+<td><a href="finance-collect-payments-with-sepa-direct-debit.html#creating-sepa-direct-debit-collection-entries-and-export-to-a-bank-file">Create SEPA Direct Debit Collection Entries and Export to a Bank File</a></td>
+</tr>
+<tr>
+<td>Use a service provider of currency exchange rates to update the <strong>Currencies</strong> page.</td>
+<td><a href="finance-how-update-currencies.html">Update Currency Exchange Rates</a></td>
+</tr>
+<tr>
+<td>View which file elements are mapped to fields in Business Central when importing SEPA CAMT statement files.</td>
+<td><a href="across-field-mapping-when-importing-sepa-camt-files.html">Field Mapping When Importing SEPA CAMT Files</a></td>
+</tr>
+<tr>
+<td>View which fields in Business Central are mapped to file elements when exporting payment files by using the AMC Banking 365 Fundamentals extension.</td>
+<td><a href="across-field-mapping-when-exporting-payment-files-using-bank-data-conversion-service.html">Field Mapping When Exporting Payment Files Using the AMC Banking 365 Fundamentals extension</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-set-up-data-exchange.html">Setting Up Data Exchange</a><br>
+<a href="across-data-exchange.html">Exchanging Data Electronically</a><br>
+<a href="sales-how-invoice-sales.html">Invoice Sales</a><br>
+<a href="purchasing-how-record-purchases.html">Record Purchases</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-exchange-data.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

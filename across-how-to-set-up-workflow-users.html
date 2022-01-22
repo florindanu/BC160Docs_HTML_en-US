@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Workflow Users | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Workflow Users | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Before you can create workflows, you must set up the users who take part in workflows. This is necessary, for example, to specify who will receive a notification to act on a workflow step.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-workflow-users">Set Up Workflow Users</h1>
+
+<p>Before you can create workflows, you must set up the users who take part in workflows. This is necessary, for example, to specify who will receive a notification to act on a workflow step.</p>
+<p>On the <strong>Workflow User Group</strong> page, you set up users under workflow user groups, and you specify the users’ number in a process sequence, such as an approver chain.</p>
+<p>Workflow users that function as approval users, both approval requesters and approvers, must also be set up on the <strong>Approval User Setup</strong> page. For more information, see <a href="across-how-to-set-up-approval-users.html">Set Up Approval Users</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To define that an approval request is not approved until multiple approvers in an approval chain have approved it, set up approvers in a hierarchy. For approver type <strong>Approver</strong>, set approvers up on the <strong>Approval User Setup</strong> page. For approver type, <strong>Workflow User Group</strong>, set approvers up on the <strong>Workflow User Groups</strong> page and define the hierarchy by assigning incremental numbers to each approver in the <strong>Sequence No.</strong> field. For more information, see <a href="across-how-to-set-up-approval-users.html">Set Up Approval Users</a> and this topic.</p>
+<p>To define that an approval request is not approved until multiple equal approvers have approved it, regardless of a hierarchy, set up a flat workflow user group. For approver type, <strong>Workflow User Group</strong>, set up approvers on the <strong>Workflow User Groups</strong> page and assign the same number to each approver in the <strong>Sequence No.</strong> field. For more information, see this topic.</p>
+</div>
+<h3 id="to-set-up-a-workflow-user">To set up a workflow user</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Workflow User Groups</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action. The <strong>Workflow User Group</strong> page opens.</p>
+</li>
+<li><p>In the <strong>Code</strong> field, enter a maximum of 20 characters to identify the workflow.</p>
+</li>
+<li><p>In the <strong>Description</strong> field, describe the workflow.</p>
+</li>
+<li><p>On the <strong>Workflow User Group Members</strong> FastTab, fill the fields on the first line as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User Name</strong></td>
+<td>Specify the user who will take part in workflows.<br><br> The user must exist on the <strong>User Setup</strong> page. For more information, see <a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a>.</td>
+</tr>
+<tr>
+<td><strong>Sequence No.</strong></td>
+<td>Specify the order in which the workflow user engages in a workflow relative to other users. This field can be used, for example, to specify when the user approves relative to other approvers when you use the <strong>Workflow User Group</strong> option in the <strong>Approver Type</strong> field on the related workflow response. <strong>TIP:</strong>  To define that an approval request is not approved until multiple equal approvers have approved it, irrespective of a hierarchy, set up a flat workflow user group by assigning the same sequence number to the relevant approvers.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Repeat step 5 to add more workflow users to the user group.</p>
+</li>
+<li><p>Repeat steps 2 through 6 to add more workflow user groups.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-how-to-set-up-approval-users.html">Set Up Approval Users</a><br>
+<a href="across-set-up-workflows.html">Setting Up Workflows</a><br>
+<a href="across-use-workflows.html">Using Workflows</a><br>
+<a href="walkthrough-setting-up-and-using-a-purchase-approval-workflow.html">Walkthrough: Setting Up and Using a Purchase Approval Workflow</a><br>
+<a href="across-workflow.html">Workflow</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-to-set-up-workflow-users.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

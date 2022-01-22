@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Supply Planning | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Supply Planning | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Prepare a detailed executable plan and the final-assembly production schedule for sales and production demand.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="planning">Planning</h1>
+
+<p>The production operations required to transform inputs into finished goods must be planned daily or weekly depending on the volume and nature of the products. Business Central offers features to supply for anticipated and actual demand from sale, assembly, and production as well as features for distribution planning using stockkeeping units and location transfers.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This topic mainly describes planning for companies involved in manufacturing or assembly management where the resulting supply orders can be either production, assembly, transfer, or purchase orders. The main interface for this planning work is the <strong>Planning Worksheet</strong> page.<br><br>
+Business Central also supports supply planning for wholesale companies where the resulting supply orders can only be transfer and purchase orders. The main interface for this planning work is the <strong>Requisition Worksheet</strong> page, which is described indirectly in this topic as most planning functionality applies to both worksheets.</p>
+</div>
+<p>Planning can be seen as the preparation of required supply orders in the purchasing, assembly, or manufacturing departments to fulfill sales or end-item demand. For more information, see <a href="purchasing-manage-purchasing.html">Purchasing</a>, <a href="assembly-assemble-items.html">Assembly Management</a>, and <a href="production-manage-manufacturing.html">Manufacturing</a>.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Get a brief introduction to how the planning system can be used to detect and prioritize demand and suggest a balanced supply plan.</td>
+<td><a href="production-about-planning-functionality.html">About Planning Functionality</a></td>
+</tr>
+<tr>
+<td>Understand how all aspects of the planning system work and how to adjust the algorithms to meet planning requirements in different environments.</td>
+<td><a href="design-details-supply-planning.html">Design Details: Supply Planning</a></td>
+</tr>
+<tr>
+<td>Learn how the planning logic differentiates between demand at locations according to the SKU setup and demand without location codes.</td>
+<td><a href="production-planning-with-without-locations.html">Planning With or Without Locations</a></td>
+</tr>
+<tr>
+<td>Forecast demand presented by expected sales and production components.</td>
+<td><a href="production-how-to-create-a-forecast.html">Create a Demand Forecast</a></td>
+</tr>
+<tr>
+<td>Create one-to-one production orders automatically from a sales order to cover the exact demand of that sales order line.</td>
+<td><a href="production-how-to-create-production-orders-from-sales-orders.html">Create Production Orders from Sales Orders</a></td>
+</tr>
+<tr>
+<td>Create a project production order directly from a multiline sales order representing a production project.</td>
+<td><a href="production-how-to-plan-project-orders.html">Plan Project Orders</a></td>
+</tr>
+<tr>
+<td>Use the <strong>Order Planning</strong> page to manually plan for sales or production demand one production BOM level at a time.</td>
+<td><a href="production-how-to-plan-for-new-demand.html">Plan for New Demand Order by Order</a></td>
+</tr>
+<tr>
+<td>Use the <strong>Planning Worksheet</strong> page to run both the MPS and MRP options to automatically create either a high-level or detailed supply plan at all item levels.</td>
+<td><a href="production-how-to-run-mps-and-mrp.html">Run Full Planning, MPS or MRP</a></td>
+</tr>
+<tr>
+<td>Run the requisition worksheet to automatically create a detailed supply plan to cover demand for items that are replenished by purchase or transfer only.</td>
+<td><strong>Requisition Worksheet</strong> page</td>
+</tr>
+<tr>
+<td>Initiate or update a production order as rough-scheduled operations in the master production schedule.</td>
+<td><a href="production-how-to-replan-refresh-production-orders.html">Replan or Refresh Production Orders Directly</a></td>
+</tr>
+<tr>
+<td>Recalculate work or machine center calendars due to planning changes.</td>
+<td><a href="production-how-to-create-work-center-calendars.html#to-calculate-a-work-center-calendar">To calculate a work center calendar</a></td>
+</tr>
+<tr>
+<td>Track the order demand (tracked quantity), forecast, blanket sales order, or planning parameter (untracked quantity) that has given rise to the planning line in question.</td>
+<td><a href="production-how-track-demand-supply.html">Track Relations Between Demand and Supply</a></td>
+</tr>
+<tr>
+<td>View an item's projected available inventory by different views and see which gross requirements, planned order receipts, and other events influence it over time.</td>
+<td><a href="inventory-how-availability-overview.html">View the Availability of Items</a></td>
+</tr>
+<tr>
+<td>Perform selected planning activities, such as changing or adding planning worksheet lines, in a graphical view of the supply plan.</td>
+<td><a href="production-how-to-modify-planning-suggestions-in-a-graphical-view.html">Modify Planning Suggestions in a Graphical View</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="design-details-supply-planning.html">Design Details: Supply Planning</a><br>
+<a href="setup-best-practices-supply-planning.html">Setup Best Practices: Supply Planning</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-planning.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

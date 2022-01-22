@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use Invoicing and Business Central | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use Invoicing and Business Central | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Workaround for accessing Microsoft Invoicing when you have signed up for Dynamics 365 Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="using-the-same-office-365-account-in--and-microsoft-invoicing">Using the same Office 365 Account in Dynamics 365 Business Central and Microsoft Invoicing</h1>
+
+<p>When you sign up for a trial with Business Central, you can move to a 30-day evaluation phase, you can start a subscription, or you can stop using Business Central. In all cases, if you sign in to the Office Portal, you might see a tile called <strong>Microsoft Invoicing</strong> and click it. This is part of the Office 365 Business Premium subscription, so not everyone will see that tile in the Office Portal.</p>
+<p>If you access Microsoft Invoicing, you will see a message that you cannot access Microsoft Invoicing because your account is used in Business Central.</p>
+<p>You see a similar message if you install the mobile app for Invoicing.</p>
+<h2 id="workaround">Workaround</h2>
+<p>Invoicing and Business Central have a shared platform. That means that you are recognized as an existing user of Business Central when you click Invoicing in the Office Portal. The reason is that Invoicing cannot use the same company as Business Central.</p>
+<p>So you will have to sign in to Business Central and rename your existing company, and then create a new company that you can then use in Invoicing. No data is moved or overwritten during this workaround.</p>
+<h3 id="to-rename-your-company">To rename your company</h3>
+<ol>
+<li><p>Sign in to Business Central.</p>
+</li>
+<li><p>In the top right corner, choose the <strong>Settings</strong> icon <img src="media/ui-experience/settings_icon_small.png" alt="Settings" title="Settings icon for role center">, and then choose <strong>My Settings</strong>.</p>
+</li>
+<li><p>In the <strong>Company</strong> field, choose a different company.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Companies</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Companies</strong> page, choose <strong>Edit List</strong>.</p>
+</li>
+<li><p>Change the name of the <em>My Company</em> entry to something else.</p>
+<p>Wait a number of minutes. We’ll be making a number of changes in the underlying database, and that takes a while.</p>
+</li>
+<li><p>When the system is ready again, choose the <strong>Create New Company</strong> button.</p>
+</li>
+<li><p>In the dialog that appears, specify the name as <em>My Company</em>, and choose the <strong>Production – Setup Data Only</strong> option.</p>
+</li>
+</ol>
+<p>This again takes a number of minutes. When the process completes, you will be able to access Invoicing as part of your Office 365 Business Premium experience.</p>
+<h3 id="what-about-my-data">What about my data?</h3>
+<p>When you rename the original My Company, the database tables that store your existing Business Central data are renamed, but the data itself is not touched.</p>
+<p>If you use both Invoicing and Business Central, the data is stored in two different containers (the two companies). Nothing is shared, so you'll have to manage customers and items in both companies.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-faq.html">Frequently Asked Questions</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/about-reuse-company-invoicing.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

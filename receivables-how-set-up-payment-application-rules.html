@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use Automatic Application to Reconcile Payments | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use Automatic Application to Reconcile Payments | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="On the Payment Application Rules page, you set up rules to govern how payments/bank transactions should be automatically applied to their related open ledger entries when you use the Apply Automatically function on the Payment Reconciliation Journal page.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-rules-for-automatic-application-of-payments">Set Up Rules for Automatic Application of Payments</h1>
+
+<p>On the <strong>Payment Application Rules</strong> page, you set up rules to govern how payment text (on a bank transaction) is automatically matched with text on open entries in the following two processes:</p>
+<ul>
+<li><p>Automatically apply payments to their related open (unpaid) invoices, credit memos, or other entries when you use the <strong>Apply Automatically</strong> function on the <strong>Payment Reconciliation Journal</strong> page. For more information, see <a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a>.</p>
+</li>
+<li><p>Automatically match bank transactions with their related, internal bank account ledger entries when you choose the <strong>Match Automatically</strong> action on the <strong>Bank Acc. Reconciliation</strong> page. For more information, see <a href="bank-how-reconcile-bank-accounts-separately.html">Reconcile Bank Accounts</a>.</p>
+</li>
+</ul>
+<p>You set up new payment application rules by choosing which types of data on a payment reconciliation journal line must match with data on one or more open entries before the related payment is automatically applied to the open entries. The quality of each automatic application is shown as a value of <strong>Low</strong> to <strong>High</strong> in the <strong>Match Confidence</strong> field on the <strong>Payment Reconciliation Journal</strong> page according to the payment application rule that was used.</p>
+<p>Each row on the <strong>Payment Application Rules</strong> page represents a payment application rule. Rules are applied in the order specified by the <strong>Sorting Order</strong> field. If multiple rules are used simultaneously, then the match confidence of the highest sorted rule is used.</p>
+<p>The automatic application function is based on prioritized matching criteria. First the function tries, in prioritized order, to match text in the five <strong>Related-Party</strong> fields on a journal line with text in the bank account, name, or address of customers or vendors with unpaid documents representing open entries. Then, the function tries to match text in the <strong>Transaction Text</strong> and <strong>Additional Transaction Info</strong> fields on a journal line with text in the <strong>External Document No.</strong> and <strong>Document No.</strong> fields on open entries. Last, the function tries to match the amount in the <strong>Statement Amount</strong> field on a journal line with the amount on open entries.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Text matching is only possible for text longer than four characters.</p>
+</div>
+<p>In addition to the matching criteria, the following applies concerning the sign of the payment amount:</p>
+<ul>
+<li>For negative amounts, a match is made first against open entries representing customer invoices and then against vendor credit memos.</li>
+<li>For positive amounts, a match is made first against open entries representing vendor invoices and then against customer credit memos.</li>
+</ul>
+<h2 id="to-set-up-a-payment-application-rule">To set up a payment application rule</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Application Rules</strong>, and then choose the related link.</li>
+<li>Define a new or edited payment application rule by filling the fields on a line as described in the following table.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Match Confidence</strong></td>
+<td>Specifies your confidence in the application rule that you define on the line. <br>A value that you specify in this field is shown in the <strong>Match Confidence</strong> field on the <strong>Payment Reconciliation Journal</strong> page according to the quality of the automatic payment application on the journal line.</td>
+</tr>
+<tr>
+<td><strong>Priority</strong></td>
+<td>Specifies the priority of the application rule relative to other application rules that are defined as lines on the <strong>Payment Application Rules</strong> page. 1 represents the highest priority.</td>
+</tr>
+<tr>
+<td><strong>Related Party Matched</strong></td>
+<td>Specifies how much information about the customer or vendor, such as address, city name, and bank account number, on the payment reconciliation journal line must match with information about the open entry before the application rule will be used to automatically apply the payment to the open entry.</td>
+</tr>
+<tr>
+<td><strong>Doc. No./Ext. Doc. No. Matched</strong></td>
+<td>Specifies if text on the payment reconciliation journal line must match with the value in the <strong>Document No.</strong> field or the <strong>External Document No.</strong> field on the open entry before the application rule will be used to automatically apply the payment to the open entry.</td>
+</tr>
+<tr>
+<td><strong>Amount Incl. Tolerance Matched</strong></td>
+<td>Specifies how many entries for a customer or vendor must match the amount including payment tolerance before the application rule will be used to automatically apply a payment to the open entry.</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows which payment application rules are set up in the generic version of Business Central.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The payment application rules may be different in your implementation of Business Central.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Match Confidence</th>
+<th>Priority</th>
+<th>Related Party Matched</th>
+<th>Doc. No./Ext. Doc. No. Matched</th>
+<th>Amount Incl. Tolerance Matched</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>1</td>
+<td>Fully</td>
+<td>Yes - Multiple</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>High</td>
+<td>2</td>
+<td>Fully</td>
+<td>Yes - Multiple</td>
+<td>Multiple Matches</td>
+</tr>
+<tr>
+<td>High</td>
+<td>3</td>
+<td>Fully</td>
+<td>Yes</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>High</td>
+<td>4</td>
+<td>Fully</td>
+<td>Yes</td>
+<td>Multiple Matches</td>
+</tr>
+<tr>
+<td>High</td>
+<td>5</td>
+<td>Partially</td>
+<td>Yes - Multiple</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>High</td>
+<td>6</td>
+<td>Partially</td>
+<td>Yes - Multiple</td>
+<td>Multiple Matches</td>
+</tr>
+<tr>
+<td>High</td>
+<td>7</td>
+<td>Partially</td>
+<td>Yes</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>High</td>
+<td>8</td>
+<td>Fully</td>
+<td>No</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>High</td>
+<td>9</td>
+<td>No</td>
+<td>Yes - Multiple</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>High</td>
+<td>10</td>
+<td>No</td>
+<td>Yes - Multiple</td>
+<td>Multiple Matches</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>1</td>
+<td>Fully</td>
+<td>Yes - Multiple</td>
+<td>Not Considered</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>2</td>
+<td>Fully</td>
+<td>Yes</td>
+<td>Not Considered</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>3</td>
+<td>Fully</td>
+<td>No</td>
+<td>Multiple Matches</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>4</td>
+<td>Partially</td>
+<td>Yes - Multiple</td>
+<td>Not Considered</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>5</td>
+<td>Partially</td>
+<td>Yes</td>
+<td>Not Considered</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>6</td>
+<td>No</td>
+<td>Yes</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>7</td>
+<td>No</td>
+<td>Yes-Multiple</td>
+<td>Not Considered</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>8</td>
+<td>Partially</td>
+<td>No</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>9</td>
+<td>No</td>
+<td>Yes</td>
+<td>Not Considered</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>1</td>
+<td>Fully</td>
+<td>No</td>
+<td>No Matches</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>2</td>
+<td>Partially</td>
+<td>No</td>
+<td>Multiple Matches</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>3</td>
+<td>Partially</td>
+<td>No</td>
+<td>No Matches</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>4</td>
+<td>No</td>
+<td>No</td>
+<td>One Match</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>5</td>
+<td>No</td>
+<td>No</td>
+<td>Multiple Matches</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/reconciliation-journals-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a><br>
+<a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-how-set-up-payment-application-rules.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

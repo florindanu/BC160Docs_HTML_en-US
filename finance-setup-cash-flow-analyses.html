@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setting up Cash Flow Analysis| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setting up Cash Flow Analysis| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Set up the charts on the Accounts Role Center to help analyze the flow of money in your business, including expenses and income, liquidity, and cash receipts minus cash payments.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="setting-up-cash-flow-analysis">Setting Up Cash Flow Analysis</h1>
+
+<p>If you want some help to decide what to do with your cash, have a look at the charts on the Accountant Role Center:</p>
+<ul>
+<li><strong>Cash Cycle</strong></li>
+<li><strong>Income &amp; Expense</strong></li>
+<li><strong>Cash Flow</strong></li>
+<li><strong>Cash Flow Forecasts</strong></li>
+</ul>
+<p>This topic describes where the data in the charts comes from and, if necessary, what to do to start using the charts.<br>
+<br><br></p>
+<div class="embeddedvideo"><iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4mJhc?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="the-cash-cycle-and-income--expense-charts">The Cash Cycle and Income &amp; Expense charts</h2>
+<p>The <strong>Cash Cycle</strong> and <strong>Income &amp; Expense</strong> charts are ready to go, based on the Chart of Accounts and account schedules. The accounts are where the data comes from, and account schedules calculate the relationship between sales and receivables. Some accounts and account schedules are provided. You can use them as-is, change them, and add new ones. If you add G/L accounts to your chart of accounts, for example, by importing them from QuickBooks, you'll need to map to the accounts on the <strong>Account Schedules</strong> page for the following account schedule names:</p>
+<table>
+<thead>
+<tr>
+<th>Account Schedule Name</th>
+<th>Where it's used</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I_CACYCLE</strong></td>
+<td>Cash Cycle</td>
+</tr>
+<tr>
+<td><strong>I_CASHFLOW</strong></td>
+<td>Cash Flow</td>
+</tr>
+<tr>
+<td><strong>I_INCEXP</strong></td>
+<td>Income &amp; Expense</td>
+</tr>
+<tr>
+<td><strong>I_MINTRIAL</strong></td>
+<td>As an income statement if you don't use the chart of accounts</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong> It's a good idea to keep the calculations that are provided for the account schedule.</p>
+<p>Enter accounts in the <strong>Totaling</strong> field for <strong>Total Revenue</strong>, <strong>Total Receivables</strong>, <strong>Total Payables</strong>, and <strong>Total Inventory</strong>. To map to a range of accounts, or more than one specific account, enter the account numbers separated by &quot;..&quot; or by a vertical bar, respectively. For example, <strong>1111..4444</strong> or <strong>2222|3333|5555</strong>.</p>
+<p><strong>Tip</strong> Verify your mapping by choosing the <strong>Overview</strong> action.</p>
+<h2 id="set-up-the-cash-flow-chart">Set up the Cash Flow chart</h2>
+<p>The Cash Flow chart is based on the following:</p>
+<ul>
+<li>A chart of cash flow accounts.</li>
+<li>One or more cash flow setups. These specify the accounts to use for general ledger, purchases, sales, services, and fixed assets.</li>
+</ul>
+<p>To help you get going, some accounts and cash flow setups are provided. You can add, change, or remove them.</p>
+<p>To set these up, search for <strong>cash flow accounts</strong>, choose the link, and then fill in the fields. Hover over a field to read a short description. Repeat these steps for <strong>cash flow setup</strong>.</p>
+<h2 id="set-up-cash-flow-forecasts">Set up cash flow forecasts</h2>
+<p>The <strong>Cash Flow Forecast</strong> chart uses cash flow accounts, cash flow setups, and cash flow forecasts. Some are provided, however, you can set up your own by using an assisted setup guide. The guide helps you specify things like how often to update the forecast, the accounts to base it on, information about when you pay taxes, and whether to turn on <a href="https://azure.microsoft.com/overview/ai-platform/">Azure AI</a>.</p>
+<p>Cash flow forecasts can use Azure AI to predict future documents. The result is a more comprehensive forecast. The connection to Azure AI is already set up for you. You just need to turn it on. When you sign in to Business Central, a notification displays in a blue bar, and provides a link to the default cash flow setup. The notification displays only once. If you close it, but decide to turn on Azure AI, you can use the assisted setup guide, or a manual process.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Alternatively, you can use your own predictive web service. For more information, see <a href="#AnchorText">Create and use your own predictive web service for cash flow forecasts</a>.</p>
+</div>
+<p>To use the assisted setup guide:</p>
+<ol>
+<li>In the Accountant Role Center, under the <strong>Cash Flow Forecast</strong> chart, choose the <strong>Open Assisted Setup</strong> action.</li>
+<li>Fill in the fields in each step of the guide.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cash Flow Forecast</strong>, and then choose the related link.</li>
+<li>On the <strong>Cash Flow Forecast</strong> page, choose the <strong>Recalculate Forecast</strong> action.</li>
+</ol>
+<p>To use a manual process:</p>
+<ol>
+<li>In the Accountant Role Center, search for <strong>Cash Flow Setup</strong>, and then choose the related link.</li>
+<li>Expand the <strong>Azure AI</strong> FastTab, and then choose the <strong>Azure AI Enabled</strong> check box.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cash Flow Forecast</strong>, and then choose the related link.</li>
+<li>On the <strong>Cash Flow Forecast</strong> page, choose the <strong>Recalculate Forecast</strong> action.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Consider the length of the periods that the service will use in its calculations. The more data you provide, the more accurate the predictions will be. Also, watch out for large variances in periods. They will also impact predictions. If Azure AI does not find enough data, or the data varies a lot, the service will not make a prediction.</p>
+</div>
+<h2 id="design-details">Design details</h2>
+<p>Subscriptions for Business Central come with access to several predictive web services in all regions where Business Central is available. For more information, see the Microsoft Dynamics 365 Business Central Licensing Guide. The guide is available for download on the <a href="https://dynamics.microsoft.com/en-us/business-central/overview/">Business Central</a> website.</p>
+<p>These web services are stateless, meaning they use data only to calculate predictions on demand. They do not store data.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can use your own predictive web service instead of ours. For more information, see <a href="#AnchorText">Create and use your own predictive web service for cash flow forecasts</a>.</p>
+</div>
+<h3 id="data-required-for-forecast">Data required for forecast</h3>
+<p>To make predictions about future revenue and expenses, web services require historical data from receivables, payables, and taxes.</p>
+<h4 id="receivables">Receivables:</h4>
+<p><strong>Due Date</strong>, <strong>Amount (LCY)</strong> fields of the <strong>Customer Ledger Entries</strong> page, where:</p>
+<ul>
+<li>The document type is Invoice or Credit Memo.</li>
+<li>The due date is between date that is calculated based on the values in the <strong>Historical Periods</strong> and <strong>Period Type</strong> fields on the <strong>Cash Flow Setup</strong> page and the work date.</li>
+</ul>
+<p>Before using the predictive web-service Business Central compresses transactions by <strong>Due Date</strong> based on the value in the <strong>Period Type</strong> field on the <strong>Cash Flow Setup</strong> page.</p>
+<h4 id="payables">Payables:</h4>
+<p><strong>Due Date</strong>, <strong>Amount (LCY)</strong> fields on the <strong>Vendor Ledger Entries</strong> page, where:</p>
+<ul>
+<li>The document type is &quot;Invoice&quot; or &quot;Credit Memo.&quot;</li>
+<li>The due date is between date that is calculated based on values in the <strong>Historical Periods</strong> and <strong>Period Type</strong> fields on the <strong>Cash Flow Setup</strong> page and the work date.</li>
+</ul>
+<p>Before using the predictive web-service Business Central compresses transactions by <strong>Due Date</strong> based on the value in the <strong>Period Type</strong> field on the <strong>Cash Flow Setup</strong> page.</p>
+<h4 id="tax">Tax:</h4>
+<p><strong>Document Date</strong>, <strong>Amount</strong> fields on the <strong>VAT (Tax) Ledger Entries</strong> page, where:</p>
+<ul>
+<li>The document type is &quot;sales.&quot;</li>
+<li>The document date is between the date that is calculated based on values in the <strong>Historical Periods</strong> and <strong>Period Type</strong> fields on the <strong>Cash Flow Setup</strong> page and the work date.</li>
+</ul>
+<p>Before using the predictive web-service Business Central compresses transactions by <strong>Document Date</strong> based on value in the <strong>Period Type</strong> field in the <strong>Cash Flow Setup</strong> page.</p>
+<h2 id="-create-and-use-your-own-predictive-web-service-for-cash-flow-forecasts"><a name="AnchorText"> </a>Create and use your own predictive web service for cash flow forecasts</h2>
+<p>You can also create your own predictive web service based on a public model named <strong>Forecasting model for Microsoft Business Central</strong>. This predictive model is available online in the Azure AI Gallery. To use the model, follow these steps:</p>
+<ol>
+<li>Open a browser and go to the <a href="https://go.microsoft.com/fwlink/?linkid=828352">Azure AI Gallery</a>.</li>
+<li>Search for <strong>Forecasting Model for Microsoft Business Central</strong>, and then open the model in Azure Machine Learning Studio.</li>
+<li>Use your Microsoft account to sign up for a workspace, and then copy the model.</li>
+<li>Run the model, and publish it as a web service.</li>
+<li>Make a note of the API URL and API key. You will use these credentials for a cash flow setup.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cash Flow Setup</strong>, and then choose the related link.</li>
+<li>Expand the <strong>Azure AI</strong> FastTab, and then fill in the fields.</li>
+</ol>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/forecast-cash-flow-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-analyze-cash-flow.html">Analyzing Cash Flow in Your Company</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-setup-cash-flow-analyses.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

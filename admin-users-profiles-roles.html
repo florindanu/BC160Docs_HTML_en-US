@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Manage users and roles | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Manage users and roles | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to manage users and Role Centers in Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="manage-profiles">Manage Profiles</h1>
+
+<p>All users of Business Central are assigned a profile that reflects their business role, the department they work in, or another categorization. Profiles allow administrators to define and manage centrally what different user types can see and do in the user interface so they can perform their business tasks efficiently.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The typical business use of a profile is a role. A profile is therefore named <em>Profile (Role)</em> in the UI.</p>
+</div>
+<p>As an administrator, you create and manage profiles on the <strong>Profiles (Roles)</strong> page. Each profile has a card where you manage various settings for the related role, such as the role name, the user settings, and which Role Center the profile uses. For more information about user settings and Role Centers, see <a href="ui-change-basic-settings.html">Change Basic Settings</a>.</p>
+<p>Before you can administrate users' profiles, the users must be created and added, through the Microsoft 365 Admin Center. Then you can assign permissions to each user or user group to define which features they are allowed to view and/or edit. For more information, see <a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a>.</p>
+<h2 id="page-customization">Page Customization</h2>
+<p>You can customize page layouts for a profile so that all users assigned the profile will see the customized pages. As an administrator, you customize pages by using the same functionality as users do when they personalize. For more information, see <a href="ui-personalization-manage.html">Customize Pages for Profiles</a>.</p>
+<h2 id="to-create-a-profile">To create a profile</h2>
+<p>If you cannot copy an existing profile, you can create a new one manually.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Profiles (Roles)</strong>, and then choose the related link.</li>
+<li>On the <strong>Profiles (Roles)</strong> page, choose the <strong>New</strong> action.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h2 id="to-copy-a-profile">To copy a profile</h2>
+<p>To save time, you can create a new profile by copying an existing one. Copy one that has similar settings to the one you want to create.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you copy a profile, all the involved page customizations are copied as well, both the user-created and those derived from extensions.</p>
+</div>
+<ol>
+<li>On the <strong>Profiles (Roles)</strong> page, select the line for the profile that you want to copy, and then choose the <strong>Copy Profile</strong> action.</li>
+<li>Fill in the <strong>Profile ID</strong> and <strong>Display Name</strong> fields, and then choose the <strong>OK</strong> button.</li>
+<li>On the <strong>Profiles (Roles)</strong> page, open the newly created profile card, and then edit other fields as necessary.</li>
+</ol>
+<h2 id="to-edit-a-profile">To edit a profile</h2>
+<p>You can edit a profile by changing the fields on the <strong>Profile (Role)</strong> page. However, the changes will not be visible to user assigned the profile until they sign out and back in.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Do not rename a profile while users assigned the profile are signed in as users may experience that the product freezes and must be restarted.</p>
+</div>
+<h2 id="to-assign-a-profile-to-a-user">To assign a profile to a user</h2>
+<p>Users can assign themselves a role (representing a profile) by choosing the <strong>Role</strong> field on the <strong>My Settings</strong> page. As an administrator, you can do the same through the <strong>Profiles (Roles)</strong> page.</p>
+<ol>
+<li>On the <strong>Profiles (Roles)</strong> page, select the profile that you want to assign, and then choose the <strong>User Personalization List</strong> action.</li>
+<li>On the <strong>User Personalizations</strong> page, select the user that you want to assign the profile to, and then choose the <strong>Edit</strong> action.</li>
+<li>In the <strong>Profile ID</strong> field, select the relevant profile.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you assign another profile to a user, any personalizations made by the user with the previous profile are preserved.</p>
+</div>
+<h2 id="to-define-user-settings-for-a-profile">To define user settings for a profile</h2>
+<p>On the <strong>My Settings</strong> page, users can define basic behavior of their account, such as the Role Center, the language, and which notifications they get. For more information, see <a href="ui-change-basic-settings.html">Change Basic Settings</a>.</p>
+<p>As an administrator, you can define these setting for a profile and thereby apply the settings to all users of the related role.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Profiles (Roles)</strong>, and then choose the related link.</li>
+<li>Select the line for the profile that you want to change user settings for, choose the <strong>Navigate</strong> action, and then choose the <strong>User Personalizations</strong> action.</li>
+<li>On the <strong>User Personalizations</strong> page, open the card for the user whose settings you want to change.</li>
+<li>On the <strong>User Personalization Card</strong> page, edit the fields as necessary.</li>
+</ol>
+<h2 id="to-activate-a-profile">To activate a profile</h2>
+<p>When a profile is created, you can select different check boxes that define if, where, and how the profile and its information is made available to users.</p>
+<ul>
+<li>On the <strong>Profile (Role)</strong> page, select the following check boxes:
+<ul>
+<li><strong>Enabled</strong> to specify if the related role is visible in the <strong>Available Roles</strong> page for users to choose from.</li>
+<li><strong>Use as default profile</strong> to specify the profile that applies to users who are not assigned a specific role.</li>
+<li><strong>Disable personalization</strong> to specify if users of the related role can personalize their workspace.</li>
+<li><strong>Show in Role Explorer</strong> to specify if actions to business features included in the profile are shown in the extended view of the role explorer, a feature overview. For more information, see <a href="ui-role-explorer.html">Finding Pages with the Role Explorer</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="to-export-profiles">To export profiles</h2>
+<p>You can export profiles from Business Central, for example to reuse them in another tenant. The profiles are exported to a zip file containing .al files that can be reused to develop extensions. For more information, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-design-profiles-using-client">Using the Client to Create Profiles and Page Customizations</a>.</p>
+<ul>
+<li>On the <strong>Profiles (Roles)</strong> page, choose the <strong>Export Profiles</strong> action.</li>
+</ul>
+<p>A zip file with the .al files for all profiles is exported.</p>
+<h2 id="to-import-profiles">To import profiles</h2>
+<p>You can import profiles that have been exported from Business Central. The steps are more or less the opposite of the steps to export profiles. For more information, see <a href="admin-users-profiles-roles.html#to-export-profiles">To export profiles</a>.</p>
+<ol>
+<li><p>On the <strong>Profiles (Roles)</strong> page, choose the <strong>Import Profiles</strong> action.</p>
+</li>
+<li><p>Follow the steps on the <strong>Import Profiles</strong> wizard.</p>
+<p>If you only want to import selected profiles, use the <strong>Selected</strong> check box to indicate which to import.</p>
+</li>
+<li><p>Choose the <strong>Import selected</strong> button.</p>
+</li>
+</ol>
+<p>A zip file with .al files for the selected profiles is imported.</p>
+<h2 id="to-delete-a-profile">To delete a profile</h2>
+<p>You can delete a profile by choosing the <strong>Delete</strong> action on the <strong>Profiles (Roles)</strong> page. However, the following limitations apply:</p>
+<ul>
+<li>You cannot delete a profile that is assigned to a user or a user group.</li>
+<li>You cannot delete profiles that originate from extensions. The extension must first be uninstalled.</li>
+<li>You can only delete one profile at a time.</li>
+</ul>
+<h2 id="to-delete-all-personalizations-made-by-a-user">To delete all personalizations made by a user</h2>
+<p>You can delete all changes that a user has made to pages that make up their workspace. This may be useful, for example, if an employee has changed role and no longer needs the personalizations. Deleting users' personalizations changes the page layout back to what is defined by the profile.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>User Personalizations</strong>, and then choose the related link.</p>
+<p>The <strong>User Personalizations</strong> page lists all users who have made personalizations.</p>
+</li>
+<li><p>Open the card for a user whose personalizations you want to delete.</p>
+</li>
+<li><p>On the <strong>User Personalization Card</strong> page, choose the <strong>Clear Personalized Pages</strong> action, and then accept the message that appears.</p>
+</li>
+</ol>
+<p>The user will see the changes the next time they sign in.</p>
+<p>You can also delete all page customizations for a profile. For more information, see <a href="ui-personalization-manage.html#to-delete-all-customizations-for-a-profile">To delete all customizations for a profile</a>.</p>
+<h2 id="to-delete-personalizations-for-specific-pages">To delete personalizations for specific pages</h2>
+<p>You can delete personalizations that one or more users have made to specific pages that make up their workspace. This may be useful, for example, if a changed business process means that a personalization must no longer be used by users. Deleting users' personalizations changes the page layout back to what is defined by the profile.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>User Page Personalizations</strong>, and then choose the related link.</p>
+<p>The <strong>User Page Personalizations</strong> page lists all the pages that have been personalized and the user that they belong to.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A check mark in the <strong>Legacy Personalization</strong> field indicates that the personalization was done in an older version of Business Central, which handled personalization differently. Users who try to personalize these pages are locked from doing so unless they choose to unlock the page. For more information, see <a href="ui-personalization-locked.html">Why a Page is Locked from Personalizing</a>.</p>
+</div>
+</li>
+<li><p>Select the line for the page personalization that you want to delete, and then choose the <strong>Delete</strong> action.</p>
+</li>
+</ol>
+<p>The user will see the changes the next time they sign-in.</p>
+<p>You can also delete individual page customizations for a profile. For more information, see <a href="ui-personalization-manage.html#to-delete-customization-for-specific-pages-for-a-profile">To delete customization for specific pages for a profile</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a><br>
+<a href="ui-personalization-manage.html">Customize Pages for Profiles</a><br>
+<a href="ui-personalization-user.html">Personalize Your Workspace</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-users-profiles-roles.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

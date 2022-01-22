@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the Sales and Inventory Forecast Extension to Manage Inventory | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the Sales and Inventory Forecast Extension to Manage Inventory | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This extension helps you predict sales, get a clear overview of expected stock-outs, and even helps you create replenishment requests to vendors.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="the-sales-and-inventory-forecast-extension">The Sales and Inventory Forecast Extension</h1>
+
+<p>Inventory management is a trade-off between customer service and managing your cost. On one hand, a low inventory requires less working capital, but, on the other hand, stock-outs potentially lead to missed sales. The Sales and Inventory Forecast extension predicts potential sales using historical data and gives a clear overview of expected stock-outs. Based on the forecast, the extension helps create replenishment requests to your vendors and saves you time.</p>
+<h2 id="setting-up-forecasting">Setting up Forecasting</h2>
+<p>In Business Central, the connection to <a href="https://azure.microsoft.com/overview/ai-platform/">Azure AI</a> is already set up for you. But you can configure the forecast to use a different type of period to report by, such as changing from forecasting by month to forecasting by quarter. You can also choose the number of periods to calculate the forecast by, depending on how granular you want the forecast to be. We suggest that you forecast by month and with a 12 month horizon for the forecast.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Consider the length of the periods that the service will use in its calculations. The more data you provide, the more accurate the predictions will be. Also, watch out for large variances in periods. They will also impact predictions. If Azure AI does not find enough data, or the data varies a lot, the service will not make a prediction.</p>
+</div>
+<h2 id="using-the-forecasts">Using the Forecasts</h2>
+<p>The extension uses Azure AI to predict future sales based on your sales history to help you avoid inventory shortage. For example, when you choose an item on the <strong>Items</strong> page, the chart in the <strong>Item Forecast</strong> pane shows the estimated sales of this item in the coming period. This way you can see if you are likely to run out of stock of the item soon.</p>
+<p>You can also use the extension to suggest when to stock up on inventory. For example, if you create a purchase order for Fabrikam because you want to buy their new desk chair, the Sales and Inventory Forecast extension will suggest that you also restock on the LONDON swivel chair that you usually buy from this vendor. This is because the extension forecasts that you will run out of stock of the LONDON swivel chair in the coming two months, so you might want to order more chairs already now.</p>
+<h2 id="design-details">Design details</h2>
+<p>Subscriptions for Business Central come with access to several predictive web services in all regions where Business Central is available. For more information, see the Microsoft Dynamics 365 Business Central Licensing Guide. The guide is available for download on the <a href="https://dynamics.microsoft.com/en-us/business-central/overview/">Business Central</a> website.</p>
+<p>These web services are stateless, meaning they use data only to calculate predictions on demand. They do not store data.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also use your own predictive web service instead of ours. For more information, see <a href="#AnchorText">Create and use your own predictive web service for sales and inventory forecasts</a>.</p>
+</div>
+<h3 id="data-required-for-forecast">Data required for forecast</h3>
+<p>To make predictions about future sales, the web service requires quantitative data about past sales. That data comes from the <strong>Posting Date</strong>, <strong>Item No</strong>, and <strong>Quantity</strong> fields on the <strong>Item Ledger Entries</strong> page, where:</p>
+<ul>
+<li>The entry type is &quot;Sale.&quot;</li>
+<li>The posting date is between the date that is calculated based on the values in the <strong>Historical Periods</strong> and <strong>Period Type</strong> fields on the <strong>Sales and Inventory Forecast Setup</strong> page and the work date.</li>
+</ul>
+<p>Before using the web service Business Central compresses transactions by <strong>Item No.</strong> and <strong>Posting Date</strong> based on the value in the <strong>Period Type</strong> field in the <strong>Sales and Inventory Forecast Setup</strong> page.</p>
+<h2 id="-create-and-use-your-own-predictive-web-service-for-sales-and-inventory-forecasts"><a name="AnchorText"> </a>Create and use your own predictive web service for sales and inventory forecasts</h2>
+<p>You can also create your own predictive web service based on a public model named <strong>Forecasting model for Microsoft Business Central</strong>. This predictive model is available online in the Azure AI Gallery. To use the model, follow these steps:</p>
+<ol>
+<li>Open a browser and go to the <a href="https://go.microsoft.com/fwlink/?linkid=828352">Azure AI Gallery</a>.</li>
+<li>Search for <strong>Forecasting Model for Microsoft Business Central</strong>, and then open the model in Azure Machine Learning Studio.</li>
+<li>Use your Microsoft account to sign up for a workspace, and then copy the model.</li>
+<li>Run the model, and publish it as a web service.</li>
+<li>Make a note of the API URL and API key. You will use these credentials for a cash flow setup.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales and Inventory Forecast Setup</strong>, and then choose the related link.</li>
+<li>Expand the <strong>General</strong> FastTab, and then fill in the API URL and API key fields.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-manage-sales.html">Sales</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="ui-extensions.html">Customizing Business Central Using Extensions</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-sales-forecast.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

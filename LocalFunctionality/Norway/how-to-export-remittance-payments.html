@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Export Remittance Payments </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Export Remittance Payments ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use the export remittance payments process to export the payments file to your computer.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="export-remittance-payments">Export Remittance Payments</h1>
+
+<p>You can use the export remittance payments process to export the payments file to your computer. You can then transfer the remittance payments to the bank.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Before you can export a remittance payment, you must select a payment format in the <strong>Payment Export Format</strong> field on the <strong>Bank Account Card</strong> page.</p>
+</div>
+<p>You export payments to a bank file by choosing the <strong>Export Payments</strong> button on the <strong>Payment Journal</strong> page. The process may be different, depending on the export format that you select:</p>
+<ul>
+<li><p>Payments using the SEPA payment standard are directly exported to a file when you choose the <strong>Export Payments</strong> button. For more information, see <a href="../../payables-make-payments.html">Making Payments</a>.</p>
+</li>
+<li><p>Payments using local payment standards, such as <strong>Telepay</strong>, are exported with either the <strong>Remittance - export (bank)</strong> or the <strong>Remittance - export (BBS)</strong> report, which automatically opens when you choose the <strong>Export Payments</strong> button.</p>
+</li>
+</ul>
+<p>The procedure for exporting payments using the <strong>Remittance – Export</strong> batch job is described in this topic.</p>
+<h2 id="to-export-remittance-payments-using-the-remittance---export-batch-jobs">To export remittance payments using the Remittance - Export batch jobs</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Prepare to export the payments from the journal. For more information, see <a href="../../finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#exporting-payments-to-a-bank-file">Export Payments to a Bank File</a>.</p>
+</li>
+<li><p>Choose the <strong>Export Payments</strong> action.</p>
+</li>
+<li><p>In the report page that opens, choose the <strong>Options</strong> FastTab, and fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Remittance agreement code</strong></td>
+<td>Specify the code for the agreement.</td>
+</tr>
+<tr>
+<td><strong>Operator</strong></td>
+<td>Specify the operator number.</td>
+</tr>
+<tr>
+<td><strong>Password</strong></td>
+<td>Specify the password for the payments.</td>
+</tr>
+<tr>
+<td><strong>Division</strong></td>
+<td>Specify the division that is paying remittance.</td>
+</tr>
+<tr>
+<td><strong>Current note</strong></td>
+<td>Specify a note for the payment.</td>
+</tr>
+<tr>
+<td><strong>Filename</strong></td>
+<td>Specify the name and directory of the payment file.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>The payment information is exported to the file that is set up in the remittance agreement.</p>
+<p>The payment journal is deleted and the transactions are transferred to the waiting journal.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="electronic-payments-to-vendors-in-norway.html">Electronic Payments to Vendors in Norway</a><br>
+<a href="how-to-set-up-remittance-agreements.html">Set Up Remittance Agreements</a><br>
+<a href="how-to-create-remittance-accounts.html">Create Remittance Accounts</a><br>
+<a href="how-to-set-up-vendors-for-remittance.html">Set Up Vendors for Remittance</a><br>
+<a href="recipient-reference-codes.html">Recipient Reference Codes</a><br>
+<a href="how-to-create-remittance-suggestions.html">Create Remittance Suggestions</a><br>
+<a href="how-to-create-manual-remittance-payments.html">Create Manual Remittance Payments</a><br>
+<a href="how-to-set-up-payment-line-information.html">Set Up Payment Line Information</a><br>
+<a href="how-to-test-remittance-payments.html">Test Remittance Payments</a><br>
+<a href="types-of-payment-returns-files.html">Types of Payment Returns Files</a><br>
+<a href="how-to-import-payment-return-data.html">Import Payment Return Data</a><br>
+<a href="how-to-delete-remittance-payment-orders.html">Delete Remittance Payment Orders</a><br>
+<a href="remittance-errors.html">Remittance Errors</a><br>
+<a href="how-to-view-remittance-error-codes.html">View Remittance Error Codes</a><br>
+<a href="how-to-cancel-payments.html">Cancel Payments</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Norway/how-to-export-remittance-payments.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Keeping a Report Layout Up-to-date | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Keeping a Report Layout Up-to-date | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You may need to update a custom report layout that is used on a report. This is required when there has been a design change to the report's data set, for example, a field that is used in the layout has been removed from the report data set.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="update-custom-report-layouts">Update Custom Report Layouts</h1>
+
+<p>Occasionally, you may need to update a custom report layout that is used on a report. This is required when there has been a design change to the report's data set, for example, a field that is used in the layout has been removed from the report data set. If a report layout requires updating, you will get an error message when you try to preview, print or save the report.</p>
+<p>You can automatically update a report layout from the error message that appears when you run the report by choosing the <strong>Yes</strong> button on the error message. Or, in advance of running reports, you can update specific report layouts or all custom report layouts that might be affected by dataset changes.</p>
+<p>You also have the option to test updates without applying the required changes to the custom report layouts. This enables you to see what changes will be applied to the report layout and identify possible issues in the process. From the test results, you can open the custom report layouts directly for editing to fix any issues. We recommend that you test the report layout update before you apply the updates.</p>
+<p>Not all report dataset changes can be automatically updated in the report layouts. Some changes will require that you manually edit the report layout. For more information, see <a href="ui-update-report-layouts.html#UpdateLimitations">Limitations of the Custom Report Layout Update</a>.</p>
+<h2 id="to-update-one-or-more-custom-report-layouts">To update one or more custom report layouts</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Report Layouts</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Report Layouts</strong> page, if you want to update a specific report, select the layout from the list, and then choose the <strong>Update Layout</strong> action. Or, if you want to update all custom report layouts for the company, choose the <strong>Update All Layouts</strong> action.</p>
+</li>
+</ol>
+<p>If no errors occur, then the updates is applied to the report layouts. If errors occur, then a message that contains the errors appears. You will then have to manually edit the custom report layout to fix the error. For more information, see <a href="ui-update-report-layouts.html#FixErrors">Fixing Errors</a>.</p>
+<h2 id="to-test-custom-report-layout-updates">To test custom report layout updates</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Report Layout Selection</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Report Layout Selection</strong> page, choose the <strong>Test Layout Updates</strong> action.</p>
+</li>
+</ol>
+<p>Changes to the report layouts are tested but not applied to the actual report layouts. A <strong>Report Layout Update Log</strong> page appears that provides the status a potential updates for each report layout. If there are errors for a report layout, you can access the report layout directly for editing from the message to fix any issues. For more information, see <a href="ui-update-report-layouts.html#FixErrors">Fixing Errors</a>.</p>
+<h2 id="UpdateLimitations"> Limitations of the Custom Report Layout Update</h2>
+<p>There are several types of changes that the automatic update can apply to custom report layouts, for example, a field that is used in the layout has been removed from the report data set. However, the automatic update cannot handle the following changes to a report dataset.</p>
+<ol>
+<li><p>Deleted fields, labels, or data items.</p>
+</li>
+<li><p>Duplicate field names in the report layout after a field has been renamed in the dataset. This should be treated as a design error.</p>
+</li>
+<li><p>Upgrade scenarios where there are multiple iterations of a report layout that causes multiple rename actions on the same fields, labels or data items.</p>
+</li>
+</ol>
+<p>If the update process detects any one of these issues, the update cannot be applied. You will have to fix the issues manually, for example by editing the report layout in Word, or programmatically by using upgrade codeunits.</p>
+<h2 id="FixErrors"> Fixing Errors</h2>
+<p>If you get an error message when you update or test report layout updates, you most likely will have to modify the report layout to fix the problem. Read the error message to help determine the cause of the problem.</p>
+<p>The most typical problem occurs when a field that is used on the layout has been removed from the report dataset. In this case, you will see a line in the error message that states that an item has been removed. To fix this issue, you will have to modify the layout and remove the field in question.</p>
+<p>For more information, see <a href="ui-how-create-custom-report-layout.html#ModifyCustomLayout">Create and Modify a Custom Report Layout</a>.</p>
+<p>After you modify the layout, try to update the layout again.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/change-documents-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-manage-report-layouts.html">Managing Report Layouts</a><br>
+<a href="ui-work-report.html">Working with Reports, Batch Jobs, and XMLports</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-update-report-layouts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Overview of Tasks to Manage Receivables | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Overview of Tasks to Manage Receivables | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Outlines tasks to manage receivables and apply payments to customer or vendor ledger entries.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="managing-receivables">Managing Receivables</h1>
+
+<p>A regular step in any financial rhythm is to reconcile bank accounts, which requires that you apply incoming payments to customer or vendor ledger entries to close sales invoices and purchase credit memos as paid.</p>
+<p>While most customers in B2B environments pay some time after delivery, leaving the posted sales invoices open for the Accounts Receivable department to close (apply) when payment is received, some sales invoices can be paid immediately, for example with PayPal. Such invoices are immediately applied as paid when they are posted and, therefore, do not appear as payments to be processes in AR. For more information, see, for example, <a href="sales-how-invoice-sales.html">Invoice Sales</a>.</p>
+<p>In Business Central, one of the fastest ways to register payments is with the <strong>Payment Reconciliation Journal</strong> page by importing a bank statement file or feed. The payments are applied to open customer or vendor ledger entries based on data matches between payment text and entry information. You can review and change the matches before you post the journal, and close bank account ledger entries for ledger entries when you post the journal. The bank account is reconciled when all payments are applied.</p>
+<p>Other pages exist where you can either apply payments or reconcile bank accounts:</p>
+<ul>
+<li>The <strong>Bank Account Reconciliations</strong> page, where you reconcile bank accounts by matching imported bank statement lines with your system bank account ledger entries. Here, you can also reconcile check payments. For more information, see <a href="bank-how-reconcile-bank-accounts-separately.html">Reconcile Bank Accounts</a>. Here, you cannot apply payments.</li>
+<li>The <strong>Payment Registration</strong> page, where you can manually apply payments received as cash, check, or bank transaction against a generated list of unpaid sales documents. Note that this functionality is available only for sales documents. Here, you cannot apply outgoing payments, and you cannot reconcile bank accounts.</li>
+<li>The <strong>Cash Receipt Journal</strong> page, where you manually post receipts to the relevant general ledger, customer, or other account by entering a payment line. You can either apply the receipt or refund to one or more open entries before you post the cash receipt journal, or from the customer ledger entries. Here, you cannot reconcile bank accounts.</li>
+</ul>
+<p>The <strong>Payment Reconciliation Journal</strong> and <strong>Bank Acc. Reconciliation</strong> pages use automatic matching logic that you can set up on the <strong>Payment Application Rules</strong> page. For more information, see <a href="receivables-how-set-up-payment-application-rules.html">Set Up Rules for Automatic Application of Payments</a>.</p>
+<p>Other aspects of managing receivables include to collect outstanding balances, including finance charges and reminders, and to set bank accounts up to allow customers' payments to be withdrawn from their account automatically.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th>To</th>
+<th>See</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apply payments to open customer or vendor ledger entries based on an imported bank statement file or feed, and reconcile the bank account when all payments are applied.</td>
+<td><a href="receivables-apply-payments-auto-reconcile-bank-accounts.html">Applying Payments Automatically and Reconciling Bank Accounts</a></td>
+</tr>
+<tr>
+<td>Apply payments to open customer ledger entries based on a list of unpaid sales documents on the <strong>Payment Registration</strong> page.</td>
+<td><a href="receivables-how-reconcile-customer-payments-list-unpaid-sales-documents.html">Reconcile Customer Payments from a List of Unpaid Sales Documents</a></td>
+</tr>
+<tr>
+<td>Post cash receipts or refunds for customers in the cash receipt journal and apply to customer ledger entries, either from the journal or from posted ledger entries.</td>
+<td><a href="receivables-how-apply-sales-transactions-manually.html">Reconcile Customer Payments with the Cash Receipt Journal or from Customer Ledger Entries</a></td>
+</tr>
+<tr>
+<td>Remind customers of overdue amounts, calculate interest and finance charges, and manage accounts receivable.</td>
+<td><a href="receivables-collect-outstanding-balances.html">Collect Outstanding Balances</a></td>
+</tr>
+<tr>
+<td>With your customer’s consent, collect payments directly from the customer’s bank account according, in the Euro currency only.</td>
+<td><a href="finance-collect-payments-with-sepa-direct-debit.html">Collect Payments with SEPA Direct Debit</a></td>
+</tr>
+<tr>
+<td>Block a customer from being entered on documents or from posting, for example because of insolvency.</td>
+<td><a href="receivables-how-block-customers.html">Block Customers</a></td>
+</tr>
+<tr>
+<td>Ensure that you know the cost of shipped items by assigning added item costs, such as freight, physical handling, insurance, and transportation that you incur after selling.</td>
+<td><a href="payables-how-assign-item-charges.html">Use Item Charges to Account for Additional Trade Costs</a></td>
+</tr>
+<tr>
+<td>Set up a tolerance by which the system closes an invoice even though the payment, including any discount, does not fully cover the amount on the invoice.</td>
+<td><a href="finance-payment-tolerance-and-payment-discount-tolerance.html">Work with Payment Tolerances and Payment Discount Tolerances</a></td>
+</tr>
+<tr>
+<td>Predict when payments will be made late for sales documents.</td>
+<td><a href="ui-extensions-late-payment-prediction.html">The Late Payment Prediction Extension</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/process-customer-vendor-payments-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-manage-sales.html">Sales</a><br>
+<a href="payables-manage-payables.html">Managing Payables</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-manage-receivables.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

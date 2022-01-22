@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Specify When and How to Receive Notifications | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Specify When and How to Receive Notifications | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When you set up users in approval workflows, you must specify in the Notification Setup and Notification Schedule pages how and when each user receives notifications about approval workflow steps. Individual users can also change their notification setup by choosing the Change Notification Settings button on any notification.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="specify-when-and-how-to-receive-notifications">Specify When and How to Receive Notifications</h1>
+
+<p>When you set up users in approval workflows, you must specify in the <strong>Notification Setup</strong> and <strong>Notification Schedule</strong> pages how and when each user receives notifications about approval workflow steps. Individual users can also change their notification setup by choosing the <strong>Change Notification Settings</strong> button on any notification.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Notifications are delivered according to notification settings for the receiver, not the sender. That's an important distinction because it means that when someone requests an approval as part of a workflow their request is not necessarily sent immediately. Instead, it will be delivered according to the approvers's notification settings.</p>
+</div>
+<p>Before you can set up an approval user’s notification preferences, you must set the user up as an approval user. For more information, <a href="across-how-to-set-up-approval-users.html">Set Up Approval Users</a>.</p>
+<p>You can define the layout of email notifications by customizing Report 1320, Notification Email. For more information, see <a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a>.</p>
+<p>Many approval workflow steps are about notifying users that an event has occurred that they must act on. For example, on one workflow step, the event can be that User 1 requests approval of a new record. The related response is that a notification is sent to User 2, the approver. On the next workflow step, the event can be that User 2 approves the record. The related response is that a notification is sent to User 3 to start a process with the approved record. For workflow steps that are about approval, each notification is tied to an approval entry. For more information, see <a href="across-workflow.html">Workflow</a>.</p>
+<h2 id="specify-when-and-how-users-receive-notifications">Specify when and how users receive notifications</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Approval User Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the line for the user that you want to set up notification preferences for, and then choose the <strong>Notification Setup</strong> action.</p>
+</li>
+<li><p>On the <strong>Notification Setup</strong> page, fill the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Notification Type</strong></td>
+<td>Specify what type of event the notification is about.<br><br> Select one of the following options:<br><br> -   <strong>New Record</strong> specifies that the notification is about a new record, such as a document, that the user must act on.<br>-   <strong>Approval</strong> specifies that the notification is about one or more approval requests.<br>-   <strong>Overdue</strong> specifies that the notification is to remind users that they are late in acting on an event.</td>
+</tr>
+<tr>
+<td><strong>Notification Method</strong></td>
+<td>Specify if the notification is an email or an internal note.</td>
+</tr>
+</tbody>
+</table>
+<p>You can define the layout of email notifications by customizing Report 1320, Notification Email. For more information, see <a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a>.</p>
+<p>You have now specified how the user receives notifications. Proceed to specify when the user receives notifications.</p>
+</li>
+<li><p>Choose the <strong>Notification Schedule</strong> action.</p>
+</li>
+<li><p>On the <strong>Notification Schedule</strong> page, fill the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Recurrence</strong></td>
+<td>Specify the recurrence pattern in which the user receives notifications.</td>
+</tr>
+<tr>
+<td><strong>Time</strong></td>
+<td>Specify what time of the day the user receives notifications when the value in the <strong>Recurrence</strong> field is different from <strong>Instantly</strong>.</td>
+</tr>
+<tr>
+<td><strong>Daily Frequency</strong></td>
+<td>Specify on which type of days the user receives notifications when the value in the <strong>Recurrence</strong> field is <strong>Daily</strong>.<br><br> Select <strong>Weekday</strong> to receive notifications every work day of the week. Select <strong>Daily</strong> to receive notifications every day of the week, including weekends.</td>
+</tr>
+<tr>
+<td><strong>Monday</strong> through <strong>Sunday</strong></td>
+<td>Specify on which days the user receives notifications when the value in the <strong>Recurrence</strong> field is <strong>Weekly</strong>.</td>
+</tr>
+<tr>
+<td><strong>Date of Month</strong></td>
+<td>Specify if the user receives notifications on the first, last, or a specific date of the month.</td>
+</tr>
+<tr>
+<td><strong>Monthly Notification Date</strong></td>
+<td>Specify the date of the month on which the user receives notifications when the value in the <strong>Date of Month</strong> field is <strong>Custom</strong>.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="change-when-and-how-you-receive-notifications">Change when and how you receive notifications</h2>
+<ol>
+<li>On one of the notifications that you have received, either as email or note, choose the <strong>Change Notification Settings</strong> button.</li>
+<li>On the <strong>Notification Setup</strong> page, change your notification preferences as described in the previous procedure.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-how-to-set-up-approval-users.html">Set Up Approval Users</a><br>
+<a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a><br>
+<a href="across-setting-up-workflow-notifications.html">Setting Up Workflow Notifications</a><br>
+<a href="across-set-up-workflows.html">Setting Up Workflows</a><br>
+<a href="across-use-workflows.html">Using Workflows</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-to-specify-when-and-how-to-receive-notifications.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

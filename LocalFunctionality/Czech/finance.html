@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Finance - Czech Local Functionality | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Finance - Czech Local Functionality | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This section describes Czech local functionality for Finance.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="finance">Finance</h1>
+
+<p>In the Czech Republic, there are specific Business Central features that you can use to track and manage your finances.</p>
+<h2 id="corrections-posting-red-storno">Corrections Posting (Red Storno)</h2>
+<p>According to legal requirements, costs and revenues are usually posted only to either the debit or the credit side of a G/L account. Companies in Eastern Europe usually enforce accounting policies to post certain inventory and GL transactions as corrections. The reason for this is that auditors and revenue authorities conduct accounting controls against this rule.</p>
+<p>The purpose of the feature is:</p>
+<ul>
+<li>To allow the accounting manager to enforce corrective posting on desired G/L accounts</li>
+<li>To allow the accounting manager to enforce corrective posting in inventory postings (negative transfer entries, expected costs posting)</li>
+<li>To allow the accounting manager to enforce corrective posting of canceling in fixed assets</li>
+<li>To allow the user to enforce corrective posting with one click (in G/L, inventory, and job postings)</li>
+</ul>
+<h2 id="statutory-company-information">Statutory Company Information</h2>
+<p>Many documents are circulating within and outside company structures. The minimum necessary requirements of such documents are set by local legislations. It is possible to divide such requirements roughly into three groups:</p>
+<ul>
+<li>Company officials' names must be present on some internal and external documents.</li>
+<li>Document footers – The majority of external documents must contain basic company information in document footers, usually in the company’s partner language.</li>
+<li>Registration numbers must be visible in internal and external documents.</li>
+</ul>
+<p>This feature allows users to define company officials and designate them as General Manager, Accounting, and Finance Managers for usage in internal and external documents.</p>
+<p>Users can define document footers in different languages. Such footers can be used in different reports and documents.</p>
+<p>Additional company registration numbers and other registration information can be stored on the <strong>Company Information</strong> page and used in documents.</p>
+<h2 id="internal-financial-documents">Internal Financial Documents</h2>
+<p>Users perform general ledger operations and must have the possibility to print documents for these operations with layout in compliance with the legal requirements. Users also want to print a document for posted general ledger operations.</p>
+<p>For the reasons above, this feature provides the following reports:</p>
+<ul>
+<li>General Journal – Test Report - used to print documents from G/L journals</li>
+<li>General Ledger Document Report - used to print posted general ledger operations</li>
+</ul>
+<h2 id="accounting-output-documents">Accounting Output Documents</h2>
+<p>In order to comply with the legislation, reporting features, and local reporting practices of Czech companies, this feature provides the following reports:</p>
+<ul>
+<li>General Journal</li>
+<li>General Ledger</li>
+<li>Accounting Sheets</li>
+<li>Turnover report by Global Dimension</li>
+<li>Open G/L Entries to date</li>
+<li>Inventory Account to date</li>
+<li>Joining Bank Account Adjustment</li>
+<li>Joining G/L Account Adjustment</li>
+<li>G/L VAT Reconciliation</li>
+<li>All payments on hold</li>
+<li>Open Customer Entries at date</li>
+<li>Open Vendor Entries at date</li>
+<li>Fiscal Year Balance – standard report adjusted</li>
+<li>Trial Balance by Period – standard report adjusted</li>
+</ul>
+<h2 id="account-schedule-feature">Account Schedule Feature</h2>
+<p>As one of the most extensively used features for analysis and reporting, Eastern European countries often ask for the following improvements of the standard Account Schedules feature:</p>
+<ul>
+<li>Common list of expressions – A common list of expressions contains named lines that can be used in formulas of all account schedules. This is done by defining one of the account schedules as a common list of expressions called a Shared Account Schedule.</li>
+<li>Saving results (current state) of analysis – This improvement allows users to store results of analysis done by using account schedules, modification of results, and retrieval of results later on.</li>
+<li>Formulas drill-down – This improvement allows users to drill down on the results of formulas. Drill-down is now accessible for Totalling type formulas. Drilling down on the result of the formula shows the user a new page containing the list of elements used to calculate the results and their description.</li>
+<li>Additional data sources – Apart from being able to perform analysis on GL entries, the user can perform analysis on VAT, customer, vendor, and value entries.</li>
+</ul>
+<h2 id="statutory-statements">Statutory Statements</h2>
+<p>Companies must create financial statements according to the Accounting Law 563/1991. They must create the balance sheet and the profit and loss statement.
+This feature provides the following reports:</p>
+<ul>
+<li>Balance Sheet</li>
+<li>Income Statement</li>
+</ul>
+<p>These reports use the Account Schedule feature with the statement structure defined.</p>
+<p>The <strong>Acc. Schedule Name</strong> table contains this new field in the Czech version:</p>
+<ul>
+<li><strong>Acc. Schedule Type</strong> – Balance Sheet or Income Statement option</li>
+</ul>
+<p>The <strong>Acc. Schedule Line</strong> table contains these new fields in the Czech version:</p>
+<ul>
+<li><strong>Row Correction</strong> – links to another line for balance sheet setup</li>
+<li><strong>Assets/Liabilities Type</strong> – Assets or Liabilities for Balance Sheet setup</li>
+<li><strong>Calc</strong> – Always, Never, When positive, When Negative options</li>
+</ul>
+<p>The balance sheet and the profit and loss statements are often prepared in Excel file templates with the necessary design for statement printout. Users want to map defined account schedules to prepared Excel templates.</p>
+<p>For the reasons above, this feature provides the new setup of Excel templates and statement file mapping. Based on this setup, users can export account schedule data to Excel files.</p>
+<h2 id="wip-extended-posting">WIP Extended Posting</h2>
+<p>The Czech legal Work in Progress (WIP) posting scheme includes the following new general ledger accounts:</p>
+<ul>
+<li>Consumption Account</li>
+<li>Change in Inventory of WIP Account</li>
+<li>Change in Inventory of Product Account</li>
+</ul>
+<p>This feature allows you to correctly perform Czech WIP and production posting. It is therefore possible to set up a combination of location and inventory posting group for the accounts Consumption, Work in Progress, Change of Semi-finished Product, Change of Product.</p>
+<p>This new posting scheme is used in the following transactions:</p>
+<ul>
+<li>Consumption posting in the consumption journal</li>
+<li>Posting the costs of capacities in the output journal</li>
+<li>Finishing orders and automatic production reporting</li>
+</ul>
+<h2 id="additional-finance-features">Additional Finance Features</h2>
+<p>Use the following table to learn more about the additional finance features that are available for the Czech Republic.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Topic</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="year-close-operations.html">Year Closing Operations</a></td>
+<td style="text-align: left;">To comply with accounting legislation at the end of the fiscal year, certain account books must be closed or opened.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="general-ledger-entries-application.html">General Ledger Entries Application</a></td>
+<td style="text-align: left;">Apart from application of Customer and Vendor Ledger Entries, a new functionality of General Ledger Entries Application has been introduced. Application of General Ledger Entries is typically used to allow companies to work with temporary and transfer accounts in the General Ledger.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="exchange-rate-update.html">Exchange Rate Updating</a></td>
+<td style="text-align: left;">Possibility to automatically update currency exchange rates from the external service provided by the ČNB (Czech National Bank).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="czech-local-functionality.html">Czech Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Czech/finance.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Apply Payments to Unpaid Sales Documents | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Apply Payments to Unpaid Sales Documents | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You apply amounts paid by customers to related sales documents and post the payment to update the customer, general ledger, and bank ledger entries.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="reconcile-customer-payments-from-a-list-of-unpaid-sales-documents">Reconcile Customer Payments from a List of Unpaid Sales Documents</h1>
+
+<p>When your customers have made payments to your electronic bank account, you must apply each amount paid to the related sales document and then post the payment to update the customer, general ledger, and bank ledger entries. Depending on your business needs, you can get paid and register that payment in different ways: manually, automatically, and through payment services.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can perform the same tasks, including vendor payments, on the <strong>Payment Reconciliation Journal</strong> page using functions for bank statement import, automatic application, and bank account reconciliation. For more information, see <a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a>.</p>
+</div>
+<p>The <strong>Register Customer Payments</strong> page is designed to support you in tasks involved in balancing internal accounts by using actual cash figures to make sure that payments are collected efficiently from customers. This payment processing tool enables you to quickly verify and post individual or lump-sum payments, process discounted payments, and find specific unpaid documents for which payment is made.</p>
+<p>Payments for different customers that have different payment dates must be posted as individual payments. Payments for the same customer that have the same payment date can be posted as a lump-sum payment. This is useful, for example, when a customer has made a single payment that covers multiple sales invoices.</p>
+<h2 id="to-set-up-the-payment-registration-journal">To set up the payment registration journal</h2>
+<p>Because you can post different payment types to different balancing accounts, you must select a balancing account on the <strong>Payment Registration Setup</strong> page before you start processing customer payments. If you always post to the same balancing account, you can set that account as the default and avoid this step every time that you open the <strong>Register Customer Payments</strong> page.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration Setup</strong>, and then choose the related link.</p>
+<p>Alternatively, on the <strong>Register Customer Payments</strong> page, choose the <strong>Setup</strong> action.</p>
+</li>
+<li><p>Fill in the fields on the <strong>Payment Registration Setup</strong> page. Choose a field to read a short description of the field or link to related information.</p>
+</li>
+</ol>
+<h2 id="to-register-customer-payments-individually">To register customer payments individually</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Register Customer Payments</strong>, and then choose the related link.</p>
+<p>The <strong>Register Customer Payments</strong> page shows all posted documents for which a payment can be registered. The page can also be opened from the <strong>Customers</strong> and <strong>Customer Card</strong> pages where it is automatically filtered for the specified customer.</p>
+</li>
+<li><p>Select the <strong>Payment Made</strong> check box on the line that represents the posted document for which a payment has been made.</p>
+<p>If the <strong>Auto Fill Date Received</strong> check box is selected on the <strong>Payment Registration Setup</strong> page, then the work date is entered in the <strong>Date Received</strong> field.</p>
+</li>
+<li><p>In the <strong>Date Received</strong> field, enter the date when the payment was made. This date may be different from the work date.</p>
+</li>
+<li><p>In the <strong>Amount Received</strong> field, enter the amount that has been paid.</p>
+<p>For full payments, this is the same as the amount in the <strong>Remaining Amount</strong> field on the line. For partial payments, this is lower than the amount in the <strong>Remaining Amount</strong> field on the line.</p>
+</li>
+<li><p>Repeat steps 2-4 for other lines that represent posted documents for which payments are made.</p>
+</li>
+<li><p>Choose the <strong>Post Payments</strong> action.</p>
+</li>
+</ol>
+<p>The payment information is posted for documents represented by lines where the <strong>Payment Made</strong> check box is selected.</p>
+<p>Payments entries are posted to general ledger, bank, and customer accounts. Each payment is applied to the related posted sales document.</p>
+<h2 id="to-reconcile-lump-sum-payments">To reconcile lump-sum payments</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the <strong>Payment Made</strong> check box on the lines that represent posted documents for the same customer for which a lump-sum payment has been made.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The customer in the <strong>Name</strong> field must be the same on all lines that will be posted as a lump-sum payment.</p>
+</div>
+<p>If the <strong>Auto Fill Date Received</strong> check box is selected on the <strong>Payment Registration Setup</strong> page, then the work date is filled in the <strong>Date Received</strong> field.</p>
+</li>
+<li><p>In the <strong>Date Received</strong> field, enter the date when the payment was made. This date may be different from the work date.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This date must be the same on all lines that will be posted as a lump-som payment.</p>
+</div>
+</li>
+<li><p>In the <strong>Amount Received</strong> field, enter amounts on multiple lines that sum up to the lump payment amount.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Try to post as many full payments as possible with the lump-sum amount. Enter amounts that are the same as the amount in the <strong>Remaining Amount</strong> field on as many lines as possible.</p>
+</div>
+</li>
+<li><p>Repeat steps 2-4 for other lines that represent posted documents for the same customer for which a lump-sum payment has been made.</p>
+</li>
+<li><p>Choose the <strong>Post As Lump Payment</strong> action. The entered payment information is posted for documents represented by lines where the <strong>Payment Made</strong> check box is selected.</p>
+</li>
+</ol>
+<p>Payment entries are posted to general ledger, bank, and customer accounts. Each payment is applied to the related posted sales document.</p>
+<p>If a payment in the bank is not represented by line on the <strong>Payment Registration</strong> page, it may be because the related document has not yet been posted. In that case, you can use a search function to quickly find the document and post it to process the payment. For more information, see <a href="receivables-how-reconcile-customer-payments-list-unpaid-sales-documents.html#to-find-a-specific-sales-document-that-is-not-fully-invoiced">To find a specific sales document that is not fully invoiced</a>.</p>
+<p>If a payment in the bank is not represented by any document in Business Central, then you can open a prefilled general journal from the <strong>Payment Registration</strong> page to post the payment directly to the balancing account without applying the payment to a document. Alternatively, you may want to record the payment in the journal until the origin of the payment has been resolved. For more information, see <a href="receivables-how-reconcile-customer-payments-list-unpaid-sales-documents.html#to-record-or-post-a-payment-without-a-related-document">To record or post a payment without a related document</a>.</p>
+<h2 id="to-process-customer-payments-with-discounts-manually">To process customer payments with discounts manually</h2>
+<p>If you have agreed on a payment discount with your customer, then the payment amounts can be lower than the invoice amounts if payment occurs before the agreed discount date.</p>
+<p>The following procedures explains four different ways to post discounted payments on the <strong>Payment Registration</strong> page.</p>
+<ul>
+<li>The payment amount is equal to the remaining discounted amount, and the payment date is before the discount date. You post the payment as is.</li>
+<li>The payment amount is equal to the remaining discounted amount, but the payment date is after the discount date. You post the payment as partial. The document remains open to collect/pay the remaining amount. Alternatively, you set the discount date later to allow the payment in full.</li>
+<li>The payment amount is lower than the remaining discounted amount. You post the payment as partial. The document remains open to collect/pay the remaining amount.</li>
+<li>The payment amount is more than the remaining discounted amount. You post the payments as is. Only the remaining amount is posted. The additional amount is credited to the customer.</li>
+</ul>
+<h3 id="to-process-a-payment-amount-that-is-equal-to-the-discounted-amount-and-where-the-payment-date-is-before-the-discount-date">To process a payment amount that is equal to the discounted amount and where the payment date is before the discount date</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration</strong>, and then choose the related link.</p>
+</li>
+<li><p>Enter the payment amount in the <strong>Amount Received</strong> field. The amount is equal to the amount in the <strong>Rem. Amt. after Discount</strong> field.</p>
+<p>The <strong>Payment Made</strong> check box is automatically selected, and the <strong>Date Received</strong> field is filled with the work date.</p>
+</li>
+<li><p>In the <strong>Date Received</strong> field, enter the payment date. The date is before the date in the <strong>Pmt. Discount Date</strong> field.</p>
+</li>
+<li><p>Verify that the <strong>Remaining Amount</strong> field contains zero (0).</p>
+</li>
+<li><p>Choose the <strong>Post Payments</strong> action to post the full payment to general ledger, bank, and customer accounts.</p>
+</li>
+</ol>
+<h3 id="to-process-a-payment-amount-that-is-equal-to-the-discounted-amount-but-where-the-payment-date-is-after-the-discount-date">To process a payment amount that is equal to the discounted amount but where the payment date is after the discount date</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration</strong>, and then choose the related link.</p>
+</li>
+<li><p>Enter the payment amount in the <strong>Amount Received</strong> field. The amount is equal to the amount in the <strong>Rem. Amt. after Discount</strong> field.</p>
+<p>The <strong>Payment Made</strong> check box is automatically selected, and the <strong>Date Received</strong> field is filled with the work date.</p>
+</li>
+<li><p>In the <strong>Date Received</strong> field, enter a payment date that is after the date in the <strong>Pmt. Discount Date</strong> field. Date fields change to red font, and an error message is shown at the bottom of the page.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you want to make an exception and grant the discount even though the payment is late, follow these steps:</p>
+</div>
+</li>
+<li><p>Choose the <strong>Details</strong> action.</p>
+</li>
+<li><p>On the <strong>Payment Registration Details</strong> page, in the <strong>Pmt. Discount Date</strong> field on the <strong>Payment Discount</strong> FastTab, enter a date that is after the date in the <strong>Date Received</strong> field on the <strong>Payment Registration</strong> page.</p>
+<p>The error message and the red font disappear, and you can proceed to process the discounted payment.</p>
+</li>
+<li><p>Verify that the <strong>Remaining Amount</strong> field contains the amount that remains to pay the full invoice amount.</p>
+</li>
+<li><p>Choose the <strong>Post Payments</strong> action to post the partial payment to general ledger, bank, and customer accounts.</p>
+</li>
+</ol>
+<p>The related document remains open.</p>
+<h3 id="to-process-a-payment-that-is-lower-than-the-remaining-discounted-amount">To process a payment that is lower than the remaining discounted amount</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration</strong>, and then choose the related link.</p>
+</li>
+<li><p>Enter the payment amount in the <strong>Amount Received</strong> field. The amount is lower than the amount in the <strong>Rem. Amt. after Discount</strong> field.</p>
+<p>The <strong>Payment Made</strong> check box is automatically selected, and the <strong>Date Received</strong> field is filled with the work date.</p>
+</li>
+<li><p>In the <strong>Date Received</strong> field, enter the payment date. The date is before the date in the <strong>Pmt. Discount Date</strong> field.</p>
+</li>
+<li><p>Verify that the <strong>Remaining Amount</strong> field contains the amount that remains to pay the discounted amount.</p>
+</li>
+<li><p>Choose the <strong>Post Payments</strong> action to post the partial payment to general ledger, bank, and customer accounts.</p>
+</li>
+</ol>
+<p>The related document remains open.</p>
+<h3 id="to-process-a-payment-that-is-more-than-the-remaining-discounted-amount">To process a payment that is more than the remaining discounted amount</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration</strong>, and then choose the related link.</p>
+</li>
+<li><p>Enter the payment amount in the <strong>Amount Received</strong> field. The amount is more than the amount in the <strong>Rem. Amt. after Discount</strong> field.</p>
+<p>The <strong>Payment Made</strong> check box is automatically selected, and the <strong>Date Received</strong> field is filled with the work date.</p>
+</li>
+<li><p>In the <strong>Date Received</strong> field, enter the payment date. The date is before the date in the <strong>Pmt. Discount Date</strong> field.</p>
+</li>
+<li><p>Verify that the <strong>Remaining Amount</strong> field contains zero (0).</p>
+</li>
+<li><p>Choose the <strong>Post Payments</strong> action to post the full payment to general ledger, bank, and customer accounts.</p>
+</li>
+</ol>
+<p>The related document is closed, and the customer is credited the excess payment amount.</p>
+<h2 id="to-find-a-specific-sales-document-that-is-not-fully-invoiced">To find a specific sales document that is not fully invoiced</h2>
+<p>The <strong>Payment Registration</strong> page supports you in tasks needed to balance internal accounts with actual cash figures to ensure effective collection from customers. It shows outstanding incoming payments as lines that represent sales documents where an amount is due for payment.</p>
+<p>Typically, when a payment has been made, recorded in the bank or otherwise, the related sales or purchase document is represented as a line on the <strong>Payment Registration</strong> page because the document in question is waiting for the payment to be posted against the outstanding amount. However, sometimes a payment that has been made is not represented by a line on the <strong>Payment Registration</strong> page, typically because the document in question has not been fully invoice posted.</p>
+<p>On the <strong>Document Search</strong> page, you can search among documents that are not fully invoiced. You can search based on one or more of the following criteria:</p>
+<ul>
+<li>Document number</li>
+<li>Amount or amount range</li>
+</ul>
+<p>The following procedure explains how to find a specific document by using both search criteria.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration</strong>, and then choose the related link.</p>
+</li>
+<li><p>With the pointer on any line, Choose the <strong>Search Documents</strong> action.</p>
+</li>
+<li><p>On the <strong>Document Search</strong> page, enter a search value in the <strong>Document No.</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The value that you enter in this field is enclosed in hidden wildcard characters. This means that the function searches for all document numbers that contain the entered value.</p>
+</div>
+</li>
+<li><p>In the <strong>Amount</strong> field, enter the specific amount that exists on the document that you want to find.</p>
+</li>
+<li><p>In the <strong>Amount Tolerance %</strong> field, enter a percentage value to define the range of amounts that you want to search to find the open document.</p>
+<p>If you enter 10, then the function will search for amounts in a range between ten percent lower and ten percent higher than the value in the <strong>Amount</strong> field.</p>
+</li>
+<li><p>Choose the <strong>Search</strong> action.</p>
+</li>
+</ol>
+<p>The Search function searches among documents that are not fully invoiced based on the specified criteria.</p>
+<p>If one or more documents match the criteria, then the <strong>Document Search Result</strong> page opens to display lines that represent those documents. Each line contains a document number, description, and amount so that you can easily find a specific document, for example based on information on your bank statement.</p>
+<p>If a payment in the bank is not represented by any document in Business Central, then you can open a prefilled general journal from the <strong>Payment Registration</strong> page to post the payment directly to the balancing account without applying the payment to a document. Alternatively, you may want to record the payment in the journal until the origin of the payment has been resolved.</p>
+<h2 id="to-record-or-post-a-payment-without-a-related-document">To record or post a payment without a related document</h2>
+<p>If a payment in the bank is not represented by any document in Business Central, then you can open a prefilled general journal line from the <strong>Payment Registration</strong> page to post the payment directly to the balancing account without applying the payment to a document. Alternatively, you may want to record the payment in the journal until the origin of the payment has been clarified.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Registration</strong>, and then choose the related link.</p>
+<p>Proceed to record an undocumented payment.</p>
+</li>
+<li><p>Choose the <strong>General Journal</strong> action.</p>
+<p>The <strong>General Journal</strong> page opens with one line prefilled with the balancing account of the journal batch that is set up on the <strong>Payment Registration Setup</strong> page.</p>
+</li>
+<li><p>Fill in the remaining fields on the general journal line, such as the amount and the customer number or other information from the bank statement. For more information, see <a href="finance-how-post-transactions-directly.html">Post Transactions Directly to the General Ledger</a>.</p>
+</li>
+</ol>
+<p>You can either post the journal line to update the total on the balancing account. Alternatively, you can leave the journal line unposted, and perhaps append it with a note that the payment needs more analysis.</p>
+<p>If you leave the journal line unposted, it will add to the value in the <strong>Unposted Balance</strong> field at the bottom of the <strong>Payment Registration</strong> page.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-how-reconcile-customer-payments-list-unpaid-sales-documents.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

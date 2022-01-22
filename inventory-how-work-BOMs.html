@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Work with Bills of Material to Manage Components| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Work with Bills of Material to Manage Components| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You create an assembly BOM or production BOM to specify the components or resources required to put together the item that the BOM represents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-with-bills-of-material">Work with Bills of Material</h1>
+
+<p>You use bills of materials (BOMs) to structure parent items that must be assembled or produced by resources or machine centers from components. An assembly BOM can also be used to sell a parent item as a kit consisting of its components.</p>
+<h2 id="assembly-boms-or-production-boms">Assembly BOMs or Production BOMs</h2>
+<p>You use assembly orders for making end items from components in a simple process that can be performed by one or more basic resources, which are not machine or work centers, or without any resources. For example, an assembly process could be to pick two wine bottles and one coffee sack and then pack them as a gift item.</p>
+<p>An assembly BOM is the master data that defines which component items go into an assembled end item and which resources are used to assemble the assembly item. When you enter an assembly item and a quantity in the header of a new assembly order, then the assembly order lines are automatically filled according to the assembly BOM with one assembly order line per component or resource. For more information, see <a href="assembly-assemble-items.html">Assembly Management</a>.</p>
+<p>Assembly BOMs are described in this topic.</p>
+<p>You use production orders for making end items from components in a complex process that requires a production routing and work or machine centers, which represent production capacities. For example, a production process could be to cut steel plates in one operation, weld them in the next operation, and paint the end item in the last operation. For more information, see <a href="production-manage-manufacturing.html">Manufacturing</a>.</p>
+<p>A production BOM is the master data that defines a production item and the components that go into it. for assembly items, the production BOM must be certified and assigned to the production item before it can be used in a production order. When you enter the production item on a production order line, either manually or by refreshing the order, then the production BOM content becomes the production order components. For more information, see <a href="production-how-to-create-production-boms.html">Create Production BOMs</a>.</p>
+<p>The concept of resources in production is much more advanced than in assembly management. Work centers and machine centers function as resources, and production steps are represented by operations that are assigned to resources in production routings. For more information, see <a href="production-how-to-create-routings.html">Create Routings</a>.</p>
+<p>Both assembly orders and production orders may be linked directly to sales orders. However, you can only use assembly orders to customize the end item directly for a customer request with the sales order.</p>
+<h2 id="to-create-an-assembly-bom">To create an assembly BOM</h2>
+<p>To define a parent item that consists of other items, and potentially of resources required to put the parent together, you must create an assembly BOM.</p>
+<p>Assembly BOMs usually contain items but can also contain one or more resources that are required to put the assembly item together.</p>
+<p>Assembly BOMs can have multiple levels, which means that a component on the assembly BOM can be an assembly item itself. In that case, the <strong>Assembly BOM</strong> field on the assembly BOM line contains <strong>Yes</strong>.</p>
+<p>Special requirements apply to items on assembly BOMs with regards to availability. For more information, see <a href="inventory-how-availability-overview.html#to-view-the-availability-of-an-item-by-its-use-in-assembly-or-production-boms">To see the availability of an item by its use in assembly BOMs</a>.</p>
+<p>There are two parts to creating an assembly BOM:</p>
+<ul>
+<li>Setting up a new item</li>
+<li>Defining the BOM structure of the assembly item.</li>
+</ul>
+<ol>
+<li><p>Set up a new item. For more information, see <a href="inventory-how-register-new-items.html">Register New Items</a>.</p>
+<p>Proceed to enter components or resources on the assembly BOM.</p>
+</li>
+<li><p>On the <strong>Item Card</strong> page for an assembly item, choose the <strong>Assembly</strong> action, and then choose the <strong>Assembly BOM</strong> action.</p>
+</li>
+<li><p>On the <strong>Assembly BOM</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</p>
+</li>
+</ol>
+<h2 id="to-edit-assembly-boms">To edit assembly BOMs</h2>
+<p>You can edit the lines on an assembly BOM at any time. But be aware that the BOM may be in use on ongoing sales or assemblies of the parent, which may be affected by the change. Choose the <strong>Where-Used</strong> action to see in which items it is being used and then whether sales or assembly orders may be affected.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Yes</strong> value in the <strong>Assembly BOM</strong> column.</li>
+<li>On the <strong>Assembly BOM</strong> page, choose the <strong>Edit List</strong> action, and then change any field as needed.</li>
+</ol>
+<h2 id="to-view-components-and-resources-indented-according-to-the-bom-structure">To view components and resources indented according to the BOM structure</h2>
+<p>From the <strong>Assembly BOM</strong> page, you can open a separate page that shows the components and any resources indented according to their BOM position under the assembly item.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the card for an assembly item. (The <strong>Assembly BOM</strong> field on the <strong>Items</strong> page contains <strong>Yes</strong>.)</li>
+<li>On the <strong>Item Card</strong> page, choose the <strong>Assembly</strong> action, and then choose the <strong>Assembly BOM</strong> action.</li>
+<li>On the <strong>Assembly BOM</strong> page, choose the <strong>Show BOM</strong> action.</li>
+</ol>
+<h2 id="to-replace-the-assembly-item-with-its-components-on-document-lines">To replace the assembly item with its components on document lines</h2>
+<p>From any sales and purchase document that contains an assembly item, you can use a special function to replace the line for the assembly item with new lines for its components. This function is useful, for example, if you want to sell the components as a kit that represents the assembly item.</p>
+<p><strong>Caution</strong>: When you have used the <strong>Explode BOM</strong> function, you cannot easily undo it. You must delete the sales order lines representing the components and then reenter a sales order line for the assembly item.</p>
+<p>The following procedure is based on a sales invoice. The same steps apply to other sales documents and to all purchase documents.</p>
+<ol>
+<li>In the top right corner, choose the <strong>Search for Page or Report</strong> icon, enter <strong>Sales Invoices</strong>, and then choose the related link.</li>
+<li>Open a sales invoice that contains a line for an assembly item.</li>
+<li>Choose the line for an assembly item, and then <strong>Explode BOM</strong> line action.</li>
+</ol>
+<p>All fields on the sales invoice line for the assembly item are cleared except for the <strong>Item</strong> and <strong>Description</strong> fields. Complete sales invoice lines are inserted for the components and possible resources that comprise the assembly item.</p>
+<p><strong>Note</strong>: The Explode BOM function is also available on the <strong>Assembly BOM</strong> page.</p>
+<h2 id="to-calculate-the-standard-cost-of-an-assembly-item">To calculate the standard cost of an assembly item</h2>
+<p>You calculate the unit cost of an assembly item by rolling up the unit cost of each component and resource in the item’s assembly BOM.</p>
+<p>You can also calculate and update the standard cost for one or many items on the <strong>Standard Cost Worksheet</strong> page. For more information, see <a href="finance-how-to-update-standard-costs.html">Update Standard Costs</a>.</p>
+<p>The unit cost of an assembly BOM always equals the total of the unit costs of its components, including other assembly BOMs, and any resources.</p>
+<ol>
+<li>In the top right corner, choose the <strong>Search for Page or Report</strong> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the card for an assembly item. (The <strong>Assembly BOM</strong> field on the <strong>Items</strong> page contains <strong>Yes</strong>.)</li>
+<li>On the <strong>Item Card</strong> page, choose the <strong>Assembly</strong> action, and then choose the <strong>Assembly BOM</strong> action.</li>
+<li>On the <strong>Assembly BOM</strong> page, choose the <strong>Calc. Standard Cost</strong> action.</li>
+<li>Select one of the following options, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Top Level</strong></td>
+<td>Calculates the assembly item's standard cost as the total cost of all purchased or assembled items on that assembly BOM regardless of any underlying assembly BOMs.</td>
+</tr>
+<tr>
+<td><strong>All Levels</strong></td>
+<td>Calculates the assembly's item standard cost as the sum of: 1) The calculated cost of all underlying assembly BOMs on the assembly BOM. 2) The cost of all purchased items on the assembly BOM.</td>
+</tr>
+</tbody>
+</table>
+<p>The costs of the items that make up the assembly BOM are copied from the component item cards. The cost of each item is multiplied by the quantity, and the total cost is shown in the <strong>Unit Cost</strong> field on the item card.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-how-register-new-items.html">Register New Items</a><br>
+<a href="inventory-how-availability-overview.html">View the Availability of Items</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/inventory-how-work-BOMs.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

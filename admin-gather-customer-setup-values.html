@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Gather Customer Setup Values | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Gather Customer Setup Values | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You use the configuration questionnaire to help reduce your implementation workload by streamlining the task of setting up the new company. You can generate the configuration questionnaire in Business Central and then provide it to your customer as an Excel (.xlsx) or XML file.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="gather-customer-setup-values">Gather Customer Setup Values</h1>
+
+<p>You use the configuration questionnaire to help reduce your implementation workload by streamlining the task of setting up the new company. You can generate the configuration questionnaire in Business Central and then provide it to your customer as an Excel or XML file.</p>
+<p>You can change all default values in a questionnaire to more closely match customer needs.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>For more information about defining setup values in supply planning fields, see <a href="setup-best-practices-supply-planning.html">Setup Best Practices: Supply Planning</a>.</p>
+</div>
+<p>When your customer completes the questionnaire, you import the file into the customer's new Business Central company. You and your customer validate the questionnaire answers before you apply them to the company.</p>
+<h2 id="to-create-a-configuration-questionnaire">To create a configuration questionnaire</h2>
+<p>You can use a questionnaire to help you determine the scope and needs of configuration. You can create a new questionnaire, or modify an existing questionnaire by adding new questions or question areas.</p>
+<!-- A configuration questionnaire has the following structure
+* The name of the questionnaire itself
+* Question Areas that group questions about a similar subject. For example, you might create a question area that focuses on entering company informtion. Typically, configuration questionnaires have many question groups
+* Questions that are closed ended, meaning that the customer must choose an answer, and can choose only one. -->
+<p>You can create questionnaires for setup-type tables only. For example you can use the tool to provide information to the following pages:</p>
+<ul>
+<li>Company Information</li>
+<li>Fixed Asset Setup</li>
+<li>General Ledger Setup</li>
+<li>Inventory Setup</li>
+<li>Assembly setup</li>
+<li>Manufacturing Setup</li>
+<li>Purchases and Payables Setup</li>
+<li>Marketing Setup</li>
+<li>Service Setup</li>
+<li>Sales and Receivables Setup</li>
+<li>Warehouse Setup</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To see a complete list of setup tables, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Setup</strong>, and then choose the related link. To determine the scope of migration of records data, use migration functionality. For more information, see <a href="admin-migrate-customer-data.html">Migrating Customer Data</a>.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Questionnaire</strong>, and choose the related link.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>On the <strong>Configuration Questionnaire</strong> page, in the <strong>Code</strong> field, enter...</li>
+</ol>
+<!--4. In the **Name** field, enter...
+5. Choose the **Question Areas** action. .
+6. On the **Config. Question Areas** page, in the **Code** field, enter...
+  
+    > [!Note]  
+    > The code is alphanumeric, and must start with a letter of the alphabet.
+7. In the Table ID field, choose the table to which to apply the answer to the question. Your selection will determine the fields that are available for the questions, and thereby the answer selections.
+  
+    > [!Tip]
+    > The list of table objects is long. If you know the name of the table, use **Search** in the upper left to find it in the list.
+8. In the **Description** field, enter text that indicates the subject of the question group.
+9. In the **No.** field, enter a number to define where the question appears in the sequence of questions.
+10. In the **Field ID** field, choose the field the the customer's answer will be applied to. You can choose from the fields on the table you chose in the **Table ID** field.
+  
+    When you choose a field, [!INCLUDE[d365fin](includes/d365fin_md.md)] provides a suggestion in the **Question** field. You can edit the question if needed.
+11. To add more questions to the questionnaire, repeat steps seven through 10.
+
+> [!Tip]
+> If at some point you change a question, or add a new one, choose the **Update Questions** action to update the list.
+
+-->
+<ol start="3">
+<li>Choose the <strong>Questions Areas</strong> action. The <strong>Question Areas</strong> page opens.</li>
+<li>Choose the <strong>New</strong> action. The <strong>Config. Question Area</strong> page opens.</li>
+<li>In the <strong>Table ID</strong> field, choose the ID of the table for which you want to collect information. The <strong>Table Name</strong> field is automatically filled in.</li>
+<li>Choose the <strong>Update Questions</strong> action. Each field in the table is added to the questionnaire with a question mark following its label.</li>
+</ol>
+<p>You can rephrase the label to make it clear how the question should be answered. For example, if a field is called &quot;Name,&quot; you could edit it to state &quot;What is the name of <data being="" collected="">.&quot; You can also provide guidance in the <strong>Reference</strong> field, including a URL to a page that provides additional information.<p>
+<p>You can also delete any questions that you do not want to include in the questionnaire.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Answer Option</strong> field describes the type and format of the answer of the data that is appropriate. The <strong>Answer</strong> field contains user-supplied information.</p>
+<p>As needed, you can also define default answers in the <strong>Answer</strong> field. These values are used by default for custom setup. However, the person filling in the questionnaire can modify and update the answer.</p>
+</div>
+<h2 id="to-complete-the-configuration-questionnaire">To complete the configuration questionnaire</h2>
+<p>You use the configuration questionnaire to structure and document a detailed discussion about the customer’s specific needs. You also use it to collect setup data from the customer to configure the relevant Business Central setup tables, such as the general ledger, inventory, and customers.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also create your own configuration questionnaire to meet your needs.</p>
+</div>
+<ol>
+<li>Open the company that you want to complete the questionnaire for.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Questionnaire</strong>, and then choose the related link.</li>
+<li>Select the questionnaire for the company, and then choose the <strong>Export to Excel</strong> action, optionally the <strong>Export to XML</strong> action.</li>
+<li>Have the customer complete the configuration questionnaire by entering the answers in the Excel workbook. There are worksheets for each of the question areas that have been created for the questionnaire.</li>
+<li>Save the Excel workbook as <em>XML Data</em>. Choose the <strong>Import from XML</strong> action, and select the .xml file with the customer's answers.</li>
+<li>Choose the <strong>Question Areas</strong> action to begin the process of validating and applying the answers to the configuration questionnaire.</li>
+</ol>
+<h2 id="to-complete-a-questionnaire-from-the-configuration-worksheet">To complete a questionnaire from the configuration worksheet</h2>
+<p>The following procedure provides an alternative way of accessing configuration questionnaires. It assumes that the configuration package that you have been provided includes questionnaires.</p>
+<ol>
+<li>After you import a configuration package, open the configuration worksheet.</li>
+<li>For each table for which there is a question area, choose the <strong>Questions</strong> action. The questionnaire page opens.</li>
+<li>Answer the questions, and then choose the <strong>Apply Answers</strong> action.</li>
+<li>Choose the <strong>OK</strong> button to close the questionnaire.</li>
+</ol>
+<h2 id="to-validate-the-configuration-questionnaire">To validate the configuration questionnaire</h2>
+<p>It is important to validate the configuration questionnaire before you apply it to the Business Central format. It is also a way to make sure that data formatting is preserved during the import from Excel.</p>
+<p>A common validation task is to check that text strings are not entered in date fields. This review process is necessary because the format of the answer in the questionnaire is not validated automatically when you run the <strong>Apply Answers</strong> function.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In general, validation of the configuration questionnaire is a manual process. However, there are checks for regional formatting inconsistencies. In addition, you will get errors if the structure of your Business Central database does not match the structure of the migration database.</p>
+</div>
+<ol>
+<li>On the <strong>Configuration Questionnaire</strong> page, select the relevant questionnaire, and then choose the <strong>Question Areas</strong> action.</li>
+<li>Open the relevant question area.</li>
+<li>For each question, validate that the value in the <strong>Answer</strong> field corresponds to the format provided in the <strong>Answer Option</strong> field. For example, validate that the address of a company is in text format.</li>
+<li>If you find errors, you can troubleshoot and make corrections in Excel by exporting the questionnaire, and then importing it again. Alternatively, you can correct errors directly in Business Central as you review the answers on the <strong>Config. Question Area</strong> page.</li>
+<li>Repeat these steps for each question area.</li>
+</ol>
+<p>When you have completed your validation, the data is ready to be applied to the database.</p>
+<h2 id="to-apply-answers-from-the-configuration-questionnaire">To apply answers from the configuration questionnaire</h2>
+<p>After you have imported and validated information from a configuration questionnaire, you can transfer, or apply the setup data to the corresponding tables in the Business Central database.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Questionnaire</strong>, and then choose the related link. The <strong>Config. Questionnaire</strong> page opens.</li>
+<li>Select a configuration questionnaire from the list, and then choose the <strong>Edit List</strong> action.</li>
+<li>You can apply answers in one of two ways.</li>
+</ol>
+<ul>
+<li>To apply the whole questionnaire, choose the <strong>Apply Answers</strong> action.</li>
+<li>To apply answers for a specific <strong>Question Area</strong> only, choose the <strong>Question Areas</strong> action, select a <strong>Question Area</strong> in the list, and then choose the <strong>Apply Answers</strong> action.</li>
+</ul>
+<h3 id="to-verify-that-answers-have-been-applied-successfully">To verify that answers have been applied successfully</h3>
+<ol>
+<li>Check setup pages for the various functional areas of Business Central. To locate the page, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter the name of the setup page, and then choose the related link.</li>
+<li>Verify that the fields have been populated with the correct data from the various question areas in the configuration questionnaire.</li>
+</ol>
+<p>You have now configured setup with the customer’s business information and rules.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</data></article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-gather-customer-setup-values.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

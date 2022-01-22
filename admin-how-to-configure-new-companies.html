@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Configure New Companies | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Configure New Companies | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can configure and customize a new company that you have created. To fine tune your implementation, you proceed in three phases to complete your configuration.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="configure-new-companies">Configure New Companies</h1>
+
+<p>To configure a new company in your solution implementation, you typically follow three phases. In the first phase, you import the configuration package, a .rapidstart file with the configuration information. In the second phase, you modify the configuration information and then apply it to your new company. In the final phase, you review and fix any errors.</p>
+<p>The following procedures assume that you have created and saved a configuration package. For more information, see <a href="admin-how-to-prepare-a-configuration-package.html">Prepare a Configuration Package</a>.</p>
+<p>The following procedures assume that you have initialized and opened your new company, and that you are using the Administration Role Center.</p>
+<h2 id="before-you-import-a-configuration-package">Before You Import a Configuration Package</h2>
+<p>Before you import a configuration package it is a good idea to verify that the following statements are true. Otherwise, you or your customer will not be able to import the configuration package.</p>
+<ul>
+<li>Your license includes the tables you are updating. If you are unsure, the <strong>Configuration Worksheet</strong> can help. If your license includes the tables, the <strong>Licensed Table</strong> check box is chosen.</li>
+<li>The user who imports the configuration package has Insert and Modify effective permissions to all of the tables that the package will update. For more information, see <a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a></li>
+</ul>
+<h2 id="to-import-a-configuration-package">To import a configuration package</h2>
+<ol>
+<li>Open the new company in the Business Central database.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then select the related link.</li>
+<li>Choose the <strong>Import Package</strong> action.</li>
+<li>Navigate to the location where you have saved the .rapidstart configuration package file, and then choose the <strong>Open</strong> button.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Company Information</strong>, and then choose the related link. Enter information about the company in the company information card. Include information, such as bank details. You can also provide a logo for the company.</li>
+</ol>
+<p>All the tables that you have designated for inclusion in the new company are imported. At this point, you can apply the package data to the database, or adjust and modify the table data to meet your customer specifications.</p>
+<h2 id="to-apply-package-data">To apply package data</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then select the related link.</li>
+<li>Select a table that you want to modify data for, and then choose the <strong>Apply Data</strong> action. Choose the <strong>Yes</strong> button to confirm the application.</li>
+<li>To confirm that the data is now in the database and that the application has succeeded, return to the <strong>Config. Worksheet</strong> page and choose the <strong>Database Data</strong> action.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>After you apply data, you can only see it in the database. It is no longer in the package.</p>
+</div>
+<h2 id="to-modify-and-apply-package-data">To modify and apply package data</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then select the related link.</li>
+<li>Select a table that you want to modify data for, and then choose the <strong>Package Data</strong> action.</li>
+<li>On the <strong>Config. Package Records</strong> page, make your modifications. For example, you can delete options that do not apply.</li>
+<li>Choose the <strong>Apply Data</strong> action, and then choose the <strong>OK</strong> button.</li>
+<li>To confirm that the data is now in the database and that the application has succeeded, return to the <strong>Config. Worksheet</strong> page and choose the <strong>Database Data</strong> action.</li>
+</ol>
+<h2 id="to-locate-and-identify-a-configuration-error">To locate and identify a configuration error</h2>
+<p>There are certain types of errors that may occur when you apply data to a database. The most common error is that required related tables were not included. You fix such errors in the configuration worksheet.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then select the related link.</p>
+</li>
+<li><p>Select the package you want to review, and then choose the <strong>Edit</strong> action.</p>
+<p>Any table that has errors is highlighted. The number of package errors is displayed in the <strong>No. of Package Errors</strong> field.</p>
+</li>
+<li><p>Choose the <strong>No. of Package Errors</strong> field to open the <strong>Config. Package Records</strong> page, which lists the records with errors.</p>
+</li>
+</ol>
+<h3 id="to-fix-an-error">To fix an error</h3>
+<ol>
+<li><p>Open the company that is based on your configuration package.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then select the related link.</p>
+</li>
+<li><p>Fix errors, such as add missing related tables to the worksheet.</p>
+</li>
+<li><p>Add the tables to the existing configuration package, or create a new package that only contains the new tables. For more information, see <a href="admin-how-to-prepare-a-configuration-package.html">Prepare a Configuration Package</a>.</p>
+</li>
+<li><p>Reopen the new company that you are implementing the configuration for.</p>
+</li>
+<li><p>Import the configuration package.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you import the same package again, you may overwrite any data modifications that you have already made. For that reason, you may want to add any new tables in a new package and import that instead.</p>
+</div>
+</li>
+<li><p>Apply the data to the database, as described in <a href="admin-how-to-configure-new-companies.html#to-modify-and-apply-package-data">To modify and apply package data</a>.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-apply-configuration-to-new-companies.html">Apply Configurations to New Companies</a><br>
+<a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-configure-new-companies.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

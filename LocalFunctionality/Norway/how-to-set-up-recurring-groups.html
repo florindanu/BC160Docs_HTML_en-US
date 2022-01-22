@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Recurring Groups </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Recurring Groups ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Recurring Group Code field in the Blanket Sales Order page defines date formulas that can be used both as a template and to create sales orders based on date intervals.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-recurring-groups">Set Up Recurring Groups</h1>
+
+<p>The <strong>Recurring Group Code</strong> field on the <strong>Blanket Sales Order</strong> page defines date formulas that can be used both as a template and to create sales orders based on date intervals. You must set up recurring groups before you can set up recurring orders.</p>
+<h2 id="to-set-up-recurring-groups">To set up recurring groups</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Recurring Groups</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>Enter a code to identify the recurring group.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Enter a description for the recurring group.</td>
+</tr>
+<tr>
+<td><strong>Date formula</strong></td>
+<td>Enter a date formula to calculate the time interval between orders.</td>
+</tr>
+<tr>
+<td><strong>Create only the latest</strong></td>
+<td>Select if you want only the latest recurring order created if the recurring group interval created by the <strong>Date formula</strong> has been exceeded.<br><br> If the order date on the blanket sales order has exceeded more than one interval period, selecting this check box prevents how all orders are created, and will only create the latest order.</td>
+</tr>
+<tr>
+<td><strong>Starting date</strong></td>
+<td>Enter the first date of the recurring group.</td>
+</tr>
+<tr>
+<td><strong>Closing date</strong></td>
+<td>Enter the last date of the recurring group.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>Update</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Update Document Date</strong></td>
+<td>Select one of the following options to update the document date:<br><br> -   <strong>Posting Date</strong> - The document date is calculated using the posting date and the date formula specified in the <strong>Document Date Formula</strong> field.<br>-   <strong>Processing Date</strong> - The document date is calculated using the processing date and the date formula specified in the <strong>Document Date Formula</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Document Date Formula</strong></td>
+<td>Enter a date formula to calculate the document date on the order.</td>
+</tr>
+<tr>
+<td><strong>Delivery Date Formula</strong></td>
+<td>Enter a date formula to calculate the delivery date on the order.</td>
+</tr>
+<tr>
+<td><strong>Update Price</strong></td>
+<td>Select one of the following options for updating prices on new orders:<br><br> -   <strong>Fixed</strong> - The price used on a new order is the same price that is specified in the blanket order.<br>-   <strong>Recalculate</strong> - The price on a new order is recalculated to reflect the current price for the customer.<br>-   <strong>Reset</strong> - The price on a new order is cleared to specify a new price.</td>
+</tr>
+<tr>
+<td><strong>Update Number</strong></td>
+<td>Select one of the following options to manage the quantity specified on the original order:<br><br> -   <strong>Constant</strong> - The quantity on the blanket order remains unchanged. This enables you to make orders indefinitely from the blanket order.<br>-   <strong>Reduce</strong> - The quantity on the blanket order is reduced with the quantity that is specified on the new order. The recurring order processing stops when the quantity specified on the blanket order is used on new orders.</td>
+</tr>
+<tr>
+<td><strong>Reset Delivery</strong></td>
+<td>Select to reset the delivery options for the recurring group.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="recurring-orders.html">Recurring Orders</a><br>
+<a href="how-to-set-up-recurring-orders.html">Set Up Recurring Orders</a><br>
+<a href="how-to-create-recurring-orders.html">Create Recurring Orders</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Norway/how-to-set-up-recurring-groups.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

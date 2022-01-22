@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Assembly Management | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Assembly Management | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Support companies that supply products to their customers by combining components in simple processes without the need of manufacturing functionality but with features to assemble items that integrate with existing features, such as sales, planning, reservations, and warehousing.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="assembly-management">Assembly Management</h1>
+
+<p>To support companies that supply products to their customers by combining components in simple processes without the need of manufacturing functionality, Business Central includes features to assemble items that integrate with existing features, such as sales, planning, reservations, and warehousing.</p>
+<p>An assembly item is defined as a sellable item that contains an assembly BOM. For more information, see <a href="inventory-how-work-BOMs.html">Work with Bills of Material</a>.</p>
+<p>Assembly orders are internal orders, just like production orders, that are used to manage the assembly process and to connect the sales requirements with the involved warehouse activities. Assembly orders differ from other order types because they involve both output and consumption when posting. The assembly order header behaves similarly to an output journal line, and the assembly order lines behave similarly to consumption journal lines.</p>
+<p>To support a just-in-time inventory strategy and the ability to customize products to customer requests, assembly orders may be automatically created and linked as soon as the sales order line is created. The link between the sales demand and the assembly supply enables sales order processors to customize the assembly item on the fly, promise delivery dates according to component availability, and to post output and shipment of the assembled item directly from their sales order interface. For more information, see <a href="assembly-how-to-sell-items-assembled-to-order.html">Sell Items Assembled to Order</a>.</p>
+<p>On one sales order line, you can sell a quantity that is available and must be picked from stock together with a quantity that must be assembled to the order. Certain rules exist to govern the distribution of such quantities to ensure that assemble-to-order quantities take priority over inventory quantities in partial shipping. For more information, see the “Combination Scenarios” section in <a href="assembly-assemble-to-order-or-assemble-to-stock.html">Understanding Assemble to Order and Assemble to Stock</a>.</p>
+<p>Special functionality exists to govern the shipping of assemble-to-order quantities. When an assemble-to-order quantity is ready to be shipped, the warehouse worker in charge posts an inventory pick for the sales order line(s) in question. This, in turn, creates an inventory movement for the components, posts the assembly output, and the sales order shipment. For more information, see the &quot;Handling Assemble-to-Order Items in Inventory Picks” section in <a href="warehouse-how-to-pick-items-with-inventory-picks.html">Pick Items with Inventory Picks</a>.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Learn about the difference between assembling items right before shipping sales orders and assembling items that are intended for storage.</td>
+<td><a href="assembly-assemble-to-order-or-assemble-to-stock.html">Understanding Assemble to Order and Assemble to Stock</a></td>
+</tr>
+<tr>
+<td>Fill in fields on location cards and in inventory setup to define how items flow to and from the assembly department.</td>
+<td><a href="warehouse-how-to-set-up-basic-warehouses-with-operations-areas.html">Set Up Basic Warehouses with Operations Areas</a></td>
+</tr>
+<tr>
+<td>Customize an assembly item to a customer’s request during the sales process, and convert to a sale when accepted.</td>
+<td><a href="assembly-how-to-quote-an-assemble-to-order-sale.html">Quote an Assemble-to-Order Sale</a></td>
+</tr>
+<tr>
+<td>Combine components to create an item in a simple process, to order or to stock.</td>
+<td><a href="assembly-how-to-assemble-items.html">Assemble Items</a></td>
+</tr>
+<tr>
+<td>Sell assembly items that are not currently available by creating a linked assembly order to supply the full or partial sales order quantity.</td>
+<td><a href="assembly-how-to-sell-items-assembled-to-order.html">Sell Items Assembled to Order</a></td>
+</tr>
+<tr>
+<td>When some assemble-to-order items are already in inventory, deduct that quantity from the assembly order and reserve it from inventory.</td>
+<td><a href="assembly-how-to-sell-inventory-items-in-assemble-to-order-flows.html">Sell Inventory Items in Assemble-to-Order Flows</a></td>
+</tr>
+<tr>
+<td>When you are selling assembly items from inventory and all items are not available, initiate an assembly order to automatically supply a part or all of the sales order quantity.</td>
+<td><a href="assembly-how-to-sell-assemble-to-order-items-and-inventory-items-together.html">Sell Assemble-to-Order Items and Inventory Items Together</a></td>
+</tr>
+<tr>
+<td>Make customized assembly items for blanket sales orders before periodically making the actual sales orders according to the blanket order agreement.</td>
+<td><a href="assembly-how-to-create-blanket-assembly-orders.html">Create Blanket Assembly Orders</a></td>
+</tr>
+<tr>
+<td>Undo a posted assembly order, for example because the order was posted with mistakes that must be corrected.</td>
+<td><a href="assembly-how-to-undo-assembly-posting.html">Undo Assembly Posting</a></td>
+</tr>
+<tr>
+<td>Learn about the difference between assembly BOMs and production BOMs and the involved processing differences.</td>
+<td><a href="inventory-how-work-BOMs.html">Work with Bills of Material</a></td>
+</tr>
+<tr>
+<td>Learn how assembly consumption and output are handled when you post assembly orders and how the derived item and resource costs are processed and distributed to the general ledger.</td>
+<td><a href="design-details-assembly-order-posting.html">Design Details: Assembly Order Posting</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/assemble-items-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-how-work-BOMs.html">Work with Bills of Material</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/assembly-assemble-items.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

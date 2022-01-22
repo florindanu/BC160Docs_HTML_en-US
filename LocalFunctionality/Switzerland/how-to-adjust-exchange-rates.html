@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Adjust Exchange Rates </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Adjust Exchange Rates ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="If you have taxable sales in a foreign currency, you must use the official rate for VAT currency conversion as set by the Federal Tax Administration.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="adjust-exchange-rates">Adjust Exchange Rates</h1>
+
+<p>If you have taxable sales in a foreign currency, you must use the official rate for VAT currency conversion as set by the Federal Tax Administration.</p>
+<p>If these rates do not match the currency rates used in the purchase or sales invoices, you will have to adjust the VAT rates with a batch job later. These adjustments can only be run using an authorized VAT rate.</p>
+<p>You can run this batch job as often as you like, however make sure that you always run it before creating a VAT statement.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When using a report currency, make sure that the <strong>VAT Exchange Rate Adjustment</strong> field on the <strong>General Ledger Setup</strong> page is set to <strong>No Adjustment</strong>.</p>
+</div>
+<p>For more information about VAT and foreign currencies, see the <a href="https://go.microsoft.com/fwlink/?LinkId=285999">ESTV</a> website.</p>
+<h2 id="to-adjust-an-exchange-rate">To adjust an exchange rate</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Currencies</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Exch. Rates</strong> action.</p>
+</li>
+<li><p>On the <strong>Currency Exchange Rates</strong> page, enter the official VAT rate per period for each currency in the <strong>VAT Exch. Rate Amount</strong> and the <strong>Relational VAT Exch. Rate Amt</strong> fields.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Adjust Exchange Rates</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Starting Date</strong></td>
+<td>Enter a date to specify the beginning of the period for which entries will be adjusted.</td>
+</tr>
+<tr>
+<td><strong>Ending Date</strong></td>
+<td>Enter the last date for which entries will be adjusted. This date is typically the same as the posting date in the <strong>Posting Date</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Adjust VAT exch. rate</strong></td>
+<td>Specify if you want to adjust the VAT exchange rate.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Print</strong> button to start the batch job. This batch job controls whether VAT entries have to be adjusted and prepares an adjusting entry for each of these entries for the Unrealized/Realized Exchange Rate Adjustment accounts. The existing VAT entries are also corrected.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="swiss-value-added-tax.html">Swiss Value Added Tax</a><br>
+<a href="vat-rates-for-switzerland.html">VAT Rates for Switzerland</a><br>
+<a href="../../finance-how-update-currencies.html">Update Currency Exchange Rates</a><br>
+<a href="../../finance-how-setup-additional-currencies.html">Set Up an Additional Reporting Currency</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Switzerland/how-to-adjust-exchange-rates.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

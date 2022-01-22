@@ -1,0 +1,253 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Make Payments with the AMC Banking 365 Fundamentals extension or SEPA Credit Transfer | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Make Payments with the AMC Banking 365 Fundamentals extension or SEPA Credit Transfer | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Process payments to your vendors by exporting a file together with the payment information from the journal lines.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="make-payments-with-the-amc-banking-365-fundamentals-extension-or-sepa-credit-transfer">Make Payments with the AMC Banking 365 Fundamentals extension or SEPA Credit Transfer</h1>
+
+<p>On the <strong>Payment Journal</strong> page, you can process payments to your vendors by exporting a file together with the payment information from the journal lines. You can then upload the file to your electronic bank where the related money transfers are processed. Business Central supports the SEPA Credit Transfer format, but in your country/region, other formats for electronic payments may be available.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the generic version of Business Central, a global provider of services to convert bank data to any file format that your bank requires is set up and connected. In North American versions, the same service can be used to send payment files as electronic funds transfer (EFT), however with a slightly different process. See step 6 in <a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#to-export-payments-to-a-bank-file">To export payments to a bank file</a>.</p>
+</div>
+<p>To enable SEPA credit transfers, you must first set up a bank account, a vendor, and the general journal batch that the payment journal is based on. You then prepare payments to vendors by automatically filling the <strong>Payment Journal</strong> page with due payments with specified posting dates.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you have verified that the payments are successfully processed by the bank, you can proceed to post the payment journal lines.</p>
+</div>
+<h2 id="setting-up-the-amc-banking-365-fundamentals-extension">Setting Up the AMC Banking 365 Fundamentals Extension</h2>
+<p>Activate the AMC Banking 365 Fundamentals extension to have any bank statement file converted to a format that you can import or to have your exported payment files converted to the format that your bank requires. For more information, see <a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a>.</p>
+<h2 id="setting-up-sepa-credit-transfer">Setting Up SEPA Credit Transfer</h2>
+<p>From the <strong>Payment Journal</strong> page, you can export payments to a file for upload to your electronic bank for processing of the related money transfers. Business Central supports the SEPA Credit Transfer format, but in your country/region, other formats for electronic payments may be available.</p>
+<p>To enable export of a bank file formats that are not supported out of the box in Business Central, you can set up a data exchange definition by using the data exchange framework. For more information, see <a href="across-how-to-set-up-data-exchange-definitions.html">Set Up Data Exchange Definitions</a>.</p>
+<p>Before you can process payment electronically by exporting payment files in the SEPA Credit Transfer format, you must perform the following setup steps:</p>
+<ul>
+<li>Set up the bank account in question to handle the SEPA Credit Transfer format</li>
+<li>Set up vendor cards to process payments by exporting files in the SEPA Credit Transfer format</li>
+<li>Set up the related general journal batch to enable payment export from the <strong>Payment Journal</strong> page</li>
+<li>Connect the data exchange definition for one or more payment types with the relevant payment method or methods</li>
+</ul>
+<h3 id="to-set-up-a-bank-account-for-sepa-credit-transfer">To set up a bank account for SEPA Credit Transfer</h3>
+<ol>
+<li><p>In the <strong>Search</strong> box, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the card of the bank account from which you will export payment files in the SEPA Credit Transfer format.</p>
+</li>
+<li><p>On the <strong>Transfer</strong> FastTab, in the <strong>Payment Export Format</strong> field, choose <strong>SEPADD</strong>.</p>
+</li>
+<li><p>In the <strong>SEPA CT Msg. ID No. Series</strong> field, choose a number series from which numbers are assigned to SEPA credit transfer entries.</p>
+</li>
+<li><p>Make sure the <strong>IBAN</strong> field is filled.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Currency Code</strong> field must be set to <strong>EUR</strong>, because SEPA credit transfers can only be made in the EURO currency.</p>
+</div>
+</li>
+</ol>
+<h3 id="to-set-up-a-vendor-card-for-sepa-credit-transfer">To set up a vendor card for SEPA Credit Transfer</h3>
+<ol>
+<li><p>In the <strong>Search</strong> box, enter <strong>Vendors</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the card of the vendor whom you will pay electronically by export payment files in the SEPA Credit Transfer format.</p>
+</li>
+<li><p>On the <strong>Payment</strong> FastTab, in the <strong>Payment Method Code</strong> field, choose <strong>BANK</strong>.</p>
+</li>
+<li><p>In the <strong>Preferred Bank Account</strong> field, choose the bank to which the money will be transferred when it is processed by your electronic bank.</p>
+<p>The value in the <strong>Preferred Bank Account</strong> field is copied to the <strong>Recipient Bank Account</strong> field on the <strong>Payment Journal</strong> page.</p>
+</li>
+</ol>
+<h3 id="to-set-the-payment-journal-up-to-export-payment-files">To set the payment journal up to export payment files</h3>
+<ol>
+<li>In the <strong>Search</strong> box, enter <strong>Payment Journals</strong>, and then choose the related link.</li>
+<li>Open the payment journal that you use to process payments by exporting files in the SEPA Credit Transfer format.</li>
+<li>In the <strong>Batch Name</strong> field, choose the drop-down button.</li>
+<li>On the <strong>General Journal Batches</strong> page, choose the <strong>Edit List</strong> action.</li>
+<li>On the line for the payment journal that you will use to export payments, select the <strong>Allow Payment Export</strong> check box.</li>
+</ol>
+<h3 id="to-connect-the-data-exchange-definition-for-one-or-more-payment-types-with-the-relevant-payment-method-or-methods">To connect the data exchange definition for one or more payment types with the relevant payment method or methods</h3>
+<ol>
+<li>In the <strong>Search</strong> box, enter <strong>Payment Methods</strong>, and then choose the related link.</li>
+<li>On the <strong>Payment Methods</strong> page, select the payment method that is used to export payments from, and then choose the <strong>Pmt. Export Line Definition</strong> field.</li>
+<li>On the <strong>Pmt. Export Line Definitions</strong> page, select the code that you specified in the <strong>Code</strong> field on the <strong>Line Definitions</strong> FastTab in step 4 in the “To describe the formatting of lines and columns in the file” section in the <a href="across-how-to-set-up-data-exchange-definitions.html">Set Up Data Exchange Definitions</a> procedure.</li>
+</ol>
+<p>The direct-debit mandate is automatically inserted in the <strong>Direct Debit Mandate ID</strong> field when you create a sales invoice for the customer that you selected in step 2. For more information, see <a href="sales-how-work-standard-lines.html">Create Recurring Sales and Purchase Lines</a>.</p>
+<h2 id="preparing-the-payment-journal">Preparing the Payment Journal</h2>
+<p>Fill the payment journal with lines for due payments to vendors, with the option to insert posting dates based on the due date of the related purchase documents. For more information, see <a href="payables-manage-payables.html">Managing Payables</a>.</p>
+<h2 id="exporting-payments-to-a-bank-file">Exporting Payments to a Bank File</h2>
+<p>When you are ready to make payments to your vendors, or reimbursements to your employees, you can export a file with the payment information on the lines on the <strong>Payment Journal</strong> page. You can then upload the file to your bank to process the related money transfers.</p>
+<p>In the generic version of Business Central, the AMC Banking 365 Fundamentals extension is available. In North American versions, the same extension can be used to send payment files as electronic funds transfer (EFT), however with a slightly different process. See step 6 in <a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#to-export-payments-to-a-bank-file">To export payments to a bank file</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Before you can export payment files from the payment journal, you must specify the electronic format for the involved bank account, and you must enable the AMC Banking 365 Fundamentals extension. For more information, see <a href="bank-how-setup-bank-accounts.html">Set Up Bank Accounts</a> and <a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a>. In addition, you must select the <strong>Allow Payment Export</strong> check box on the <strong>General Journal Batches</strong> page. For more information, see <a href="ui-work-general-journals.html">Working with General Journals</a>.</p>
+</div>
+<p>You use the <strong>Credit Transfer Registers</strong> page to view the payment files that have been exported from the payment journal. From this page, you can also re-export payment files in case of technical errors or file changes. Note, however, that exported EFT files are not shown in this page and cannot be re-exported.</p>
+<h3 id="to-export-payments-to-a-bank-file">To export payments to a bank file</h3>
+<p>The following describes how to pay a vendor by check. The steps are similar to refund a customer by check.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</li>
+<li>Fill in the payment journal lines. For more information, see <a href="payables-how-post-payments-refunds.html">Record Payments and Refunds</a>.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using EFT, you must select either <strong>Electronic Payment</strong> or <strong>Electronic Payment–IAT</strong> in the <strong>Bank Payment Type</strong> field. Different file export services and their formats require different setup values on the <strong>Bank Account Card</strong> and <strong>Vendor Bank Account Card</strong> pages. You will be informed about wrong or missing setup values as you try to export the file.<br><br>
+The EFT feature can only be used for bank accounts in the local currency. It cannot be used with a foreign currency, indicated by a value in the <strong>Currency Code</strong> field. (Blank field value means local currency.)</p>
+</div>
+<ol start="3">
+<li><p>When you have completed all payment journal lines, choose the <strong>Export</strong> action.</p>
+</li>
+<li><p>On the <strong>Export Electronic Payments</strong> page, fill in the fields as necessary.</p>
+<p>Any error messages will be shown in the <strong>Payment File Errors</strong> FactBox where you can also choose an error message to see detailed information. You must resolve all errors before the payment file can be exported.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>When you use the AMC Banking 365 Fundamentals extension, a common error message states that the bank account number does not have the length that your bank requires. To avoid or resolve the error, you must remove the value in the <strong>IBAN</strong> field on the <strong>Bank Account Card</strong> page and then, in the <strong>Bank Account No.</strong> field, enter a bank account number in the format that your bank requires.</p>
+</div>
+</li>
+<li><p>On the <strong>Save As</strong> page, specify the location that the file is exported to, and then choose <strong>Save</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using EFT, save the resulting vendor remittance form as a Word document or select to have it emailed directly to the vendor. The payments are now added to the <strong>Generate EFT File</strong> page from where you can generate multiple payment orders together to save transmission cost. For more information, see the following steps.</p>
+</div>
+</li>
+<li><p>On the <strong>Payment Journal</strong> page, choose the <strong>Generate EFT File</strong> action.</p>
+<p>On the <strong>Generate EFT File</strong> page, all payments set up for EFT that you have exported from the payment journal for a specified bank account but not yet generated are listed on the <strong>Lines</strong> FastTab.</p>
+</li>
+<li><p>Choose the <strong>Generate EFT File</strong> action to export one file for all the EFT payments.</p>
+</li>
+<li><p>On the <strong>Save As</strong> page, specify the location that the file is exported to, and then choose <strong>Save</strong>.</p>
+</li>
+</ol>
+<p>The bank payment file is exported to the location that you specify, and you can proceed to upload it to your electronic bank account and make the actual payments. Then you can post the exported payment journal lines.</p>
+<h3 id="to-plan-when-to-post-exported-payments">To plan when to post exported payments</h3>
+<p>If you do not want to post a payment journal line for an exported payment, for example because you are waiting for confirmation that the transaction has been processed by the bank, you can just delete the journal line. When you later create a payment journal line to pay the remaining amount on the invoice, the <strong>Total Exported Amount</strong> field shows how much of the payment amount has already been exported. Also, you can find detailed information about the exported total by choosing the <strong>Credit Transfer Reg. Entries</strong> button to see details about exported payment files.</p>
+<p>If you follow a process where you do not post payments until you have confirmation that they have been processed in the bank, you can control this in two ways.</p>
+<ul>
+<li>In a payment journal with suggested payment lines, you can sort on either the <strong>Exported to Payment File</strong> column or the <strong>Total Exported Amount</strong> and then delete payment suggestions for open invoices for which payments have already been made and you do not want to make payments for.</li>
+<li>On the <strong>Suggest Vendor Payments</strong> page, where you specify which payments to insert in the payment journal, you can select the <strong>Skip Exported Payments</strong> check box if you do not want to insert journal lines for payments that have already been exported.</li>
+</ul>
+<p>To see information about exported payments, choose the <strong>Payment Export History</strong> action.</p>
+<h3 id="to-re-export-payments-to-a-bank-file">To re-export payments to a bank file</h3>
+<p>You can re-export payment files from the <strong>Credit Transfer Registers</strong> page. Before you delete or post payment journal lines, you can also re-export the payment file from the <strong>Payment Journal</strong> page by simply exporting it again. If you have deleted or posted the payment journal lines after exporting them, you can re-export the same payment file from the <strong>Credit Transfer Registers</strong> page. Select the line for the batch of credit transfers that you want to re-export, and then use the <strong>Reexport Payments to File</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Exported EFT files are not shown on the <strong>Credit Transfer Registers</strong> page and cannot be re-exported.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Credit Transfer Registers</strong>, and then choose the related link.</li>
+<li>Select a payment export that you want to re-export, and then choose the <strong>Reexport Payment to File</strong> action.</li>
+</ol>
+<h2 id="posting-the-payments">Posting the Payments</h2>
+<p>When the electronic payment is successfully processed by the bank, post the payments. For more information, see <a href="payables-make-payments.html">Making Payments</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a><br>
+<a href="payables-manage-payables.html">Managing Payables</a><br>
+<a href="ui-work-general-journals.html">Working with General Journals</a><br>
+<a href="finance-collect-payments-with-sepa-direct-debit.html">Collect Payments with SEPA Direct Debit</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

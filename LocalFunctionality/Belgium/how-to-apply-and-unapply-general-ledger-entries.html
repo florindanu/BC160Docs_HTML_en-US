@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Apply and Unapply General Ledger Entries </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Apply and Unapply General Ledger Entries ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Applying temporary general ledger entries allows companies to work with temporary and transfer accounts in the general ledger. Temporary and transfer accounts are used to store temporary ledger entries that are waiting for further processing into the general ledger.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="apply-and-unapply-general-ledger-entries">Apply and Unapply General Ledger Entries</h1>
+
+<p>Applying temporary general ledger entries allows companies to work with temporary and transfer accounts in the general ledger. Temporary and transfer accounts are used to store temporary ledger entries that are waiting for further processing into the general ledger.</p>
+<p>You can use temporary accounts for:</p>
+<ul>
+<li>Money transfers from one bank account to another.</li>
+<li>Financial transaction transfers from one system to another in which part of the information temporarily resides on the original system.</li>
+<li>Transactions for which you have issued a sales invoice to a customer but have not yet received the corresponding purchase invoice from the vendor.</li>
+</ul>
+<p>When the ledger entries have been processed, you can use the <strong>Apply Entries</strong> function to update the posted ledger entries and the posting account type.</p>
+<p>You can unapply the applied general ledger entries and then open the closed entries to make changes.</p>
+<h2 id="to-apply-general-ledger-entries">To apply general ledger entries</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>G/L Registers</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select a general ledger register, and then choose the <strong>General Ledger</strong> action.</p>
+</li>
+<li><p>On the <strong>General Ledger Entries</strong> page, choose the <strong>Apply Entries</strong> action.</p>
+<p>All open ledger entries for the general ledger account are displayed on the <strong>Apply General Ledger Entries</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default, the <strong>Include Entries</strong> field is set to <strong>Open</strong>. You can change the value of the <strong>Include Entries</strong> field to <strong>All</strong> or <strong>Closed</strong>. You can apply only those general ledger entries that are <strong>Open</strong>.</p>
+</div>
+</li>
+<li><p>Select the relevant general ledger entry, and then choose <strong>Set Applies-to ID</strong>.</p>
+<p>The <strong>Applies-to ID</strong> field is updated with the user ID. The remaining amount is displayed in the <strong>Balance</strong> field on the <strong>Apply General Ledger Entries</strong> page.</p>
+</li>
+<li><p>Choose the <strong>Post Application</strong> action.</p>
+<p>You can post the application even if the balance amount is equal to 0. When posted, the <strong>Remaining Amount</strong> field is affected as follows:</p>
+<ul>
+<li><p>If the <strong>Balance</strong> is equal to 0, then the <strong>Remaining Amount</strong> field on all ledger entries is set to 0.</p>
+</li>
+<li><p>If the <strong>Balance</strong> is not equal to 0, then the amount in the <strong>Balance</strong> field is transferred to the <strong>Remaining Amount</strong> field for the general ledger entry that was selected when you posted the application.</p>
+</li>
+<li><p>For all other general ledger entries, the <strong>Remaining Amount</strong> field is set to 0, and the <strong>Open</strong>, <strong>Closed by Entry No.</strong>, <strong>Closed by Amount</strong>, and <strong>Closed at Date</strong> fields are updated.</p>
+</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When posted, the general ledger entries that update the <strong>Applies-to ID</strong> field are deleted.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-view-the-applied-general-ledger-entries">To view the applied general ledger entries</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>G/L Registers</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select a general ledger register, and then choose the <strong>General Ledger</strong> action.</p>
+</li>
+<li><p>Select the relevant general ledger entry, and then choose the <strong>Applied Entries</strong> action.</p>
+<p>You can view all the applied general ledger entries.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-unapply-general-ledger-entries">To unapply general ledger entries</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>G/L Registers</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select a general ledger register, and then choose the <strong>General Ledger</strong> action.</p>
+</li>
+<li><p>Select the general ledger entry that you want to unapply, and then choose the <strong>Undo Application</strong> action.</p>
+<p>The applied general ledger entries are unapplied.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If an entry is applied to more than one application entry, you must unapply the latest application entry first. By default, the latest entry is displayed.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="belgium-local-functionality.html">Belgium Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Belgium/how-to-apply-and-unapply-general-ledger-entries.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Upgrading an Integration with Dynamics 365 Sales| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Upgrading an Integration with Dynamics 365 Sales| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to get Dynamics 365 Business Central ready to integrate with Dynamics 365 Sales.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="upgrading-an-integration-with-dynamics-365-sales">Upgrading an Integration with Dynamics 365 Sales</h1>
+
+<p>Business Central also integrates with Common Data Service, which makes it easy to connect and synchronize data with other Dynamics 365 applications, such as Dynamics 365 Sales, or even apps that you build yourself. If you are integrating for the first time, we recommend that you do so through Common Data Service. For more information, see <a href="admin-common-data-service.html">Integration with Common Data Service</a>.</p>
+<p>If you have already integrated Dynamics 365 Sales with Business Central, you can continue to synchronize data using your setup. However, if you upgrade Business Central, or turn off your Dynamics 365 Sales integration, to turn it on again you must connect through Common Data Service.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Reconnecting through Common Data Service will apply default synchronization settings, and will overwrite any configurations you have. For example, the default table mappings will be applied.</p>
+</div>
+<h2 id="to-upgrade-your-connection-to-use-common-data-service">To upgrade your connection to use Common Data Service</h2>
+<ol>
+<li>Open the <strong>Microsoft Dynamics 365 Connection Setup</strong> page, choose the <strong>Enable</strong> toggle to turn off your existing connection to Dynamics 365 Sales.</li>
+<li>Open the <strong>Common Data Service Connection Setup</strong> page, and choose the <strong>Enable</strong> toggle to turn on the connection.</li>
+<li>After you enable the CDS connection, the Business Central CDS Base Integration Solution is deployed to Common Data Service.</li>
+<li>On the Microsoft Dynamics 365 Connection Setup page, choose the Enable toggle to turn on the connection to Dynamics 365 Sales.</li>
+<li>After you enable the Sales connection, the Business Central Integration Solution is deployed to Sales. This enables integration with entities that are specific to Dynamics 365 Sales, such as sales orders, quotes, and invoices.</li>
+<li>On the <strong>Sales Connection Setup</strong> page, choose <strong>Use Default Synchronization Setup</strong> to initialize the integration table mappings for Dynamics 365 Sales.</li>
+<li>Now choose <strong>Redeploy Integration Solution</strong> to install and configure the upgraded Business Central Integration Solution.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Integrating with Dynamics 365 Sales</a><br>
+<a href="admin-common-data-service.html">Integrating with Common Data Service</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-upgrade-sales-to-cds.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

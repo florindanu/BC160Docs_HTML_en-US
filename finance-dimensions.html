@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Work with Dimensions| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Work with Dimensions| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You use dimensions to categorize entries, for example, by department or project, so you can easily track and analyze data.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="working-with-dimensions">Working with Dimensions</h1>
+
+<p>To make it simpler to perform analysis on documents such as sales orders, you can use dimensions. Dimensions are attributes and values that categorize entries so you can track and analyze them. For example, dimensions can indicate the project or department an entry came from.</p>
+<p>For example, instead of setting up separate general ledger accounts for each department and project, you can use dimensions. This gives a rich opportunity for analysis, without creating a complicated chart of accounts. For more information, see <a href="bi.html">Business Intelligence</a>.</p>
+<p>Another example is to set up a dimension called <em>Department</em>, and use this dimension when you post sales documents. This will let you use business intelligence tools to see which department sold which items.
+The more dimensions you use, the more detailed reports you can base your business decisions on. For example, a single sales entry can include multiple dimension information, such as:</p>
+<ul>
+<li>The account the item sale was posted to</li>
+<li>Where the item was sold</li>
+<li>Who sold it</li>
+<li>The kind of customer who bought it</li>
+</ul>
+<h2 id="analyzing-by-dimensions">Analyzing by Dimensions</h2>
+<p>The Dimensions functionality plays an important role in business intelligence, such as when defining analysis views. For more information, see <a href="bi-how-analyze-data-dimension.html">Analyze Data by Dimensions</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>As a quick way to analyze transactional data by dimensions, you can filter totals in the chart of accounts and entries in all <strong>Entries</strong> pages by dimensions. Look for the <strong>Set Dimension Filter</strong> action.</p>
+</div>
+<h2 id="dimension-sets">Dimension Sets</h2>
+<p>A dimension set is a unique combination of dimension values. It is stored as dimension set entries in the database. Each dimension set entry represents a single dimension value. The dimension set is identified by a common dimension set ID that is assigned to each dimension set entry that belongs to the dimension set.</p>
+<p>When you create a journal line, document header, or document line, you can specify a combination of dimension values. Instead of explicitly storing each dimension value in the database, a dimension set ID is assigned to the journal line, document header, or document line to specify the dimension set.</p>
+<h2 id="setting-up-dimensions">Setting Up Dimensions</h2>
+<p>You can define the dimensions and dimension values to categorize journals and documents, such as sales orders and purchase orders. You set up dimensions on the <strong>Dimensions</strong> page, where you create one line for each dimension, such as <em>Project</em>, <em>Department</em>, <em>Area</em>, and <em>Salesperson</em>.</p>
+<p>You also set up values for dimensions. For example, values might be departments in your company. Dimension values can be set up in a hierarchical structure similar to the chart of accounts, so that data can be broken down into various levels of granularity, and subsets of dimension values can be totaled. You can define as many dimensions and dimension values as you need, and everyone in your company can use them.</p>
+<p>When dimensions and values are set up, you can define global and shortcut dimensions on the <strong>General Ledger Setup</strong> page that will always be available to select as fields on journal and document lines, without having to open the <strong>Dimensions</strong> page first. For more information, see <a href="finance-dimensions.html#to-set-up-global-and-shortcut-dimensions">To set up global and shortcut dimensions</a>.</p>
+<ul>
+<li><strong>Global Dimensions</strong> are used as filters, for example, on reports, batch jobs, and XMLports. You can use only two global dimensions, so choose dimensions you will use often.</li>
+<li><strong>Shortcut Dimensions</strong> are available as fields on journal and document lines. You can create up to six of these.</li>
+</ul>
+<h3 id="to-set-up-default-dimensions-for-customers-vendors-and-other-accounts">To set up default dimensions for customers, vendors, and other accounts</h3>
+<p>You can assign a default dimension for a specific account. The dimension will be copied to the journal or document when you enter the account number on a line, but you can delete or change the code on the line if appropriate. You can also make a dimension required for posting an entry with a specific type of account.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Dimensions</strong>, and then choose the related link.</li>
+<li>On the <strong>Dimensions</strong> page, select the relevant dimension, and then choose the <strong>Account Type Default Dim</strong> action.</li>
+<li>Fill in a line for each new default dimension that you want to set up. Hover over a field to read a short description.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you want to make a dimension required but you do not want to assign a default value to the dimension, leave the <strong>Dimension Value Code</strong> field blank and then select <strong>Code Mandatory</strong> in the <strong>Value Posting</strong> field.</p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If an account is used in the <strong>Adjust Exchange Rates</strong> batch job or the <strong>Post Inventory Cost to G/L</strong> batch job, do not select <strong>Code Mandatory</strong> or <strong>Same Code</strong>. These batch jobs cannot use dimension codes.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If an account must have a different dimension assigned to it than the default dimension already set up for the account type, you must set up a default dimension for this account. The default dimension for the individual account then replaces the default dimension for the account type.</p>
+</div>
+<h3 id="to-set-up-default-dimension-priorities">To set up default dimension priorities</h3>
+<p>Different account types, such as a customer account and an item account, can have different default dimensions set up. As a result, an entry can have more than one default dimension proposed for a dimension. To avoid such conflicts, you can apply priority rules to the different sources.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Default Dimension Priorities</strong>, and then choose the related link.</li>
+<li>On the <strong>Default Dimension Priorities</strong> page, in the <strong>Source Code</strong> field, enter the source code for the entry table to which default dimension priorities will apply.</li>
+<li>Fill in a line for each default dimension priority that you want for the selected source code.</li>
+<li>Repeat the procedure for each source code for which you want to set up default dimension priorities.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you set up two tables with the same priority for the same source code, Business Central will always select the table with the lowest table ID.</p>
+</div>
+<h3 id="to-set-up-dimension-combinations">To set up dimension combinations</h3>
+<p>To avoid posting entries with contradictory or irrelevant dimensions, you can block or limit specific combinations of two dimensions. A blocked dimension combination means that you cannot post both dimensions on the same entry regardless of what the dimension values are. A limited dimension combination lets you post both dimensions to the same entry, but only for certain combinations of dimension values.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Dimension Combinations</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Dimension Combinations</strong> page, choose the field of the dimension combination and select one of the following options.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>No limitation</strong></td>
+<td>This dimension combination has no restrictions. All dimensions values are allowed.</td>
+</tr>
+<tr>
+<td><strong>Limited</strong></td>
+<td>This dimension combination has restrictions depending on which dimension values that you enter. You must define the limitations on the <strong>Dimension Value Combination</strong> page.</td>
+</tr>
+<tr>
+<td><strong>Blocked</strong></td>
+<td>This dimension combination is not allowed.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>If you selected the <strong>Limited</strong> option, you must define which combinations of dimension values are blocked. To do this, choose the field to define the dimension combination.</p>
+</li>
+<li><p>Now select a dimension value combination that is blocked and enter <strong>Blocked</strong> in the field. A blank field means that the dimension value combination is allowed. Repeat if multiple combinations are blocked.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The same dimensions are displayed in both rows and columns and, therefore, all dimension combinations appear two times. Business Central automatically displays the setting in both fields. You cannot select anything in the fields from the upper-left corner and down, because these fields have the same dimension in both rows and columns.</p>
+<p>The selected option is not visible before you exit the field.</p>
+<p>To show the name of the dimensions instead of the code, select the <strong>Show Column Name</strong> field.</p>
+</div>
+<h3 id="to-set-up-global-and-shortcut-dimensions">To set up global and shortcut dimensions</h3>
+<p>Global and shortcut dimensions can be used as a filter anywhere in Business Central, including on reports, batch jobs, and analysis views. Global and shortcut dimensions are always available to be inserted directly without first opening the <strong>Dimensions</strong> page. On journal and document lines, you can select global and shortcut dimensions in a field on the line. You can set up two global dimensions and eight shortcut dimensions. Choose the dimensions that you use most frequently.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Changing a global or shortcut dimension requires that all entries posted with the dimension are updated. You can perform this task with the <strong>Change Global Dimensions</strong> function, but it can be time-consuming and may affect performance and tables may be locked during the update. Therefore, choose your global and shortcut dimensions carefully so that you do not have to change them later. <br><br>
+For more information, see <a href="finance-dimensions.html#to-change-global-dimensions">To change global dimensions</a>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you add or change a global or shortcut dimension, you are automatically signed out and back in so that the new value is prepared for use all over the application.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>Dimensions</strong> FastTab, fill in the fields. Hover over a field to read a short description.</li>
+</ol>
+<h4 id="to-change-global-dimensions">To change global dimensions</h4>
+<p>When you change a global or shortcut dimension, all entries posted with the dimension in question are updated. Because this process may be time-consuming and can affect performance, two different modes are provided to adapt the process to the size of the database.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Change Global Dimensions</strong> action.</p>
+</li>
+<li><p>At the top of the page, select one of the following options to define in which mode the batch job is run.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sequential</strong></td>
+<td>(Default) The whole dimension change is done in one transaction taking all entries back to the dimensions they had before the change.<br><br>This option is recommended if the company contains relatively few posted entries where it will take the shortest time to complete. The process locks multiple tables and blocks other users until it is done. Note that on large databases, the process may not be able to complete at all in this mode. In that case, use the <strong>Parallel</strong> option.</td>
+</tr>
+<tr>
+<td><strong>Parallel</strong></td>
+<td>(Select the <strong>Parallel Processing</strong> checkbox.) The dimension change is done as multiple background sessions and the operation is split into multiple transactions.<br><br>This option is recommended for large databases or companies with many posted entries where it will take the shortest time to complete. Note that with this mode, the update process will not start if there are more than one active database session.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>In the <strong>Global Dimension 1 Code</strong> and/or <strong>Global Dimension 2 Code</strong> fields, enter the new dimension(s). The current dimensions are displayed in gray behind the fields.</p>
+</li>
+<li><p>If you have selected the <strong>Sequential</strong> mode, choose the <strong>Start</strong> action.</p>
+</li>
+<li><p>If you have selected the <strong>Parallel</strong> mode, choose the <strong>Prepare</strong> action.</p>
+<p>The <strong>Log Entries</strong> tab is filled with information about the dimensions that will be changed.</p>
+</li>
+<li><p>Sign out of Business Central, and then sign back in.</p>
+</li>
+<li><p>Choose the <strong>Start</strong> action to start the parallel processing of the dimension changes.</p>
+</li>
+</ol>
+<h3 id="example-of-dimension-setup">Example of Dimension Setup</h3>
+<p>Let's say that your company wants to track transactions based on organizational structure and geographic locations. To do that, you can set up two dimensions on the <strong>Dimensions</strong> page:</p>
+<ul>
+<li><strong>AREA</strong></li>
+<li><strong>DEPARTMENT</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Name</th>
+<th>Code Caption</th>
+<th>Filter Caption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AREA</td>
+<td>Area</td>
+<td>Area Code</td>
+<td>Area Filter</td>
+</tr>
+<tr>
+<td>DEPARTMENT</td>
+<td>Department</td>
+<td>Department Code</td>
+<td>Department Filter</td>
+</tr>
+</tbody>
+</table>
+<p>For <strong>AREA</strong>, you add the following dimension values:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Name</th>
+<th>Dimension Value Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>Americas</td>
+<td>Begin-Total</td>
+</tr>
+<tr>
+<td>20</td>
+<td>North America</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Pacific</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>40</td>
+<td>South America</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>50</td>
+<td>Americas, Total</td>
+<td>End-Total</td>
+</tr>
+<tr>
+<td>60</td>
+<td>Europe</td>
+<td>Begin-Total</td>
+</tr>
+<tr>
+<td>70</td>
+<td>EU</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>80</td>
+<td>Non-EU</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>90</td>
+<td>Europe, Total</td>
+<td>End-Total</td>
+</tr>
+</tbody>
+</table>
+<p>For the two main geographic areas, Americas and Europe, you add subcategories for regions by indenting the dimension values. This will let you report on sales or expenses in regions, and get totals for the larger geographic areas. You could also choose to use countries or regions as your dimension values, or counties or cities, depending on your business.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To set up a hierarchy, the codes must be in alphabetical order. This includes the codes of the dimension values that are provided in Business Central.</p>
+</div>
+<p>For <strong>DEPARTMENT</strong>, you add the following dimension values:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Name</th>
+<th>Dimension Value Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADMIN</td>
+<td>Administration</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>PROD</td>
+<td>Production</td>
+<td>Standard</td>
+</tr>
+<tr>
+<td>SALES</td>
+<td>Sales</td>
+<td>Standard</td>
+</tr>
+</tbody>
+</table>
+<p>With this set up, you can add your two dimensions as the two global dimensions on the <strong>General Ledger Setup</strong> page. This means that you can use AREA and DEPARTMENT as filters for general ledger entries, as well as on all reports and account schedules. Both global dimensions are also automatically available for use on entry lines and document headers as shortcut dimensions.</p>
+<h2 id="getting-an-overview-of-dimensions-used-multiple-times">Getting an Overview of Dimensions used Multiple Times</h2>
+<p>The <strong>Default Dimensions-Multiple</strong> page specifies how a group of accounts use dimensions and dimension values. You can do this by highlighting multiple accounts and then specifying default dimensions and dimension values for all the accounts you have highlighted in the account list. When you specify default dimensions for the highlighted accounts, application will suggest these dimensions and dimension values whenever one of these accounts is used, for example on a journal line. This makes entry posting easier for the user, as the dimension fields are filled in automatically. However, the dimension values that are suggested can be changed on, for example, a journal line.</p>
+<p>The <strong>Default Dimensions-Multiple</strong> page contains the following fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dimension Code</strong></td>
+<td>Shows all dimensions that have been defined as default dimensions on one or more of the highlighted accounts. By choosing the field, you can see a list of all available dimensions. If you select a dimension, the selected dimension will be defined as a default dimension for all highlighted accounts.</td>
+</tr>
+<tr>
+<td><strong>Dimension Value Code</strong></td>
+<td>Shows either a single dimension value or the term (Conflict). If a dimension value is shown in the field, then all highlighted accounts have the same default dimension value for a dimension. If the term (Conflict) is shown in the field, then not all of the highlighted accounts have the same default dimension value for a dimension. By choosing the field, you can see a list of all available dimension values for a dimension. If you select a dimension value, the selected dimension value will be defined as a default dimension value for all highlighted accounts.</td>
+</tr>
+<tr>
+<td><strong>Value Posting</strong></td>
+<td>Shows either a single value posting rule or the term (Conflict). If a value posting rule is shown in the field, then all highlighted accounts have the same value posting rule for a dimension value. If the term (Conflict) is shown in the field, then not all of the highlighted accounts have the same value posting rule for a dimension value. By choosing the Value Posting field, you can see a list of value posting rules. If you select a value posting rule, it will be applied for all highlighted accounts.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="using-dimensions">Using Dimensions</h2>
+<p>In a document such as a sales order, you can add dimension information for both an individual document line and the document itself. For example, on the <strong>Sales Order</strong> page, you can enter dimension values for the first two shortcut dimensions on the individual sales lines, and you can add more dimension information if you choose the <strong>Dimensions</strong> button.</p>
+<p>If you work in a journal instead, you can add dimension information to an entry in the same way, if you have set up shortcut dimensions as fields directly on journal lines.</p>
+<p>You can set up default dimensions for accounts or account types, so that dimensions and dimension values are filled in automatically.</p>
+<h3 id="to-view-global-dimensions-in-ledger-entry-pages">To view global dimensions in ledger entry pages</h3>
+<p>Global dimensions are always company-defined and company-named. To see the global dimensions for your company, open the <strong>General Ledger Setup</strong> page.</p>
+<p>In a ledger entry page, you can see whether there are global dimensions for the entries. The two global dimensions differ from the rest of your dimensions because you can use them as filters anywhere in Business Central.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Accounts</strong>, and then choose the related link.</li>
+<li>On the <strong>Chart of Accounts</strong> page, choose the <strong>Ledger Entries</strong> action.</li>
+<li>To see only the entries that are relevant, set one or more filters on the page.</li>
+<li>To see all the dimensions for an entry, select the entry, and then choose the <strong>Dimensions</strong> action.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Ledger Entry Dimensions</strong> page displays the dimensions for one ledger entry at a time. As you scroll through the ledger entries, the content on the <strong>Ledger Entry Dimensions</strong> page changes accordingly.</p>
+</div>
+<h2 id="troubleshooting-dimensions-errors">Troubleshooting Dimensions Errors</h2>
+<p>When you post documents or journal lines that contain dimensions, various errors may occur that are typically related to wrong dimension setup or assignment.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the following list of potential error messages, the <em>%X</em> codes are placeholders for the data variables that the actual message will contain in the UI depending on the context. For example, <em>%1 %2 is blocked.</em> could appear in the UI as &quot;Dimension Code AREA is blocked.&quot;.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Error Message</th>
+<th>Possible Solution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blocked dimension</td>
+<td>%1 %2 is blocked.</td>
+<td>-Find non-posted documents containing the dimension set with the blocked dimension and unblock it.<br>-Remove the dimension set line for the blocked dimension.</td>
+</tr>
+<tr>
+<td>Deleted dimension</td>
+<td>%1 %2 can't be found.</td>
+<td>-Restore the missing dimension.<br>-Find non-posted documents containing the dimension set with the missing dimension and add it.<br>-Remove the dimension set line for the missing dimension.</td>
+</tr>
+<tr>
+<td>Blocked dimension value</td>
+<td>%1 %2 - %3 is blocked.</td>
+<td>-Find non-posted documents containing the dimension set with the blocked dimension value and unblock it.<br>-Remove the dimension set line for the blocked dimension value.</td>
+</tr>
+<tr>
+<td>Deleted dimension value</td>
+<td>%1 for %2 is missing.</td>
+<td>-Restore the missing dimension value.<br>-Find non-posted documents containing the dimension set with the missing dimension value and add it.<br>-Remove the dimension set line for the missing dimension value.</td>
+</tr>
+<tr>
+<td>Disallowed dimension value</td>
+<td>Dimension Value Type for %1 %2 - %3 must not be %4.</td>
+<td>-Change the <strong>Dimension Value Type</strong> field on the <strong>Dimension Values</strong> page to <strong>Standard</strong> or <strong>Begin-Total</strong>.<br>-Remove the dimension set line for the blocked dimension value.</td>
+</tr>
+<tr>
+<td>Blocked dimension combination</td>
+<td>Dimensions %1 and %2 can't be used concurrently.</td>
+<td>-Find non-posted documents containing the dimension set with the blocked dimension combination and unblock it.<br>-Modify one of the conflicting permission set line for the dimension combination.</td>
+</tr>
+<tr>
+<td>Blocked dimension value Combination</td>
+<td>Dimension combinations %1 - %2 and %3 - %4 can't be used concurrently.</td>
+<td>-Find non-posted documents containing the dimension set with the blocked dimension value combination and unblock it.<br>-Modify one of the conflicting permission set line for the dimension value combination.</td>
+</tr>
+<tr>
+<td>Blank dimension value code for default dimension where the <strong>Value Posting</strong> field contains <strong>Code Mandatory</strong></td>
+<td>-Select a %1 for the %2 %3.<br>-Select a %1 for the %2 %3 for %4 %5.</td>
+<td>-Change the <strong>Value Posting</strong> field on the <strong>Default Dimension</strong> page.<br>-Enter a non-blank dimension value for the conflicting dimension in the dimension set.</td>
+</tr>
+<tr>
+<td>Wrong dimension value code for default dimension where the <strong>Value Posting</strong> field contains <strong>Same Code</strong></td>
+<td>-Select %1 %2 for the %3 %4.<br>-Select %1 %2 for the %3 %4 for %5 %6</td>
+<td>-Change the <strong>Value Posting</strong> field on the <strong>Default Dimension</strong> page.<br>-Enter the required dimension value for the conflicting dimension in the dimension set.</td>
+</tr>
+<tr>
+<td>Non-blank dimension value code for blank default dimension where the <strong>Value Posting</strong> field contains <strong>Same Code</strong></td>
+<td>-%1 %2 must be blank.<br>-%1 %2 must be blank for %3 %4.</td>
+<td>-Change the <strong>Value Posting</strong> field on the <strong>Default Dimension</strong> page.<br>-Enter a blank dimension value code for the conflicting dimension in the dimension set.</td>
+</tr>
+<tr>
+<td>Unexpected dimension value for default dimension where the <strong>Value Posting</strong> field contains <strong>No Code</strong></td>
+<td>-%1 %2 must not be mentioned.<br>-%1 %2 must not be mentioned for %3 %4</td>
+<td>-Change the <strong>Value Posting</strong> field on the <strong>Default Dimension</strong> page.<br>-Remove the conflicting line from the dimension set.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/dimensions-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="bi.html">Business Intelligence</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="bi-how-analyze-data-dimension.html">Analyze Data by Dimensions</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-dimensions.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

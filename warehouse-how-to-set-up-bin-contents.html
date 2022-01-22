@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Bin Contents | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Bin Contents | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="After you have set up your bins, you can set up the bin contents. In other words, you can set up the items you want to store in any given bin and set the rules that govern filling the bin with a particular item.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-bin-contents">Create Bin Contents</h1>
+
+<p>After you have set up your bins, you can set up the bin contents. In other words, you can set up the items you want to store in any given bin and set the rules that govern filling the bin with a particular item. You can do this manually on the <strong>Bin Contents</strong> page or automatically with the <strong>Create Bin Content Worksheet</strong> page.</p>
+<h2 id="to-create-bin-content-manually">To create bin content manually</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Select the location where you want to set up bin contents,  and then choose the <strong>Bins</strong> action.</li>
+<li>Select the bin where you want to set up contents, and then choose the <strong>Contents</strong> action.</li>
+<li>For each item that you want to store in the bin, fill in a line on the <strong>Bin Contents</strong> page with the appropriate information. Some of the fields are filled in already with information about the bin.</li>
+<li>First fill in the <strong>Item No.</strong> field, and then, if you are using directed put-away and pick, fill in the other fields such as the <strong>Unit of Measure Code</strong>, <strong>Max. Qty.</strong>, and <strong>Min. Qty.</strong> fields.</li>
+</ol>
+<p>Select the <strong>Fixed</strong> field if necessary. If the bin is to be used as the default bin for the item, select the <strong>Default Bin</strong> field.</p>
+<p>If you are using directed put-away and pick, and if you have entered the correct dimensional information on the item card about each item’s units of measure, the maximum quantity that you enter on the <strong>Bin Contents</strong> page is verified against the physical capabilities of the bin. The minimum and maximum quantities are used when calculating bin replenishment and suggested put-aways.</p>
+<p>If you select the <strong>Fixed</strong> field, you are fixing the item to the bin, meaning that Business Central will try to put this item in the bin if there is space for it, and it will preserve the record fixing the item to the bin even when the quantity in the bin is 0. Other items can be put into the bin, even though a particular item has been fixed to the bin.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can set up several bin contents at the same time on the <strong>Bin Content Creation Worksheet</strong> page.</p>
+</div>
+<h2 id="to-create-bin-content-with-a-worksheet">To create bin content with a worksheet</h2>
+<p>When you have created your bins, you can create the bin content that you want for each bin in the bin content creation worksheet.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bin Content Creation Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the worksheet header, in the <strong>Name</strong> field, select the worksheet of the location where you want to create bin contents.</p>
+</li>
+<li><p>In the <strong>Bin Code</strong> field, select the code of the bin for which you want to define bin content.</p>
+<p>If you are using directed put-away and pick in this location, the fields relating to that particular bin, such as <strong>Bin Type</strong>, <strong>Warehouse Class Code</strong>, and <strong>Bin Ranking</strong>, will be filled in automatically. This is information that you need to consider as you define the bin content.</p>
+</li>
+<li><p>Select the item that you want to assign to the bin, and fill in the fields related to the bin content. If you are using directed put-away and pick, and you want to use the <strong>Calculate Bin Replenishment</strong> function, fill in the <strong>Max. Qty.</strong> and <strong>Min. Qty.</strong> fields.</p>
+<p>To set this bin as the preferred bin for the item even if the bin quantity is <strong>0</strong> and all other put-away criteria equal, select the <strong>Fixed</strong> field.</p>
+</li>
+<li><p>Repeat steps 3 through 4 for each item you want to assign to a bin.</p>
+</li>
+<li><p>Choose the <strong>Print</strong> action to preview and print the bin content you have entered in the worksheet. Continue to revise the bin content until you are satisfied.</p>
+</li>
+<li><p>When you are ready, choose the <strong>Create Bin Content</strong> action.</p>
+</li>
+</ol>
+<p>In this worksheet, you can work with a number of bin content lines for a number of bins and thereby obtain a good overview of what you are putting into various bins in a given zone, aisle, or rack.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-how-to-calculate-bin-replenishment.html">Calculate Bin Replenishment</a><br>
+<a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-set-up-bin-contents.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

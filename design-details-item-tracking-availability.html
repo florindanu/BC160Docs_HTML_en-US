@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Item Tracking Availability | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Item Tracking Availability | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The Item Tracking Lines and Item Tracking Summary pages provide dynamic availability information for serial or lot numbers. The purpose of this is to increase transparency for users on outbound documents, such as sales orders, by showing them which serial numbers or how many units of a lot number are currently assigned on other open documents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-item-tracking-availability">Design Details: Item Tracking Availability</h1>
+
+<p>The <strong>Item Tracking Lines</strong> and <strong>Item Tracking Summary</strong> pages provide dynamic availability information for serial or lot numbers. The purpose of this is to increase transparency for users on outbound documents, such as sales orders, by showing them which serial numbers or how many units of a lot number are currently assigned on other open documents. This reduces uncertainty that is caused by double allocation and instills confidence in order processors that the item tracking numbers and dates that they are promising on unposted sales orders can be fulfilled. For more information, see <a href="design-details-item-tracking-lines-window.html">Design Details: Item Tracking Lines Page</a>.</p>
+<p>When you open the <strong>Item Tracking Lines</strong> page, availability data is retrieved from the <strong>Item Ledger Entry</strong> table and the <strong>Reservation Entry</strong> table, with no date filter. When you choose the <strong>Serial No.</strong> field or the <strong>Lot No.</strong> field, the <strong>Item Tracking Summary</strong> page opens and shows a summary of the item tracking information in the <strong>Reservation Entry</strong> table. The summary contains the following information about each serial or lot number on the item tracking line:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Total Quantity</strong></td>
+<td>The total quantity of the serial or lot number that is currently in inventory.</td>
+</tr>
+<tr>
+<td><strong>Total Requested Quantity</strong></td>
+<td>The total quantity of the serial or lot number that is currently requested in all documents.</td>
+</tr>
+<tr>
+<td><strong>Current Pending Quantity</strong></td>
+<td>The quantity that is entered in the current instance of the <strong>Item Tracking Lines</strong> page but is not yet committed to the database.</td>
+</tr>
+<tr>
+<td><strong>Total Available Quantity</strong></td>
+<td>The quantity of the serial or lot number that is available for the user to request.<br><br> This quantity is calculated from other fields on the page as follows:<br><br> total quantity – (total requested quantity + current pending quantity).</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also see the information in the preceding table by using the <strong>Select Entries</strong> function on the <strong>Item Tracking Lines</strong> page.</p>
+</div>
+<p>To preserve database performance, availability data is only retrieved once from the database when you open the <strong>Item Tracking Lines</strong> page and when you use the <strong>Refresh Availability</strong> function on the page.</p>
+<h2 id="calculation-formula">Calculation Formula</h2>
+<p>As described in the preceding table, the availability of a given serial or lot number is calculated as follows.</p>
+<p>total available quantity = quantity in inventory – (all demands + quantity not yet committed to the database)</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>This formula implies that the serial or lot number availability calculation considers only inventory and ignores projected receipts. Accordingly, supply that is not yet posted to inventory does not affect item tracking availability, as opposed to regular item availability where projected receipts are included.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-item-tracking.html">Design Details: Item Tracking</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-item-tracking-availability.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Export Electronic Payments </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Export Electronic Payments ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In Business Central, you can export payment journal entries into a file format according to four different payment standards. You must use the following pages to export according to the different payment standards.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="export-electronic-payments">Export Electronic Payments</h1>
+
+<p>In Business Central, you can export payment journal entries into a file format according to four different payment standards. You must use the following pages to export according to the different payment standards.</p>
+<table>
+<thead>
+<tr>
+<th>Payment standard</th>
+<th>Page to export from</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AEB N34</td>
+<td><strong>Payment Orders</strong></td>
+</tr>
+<tr>
+<td>AEB N34.1</td>
+<td><strong>Payment Orders</strong></td>
+</tr>
+<tr>
+<td>E-PAY</td>
+<td><strong>Payment Journal</strong></td>
+</tr>
+<tr>
+<td>SEPA</td>
+<td><strong>Payment Journal</strong> or <strong>Payment Orders</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Before you can export a payment, you must select a payment format in the <strong>Payment Export Format</strong> field on the <strong>Bank Account Card</strong> page.</p>
+</div>
+<h2 id="to-export-electronic-payments-using-the-payment-orders-page">To export electronic payments using the Payment Orders page</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Payment Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the documents that you want to pay.</p>
+</li>
+<li><p>Choose THE <strong>Export to File</strong> action.</p>
+<p>Payments of type SEPA will be exported to a file immediately.</p>
+<p>Payments of type N34 or N34.1 will be exported when you run the <strong>Payment order - Export N34</strong> or <strong>PO - Export N34.1</strong> report, which automatically opens when you choose <strong>Export</strong> in step 3.</p>
+</li>
+<li><p>On the <strong>PO - Export N34.1</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bank Account No.</strong></td>
+<td>Select the bank account from which the payments will be exported.</td>
+</tr>
+<tr>
+<td><strong>Settle Date</strong></td>
+<td>Specify the date that the export will be transmitted to the bank. This date will be the posting date for the payment journal entries that are exported.</td>
+</tr>
+<tr>
+<td><strong>If Posting Date does not match Delivery Date</strong></td>
+<td>Specify if you want to match the settle date, or if you want to skip any payment journal lines where the entered posting date does not match the settle date.</td>
+</tr>
+<tr>
+<td><strong>Expenses Code</strong></td>
+<td>Specify who is responsible for the payment expenses.</td>
+</tr>
+<tr>
+<td><strong>Shared (Only International Transf.</strong></td>
+<td>Specify if you want to share the expenses between the payer and the payee. This is only applicable for international transfers.</td>
+</tr>
+<tr>
+<td><strong>Payment Order Concept.)</strong></td>
+<td>Specify the payment order concept, either <strong>Payroll</strong>, <strong>Retirement Payroll</strong>, or <strong>Others</strong>.</td>
+</tr>
+<tr>
+<td><strong>Relation</strong></td>
+<td>Specify if you want the bank to send you a detailed list of all transfer charges. If you do not select this field, the bank will send the total of all charges for all the transfers made.</td>
+</tr>
+<tr>
+<td><strong>Number Of Copies</strong></td>
+<td>Specify the number of additional copies of the remittance advice that will be printed by this process. One document is always printed so that it can be mailed to the payee.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Print</strong> or the <strong>Preview</strong> action to see the created payment file.</p>
+<p>The payment journal entries which have the <strong>Bank Payment Type</strong> field set to <strong>Electronic Payment</strong> will be exported. The data will be exported to a file that is formatted according the N34 or N34.1 standard format. In addition, remittance advice will be printed, which is suitable for mailing to each payee.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only post the payment order after you have successfully exported the electronic payments.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-export-electronic-payments-using-the-payment-journal-page">To export electronic payments using the Payment Journal page</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the documents that you want to pay.</p>
+</li>
+<li><p>On the <strong>Navigate</strong> tab, choose <strong>Electronic Payments</strong>, and then choose <strong>Export</strong>.</p>
+<p>Payments of type SEPA will be exported to a file immediately.</p>
+<p>Payments of type E-PAY will be exported when you run the <strong>Export Electronic Payments</strong> report, which automatically opens when you choose <strong>Export</strong> in step 3.</p>
+</li>
+<li><p>On the <strong>Export Electronic Payments</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bank Account No.</strong></td>
+<td>Select the bank account from which the payments will be exported.</td>
+</tr>
+<tr>
+<td><strong>Settle Date</strong></td>
+<td>Specify the date that the export will be transmitted to the bank. This date will be the posting date for the payment journal entries that are exported.</td>
+</tr>
+<tr>
+<td><strong>If Posting Date does not match Delivery Date</strong></td>
+<td>Specify if you want to match the settle date, or if you want to skip any payment journal lines where the entered posting date does not match the settle date.</td>
+</tr>
+<tr>
+<td><strong>Expenses Code</strong></td>
+<td>Specify who is responsible for the payment expenses.</td>
+</tr>
+<tr>
+<td><strong>Shared (Only International Transf.</strong></td>
+<td>Specify if you want to share the expenses between the payer and the payee. This is only applicable for international transfers.</td>
+</tr>
+<tr>
+<td><strong>Payment Order Concept.)</strong></td>
+<td>Specify the payment order concept, either <strong>Payroll</strong>, <strong>Retirement Payroll</strong>, or <strong>Others</strong>.</td>
+</tr>
+<tr>
+<td><strong>Relation</strong></td>
+<td>Specify if you want the bank to send you a detailed list of all transfer charges. If you do not select this field, the bank will send the total of all charges for all the transfers made.</td>
+</tr>
+<tr>
+<td><strong>Number Of Copies</strong></td>
+<td>Specify the number of additional copies of the remittance advice that will be printed by this process. One document is always printed so that it can be mailed to the payee.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Print</strong> or the <strong>Preview</strong> action to see the created payment file.</p>
+<p>The payment journal entries which have the <strong>Bank Payment Type</strong> field set to <strong>Electronic Payment</strong> will be exported. The data will be exported to a file that is formatted according to the selected payment standard. In addition, remittance advice will be printed, which is suitable for mailing to each payee.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only post the payment order after you have successfully exported the electronic payments.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the generic version of Business Central, the <strong>Payment Journal</strong> page is used in a similar way to export electronic payments in the SEPA Credit Transfer format. For more information, see <a href="../../finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html">Make Payments with AMC Banking 365 Fundamentals extension or SEPA Credit Transfer</a>.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-export-electronic-payments-from-the-cartera-module">To export electronic payments from the Cartera module</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>PO - Export N34.1</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Delivery Date</strong></td>
+<td>Specify the delivery date of the electronic payment.</td>
+</tr>
+<tr>
+<td><strong>Expenses Code</strong></td>
+<td>Specify who is responsible for the payment expenses.</td>
+</tr>
+<tr>
+<td><strong>Payment Order Concept</strong></td>
+<td>Specify the payment order concept, either <strong>Payroll</strong>, <strong>Retirement Payroll</strong>, or <strong>Others</strong>.</td>
+</tr>
+<tr>
+<td><strong>Relation</strong></td>
+<td>Specify if you want the bank to send you a detailed list of all transfer charges. If you do not select this field, the bank will send the total of all charges for all the transfers made.</td>
+</tr>
+<tr>
+<td><strong>Number Of Copies</strong></td>
+<td>Specify the number of additional copies of the remittance advice that will be printed by this process. One document is always printed so that it can be mailed to the payee.</td>
+</tr>
+<tr>
+<td><strong>Shared (Only Internation Transf.)</strong></td>
+<td>Specify if you want to share the expenses between the payer and the payee. This is only applicable for international transfers.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only post the payment order after you have successfully exported the electronic payments.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="electronic-payments-aeb-n341.html">Electronic Payments – AEB N34.1</a><br>
+<a href="how-to-set-up-bank-accounts-for-electronic-payments.html">Set Up Bank Accounts for Electronic Payments</a><br>
+<a href="../../finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html">Make Payments with AMC Banking 365 Fundamentals extension or SEPA Credit Transfer</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Spain/how-to-export-electronic-payments.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

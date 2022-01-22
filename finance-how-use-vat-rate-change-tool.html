@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use the VAT Rate Change Tool | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use the VAT Rate Change Tool | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use the VAT Rate Change Tool">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="use-the-vat-rate-change-tool">Use the VAT Rate Change Tool</h1>
+
+<h2 id="understanding-the-vat-rate-conversion-process">Understanding the VAT Rate Conversion Process</h2>
+<p>The VAT rate change tool performs VAT rate conversions for master data, journals, and orders in different ways. The selected master data and journals will be updated by the new general product posting group or VAT product post group. If an order has been fully or partially shipped, the shipped items will keep the current general product posting group or VAT product posting group. A new order line will be created for the unshipped items and updated to align current and new VAT or general product posting groups. In addition, item charge assignments, reservations, and item tracking information will be updated accordingly.</p>
+<p>There are a few things that the tool does not convert:</p>
+<ul>
+<li>Sales or purchase orders and invoices where shipments have been posted. These documents are posted using the current VAT rate.</li>
+<li>Documents that have posted prepayment invoices. For example, you have made or received prepayments on invoices that have not been completed before you use the VAT rate change tool. In this case, there will be a difference between the VAT that is due and the VAT that has been paid in the prepayments when the invoice is completed. The VAT rate change tool will skip these documents and you will have to manually update them.</li>
+<li>Drop shipments or special orders.</li>
+<li>Sales or purchase orders with warehouse integration if they are partially shipped or received.</li>
+<li>Service contracts.</li>
+</ul>
+<h3 id="to-prepare-vat-rate-change-conversions">To prepare VAT rate change conversions</h3>
+<p>Before you set up the VAT rate change tool, you must make the following preparations.</p>
+<ul>
+<li>If you have transactions that use different rates, then they must be separated into different groups either by creating new general ledger accounts for each rate or by using data filters to group transactions according to rate.</li>
+<li>If you create new general ledger accounts, then you must create new general posting groups.</li>
+<li>To reduce the number of documents that get converted, post as many documents as possible and reduce unposted documents to a minimum.</li>
+<li>Back up data.</li>
+</ul>
+<h3 id="to-set-up-the-vat-rate-change-tool">To set up the VAT rate change tool</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>VAT Rate Change Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>Master Data</strong>, <strong>Journals</strong>, and <strong>Documents</strong> FastTabs, choose a posting group value from the option list for needed fields. For each group you can choose whether to convert VAT product posting groups or general product posting groups, or convert both values if they are available in the master data item. For some areas you can also set a filter to convert only a subset of values, for example, G/L accounts.</li>
+</ol>
+<h3 id="to-set-up-product-posting-group-conversion">To set up product posting group conversion</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>VAT Rate Change Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>VAT Rate Change Setup</strong> page, choose either the <strong>VAT Prod. Posting Group Conv.</strong> or <strong>Gen Prod. Posting Group Conv.</strong> action.</li>
+<li>In the <strong>From Code</strong> field, enter the current posting group.</li>
+<li>In the <strong>To Code</strong> field, enter the new posting group.</li>
+</ol>
+<h3 id="to-perform-vat-rate-change-conversion">To perform VAT rate change conversion</h3>
+<p>You use the VAT rate change tool to manage changes in the standard rate of VAT. You perform VAT and general posting group conversions to change VAT rates and maintain accurate VAT reporting. Depending on your setup, the following changes are made:</p>
+<ul>
+<li>VAT and general posting groups are converted.</li>
+<li>Changes are implemented in general ledger accounts, customers, vendors, open documents, journal lines, and so on.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Before you perform VAT rate change conversion, you can test the conversion. To do so, follow the steps below, but make sure to clear the <strong>Perform Conversion</strong> and <strong>VAT Rate Change Tool Completed</strong> check boxes. During test conversion, the <strong>Converted</strong> field in the <strong>VAT Rate Change Log Entry</strong> table is cleared and the <strong>Converted Date</strong> field in the <strong>VAT Rate Change Log Entry</strong> table is blank. After the conversion is complete, choose <strong>VAT Rate Change Log Entries</strong> to view the results of the test conversion. Verify each entry before you perform the conversion. In particular, verify transactions that use an old VAT rate.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>VAT Rate Change</strong>, and then choose the <strong>VAT Rate Change Setup</strong> link.</p>
+</li>
+<li><p>Verify that you have already set up the VAT product posting group conversion or general product posting group conversion.</p>
+</li>
+<li><p>Choose the <strong>Perform Conversion</strong> check box.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Clear the <strong>VAT Rate Change Tool Completed</strong> check box. The check box is automatically selected when the VAT rate change conversion is completed.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Convert</strong> action.</p>
+</li>
+<li><p>After the conversion is complete, choose the <strong>VAT Rate Change Log Entries</strong> action to view the results of the conversion.</p>
+</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>After the conversion, the <strong>Converted</strong> field in the <strong>VAT Rate Change Log Entry</strong> table is chosen and the <strong>Converted Date</strong> field in the <strong>VAT Rate Change Log Entry</strong> table displays the conversion date.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-setup-vat.html">Set Up Value-Added Tax</a><br>
+<a href="finance-setup-unrealized-vat.html">Setting Up Unrealized Value Added Tax</a><br>
+<a href="finance-how-report-vat.html">Report VAT to a Tax Authority</a><br>
+<a href="finance-work-with-vat.html">Work with VAT on Sales and Purchases</a><br>
+<a href="about-localization.html">Local functionality in Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-use-vat-rate-change-tool.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Fault Reporting in Service Management | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Fault Reporting in Service Management | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to set up fault reporting processes.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-fault-reporting">Set Up Fault Reporting</h1>
+
+<p>Fault reporting lets you establish standards for recording fault information for service items. For example, you can specify what the problem is, the symptoms you see, the reason for the problem, and how to resolve it.</p>
+<p>Fault codes describe the typical service item faults or the actions taken on service items. Depending on the level of fault reporting in your company, you might need to set up fault area codes and symptom codes before you set up fault codes. Fault areas descrive areas of service item faults. Fault reason codes describe the reason for service item faults and, if needed, whether to exclude warranty and contract discounts. For example, you might want to exclude warranty and contract discounts if the customer was somehow responsible for the fault in the service item. You assign fault reason codes to service orders. For more information, see <a href="service-how-to-work-on-service-tasks.html">Work on Service Tasks</a>.</p>
+<h2 id="to-specify-the-overall-level-of-fault-reporting-to-use">To specify the overall level of fault reporting to use</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the <strong>Fault Reporting Level</strong> field, choose one of the options described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Fault Level</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>No reporting codes are used.</td>
+</tr>
+<tr>
+<td>Fault</td>
+<td>Codes are listed in the <strong>Fault Codes</strong> table. These codes identify service item faults or actions to take on service items. You can cluster related codes into <strong>Fault Area Code</strong> groupings.</td>
+</tr>
+<tr>
+<td>Fault + Symptom</td>
+<td>You provide a combination of codes in the <strong>Fault Codes</strong> and <strong>Symptom Codes</strong> tables. Typical symptom codes include indicators that a customer might use to describe a problem, such as a noise or a quality.</td>
+</tr>
+<tr>
+<td>Fault + Symptom + Area</td>
+<td>You use fault, symptom, and fault area codes as an implementation of the International Repair Coding System (IRIS).</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>To complete the setup of fault reporting, you can also specify what repairs or resolutions are associated with a fault or defect. You set that up on the <strong>Fault/Resolution Code Relationships</strong> page, where you set up combinations of codes for the service item group of the service item from which you accessed the witndow and the number of occurrences for each one.</p>
+<h2 id="to-create-fault-and-resolution-code-relationships">To create fault and resolution code relationships</h2>
+<!--this needs to go in a working with topic-->
+<p>To be able to see the most common methods of repair for particular item faults when you are servicing the items, you need to build up information on fault/resolution codes relationships. Use the <strong>Insert Fault/Resol. Codes Relationships</strong> batch job to find all the combination of fault and resolution codes in posted service orders and record them on the <strong>Fault/Resol. Codes Relationships</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Insert Fault/Resol. Codes Relationships</strong>, and then choose the related link.</li>
+<li>Enter dates to define the period you want to include in the batch job.</li>
+<li>To group the relationships by service item group, choose the <strong>Relation Based on Service Item Group</strong> check box.</li>
+<li>To retain the records that you have already inserted manually on the <strong>Fault/Resol. Codes Relationships</strong> page, choose the <strong>Retain Manually Inserted Rec.</strong> check box.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-setup-service.html">Setting Up Service Management</a><br>
+<a href="service-service.html">Service Management</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-setup-fault-reporting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

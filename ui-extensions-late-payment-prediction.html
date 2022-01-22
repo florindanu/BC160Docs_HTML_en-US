@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Predict Late Payments for Sales Documents | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Predict Late Payments for Sales Documents | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use our predictive model to predict whether an invoice will be paid on time.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="the-late-payment-prediction-extension">The Late Payment Prediction Extension</h1>
+
+<p>Effectively managing receivables is important to the overall financial health of a business. The Late Payment Prediction extension can help you reduce outstanding receivables and fine-tune your collections strategy by predicting whether sales invoices will be paid on time. For example, if a payment is predicted to be late, you might decide to adjust the terms of payment or the payment method for the customer.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>When you open a posted sales document, a notification will display at the top of the page. To use the Late Payment Prediction Extension you can opt in by choosing <strong>Enable</strong> in the notification. Alternatively, you can set up the extension manually. For example, if you regret dismissing the notification.</p>
+<p>To enable the extension manually, follow these steps:</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Late Payment Prediction Setup</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you decide to enable the extension manually, be aware that Business Central will not allow you to do so if the quality of the model is low. The quality of the model indicates how accurate the model's predictions are likely to be. Several factors can impact the quality of a model. For example, there might not have been enough data, or the data did not contain enough variation. You can view the quality of the model you are currently using on the <strong>Late Payment Prediction Setup</strong> page. You can also specify a minimum threshold for the model quality.</p>
+</div>
+<h2 id="viewing-all-payment-predictions">Viewing All Payment Predictions</h2>
+<p>If you enable the extension a <strong>Payments Predicted to be Late</strong> tile is available in the <strong>Business Manager</strong> Role Center. The tile displays the number of payments that are predicted to be late, and let's you open the <strong>Customer Ledger Entries</strong> page where you can dig deeper into the posted invoices. There are three columns to pay attention to:</p>
+<ul>
+<li><strong>Late Payment</strong> - Indicates whether the payment for the invoice is predicted to be late.</li>
+<li><strong>Prediction Confidence</strong> - Indicates how reliable you should consider the prediction to be. <strong>High</strong> means that the prediction is at least 90% sure, <strong>Medium</strong> is between 80 and 90%, and <strong>Low</strong> is below 80%.</li>
+<li><strong>Prediction Confidence %</strong> - Shows the actual percentage behind the confidence rating. By default, this column is not displayed, but you can add it if you want. For more information, see <a href="ui-personalization-user.html">Personalize Your Workspace</a>.</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The Customer Ledger Entries page also shows a FactBox on the right. While you are reviewing predictions, the information in the <strong>Customer Details</strong> section can be helpful. When you choose the invoice in the list, the section shows information about the customer. It also lets you take immediate action. For example, if a customer frequently misplaces their wallet, you can open the Customer card from the FactBox and block the customer for future sales.</p>
+</div>
+<h2 id="viewing-a-payment-prediction-for-a-specific-sales-document">Viewing a Payment Prediction for a Specific Sales Document</h2>
+<p>You can also predict late payments up-front. On the <strong>Sales Quotes</strong>, <strong>Sales Orders</strong>, and <strong>Sales Invoices</strong> pages, you can use the <strong>Predict Payment</strong> action to generate a prediction for the sales document you're viewing.</p>
+<!--## Scheduling Payment Predictions
+On the **Late Payment Prediction Setup** page you can schedule updates to payment predictions for a time that is convenient for you. -->
+<h2 id="design-details">Design details</h2>
+<p>Microsoft deploys and operates number of predictive web services in all regions where Business Central is available. Access to these web services is included in your Business Central subscription. For more information, see the Microsoft Dynamics 365 Business Central Licensing Guide. The guide is available for download on the <a href="https://dynamics.microsoft.com/en-us/business-central/overview/">Business Central</a> website.</p>
+<p>The web-services work in three modes:</p>
+<ul>
+<li>Train model. The web service trains the model based on the provided dataset.</li>
+<li>Evaluate model. The web service checks whether the model returns reliable data for the provided dataset.</li>
+<li>Predict. Web-service applies the model to the provided dataset to make a prediction.</li>
+</ul>
+<p>These web-services are stateless, meaning they use data only to calculate predictions on demand. They do not store data.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can use your own predictive web service instead of ours. For more information, see <a href="#AnchorText">Create and use your own predictive web service late payment prediction</a>.</p>
+</div>
+<h3 id="data-required-to-train-and-evaluate-the-model">Data required to train and evaluate the model</h3>
+<p>For each <strong>Customer ledger entry</strong> that has a related <strong>Posted Sales Invoice</strong>:</p>
+<ul>
+<li>Amount (LCY) including Tax</li>
+<li>Payment terms in days is calculated as <strong>Due Date</strong> minus <strong>Posting Date</strong>.</li>
+<li>Whether there is an applied credit memo.</li>
+</ul>
+<p>Additionally, the record is enriched with aggregated data from other invoices that are related to the same customer. This includes the following:</p>
+<ul>
+<li>Total number and amount of paid invoices</li>
+<li>Total number and amount of invoices that were paid late</li>
+<li>Total number and amount of outstanding invoices</li>
+<li>Total number and amount of outstanding invoices that are already late</li>
+<li>Average days late</li>
+<li>Ratio: Number Paid Late/Paid invoices</li>
+<li>Ratio: Amount Paid Late/Paid invoices</li>
+<li>Ratio: Number Outstanding Late/Outstanding invoices</li>
+<li>Ratio: Amount Outstanding Late/Outstanding invoices</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The information about the customer is not included in the dataset.</p>
+</div>
+<h3 id="standard-model-and-my-model">Standard model and My model</h3>
+<p>The Late Payment Prediction extension contains a predictive model that is trained using data that is representative of a range of small to medium-sized businesses. When you start posting invoices and receiving payments, Business Central will evaluate whether the standard model fits your business flow.</p>
+<p>If it appears that your processes do not match the standard model, you still can use the extension but you will need to get more data. Just continue to use Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We use a bit of your compute time each week when we evaluate and re-train the model.</p>
+</div>
+<p>Business Central runs training and evaluation automalically when there are enough paid and late invoices are available, however you can run it manually whenever you want.</p>
+<h4 id="to-train-and-use-your-model">To train and use your model</h4>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Late Payment Prediction Setup</strong>, and then choose the related link.</li>
+<li>In the <strong>Selected Model</strong> field, choose <strong>My Model</strong>.</li>
+<li>Choose the <strong>Create My Model</strong> action, to train model on your data.</li>
+</ol>
+<h2 id="-create-and-use-your-own-predictive-web-service-for-late-payment-prediction"><a name="AnchorText"> </a>Create and use your own predictive web service for late payment prediction</h2>
+<p>You can also create your own predictive web service based on a public model named <strong>Prediction Experiment for Dynamics 365 Business Central</strong>. This predictive model is available online in the Azure AI Gallery. To use the model, follow these steps:</p>
+<ol>
+<li>Open a browser and go to the <a href="https://go.microsoft.com/fwlink/?linkid=2086310">Azure AI Gallery</a>.</li>
+<li>Search for <strong>Prediction Experiment for Dynamics 365 Business Central</strong>, and then open the model in Azure Machine Learning Studio.</li>
+<li>Use your Microsoft account to sign up for a workspace, and then copy the model.</li>
+<li>Run the model, and publish it as a web service.</li>
+<li>Make a note of the API URL and API key. You will use these credentials for a cash flow setup.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Late Payment Prediction Setup</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Use My Azure Subscription</strong> check box.</li>
+<li>On the <strong>My Model Credentials</strong> FastTab, enter the API URL and API key for your model.  .</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="https://go.microsoft.com/fwlink/?linkid=861765">Azure Machine Learning Studio Documentation</a><br>
+<a href="ui-extensions.html">Customizing Business Central Using Extensions</a><br>
+<a href="index.html">Welcome to Dynamics 365 Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-late-payment-prediction.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

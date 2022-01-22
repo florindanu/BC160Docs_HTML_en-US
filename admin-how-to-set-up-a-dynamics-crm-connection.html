@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Connect to Dynamics 365 Sales | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Connect to Dynamics 365 Sales | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can integrate other apps with Business Central through Common Data Service.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="connect-to-common-data-service">Connect to Common Data Service</h1>
+
+<p>This topic describes how to set up a connection between Business Central and Common Data Service. Typically, businesses create the connection to integrate and synchronize data with another Dynamics 365 business app, such as Dynamics 365 Sales.</p>
+<h2 id="before-you-start">Before You Start</h2>
+<p>There are a few pieces of information to have ready before you create the connection:</p>
+<ul>
+<li>The URL for the Common Data Service environment that you want to connect to. If you use the <strong>CDS Connection Setup</strong> assisted setup guide to create the connection we will discover your environments, but you can also enter the URL of another environment in your tenant.</li>
+<li>A user name and password of a user account that is used only for the integration. This account is referred to as the &quot;integration user&quot; account.</li>
+<li>The user name and password of an account that has administrator permissions in Business Central and Common Data Service.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These steps describe the procedure for the online version of Business Central.</p>
+</div>
+<h2 id="set-up-a-connection-to-">Set Up a Connection to Common Data Service</h2>
+<p>For all authentication types other than Office 365 authentication, you set up your connection to Common Data Service on the <strong>CDS Connection Setup</strong> page. For Office 365 authentication, we recommend that you use the <strong>CDS Connection Setup</strong> assisted setup guide. The guide makes it easier to set up the connection and specify advanced features, such as coupling between records.</p>
+<h3 id="to-use-the-cds-connection-setup-assisted-setup-guide">To use the CDS Connection Setup assisted setup guide</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Assisted Setup</strong>, and then choose the related link.</li>
+<li>Choose <strong>Set up CDS Base Integration connection</strong> to start the assisted setup guide.</li>
+<li>Fill in the fields as necessary.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>CDS Connection Setup</strong> assisted setup guide automatically assigns <strong>Integration Administrator</strong> and <strong>Integration User</strong> security roles to the user account used for integration, and sets the access mode for the account to <strong>non-interactive</strong>.</p>
+</div>
+<h3 id="to-create-or-maintain-the-connection-manually">To create or maintain the connection manually</h3>
+<p>The following procedure describes how to set up the connection manually on the <strong>CDS Connection Setup</strong> page manually. This is also the page where you manage settings for the integration.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>CDS Connection Setup</strong>, and then choose the related link.</li>
+<li>Enter the following information for the connection from Business Central to Common Data Service.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Environment URL</strong></td>
+<td>If you own environments in Common Data Service, we will find those for you when you run the setup guide. If you want to connect to a different environment in another tenant, you can enter the administrator credentials for the environment and we will discover those.</td>
+</tr>
+<tr>
+<td><strong>User Name</strong> and <strong>Password</strong></td>
+<td>The credentials of the user account that is dedicated for the integration. For more information, see <a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Common Data Service</a>.</td>
+</tr>
+<tr>
+<td><strong>Enabled</strong></td>
+<td>Start using the integration. If you do not enable the connection now, the connection settings will be saved but users will not be able to access Common Data Service data from Business Central. You can return to this page and enable the connection later.</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>In the <strong>Ownership Model</strong> field, choose whether you want a team entity in Common Data Service to own new records, or one or more specific users. If you choose <strong>Person</strong>, you must specify each user. If you choose <strong>Team</strong>, the default business unit BCI_Company will display in the <strong>Coupled Business Unit</strong> field.</li>
+</ol>
+<!--Need to verify the details in this table, are these specific to Sales maybe?
+Enter the following advanced settings.
+
+|Field|Description|
+|-----|-----|
+|**[!INCLUDE[d365fin](includes/d365fin_md.md)] Users Must Map to CDS Users**|If you are using the Person ownership model, specify whether [!INCLUDE[d365fin](includes/d365fin_md.md)] user accounts must have a matching user accounts in [!INCLUDE[d365fin](includes/cds_long_md.md)]. The **Office 365 Authentication Email** of the [!INCLUDE[d365fin](includes/d365fin_md.md)] user must be the same as the **Primary Email** of the [!INCLUDE[crm_md](includes/crm_md.md)] user.<br /><br /> If you set the value to **Yes**, [!INCLUDE[d365fin](includes/d365fin_md.md)] users who do not have a matching [!INCLUDE[crm_md](includes/crm_md.md)] user account will not have [!INCLUDE[d365fin](includes/d365fin_md.md)] integration capabilities in the user interface. Access to [!INCLUDE[crm_md](includes/crm_md.md)] data directly from [!INCLUDE[d365fin](includes/d365fin_md.md)] is done on behalf of the [!INCLUDE[crm_md](includes/crm_md.md)] user account.<br /><br /> If you set the value to **No**, all [!INCLUDE[d365fin](includes/d365fin_md.md)] users will have [!INCLUDE[crm_md](includes/crm_md.md)] integration capabilities in the user interface. Access to [!INCLUDE[crm_md](includes/crm_md.md)] data is done on behalf of the [!INCLUDE[crm_md](includes/crm_md.md)] connection (integration) user.|
+|**Current Business Central Salesperson is Mapped to a User**|Indicates whether your user account is mapped to an account in [!INCLUDE[crm_md](includes/crm_md.md)] <!--double check the name of this field|-->
+<ol start="4">
+<li><p>To test the connection settings, choose <strong>Connection</strong>, and then <strong>Test Connection</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If data encryption is not enabled in Business Central, you will be asked whether you want to enable it. To enable data encryption, choose <strong>Yes</strong> and provide the required information. Otherwise, choose <strong>No</strong>. You can enable data encryption later. For more information, see <a href="/dynamics365/business-central/dev-itpro/developer/devenv-encrypting-data.md">Encrypting Data in Dynamics 365 Business Central</a> in Developer and IT-Pro help.</p>
+</div>
+</li>
+<li><p>If Common Data Service synchronization is not already set up, you will be asked whether you want to use the default synchronization setup. Depending on whether you want to keep records aligned in Common Data Service and Business Central, choose <strong>Yes</strong> or <strong>No</strong>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Connecting to Common Data Service using the <strong>CDS Connection Setup</strong> page may require that you assign the Integration Administrator and Integration User security roles to the account used for integration in Dynamics 365 Sales. For more information, see <a href="http://docs.microsoft.com/dynamics365/customer-engagement/admin/create-users-assign-online-security-roles#assign-a-security-role-to-a-user">Assign a security role to a user</a>.</p>
+</div>
+<h3 id="to-disconnect-from-">To disconnect from Common Data Service</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>CDS Connection Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>CDS Connection Setup</strong> page, turn off the <strong>Enabled</strong> toggle.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-how-to-view-synchronization-status.html">View the Status of a Synchronization</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-set-up-a-dynamics-crm-connection.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

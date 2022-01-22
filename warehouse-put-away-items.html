@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Put Items Away | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Put Items Away | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The warehouse activity of putting items away after they are received or output is performed in different ways depending on how warehouse management features are configured.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="putting-items-away">Putting Items Away</h1>
+
+<p>The warehouse activity of putting items away after they are received or output is performed in different ways depending on how warehouse management features are configured. The complexity can rank from no warehouse features, through basic warehouse configurations for order-by order handling in one or more activities only, to advanced configurations where all warehouse activities must be performed in a directed workflow. For more information, see <a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a>.</p>
+<p>If you decide that you want to organize and record put-away information with warehouse documents, you place a check mark in the <strong>Require Put-away</strong> field on the location card. This indicates that when you have items coming into the warehouse location through an inbound source document, you want the put-away of those items to be controlled by the system. An inbound source document can be a purchase order, a sales return order, an inbound transfer order, or a production order whose output is ready for put-away.</p>
+<p>If your location is set up to use put-away processing but not receive processing, you use the <strong>Inventory Put-away</strong> page to organize the put-away information, print it, enter the result of the actual put-away and post the put-away information, which in turn posts the receipt information for the source document. In the case of a production order, the posting process posts the output of the order and finishes the production order.</p>
+<p>If your location is set up to require both receive and put-away processing, so that you have placed check marks in both the <strong>Require Receive</strong> and the <strong>Require Put-away</strong> field on the location card, there is a different process for putting items away. In this case, you will use the <strong>Warehouse Put-away</strong> page to handle the put-away. The warehouse put-away functions similarly to the inventory put-away, except that instead of posting the information, you register the put-away. Note that the registering of the warehouse put-away does not post the receipt of the items. It merely updates the bin content. As a warehouse manager, you can use a put-away worksheets to organize put-away information before creating the individual warehouse put-away instructions.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Post the receipt of items directly from the inbound order document and thereby record the put away, because no warehouse configuration exists.</td>
+<td><a href="warehouse-how-receive-items.html">Receive Items</a></td>
+</tr>
+<tr>
+<td>Put items away order by order and post the receipt in the same activity, in a basic warehouse configuration.</td>
+<td><a href="warehouse-how-to-put-items-away-with-inventory-put-aways.html">Put Items Away with Inventory Put-aways</a></td>
+</tr>
+<tr>
+<td>Put items away for multiple orders in an advanced warehouse configuration.</td>
+<td><a href="warehouse-how-to-put-items-away-with-warehouse-put-aways.html">Put Items Away with Warehouse Put-aways</a></td>
+</tr>
+<tr>
+<td>Put produced or assembled items away in a basic or an advanced warehouse configuration.</td>
+<td><a href="warehouse-how-to-put-away-production-output.html">Put Away Production or Assembly Output</a></td>
+</tr>
+<tr>
+<td>Plan optimized put-away instructions for a number of posted warehouse receipts rather than have warehouse workers act directly on receipts.</td>
+<td><a href="warehouse-how-to-plan-put-aways-in-worksheets.html">Plan Put-aways in Worksheets</a></td>
+</tr>
+<tr>
+<td>Put back items that were picked technically with an internal pick, for example for a production order that did not consume the expected quantity.</td>
+<td><a href="warehouse-how-to-create-put-aways-from-internal-put-aways.html">Pick and Put Away Without a Source Document</a></td>
+</tr>
+<tr>
+<td>Split a put-away line to place part of the put-away quantity in available bins because the designated bin is filled up.</td>
+<td><a href="warehouse-how-to-split-warehouse-activity-lines.html">Split Warehouse Activity Lines</a></td>
+</tr>
+<tr>
+<td>Get immediate access to put-aways that are assigned to you as a warehouse worker.</td>
+<td><a href="warehouse-how-to-find-your-warehouse-assignments.html">Find Your Warehouse Assignments</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-put-away-items.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

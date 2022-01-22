@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Czech Local Functionality - Intrastat | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Czech Local Functionality - Intrastat | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This section describes local functionality - Intrastat">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="intrastat">Intrastat</h1>
+
+<p>The standard Intrastat feature does not transfer all and only valid transactions into Intrastat journal. This results into a lot of manual work necessary to exclude/include the excess/missing transactions, often rendering a lot of errors. According to the requirements of the Czech Republic, the following improvements are needed for the Intrastat feature:</p>
+<ul>
+<li>Particular options in the Intrastat engine need to be parameterized</li>
+<li>Handling of supplementary measure units needs to be improved</li>
+<li>Calculation of Intrastat amount and statistical amounts must be improved</li>
+<li>The <strong>Get Intrastat Entries</strong> batch needs to be improved</li>
+<li>Exporting of Intrastat reports to .csv files according to local requirements</li>
+</ul>
+<p>This feature adds improvement of data transferred into Intrastat journal and prepares the environment for correct Intrastat reporting.</p>
+<h2 id="intrastat-engine-setup">Intrastat Engine Setup</h2>
+<p>Additional Intrastat engine general parameters setup allows to:</p>
+<ul>
+<li>Set mandatory fields of Intrastat transactions in sales, purchase, and transfer transaction</li>
+<li>Set where the particular parts on Intrastat data related to items should be taken from (item or posted entry) and which item attributes will be mandatory in sales, purchase, and transfer transaction</li>
+<li>Set if any item charges related to sales, purchase, and transfer transaction will be ignored by the system (i.e. not including them in Intrastat or statistical amounts)</li>
+<li>Define if the statistical amount is calculated and calculation method for it</li>
+<li>Select Intrastat rounding type to set how Intrastat and statistical amounts will be rounded</li>
+<li>Set foreign currency exchange rate for Intrastat reporting</li>
+<li>Set object for Intrastat report export</li>
+</ul>
+<h3 id="new-setup-tables-added-for">New Setup Tables Added for:</h3>
+<ul>
+<li>Statistic Indications</li>
+<li>Specific Movements</li>
+<li>Intrastat Delivery Groups</li>
+</ul>
+<h3 id="additional-setup-for-intrastat-enables">Additional Setup for Intrastat Enables:</h3>
+<ul>
+<li>Set a country/region code for Entry/Exit Point</li>
+<li>Set Tariff Number Supplementary Units of Measure if Tariff numbers have to be reported in Supplementary Units of Measure</li>
+<li>Set if particular item charges have to be included in either Intrastat Amount or Intrastat Statistical Value or both</li>
+<li>Set Intrastat behavior for Shipment Methods – select if item charges should be included/excluded for particular Shipment Methods and Intrastat Delivery Group for reporting</li>
+<li>Set Area value in Location Card</li>
+<li>Set default values and enforce company policies following additional Intrastat data available on Customer and Vendor Cards</li>
+<li>Define on the Item Card additional Intrastat data – Statistic indication and Specific movement</li>
+<li>Make special foreign Currency Exchange Rate setup and object for export setup for each Registration Country</li>
+</ul>
+<h2 id="posting-sales-purchase-or-transfer-transaction">Posting Sales, Purchase or Transfer Transaction</h2>
+<p>To identify and enter attributes of sales transaction that will be used in Intrastat reporting user, follows these steps:</p>
+<ul>
+<li>User verifies Intrastat data (Transaction Type, Specification and Transport Method, etc.) on the Foreign Trade tab. These were transferred to the document header from the relevant Customer or Vendor card and can be manually edited.</li>
+<li>Intrastat Transaction field (non-editable) informs the user whether the particular transaction is qualified as Intrastat transaction.</li>
+<li>Identification of the Physical Movement in the correction (Credit-Memo) documents using the Physical Transfer field.</li>
+<li>User can manually exclude an Intrastat Transaction from Intrastat reporting using the Intrastat Exclude field.</li>
+<li>User verifies Intrastat Data (Tariff No., Statistic Indication, Country/Region of Origin and Net Weight) in the document lines. These were transferred to the line from the relevant Item card and can be manually edited.</li>
+<li>User assigns Item Charge to the sales line and includes/excludes its value to Intrastat Amount and Statistical Amount.</li>
+<li>During the posting, system transfers all Intrastat relevant information to Item Ledger Entry.</li>
+<li>During the posting, system displays an error if any Intrastat field set as mandatory in Stat. Reporting Setup form is not filled in. This will prevent the user from posting the transaction.</li>
+</ul>
+<h2 id="preparing-intrastat-journal">Preparing Intrastat Journal</h2>
+<p>The Intrastat Journal contains the following new fields and functionalities:</p>
+<ul>
+<li>Shipment Method Code</li>
+<li>Statistic Indication</li>
+<li>Specific Movement</li>
+<li>Supplementary Units of Measure Calculation</li>
+<li>Declaration Numbering</li>
+<li>Declaration types for Statement Classification – Primary, Null, Replacing, Deleting</li>
+<li>Registration Country entries filtering</li>
+</ul>
+<p>The fastest way to prepare the Intrastat journal and make sure all the rules set in the previous steps are followed is by using the <strong>Get Entries</strong> batch job. During the execution of the Get Entries batch job, the system will take care of the following:</p>
+<ul>
+<li>System considers Item and Job Ledger Entries created by transaction identified as Intrastat transactions</li>
+<li>System ignores sales and purchase Intrastat transactions with the EU-3 Party Trade flag</li>
+<li>System makes sure to include Intrastat transactions with Entry/Exit Points in EU Country</li>
+<li>System makes sure to include sales and purchase documents (i.e. Credit Memos) posted with the <strong>Correction</strong> check box as inserted in the Intrastat journal with the same type as documents they are correcting, but with opposite sign for Non-physical Transfer documents and with the opposite type for documents marked as Physical Transfer</li>
+<li>System makes sure the reversed Intrastat transactions (i.e. using Undo Receipt/Shipment) are excluded from reporting (both revered and reversing Intrastat transactions)</li>
+<li>System makes sure the Item Charges are (not) included, adjusted and calculated in Intrastat Amount and Statistical Amount according to the user’s setup in Stat. Reporting Setup, Item Charges, Shipment Methods and Item Charge Assignments</li>
+<li>System makes sure the Supplementary Units of Measure are used while preparing Intrastat Journal lines</li>
+<li>System makes sure the correct data source is used for Tariff No., Net Weight and Country/Region of Origin according to Stat. Reporting Setup</li>
+</ul>
+<h2 id="intrastat-report-export-to-csv-format">Intrastat Report Export to CSV Format</h2>
+<p>Export of Intrastat reports to .csv files according to local requirements (for INSTATDESK and INSTATONLINE applications) was added to Intrastat Journal.
+Export use object for export based on setup in Stat. Reporting Setup or Registration Country.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="czech-local-functionality.html">Czech Local Functionality</a><br>
+<a href="finance.html">Finance</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Czech/intrastat.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

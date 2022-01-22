@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Define how data is exchanged electronically | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Define how data is exchanged electronically | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use an external provider of OCR services to have PDF or image files turned into electronic documents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-data-exchange-definitions">Set Up Data Exchange Definitions</h1>
+
+<p>You can set up Business Central to exchange data in specific tables with data on external files, for example to send and receive electronic documents, import and export bank data or other data, such as payroll, currency exchange rates, and item catalogues. For more information, see <a href="across-data-exchange.html">Exchanging Data Electronically</a>.</p>
+<p>As preparation for creating a data exchange definition for a data file or stream, you can use the related XML schema to define which data elements to include on the <strong>Column Definitions</strong> FastTab. See step 6 in <a href="across-how-to-set-up-data-exchange-definitions.html#to-describe-the-formatting-of-lines-and-columns-in-the-file">To describe the formatting of lines and columns in the file</a>. For more information, see the <a href="across-how-to-use-xml-schemas-to-prepare-data-exchange-definitions.html">Use XML Schemas to Prepare Data Exchange Definitions</a>.</p>
+<p>You normally set up data exchange definitions on the <strong>Data Exchange Definition</strong> page. However, when you set up a data exchange definition for the service of refreshing currency exchange rates, you start the process in the simplified <strong>Exch. Rate Update Setup Card</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the file that is being converted is in XML format, the term <em>“column”</em> in this topic should be interpreted as <em>“XML element containing data”</em>.</p>
+</div>
+<p>This topic includes the following procedures:</p>
+<ul>
+<li>To create a data exchange definition</li>
+<li>To export a data exchange definition as an XML file for use by others</li>
+<li>To import an XML file for an existing data exchange definition</li>
+</ul>
+<h2 id="to-create-a-data-exchange-definition">To create a data exchange definition</h2>
+<p>Creating a data exchange definition involves two tasks:</p>
+<ol>
+<li>On the <strong>Data Exchange Definition</strong> page, describe the formatting of lines and columns in the file.</li>
+<li>On the <strong>Data Exchange Mapping</strong> page, map columns in the data file to fields in Business Central.</li>
+</ol>
+<p>This is described in the following procedures.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To see which codeunits Microsoft uses in existing definitions in the standard product, review the three <strong>Codeunit</strong> fields on the header of the <strong>Field Mapping</strong> page for each definition.</p>
+</div>
+<h4 id="to-describe-the-formatting-of-lines-and-columns-in-the-file">To describe the formatting of lines and columns in the file</h4>
+<ol>
+<li><p>In the <strong>Search</strong> box, enter <strong>Data Exchange Definitions</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, describe the data exchange definition and the data file type by filling the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>Enter a code to identify the data exchange definition.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Enter a name for the data exchange definition.</td>
+</tr>
+<tr>
+<td><strong>File Type</strong></td>
+<td>Specify what type of file that the data exchange definition is used for. You can select between four file types:<br><br> -   <strong>XML</strong>: Layered strings of content and markup surrounded by tags indicating function.<br>-   <strong>Variable Text</strong>: Records have variable length and are separated by a character, such as comma or semi-colon. Also known as <em>delimited file</em>.<br>-   <strong>Fixed Text</strong>: Records have the same length, using pad characters, and each record is on a separate line. Also known as <em>fixed-width file</em>.<br>- <strong>Json</strong>: Layered strings of content in JavaScript.</td>
+</tr>
+<tr>
+<td><strong>Type</strong></td>
+<td>Specify what type of business activity the data exchange definition is used for, such as <strong>Payment Export</strong>.</td>
+</tr>
+<tr>
+<td><strong>Data Handling Codeunit</strong></td>
+<td>Specify the codeunit that transfers data in and out of tables in Business Central.</td>
+</tr>
+<tr>
+<td><strong>Validation Codeunit</strong></td>
+<td>Specify the codeunit that is used to validate data against pre-defined business rules.</td>
+</tr>
+<tr>
+<td><strong>Reading/Writing Codeunit</strong></td>
+<td>Specify the codeunit that processes imported data prior to mapping and exported data after mapping.</td>
+</tr>
+<tr>
+<td><strong>Reading/Writing XMLport</strong></td>
+<td>Specify the XMLport through which an imported data file or service enters prior to mapping and through which exported data exits when it is written to a data file or service after mapping.</td>
+</tr>
+<tr>
+<td><strong>Ext. Data Handling Codeunit</strong></td>
+<td>Specify the codeunit that transfers external data in and out of the data exchange framework.</td>
+</tr>
+<tr>
+<td><strong>User Feedback Codeunit</strong></td>
+<td>Specify the codeunit that does various clean-up after mapping, such as marks the lines as exported and deletes temporary records.</td>
+</tr>
+<tr>
+<td><strong>File Encoding</strong></td>
+<td>Specify the encoding of the file. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+<tr>
+<td><strong>Column Separator</strong></td>
+<td>Specify how columns in the data file are separated, if the file is of type <strong>Variable Text</strong>.</td>
+</tr>
+<tr>
+<td><strong>Header Lines</strong></td>
+<td>Specify how many header lines exist in the file.<br><br> This makes sure that the header data is not imported. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+<tr>
+<td><strong>Header Tag</strong></td>
+<td>If a header line exists in several positions in the file, enter the text of the first column on the header line.<br><br> This makes sure that the header data is not imported. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+<tr>
+<td><strong>Footer Tag</strong></td>
+<td>If a footer line exists in several positions in the file, enter the text of the first column on the footer line.<br><br> This makes sure that the footer data is not imported. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>Line Definitions</strong> FastTab, describe the formatting of lines in the data file by filling the fields as described in the following table.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For import of bank statements, you only create one line for the single format of the bank statement file that you want to import.</p>
+<p>For export of payments, you can create a line for each payment type that you want to export. In that case, the <strong>Column Definitions</strong> FastTab shows different columns for each payment type.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>Enter a code to identify the line in the file.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Enter a name that describes the line in the file.</td>
+</tr>
+<tr>
+<td><strong>Column Count</strong></td>
+<td>Specify how many columns the line in data file has. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+<tr>
+<td><strong>Data Line Tag</strong></td>
+<td>Specify the position in the related XML schema of the element that represents the main entry of the data file. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+<tr>
+<td><strong>Namespace</strong></td>
+<td>Specify the namespace that is expected in the file, to enable namespace validation. You can leave this field blank if you do not want to enable namespace validation.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Repeat step 4 to create a line for every type of file data that you want to export.</p>
+<p>Proceed to describe the formatting of columns in the data file by filling the fields on the <strong>Column Definitions</strong> FastTab as described in the table below. You can use the structure file, such as an .XSD file, for the data file to prefill the FastTab with the relevant elements. For more information, see <a href="across-how-to-use-xml-schemas-to-prepare-data-exchange-definitions.html">Use XML Schemas to Prepare Data Exchange Definitions</a>.</p>
+</li>
+<li><p>On the <strong>Column Definitions</strong> FastTab, choose <strong>Get File Structure</strong>.</p>
+</li>
+<li><p>On the <strong>Get File Structure</strong> page, select the related structure file, and then choose the <strong>OK</strong> button. The lines on the <strong>Column Definitions</strong> FastTab are filled according to the structure of the data file.</p>
+</li>
+<li><p>On the <strong>Column Definitions</strong> FastTab, edit or fill the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Column No.</strong></td>
+<td>Specify the number that reflects the column’s position on the line in the file.<br><br> For XML files, specify the number that reflects the type of element in the file that contains the data.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Specify the name of the column.<br><br> For XML files, specify the markup that marks the data to be exchanged.</td>
+</tr>
+<tr>
+<td><strong>Data Type</strong></td>
+<td>Specify if the data to be exchanged is of type <strong>Text</strong>, <strong>Date</strong>, or <strong>Decimal</strong>.</td>
+</tr>
+<tr>
+<td><strong>Data Format</strong></td>
+<td>Specify the format of the data, if any. For example, <strong>MM-dd-yyyy</strong> if the data type is <strong>Date</strong>. <strong>Note:</strong>  For export, specify the data format according to Business Central. For import, specify the data format according to the .NET Framework. For more information, see <a href="https://go.microsoft.com/fwlink/?LinkID=323466">Standard Date and Time Format Strings</a>.</td>
+</tr>
+<tr>
+<td><strong>Data Formatting Culture</strong></td>
+<td>Specify the culture of the data format, if any. For example, <strong>en-US</strong> if the data type is <strong>Decimal</strong> to make sure that comma is used as the .000 separator, according to the US format. For more information, see <a href="https://go.microsoft.com/fwlink/?LinkID=323466">Standard Date and Time Format Strings</a>. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+<tr>
+<td><strong>Length</strong></td>
+<td>Specify the length of the fixed-width line that holds the column if the data file is of type <strong>Fixed Text</strong>.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Enter a description of the column, for information.</td>
+</tr>
+<tr>
+<td><strong>Path</strong></td>
+<td>Specify the position of the element in the related XML schema.</td>
+</tr>
+<tr>
+<td><strong>Negative-Sign Identifier</strong></td>
+<td>Enter the value that is used in the data file to identify negative amounts, in data files that cannot contain negative signs. This identifier is then used to reverse the identified amounts to negative signs during import. <strong>Note:</strong>  This field is only relevant for import.</td>
+</tr>
+<tr>
+<td><strong>Constant</strong></td>
+<td>Specify any data that you want to export in this column, such as extra information about the payment type. <strong>Note:</strong>  This field is only relevant for export.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Repeat step 8 for every column or XML element in the data file that has data that you want to exchange with Business Central.</p>
+</li>
+</ol>
+<p>The next step in creating a data exchange definition is to decide which columns or XML elements in the data file map to which fields in Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The specific mapping depends on the business purpose of the data file to be exchanged and on local variations. Even the SEPA bank standard has local variations. Business Central supports import of SEPA CAMT bank statement files out-of-the-box. This is represented by the <strong>SEPA CAMT</strong> data exchange definition record code on the <strong>Data Exchange Definitions</strong> page. For information about the specific field mapping of this SEPA CAMT support, see <a href="across-field-mapping-when-importing-sepa-camt-files.html">Field Mapping When Importing SEPA CAMT Files</a>.</p>
+</div>
+<h4 id="to-map-columns-in-the-data-file-to-fields-in-">To map columns in the data file to fields in Business Central</h4>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Sometimes the values in the fields that you want to map are different. For example, in one business app the language code for the United States is &quot;U.S.,&quot;
+but in the other it's &quot;US.&quot; That means you must transform the value when you exchange data. This happens through transformation rules that you define for the fields. For more information, see <a href="across-how-to-set-up-data-exchange-definitions.html#transformation-rules">Transformation Rules</a>.</p>
+</div>
+<ol>
+<li><p>On the <strong>Line Definitions</strong> FastTab, select the line for which you want to map columns to fields, and then choose <strong>Field Mapping</strong>. The <strong>Data Exchange Mapping</strong> page opens.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, specify the mapping setup by filling the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Table ID</strong></td>
+<td>Specify the table that holds the fields to or from which data is exchanged according to the mapping.</td>
+</tr>
+<tr>
+<td><strong>Use as Intermediate Table</strong></td>
+<td>Specify if the table that you select in the <strong>Table ID</strong> field is an intermediate table where the imported data is stored before it is mapped to the target table.<br><br> You typically use an intermediate table when the data exchange definition is used to import and convert electronic documents, such as vendor invoices into purchase invoices in Business Central. For more information, see <a href="across-data-exchange.html">Exchanging Data Electronically</a>.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Enter a name for the mapping setup.</td>
+</tr>
+<tr>
+<td><strong>Pre-Mapping Codeunit</strong></td>
+<td>Specify the codeunit that prepares the mapping between fields in Business Central and external data.</td>
+</tr>
+<tr>
+<td><strong>Mapping Codeunit</strong></td>
+<td>Specify the codeunit that is used to map the specified columns or XML data elements to fields in Business Central.</td>
+</tr>
+<tr>
+<td><strong>Post-Mapping Codeunit</strong></td>
+<td>Specify the codeunit that completes the mapping between fields in Business Central and external data. <strong>Note:</strong>  When using the AMC Banking 365 Fundamentals extension feature, the codeunit converts exported data from Business Central to a generic format that is ready for export. For import, the codeunit converts external data to a format that is ready for import into Business Central.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>Field Mapping</strong> FastTab, specify which columns map to which fields in Business Central by filling the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Column No.</strong></td>
+<td>Specify which column in the data file that you want to define a map for.<br><br> You can only select columns that are represented by lines on the <strong>Column Definitions</strong> FastTab on the <strong>Data Exchange Definition</strong> page.</td>
+</tr>
+<tr>
+<td><strong>Field ID</strong></td>
+<td>Specify which field the column in the <strong>Column No.</strong> field maps to.<br><br> You can only select from fields that exist in the table that you specified in the <strong>Table</strong> field on the <strong>General</strong> FastTab.</td>
+</tr>
+<tr>
+<td><strong>Optional</strong></td>
+<td>Specify that the map will be skipped if the field is empty. <strong>Note:</strong>  If you do not select this check box, an export error will occur if the field is empty. <strong>Note:</strong>  This field is only relevant for export.</td>
+</tr>
+<tr>
+<td><strong>Target Table ID</strong></td>
+<td>Only visible when the <strong>Use as Intermediate Table</strong> check box is selected.<br><br> Specify the table that the value in the <strong>Column Caption</strong> field is mapped to, when you are using an intermediate table for data import.</td>
+</tr>
+<tr>
+<td><strong>Target Table Caption</strong></td>
+<td>Only visible when the <strong>Use as Intermediate Table</strong> check box is selected.<br><br> Specify the name of the table in the <strong>Target Table ID</strong> field, which is the table that the value in the <strong>Column Caption</strong> field is mapped to, when you are using an intermediate table for data import.</td>
+</tr>
+<tr>
+<td><strong>Target Field ID</strong></td>
+<td>Only visible when the <strong>Use as Intermediate Table</strong> check box is selected.<br><br> Specify the field in the target table that the value in the <strong>Column Caption</strong> field is mapped to, when you are using an intermediate table for data import.</td>
+</tr>
+<tr>
+<td><strong>Target Field Caption</strong></td>
+<td>Only visible when the <strong>Use as Intermediate Table</strong> check box is selected.<br><br> Specify the name of the field in the target table that the value in the <strong>Column Caption</strong> field is mapped to, when you are using an intermediate table for data import.</td>
+</tr>
+<tr>
+<td><strong>Optional</strong></td>
+<td>Only visible when the <strong>Use as Intermediate Table</strong> check box is selected.<br><br> Specify if the map should be skipped if the field is empty. If you do not select this check box, then an export error will occur if the field is empty.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>The data exchange definition is now ready to be enabled for users. For more information, see <a href="across-how-to-set-up-electronic-document-sending-and-receiving.html">Set Up Electronic Document Sending and Receiving</a>, <a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#setting-up-sepa-credit-transfer">Set Up SEPA Credit Transfer</a>, <a href="finance-collect-payments-with-sepa-direct-debit.html">Collect Payments with SEPA Direct Debit</a>, and <a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html">Make Payments with AMC Banking 365 Fundamentals extension or SEPA Credit Transfer</a>.</p>
+<h3 id="transformation-rules">Transformation Rules</h3>
+<p>If the values in the fields you are mapping differ, you must use transformation rules for data exchange definitions to make them the same. You define transformation rules for data exchange definitions by opening an existing definition, or creating a new definition, and then on the <strong>Line Definitions</strong> FastTab, choosing <strong>Manage</strong>, and then <strong>Field Mapping</strong>. Predefined rules are provided, but you can also create your own. The following table describes the types of transformations that you can perform.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Uppercase</strong></td>
+<td>Capitalize all letters.</td>
+</tr>
+<tr>
+<td><strong>Lowercase</strong></td>
+<td>Make all letters lowercase.</td>
+</tr>
+<tr>
+<td><strong>Title Case</strong></td>
+<td>Capitalize the first letter of each word.</td>
+</tr>
+<tr>
+<td><strong>Trim</strong></td>
+<td>Remove empty spaces before and after the value.</td>
+</tr>
+<tr>
+<td><strong>Substring</strong></td>
+<td>Transform a specific portion of a value. To specify where to start the transformation, choose either a <strong>Start Position</strong> or <strong>Starting Text</strong>. The starting position is a number that represents the first character to transform. The starting text is the letter immediately before the letter to replace. If you want to start with the first letter in the value, use a starting position instead. To specify where to stop the transformation you choose either <strong>Length</strong>, which is the number of characters to replace, or the <strong>Ending Text</strong>, which is the character that is immediately after the last character to transform.</td>
+</tr>
+<tr>
+<td><strong>Replace</strong></td>
+<td>Find a value and replace it with another. This is useful for replacing simple values, such as a particular word.</td>
+</tr>
+<tr>
+<td><strong>Regular Expression - Replace</strong></td>
+<td>Use a regular expression as part of a find and replace operation. This is useful for replacing multiple, or perhaps more complex, values.</td>
+</tr>
+<tr>
+<td><strong>Remove Non-Alphanumeric Characters</strong></td>
+<td>Delete characters that are not letters or numbers, such as symbols or special characters.</td>
+</tr>
+<tr>
+<td><strong>Date Formatting</strong></td>
+<td>Specify how to display dates. For example, you can transform DD-MM-YYYY to YYYY-MM-DD.</td>
+</tr>
+<tr>
+<td><strong>Decimal Formatting</strong></td>
+<td>Define rules for decimal placement and rounding precision.</td>
+</tr>
+<tr>
+<td><strong>Regular Expression - Match</strong></td>
+<td>Use a regular expression to find one or more values. This is similar to the <strong>Substring</strong> and <strong>Regular Expression - Replace</strong> options.</td>
+</tr>
+<tr>
+<td><strong>Custom</strong></td>
+<td>This is an advanced option that requires assistance from a developer. It enables an integration event that that you can subscribe to if you want to use your own transformation code. If you are a developer and want to use this option, see the &quot;Tip for Developers: Example of the Custom Option&quot; section below.</td>
+</tr>
+<tr>
+<td><strong>Date and Time Formatting</strong></td>
+<td>Define how to display the current date as well as the time of day.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="tip-for-developers-example-of-the-custom-option">Tip for Developers: Example of the Custom Option</h4>
+<p>The following example shows how to implement your own transformation code.</p>
+<pre><code>codeunit 60100 &quot;Hello World&quot;
+{
+    [EventSubscriber(ObjectType::Table, Database::&quot;Transformation Rule&quot;, 'OnTransformation', '', false, false)]
+    procedure OnTransformation(TransformationCode: Code[20]; InputText: Text; var OutputText: Text)
+    begin
+        if TransformationCode = 'CUST' then
+            OutputText := InputText + ' testing';
+    end;
+}
+</code></pre>
+<p>After you define your rules you can test them. In the <strong>Test</strong> section, enter an example of a value that you want to transform, and then check the results.</p>
+<h3 id="to-export-a-data-exchange-definition-as-an-xml-file-for-use-by-others">To export a data exchange definition as an XML file for use by others</h3>
+<p>When you have created the data exchange definition for a specific data file, you can export the data exchange definition as an XML file that you can import. This is described in the following procedure.</p>
+<ol>
+<li><p>In the <strong>Search</strong> box, enter <strong>Data Exchange Definitions</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the data exchange definition that you want to export.</p>
+</li>
+<li><p>Choose the <strong>Export Data Exchange Definition</strong> action.</p>
+</li>
+<li><p>Save the XML file that represents the data exchange definition in an appropriate location.</p>
+<p>If a data exchange definition has already been created, you just have to import the XML file into the Data Exchange Framework. This is described in the following procedure.</p>
+</li>
+</ol>
+<h3 id="to-import-an-existing-data-exchange-definition">To import an existing data exchange definition</h3>
+<ol>
+<li>Save the XML file that represents the data exchange definition in an appropriate location.</li>
+<li>In the <strong>Search</strong> box, enter <strong>Data Exchange Definitions</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action. The <strong>Data Exchange Definitio</strong> page opens.</li>
+<li>Choose the <strong>Import Data Exchange Definition</strong> action.</li>
+<li>Choose the file that you saved in step 1.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-set-up-data-exchange.html">Setting Up Data Exchange</a><br>
+<a href="across-how-to-set-up-electronic-document-sending-and-receiving.html">Set Up Electronic Document Sending and Receiving</a><br>
+<a href="finance-collect-payments-with-sepa-direct-debit.html">Collect Payments with SEPA Direct Debit</a><br>
+<a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html">Make Payments with AMC Banking 365 Fundamentals extension or SEPA Credit Transfer</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-to-set-up-data-exchange-definitions.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Service Orders | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Service Orders | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can use the **Service Order** page to create documents where you enter information about a service, such as repairs and maintenance, on service items by customer request.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-service-orders">Create Service Orders</h1>
+
+<p>You can use the <strong>Service Order</strong> page to create documents where you enter information about a service, such as repairs and maintenance, on service items by customer request.</p>
+<p>When creating a service order, you only have to fill in a few fields. Some fields are optional and many are automatically filled in when you fill in related fields.</p>
+<h2 id="to-create-a-service-order">To create a service order</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a new service order.</p>
+</li>
+<li><p>In the <strong>No.</strong> field, enter a number for the service order.</p>
+<p>Alternatively, if you have set up number series for service orders on the <strong>Service Management Setup</strong> page, you can press Enter to select the next available service order number.</p>
+</li>
+<li><p>In the <strong>Customer No.</strong> field, select the relevant customer from the list. The customer-relevant fields are filled in with information from the <strong>Customer</strong> table.</p>
+</li>
+<li><p>Depending on the settings on the <strong>Mandatory Fields</strong> FastTab on the <strong>Service Management Setup</strong> page, you may need to fill in the <strong>Service Order Type</strong> field and the <strong>Salesperson Code</strong> field.</p>
+</li>
+<li><p>Optionally, fill in the rest of the fields.</p>
+</li>
+<li><p>Register the service item lines.</p>
+</li>
+</ol>
+<h2 id="to-create-a-service-order-from-a-contract">To create a service order from a contract</h2>
+<p>You can automatically create service orders for the maintenance of service items based on service contracts.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Create Contract Service Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Service Contract Header</strong> FastTab, set the filters you want to apply.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, fill in the <strong>Starting Date</strong> and <strong>Ending Date</strong> fields with the starting date and ending date for the period that you want to create contract service orders for. The batch job creates service orders that include service items in service contracts with next planned service dates within this period.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There is a limit to the number of days you can use as the date range each time you use this batch job. You set this limit in the <strong>Contract Serv. Ord. Max. Days</strong> field on the <strong>Service Management Setup</strong> page.</p>
+</div>
+</li>
+<li><p>In the <strong>Action</strong> field, choose <strong>Create Service Order</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You will not be able to create order with multiple service item, if you set <strong>One Service Item Line/Order</strong> field on the <strong>Service Management Setup</strong> page.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-convert-a-service-quote-to-a-service-order">To convert a service quote to a service order</h2>
+<p>When a customer has accepted a service quote, you convert it to a service order. The quote is deleted and a new service order is set up with the same description as the service quote. The response date and time are recalculated for the service order and the status is set to <strong>Pending</strong>. The repair status of the service items in the order are changed to <strong>Initial</strong>.</p>
+<p>Business Central searches for allocation entries for all the service items in the service quote that have the status <strong>Active</strong>. If it finds such allocation entries, their allocation status is updated to <strong>Reallocation Needed</strong>. When you reallocate the service items in the service order, the status of the allocation entries registered for the quote are updated to <strong>Finished</strong>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Contract Quotes</strong>, and then choose the related link.</li>
+<li>Choose the service quote to convert to a service order.</li>
+<li>Choose the <strong>Make Order</strong> action.</li>
+</ol>
+<h2 id="to-check-item-availability-for-one-or-more-orders">To check item availability for one or more orders</h2>
+<p>You can check and see if an item you need to fulfill an order is in stock, and if it is not, when the item will be in stock. In addition, if an item is available to reserve, you can reserve it to make sure it is available for your use. You can check availability for a particular order, or for all orders.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Dispatch Board</strong>, and then choose the related link.</p>
+</li>
+<li><p>Do one of the following:</p>
+<ul>
+<li>For a particular order, choose the order, and then choose the <strong>Demand Overview</strong> action.</li>
+<li>For all orders, choose <strong>Show Document</strong>. The <strong>Service Order</strong> page opens.</li>
+</ul>
+</li>
+<li><p>On the <strong>Demand Overview</strong> page, expand the item grouping, and view information about the availability of the item. For example, you can see how many items are in inventory. You can also see if and when an item will be available if it is on back order, that is, Source Type = Purchase, or whether it has been reserved.</p>
+</li>
+</ol>
+<h2 id="to-reserve-an-item-for-a-service-order">To reserve an item for a service order</h2>
+<p>If you need to be sure that an item is available for a service order, you can reserve the item.</p>
+<ol>
+<li>In the <strong>Search</strong> box, enter <strong>Service Orders</strong>, and then choose the related link.</li>
+<li>Choose the service order, and then choose <strong>Edit</strong>.</li>
+<li>Choose <strong>Actions</strong>, choose <strong>Order</strong>, and then choose <strong>Service Lines</strong>.</li>
+<li>On the <strong>Service Lines</strong> page, choose the item to reserve, and then choose the <strong>Reserve</strong> action.</li>
+<li>On the <strong>Reservation</strong> page, choose <strong>Reserve from Current Line</strong>.</li>
+</ol>
+<h2 id="to-insert-lines-based-on-standard-service-codes">To insert lines based on standard service codes</h2>
+<p>If you have set up standard service codes and assigned them to service item groups, you can insert the standard lines linked to the standard service codes on service documents. For more information, see <a href="service-how-setup-service-coding.html">Set Up Standard Service Codes</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</li>
+<li>Create a new service order.</li>
+<li>Fill in the fields as necessary..</li>
+<li>Fill in the service item lines with the required information.</li>
+<li>Choose the line with the service item that you want to create service lines for, and then choose <strong>Get Std. Service Codes</strong>. The <strong>Standard Serv. Item Gr. Codes</strong> page opens with the standard codes for the service item group specified on the line.</li>
+<li>Choose the appropriate code, and choose the <strong>OK</strong> button to enter standard service lines.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the <strong>Service Item Group Code</strong> field on the service item line of the document is blank, this means that the service item does not belong to any service item group. In this case, the <strong>Standard Serv. Item Gr. Codes</strong> page will contain a list of all standard service codes. You should select from the list to insert standard service lines in the document. You may also select from the list of standard service codes assigned to a specific service item group. To view the list, select the relevant code in the <strong>Service Item Group Code</strong> field on the <strong>Standard Serv. Item Gr. Codes</strong> page.</p>
+</div>
+<h2 id="to-register-internal-or-public-comments">To register internal or public comments</h2>
+<p>You can add comments that will be printed on service orders and service quotes to provide additional information. You can add up to 80 characters, including spaces. If you need to enter additional text, choose another line. To register a comment, choose a line, and then choose the <strong>Comments</strong> action.</p>
+<h2 id="to-delete-invoiced-service-orders">To delete invoiced service orders</h2>
+<p>Orders are usually deleted automatically after having been fully invoiced. When an invoice is posted, a corresponding entry is created on the <strong>Posted Service Invoices</strong> page. The posted document can be viewed on the <strong>Posted Service Invoice</strong> page.</p>
+<p>Service orders are not deleted automatically, however, if the total quantity on the order has been posted not from the service order itself, but from the <strong>Service Invoice</strong> page. Then you may need to delete invoiced orders that were not deleted. You can do this by running the <strong>Delete Invoiced Service Orders</strong> batch job.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Delete Invoiced Service Orders</strong>, and then choose the related link. The <strong>Delete Invoiced Service Orders</strong> batch job request page opens.</li>
+<li>To select the orders to be deleted, you can set filters in the <strong>No.</strong>, <strong>Customer No.</strong>, and <strong>Bill-to Customer No.</strong> fields.</li>
+<li>Choose <strong>OK</strong>.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-service-posting.html">Service Posting</a><br>
+<a href="service-how-to-post-service-orders.html">Post a Service Order</a><br>
+<a href="service-setup-service.html">Setting Up Service Management</a><br>
+<a href="service-how-to-work-on-service-tasks.html">Work on Service Tasks</a><br>
+<a href="service-how-to-allocate-resources.html">Allocate Resources</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-to-create-service-orders.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

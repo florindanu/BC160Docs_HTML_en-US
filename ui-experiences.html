@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Choosing the User Experience to Show or Hide Advanced Features | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Choosing the User Experience to Show or Hide Advanced Features | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn what the Essential and Premium user experience tiers mean for the user interface, application areas, and your company.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="change-which-features-are-displayed">Change Which Features are Displayed</h1>
+
+<p>Business Central is designed to help you run your business regardless of the size and complexity. At the core of the product, you find essential features, such as financial reporting, sales, purchasing, and inventory management. As business complexity increases, you can turn on functionality for manufacturing and service management, for example.</p>
+<p>You can define the product complexity level, and thereby which features the company's users get access to, by changing the <strong>Experience</strong> setting on the <strong>Company Information</strong> page. Note that the experience setting can also be changed by adding certain extensions from AppSource. For more information, see <a href="ui-extensions.html">Customizing Business Central Using Extensions</a>.</p>
+<p>The following table lists the experiences that are currently available.</p>
+<table>
+<thead>
+<tr>
+<th>Experience</th>
+<th>Impact on User Interface</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Essential</strong></td>
+<td>Shows all actions and fields for all common business functionality.</td>
+</tr>
+<tr>
+<td><strong>Premium</strong></td>
+<td>Shows all actions and fields for all business functionality, including Manufacturing and Service Management.</td>
+</tr>
+</tbody>
+</table>
+<p>The experiences that can be selected in Business Central reflect the solution licenses, called plans, that are defined for the product. For information about the Essential and Premium plans, see <a href="https://go.microsoft.com/fwlink/?linkid=870242">Business Central</a> on the Microsoft Dynamics 365 marketing site. See also the <a href="https://go.microsoft.com/fwlink/?linkid=2068931">Business Central Licensing Guide</a> (requires access to CustomerSource or PartnerSource).</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>All regular users in a solution must be assigned the same plan, Essential or Premium, before that experience can be selected for the company. Accordingly, one user cannot access Premium features if one or more other users can only access Essential features. This is not the case for non-regular users of type Team Member, Internal Admin, External Accountant, and Delegated Admin, who can each be assigned a different plan than other users in the solution.<br><br> Only users of type Evaluation or Premium can change the value in the <strong>Experience</strong> field from Essential to Premium.</p>
+</div>
+<p>Prior to defining a company's experience setting, you define users' access to specific functions and pages by assigning permission sets. For more information, see <a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a>.</p>
+<p>The <strong>Experience</strong> setting applies to all users in a company, but each user can personalize their own experience further by changing page layouts and content. For more information, see <a href="ui-personalization-user.html">Personalize Your Workspace</a>.</p>
+<h2 id="enabling-premium-features-after-upgrading-a-plan">Enabling Premium Features after Upgrading a Plan</h2>
+<p>Users are assigned to plans in Microsoft 365 Admin Center in connection with the general work to create the Business Central users. For more information, see <a href="https://support.office.com/article/Add-users-to-Office-365-for-business-435ccec3-09dd-4587-9ebd-2f3cad6bc2bc">Add users individually or in bulk to Office 365</a>.</p>
+<h3 id="to-update-plan-changes-in-users-groups">To update plan changes in users groups</h3>
+<p>When you have made a change to users plans in Microsoft 365 Admin Center, such as assigned more users to the Premium plan, you must reflect the change in Business Central.</p>
+<ol>
+<li>Sign is as an administrator.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Users</strong>, and then choose the related link.</li>
+<li>On the <strong>Users</strong> page, choose the <strong>Refresh all User Groups</strong> action.</li>
+</ol>
+<p>All new information about the users’ plans and their assigned user groups are now updated according to the plan changes.</p>
+<h3 id="to-select-the-premium-experience">To select the Premium experience</h3>
+<p>You can now proceed to select the new experience.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Company Information</strong>, and then choose the related link.</li>
+<li>On the <strong>Company Information</strong> page, on the <strong>User Experience</strong> FastTab, select Premium  in the <strong>Experience</strong> field.</li>
+</ol>
+<h2 id="help-assumes-premium-experience">Help Assumes Premium Experience</h2>
+<p>All feature descriptions in user documentation for Business Central assume the <strong>Premium</strong> experience, meaning the descriptions cover the full scope of UI elements.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="ui-personalization-user.html">Personalize Your Workspace</a><br>
+<a href="ui-customizing-overview.html">Customizing Business Central</a><br>
+<a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a><br>
+<a href="about-new-company.html">Creating New Companies</a><br>
+<a href="ui-change-basic-settings.html">Change Basic Settings</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="https://go.microsoft.com/fwlink/?LinkId=871590&amp;clcid=0x409">Business Central Licensing Guide</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-experiences.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

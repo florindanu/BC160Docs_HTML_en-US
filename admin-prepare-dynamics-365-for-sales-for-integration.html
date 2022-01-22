@@ -1,0 +1,471 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Integrating with Dynamics 365 Sales| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Integrating with Dynamics 365 Sales| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to get Dynamics 365 Business Central ready to integrate with Dynamics 365 Sales.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="integrating-with-dynamics-365-sales">Integrating with Dynamics 365 Sales</h1>
+
+<p>The sales person role is often considered as one the most outward-facing jobs in a business. However, it can be helpful for sales people to be able to look inward in the business and see what is happening on the back end. By integrating Business Central and Dynamics 365 Sales, you can give your sales people that insight by enabling them to view information in Business Central while they are working in Dynamics 365 Sales. For example, when preparing a sales quote it could be useful to know whether you have enough inventory to fulfill the order. For more information, see <a href="marketing-integrate-dynamicscrm.html">Using Dynamics 365 Sales from Business Central</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This topic describes the process of integrating the online versions of Dynamics 365 Sales and Business Central through Common Data Service. For information about on-premises configuration, see <a href="/dynamics365/business-central/dev-itpro/administration/prepare-dynamics-365-for-sales-for-integration.md">Preparing Dynamics 365 Sales for Integration on-premises</a>.</p>
+</div>
+<h2 id="integrating-through-common-data-service">Integrating Through Common Data Service</h2>
+<p>Business Central also integrates with Common Data Service, which makes it easy to connect and synchronize data with other Dynamics 365 applications, such as Dynamics 365 Sales, or even apps that you build yourself. If you are integrating for the first time, we recommend that you do so through Common Data Service. For more information, see <a href="admin-common-data-service.html">Integration with Common Data Service</a>.</p>
+<p>If you have already integrated Dynamics 365 Sales with Business Central, you can continue to synchronize data using your setup. However, if you upgrade or turn off your Dynamics 365 Sales integration, to turn it on again you must connect through Common Data Service. For more information, see <a href="admin-upgrade-sales-to-cds.html">Upgrading an Integration with Dynamics 365 Sales</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Reconnecting through Common Data Service will apply default synchronization settings, and will overwrite any configurations you have. For example, the default table mappings will be applied.</p>
+</div>
+<h2 id="integration-settings-that-are-specific-to-a--integration">Integration Settings that are Specific to a Dynamics 365 Sales Integration</h2>
+<p>Integration with Business Central happens through Common Data Service, and there are a lot of standard settings and entities that are provided by the integration. In addition to the standard settings, there are some that are specific to Dynamics 365 Sales. The following sections list those.</p>
+<h2 id="permissions-and-security-roles-for-user-accounts-in-sales">Permissions and Security Roles for User Accounts in Sales</h2>
+<p>When you install the Integration Solution, permissions for the integration user account are configured. If those permissions are changed you might need to reset them. You can do that by reinstalling the Integration Solution by choosing <strong>Redeploy Integration Solution</strong> on the <strong>Dynamics 365 Connection Setup</strong> page. The following security roles are deployed:</p>
+<ul>
+<li>Dynamics 365 Business Central Integration Administrator</li>
+<li>Dynamics 365 Business Central Integration User</li>
+<li>Dynamics 365 Business Central Product Availability User</li>
+</ul>
+<h3 id="connection-settings-in-the-setup-guide">Connection Settings in the Setup Guide</h3>
+<p>You can use an assisted setup guide to quickly set up the connection and specify advanced features, such as coupling between records.</p>
+<ol>
+<li>Choose <strong>Setup and Extensions</strong>, and then choose <strong>Assisted Setup</strong>.</li>
+<li>Choose <strong>Set up the Dynamics 365 Sales Connection</strong> to start the assisted setup guide.</li>
+<li>Fill in the fields as necessary.</li>
+<li>Optionally, there are advanced settings that can enhance security and enable additional capabilities, such as sales order processing and viewing inventory levels. The following table describes the advanced settings.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Import Dynamics 365 Sales Solution</strong></td>
+<td>Enable this to install and configure the integration solution in Dynamics 365 Sales. <!--For more information, see [About the Base CDS Integration Solution](admin-common-data-service.md#about-the-business-central-integration-solution). Need to add a new topic--></td>
+</tr>
+<tr>
+<td><strong>Publish Item Availability Web Service</strong></td>
+<td>Enable people who are using Dynamics 365 Sales to view the availability of items (products) in inventory in Business Central. This requires a Business Central user account with a web services access key. Assigning the key is a two-step process. On the user account in Business Central you must choose the <strong>Change Web Service Key</strong> action. In the Set Up Dynamics 365 Sales Connection assisted setup guide, you must specify the Dynamics 365 Business Central OData web service URL, and provide Business Central user credentials for accessing the service. For more information, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/webservices/odata-web-services">OData Web Services</a>.</td>
+</tr>
+<tr>
+<td><strong>Business Central OData Web Service URL</strong></td>
+<td>If you enable the web service for viewing item availability, the URL for the OData Web service is provided for you.</td>
+</tr>
+<tr>
+<td><strong>Business Central OData Web Service Username</strong></td>
+<td>The name of the Business Central user account that Dynamics 365 Sales uses to retrieve information about item availability in Business Central through the OData web service.</td>
+</tr>
+<tr>
+<td><strong>Business Central OData Web Service Accesskey</strong></td>
+<td>The access key for the user account that Dynamics 365 Sales uses to get information about item availability from Business Central through the OData web service. The key is assigned to the user chosen in the <strong>Business Central OData Web Service Username</strong> field. To get the key, choose the <strong>Look up value</strong> button next to the user name, choose the user, choose <strong>Manage</strong>, and then <strong>Edit</strong>. On the user card, choose <strong>Actions</strong>, <strong>Authentication</strong>, and then choose <strong>Change Web Service Key</strong>.</td>
+</tr>
+<tr>
+<td><strong>Enable Sales Order Integration</strong></td>
+<td>When people create sales orders in Dynamics 365 Sales and fullfill orders in Business Central, this integrates the process in Dynamics 365 Sales. For more information, see <a href="http://docs.microsoft.com/dynamics365/customer-engagement/sales-enterprise/developer/enable-sales-order-processing-integration">Enable sales order processing integration</a>. This requires that you provide credentials for an administrator user account in Dynamics 365 Sales. For more information, see <a href="marketing-integrate-dynamicscrm.html#handling-sales-order-data">Handling Sales Order Data</a>.</td>
+</tr>
+<tr>
+<td><strong>Enable CDS Connection</strong></td>
+<td>Enable the connection to Common Data Service.</td>
+</tr>
+<tr>
+<td><strong>Dynamics 365 SDK Version</strong></td>
+<td>This is relevant only if you are integrating with an on-premises version of Dynamics 365 Sales. This is the Dynamics 365 software development kit (also referred to as Xrm) you use to connect Business Central to Dynamics 365 Sales. The version must be compatible with the SDK version that is used by Dynamics 365 Sales, and equal to or newer than the version used by Dynamics 365 Sales.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connection-settings-on-the-microsoft-dynamics-365-connection-setup-page">Connection Settings on the Microsoft Dynamics 365 Connection Setup Page</h3>
+<p>Enter the following information for the connection from Dynamics 365 Sales to Business Central.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dynamics 365 Sales URL</strong></td>
+<td>The URL of your Dynamics 365 Sales instance. This enables users to open corresponding records in Business Central from records in Dynamics 365 Sales, such as an account or product. The Business Central records open in Business Central.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Item Availability Web Service Enabled</strong></td>
+<td>Enable people who are using Dynamics 365 Sales to view the availability of items (products) in inventory in Business Central. If you enable this, you must also provide a user name and an access key for the Dynamics 365 Sales to use to query OData Web Service for availablity of items (products). For more information, see <a href="/dynamics365/business-central/dev-itpro/webservices/odata-web-services.md">OData Web Services</a>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dynamics 365 Business Central OData Web Service URL</strong></td>
+<td>If you enable the Item Availability Web Service, the URL for the OData Web service is provided for you. Set this field to the URL of the Business Central instance to use.<br><br> To reset the field to the default URL for the Business Central, choose <strong>Reset Web Client URL</strong> action.<br><br> This field is relevant only if the Business Central Integration Solution is installed in Dynamics 365 Sales.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dynamics 365 Business Central OData Web Service Username</strong></td>
+<td>The name of the user account that the Dynamics 365 Sales uses to get information about item availability from Business Central through OData Web service.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dynamics 365 Business Central OData Web Service Accesskey</strong></td>
+<td>The access key for the user account that the Dynamics 365 Sales uses to get information about item availability from Business Central through OData Web service. The key is assigned to the user chosen in the <strong>Dynamics 365 Business Central OData Web Service Username</strong> field. To get the key, choose the <strong>Look up value</strong> button next to the user name, choose the user, choose <strong>Manage</strong>, and then <strong>Edit</strong>. On the user card, choose <strong>Actions</strong>, <strong>Authentication</strong>, and then choose <strong>Change Web Service Key</strong>.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Dynamics 365 SDK Version</strong></td>
+<td>If you are integrating with an on-premesis version of Dynamics 365 Sales, this is the Dynamics 365 software development kit (also referred to as Xrm) you use to connect Business Central to Dynamics 365 Sales. The version that you select must be compatible with the SDK version that is used by Dynamics 365 Sales. This version equal to or newer than the version used by Dynamics 365 Sales.</td>
+<td>--&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to the settings above, enter the following settings for Dynamics 365 Sales.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sales Order Integration is Enabled</strong></td>
+<td>Enable users to submit sales orders and activated quotes in Dynamics 365 Sales and then view and process them in Business Central. This integrates the process in Dynamics 365 Sales. For more information, see <a href="http://docs.microsoft.com/dynamics365/customer-engagement/sales-enterprise/developer/enable-sales-order-processing-integration">Enable sales order processing integration</a>.</td>
+</tr>
+<tr>
+<td><strong>Automatically Create Sales Orders</strong></td>
+<td>Create a sales order in Business Central when a user creates and submits one in Dynamics 365 Sales.</td>
+</tr>
+<tr>
+<td><strong>Automatically Process Sales Quotes</strong></td>
+<td>Process a sales quote in Business Central when a user creates and activates one in Dynamics 365 Sales.</td>
+</tr>
+</tbody>
+</table>
+<!--
+### User Account Settings
+Integrate with Business Central through Common Data Service requires an administrator user account and an account that is used only for the connection between the apps. This account is called the "integration user." When you install the CDS Base Integration Solution, permissions for the integration user account are configured in [!INCLUDE[crm_md](includes/crm_md.md)]. If those permissions are changed you might need to reset them. You can do that by reinstalling the Integration Solution or by manually resetting them. The following tables list the minimum permissions for the user accounts in [!INCLUDE[crm_md](includes/crm_md.md)].  -->
+<h3 id="standard-sales-entity-mapping-for-synchronization">Standard Sales Entity Mapping for Synchronization</h3>
+<p>Entities in Dynamics 365 Sales, such as orders, are integrated with equivalent types of entities in Business Central,such as sales orders. To work with Dynamics 365 Sales data you set up links, called couplings, between entities in Business Central and Dynamics 365 Sales.</p>
+<p>The following table lists the standard mapping between entities in Business Central and Dynamics 365 Sales that Business Central provides.</p>
+<table>
+<thead>
+<tr>
+<th>Business Central</th>
+<th>Dynamics 365 Sales</th>
+<th>Synchronization Direction</th>
+<th>Default Filter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit of Measure</td>
+<td>Unit Group</td>
+<td>Business Central -&gt; Dynamics 365 Sales</td>
+<td></td>
+</tr>
+<tr>
+<td>Item</td>
+<td>Product</td>
+<td>Business Central -&gt; Dynamics 365 Sales and Dynamics 365 Sales -&gt; Business Central</td>
+<td>Sales contact filter: <strong>Product Type</strong> is <strong>Sales Inventory</strong></td>
+</tr>
+<tr>
+<td>Resource</td>
+<td>Product</td>
+<td>Business Central -&gt; Dynamics 365 Sales and Dynamics 365 Sales -&gt; Business Central</td>
+<td>Sales contact filter: <strong>Product Type</strong> is <strong>Services</strong></td>
+</tr>
+<tr>
+<td>Customer Price Group</td>
+<td>Price List</td>
+<td>Business Central -&gt; Dynamics 365 Sales</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales Price</td>
+<td>Product Price List</td>
+<td>Business Central -&gt; Dynamics 365 Sales</td>
+<td>Business Central contact filter: <strong>Sales Code</strong> is not blank, <strong>Sales Type</strong> is <strong>Customer Price Group</strong></td>
+</tr>
+<tr>
+<td>Opportunity</td>
+<td>Opportunity</td>
+<td>Business Central -&gt; Common Data Service and Dynamics 365 Sales -&gt; Business Central</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales Invoice Header</td>
+<td>Invoice</td>
+<td>Business Central -&gt; Dynamics 365 Sales</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales Invoice Line</td>
+<td>Invoice Product</td>
+<td>Business Central -&gt; Dynamics 365 Sales</td>
+<td></td>
+</tr>
+<tr>
+<td>Sales Order Header</td>
+<td>Sales Order</td>
+<td>Business Central -&gt; Dynamics 365 Sales</td>
+<td>Business Central Sales Header filter: <strong>Document Type</strong> is Order, <strong>Status</strong> is Released</td>
+</tr>
+<tr>
+<td>Sales Order Notes</td>
+<td>Sales Order Notes</td>
+<td>Business Central -&gt; Dynamics 365 Sales and Dynamics 365 Sales -&gt; Business Central</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="synchronization-rules">Synchronization Rules</h3>
+<p>The following table lists the rules that control the synchronization between Dynamics 365 Sales and Business Central. These are in addition to rules defined for Common Data Service, which also apply. For more information, see <a href="http://docs.microsoft.com/dynamics365/business-central/admin-synchronizing-business-central-and-sales?branch=master-cds-crm#standard-entity-mapping-for-synchronization">Standard Entity Mapping</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Changes to data in  that were made by the integration user account are not synchronized. Therefore, we recommended that you do not change data while using that account. For more information, see <a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Dynamics 365 Sales</a>.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Units of Measure</td>
+<td>Units of measure are synchronized with unit groups in Dynamics 365 Sales. There can only be one unit of measure defined in the unit group.</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>When synchronizing items with Dynamics 365 Sales products, Business Central automatically creates a price list in Dynamics 365 Sales. To avoid synchronization errors, you should not modify this price list manually.</td>
+</tr>
+<tr>
+<td>Resources</td>
+<td>Resources are synchronized with Dynamics 365 Sales products that have product type Service.</td>
+</tr>
+<tr>
+<td>Customer Price Groups</td>
+<td>Customer price groups are synchronized with Sales price lists.</td>
+</tr>
+<tr>
+<td>Sales Prices</td>
+<td>Sales prices that have sales type Customer Price Group and have a sales code defined are synchronized with Dynamics 365 Sales price list lines</td>
+</tr>
+<tr>
+<td>Opportunities</td>
+<td>Opportunities are synchronized with Dynamics 365 Sales opportunities. The Salesperson Code value defines the owner of the coupled entity in Dynamics 365 Sales.</td>
+</tr>
+<tr>
+<td>Posted Sales Invoices</td>
+<td>Posted sales invoices are synchronized with sales invoices. Before an invoice can be synchronized, it is better to synchronize all other entities that can participate in the invoice, from salespersons to price lists. The Salesperson Code value in the invoice header defines the owner of the coupled entity in Sales.</td>
+</tr>
+<tr>
+<td>Sales Orders</td>
+<td>When sales order integration is enabled, sales orders in Business Central that are created from submitted sales orders in Dynamics 365 Sales are synchronized with sales orders in INCLUDE SALES when they are released. Before you synchronize orders, we recommend that you first synchronize all entities that the are involved with the order, such as sales persons and price lists. The Salesperson Code field in the order header defines the owner of the coupled entity in Dynamics 365 Sales.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="synchronization-jobs-for-a-sales-integration">Synchronization Jobs for a Sales Integration</h3>
+<p>The jobs are run in the following order to avoid coupling dependencies between entities. There are additional jobs available from Common Data Service. For more information, see <a href="/dynamics365/business-central/admin-job-queues-schedule-tasks.md">Use Job Queues to Schedule Tasks</a>.</p>
+<ol>
+<li>UNITOFMEASURE - Dynamics 365 Sales synchronization job</li>
+<li>RESOURCE-PRODUCT - Dynamics 365 Sales synchronization job</li>
+<li>ITEM-PRODUCT - Dynamics 365 Sales synchronization job</li>
+<li>CUSTPRCGRP-PRICE - Dynamics 365 Sales synchronization job.</li>
+<li>SALESPRC-PRODPRICE - Dynamics 365 Sales synchronization job.</li>
+<li>POSTEDSALESINV-INV - Dynamics 365 Sales synchronization job.</li>
+</ol>
+<h3 id="default-synchronization-job-queue-entries">Default Synchronization Job Queue Entries</h3>
+<p>The following table describes the default synchronization jobs for Sales.</p>
+<table>
+<thead>
+<tr>
+<th>Job Queue Entry</th>
+<th>Description</th>
+<th>Direction</th>
+<th>Integration Table Mapping</th>
+<th>Default Synchronization Frequency (mins)</th>
+<th>Default inactivity sleep time (mins)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNITOFMEASURE - Dynamics 365 Sales synchronization job</td>
+<td>Synchronizes Dynamics 365 Sales unit groups with Business Central units of measure.</td>
+<td>From Business Central to Dynamics 365 Sales</td>
+<td>UNIT OF MEASURE</td>
+<td>30</td>
+<td>720<br> (12 hrs)</td>
+</tr>
+<tr>
+<td>RESOURCE-PRODUCT - Dynamics 365 Sales synchronization job</td>
+<td>Synchronizes Dynamics 365 Sales products with Business Central resources.</td>
+<td>From Business Central to Dynamics 365 Sales</td>
+<td>RESOURCE-PRODUCT</td>
+<td>30</td>
+<td>720<br> (12 hrs)</td>
+</tr>
+<tr>
+<td>ITEM - PRODUCT - Dynamics 365 Sales synchronization job</td>
+<td>Synchronizes Dynamics 365 Sales products with Business Central items.</td>
+<td>From Business Central to Dynamics 365 Sales</td>
+<td>ITEM-PRODUCT</td>
+<td>30</td>
+<td>1440<br> (24 hrs)</td>
+</tr>
+<tr>
+<td>CUSTPRCGRP-PRICE - Dynamics 365 Sales synchronization job</td>
+<td>Synchronizes Dynamics 365 Sales sales price lists with Business Central customer price groups.</td>
+<td></td>
+<td>CUSTOMER PRICE GROUPS-SALES PRICE LISTS</td>
+<td>30</td>
+<td>1440<br> (24 hrs)</td>
+</tr>
+<tr>
+<td>SALESPRC-PRODUCTPRICE - Dynamics 365 Sales synchronization job</td>
+<td>Synchronizes Dynamics 365 Sales product prices with Business Central sales prices.</td>
+<td></td>
+<td>PRODUCT PRICE-SALES PRICE</td>
+<td>30</td>
+<td>1440<br> (24 hrs)</td>
+</tr>
+<tr>
+<td>POSTEDSALESINV-INV - Dynamics 365 Sales synchronization job</td>
+<td>Synchronizes Dynamics 365 Sales invoices with Business Central posted sales invoices.</td>
+<td>From Business Central to Dynamics 365 Sales</td>
+<td>INVOICES-POSTED SALES INVOICES</td>
+<td>30</td>
+<td>1440<br> (24 hrs)</td>
+</tr>
+<tr>
+<td>Customer Statistics - Dynamics 365 Sales synchronization</td>
+<td>Updates Dynamics 365 Sales accounts with the latest Business Central customer data. In Dynamics 365 Sales, this information appears in <strong>Business Central Account Statistics</strong> quick view form of accounts that are coupled to Business Central customers.<br><br> This data can also be updated manually from each customer record. For more information, see <a href="admin-how-to-couple-and-synchronize-records-manually.html">Couple and Synchronize Records Manually</a>. </br></br><strong>Note:</strong>  This job queue entry is relevant only if the Business Central integration solution is installed in Dynamics 365 Sales.</td>
+<td>Not applicable</td>
+<td>Not applicable</td>
+<td>30</td>
+<td>Not applicable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="note-for-on-premises-versions">Note for On-Premises Versions</h3>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are connecting an on-premises version of Business Central to Dynamics 365 Sales and you want to configure a connection to a Dynamics 365 Sales instance with a specific authentication type, fill in the fields on the <strong>Authentication Type Details</strong> FastTab. For more information, see <a href="https://go.microsoft.com/fwlink/?linkid=843055">Use connection strings in XRM tooling to connect to Dynamics 365</a>. This step is not required when connecting an online version of Business Central.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Dynamics 365 Sales</a><br>
+<a href="admin-how-to-set-up-a-dynamics-crm-connection.html">Set Up a Connection to Dynamics 365 Sales</a><br>
+<a href="admin-synchronizing-business-central-and-sales.html">Synchronizing Business Central and Dynamics 365 Sales</a><br>
+<a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/administration/prepare-dynamics-365-for-sales-for-integration">Preparing Dynamics 365 Sales for Integration on-premises</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-prepare-dynamics-365-for-sales-for-integration.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

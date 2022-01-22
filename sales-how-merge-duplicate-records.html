@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Merge Duplicate Customer or Vendor Records | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Merge Duplicate Customer or Vendor Records | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to create a customer card to register information about each new customer or client that you sell to.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="merge-duplicate-records">Merge Duplicate Records</h1>
+
+<p>As different users create new customer, vendor, or contact cards over time, or the new records are created automatically during migration, a customer, vendor, or contact may be represented in the system with more than one record. In this case, you can use the <strong>Merge Duplicate</strong> page from the card of the record that you want to keep. The page gives you an overview of duplicated field values and provides functions to select which values to keep or discard when merging two records into one.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only users with the MERGE DUPLICATES permission set can use this functionality.</p>
+</div>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The <strong>Merge Duplicate</strong> page shows all fields where the values are different for the two records being compared. Therefore, a duplicate is indicated by the page showing very few fields. Whereas, if the page shows many fields, then the suspected record is probably not a duplicate.</p>
+</div>
+<p>The following procedure is based on a customer card. The steps are similar for a vendor  and contact cards.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customers</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the customer that you know or suspect that a duplicate record exists for, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Customer Card</strong> page, choose the <strong>Merge With</strong> action.</p>
+</li>
+<li><p>On the <strong>Merge Duplicate</strong> page, in the <strong>Merge With</strong> field, select the customer that you believe is a duplicate of the one you have opened, indicated in the <strong>Current</strong> field.</p>
+<p>The <strong>Fields</strong> FastTab lists fields where the values are different for the two customers. This means that if the selected customer is really a duplicate, then only very few fields should be listed, such as typing errors and other data entry mistakes.</p>
+<p>The <strong>Related Tables</strong> FastTab lists tables where there are fields with a relation to both customers. The <strong>Current Count</strong> and <strong>Duplicate Count</strong> fields show the number of fields in related tables where the <strong>No.</strong> value of both the current and the duplicate customer is used. On the <strong>Merge Duplicate</strong> page, this section is informational only, however, if merge conflicts exist, you will resolve them on the <strong>Merge Duplicate Conflicts</strong> page. See steps 8 through 12.</p>
+</li>
+<li><p>For each field where you want to use another value than the current one, select the <strong>Override</strong> check box. The value in the <strong>Alternate Value</strong> field will then be transferred to the current record when you complete the process.</p>
+</li>
+<li><p>When you have finished selecting which values to keep or override, choose the <strong>Merge</strong> action.</p>
+<p>The system checks if the merge of values for the duplicate customer into the current customer causes any conflicts. A conflicts exists if a value in at least one primary-key field is the same for both customers while the value in the <strong>No</strong> field is different for the two customers.</p>
+</li>
+<li><p>If no conflicts are found, choose the <strong>Yes</strong> button in the confirmation message box.</p>
+<p>The duplicate customer is renamed so that all usage of its <strong>No.</strong> value in all fields with relations to the customer table will be replaced with the <strong>No.</strong> value of the current customer.</p>
+</li>
+<li><p>If conflicts exist, choose the <strong>Resolve (xx) conflicts before merge.</strong> action on the <strong>Conflicts</strong> FastTab, which will appear if conflicts exist.</p>
+</li>
+<li><p>On the <strong>Merge Duplicate Conflicts</strong> page, select the line for a related table with a conflict, and then choose the <strong>View Details</strong> action.</p>
+<p>The <strong>Merge Duplicate</strong> page now shows the fields in the selected table that cause a merge conflict between the two customer records. Notice in both the summarized values in the <strong>Current</strong> and <strong>Conflicts With</strong> fields and on the lines that at least one primary-key field is the same for both customers and the value of the <strong>No.</strong> field is different for the two customers.</p>
+</li>
+<li><p>If you do not want to keep the duplicate customer record, choose the <strong>Remove Duplicate</strong> action, and then choose the <strong>Close</strong> button.</p>
+<p>Identical field values, other than the value in the <strong>No.</strong> field, are removed from the duplicate record and inserted on the current record.</p>
+</li>
+<li><p>If you want to keep the duplicate customer record after the merge,  choose the <strong>Rename Duplicate</strong>.</p>
+</li>
+<li><p>On lines, not for the <strong>No.</strong> field, where the field has the same value on both records, change the value in the <strong>Alternate Value</strong> field, and then choose the <strong>Close</strong> button.</p>
+<p>The conflicting field value is updated on the duplicate record so that it can be merged with the current record. The duplicate record continues to exist after the merge.</p>
+</li>
+<li><p>Repeat steps 8 through 12 until all conflicts are resolved. The <strong>Conflicts</strong> FastTab disappears.</p>
+</li>
+<li><p>On the <strong>Merge Duplicate</strong> page, choose the <strong>Merge</strong> action again, and then select the <strong>Yes</strong> button in the confirmation message box.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For contacts, you can use functionality to find duplicate contacts before you use the <strong>Merge Duplicate</strong> page. For more information, see <a href="marketing-setup-contacts.html#searching-for-duplicate-contacts">Searching for Duplicate Contacts</a>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-manage-sales.html">Sales</a><br>
+<a href="marketing-setup-contacts.html">Set Up Contacts</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/sales-how-merge-duplicate-records.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

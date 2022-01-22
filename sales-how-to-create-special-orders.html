@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Special Orders | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Special Orders | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can create a special order for a specific catalog item to be shipped to a specific customer. Your vendor ships the item to your warehouse and you can then ship the item on to your customer either independently or together with other items on another order.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-special-orders">Create Special Orders</h1>
+
+<p>You can create a special order for a specific catalog item to be shipped to a specific customer. Your vendor ships the item to your warehouse and you can then ship the item on to your customer either independently or together with other items on another order.</p>
+<p>Special orders imply that the purchase and sales order are linked to ensure that the specific catalog item is picked and delivered to the customer.</p>
+<p>Before you can use this feature, you must first set up the customer, vendor, and item cards necessary for the order.</p>
+<h2 id="to-create-a-special-order">To create a special order</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Order</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action. Create and fill in a  sales order for the item. For more information, see <a href="sales-how-sell-products.html">Sell Products</a>.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, fill in the sales line. In the <strong>Purchasing Code</strong> field, select a purchasing code that has the <strong>Special Order</strong> field selected.</p>
+<p>You must now create a purchase order from a requisition worksheet.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Requisition Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Special Order</strong> action, and then choose the <strong>Get Sales Orders</strong> action.</p>
+</li>
+<li><p>On the <strong>Get Sales Orders</strong> page, show results where the <strong>Document No.</strong> is the sales order number. Choose the <strong>OK</strong> button. A requisition worksheet line is created for the item.</p>
+</li>
+<li><p>On the requisition worksheet line, in the <strong>Action Message</strong> field, select <strong>New</strong>.</p>
+</li>
+<li><p>On the <strong>Req. Worksheet</strong> page, choose the <strong>Carry Out Action Message</strong> action. The <strong>Carry Out Action Msg. - Req.</strong> page opens. Choose the <strong>OK</strong> button.</p>
+<p>A message appears telling you that the purchase orders have been created. Choost the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>A purchase order created as a special order for a sales order is respected by the planning system as it balances demand and supply. That is, the purchase order (supply) remains linked to the sales order (demand), even if that purchase order could supply another earlier demand. For more information, see <a href="design-details-reservation-order-tracking-and-action-messaging.html">Design Details: Reordering Policies</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot use the special order functionality if the item is already reserved. Therefore, for items that are sold on special orders, make sure the <strong>Reserve</strong> field on the item card is not set to <strong>Always</strong>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-how-work-nonstock-items.html">Work with Catalog Items</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="sales-how-drop-shipment.html">Make Drop Shipments</a><br>
+<a href="design-details-reservation-order-tracking-and-action-messaging.html">Design Details: Reordering Policies</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/sales-how-to-create-special-orders.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

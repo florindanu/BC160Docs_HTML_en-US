@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Frequently Asked Questions about List Views </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Frequently Asked Questions about List Views ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Detailed information about saving filters as list views.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="list-views-faq">List Views FAQ</h1>
+
+<p>This topic answers questions that our advanced users often ask about working with list views and saving filters.</p>
+<h3 id="how-do-views-handle-expressions">How do views handle expressions?</h3>
+<p>When saving a view that includes filters with expressions, such as date ranges, operators, keywords or filter tokens, the expression and not the resulting values is saved. For example, saving a view that filters on the <strong>Created Date</strong> field with the expression <strong>-1W..today</strong> will always find records relative to the current date, even when the view is accessed next month.</p>
+<h3 id="where-are-list-views-saved">Where are list views saved?</h3>
+<p>Similarly to hiding a field or reordering your navigation menu, list views are a part of user personalization and are stored in the database. Clearing all personalization on a list will also permanently remove your personal views and clear additional personalization such as re-ordering of views. For more information see <a href="ui-personalization-user.html">Personalize your workspace</a>.</p>
+<h3 id="why-dont-i-have-a-save-icon">Why don't I have a Save icon?</h3>
+<p>The save icon and options menu are not displayed alongside views in the filter pane if personalization is disabled for a user role. Users who do not have personalization enabled are still able to access system views that are a standard part of the page, modify or create more filters.</p>
+<h3 id="on-which-page-types-can-i-use-list-views">On which page types can I use list views?</h3>
+<p>Views are only available on list and worksheet pages.</p>
+<h3 id="are-views-also-available-on-other-form-factors">Are views also available on other form factors?</h3>
+<p>Yes. Any views you save on your desktop browser or desktop app will also be available on your tablet or smartphone. You cannot modify or personalize views on mobile devices.</p>
+<h3 id="are-my-personal-views-always-accessible">Are my personal views always accessible?</h3>
+<p>The same views are available on a list page if you access it from the navigation menu, through the <strong>Tell Me</strong> window, or through a URL link to the list page. Views are not available in list parts, lookups or whenever a list page is displayed as a dialog.</p>
+<h3 id="how-do-i-return-a-view-to-its-original-filters-after-modifying-them">How do I return a view to its original filters after modifying them?</h3>
+<p>At the bottom of the filter pane, choose the <strong>Reset filters</strong> action to clear filter changes you have made to the view and return to its original filtered fields and filter criteria.</p>
+<h3 id="what-is-the-difference-between-hiding-and-removing-views">What is the difference between hiding and removing views?</h3>
+<p>Removing a view will permanently delete that view. Hiding a view allows you to temporarily hide it from the filter pane, but you can unhide it again later by choosing the <strong>Show</strong> action.</p>
+<h3 id="how-can-i-share-my-views-with-others">How can I share my views with others?</h3>
+<p>Business Central does not provide a way to share the precise list view, but you can share your current filters so that other users can see a similar list of records. In your desktop browser, simply copy the URL and share it with your colleagues. Sharing filters is not guaranteed to give the recipient an identical set of filters that you see in your browser.</p>
+<h3 id="can-i-search-for-views-in-the-tell-me-window">Can I search for views in the Tell Me window?</h3>
+<p>No. The <strong>Tell Me</strong> window only displays search results for the page, but you are only a step away from getting to your favorite view once you navigate to the page.</p>
+<h3 id="what-is-shared-layout">What is shared layout?</h3>
+<p>All views on a list page share a common column layout that includes which columns are displayed, their sequence, width, freeze pane and Quick Entry settings. Personalizing any of the column layout will also affect other views sharing the same layout on the list page.</p>
+<p>Some system views can have unique layouts of the columns in the list. For example, they could re-arrange columns to display only the columns most relevant to that view. You can identify which views have unique layouts by choosing the <img src="media/show-more-options-icon.png" alt="Show more options" title="Show more options"> icon and observing that the <strong>Shared layout</strong> check box is not selected. As a user, you can personalize the column layout for a view with unique layout without it affecting any of the other views on the list page. Only developers can define a unique column layout for a view that initially has a shared layout.</p>
+<h3 id="what-does-the-show-system-filters-link-do">What does the Show System Filters link do?</h3>
+<p>On some list pages, the filter pane will display <strong>Show system filters</strong> at the bottom of the filter pane when the page includes filters specified by the system. These special filters are typically used to display records based on the current context, such as when a list of orders has to be filtered for a specific customer.</p>
+<p>System filters are set by developers using filter group 0. For technical details about system filters, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/methods-auto/record/record-filtergroup-method">Filtergroup Method</a></p>
+<h3 id="i-see-multiple-views-on-my-page-but-i-did-not-create-them-where-did-they-come-from">I see multiple views on my page, but I did not create them. Where did they come from?</h3>
+<p>The views you see on any list are a combination of your personal views together with system views. System views may originate from the business application, from extensions, or may be role-specific if the list was customized for your role.</p>
+<h3 id="why-do-some-views-provide-fewer-options">Why do some views provide fewer options?</h3>
+<p>Some views only provide the option to save a copy of the view, while others do not allow saving changes to the view. How the view was created determines the options available to that view. Views can be created in multiple ways:</p>
+<ul>
+<li>Personal views that you saved</li>
+<li>System views that are a standard part of the business application, or added by extensions or role-specific views. Unlike personal views, you cannot save changes to filters back to that system view.</li>
+<li>Legacy system views that are a standard part of the business application but were created using older versions of Business Central. These views offer significantly fewer options. You can only save them as a new view and cannot hide or reorder them either. Note that legacy system views will be discontinued in a future update to Business Central.</li>
+</ul>
+<h3 id="how-do-i-convert-legacy-system-views">How do I convert legacy system views?</h3>
+<p>Legacy system views are list views that were created by developers in older versions of Business Central by placing them on the Role Center page. These views are now displayed directly on the list page but offer a degraded experience and significantly fewer options. You can convert a legacy system view to a personal view that is fully customizable, simply by saving that legacy view as a new view. Similarly, administrators can choose to convert role-specific legacy system views by customizing the user role and saving the legacy view as a new role-specific view.</p>
+<p>Note that legacy system views will be discontinued in a future update to Business Central.</p>
+<h3 id="others-in-my-organization-need-similar-list-views-as-standard-what-can-i-do">Others in my organization need similar list views as standard. What can I do?</h3>
+<p>Working with personal views is quick and effective, but Business Central provides additional tools to define list views needed by specific user roles or all users in the organization.</p>
+<ul>
+<li>Developers can customize the environment and create list views in extensions for all users in the organization.</li>
+<li>Non-coders such as administrators or department managers, can create role-specific list views when customizing a role from the <strong>Profiles (Roles)</strong> page.</li>
+</ul>
+<h3 id="i-work-with-multiple-languages-how-do-i-translate-the-name-of-the-view">I work with multiple languages: how do I translate the name of the view?</h3>
+<p>When saving a new view or renaming an existing view, you must enter a recognizable and meaningful name for that view. The name is saved for your current language and will be displayed also when you or other users work with Business Central in different languages. To provide translated view names, you must switch language using the <strong>My Settings</strong> page and then rename the view, which will store the translated name in the new language.</p>
+<h3 id="do-views-with-expressions-work-in-all-languages">Do views with expressions work in all languages?</h3>
+<p>Expressions that only use symbols, such as '<strong>|</strong>' or <strong>..</strong>, are considered safe for users to access in any language. Any views with expressions that include letters, keywords or filter tokens will only work for the language in which they were authored.</p>
+<h3 id="see-also">See Also</h3>
+<p><a href="ui-views.html">Save and Personalize List Views</a><br>
+<a href="ui-search.html">Finding Features and Information</a><br>
+<a href="ui-enter-criteria-filters.html">Sorting, Searching and Filtering</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-views-faq.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

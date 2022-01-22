@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Bins | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Bins | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The most effective way to create the bins of your warehouse is to generate groups of similar bins in the bin creation worksheet, but you can also create your bins individually.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-bins">Create Bins</h1>
+
+<p>The most effective way to create the bins of your warehouse is to generate groups of similar bins in the bin creation worksheet, but you can also create your bins individually from the location card. You can also use a function on the <strong>Bin Creation Worksheet</strong> page to create bins automatically.</p>
+<h2 id="to-create-a-bin-from-the-location-card">To create a bin from the location card</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and choose the related link.</li>
+<li>Select the location that you want to create a bin from, and then choose the <strong>Bins</strong> action.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h3 id="the-dedicated-field">The Dedicated field</h3>
+<p>The <strong>dedicated</strong> field on the <strong>Bins</strong> page specifies that quantities in the bin are protected from being picked for other demands. However, quantities in dedicated bins can still be reserved. Accordingly, the quantities in dedicated bins are included in the <strong>Total Available Quantity</strong> field on the <strong>Reservation</strong> page.</p>
+<p>Making a bin dedicated results in similar functionality in basic warehousing to using bin types, which is only available in advanced warehousing. For more information, see <a href="warehouse-how-to-set-up-bin-types.html">Set Up Bin Types</a>.</p>
+<p><strong>Example:</strong> A work center is set up with a bin code in the <strong>To-Production Bin Code</strong> field. Production order component lines with that bin code require that forward-flushed components are placed there. However, until the components are consumed from that bin, other component demands may pick or consume from that bin because they are still considered available bin contents. To make sure that bin content is only available to component demand that uses that to-production bin, you must select the <strong>Dedicated</strong> field on the line for that bin code.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Items in dedicated bins are not protected when they are picked and consumed as production or assembly components with the <strong>Inventory Pick</strong> page. For more information, see <a href="warehouse-how-to-pick-for-production.html">Pick for Production or Assembly in Basic Warehouse Configurations</a>.</p>
+</div>
+<h2 id="to-create-bins-individually-in-the-bin-creation-worksheet">To create bins individually in the bin creation worksheet</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bin Creation Worksheet</strong>, and choose the related link.</li>
+<li>Fill in on each line the fields that are necessary to name and characterize the bins you are creating.</li>
+<li>Choose the <strong>Create Bins</strong> action.</li>
+</ol>
+<h2 id="to-make-bins-automatically-in-the-bin-creation-worksheet">To make bins automatically in the bin creation worksheet</h2>
+<p>Before you start creating bins automatically, you should determine the kind of bins that are essential for your operations, as well as the most practical flow of items through the physical structure of your warehouse.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>As soon as you use a bin, you cannot delete it unless it is empty. But if you want to use another bin-naming system, you can use the reclassification journal to in effect move your items to a new bin system. This process is manual and takes time, however, so it is best to set up your bins correctly from the start.</p>
+</div>
+<p>To work with the <strong>Bin Creation Worksheet</strong> page, you must be set up as a warehouse employee at the location where the bins exist. For more information, see <a href="warehouse-how-to-set-up-warehouse-employees.html">Set Up Warehouse Employees</a>.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bin Creation Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Calculate Bins</strong> action.</p>
+</li>
+<li><p>On the <strong>Calculate Bins</strong> page, in the <strong>Bin Template Code</strong> field, select the bin template that you want to use as the model for the bins you are creating.</p>
+</li>
+<li><p>Fill in a description for the bins you are in the process of creating.</p>
+</li>
+<li><p>To create the bin codes, fill in the <strong>From No.</strong> and <strong>To No.</strong> fields in the three categories shown on the page: <strong>Rack</strong>, <strong>Section,</strong>, and <strong>Level.</strong> The bin code can contain up to 20 characters.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The number of characters that you have entered in the three categories for either field, for example, the characters you have entered in the three <strong>From No.</strong> fields, plus the field separators, if any, must be 20 or less.</p>
+</div>
+<p>You can use letters in the code as an identifying combination, but the letter you use must be the same in the <strong>From No.</strong> and <strong>To No.</strong> fields. For example, you might define the Rack part of the code as <strong>From No. A01</strong> and <strong>To No. A10</strong>. The application is not set up to generate codes with letter sequences, for example, from A01 to F05.</p>
+</li>
+<li><p>If you want a character, such as a hyphen, to separate the category fields you have defined as part of the bin code, fill in the <strong>Field Separator</strong> field with this character.</p>
+</li>
+<li><p>If you want application not to create a line for a bin if it exists already, select the <strong>Check on Existing Bin</strong> field.</p>
+</li>
+<li><p>When you have finished filling in the fields, choose the <strong>OK</strong> Button.</p>
+<p>The application creates a line for each bin in the worksheet. You can now delete some of the bins, for example, if you have a rack with a passageway through the first two levels of a couple of sections.</p>
+</li>
+<li><p>When you have deleted all unnecessary bins, choose the <strong>Create Bins</strong> action, and application will create bins for each line in the worksheet.</p>
+</li>
+</ol>
+<p>Repeat the process for another set of bins until you have created all the bins in your warehouse.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-create-individual-bins.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Defer Revenues and Expenses| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Defer Revenues and Expenses| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="To recognize revenues and expenses in periods other than the period in which the transaction was posted, you can automatically defer or postpone them over a specified schedule.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="defer-revenues-and-expenses">Defer Revenues and Expenses</h1>
+
+<p>To recognize a revenue or an expense in a period other than the period in which the transaction was posted, you can use functionality to automatically defer revenues and expenses over a specified schedule.</p>
+<p>To distribute revenues or expenses on the involved accounting periods, you set up a deferral template for the resource, item, or G/L account that the revenue or expense will be posted for. When you post the related sales or purchase document, the revenue or expense are deferred to the involved accounting periods, according to a deferral schedule that is governed by settings in the deferral template and the posting date.</p>
+<h2 id="to-set-up-a-gl-account-for-deferral">To set up a G/L account for deferral</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Accounts</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>Fill in the fields as necessary to create a G/L account for deferred revenues. For more information, see <a href="finance-general-ledger.html">The General Ledger and the Chart of Accounts</a>.</li>
+<li>Repeat steps 2 and 3 to create a new G/L account for deferred expenses.</li>
+</ol>
+<p>For both types of deferral, select <strong>Balance Sheet</strong> in the <strong>Type</strong> field, and name the accounts appropriately, such as &quot;Unearned Income&quot; for deferred revenues and &quot;Unpaid Expenses&quot; for deferred expenses.</p>
+<h2 id="to-set-up-a-deferral-template">To set up a deferral template</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Deferral Templates</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the fields as necessary.</p>
+</li>
+<li><p>In the <strong>Calc. Method</strong> field, specify how the <strong>Amount</strong> field for each period on the <strong>Deferral Schedule</strong> page is calculated. You can choose between the following options:</p>
+<ul>
+<li><strong>Straight-Line</strong>: The periodic deferral amounts are calculated according to the number of periods, distributed according to period length.</li>
+<li><strong>Equal Per Period</strong>: The periodic deferral amounts are calculated according to the number of periods, distributed evenly on periods.</li>
+<li><strong>Days Per Period</strong>: The periodic deferral amounts are calculated according to the number of days in the period.</li>
+<li><strong>User-Defined</strong>: The periodic deferral amounts are not calculated. You must manually fill the <strong>Amount</strong> field for each period in the Deferral Schedule page. For more information, see the “To change a deferral schedule from a sales invoice” section.</li>
+</ul>
+</li>
+<li><p>In the <strong>Period Desc.</strong> field, specify a description that will be shown on entries for the deferral posting. You can enter the following placeholder codes for typical values, which will be inserted automatically when the period description is displayed.</p>
+<ul>
+<li>%1 = The day number of the period posting date</li>
+<li>%2 = The week number of the period posting date</li>
+<li>%3 = The month number of the period posting date</li>
+<li>%4 = The month name of the period posting date</li>
+<li>%5 = The accounting period name of the period posting date</li>
+<li>%6 = The fiscal year of the period posting date</li>
+</ul>
+</li>
+</ol>
+<p>Example: The posting date is 02/06/2016. If you enter “Expenses deferred for %4 %6”, then the description displayed will be &quot;Expenses deferred for February 2016&quot;.</p>
+<h2 id="to-assign-a-deferral-template-to-an-item">To assign a deferral template to an item</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The steps in this procedure are the same as when you assign a deferral template to a G/L account or a resource.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item</strong>, and then choose the related link.</li>
+<li>Open the card for the item for which revenues or expenses must be deferred to the accounting periods when the item was sold or purchased.</li>
+<li>In the <strong>Default Deferral Template</strong> field, select the relevant deferral template.</li>
+</ol>
+<h2 id="to-change-a-deferral-schedule-from-a-sales-invoice">To change a deferral schedule from a sales invoice</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The steps in this procedure are the same as when you change a deferral schedule, for expenses, from a purchase invoice.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Invoices</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a sales invoice for an item that has a deferral template assigned. For more information, see <a href="sales-how-invoice-sales.html">Invoice Sales</a>.</p>
+<p>Notice that as soon as you enter the item (or resource or G/L account) on the invoice line, the <strong>Deferral Code</strong> field is filled with the code of the assigned deferral template.</p>
+</li>
+<li><p>Choose the <strong>Deferral Schedule</strong> action.</p>
+</li>
+<li><p>On the <strong>Deferral Schedule</strong> page, change settings on the header or values on the lines, for example to defer the amount to an additional accounting period.</p>
+</li>
+<li><p>Choose the <strong>Calculate Schedule</strong> action.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button. The deferral schedule is updated for the sales invoice. The related deferral template is unchanged.</p>
+</li>
+</ol>
+<h2 id="to-preview-how-deferred-revenues-or-expenses-will-be-posted-to-the-general-ledger">To preview how deferred revenues or expenses will be posted to the general ledger</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The steps in this procedure are the same as when you preview how expense deferrals are posted.</p>
+</div>
+<ol>
+<li>On the <strong>Sales Invoice</strong> page, choose the <strong>Preview Posting</strong> action.</li>
+<li>On the <strong>Posting Preview</strong> page, choose the <strong>G/L Entry</strong> action, and then choose the <strong>Show Related Entries</strong> action.</li>
+</ol>
+<p>G/L entries to be posted to the specified deferral account, for example, Unearned Income, are denoted by the description that you entered in the <strong>Period Desc.</strong> field in the deferral template, for example, &quot;Expenses deferred for February 2016&quot;.</p>
+<h2 id="to-review-posted-deferrals-in-the-sales-deferral-summary-report">To review posted deferrals in the Sales Deferral Summary report</h2>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The steps in this procedure are the same as when you review the Purchasing Deferral Summary report.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Deferral Summary</strong>, and then choose the related link.</li>
+<li>On the <strong>Sales Deferral Summary</strong> page, in the <strong>Balance as of</strong> field, enter the date up to which you want to see deferred revenues.</li>
+<li>Choose the <strong>Preview</strong> button.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance.html">Finance</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="ui-work-general-journals.html">Working with General Journals</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-defer-revenue-expenses.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

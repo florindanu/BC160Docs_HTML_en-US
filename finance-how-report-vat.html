@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Submit VAT Reports to Tax Authorities| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Submit VAT Reports to Tax Authorities| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to prepare reports that lists VAT from sales during a period, or from sales and purchases, and submit the report to a tax authority.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="report-vat-to-tax-authorities">Report VAT to Tax Authorities</h1>
+
+<p>This topic describes the reports in Business Central that you can use to submit information about value-added tax (VAT) amounts for sales and purchases to tax authorities in your region.</p>
+<p>You can use the following reports :</p>
+<ul>
+<li>The <strong>EC Sales List</strong> European Community (EC) Sales List report lists the value added tax (VAT) amounts that you have collected for sales to VAT-registered customers in the European Union (EU) countries.</li>
+<li>The <strong>VAT Return</strong> report includes VAT for sales and purchases to customers in all countries that use VAT.</li>
+</ul>
+<p>If you want to view a complete history of VAT entries, every posting that involves VAT creates an entry on the <strong>VAT Entries</strong> page. These entries are used to calculate your VAT settlement amount, such as your payment and refund, for a specific period. To view VAT entries, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>VAT Entries</strong>, and then choose the related link.</p>
+<h2 id="about-the-ec-sales-list-report">About the EC Sales List report</h2>
+<p>In the UK, all companies that sell goods and services to VAT-registered customers, including customers in other European Union (EU) countries, must submit an electronic version of the European Community (EC) Sales List report in XML format through Her Majesty's Revenue and Customs (HMRC) website. The EC Sales List report works only for countries in the EU.</p>
+<p>The report includes one line for each type of transaction with the customer, and displays the total amount for each type of transactions. There are three types of transactions that the report can include:</p>
+<ul>
+<li>B2B Goods</li>
+<li>B2B Services</li>
+<li>B2B Triangulated Goods</li>
+</ul>
+<p>B2B goods and services specify whether you sold a good or a service, and are controlled by the <strong>EU Service</strong> setting in the VAT posting setup. B2B Triangulated Goods indicate whether you engaged in trade with a 3rd party, and are controlled by the <strong>EU 3-Party Trade</strong> setting on sales documents, such as sales orders, invoices, credit memos, and so on.</p>
+<p>After the tax authority reviews your report, they will send an email to the contact person for your company. In Business Central, the contact person is specified on the <strong>Company Information</strong> page. Before you submit the report, make sure that a contact person is chosen.</p>
+<h2 id="about-the-vat-return-report">About the VAT Return report</h2>
+<p>Use this report to submit VAT for sales and purchase documents, such as purchase and sales orders, invoices, and credit memos. The information in the report is in the same format as on the declaration form from the customs and tax authorities.</p>
+<p>VAT is calculated based on the VAT posting setup and the VAT posting groups that you have set up.</p>
+<p>For the VAT return, you can specify the entries to include:</p>
+<ul>
+<li>Submit open transactions only, or open and closed. For example, this is useful when you prepare your final annual VAT return.</li>
+<li>Submit only entries from the specified periods, or also include entries from previous periods. This is useful for updating a VAT return that you have already submitted, for example, if a vendor sends you a late invoice.</li>
+</ul>
+<h2 id="to-connect-to-your-tax-authoritys-web-service">To connect to your tax authority's web service</h2>
+<p>Business Central provides service connections to tax authority websites. For example, if you are in the UK, you can enable the <strong>GovTalk</strong> service connection to submit the EC Sales List and VAT Return reports electronically. If you want to submit the report manually, for example by entering your data on the tax authority's website, this is not required.</p>
+<p>To report VAT to a tax authority electronically, you need to connect Business Central to the tax authority's web service. This requires that you set up an account with your tax authority. When you have an account, you can enable a service connection that we provide in Business Central.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Connections</strong>, and then choose appropriate link.</p>
+</li>
+<li><p>Fill in the required fields. Hover over a field to read a short description.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is a good idea to test your connection. To do this, choose the <strong>Test Mode</strong> check box, then prepare and submit your VAT report as described in the <em>To prepare and submit a VAT report</em> section. While in Test Mode, the service tests whether the tax authority can receive your report, and the status of the report will indicate whether the test submission was successful. It is important to remember that this is not an actual submission. To submit the report for real, you must clear the <strong>Test Mode</strong> check box, and then repeat the submission process.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-set-up-vat-reports-in-">To set up VAT reports in Business Central</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>VAT Report Setup</strong>, and then choose the related link.</li>
+<li>To let users change and resubmit this report, choose the <strong>Modify Submitted Reports</strong> check box.</li>
+<li>Choose the number series to use for each report.</li>
+</ol>
+<h2 id="to-prepare-and-submit-a-vat-report">To prepare and submit a VAT report</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>EC Sales List</strong> or <strong>VAT Return</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose <strong>New</strong>, and then fill in the required fields. Hover over a field to read a short description.</p>
+</li>
+<li><p>To generate the content of the report, choose the <strong>Suggest Lines</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For the EC Sales List report, you can review the transactions included in the report lines before you submit the report. To do that, choose the line, and then choose the <strong>Show VAT Entries</strong> action.</p>
+</div>
+</li>
+<li><p>To validate and prepare the report for submission, choose the <strong>Release</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Business Central validates whether the report is set up correctly. If the validation fails, the errors display under <strong>Errors and Warnings</strong> so that you know what to fix. Typically, if the message is about a missing setting in Business Central, you can click the message to open the page that contains the information to correct.</p>
+</div>
+</li>
+<li><p>To submit the report, choose the <strong>Submit</strong> action.</p>
+</li>
+</ol>
+<p>After you submit the report, Business Central monitors the service and keeps a record of your communications. The <strong>Status</strong> field indicates where the report is in the process. For example, when the authorities process your report, the status of the report changes to <strong>Succeeded</strong>. If the tax authority found mistakes in the report you submitted, the status of the report will be <strong>Failed</strong>. You can view the errors under <strong>Errors and Warnings</strong>, correct them, and then submit the report again. To view a list of all your EC Sales List reports, go to the <strong>EC Sales List Reports</strong> page.</p>
+<h2 id="viewing-communications-with-your-tax-authority">Viewing communications with your tax authority</h2>
+<p>In some countries, you exchange messages with the tax authority when you submit reports. You can view the first and the last message you sent or received by choosing the <strong>Download Submission Message</strong> and <strong>Download Response Message</strong> actions.</p>
+<h2 id="submitting-vat-reports-manually">Submitting VAT reports manually</h2>
+<p>If you use another method to submit the report, for example by exporting the XML and uploading it to a tax authority website, afterward you can choose <strong>Mark as Submitted</strong> to close the reporting period. When you mark the report as released, it becomes non-editable. If you must change the report after you mark it as released, you must reopen it.</p>
+<h2 id="vat-settlement">VAT settlement</h2>
+<p>Periodically, you must remit the net VAT to the tax authorities. If you need to settle VAT frequently, you can run the <strong>Calc. and Post VAT Settlement</strong> batch job to close the open VAT entries and transfer purchase and sales VAT amounts to the VAT settlement account.</p>
+<p>When you transfer VAT amounts to the settlement account, the purchase VAT account is credited, and the sales VAT account is debited with the amounts calculated for the specified period. The net amount is credited or debited, if the purchase VAT amount is larger, to the VAT settlement account. You can post the settlement immediately or print a test report first.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you use the <strong>Calc. and Post VAT Settlement</strong> batch job, if you do not specify a <strong>VAT Bus. Posting Group</strong> and a <strong>VAT Prod. Posting group</strong>, entries with all business posting groups and product posting group codes are included.</p>
+</div>
+<h2 id="configuring-your-own-vat-reports">Configuring your own VAT reports</h2>
+<p>You can use the EC Sales List report out-of-the-box, however, you can also create your own reports. This requires that you create a few codeunits. If you need help with that, contact a Microsoft Partner.</p>
+<p>The following table describes the codeunits that you must create for your report.</p>
+<table>
+<thead>
+<tr>
+<th>Codeunit</th>
+<th>What it must do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Suggest Lines</td>
+<td>Fetch information from the VAT Entries table, and display it in lines on the VAT report.</td>
+</tr>
+<tr>
+<td>Content</td>
+<td>Control the format of the report. For example, whether it is XML or JSON. The format to use depends on the requirements of your tax authority's web service.</td>
+</tr>
+<tr>
+<td>Submission</td>
+<td>Control how, and when, you submit the report based on the requirements of your tax authority.</td>
+</tr>
+<tr>
+<td>Response Handler</td>
+<td>Handle the return from the tax authority. For example, it might send an email message to your company's contact person.</td>
+</tr>
+<tr>
+<td>Cancel</td>
+<td>Send a cancellation of a VAT report that was submitted earlier to your tax authority.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When create codeunits for the report, pay attention to the value in the <strong>VAT Report Version</strong> field. This field must reflect the version of the report that is, or was, required by the tax authority. For example, you might enter <strong>2017</strong> in the field to indicate that the report conforms to the requirements that were in place that year. To find the current version, contact your tax authority.</p>
+</div>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/process-vat-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See also</h2>
+<p><a href="finance-setup-vat.html">Setting Up to Calculations and Posting Methods for Value-Added Tax</a><br>
+<a href="finance-work-with-vat.html">Work with VAT on Sales and Purchases</a><br>
+<a href="sales-setup-sales.html">Setting Up Sales</a><br>
+<a href="sales-how-invoice-sales.html">Invoice Sales</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-report-vat.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

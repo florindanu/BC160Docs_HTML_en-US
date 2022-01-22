@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Correct VAT Reports </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Correct VAT Reports ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="If you have to submit a corrective VAT report or delete a submitted VAT report, you must create a new VAT report. According to the legislation, a corrective report must be submitted within a month of the initial report.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="correct-vat-reports">Correct VAT Reports</h1>
+
+<p>If you have to submit a corrective VAT report or delete a submitted VAT report, you must create a new VAT report. According to the legislation, a corrective report must be submitted within a month of the initial report.</p>
+<p>When you create a corrective report, the report will contain two line types per corrected line. In one line type, Cancellation, the base value of the VAT is reported as a cancellation. All other information remains the same, and cannot be edited. On a new line, Correction type, you can make corrections as needed to the VAT amount. The <strong>Suggest Lines</strong> action, however, will suggest the correct amount based on the filters and posted documents. You cannot correct or modify the <strong>VAT Registration No.</strong> Each period being corrected needs its own corrective report.</p>
+<p>The <strong>Suggest Lines</strong> action recalculates the values to report. The <strong>Correct Lines</strong> action is used to make manual changes. You can combine the effects of the two actions to correct your report.</p>
+<p><strong>Example corrections scenarios</strong></p>
+<ol>
+<li><p>If you post additional VAT entries after you submit the Standard report in the report period, choose <strong>Suggest Lines</strong> in the <strong>Process</strong> group to get the updated amounts.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you manually changed the amount for a customer or vendor, this amount will be overwritten when additional VAT entries are posted. Update the amount accordingly.</p>
+</div>
+</li>
+<li><p>If you want to change the amount of a report line that has already been submitted and no new VAT entries are posted, choose the  <strong>Correct Lines</strong> action. On the <strong>VAT Report Lines</strong> page, select the lines that you want to correct, and then choose the <strong>OK</strong> button.</p>
+<p>For each entry, two lines are displayed: Cancellation and Correction. You can now change the amount on the Correction line.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Correct Lines</strong> action will not suggest the amount based in VAT entries. If you have new VAT entries for the customer or vendor, instead use the <strong>Suggest Lines</strong> action.</p>
+</div>
+</li>
+<li><p>If you used the wrong filters, for example, the wrong VAT product posting group, choose the <strong>Suggest Lines</strong> action, and then set filters as needed.</p>
+<p><strong>Suggest Lines</strong> will create entries to account for the difference between the filters.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the updated filters exclude a customer or vendor, Business Central creates a Cancellation line for the previous reported amount and a Correction entry with amount 0.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-correct-a-vat-report">To correct a VAT report</h2>
+<ol>
+<li><p>Create a new VAT report. For more information, see <a href="how-to-create-vat-reports.html">Create VAT Reports</a>.</p>
+</li>
+<li><p>Fill in the fields in the <strong>General</strong> FastTab, and set the <strong>VAT Report Type</strong> field to Corrective.</p>
+</li>
+<li><p>In the <strong>Original Report No.</strong> field, select the report that you want to correct. You can only select reports of type Standard that have been marked as Submitted.</p>
+</li>
+<li><p>Create your correction VAT report line entries.</p>
+<p>Choose the <strong>Suggest Lines</strong> action. Set filters as needed.</p>
+<p>On each line you can drill down on the amounts to see which VAT entries make up the amount. Change the amount if needed. You cannot edit, however, the <strong>VAT Registration No.</strong>.</p>
+</li>
+<li><p>If the <strong>Suggest Lines</strong> action does not provide suggestions to correct the amounts that you intended, use the <strong>Correct Lines</strong> action to insert cancellation and correction lines for the customer or vendor.</p>
+</li>
+<li><p>Continue with the VAT report creation process, and release the report.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="how-to-set-up-vat-reports.html">Set Up VAT Reports</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Germany/how-to-correct-vat-reports.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

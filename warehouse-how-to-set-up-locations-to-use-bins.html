@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Locations to Use Bins | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Locations to Use Bins | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Bins represent the basic warehouse structure and are used to make suggestions about the placement of items. When you have created your bins, you can define very specifically the contents that you want to place in each bin, or the bin can function as a floating bin without specified contents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-locations-to-use-bins">Set Up Locations to Use Bins</h1>
+
+<p>Bins represent the basic warehouse structure and are used to make suggestions about the placement of items. When you have created your bins, you can define very specifically the contents that you want to place in each bin, or the bin can function as a floating bin without specified contents.</p>
+<p>To use the bin functionality at a location, you first activate the functionality on the <strong>Location</strong> card. Then you design the item flow at the location by specifying bin codes in setup fields that represent the different flows.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Before you can specify bin codes on the location card, the bin codes must be created. For more information, see <a href="warehouse-how-to-create-individual-bins.html">Create Bins</a>.</p>
+</div>
+<h2 id="to-set-up-a-location-to-use-bins">To set up a location to use bins</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Select the location where you want to use bins.</li>
+<li>Choose the <strong>Edit</strong> action.</li>
+<li>On the <strong>Warehouse</strong> FastTab, select the <strong>Bin Mandatory</strong> check box.</li>
+<li>If you are not using directed put-away and pick for the location, fill in the <strong>Default Bin Selection</strong> field with the method the system should use when assigning a default bin to an item.</li>
+<li>Open the card for the location that you want to set up bins for.</li>
+<li>On the <strong>Bins</strong> FastTab, select the bins that you want to use as the default for receipts, shipments, inbound, outbound, and open shop floor bins.</li>
+<li>The bin codes you fill in here will appear automatically on the headers and on the lines of various warehouse documents. The default bins define all starting or ending placements of items in the warehouse.</li>
+<li>If you are using directed put-away and pick, select a bin for your warehouse adjustments. The bin code in the <strong>Adjustment Bin Code</strong> field defines the virtual bin in which to record discrepancies in inventory when you register either observed differences registered in the warehouse item journal, or differences calculated when you register a warehouse physical inventory.</li>
+<li>Fill in the fields on the <strong>Bin Policies</strong> FastTab if they are relevant to your warehouse. The most important fields are <strong>Bin Capacity Policy</strong>, <strong>Allow Breakbulk</strong>, and <strong>Put-away Template Code</strong> fields.</li>
+<li>On the <strong>Warehouse</strong> FastTab, fill in the <strong>Outbound Whse. Handling Time</strong>, <strong>Inbound Whse. Handling Time</strong>, and the <strong>Base Calendar Code</strong> fields. For more information, see <a href="across-how-to-assign-base-calendars.html">Set Up Base Calendars</a>.</li>
+</ol>
+<h2 id="filling-the-consumption-bin">Filling the Consumption Bin</h2>
+<p>This flow chart shows how the <strong>Bin Code</strong> field on production order component lines is filled according to your location setup.</p>
+<p><img src="media/binflow.png" alt="Bin flow chart" title="BinFlow"></p>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-set-up-locations-to-use-bins.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

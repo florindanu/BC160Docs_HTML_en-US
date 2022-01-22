@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Specify the Layout of a Check| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Specify the Layout of a Check| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can design and print your checks in different formats to conform with standards.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="select-a-check-layout">Select a Check Layout</h1>
+
+<p>You can design your checks to conform with the standards set by the local authorities. Check images can be printed in English, French, or Spanish.</p>
+<p>Checks are designed to print in both the United States and Canadian check image formats in either a check-stub-check format or a stub-stub-check format.</p>
+<h2 id="to-select-a-check-layout">To select a check layout</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Report Selections Bank Account</strong>, and then choose the related link.</li>
+<li>On the <strong>Report Selection - Bank Acc.</strong> page, in the <strong>Usage</strong> field, select <strong>Check</strong>.</li>
+<li>Select one of the following report IDs.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Report ID</th>
+<th>Report Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1401</td>
+<td>Check</td>
+<td>This is the default report.</td>
+</tr>
+<tr>
+<td>10411</td>
+<td>Check (Stub/Stub/Check)</td>
+<td>This report is designed to print checks in a stub/stub/check format.</td>
+</tr>
+<tr>
+<td>10412</td>
+<td>Check (Stub/Check/Stub)</td>
+<td>This report is designed to print checks in a stub/check/stub format.</td>
+</tr>
+<tr>
+<td>10413</td>
+<td>Three Checks per Page</td>
+<td>This report is designed to print three checks on each page.</td>
+</tr>
+</tbody>
+</table>
+<p>When you have set up check layouts, you can print checks from the <strong>Payment Journal</strong> page. For more information, see <a href="payables-how-work-checks.html">Work with Checks</a>.</p>
+<p>To change one of these default check layouts, use either the Word or the RDLC integration to do so. For more information, see <a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a>.</p>
+<h2 id="using-micr-and-security-fonts">Using MICR and Security Fonts</h2>
+<p>The online version of Business Central contains pre-installed fonts on the servers that can be used when defining check layouts. The following outlines which fonts are available and has links to detailed information by the 3rd-party suppliers of the fonts.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>MICR and check security fonts in Microsoft Dynamics Business Central are licensed in a font package from IDAutomation.com, Inc. These products may only be used as part of and in connection with Microsoft Dynamics Business Central.</p>
+</div>
+<p>In update 15.3 and newer, Magnetic Ink Character Recognition (MICR) fonts are installed and available to use. Both the E-13B and the CMC-7 standards are supported. In addition to MICR fonts, special security fonts are available to generate text, names, amounts, and the currency symbols Dollar, Euro, Pound, and Yen, which are hard to tamper with once a check has been printed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For security and legal reasons, you cannot upload custom fonts to the Business Central environment.</p>
+</div>
+<h3 id="micr-e-13b-specifications">MICR E-13B Specifications</h3>
+<p>The following summarizes specifications for the MICR E-13B fonts that may be useful when calibrating fonts to be on check layouts with specific MICR printers.</p>
+<p><img src="media/font_MICR_E-13B_Specifications.png" alt="MICR E-13B Specifications" title="MICR E-13B Specifications"></p>
+<p>The full specification of MICR E-13B fonts can be found in the supplier's documentation here: (<a href="https://www.idautomation.com/micr-fonts/e13b/">https://www.idautomation.com/micr-fonts/e13b/</a>).</p>
+<h3 id="micr-cmc-7-specifications">MICR CMC-7 Specifications</h3>
+<p>The following CMC-7 fonts are available in Business Central online:</p>
+<ul>
+<li>IDAutomationCMC7</li>
+<li>IDAutomationCMC7n10</li>
+<li>IDAutomationCMC7n25</li>
+<li>IDAutomationCMC7n40</li>
+</ul>
+<p>The following summarizes specifications for the MICR CMC-7 fonts that may be useful when calibrating fonts to be on check layouts with specific MICR printers.</p>
+<p><img src="media/font_MICR_CMC-7_Specifications.png" alt="MICR CMC-7 Specifications" title="MICR CMC-7 Specifications"></p>
+<p>The full specification of MICR CMC-7 fonts can be found in the supplier's documentation here: (<a href="http://www.idautomation.com/micr-fonts/cmc7/">http://www.idautomation.com/micr-fonts/cmc7/</a>).</p>
+<h3 id="secure-font-specifications">Secure Font Specifications</h3>
+<p>The following summarizes specifications for check security fonts that may be useful when calibrating fonts to be on check layouts with specific MICR printers.</p>
+<p><img src="media/font_check-security-font_Specifications.png" alt="Check Security Font Specifications" title="Check Security Font Specifications"></p>
+<p>The full specification of check security fonts can be found in the supplier's documentation here: (<a href="https://www.idautomation.com/security-fonts/">https://www.idautomation.com/security-fonts/</a>).</p>
+<p>Fonts for other purposes are also available in Business Central. For more information, see <a href="ui-fonts.html">Available Fonts</a></p>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a><br>
+<a href="ui-fonts.html">Fonts in Business Central</a><br>
+<a href="payables-manage-payables.html">Managing Payables</a><br>
+<a href="bank-manage-bank-accounts.html">Reconciling Bank Accounts</a><br>
+<a href="year-how-complete-period-end-processes.html">Completing Period-End Processes</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-define-check-layouts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

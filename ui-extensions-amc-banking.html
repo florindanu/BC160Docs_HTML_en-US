@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the AMC Banking 365 Fundamentals Extension | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the AMC Banking 365 Fundamentals Extension | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Easily exchange data with your banks by transforming data into the format that they require.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="using-the-amc-banking-365-fundamentals-extension">Using the AMC Banking 365 Fundamentals Extension</h1>
+
+<p>The AMC Banking 365 Fundamentals extension makes it easier, and more accurate, to send data to your banks. The extension connects Business Central with the AMC Banking 365 Fundamentals for Microsoft Dynamics 365 Business Central service, which can convert bank data from Business Central into formats that are required by over 600 banks around the world. For example, this makes it easier to transfer payments and credits to vendors by entering the payments in Business Central, and then uploading them to your bank. The formats can also smooth out bank reconciliation processes. For more information, see <a href="https://amcbanking.com/landing365bc/help">AMC Banking for Microsoft Dynamics 365 Business Central</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>AMC Banking has built additional extensions that work with Business Central. This topic describes only the Fundamental extension.</p>
+</div>
+<h2 id="using-our-demonstration-account">Using Our Demonstration Account</h2>
+<p>Business Central comes with a demonstration account that lets you try out the AMC Banking 365 Fundamentals extension. We provide default settings for connecting to AMC Banking, specifying the bank accounts to get data from in Business Central, plus a few data exchange definitions. You can view the connection settings on the <strong>AMC Banking Setup</strong> page. For bank accounts, the extension applies values in the <strong>Bank Name</strong>, <strong>Credit Transfer Msg. Nos.</strong>, <strong>Bank Statement Import Format</strong>, and <strong>Payment Export Format</strong> fields on bank account cards.</p>
+<p>We provide the settings, but to try out the extension you must run the assisted setup guide to apply them. To run the guide, on the <strong>AMC Banking Setup</strong> page, choose the <strong>Assisted Setup</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>There are some limitations on the demo account. For example, when you convert payments, the amount in the converted file will not match the actual amount. Instead, the amount will always be five units of the currency that you use for payments.</p>
+</div>
+<h2 id="setting-up-the-extension">Setting Up the Extension</h2>
+<p>Getting started with the extension involves just a few easy steps, and an assisted setup guide will make the connection and turn on the extension. The guide will do things like install the data exchange definitions for bank statement export/import setups and initiate the number series used for credit transfer messages.</p>
+<h3 id="to-set-up-the-required-permission-sets">To set up the required permission sets</h3>
+<p>Before people can use this extension, your administrator must copy the following permission sets, edit them, and then assign the new permission sets to users instead of original:</p>
+<ul>
+<li><strong>D365 Basic</strong></li>
+<li><strong>D365 Team Member</strong></li>
+<li><strong>D365 Read</strong></li>
+<li><strong>IntelligentCloudBC</strong></li>
+</ul>
+<p>For more information, see <a href="ui-define-granular-permissions.html#to-copy-a-permission-set">To copy a permission set</a>.</p>
+<p>For each new permission set, grant only the <strong>Read</strong> permission for the <strong>AMC Banking Setup table (20101)</strong>. For more information, see <a href="ui-define-granular-permissions.html#to-create-or-modify-permissions-manually">To create or modify permissions manually</a>.</p>
+<h3 id="to-connect-the-extension-to-amc-banking">To connect the extension to AMC Banking</h3>
+<ol>
+<li>Get a module and a service plan for AMC Banking. To do that, visit the <a href="https://license.amcbanking.com/register">AMC License</a> page.</li>
+<li>In Business Central, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>AMC Banking Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>AMC Banking Setup</strong> page, choose the <strong>Assisted Setup</strong> action.</li>
+<li>Complete the steps in the assisted setup guide.</li>
+</ol>
+<h3 id="to-connect-bank-accounts-to-the-extension">To connect bank accounts to the extension</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the card for the bank account that you want to connect to the service.</p>
+</li>
+<li><p>In the <strong>Bank Name</strong> field, choose the format that your bank requires.</p>
+<p>The formats are filtered to show only those that are relevant for the country/region that is specified for the bank account.</p>
+</li>
+<li><p>In the <strong>Credit Transfer Msg. Nos.</strong> field, choose the number series to use for messages that accompany payments.</p>
+</li>
+<li><p>In the <strong>Bank Statement Import Format</strong> and <strong>Payment Export Format</strong> fields, choose the data exchange definitions that your bank requires.</p>
+</li>
+</ol>
+<h2 id="using-the-extension">Using the Extension</h2>
+<p>Using this extension is just a matter of exporting data on the <strong>Payment Journals</strong> page, and then uploading it to your bank's web service. For more information, see <a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html">Making Payments with Bank Data Conversion or SEPA Credit Transfer</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must fill in the <strong>SWIFT Code</strong> and <strong>IBAN</strong> fields for each bank account.</p>
+</div>
+<h3 id="to-export-data-and-submit-it-to-your-bank">To export data and submit it to your bank</h3>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>When you export data by using the AMC Banking 365 Fundamentals extension, some of your business data will be exposed to the provider of the service. The service provider, AMC Consult A/S, is responsible for the privacy of this data. For more information, see <a href="https://go.microsoft.com/fwlink/?LinkId=510158">AMC Privacy Policy</a>.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create the journal lines that you want to export.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For each line, remember to choose <strong>Electronic Payment</strong> in the <strong>Bank Payment Type</strong> field.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Export</strong> action.</p>
+</li>
+</ol>
+<h3 id="to-import-and-apply-the-converted-file">To import and apply the converted file</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Reconciliation Journal</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Import Bank Transaction</strong> action, and then choose the converted file.</p>
+<p>Business Central will create a new payment reconciliation journal that contains the data in the file. For more information, see <a href="receivables-apply-payments-auto-reconcile-bank-accounts.html">Applying Payments Automatically and Reconciling Bank Accounts</a>.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-extensions.html">Customizing Business Central Using Extensions</a><br>
+<a href="product-get-started.html">Getting Started</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-amc-banking.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

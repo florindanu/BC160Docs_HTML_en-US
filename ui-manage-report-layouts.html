@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Custom and Built-In Layouts for Reports and Documents | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Custom and Built-In Layouts for Reports and Documents | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use report layouts to customize documents, for example, to personalize the font, logo, or page settings of PDF files you send to customers.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="managing-report-and-document-layouts">Managing Report and Document Layouts</h1>
+
+<p>A report layout controls content and format of the report, including which data fields of a report dataset appear on the report and how they are arranged, text style, images, and more. From Business Central, you can change which layout is used on a report, create new layout, or modify the existing layouts.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In Business Central, the term &quot;report&quot; also covers externally-facing documents, such as sales invoices and order confirmations that you send to customers as PDF files.</p>
+</div>
+<p>In particular, a report layout sets up the following:</p>
+<ul>
+<li>The label and data fields to include from the dataset of the Business Central report.</li>
+<li>The text format, such as font type, size, and color.</li>
+<li>The company logo and its position.</li>
+<li>General page settings, such as margins and background images.</li>
+</ul>
+<p>A report can be set up with multiple report layouts, which you can switch among as required. You can use one of the built-in report layouts or you can create custom report layouts and assign them to your reports as needed. For more information, see <a href="ui-how-create-custom-report-layout.html">Create a Custom Report or Document Layout</a>.</p>
+<p>There are two types of report layouts that you can use on reports; Word and RDLC.</p>
+<h2 id="word-report-layout-overview">Word report layout overview</h2>
+<p>A Word report layout is a based on Word document (.docx file type). Word report layouts enable you to design report layouts by using Microsoft Word 2013 or later. A Word report layout determines the report's content - controlling how that content elements are arranged and how they look. A Word report layout document will typically use tables to arrange content, where the cells can contain data fields, text, or pictures.</p>
+<p><img src="media/nav_wordreportlayout_edit_in_word_example.png" alt="Example of a word report layout document for NAV" title="NAV_WordReportLayout_Edit_In_Word_Example"></p>
+<h2 id="rdlc-layout-overview">RDLC layout overview</h2>
+<p>RDLC layouts are based on client report definition layouts (.rdlc or .rdl file types). These layouts are created and modified by using SQL Server Report Builder. The design concept for RDLC layouts is similar to Word layouts, where the layout defines the general format of the report and determines the fields from the dataset to include. Designing RDLC layouts is more advanced than Word layouts. For more information, see <a href="http://docs.microsoft.com/dynamics-nav/Designing-RDLC-Report-Layouts">Designing RDLC Report Layouts</a>.</p>
+<h2 id="built-in-and-custom-report-layouts">Built-in and custom report layouts</h2>
+<p>Business Central includes several built-in layouts. Built-in layouts are predefined layouts that are designed for specific reports. Business Central reports will have a built-in layout as either an RDLC report layout, Word report layout, or in some cases both. You cannot modify a built-in report layout from Business Central but you use them as a starting point for building your own custom report layouts.</p>
+<p>Custom layouts are report layouts that you design to change the appearance of a report. You typically create a custom layout based on a built-in layout, but you can create them from scratch or from a copy of an existing custom layout. Custom layouts enable you to have multiple layouts for the same report, which you switch among as needed. For example, you can have different layouts for each Business Central company, or you can have different layouts for the same company for specific occasions or events, like a special campaign or holiday season.</p>
+<h2 id="deciding-whether-to-use-a-word-or-rdlc-report-layout">Deciding whether to use a Word or RDLC report layout</h2>
+<p>A report layout can be based on either a Word document or RDLC file. Deciding on whether to use a Word report layout or RDLC report layout type will depend on how you want the generated report to look and your knowledge of Word and SQL Server Report Builder.</p>
+<p>The general design concepts for Word and RDLC layouts are very similar. However each type has certain design features that affect how the generated report appears in Business Central. This means that the same report might look different when using the Word report layout compared to the RDLC report layout.</p>
+<p>The process for setting up Word report layouts and RDLC report layouts on reports is the same. The main difference is in the way you modify the layouts. Word report layouts are typically easier to create and modify than RDLC report layouts because you can use Word. RDLC report layouts are modified by using SQL Server Report builder which targets more advanced users.</p>
+<p>For information on how to change which layout to use, see <a href="ui-how-change-layout-currently-used-report.html">Change the Current Report Layout</a>.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/change-documents-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-update-report-layouts.html">Update Custom Report Layouts</a><br>
+<a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a><br>
+<a href="ui-how-import-and-export-report-layout.html">Import and Export a Custom Report or Document Layout</a><br>
+<a href="ui-define-customer-vendor-document-layouts.html">Define Special Document Layouts for Customers and Vendors</a><br>
+<a href="ui-how-send-documents-email.html">Send Documents by Email</a><br>
+<a href="ui-work-report.html">Working with Reports, Batch Jobs, and XMLports</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-manage-report-layouts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

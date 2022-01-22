@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Installing Extensions to Customize Business Central  | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Installing Extensions to Customize Business Central  | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about adding functionality and customizing Business Central  by installing extensions.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="customizing-business-central-using-extensions">Customizing Business Central Using Extensions</h1>
+
+<p>You can change Business Central by installing extensions that add functionality, changes behavior, or gives you access to new online services, for example.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To install extensions from AppSource or add per-tenant extensions, you must have the right permissions. You must either be a member of the D365 EXTENSION MGMT user group or you must have the D365 EXTENSION MGMT permission set. If you are an administrator, you can assign user groups and permissions to other users in your company.<br><br>
+To use the functionality that is provided by an extension, such as opening pages, running reports, selecting actions, and so on, you must be assigned the permission sets that are installed as part of the extension.</p>
+</div>
+<p>When you first launch Business Central, some extensions are already installed for you. Over time, more extensions will be made available to you, and you can then choose if you want to use the extension or not.</p>
+<p>For example, Microsoft provides an extension that provides integration with PayPal Payments Standard. This extension is installed by default.
+But if another extension is made available that offers integration with another payment service, you can install the new extension and then choose which of the two services to use.</p>
+<p>You manage the extensions on the <strong>Extension Management</strong> page. You can access this page from Home. Alternatively, choose the <strong>Search for Page or Report</strong> icon <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> in the top right corner, enter <strong>Extension</strong>, and then choose the related link.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you think you should have access to an extension but you cannot find its functionality, check the <strong>Extension Management</strong> page - if the extension is not listed there, you can install it as described in the following section.</p>
+</div>
+<h2 id="installing-an-extension">Installing an Extension</h2>
+<p>You can get new extensions from the marketplace at <a href="https://appsource.microsoft.com/marketplace/apps?product=dynamics-365%3Bdynamics-365-business-central&amp;page=1">AppSource.microsoft.com</a>. Here, you can see all available extensions for Business Central, and you can get apps, extensions, and content packs for other Microsoft products. Set the relevant filters, take a look at the information for each extension, and get an extension for your Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Sign in to <a href="https://appsource.microsoft.com/">AppSource.microsoft.com</a> using the email account that you use for Business Central. Use the same email account for other services and products for a smooth experience.</p>
+</div>
+<p>You can also get to the marketplace from inside Business Central. On the <strong>Extension Management</strong> page, you can see the extensions that are currently installed, and you can open the <strong>Extension Marketplace</strong> page that shows the Business Central extensions that are currently available in AppSource. If you choose the <em>More apps</em> link, you are taken to <a href="https://appsource.microsoft.com/marketplace/apps?product=dynamics-365%3Bdynamics-365-business-central&amp;page=1">AppSource.microsoft.com</a>.</p>
+<p>If you choose an extension, you can read about what the extension does, and you can access Help for the extension to learn more. When you choose to get an extension, you must agree to the terms of use. If you get the extension from the AppSource website, you will be signed in to Business Central to complete the installation.</p>
+<p>When you install an extension, you might have to set it up, such as specifying an account for use with the <strong>PayPal Payments Standard for Business Central</strong> extension.
+Other extensions simply add fields to an existing page, or they add a new page, for example.</p>
+<p>If you uninstall an extension, and you then change your mind, you can install it again. When you uninstall an extension that you have been using, the data is preserved so that if you install the extension again, your data is still available. There are some extensions that are required. You are prevented from uninstalling these from the <strong>Extension Management</strong> page. If you try, an error message appears.</p>
+<p>Some extensions are provided by Microsoft, and other extensions are provided by <a href="ui-extensions-other.html">other companies</a>. All extensions are tested before they are made available to you, but we recommend that you access the links that are provided with each extension to learn more about the extension before you choose to install it.</p>
+<p>Microsoft provides the following extensions:</p>
+<ul>
+<li><a href="ui-extensions-accountant-portal.html">Accountant Portal for Business Central</a></li>
+<li><a href="ui-extensions-ceridian-payroll.html">Ceridian Payroll</a></li>
+<li><a href="ui-extensions-dynamicsgp-data-migration.html">Dynamics GP Data Migration</a></li>
+<li><a href="ui-extensions-yodlee-bank-feeds.html">Envestnet Yodlee Bank Feeds</a></li>
+<li><a href="ui-extensions-essential-business-insights.html">Essential Business Insights</a></li>
+<li><a href="ui-extensions-image-analyzer.html">Image Analyzer</a></li>
+<li><a href="ui-extensions-data-replication.html">Intelligent Cloud</a></li>
+<li><a href="ui-extensions-intelligent-cloud.html">Intelligent Cloud Base</a></li>
+<li><a href="ui-extensions-late-payment-prediction.html">Late Payment Predictions</a></li>
+<li><a href="ui-extensions-microsoft-pay-payments.html">Microsoft Pay</a></li>
+<li><a href="ui-extensions-paypal-payments-standard.html">PayPal Payments Standard</a></li>
+<li><a href="ui-extensions-quickbooks-data-migration.html">QuickBooks Data Migration</a></li>
+<li><a href="ui-extensions-quickbooks-online-data-migration.html">QuickBooks Online Data Migration</a></li>
+<li><a href="ui-extensions-quickbooks-payroll.html">Quickbooks Payroll File Import</a></li>
+<li><a href="ui-extensions-sales-forecast.html">Sales and Inventory Forecast</a></li>
+<li><a href="ui-extensions-worldpay-payments-standard.html">WorldPay Payments Standard</a></li>
+<li><a href="ui-extensions-amc-banking.html">AMC Banking 365 Fundamentals Extension</a></li>
+<li><a href="ui-extensions-c5-data-migration.html">DK - C5 Data Migration</a></li>
+<li><a href="ui-extensions-payments-reconciliation-formats-dk.html">DK - Payments and Reconciliations</a></li>
+<li><a href="ui-extensions-tax-file-formats-dk.html">DK - Tax File Formats</a></li>
+<li><a href="ui-extensions-getaddressio.html">UK - GetAddress.io UK Postcodes</a></li>
+<li><a href="ui-extensions-send-remittance-advice.html">US/CA/UK/AU/NZ/ZA - Send Remittance Advice</a></li>
+<li><a href="ui-extensions-other.html">Business Central Extensions by Other Providers</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>New extensions are not available in AppSource immediately after we announce an update. You can keep an eye out for the extensions at <a href="https://appsource.microsoft.com/marketplace/apps?product=dynamics-365%3Bdynamics-365-business-central&amp;page=1">AppSource.microsoft.com</a>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="about-develop-extensions.html">Extending Dynamics 365 Business Central</a><br>
+<a href="ui-extensions-other.html">Business Central Extensions by Other Providers</a><br>
+<a href="bank-how-setup-bank-statement-service.html">Set Up the Envestnet Yodlee Bank Feeds Service</a><br>
+<a href="sales-how-enable-payment-service-extensions.html">Enable Customer Payment Through PayPal</a><br>
+<a href="across-import-data-configuration-packages.html">Migrating Business Data from Other Finance Systems</a><br>
+<a href="LocalFunctionality/UnitedKingdom/uk-setup-postal-code-service.html">Setting Up the GetAddress.io UK Postal Code extension</a><br>
+<a href="ui-extensions-other.html">Business Central Extensions by Other Providers</a><br>
+<a href="product-get-started.html">Getting Started</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

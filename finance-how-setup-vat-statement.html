@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up a VAT Statement | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up a VAT Statement | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Set Up a VAT Statement">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-a-vat-statement">Set Up a VAT Statement</h1>
+
+<h2 id="setting-up-vat-statement-templates-and-vat-statement-names">Setting up VAT Statement Templates and VAT Statement Names</h2>
+<p>Tax authorities can, and do, change their requirements for posting VAT. VAT Statement templates and VAT statement names can help you prepare for upcoming changes and make a smooth transition to the new requirements. You can use VAT statement templates to setup different Reports when choosing to print the statement. Each VAT Statement Template can have multiple Vat Statement names which in turn define the calculations, and you can create a new VAT statement Name when requirements change. For example, one name might calculate VAT for this year based on the current requirements, and another might calculate VAT based on requirements for next year. Names are also a way to keep a history of VAT statement formats, for example, so that you can look back to see how you calculated VAT in previous years.</p>
+<h2 id="to-define-a-vat-statements">To define a VAT statements</h2>
+<p>VAT statements let you calculate your VAT settlement amount for a certain period, for example, a quarter.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>VAT Statements</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Name</strong> field, and then choose <strong>New</strong> on the <strong>VAT Statement Names</strong> page.</li>
+<li>Fill in the required fields. Usually you want to have a setting for each VAT Bus. Posting Group / VAT Prod. Posting Group combination. For Row numbers it does make sense to use equvalent numbers or codes as in your official VAT Statement Hover over a field to read a short description.</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can filter the information that the statement will include, depending on what you choose in the <strong>Type</strong> field. <strong>Account Totaling</strong> is useful when you want the VAT from a specific account.
+<strong>VAT Entry Totaling</strong> gets VAT from the accounts assigned to the selections in the <strong>Gen. Posting Type</strong>, <strong>VAT Bus. Posting Group</strong>, and/or the <strong>VAT Prod. Posting Group</strong> fields. <strong>Row Totaling</strong> lets you enter a value or quick filter criteria in the <strong>Row Totaling</strong> field. For more information, see <a href="ui-enter-criteria-filters.html">Searching, filtering, and Sorting Data</a>. <strong>Description</strong> is often used to add a note to the statement. For example, you could use it as a heading when you've used row totaling.</p>
+</div>
+<h2 id="to-preview-the-vat-statement">To preview the VAT statement</h2>
+<p>After you define a VAT statement, you can preview it to make sure it meets your needs.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>It is best practice to have one section in the VAT Statement using <strong>Type</strong> <strong>Vat Entry Totaling</strong> and another section below using <strong>Type</strong> <strong>Account Totaling</strong> to reconcile the amounts based on the <strong>VAT Entry</strong> table compared to the amount on the <strong>G/L Accounts</strong>. You can also use the <strong>G/L - VAT Reconciliation</strong> Report for this purpose.</p>
+</div>
+<ol>
+<li>Choose <strong>Preview</strong>.</li>
+<li>Enter a date filter to limit the statement to a specific period. For more information about how to customize the page to show the date filter, see <a href="ui-enter-criteria-filters.html">Searching, filtering, and Sorting Data</a>.</li>
+<li>You can select various options to specify the type of VAT entries to include in the statement.</li>
+<li>On the lines where the <strong>Type</strong> field contains <strong>VAT Entry Totaling</strong> you can see a list of VAT entries by choosing the amount in the <strong>Column Amount</strong> field.</li>
+<li>You can use personalization to show more fields in the lines. For example the Unrealized Base Amount and Unrealized VAT Amount, if you are using unrealized VAT.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-setup-vat.html">Set Up Value-Added Tax</a><br>
+<a href="finance-setup-unrealized-vat.html">Setting Up Unrealized Value Added Tax</a><br>
+<a href="finance-how-report-vat.html">Report VAT to a Tax Authority</a><br>
+<a href="finance-work-with-vat.html">Work with VAT on Sales and Purchases</a><br>
+<a href="about-localization.html">Local functionality in Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-setup-vat-statement.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

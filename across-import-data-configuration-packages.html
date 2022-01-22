@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use Excel to import data into Business Central| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use Excel to import data into Business Central| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use the default configuration package to add customer data in Excel and import the data back into Business Central .">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="importing-business-data-from-other-finance-systems">Importing Business Data from Other Finance Systems</h1>
+
+<p>When you sign up for Business Central, you can choose to create an empty company so that you can upload your own data and to test your new Business Central company. Depending on the finance solution that your business uses today, you can transfer information about customers, vendors, inventory, and bank accounts.</p>
+<p>From the Role Center, you can start an assisted setup guide that helps you transfer the business data from an Excel file or from other formats. The type of files you can upload depends on the extensions that are available. For example, you can migrate data from QuickBooks because Business Central includes an extension that handles the conversion from QuickBooks. If you want to migrate data from other finance solutions, you must either check if an extension is available for that solution or import from Excel.</p>
+<p>Business Central includes templates for accounts, customers, vendors, and inventory items that you can choose to apply when you import your data.</p>
+<p>You can import master data and some transactional data from other finance systems based on the default configuration package in Business Central. On the <strong>Configuration Packages</strong> page, you can work with the package to import and validate the data before you apply the package.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Alternatively, use data migration wizards to import data from QuickBooks or Dynamics GP. For more information, see <a href="ui-extensions-quickbooks-data-migration.html">QuickBooks Data Migration</a> or <a href="ui-extensions-dynamicsgp-data-migration.html">Dynamics GP Data Migration</a>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For larger implementation work, you can use RapidStart Services for Business Central, which is an extensive toolkit for setting up new solutions based on customers' business requirements and setup data. RapidStart Services also offers functionality for import of business data. For more information, see <a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a>.</p>
+</div>
+<p>To import item pictures, you can use a dedicated function on the <strong>Inventory Setup</strong> page. For more information, see <a href="inventory-how-import-item-pictures.html">Import Multiple Item Pictures</a>.</p>
+<h2 id="importing-data-from-configuration-packages">Importing Data from Configuration Packages</h2>
+<p>Business Central includes a configuration package that you can export to Excel and set up your data there. Then, you can import the data from Excel again. The package consists of 27 tables, including master data such as customers, vendors, items, and accounts, other basic setup tables such as shipping methods, and transactions tables such as sales header and lines.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Working with configuration packages is advanced functionality, and we recommend that you contact your administrator. For more information, see <a href="across-import-data-configuration-packages.html">Importing Data from Legacy Accounting Software using a Configuration Package</a>.</p>
+</div>
+<h2 id="working-with-data-in-excel">Working with Data in Excel</h2>
+<p>When you export the default configuration package to Excel, the generated workbook contains a worksheet for each table in the package. To simplify your tasks, you can take advantage of the XML manipulation tools that are built into Excel. You can also use Excel built-in functions to help with data formatting and to put data in the correct cell. For example, add a blank worksheet and copy the legacy data to it. Then make an Excel formula to map data in the transformation worksheet between the fields in the exported worksheet and customer legacy data. After you have mapped all of the data, copy the range of data onto the table worksheet.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Do not change the columns in the worksheets. If they are moved, changed, or deleted, the worksheet cannot be imported into Business Central.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Fields of type Blob cannot be exported/imported using Excel.</p>
+</div>
+<h2 id="tables-in-the-default-configuration-package">Tables in the Default Configuration Package</h2>
+<p>The default configuration package supports the following tables:</p>
+<ul>
+<li>Payment Terms</li>
+<li>Customer Price Group</li>
+<li>Shipment Method</li>
+<li>Salesperson/Purchaser</li>
+<li>Location</li>
+<li>GL Account</li>
+<li>Customer</li>
+<li>Vendor</li>
+<li>Item</li>
+<li>Sales Header</li>
+<li>Sales Line</li>
+<li>Purchase Header</li>
+<li>Purchase Line</li>
+<li>Gen. Journal Line</li>
+<li>Item Journal Line</li>
+<li>Customer Posting Group</li>
+<li>Vendor Posting Group</li>
+<li>Inventory Posting Group</li>
+<li>Unit of Measure</li>
+<li>Gen. Business Posting Group</li>
+<li>Gen. Product Posting Group</li>
+<li>General Posting Setup</li>
+<li>Territory</li>
+<li>Item Category</li>
+<li>Sales Price</li>
+<li>Purchase Price</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="ui-extensions-quickbooks-data-migration.html">QuickBooks Data Migration</a><br>
+<a href="ui-extensions-dynamicsgp-data-migration.html">Dynamics GP Data Migration</a><br>
+<a href="inventory-how-import-item-pictures.html">Import Multiple Item Pictures</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-import-data-configuration-packages.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

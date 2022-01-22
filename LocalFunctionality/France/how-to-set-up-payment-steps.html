@@ -1,0 +1,296 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Payment Steps </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Payment Steps ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="To use payment management, you must set up steps for payment documents and define payment steps for each payment status.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-payment-steps">Set Up Payment Steps</h1>
+
+<p>To use payment management, you must set up steps for payment documents and define payment steps for each payment status. For example, &quot;Creation of documents,&quot; &quot;Documents created,” and &quot;Creation of payments.&quot; For more information, see <a href="how-to-set-up-payment-statuses.html">Set Up Payment Statuses</a>.</p>
+<h2 id="to-set-up-payment-steps">To set up payment steps</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Payment Slip Setup</strong>, and then choose the relevant link.</p>
+</li>
+<li><p>Select a payment class, and then choose the <strong>Steps</strong> action.</p>
+</li>
+<li><p>In the <strong>Name</strong> field, enter a name for the payment step. You can enter a maximum of 50 alphanumeric characters.</p>
+</li>
+<li><p>Choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Payment Step Card</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>The payment step name that you entered on the <strong>Payment Step</strong> page.</td>
+</tr>
+<tr>
+<td><strong>Previous Status</strong></td>
+<td>The previous status, from which the step was last executed. The default value is 0. When the previous status is equal to the next status, the status is not modified after it is executed. Therefore, this payment step is optional and can be executed indefinitely.</td>
+</tr>
+<tr>
+<td><strong>Previous Status Name</strong></td>
+<td>The name of the status selected in the <strong>Previous Status</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Next Status</strong></td>
+<td>The status at which this payment step ends.</td>
+</tr>
+<tr>
+<td><strong>Next Status Name</strong></td>
+<td>The name of the status selected in the <strong>Next Status</strong> field. This field cannot be modified.</td>
+</tr>
+<tr>
+<td><strong>Action Type</strong></td>
+<td>The type of action to be performed by this step. <br><br> <strong>Ledger:</strong> If you specify <strong>Ledger</strong>, you must define the additional ledger information on the <strong>Payment Step Ledger</strong> page.<br><br> <strong>Report:</strong> If you specify <strong>Report</strong>, you specify which report in the <strong>Report No.</strong> field.<br><br> <strong>File:</strong><br><br> * If you specify <strong>File</strong>, you specify the type of file in the <strong>Export Type</strong> field: <strong>Report</strong> or <strong>XMLPort</strong>.<br><br> * For SEPA Credit Transfer files, specify <strong>XMLport</strong>, and then set the <strong>Export No.</strong> field to 1000.<br><br> * For SEPA Direct Debit files, specify <strong>XMLport</strong>, and then set the <strong>Export No.</strong> field to 1010.</td>
+</tr>
+<tr>
+<td><strong>Report No.</strong></td>
+<td>The identification number for the report. This field is available if the <strong>Action Type</strong> field is set to <strong>Report</strong>.</td>
+</tr>
+<tr>
+<td><strong>Export Type</strong></td>
+<td>The export type for the file. This field is available if the <strong>Action Type</strong> field is set to <strong>File</strong>.<br><br> For example, see <a href="how-to-export-payments.html">Export Payments</a>.</td>
+</tr>
+<tr>
+<td><strong>Export No.</strong></td>
+<td>The identification code for the selected export type. This field is available if the <strong>Action Type</strong> field is set to <strong>File</strong>.</td>
+</tr>
+<tr>
+<td><strong>Verify Lines RIB</strong></td>
+<td>Select to verify that the Relevé d'Identité Bancaire (RIB) key value specified on the payment slip line has been correctly reported.</td>
+</tr>
+<tr>
+<td><strong>Verify Due Date</strong></td>
+<td>Select to verify that the due date on the billing and payment line has been correctly reported.</td>
+</tr>
+<tr>
+<td><strong>Source Code</strong></td>
+<td>The source code that is linked to the payment step.<br><br> This field is available if the <strong>Action Type</strong> field is set to <strong>Ledger</strong>.</td>
+</tr>
+<tr>
+<td><strong>Reason Code</strong></td>
+<td>The reason code that is linked to the payment step.<br><br> This field is available if the <strong>Action Type</strong> field is set to <strong>Ledger</strong>.</td>
+</tr>
+<tr>
+<td><strong>Header Nos. Series</strong></td>
+<td>The number series code that must be used to assign numbers to the header for a new payment slip.<br><br> This field is available if the <strong>Action Type</strong> field is set to <strong>Create New Document</strong>.</td>
+</tr>
+<tr>
+<td><strong>Correction</strong></td>
+<td>Select to mark the payment entries as corrections. This field is available if the <strong>Action Type</strong> field is set to <strong>Ledger</strong>.</td>
+</tr>
+<tr>
+<td><strong>Realize VAT</strong></td>
+<td>Select to indicate that unrealized VAT should be reversed and VAT should be declared for this payment step.<br><br> This field is available if the <strong>Unrealized VAT Reversal</strong> field on the <strong>Payment Class</strong> page is set to <strong>Delayed</strong>.</td>
+</tr>
+<tr>
+<td><strong>Verify Header RIB</strong></td>
+<td>Select to verify that the RIB key value specified on the payment slip header has been correctly reported.</td>
+</tr>
+<tr>
+<td><strong>Acceptation Code&lt;&gt;No</strong></td>
+<td>Select to verify that the acceptance code for each payment line is not a number.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>If the action type of the payment step is <strong>Ledger</strong>, you must set up additional ledger information for the payment step.</p>
+<h2 id="to-set-up-ledger-information-for-a-payment-step">To set up ledger information for a payment step</h2>
+<ol>
+<li><p>On the <strong>Payment Step Card</strong> page for the payment step, choose the <strong>Ledger</strong> action.</p>
+</li>
+<li><p>On the <strong>Payment Step Ledger</strong> page, choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Field</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sign</strong></td>
+<td>The type of posting entry.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The entry description.</td>
+</tr>
+<tr>
+<td><strong>Accounting Type</strong></td>
+<td>The accounting type that is used for posting the entry.</td>
+</tr>
+<tr>
+<td><strong>Account Type</strong></td>
+<td>The account type for posting the entry. This field is available if the <strong>Accounting Type</strong> is <strong>Setup Account</strong>.</td>
+</tr>
+<tr>
+<td><strong>Account No.</strong></td>
+<td>The account number to which the entry is posted. The account number displayed here depends on the type selected in the <strong>Account Type</strong> field. This field is available if the <strong>Accounting Type</strong> is <strong>Setup Account</strong>.</td>
+</tr>
+<tr>
+<td><strong>Customer Posting Group</strong></td>
+<td>The code for the customer posting group to which the entry is posted. This field is available if the <strong>Accounting Type</strong> is <strong>Payment Line Account</strong>, <strong>Associated G/L Account</strong>, or <strong>Header Payment Account</strong>.</td>
+</tr>
+<tr>
+<td><strong>Vendor Posting Group</strong></td>
+<td>The code for the vendor posting group to which the entry is posted. This field is available if the <strong>Accounting Type</strong> is <strong>Payment Line Account</strong>, <strong>Associated G/L Account</strong>, or <strong>Header Payment Account</strong>.</td>
+</tr>
+<tr>
+<td><strong>Root</strong></td>
+<td>The root for the general ledger accounts group. This is used if the <strong>Accounting Type</strong> is <strong>G/L Account / Month</strong> or <strong>G/L Account / Week</strong>.</td>
+</tr>
+<tr>
+<td><strong>Memorize Entry</strong></td>
+<td>Select to indicate that the ledger entries created in this step will be retained and applied to newly posted entries. If you select this check box, the <strong>Detail Level</strong> field is not available.</td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>The method for applying the entries. If you have cleared the <strong>Memorize Entry</strong> check box, and have set this field to <strong>None</strong>, the <strong>Detail Level</strong> field is available.</td>
+</tr>
+<tr>
+<td><strong>Detail Level</strong></td>
+<td>The method for posting the payment lines.</td>
+</tr>
+<tr>
+<td><strong>Document Type</strong></td>
+<td>The type of document assigned to the ledger entry.</td>
+</tr>
+<tr>
+<td><strong>Document No.</strong></td>
+<td>The method for assigning the document number to the ledger entry.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="payment-management.html">Payment Management</a><br>
+<a href="how-to-set-up-payment-classes.html">Set Up Payment Classes</a><br>
+<a href="how-to-set-up-payment-addresses.html">Set Up Payment Addresses</a><br>
+<a href="how-to-create-payment-slips.html">Create Payment Slips</a><br>
+<a href="how-to-post-payment-slips.html">Post Payment Slips</a><br>
+<a href="how-to-archive-payment-slips.html">Archive Payment Slips</a><br>
+<a href="how-to-export-or-import-payment-management-setup-parameters.html">Export or Import Payment Management Setup Parameters</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/France/how-to-set-up-payment-steps.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

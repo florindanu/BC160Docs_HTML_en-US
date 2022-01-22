@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Journal Opening Balances | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Journal Opening Balances | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Business Central includes several batch jobs that are provided to help in the transfer of legacy account balances to a newly configured company. You can easily transfer this data with journals postings.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-journal-opening-balances">Create Journal Opening Balances</h1>
+
+<p>Business Central includes several batch jobs that are provided to help in the transfer of legacy account balances to a newly configured company. You can easily transfer this data with the customer journal, the vendor journal, the item journal, or the G/L journal.</p>
+<p>The first step is to create a configuration package that includes the setup tables for those journals. The following procedure assumes that this step is completed. For more information, see <a href="admin-set-up-company-configuration.html">Set Up Company Configuration</a>. This procedure describes the subsequent steps, which include applying the package that is provided by a partner.</p>
+<p>Before you start, make sure that you are using the Administration Role Center page because it provides the correct context for your configuration work. For more information, see <a href="ui-change-basic-settings.html">Change Basic Settings</a>.</p>
+<h2 id="to-apply-the-entries-in-a-journal-to-a-new-company">To apply the entries in a journal to a new company</h2>
+<ol>
+<li><p>Configure a new company and apply a configuration package to it. For more information, see <a href="admin-how-to-configure-a-company-with-the-rapidstart-wizard.html">Configure a Company with the RapidStart Wizard</a>.</p>
+<p>The new company does not contain information about journal opening balances.</p>
+</li>
+<li><p>Open the configuration worksheet and import existing data about customers, items, vendors, and the general ledger. For more information, see <a href="admin-migrate-customer-data.html">Migrate Customer Data</a>.</p>
+</li>
+<li><p>Choose, for example, the <strong>Create G/L Acct. Journal Lines</strong> action.</p>
+</li>
+<li><p>Fill in the <strong>Options</strong> FastTab as appropriate, and set filters as needed. For example, in the <strong>Journal Template</strong> field, enter a name.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button. The records are now in the journal, but the amounts are empty.</p>
+</li>
+<li><p>Export the journal table to Excel and manually enter the posting and balancing account information from the legacy data.</p>
+</li>
+<li><p>Import and apply the table information into the new company. The journal lines are ready for posting.</p>
+</li>
+<li><p>In the configuration worksheet, select the journal line table, and then choose the <strong>Database Data</strong> action.</p>
+</li>
+<li><p>Review the information, and then choose the <strong>Post</strong> action.</p>
+</li>
+<li><p>Repeat the steps to import and post any other opening balances.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-apply-configuration-to-new-companies.html">Apply Configurations to New Companies</a><br>
+<a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-create-journal-opening-balances.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

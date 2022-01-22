@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Work on Service Tasks | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Work on Service Tasks | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="After you have created a service order or service quote, registered service item lines, and allocated resources to the service items in the order or quote, you can start repairing and maintaining the service items.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-on-service-tasks">Work on Service Tasks</h1>
+
+<p>After you have created a service order or service quote, registered service item lines, and allocated resources to the service items in the order or quote, you can start repairing and maintaining the service items.</p>
+<p>Business Central features a <strong>Service Tasks</strong> page that gives an overview of all the service items that need attention. Think of it as your service dashboard where you can see what orders are pending, look for and register spare parts, and keep your inventory up-to-date.</p>
+<p>To track changes and get a graphical view of your service business, use Business Central statistics tools for quick, automatically generated charting and analysis.</p>
+<h2 id="to-work-on-a-service-task">To work on a service task</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Tasks</strong>, and then choose the related link.</p>
+</li>
+<li><p>If you want a list of service tasks a certain resource or resource group is allocated to, fill in the <strong>Resource Filter</strong> or <strong>Resource Group Filter</strong> field and press Enter.</p>
+</li>
+<li><p>If you want a list of service tasks with a certain response date or response dates within a certain time period, fill in the <strong>Response Date Filter</strong> field and press Enter.</p>
+</li>
+<li><p>If you want a list of service tasks with a certain allocation status or repair status, fill in the <strong>Allocation Status Filter</strong> or <strong>Repair Status Code Filter</strong> field and press Enter.</p>
+</li>
+<li><p>Select the service task you want to work on. Choose the <strong>Item Worksheet</strong> action. The <strong>Service Item Worksheet</strong> page opens.</p>
+</li>
+<li><p>Register standard texts, spare parts, resource hours, and costs as appropriate using the corresponding options in the <strong>Type</strong> field:  <blank>, <strong>Item</strong>, <strong>Resource</strong>, and <strong>Cost</strong>.<p>
+</blank></li>
+<li><p>In the <strong>Repair Status</strong> field, select the appropriate status.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Fill in the <strong>Repair Status</strong> field with the <strong>Finished</strong> or <strong>Partly Serviced</strong> status if the service item has been completely serviced or another resource will continue servicing. The <strong>Finished</strong> or <strong>Reallocation Needed</strong> status is specified automatically for the allocation entry corresponding to the service item.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-register-service-operations">To register service operations</h2>
+<p>When performing a service on a service order, you can register the details specifying the items used, costs incurred, and the time spent. The data you specify is stored on the <strong>Service Item Worksheet</strong> page. You can update the data when necessary.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the service order to register the service for, and choose the item line.</p>
+</li>
+<li><p>Choose the <strong>Service Item Worksheet</strong> action</p>
+</li>
+<li><p>On the lines, specify the items used, costs incurred, and the time spent on the service.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also register service directly on the service lines linked to the service order.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-register-spare-parts">To register spare parts</h2>
+<p>When working on service items in service orders, you may need to use spare parts for the service. The following procedure shows how to register the spare parts you use on the <strong>Service Item Worksheet</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Tasks</strong>, and then choose the related link.</li>
+<li>Choose the line that includes the relevant service item, and then choose the <strong>Item Worksheet</strong> action.</li>
+<li>Enter a new service line.</li>
+<li>In the <strong>Type</strong> field, choose <strong>Item</strong>.</li>
+<li>In the <strong>No.</strong> field, choose the relevant spare part.</li>
+<li>In the <strong>Quantity</strong> field, enter the quantity of items you want to use.</li>
+</ol>
+<p>You can use a similar procedure to register the spare parts on the <strong>Service Lines</strong> page, which you can open from the <strong>Service Order</strong> page.</p>
+<h2 id="to-register-spare-parts-from-a-service-order">To register spare parts from a service order</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</li>
+<li>Open the service order you want to register spare parts for.</li>
+<li>Choose the line that includes the relevant service item. Choose <strong>Actions</strong>, choose <strong>Order</strong>, and then choose <strong>Service Lines</strong>.</li>
+<li>enter a new service line.</li>
+</ol>
+<h2 id="to-replace-a-service-item-or-a-service-item-component">To replace a service item or a service item component</h2>
+<p>When you service a service item that is composed of components, you may need to replace a faulty component with a new one. Every time that you enter a spare part for a service item with components, you have the option of replacing a component or creating a new one. The new item is not registered as a component of the service item until you post this service line or the service order.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Tasks</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the line that includes the service item, and then choose the <strong>Item Worksheet</strong> action.</p>
+</li>
+<li><p>Enter a new service line.</p>
+</li>
+<li><p>In the <strong>Type</strong> field, choose <strong>Item</strong>.</p>
+</li>
+<li><p>In the <strong>No.</strong> field, choose the component to replace.</p>
+</li>
+<li><p>Press <strong>Enter</strong>. A dialog box opens with three options: <strong>Replace Component</strong>, <strong>New Component</strong>, and <strong>Ignore</strong>. The following table describes the options.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Replace Component</strong></td>
+<td>Changes the status of the component you are replacing to not active, and it will appear on the replaced component list for the service item.</td>
+</tr>
+<tr>
+<td><strong>New Component</strong></td>
+<td>Enters the new component in the component list of the service item.</td>
+</tr>
+<tr>
+<td><strong>Ignore</strong></td>
+<td>Does nothing to the component list of the service item.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose <strong>Replace Component</strong>.</p>
+</li>
+<li><p>Choose the component to replace, and then choose <strong>OK</strong>.</p>
+</li>
+</ol>
+<h2 id="to-change-the-response-time-for-a-service-item-line">To change the response time for a service item line</h2>
+<p>When you register a service item line in a service order or quote, depending on whether the service item is on a service contract the response time in hours is automatically entered and the response date and time are calculated accordingly. You can change the response time in hours and the response date and time if you need to.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong> or <strong>Service Quotes</strong>, and then choose the related link.</li>
+<li>Choose the service order or quote to open the card.</li>
+<li>On the service item line you want to change the response time for, either in the <strong>Response Time (Hours)</strong> field or in the <strong>Response Date</strong> and <strong>Response Time</strong> fields, enter the new response hours or response date and time.</li>
+</ol>
+<h2 id="to-register-faultresolution-codes">To register fault/resolution codes</h2>
+<p>After repairing a service item, you can register both the fault code and the resolution code for the item by selecting a combination from the existing fault/resolution codes relationships. The fault and resolution codes will appear in the corresponding fields on the <strong>Service Item Worksheet</strong> page. You can also register the codes directly in this page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Tasks</strong>, and then choose the related link.</li>
+<li>Choose the line that includes the relevant service item, and then choose the <strong>Item Worksheet</strong> action.</li>
+<li>On the <strong>Service Item Worksheet</strong> page, choose <strong>Fault/Resol. Codes Relationships</strong>. The <strong>Fault/Resolution Codes Relationships</strong> page opens.</li>
+</ol>
+<blockquote>
+<p>[!NOTE]
+Filters are set on the relationships that are shown on the page by copying the service item group and the fault codes from the <strong>Service Item Worksheet</strong> page.</p>
+</blockquote>
+<ol start="4">
+<li>Fill out the line. Choose the combination of fault and resolution codes, and then choose <strong>OK</strong> to copy it to the service item. If an appropriate combination cannot be found, you can create a new combination on the page.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-setup-fault-reporting.html">Set Up Fault Reporting</a>
+<a href="service-allocation-status-and-repair-status.html">Allocation Status and Repair Status</a><br>
+<a href="service-service-posting.html">Service Posting</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-to-work-on-service-tasks.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

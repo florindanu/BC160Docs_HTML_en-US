@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up and Publish KPI Web Services for Account Schedules | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up and Publish KPI Web Services for Account Schedules | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic describes how to show the account-schedule KPI data based on specific account schedules.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-and-publish-kpi-web-services-based-on-account-schedules">Set Up and Publish KPI Web Services Based on Account Schedules</h1>
+
+<p>On the <strong>Account Schedule KPI Web Service Setup</strong> page, you set up how to show the account-schedule KPI data and which specific account schedules to base the KPIs on. When you choose the <strong>Publish Web Service</strong> button, the specified account-schedule KPI data is added to the list of published web services on the <strong>Web Services</strong> page.</p>
+<h2 id="to-set-up-and-publish-a-kpi-web-service-that-is-based-on-account-schedules">To set up and publish a KPI web service that is based on account schedules</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Account Schedule KPI Web Service Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Forecasted Values Start</strong></td>
+<td>Specify at what point in time forecasted values are shown on the account-schedule KPI graphic.<br><br> The forecasted values are retrieved from the general ledger budget that you select in the <strong>G/L Budget Name</strong> field. <strong>Note:</strong>  To obtain KPIs that show forecasted figures after a certain date and actual figures before the date, you can change the <strong>Allow Posting From</strong> field on the <strong>General Ledger Setup</strong> page. For more information, see Allow Posting From.</td>
+</tr>
+<tr>
+<td><strong>G/L Budget Name</strong></td>
+<td>Specify the name of the general ledger budget that provides forecasted values to the account-schedule KPI web service.</td>
+</tr>
+<tr>
+<td><strong>Period</strong></td>
+<td>Specify the period that the account-schedule KPI web service is based on.</td>
+</tr>
+<tr>
+<td><strong>View By</strong></td>
+<td>Specify which time interval the account-schedule KPI is shown in.</td>
+</tr>
+<tr>
+<td><strong>Web Service Name</strong></td>
+<td>Specify the name of the account-schedule KPI web service.<br><br> This name will appear in the <strong>Service Name</strong> field on the <strong>Web Services</strong> page.</td>
+</tr>
+</tbody>
+</table>
+<p>Specify one or more account schedules that you want to publish as a KPI web service according to the setup that you made in the previous table.</p>
+</li>
+<li><p>On the <strong>Account Schedules</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acc. Schedule Name</strong></td>
+<td>Specify the account schedule that the KPI web service is based on.</td>
+</tr>
+<tr>
+<td><strong>Acc. Schedule Description</strong></td>
+<td>Specify the description of the account schedule that the KPI web service is based on.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Repeat step 3 for all the account schedules that you want to base the account-schedule KPI web service on.</p>
+</li>
+<li><p>To view or edit the selected account schedule, on the <strong>Account Schedule</strong> FastTab, choose the <strong>Edit Account Schedule</strong> action.</p>
+</li>
+<li><p>To view the account-schedule KPI data that you have set up, choose the <strong>Account Schedule KPI Web Service</strong> action.</p>
+</li>
+<li><p>To publish the account-schedule KPI web service, choose the <strong>Publish Web Service</strong> action. The web service is added to the list of published web services on the <strong>Web Services</strong> page.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also publish the KPI web service by pointing to the <strong>Account Schedule KPI Web Service Setup</strong> page object from the <strong>Web Services</strong> page. For more information, see <a href="across-how-publish-web-service.html">Publish a Web Service</a>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="bi.html">Business Intelligence</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="finance-general-ledger.html">The General Ledger and the Chart of Accounts</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/bi-how-to-set-up-and-publish-kpi-web-services-based-on-account-schedules.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

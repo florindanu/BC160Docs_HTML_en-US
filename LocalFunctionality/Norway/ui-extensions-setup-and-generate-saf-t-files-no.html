@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setup and generate SAF-T files | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setup and generate SAF-T files | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use this extension to setup and generate SAF-T files for the Norwegian authorities in Business Central.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="standard-audit-files---tax">Standard Audit Files - Tax</h1>
+
+<p>Starting in January, 2020, companies in Norway must report financial data and provide a set of Standard Audit Files - Tax (SAF-T) to the Norwegian authorities upon request. This extension makes it easy to set up, generate, and export Standard Audit Files - Tax in Business Central. The exported SAF-T files will automatically be compressed as a .zip file ready to be uploaded by the user on the website of Skatteetaten, the Norwegian tax authorities.</p>
+<h2 id="what-does-this-extensions-handle">What does this extensions handle?</h2>
+<p>This extension provides the following capabilities:</p>
+<ul>
+<li>Setup and mapping of chart of accounts to SAF-T standard accounts</li>
+<li>Mapping VAT setup to SAF-T VAT codes</li>
+<li>Control to which extent dimensions are exported in SAF-T files</li>
+<li>Export SAF-T files, either directly or by using the Job Queue. Using Job Queue lets you schedule the export to occur during quiet hours, which is useful for potentially large datasets.</li>
+</ul>
+<h2 id="setup-of-the-norwegian-saf-t-extension">Setup of the Norwegian SAF-T extension</h2>
+<p>Set up the SAF-T extension through Assisted Setup, which provides an easy, step-by-step guide for get started with SAF-T in Business Central. If needed, you can run the guide several times until you finish the setup.</p>
+<ol>
+<li><p>In Business Central, choose the <img src="../../media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Assisted Setup</strong>, and then choose <strong>Assisted Setup</strong>.</p>
+</li>
+<li><p>Choose <strong>Set up SAF-T</strong>.</p>
+</li>
+<li><p>The first page in the setup guide explains what you are about to set up. Choose <strong>Next</strong>.</p>
+</li>
+<li><p>In the in <strong>Mapping Type</strong> field, choose the type of Chart of Accounts you want to SAF-T accounts, and then choose <strong>Next</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using the on-premises version of Business Central, there are some additional steps.</p>
+<ol>
+<li>Download and import source files with SAF-T accounts. Download the SAF-T mapping files from <a href="https://github.com/Skatteetaten/saf-t">Skatteetaten's repo on Github</a>.</li>
+<li>Choose <strong>Import The Source Files For Mapping</strong>.</li>
+<li>Import all required files. If you are setting up the mapping for income statement import files, make sure to import mapping codes for all records with <strong>Income Statement</strong> in the <strong>Source Type</strong> column.</li>
+<li>For each imported file, choose <strong>Update mapping codes from file</strong>.</li>
+</ol>
+</div>
+</li>
+<li><p>To define the period for the first SAF-T reporting, choose <strong>Accounting Period</strong>, confirm the data range, and then choose <strong>Next</strong>.</p>
+<p>Typically, this is done for a specific accounting period, but you can also define a date range without specifying an accounting period.</p>
+</li>
+<li><p>To map your chart of accounts to the SAF-T accounts, choose <strong>Open setup to define G/L account mappings</strong>. Lines where the G/L Account No. is marked with green indicates that here are transactions on the account within the date range specified in the previous step, in which case it must be mapped. Other G/L accounts can be skipped. When finished, close the <strong>SAF-T Mapping Setup Card</strong>, and then choose <strong>Next</strong> in the setup guide.</p>
+</li>
+<li><p>To map the VAT Posting Setup to standard sales and purchase SAF-T tax codes, choose <strong>Open setup to define VAT Posting Setup Mapping</strong>.  When finished close the <strong>SAF-T VAT Posting Setup card</strong>, and then choose <strong>Next</strong> in the setup guide.</p>
+</li>
+<li><p>Norwegian authorities recommend that you export dimensions for financial transactions. However, in some situations you may not want to export dimensions - for example if you have internal dimensions that do provide value to auditors. This step lets you open the Dimensions list and choose which dimensions to export. Choose the value in the <strong>Export to SAF-T</strong> field, and then choose <strong>Close</strong>.</p>
+</li>
+<li><p>To specify the employee who is the SAF-T contact in your company, choose the employee in the <strong>Employee No.</strong> field. This is useful when Norwegian authorities have questions about the SAF-T files. When finished, choose <strong>Next</strong>.</p>
+</li>
+<li><p>The setup of SAF-T is now finished. Choose <strong>Finish</strong>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The mappings are tied to the date range you specified. You can create additional mappings for other periods without changing the mapping you already created. You can also copy mappings from previously made setups. This is to ensure that you can report SAF-T for different periods while managing changes in your chart of accounts.</p>
+</div>
+<h2 id="exporting-saf-t-files">Exporting SAF-T files</h2>
+<p>To export SAF-T files from Business Central, you must first create and set up a <strong>SAF-T Export</strong> to define the mapping range. For example, you can define a mapping and export the entire year of 2019, and another mapping for just the month of April 2019 if the authorities ask you to provide this data specifically.</p>
+<h3 id="to-create-an-export-of-saf-t-files">To create an export of SAF-T files</h3>
+<ol>
+<li>In Business Central, choose the <img src="../../media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature"> &quot;Tell me what you want to do&quot;) icon, enter <strong>SAF-T Exports</strong>, and then choose <strong>SAF-T Exports</strong>.</li>
+<li>On the <strong>SAF-T Exports</strong> page, choose <strong>Create</strong>.</li>
+<li>On the <strong>SAF-T Export</strong> page, in the <strong>Mapping Range Code</strong> field, choose the mapping range for which to define an export.</li>
+<li>To start the SAF-T export, do one of the following:
+<ul>
+<li>To export immediately, choose <strong>Start</strong>.</li>
+<li>To schedule the export to be handled by the jobs in the Job Queue, choose <strong>Parallel Processing</strong>. Exporting G/L entries can take time. To speed up the process, consider specifying how many jobs to run in parallel.</li>
+</ul>
+</li>
+<li>To check the status of the SAF-T file generation, look at the <strong>Lines</strong> section in the lower part of this page.</li>
+<li>When all files are generated, choose <strong>Download file</strong> to download a .zip file that contains the SAF-T files. This file is ready to be uploaded to Skatteetaten.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>SAF-T exports will generate one file with master data, and separate files for each of the months included in the selected mapping range. Consider the amount of transactions in the selected period and adjust the <strong>Max No. of Jobs</strong> accordingly on the SAF-T Export page. As a general recommendation, start with three parallel jobs to allow parallel export and still leave resources for other Business Central users. Additionally, for on-premises, you can specify a network share in the <strong>Folder path</strong> to generate the SAF-T files directly on a network share instead of in the database. For online versions of Business Central this is always the case. If you specify the <strong>Folder Name</strong>, the generated .zip file will be located here.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="../../ui-extensions.html">Customizing Business Central Using Extensions</a><br>
+<a href="../../product-get-started.html">Getting Started</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Norway/ui-extensions-setup-and-generate-saf-t-files-no.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

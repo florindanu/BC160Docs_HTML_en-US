@@ -1,0 +1,712 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Table Structure | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Table Structure | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="To understand how the dimension entry storing and posting is redesigned, it is important to understand the table structure.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-table-structure">Design Details: Table Structure</h1>
+
+<p>To understand how dimension entries are stored and posted, it is important to understand the table structure.</p>
+<h2 id="table-480-dimension-set-entry">Table 480, Dimension Set Entry</h2>
+<p>You cannot change this table. After data has been written to the table, you cannot delete or edit it.</p>
+<table>
+<thead>
+<tr>
+<th>Field No.</th>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>ID</strong></td>
+<td>Integer</td>
+<td>&gt;0.0 is reserved for the empty dimension set. References field 3 in table 481.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Dimension Code</strong></td>
+<td>Code 20</td>
+<td>Table relation to table 348.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Dimension Value Code</strong></td>
+<td>Code 20</td>
+<td>Table relation to table 349.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Dimension Value ID</strong></td>
+<td>Integer</td>
+<td>References field 12 in table 349. It is the secondary key that is used when traversing table 481.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Dimension Name</strong></td>
+<td>Text 30</td>
+<td>CalcField. Lookup to table 348.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Dimension Value Name</strong></td>
+<td>Text 30</td>
+<td>CalcField. Lookup to table 349.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-481-dimension-set-tree-node">Table 481, Dimension Set Tree Node</h2>
+<p>You cannot change this table. It is used to search for a dimension set. If the dimension set is not found, a new set is created.</p>
+<table>
+<thead>
+<tr>
+<th>Field No.</th>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Parent Dimension Set ID</strong></td>
+<td>Integer</td>
+<td>0 for top level node.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Dimension Value ID</strong></td>
+<td>Integer</td>
+<td>Table relation to field 12 in table 349.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Dimension Set ID</strong></td>
+<td>Integer</td>
+<td>AutoIncrement. Used in field 1 in table 480.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>In Use</strong></td>
+<td>Boolean</td>
+<td>False if not in use.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="table-482-reclas-dimension-set-buffer">Table 482 Reclas. Dimension Set Buffer</h2>
+<p>This table is used when you change a dimension value code, for example, on an item ledger entry by using the <strong>Item Reclassification Journal</strong> page.</p>
+<table>
+<thead>
+<tr>
+<th>Field No.</th>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Dimension Code</strong></td>
+<td>Code 20</td>
+<td>Table relation to table 348.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Dimension Value Code</strong></td>
+<td>Code 20</td>
+<td>Table relation to table 349.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Dimension Value ID</strong></td>
+<td>Integer</td>
+<td>References field 12 in table 349.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>New Dimension Value Code</strong></td>
+<td>Code 20</td>
+<td>Table relation to table 349.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>New Dimension Value ID</strong></td>
+<td>Integer</td>
+<td>References field 12 in table 349.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Dimension Name</strong></td>
+<td>Text 30</td>
+<td>CalcField. Lookup to table 348.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Dimension Value Name</strong></td>
+<td>Text 30</td>
+<td>CalcField. Lookup to table 349.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>New Dimension Value Name</strong></td>
+<td>Text 30</td>
+<td>CalcField. Lookup to table 349.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="transaction-and-budget-tables">Transaction and Budget Tables</h2>
+<p>In addition to other dimension fields in the table, this field is important:</p>
+<table>
+<thead>
+<tr>
+<th>Field No.</th>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>480</td>
+<td><strong>Dimension Set ID</strong></td>
+<td>Integer</td>
+<td>References field 1 in table 480.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-83-item-journal-line">Table 83, Item Journal Line</h3>
+<p>In addition to other dimension fields in the table, these fields are important.</p>
+<table>
+<thead>
+<tr>
+<th>Field No.</th>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>480</td>
+<td><strong>Dimension Set ID</strong></td>
+<td>Integer</td>
+<td>References field 1 in table 480.</td>
+</tr>
+<tr>
+<td>481</td>
+<td><strong>New Dimension Set ID</strong></td>
+<td>Integer</td>
+<td>References field 1 in table 480.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="table-349-dimension-value">Table 349, Dimension Value</h3>
+<p>In addition to other dimension fields in the table, these fields are important.</p>
+<table>
+<thead>
+<tr>
+<th>Field No.</th>
+<th>Field Name</th>
+<th>Data Type</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td><strong>Dimension Value ID</strong></td>
+<td>Integer</td>
+<td>AutoIncrement. Used for references in table 480 and table 481.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tables-that-contain-the-dimension-set-id-field">Tables That Contain the Dimension Set ID Field</h3>
+<p>The <strong>Dimension Set ID</strong> field (480) exists in the following tables. For the tables that store posted data, the field only provides a non-editable display of dimensions, which is marked as Drill-down. For the tables that store working documents, the field is editable. The buffer tables that are used internally do not need editable or non-editable capabilities.</p>
+<p>Field 480 is non-editable in the following tables.</p>
+<table>
+<thead>
+<tr>
+<th>Table No.</th>
+<th>Table Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>17</td>
+<td><strong>G/L Entry</strong></td>
+</tr>
+<tr>
+<td>21</td>
+<td><strong>Cust. Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>25</td>
+<td><strong>Vendor Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>32</td>
+<td><strong>Item Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>110</td>
+<td><strong>Sales Shipment Header</strong></td>
+</tr>
+<tr>
+<td>111</td>
+<td><strong>Sales Shipment Line</strong></td>
+</tr>
+<tr>
+<td>112</td>
+<td><strong>Sales Invoice Header</strong></td>
+</tr>
+<tr>
+<td>113</td>
+<td><strong>Sales Invoice Line</strong></td>
+</tr>
+<tr>
+<td>114</td>
+<td><strong>Sales Cr.Memo Header</strong></td>
+</tr>
+<tr>
+<td>115</td>
+<td><strong>Sales Cr.Memo Line</strong></td>
+</tr>
+<tr>
+<td>120</td>
+<td><strong>Purch. Rcpt. Header</strong></td>
+</tr>
+<tr>
+<td>121</td>
+<td><strong>Purch. Rcpt. Line</strong></td>
+</tr>
+<tr>
+<td>122</td>
+<td><strong>Purch. Inv. Header</strong></td>
+</tr>
+<tr>
+<td>123</td>
+<td><strong>Purch. Inv. Line</strong></td>
+</tr>
+<tr>
+<td>124</td>
+<td><strong>Purch. Cr. Memo Hdr.</strong></td>
+</tr>
+<tr>
+<td>125</td>
+<td><strong>Purch. Cr. Memo Line</strong></td>
+</tr>
+<tr>
+<td>169</td>
+<td><strong>Job Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>203</td>
+<td><strong>Res. Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>271</td>
+<td><strong>Bank Account Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>281</td>
+<td><strong>Phys. Inventory Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>297</td>
+<td><strong>Issued Reminder Header</strong></td>
+</tr>
+<tr>
+<td>304</td>
+<td><strong>Issued Fin. Charge Memo Header</strong></td>
+</tr>
+<tr>
+<td>5107</td>
+<td><strong>Sales Header Archive</strong></td>
+</tr>
+<tr>
+<td>5108</td>
+<td><strong>Sales Line Archive</strong></td>
+</tr>
+<tr>
+<td>5109</td>
+<td><strong>Purchase Header Archive</strong></td>
+</tr>
+<tr>
+<td>5110</td>
+<td><strong>Purchase Line Archive</strong></td>
+</tr>
+<tr>
+<td>5601</td>
+<td><strong>FA Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>5625</td>
+<td><strong>Maintenance Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>5629</td>
+<td><strong>Ins. Coverage Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>5744</td>
+<td><strong>Transfer Shipment Header</strong></td>
+</tr>
+<tr>
+<td>5745</td>
+<td><strong>Transfer Shipment Line</strong></td>
+</tr>
+<tr>
+<td>5746</td>
+<td><strong>Transfer Receipt Header</strong></td>
+</tr>
+<tr>
+<td>5747</td>
+<td><strong>Transfer Receipt Line</strong></td>
+</tr>
+<tr>
+<td>5802</td>
+<td><strong>Value Entry</strong></td>
+</tr>
+<tr>
+<td>5832</td>
+<td><strong>Capacity Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>5907</td>
+<td><strong>Service Ledger Entry</strong></td>
+</tr>
+<tr>
+<td>5908</td>
+<td><strong>Service Header</strong></td>
+</tr>
+<tr>
+<td>5933</td>
+<td><strong>Service Order Posting Buffer</strong></td>
+</tr>
+<tr>
+<td>5970</td>
+<td><strong>Filed Service Contract Header</strong></td>
+</tr>
+<tr>
+<td>5990</td>
+<td><strong>Service Shipment Header</strong></td>
+</tr>
+<tr>
+<td>5991</td>
+<td><strong>Service Shipment Line</strong></td>
+</tr>
+<tr>
+<td>5992</td>
+<td><strong>Service Invoice Header</strong></td>
+</tr>
+<tr>
+<td>5993</td>
+<td><strong>Service Invoice Line</strong></td>
+</tr>
+<tr>
+<td>5994</td>
+<td><strong>Service Cr. Memo Header</strong></td>
+</tr>
+<tr>
+<td>5995</td>
+<td><strong>Service Cr. Memo Line</strong></td>
+</tr>
+<tr>
+<td>6650</td>
+<td><strong>Return Shipment Header</strong></td>
+</tr>
+<tr>
+<td>6651</td>
+<td><strong>Return Shipment Line</strong></td>
+</tr>
+<tr>
+<td>6660</td>
+<td><strong>Return Receipt Header</strong></td>
+</tr>
+<tr>
+<td>6661</td>
+<td><strong>Return Receipt Line</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Field 480 is editable in the following tables.</p>
+<table>
+<thead>
+<tr>
+<th>Table No.</th>
+<th>Table Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>36</td>
+<td><strong>Sales Header</strong></td>
+</tr>
+<tr>
+<td>37</td>
+<td><strong>Sales Line</strong></td>
+</tr>
+<tr>
+<td>38</td>
+<td><strong>Purchase Header</strong></td>
+</tr>
+<tr>
+<td>39</td>
+<td><strong>Purchase Line</strong></td>
+</tr>
+<tr>
+<td>81</td>
+<td><strong>Gen. Journal Line</strong></td>
+</tr>
+<tr>
+<td>83</td>
+<td><strong>Item Journal Line</strong></td>
+</tr>
+<tr>
+<td>89</td>
+<td><strong>BOM Journal Line</strong></td>
+</tr>
+<tr>
+<td>96</td>
+<td><strong>G/L Budget Entry</strong></td>
+</tr>
+<tr>
+<td>207</td>
+<td><strong>Res. Journal Line</strong></td>
+</tr>
+<tr>
+<td>210</td>
+<td><strong>Job Journal Line</strong></td>
+</tr>
+<tr>
+<td>221</td>
+<td><strong>Gen. Jnl. Allocation</strong></td>
+</tr>
+<tr>
+<td>246</td>
+<td><strong>Requisition Line</strong></td>
+</tr>
+<tr>
+<td>295</td>
+<td><strong>Reminder Header</strong></td>
+</tr>
+<tr>
+<td>302</td>
+<td><strong>Finance Charge Memo Header</strong></td>
+</tr>
+<tr>
+<td>5405</td>
+<td><strong>Production Order</strong></td>
+</tr>
+<tr>
+<td>5406</td>
+<td><strong>Prod. Order Line</strong></td>
+</tr>
+<tr>
+<td>5407</td>
+<td><strong>Prod. Order Component</strong></td>
+</tr>
+<tr>
+<td>5615</td>
+<td><strong>FA Allocation</strong></td>
+</tr>
+<tr>
+<td>5621</td>
+<td><strong>FA Journal Line</strong></td>
+</tr>
+<tr>
+<td>5635</td>
+<td><strong>Insurance Journal Line</strong></td>
+</tr>
+<tr>
+<td>5740</td>
+<td><strong>Transfer Header</strong></td>
+</tr>
+<tr>
+<td>5741</td>
+<td><strong>Transfer Line</strong></td>
+</tr>
+<tr>
+<td>5900</td>
+<td><strong>Service Header</strong></td>
+</tr>
+<tr>
+<td>5901</td>
+<td><strong>Service Item Line</strong></td>
+</tr>
+<tr>
+<td>5902</td>
+<td><strong>Service Line</strong></td>
+</tr>
+<tr>
+<td>5965</td>
+<td><strong>Service Contract Header</strong></td>
+</tr>
+<tr>
+<td>5997</td>
+<td><strong>Standard Service Line</strong></td>
+</tr>
+<tr>
+<td>7134</td>
+<td><strong>Item Budget Entry</strong></td>
+</tr>
+<tr>
+<td>99000829</td>
+<td><strong>Planning Component</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Field 480 exists in the following buffer tables.</p>
+<table>
+<thead>
+<tr>
+<th>Table No.</th>
+<th>Table Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>49</td>
+<td><strong>Invoice Post. Buffer</strong></td>
+</tr>
+<tr>
+<td>212</td>
+<td><strong>Job Posting Buffer</strong></td>
+</tr>
+<tr>
+<td>372</td>
+<td><strong>Payment Buffer</strong></td>
+</tr>
+<tr>
+<td>382</td>
+<td><strong>CV Ledger Entry Buffer</strong></td>
+</tr>
+<tr>
+<td>461</td>
+<td><strong>Prepayment Inv. Line Buffer</strong></td>
+</tr>
+<tr>
+<td>5637</td>
+<td><strong>FA G/L Posting Buffer</strong></td>
+</tr>
+<tr>
+<td>7136</td>
+<td><strong>Item Budget Buffer</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-dimension-set-entries.html">Design Details: Dimension Set Entries</a><br>
+<a href="design-details-dimension-set-entries-overview.html">Dimension Set Entries Overview</a><br>
+<a href="design-details-searching-for-dimension-combinations.html">Design Details: Searching for Dimension Combinations</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-table-structure.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

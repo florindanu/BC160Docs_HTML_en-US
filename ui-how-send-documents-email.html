@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Document-Specific Email Content | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Document-Specific Email Content | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can define content to insert into the body of an email message, for example, a PayPal link. You can also attach documents to email messages.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="send-documents-by-email">Send Documents by Email</h1>
+
+<p>To communicate the contents of business documents quickly to your business partners, such as the payment information on sales documents to customers, you can use the Report Layout feature to define document-specific content that gets inserted in email bodies automatically. For more information, see <a href="ui-manage-report-layouts.html">Managing Report and Document Layouts</a>.</p>
+<p>To enable emails from within Business Central, start the <strong>Set Up Email</strong> assisted setup guide on the Role Center.</p>
+<p>You can email practically all document types as attachments to email messages directly from the page that shows the document. In addition to the attachment, you can set up document-specific email bodies with core information from the document preceded by standard text that greets the mail recipient and introduces the document in question. To offer your customers to pay for sales electronically using a payment service, such as PayPal, you can also have the PayPal information and hyperlink inserted in the email body.</p>
+<p>From all supported documents, you initiate emailing by choosing the <strong>Send</strong> action, on posted documents, or the <strong>Post and Send</strong> action, on non-posted documents.</p>
+<p>If the <strong>Email</strong> field on the <strong>Send Document to</strong> page is set to <strong>Yes (Prompt for Settings)</strong>, then the <strong>Send Email</strong> page opens prefilled with the contact person in the <strong>To:</strong> field and the document attached as a PDF file. In the <strong>Body</strong> field, you can either enter text manually or you can have the field filled with a document-specific email body that you have set up.</p>
+<p>The following procedure describes how to set the <strong>Sales - Invoice</strong> report up to be used for document-specific email bodies when you email posted sales invoices.</p>
+<h2 id="to-set-up-a-document-specific-email-body-for-sales-invoices">To set up a document-specific email body for sales invoices</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Report Selections Sales</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Report Selection - Sales</strong> page, in the <strong>Usage</strong> field, select <strong>Invoice</strong>.</p>
+</li>
+<li><p>On a new line, in the <strong>Report ID</strong> field, select, for example, standard report 1306.</p>
+</li>
+<li><p>Select the <strong>Use for Email Body</strong> check box.</p>
+</li>
+<li><p>Choose the <strong>Email Body Layout Code</strong> field, and then select a layout from the drop-down list.</p>
+<p>Report layouts define both the style and the content of the email body, including the standard text that precedes the core document information in the email body. You can see all available report layouts if you choose the <strong>Select from full list</strong> button in the drop-down list.</p>
+</li>
+<li><p>To view or edit the layout that the email body is based on, select the layout on the <strong>Custom Report Layouts</strong> page, and then choose the <strong>Edit Layout</strong> action.</p>
+</li>
+<li><p>If you want to offer customers to pay for sales electronically, you can set up the related payment service, such as PayPal, and then have the PayPal information and hyperlink inserted in the email body as well. For more information, see <a href="sales-how-enable-payment-service-extensions.html">Enable Customer Payments Through PayPal</a>.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>Now, when you choose, for example, the <strong>Send</strong> action on the <strong>Posted Sales Invoice</strong> page, the email body will contain the document information of report 1306 preceded by styled standard text according to the report layout that you selected in step 5.</p>
+<p>The following procedure describes how to send a posted sales invoice as an email message with the document attached as a PDF file and with a document-specific email body.</p>
+<h2 id="to-send-documents-by-email">To send documents by email</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Sales Invoices</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant posted sales invoice, and then choose the <strong>Send</strong> action. The <strong>Send Document to</strong> page opens.</p>
+</li>
+<li><p>In the <strong>Email</strong> field, select <strong>Yes (Prompt for Settings)</strong>. For more information, see <a href="sales-how-setup-document-send-profiles.html">Set Up Document Sending Profiles</a>.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button. The <strong>Send Email</strong> page opens.</p>
+</li>
+<li><p>In the <strong>To:</strong> field, enter a valid email address. The default value is the customer email address.</p>
+</li>
+<li><p>In the <strong>Subject</strong> field, enter a descriptive subject text. The default value is the customer name and invoice number.</p>
+</li>
+<li><p>In the <strong>Attachment</strong> field, the generated invoice is attached by default as a PDF file.</p>
+</li>
+<li><p>In the <strong>Body</strong> field, enter a short message to the recipient.</p>
+<p>If a document-specific email body is set up on the <strong>Report Selection - Sales</strong> page, then the <strong>Body</strong> field is filled in automatically. For more information, see <a href="ui-how-send-documents-email.html#to-set-up-a-document-specific-email-body-for-sales-invoices">To set up a document-specific email body for sales invoices</a>.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to send the email message.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you do not want to specify email settings each time you email a document, you can select the <strong>Yes (Use Default Settings)</strong> option in the <strong>Email</strong> field on the <strong>Send Document to</strong> page. In that case, the <strong>Send Email</strong> page will not open. See Step 4. For more information, see <a href="sales-how-setup-document-send-profiles.html">Set Up Document Sending Profiles</a>.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-manage-report-layouts.html">Managing Report and Document Layouts</a><br>
+<a href="admin-how-setup-email.html">Set up Email</a><br>
+<a href="sales-how-invoice-sales.html">Invoice Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-how-send-documents-email.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

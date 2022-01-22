@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Receiving and Putting Away in Advanced Warehousing | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Receiving and Putting Away in Advanced Warehousing | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In Business Central, the inbound processes for receiving and putting away can be performed in four ways using different functionalities depending on the warehouse complexity level.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-receiving-and-putting-away-in-advanced-warehouse-configurations">Walkthrough: Receiving and Putting Away in Advanced Warehouse Configurations</h1>
+
+<p><strong>Note</strong>: This walkthrough must be performed on a demonstration company with the <strong>Full Evaluation - Complete Sample Data</strong> option, which is available in the Sandbox environment. For more information, see <a href="across-how-create-sandbox-environment.html">Creating a Sandbox Environment</a>.</p>
+<p>In Business Central, the inbound processes for receiving and putting away can be performed in four ways using different functionalities depending on the warehouse complexity level.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Inbound process</th>
+<th>Bins</th>
+<th>Receipts</th>
+<th>Put-aways</th>
+<th>Complexity level (See <a href="design-details-warehouse-setup.html">Design Details: Warehouse Setup</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Post receipt and put-away from the order line</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Post receipt and put-away from an inventory put-away document</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>3</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Post receipt and put-away from a warehouse receipt document</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>4/5/6</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Post receipt from a warehouse receipt document and post put-away from a warehouse put-away document</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>4/5/6</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, see <a href="design-details-inbound-warehouse-flow.html">Design Details: Inbound Warehouse Flow</a>.</p>
+<p>The following walkthrough demonstrates method D in the previous table.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>In advanced warehouse configurations where your location is set up to require receiving processing in addition to put-away processing, you use the <strong>Warehouse Receipt</strong> page to record and post the receipt of items on multiple inbound orders. When the warehouse receipt is posted, one or more warehouse put-away documents are created to instruct warehouse workers to take the received item and place them in designated places according to bin setup or in other bins. The specific placement of the items is recorded when the warehouse put-away is registered. The inbound source document can be a purchase order, sales return order, inbound transfer order, or assembly or production order with output that is ready to be put away. If the receipt is created from an inbound order, more than one inbound source document can be retrieved for the receipt. By using this method you can register many items arriving from different inbound orders with one receipt.</p>
+<p>This walkthrough demonstrates the following tasks.</p>
+<ul>
+<li>Setting up WHITE location for receiving and putting away.</li>
+<li>Creating and releasing two purchase orders for full warehouse handling.</li>
+<li>Creating and posting a warehouse receipt document for multiple purchase order lines from specific vendors.</li>
+<li>Registering a warehouse put-away for the received items.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<p>This walkthrough demonstrates tasks that are performed by the following user roles:</p>
+<ul>
+<li>Warehouse Manager</li>
+<li>Purchasing Agent</li>
+<li>Receiving Staff</li>
+<li>Warehouse Worker</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To complete this walkthrough, you will need:</p>
+<ul>
+<li>CRONUS International Ltd. installed.</li>
+<li>To make yourself a warehouse employee at WHITE location by following these steps:</li>
+</ul>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Employees</strong>, and then choose the related link.</li>
+<li>Choose the <strong>User ID</strong> field, and select your own user account on the <strong>Users</strong> page.</li>
+<li>In the <strong>Location Code</strong> field, enter WHITE.</li>
+<li>Select the <strong>Default</strong> field.</li>
+</ol>
+<h2 id="story">Story</h2>
+<p>Ellen, the warehouse manager at CRONUS International Ltd., creates two purchase orders for accessory items from vendors 10000 and 20000 to be delivered to WHITE warehouse. When the deliveries arrive at the warehouse, Sammy, who is responsible for receiving items from vendors 10000 and 20000, uses a filter to create receipt lines for purchase orders arriving from the two vendors. Sammy posts the items as received into inventory in one warehouse receipt and makes the items available for sale or other demand. John, the warehouse worker, takes the items from the receiving bin and puts them away. He puts all units away in their default bins, except 40 out of 100 received hinges that he puts away in the assembly department by splitting the put-away line. When John registers the put-away, the bin contents are updated and the items are made available for picking from the warehouse.</p>
+<h2 id="reviewing-the-white-location-setup">Reviewing the WHITE Location Setup</h2>
+<p>The setup of the <strong>Location Card</strong> page defines the company’s warehouse flows.</p>
+<h3 id="to-review-the-location-setup">To review the location setup</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the WHITE location card.</p>
+</li>
+<li><p>Note on the <strong>Warehouse</strong> FastTab that the <strong>Directed Put-away and Pick</strong> check box is selected.</p>
+<p>This means that the location is set up for the highest complexity level, reflected by the fact that all warehouse handling check boxes on the FastTab are selected.</p>
+</li>
+<li><p>Note on the <strong>Bins</strong> FastTab that bins are specified in the <strong>Receipt Bin Code</strong> and the <strong>Shipment Bin Code</strong> fields.</p>
+</li>
+</ol>
+<p>This means that when you create a warehouse receipt, this bin code is copied to the header of the warehouse receipt document by default and to the lines of the resulting warehouse put-aways.</p>
+<h2 id="creating-the-purchase-orders">Creating the Purchase Orders</h2>
+<p>Purchase orders are the most common type of inbound source document.</p>
+<h3 id="to-create-the-purchase-orders">To create the purchase orders</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Create a purchase order for vendor 10000 on the work date (January 23) with the following purchase order lines.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Location code</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>70200</td>
+<td>WHITE</td>
+<td>100 PCS</td>
+</tr>
+<tr>
+<td>70201</td>
+<td>WHITE</td>
+<td>50 PCS</td>
+</tr>
+</tbody>
+</table>
+<p>Proceed to notify the warehouse that the purchase order is ready for warehouse handling when the delivery arrives.</p>
+</li>
+<li><p>Choose the <strong>Release</strong> action.</p>
+<p>Proceed to create the second purchase order.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Create a purchase order for vendor 20000 on the work date with the following purchase order lines.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Location code</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>70100</td>
+<td>WHITE</td>
+<td>10 CAN</td>
+</tr>
+<tr>
+<td>70101</td>
+<td>WHITE</td>
+<td>12 CAN</td>
+</tr>
+</tbody>
+</table>
+<p>Choose the <strong>Release</strong> action.</p>
+<p>The deliveries of items from vendors 10000 and 20000 have arrived at WHITE warehouse, and Sammy starts to process the purchase receipts.</p>
+</li>
+</ol>
+<h2 id="receiving-the-items">Receiving the Items</h2>
+<p>On the <strong>Warehouse Receipt</strong> page, you can manage multiple inbound orders for source documents, such as a purchase order.</p>
+<h3 id="to-receive-the-items">To receive the items</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Receipts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>In the <strong>Location Code</strong> field, enter WHITE.</p>
+</li>
+<li><p>Choose the <strong>Use Filters to Get Src. Docs.</strong> action.</p>
+</li>
+<li><p>In the <strong>Code</strong> field, enter <strong>ACCESSORY</strong>.</p>
+</li>
+<li><p>In the <strong>Description</strong> field, enter <strong>Vendors 10000 and 20000</strong>.</p>
+</li>
+<li><p>Choose the <strong>Modify</strong> action.</p>
+</li>
+<li><p>On the <strong>Purchase</strong> FastTab, in the <strong>Buy-from Vendor No. Filter</strong> field, enter <strong>10000|20000</strong>.</p>
+</li>
+<li><p>Choose the <strong>Run</strong> action. The warehouse receipt is filled with four lines representing purchase order lines for the specified vendors. The <strong>Qty. to Receive</strong> field is filled because you did not select the <strong>Do not Fill Qty. to Handle</strong> check box on the <strong>Filters to Get Source Docs.</strong> page.</p>
+</li>
+<li><p>Optionally, if you want to use a filter as described earlier in this section, choose the <strong>Get Source Document</strong> action, and then select purchase orders from the vendors in question.</p>
+</li>
+<li><p>Choose the <strong>Post Receipt</strong> action, and then choose the <strong>Yes</strong> button.</p>
+<p>Positive item ledger entries are created reflecting the posted purchase receipts of accessories from vendors 10000 and 20000, and the items are ready to be put away in the warehouse from the receiving bin.</p>
+</li>
+</ol>
+<h2 id="putting-the-items-away">Putting the Items Away</h2>
+<p>On the <strong>Warehouse Put-away</strong> page, you can manage put-aways for a specific warehouse receipt document covering multiple source documents. Like all warehouse activity documents, each item on the warehouse put-away is represented by a Take line and a Place line. In the following procedure, the bin code on the Take lines is the default receiving bin at WHITE location, W-08-0001.</p>
+<h3 id="to-put-the-items-away">To put the items away</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Put-Aways</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the only warehouse put-away document in the list, and then choose the <strong>Edit</strong> action.</p>
+<p>The warehouse put-away document opens with a total of eight Take or Place lines for the four purchase order lines.</p>
+<p>The warehouse worker is told that 40 hinges are needed in the assembly department, and he proceeds to split the single Place line to specify a second Place line for bin W-02-0001 in the assembly department where he places that part of the received hinges.</p>
+</li>
+<li><p>Select the second line on the <strong>Warehouse Put-away</strong> page, the Place line for item 70200.</p>
+</li>
+<li><p>In the <strong>Qty. to Handle</strong> field, change the value from 100 to 60.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, choose <strong>Functions</strong>, and then choose <strong>Split Line</strong>. A new line is inserted for item 70200 with 40 in <strong>Qty. to Handle</strong> field.</p>
+</li>
+<li><p>In the <strong>Bin Code</strong> field, enter W-02-0001. The <strong>Zone Code</strong> field is automatically filled.</p>
+<p>Proceed to register the put-away.</p>
+</li>
+<li><p>Choose the <strong>Register Put-Away</strong> action, and then choose the <strong>Yes</strong> button.</p>
+<p>The received accessories are now put-away in the items’ default bins, and 40 hinges are placed in the assembly department. The received items are now available for picking to internal demand, such as assembly orders, or to external demand, such as sales shipments.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-how-to-put-items-away-with-warehouse-put-aways.html">Put Items Away with Warehouse Put-aways</a><br>
+<a href="warehouse-how-to-move-items-in-advanced-warehousing.html">Move Items in advanced warehouse configurations</a><br>
+<a href="design-details-inbound-warehouse-flow.html">Design Details: Inbound Warehouse Flow</a><br>
+<a href="walkthrough-receiving-and-putting-away-in-basic-warehousing.html">Walkthrough: Receiving and Putting Away in Basic Warehouse Configurations</a><br>
+<a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-receiving-and-putting-away-in-advanced-warehousing.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Specify Colored Indicators to Customize Visual Signals About a Cue's Activity for the Company or Individual Users | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Specify Colored Indicators to Customize Visual Signals About a Cue's Activity for the Company or Individual Users | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="As an administrator, you can set up Cues that appear on the users' Role Centers to include an indicator that changes color based on the data values in the Cues.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-a-colored-indicator-on-cues-for-the-company-or-individual-users">Set Up a Colored Indicator on Cues for the Company or Individual Users</h1>
+
+<p>As an administrator, you can set up Cues that appear on the users' Role Centers to include an indicator that changes color based on the data values in the Cues.</p>
+<p>The indicator appears as a colored bar along the top border of the Cue tile. It provides a visual signal of the status of the Cue's activity, which can indicate favorable or unfavorable conditions to prompt the user to take action. For example, if a Cue displays ongoing sales invoices, you can set up the indicator to appear green (favorable) when total number of ongoing sales invoices is below 10, and appears red (unfavorable) when the total is greater than 20.</p>
+<p>From the <strong>Cue Setup</strong> page, you set up indicators for all the Cues that are available in the company database. You can set up the indicators to apply to all users in the company or an individual user only. The indicator settings on the <strong>Cue Setup</strong> page act as the default indicator settings. If the <strong>Cue Setup End User</strong> page is made available to users, then they can personalize the indicators settings that you define on the <strong>Cue Setup</strong> page.</p>
+<p>To set up the indicator, you specify up to two threshold values that define three ranges of data values (low, middle, and high) to which you can apply a different color (or style).</p>
+<h3 id="to-set-up-colored-indicators-on-cues">To set up colored indicators on Cues</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cue Setup</strong>, and then choose the related link.</p>
+<p>The <strong>Cue Setup</strong> page appears. The page lists the indicators that are currently setup up on Cues. Indicators that apply to all users in the company have a blank <strong>User Name</strong> field. Indicators that apply to a specific user include the user's name in the <strong>User Name</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you set up a company-wide indicator and a user modifies the indicator later on, then a separate entry for the indicator appears in list for that user.</p>
+</div>
+</li>
+<li><p>Choose <strong>Edit List</strong> action.</p>
+</li>
+<li><p>To set up an indicator for a Cue that is not listed on the page, choose the <strong>New</strong> action, and then fill in the fields as described in the following. If you want to modify an existing indicator, go to the next step.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User Name</strong></td>
+<td>If you want to set up the indicator for all users, leave this field blank.<br><br> If you want to set up the indicator for a specific user, then set this field to the user name.</td>
+</tr>
+<tr>
+<td><strong>Table No</strong></td>
+<td>Specifies the ID of the table object that contains the Cue. Use the drop down list to find the table. The drop down list includes all Cue tables in the company database.<br><br> The <strong>Table Name</strong> field will be automatically filled in based on your selection.</td>
+</tr>
+<tr>
+<td><strong>Field No</strong></td>
+<td>Specifies the ID of the Cue that you want to set up an indicator on. Use the drop down list to find the Cue that you want. <strong>Note:</strong>  The Cue ID corresponds to the field number that is assigned to the Cue in the table. <br><br> The <strong>Field Name</strong> field is automatically filled in based on your selection</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>To set up the indicator for a Cue, set the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LowStyle</strong></td>
+<td>Specifies the color of the indicator when the Cue's value is below the value of the <strong>Threshold 1</strong> field.</td>
+</tr>
+<tr>
+<td><strong>LowThreshold</strong></td>
+<td>Specifies the value at or above which the indicator changes to the color specified by the <strong>Middle Range Style</strong> field.</td>
+</tr>
+<tr>
+<td><strong>MiddleStyle</strong></td>
+<td>Specifies the color of the indicator when Cue's value is greater than or equal to the value of the <strong>Threshold 1</strong> field but less than or equal to the value of the <strong>Threshold 2</strong> field.</td>
+</tr>
+<tr>
+<td><strong>HighThreshold</strong></td>
+<td>Specifies the value above which the indicator changes to the color specified by the <strong>High Range Style</strong> field.</td>
+</tr>
+<tr>
+<td><strong>HighStyle</strong></td>
+<td>Specifies the color to use when the Cue's value is above the value of the <strong>Threshold 2</strong> field.</td>
+</tr>
+</tbody>
+</table>
+<p>The following table lists the colors that correspond to the options of the <strong>LowStyle</strong>, <strong>MiddleStyle</strong>, and <strong>HighStyle</strong> fields.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>None</strong></td>
+<td>No color (same color as the Cue tile)</td>
+</tr>
+<tr>
+<td><strong>Favorable</strong></td>
+<td>Green</td>
+</tr>
+<tr>
+<td><strong>Unfavorable</strong></td>
+<td>Red</td>
+</tr>
+<tr>
+<td><strong>Ambiguous</strong></td>
+<td>Yellow</td>
+</tr>
+<tr>
+<td><strong>Subordinate</strong></td>
+<td>Gray</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-set-up-colored-indicator-on-cues.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

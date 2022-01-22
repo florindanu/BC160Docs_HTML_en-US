@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Undo Assembly Posting | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Undo Assembly Posting | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Sometimes you may need to undo a posted assembly order, for example when the order was posted with mistakes that must be corrected, or because it should not have been posted in the first place and must be rolled back.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="undo-assembly-posting">Undo Assembly Posting</h1>
+
+<p>Sometimes you may need to undo a posted assembly order, for example when the order was posted with mistakes that must be corrected, or because it should not have been posted in the first place and must be rolled back.</p>
+<p>When you undo a posted assembly order, a set of corrective item ledger entries is created to reverse the original entries. Each positive output entry for the assembly item is reversed by a negative output entry. Each negative consumption entry for an assembly component is reversed by a positive consumption entry. Fixed cost application is automatically created between the corrective and original entries to ensure exact cost reversal.</p>
+<p>When you undo a fully posted assembly order, then you can choose to recreate the assembly order to its original state, for example to make corrections before reposting it. Alternatively, you can choose to not recreate the assembly order.</p>
+<p>When you undo a partially posted assembly order, then all affected quantity fields, such as the <strong>Assembled Quantity</strong>, <strong>Consumed Quantity</strong>, and <strong>Remaining Quantity</strong> fields are restored to the values they had before the posting in question.</p>
+<p>To recreate or restore assembly orders, the following conditions must apply to the assembly item that was output in the original posting:</p>
+<ul>
+<li>It must still be in inventory, that is, it is not sold or otherwise consumed by outbound transactions.</li>
+<li>It must not be reserved.</li>
+<li>It must exist in the bin that it was output to.</li>
+</ul>
+<p>In addition, existing assembly orders can only be restored if the number of lines and the sequence of lines on the original assembly order are not changed.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>To solve conflicts due to line changes, you can manually revert the changes on the lines in question before undoing the related posted assembly order. Alternatively, you can post the assembly order fully and then select to recreate it when undoing the posting.</p>
+</div>
+<p>The following procedure describes how to undo posted assembly orders where the items were assembled to stock. If you want to undo posted assembly orders where the items were assembled to a sales order, then you must use the <strong>Undo Shipment</strong> function on the posted shipment that relates to the posted assembly order. For more information, see <a href="finance-how-reverse-journal-posting.html">Reverse Journal Postings and Undo Receipts/Shipments</a>. The undoing of the posted assembly order then happens automatically in the same way as described in this topic.</p>
+<h2 id="to-undo-posting-of-an-assembly-order">To undo posting of an assembly order</h2>
+<ol>
+<li><p>To undo a fully or partially posted assembly order, Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Assembly Orders</strong>, and choose the related link.</p>
+<p>The <strong>Posted Assembly Orders</strong> page opens showing one or more posted assembly orders that are posted from the assembly order in question. Each partial posting creates a separate posted assembly order.</p>
+</li>
+<li><p>Open the posted assembly order that you want to undo, and then choose the <strong>Undo Assembly</strong> action.</p>
+<p>If the posted assembly order that you want to undo relates to a fully posted assembly order that is now deleted, then you have the option to recreate it, typically because you want to reprocess it.</p>
+</li>
+<li><p>If you want to recreate the assembly order, choose the <strong>Yes</strong> button. To undo the posting without recreating the related assembly order, choose the <strong>No</strong> button.</p>
+</li>
+</ol>
+<p>The <strong>Reversed</strong> field on the assembly order header changes to <strong>Yes</strong>. The assembly order posting is now reversed, and you can proceed to process the entire assembly order if you chose to recreate it or the open assembly order that you have restored to its original state.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To restore quantities from multiple partial postings in an assembly order, you must undo all the posted assembly orders in question by following steps 1 through 3 above for each posted assembly order.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="finance-how-reverse-journal-posting.html">Reverse Journal Postings and Undo Receipts/Shipments</a><br>
+<a href="sales-how-process-sales-returns-cancellations.html">Process Sales Returns or Cancellations</a><br>
+<a href="inventory-how-work-BOMs.html">Work with Bills of Material</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/assembly-how-to-undo-assembly-posting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Handling Missing Option Values </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Handling Missing Option Values ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to prevent full synchronization from failing because the options differ in mapped fields.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="handling-missing-option-values">Handling Missing Option Values</h1>
+
+<p>Common Data Service contains only three option set fields that contain option values that you can map to Business Central fields of Option type<!-- Option type, not enum? @Onat can you vertify this? --> for automatic synchronization. During synchronization, non-mapped options are ignored and the missing options are appended to the related Business Central table and added to the <strong>CDS Option Mapping</strong> system table to handle manually later. For example, by adding the missing options in either product and then updating the mapping. This section describes how that works.</p>
+<p>The <strong>Integration Table Mapping</strong> page contains three maps for fields that contain one or more mapped option values. After a full synchronization, the <strong>CDS Option Mapping</strong> page contains the non-mapped options in the three fields respectively.</p>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Option Value</th>
+<th>Option Value Caption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Payment Terms: NET30</td>
+<td>1</td>
+<td>Net 30</td>
+</tr>
+<tr>
+<td>Payment Terms: 2%10NET30</td>
+<td>2</td>
+<td>2% 10; Net 30</td>
+</tr>
+<tr>
+<td>Payment Terms: NET45</td>
+<td>3</td>
+<td>Net 45</td>
+</tr>
+<tr>
+<td>Payment Terms: NET60</td>
+<td>4</td>
+<td>Net 60</td>
+</tr>
+<tr>
+<td>Shipment Method: FOB</td>
+<td>1</td>
+<td>FOB</td>
+</tr>
+<tr>
+<td>Shipment Method: NOCHARGE</td>
+<td>2</td>
+<td>No Charge</td>
+</tr>
+<tr>
+<td>Shipping Agent: AIRBORNE</td>
+<td>1</td>
+<td>Airborne</td>
+</tr>
+<tr>
+<td>Shipping Agent: DHL</td>
+<td>2</td>
+<td>DHL</td>
+</tr>
+<tr>
+<td>Shipping Agent: FEDEX</td>
+<td>3</td>
+<td>FedEx</td>
+</tr>
+<tr>
+<td>Shipping Agent: UPS</td>
+<td>4</td>
+<td>UPS</td>
+</tr>
+<tr>
+<td>Shipping Agent: POSTALMAIL</td>
+<td>5</td>
+<td>Postal Mail</td>
+</tr>
+<tr>
+<td>Shipping Agent: FULLLOAD</td>
+<td>6</td>
+<td>Full Load</td>
+</tr>
+<tr>
+<td>Shipping Agent: WILLCALL</td>
+<td>7</td>
+<td>Will Call</td>
+</tr>
+</tbody>
+</table>
+<p>The content of the <strong>CDS Option Mapping</strong> page is based on enum values in the <strong>CDS Account</strong> table. In Common Data Service, the following fields on the account entity are mapped to fields on the customer and vendor records:</p>
+<ul>
+<li><strong>Address 1: Freight Terms</strong> of data type Enum, where values are defined as follow:</li>
+</ul>
+<pre><code>enum 5335 &quot;CDS Shipment Method Code&quot;
+{
+    Extensible = true;
+    value(0; &quot; &quot;) { Caption = ' '; }
+    value(1; &quot;FOB&quot;) { Caption = 'FOB'; }
+    value(2; &quot;NoCharge&quot;) { Caption = 'No Charge'; }
+}
+</code></pre>
+<ul>
+<li><strong>Address 1: Shipping Method</strong> of data type Enum, where values are defined as follows:</li>
+</ul>
+<pre><code>enum 5336 &quot;CDS Shipping Agent Code&quot;
+enum 5336 &quot;CDS Shipping Agent Code&quot;
+{
+    Extensible = true;
+    value(0; &quot; &quot;) { Caption = ' '; }
+    value(1; &quot;Airborne&quot;) { Caption = 'Airborne'; }
+    value(2; &quot;DHL&quot;) { Caption = 'DHL'; }
+    value(3; &quot;FedEx&quot;) { Caption = 'FedEx'; }
+    value(4; &quot;UPS&quot;) { Caption = 'UPS'; }
+    value(5; &quot;PostalMail&quot;) { Caption = 'Postal Mail'; }
+    value(6; &quot;FullLoad&quot;) { Caption = 'Full Load'; }
+    value(7; &quot;WillCall&quot;) { Caption = 'Will Call'; }
+}
+</code></pre>
+<ul>
+<li><strong>Payment Terms</strong> of data type Enum, where values are defined as follows:</li>
+</ul>
+<pre><code>enum 5334 &quot;CDS Payment Terms Code&quot;
+{
+    Extensible = true;
+    value(0; &quot; &quot;) { Caption = ' '; }
+    value(1; &quot;Net30&quot;) { Caption = 'Net 30'; }
+    value(2; &quot;2%10Net30&quot;) { Caption = '2% 10; Net 30'; }
+    value(3; &quot;Net45&quot;) { Caption = 'Net 45'; }
+    value(4; &quot;Net60&quot;) { Caption = 'Net 60'; }
+}
+</code></pre>
+<p>All of the Business Central enums above are mapped to option sets in Common Data Service.</p>
+<h3 id="extending-option-sets-in-">Extending Option Sets in Business Central</h3>
+<ol>
+<li><p>Create a new AL extension.</p>
+</li>
+<li><p>Add an Enum extension for the options that you want to extend. Be sure that you use the same value.</p>
+</li>
+</ol>
+<pre><code>enumextension 50100 &quot;CDS Payment Terms Code Extension&quot; extends &quot;CDS Payment Terms Code&quot;
+{
+    value(779800001; &quot;Cash Payment&quot;) { Caption = 'Cash Payment'; }
+    value(779800002; &quot;Transfer&quot;) { Caption = 'Transfer'; }
+}
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must use the same option ID values from Common Data Service when you extend the Business Central enum. Otherwise synchronization will fail.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The first ten characters of the new option value names and captions must be unique. For example, two options named &quot;Transfer 20 working days&quot; and &quot;Transfer 20 calendar days&quot; will cause an error because both have the same first 10 characters, &quot;Transfer 2&quot;. Name them, for example, &quot;TRF20 WD&quot; and &quot;TRF20 CD.&quot;</p>
+</div>
+<h3 id="update--option-mapping">Update Common Data Service Option Mapping</h3>
+<p>Now you can recreate the mapping between Common Data Service options and Business Central records.</p>
+<p>On the <strong>Integration Table Mapping</strong> page, choose the line for the <strong>Payment Terms</strong> map, and then choose the <strong>Synchronize Modified Records</strong> action. The <strong>CDS Option Mapping</strong> page is updated with the additional records below.</p>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Option Value</th>
+<th>Option Value Caption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Payment Terms: NET30</td>
+<td>1</td>
+<td>Net 30</td>
+</tr>
+<tr>
+<td>Payment Terms: 2%10NET30</td>
+<td>2</td>
+<td>2% 10; Net 30</td>
+</tr>
+<tr>
+<td>Payment Terms: NET45</td>
+<td>3</td>
+<td>Net 45</td>
+</tr>
+<tr>
+<td>Payment Terms: NET60</td>
+<td>4</td>
+<td>Net 60</td>
+</tr>
+<tr>
+<td><strong>Payment Terms: CASH PAYME</strong></td>
+<td><strong>779800001</strong></td>
+<td><strong>Cash Payment</strong></td>
+</tr>
+<tr>
+<td><strong>Payment Terms: TRANSFER</strong></td>
+<td><strong>779800002</strong></td>
+<td><strong>Transfer</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Payment Terms</strong> table in Business Central will then have new records for the Common Data Service options. In the following table new options are in bold font . Italic rows represent all options that can now be synchronized. Remaining rows represent options are not in use and will be ignored during synchronization. You can remove them or extend CDS options with the same names.)</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Due Date Calculation</th>
+<th>Discount Date Calculation</th>
+<th>Discount %</th>
+<th>Calc. Pmt. Disc. on Cr. Memos</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10 DAYS</td>
+<td>10D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 10 days</td>
+</tr>
+<tr>
+<td>14 DAYS</td>
+<td>14D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 14 days</td>
+</tr>
+<tr>
+<td>15 DAYS</td>
+<td>15D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 15 days</td>
+</tr>
+<tr>
+<td>1M(8D)</td>
+<td>1M</td>
+<td>8D</td>
+<td>2.</td>
+<td>FALSE</td>
+<td>1 Month/2% 8 days</td>
+</tr>
+<tr>
+<td>2 DAYS</td>
+<td>2D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 2 days</td>
+</tr>
+<tr>
+<td><em>2%10NET30</em></td>
+<td></td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td></td>
+</tr>
+<tr>
+<td>21 DAYS</td>
+<td>21D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 21 days</td>
+</tr>
+<tr>
+<td>30 DAYS</td>
+<td>30D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 30 days</td>
+</tr>
+<tr>
+<td>60 DAYS</td>
+<td>60D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 60 days</td>
+</tr>
+<tr>
+<td>7 DAYS</td>
+<td>7D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Net 7 days</td>
+</tr>
+<tr>
+<td><em><strong>CASH PAYME</strong></em></td>
+<td></td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td></td>
+</tr>
+<tr>
+<td>CM</td>
+<td>CM</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Current Month</td>
+</tr>
+<tr>
+<td>COD</td>
+<td>0D</td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td>Cash on delivery</td>
+</tr>
+<tr>
+<td><em>NET30</em></td>
+<td></td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td></td>
+</tr>
+<tr>
+<td><em>NET45</em></td>
+<td></td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td></td>
+</tr>
+<tr>
+<td><em>NET60</em></td>
+<td></td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td></td>
+</tr>
+<tr>
+<td><em><strong>TRANSFER</strong></em></td>
+<td></td>
+<td></td>
+<td>0.</td>
+<td>FALSE</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-cds-missing-option-values.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

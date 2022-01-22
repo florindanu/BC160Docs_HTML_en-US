@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the Payments and Reconciliations (DK) Extension | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the Payments and Reconciliations (DK) Extension | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This extension makes it easy to export files that are pre-formatted to meet bank requirements for electronic submissions.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="the-payments-and-reconciliations-dk-extension">The Payments and Reconciliations (DK) Extension</h1>
+
+<p>Make fast, error-free payments by exporting files that are formatted specifically for exchanges with your vendor or bank. These files speed up the payment and reconciliation processes, and eliminate errors that can happen when you manually enter the information on a bank website.</p>
+<p>This extension supports file formats for several Danish banks. When you export payment information to a file, the extension packages the data into the format that your bank requires. For example, the formats include Bankdata-V3, BEC, SDC, and FIK, which many different banks use, and some that are more specialized for certain banks, for example, Danske Bank and Nordea. The extension also includes some formats for importing and reconciling bank statements.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use the extension, you must know the format that your bank or vendor requires. Some banks or vendors provide this information on their websites; however, you might need to contact their customer service to get the information.</p>
+</div>
+<h2 id="supported-bank-formats">Supported Bank Formats</h2>
+<p>This extension can apply the following file formats for payment files:</p>
+<ul>
+<li>BANKDATA-V3</li>
+<li>BEC-INDLAND</li>
+<li>BEC-CSV</li>
+<li>DANSKEBANK-CMKV</li>
+<li>DANSKEBANK-CMKXKSX</li>
+<li>DANSKEBANK</li>
+<li>FIK71</li>
+<li>NORDEA-ERHVERV-CSV</li>
+<li>NORDEA</li>
+<li>NORDEA-UNITEL-V3</li>
+<li>SDC</li>
+<li>SDC-CSV</li>
+</ul>
+<h2 id="to-set-up-the-extension">To set up the extension</h2>
+<p>There are a few steps to get started.</p>
+<ul>
+<li>Allow payment data exports. To help protect your data, this is not readily available.</li>
+<li>Set up purchase and payables so that you do not require external document numbers on invoices. If needed, you can use the reference number to refer to a specific invoice.</li>
+<li>Specify the payment method for each vendor. Payment methods define how you pay invoices from the vendor. For example, Bank, Cash, Check, or Account.</li>
+<li>Specify the type of format to use for each of your bank accounts. For example, NORDEA, DANSKEBANK, SDC, and so on.</li>
+</ul>
+<p>Additionally, you must assign vendors to a domestic <strong>Gen. Bus. Posting Group</strong> and a <strong>Vendor Posting Group</strong>. The Country/Region setting for the vendor must be Denmark (DK). For more information, see <a href="finance-posting-groups.html">Setting Up Posting Groups</a>.</p>
+<h3 id="to-allow--to-export-payment-data">To allow Business Central to export payment data</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Journal</strong>, and then choose the related link.</li>
+<li>On the <strong>Edit Payment Journal</strong> page, choose the <strong>Bank</strong> batch.</li>
+<li>Choose the <strong>Allow Payment Export</strong> check box.</li>
+</ol>
+<h3 id="to-specify-a-payment-method-for-a-vendor">To specify a payment method for a vendor</h3>
+<p>The following table shows the combinations of FIK and GIRO payment methods that Business Central supports.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Type 01</th>
+<th>Type 04</th>
+<th>Type 71</th>
+<th>Type 73</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Giro Account No. or FIK Creditor No.?</td>
+<td>Giro Account No.</td>
+<td>Giro Account No.</td>
+<td>FIK Creditor No.</td>
+<td>FIK Creditor No.</td>
+</tr>
+<tr>
+<td>Allows Message to Recipient?</td>
+<td>Yes</td>
+<td>No</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Contains Payment Reference number?</td>
+<td>No</td>
+<td>Yes, 16 digits.</td>
+<td>Yes, 15 digits.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Vendors</strong>, and then choose the related link.</li>
+<li>Open the card, expand the <strong>Payments</strong> tab, in the <strong>Payment Method</strong> field choose the payment method.</li>
+<li>Depending on your selection, you must complete other fields. See the table above for a description of the combinations.</li>
+</ol>
+<h3 id="to-specify-the-format-to-use-for-a-bank-account">To specify the format to use for a bank account</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</li>
+<li>Open the card for the bank account.</li>
+<li>In the <strong>Payment Export Format</strong> field, choose the format for your export file.</li>
+</ol>
+<h2 id="choosing-the-fik-or-giro-payment-information-for-vendor-invoices">Choosing the FIK or Giro payment information for vendor invoices</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Invoices</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the vendor. Remember, this must be a Danish vendor with an address in Denmark.</p>
+</li>
+<li><p>Create an invoice. The <strong>Payment Method</strong> and <strong>Vendor Number</strong> fields are filled in based on settings on the Vendor card. You can change them if you want.</p>
+</li>
+<li><p>In the <strong>Payment Reference</strong> field, enter the 15-digit number from the vendor invoice.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You only have to add the last 11 digits of the number. Business Central will add four zeros to the beginning of the number.</p>
+</div>
+</li>
+<li><p>Post the invoice.</p>
+</li>
+</ol>
+<h2 id="to-use-the-extension-to-export-payment-data">To use the extension to export payment data</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Suggest Vendor Payment Journals</strong> action.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you want to export only specific payments, use the options for filtering the data.</p>
+</div>
+</li>
+<li><p>If needed, you can add filters to export only specific payments.</p>
+</li>
+<li><p>In the <strong>Bank Payment Type</strong> field, choose <strong>Electronic Payment</strong>.</p>
+</li>
+<li><p>Choose the <strong>Export</strong> action.</p>
+</li>
+</ol>
+<h2 id="see-also">See also</h2>
+<p><a href="ui-extensions.html">Customizing Business Central for Business Central Using Extensions</a><br>
+<a href="finance-collect-payments-with-sepa-direct-debit.html">Collect Payments with SEPA Direct Debit</a><br>
+<a href="ui-work-general-journals.html">Working with General Journals</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-payments-reconciliation-formats-dk.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

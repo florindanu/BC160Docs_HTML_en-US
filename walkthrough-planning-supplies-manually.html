@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough - Planning Supplies Manually | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough - Planning Supplies Manually | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This walkthrough demonstrates the process of planning supply orders to fulfill new demand. You can initiate supply planning at fixed intervals, for example, every morning or every Monday, or when you are notified by sales or production, depending on the type of demand.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-planning-supplies-manually">Walkthrough: Planning Supplies Manually</h1>
+
+<p><strong>Note</strong>: This walkthrough must be performed on a demonstration company with the <strong>Full Evaluation - Complete Sample Data</strong> option, which is available in the Sandbox environment. For more information, see <a href="across-how-create-sandbox-environment.html">Creating a Sandbox Environment</a>.</p>
+<p>This walkthrough demonstrates the process of planning supply orders to fulfill new demand. You can initiate supply planning at fixed intervals, for example, every morning or every Monday, or when you are notified by sales or production, depending on the type of demand. In this walkthrough you will use the <strong>Order Planning</strong> page, a simple supply planning tool that is based on manual decision-making instead of parameter-based automatic planning.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>This walkthrough illustrates the following tasks:</p>
+<ul>
+<li>Planning a purchase order for manufacturing components.</li>
+<li>Planning a transfer order to fulfill sales demand.</li>
+<li>Planning a production order for a multilevel item.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<p>This walkthrough demonstrates tasks performed by the following user roles:</p>
+<ul>
+<li>Production Planner</li>
+<li>Purchasing Agent</li>
+<li>Sales Order Processor</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Before you begin this walkthrough, you must install the Business Central. The following modifications must be made to the database:</p>
+<ul>
+<li>Delete all existing sales orders for bicycles.</li>
+<li>Create one sales order for 10 bicycles at BLUE location.</li>
+<li>Delete all planned and firm planned production orders. Do not delete started orders with entries that are already posted.</li>
+</ul>
+<p>As a rule, use the suggested data in this walkthrough because this data has the necessary records.</p>
+<h2 id="story">Story</h2>
+<p>Eduardo, the Production Planner of a small manufacturing company, is about to plan production and purchase orders to fulfill new sales demand.</p>
+<p>Because the products have few BOM levels and the flow of orders is relatively low, Eduardo uses the <strong>Order Planning</strong> page to manually create supply orders, one product level at a time.</p>
+<p>In a more complex manufacturing environment, the planning worksheet is used to plan supply based on item parameters such as rescheduling period, safety lead time, reorder point, and batch calculations of consolidated demand from all product levels.</p>
+<h2 id="setting-up-the-sample-data">Setting Up the Sample Data</h2>
+<p>The standard CRONUS demonstration company currently has lots of unplanned demand. During the different planning tasks in this walkthrough, you will have to deviate from the realistic business flow by ignoring demand with close due dates and instead use demand with later due dates.</p>
+<h2 id="using-the-order-planning-page">Using the Order Planning Page</h2>
+<p>The <strong>Order Planning</strong> page can be accessed from several different locations:</p>
+<ul>
+<li>Manufacturing, Planning</li>
+<li>Sales &amp; Marketing, Order Processing</li>
+<li>Purchase, Planning</li>
+<li>In addition, you can open this page for a specific production order by choosing the <strong>Planning</strong> action.</li>
+</ul>
+<h3 id="to-use-the-order-planning-page">To use the Order Planning page</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Order Planning</strong>, and then choose the related link.</p>
+<p>When the <strong>Order Planning</strong> page first opens, a plan must be calculated to show the new demand since it was last calculated.</p>
+</li>
+<li><p>Choose the <strong>Calculate Plan</strong> action.</p>
+<p>The planning system analyzes any new demand that has been introduced, such as new sales, changed sales, or production orders.</p>
+<p>Based on total availability, the quantity needed for each demand line is calculated. This calculation is performed order-by-order. This means that the order which includes the demand line with the earliest due date or shipment date will be calculated first. After that, additional demand lines will be calculated in the same order, regardless of the due date or shipment date.</p>
+</li>
+<li><p>Be sure that the <strong>Order Planning</strong> page is maximized and that column fields are resized to show all the default field names.</p>
+<p>When the calculation is completed, the page displays all unfulfilled demand as collapsed order header lines sorted by earliest demand date.</p>
+<p>Notice that CRONUS has several orders with unfulfilled demand. Each bold planning line represents an order, sales order, or production order, including at least one order line with insufficient availability.</p>
+</li>
+<li><p>In the <strong>Show Demand As</strong> field, select the <strong>All Demand</strong> filter.</p>
+<p>With the <strong>Demand Type</strong> field, you can choose which order types that you want to display.</p>
+<p>Orders that do not have availability problems are not shown. If no orders exist when a plan is calculated, a message will display and no planning lines will appear.</p>
+</li>
+</ol>
+<h2 id="planning-a-purchase-order-to-fulfill-component-demand">Planning a Purchase Order to Fulfill Component Demand</h2>
+<p>In this procedure, you create a purchase order for needed manufacturing components.</p>
+<h3 id="to-plan-a-purchase-order-to-fulfill-component-need-in-production">To plan a purchase order to fulfill component need in production</h3>
+<ol>
+<li><p>Expand the first line (choose the + symbol).</p>
+</li>
+<li><p>Choose the first demand line, with item <strong>LSU-15</strong>, and then choose the <strong>Show Document</strong> action.</p>
+</li>
+<li><p>Close the opened production order to return to the <strong>Order Planning</strong> page.</p>
+</li>
+<li><p>In the <strong>Replenishment System</strong> field, select <strong>Purchase</strong>.</p>
+<p>The default value is from the item card, or SKU card, but you can change it to one of the following options:</p>
+<ul>
+<li><strong>Purchase</strong> – To create a purchase order.</li>
+<li><strong>Transfer</strong> – To create a transfer order.</li>
+<li><strong>Prod. Order</strong> – To create a production order.</li>
+</ul>
+</li>
+<li><p>In the <strong>Supply From</strong> field, select one of the following options according to the selected replenishment system:</p>
+<ul>
+<li><strong>Vendor</strong> – For purchases</li>
+<li><strong>Location</strong> – For transfers</li>
+</ul>
+<p>If the field is not filled in, an error message will display when you try to create the supply orders.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the components have a default vendor number set up on the item cards, the lines will be preset.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Supply From</strong>  field.</p>
+</li>
+<li><p>On the <strong>Item Vendor Catalogue</strong> page, choose the <strong>New</strong> action, and then select vendor <strong>30000</strong>.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to return to the <strong>Order Planning</strong> page.</p>
+</li>
+<li><p>Copy vendor <strong>30000</strong> to the other lines for loudspeaker components on this production order.</p>
+<p>You are now ready to create a purchase order.</p>
+</li>
+<li><p>Choose the <strong>Make Orders</strong> action. The <strong>Make Supply Orders</strong> page opens.</p>
+</li>
+<li><p>On the <strong>Order Planning</strong> FastTab, in the <strong>Make Orders for</strong> field, choose the <strong>Active Order</strong> option.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, in the <strong>Create Purchase Order</strong> field, choose the <strong>Make Purch. Order</strong> option.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to create purchase orders for all the components of the order.</p>
+<p>The purchase orders are now created and saved as the last orders in the list of purchase orders.</p>
+</li>
+</ol>
+<h2 id="planning-a-transfer-order-to-fulfill-sales-demand">Planning a Transfer Order to Fulfill Sales Demand</h2>
+<p>In this procedure, you will plan for demand from a sales order. Demand lines represent sales lines and not component lines, as in production demand.</p>
+<h3 id="to-plan-a-transfer-order-to-fulfill-sales-demand">To plan a transfer order to fulfill sales demand</h3>
+<ol>
+<li><p>Move the pointer to the planning line for order <strong>2008</strong>.</p>
+</li>
+<li><p>Expand the line and move the pointer to the demand line.</p>
+<p>Sales order <strong>2008</strong> is for ten loudspeakers, item <strong>LS-120</strong>, ordered by John Haddock Insurance Co.</p>
+<p>The item’s defined replenishment system and default vendor will display.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>At the bottom of the page, there are four information fields. In the <strong>Earliest Date Available</strong> field, the ten pieces that are needed will be available, on an inbound supply order, nine days later than the current due date. If this is too late for the customer, the <strong>Available for Transfer</strong> field shows 13 pieces of the item at another location. You will want to plan for this stock.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Available for Transfer</strong> field to open the <strong>Get Alternative Supply</strong> page.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to book the ten items that are available.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the demand line, the suggested purchase has been exchanged with a transfer from GREEN location. The <strong>Make Orders</strong> function creates a transfer order from GREEN to the demanded location. The <strong>Substitutes Exists</strong> field works in the same way.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Make Orders</strong> action. The <strong>Make Supply Orders</strong> page opens.</p>
+</li>
+<li><p>On the <strong>Order Planning</strong> FastTab, in the <strong>Make Orders for</strong> field, choose the <strong>The Active Order</strong> option.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, in the <strong>Create Transfer Order</strong> field, select the <strong>Make Trans. Orders</strong> option.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to create the transfer order to supply the sales order.</p>
+<p>The transfer order is now created and saved in the list as the last order in the list of open transfer orders.</p>
+</li>
+</ol>
+<h2 id="planning-a-multilevel-production-order-to-fulfill-sales-demand">Planning a Multilevel Production Order to Fulfill Sales Demand</h2>
+<p>In this procedure, you will plan to fulfill sales demand for a produced item with multiple product levels, each creating dependent production demand.</p>
+<h3 id="to-plan-multilevel-production-to-fulfill-sales-demand">To plan multilevel production to fulfill sales demand</h3>
+<ol>
+<li><p>Select the planning line with sales demand for order <strong>1001</strong>, created earlier as prerequisite data.</p>
+<p>This demand is a sales line, but the item has a defined replenishment system of <strong>Prod. Order</strong>. Proceed to add an extra bell to the component need of each bicycle.</p>
+</li>
+<li><p>Choose the <strong>Components</strong> action to open the <strong>Planning Components</strong> page.</p>
+</li>
+<li><p>On the line with the Bell item, change the <strong>Quantity per</strong> field from <strong>1</strong> to <strong>2</strong>.</p>
+</li>
+<li><p>On the <strong>Order Planning</strong> page, consider your planning alternatives. In this case, you have no alternative means of supply, no transfer, substitute, or later delivery. You must create the suggested supply order, a production order.</p>
+</li>
+<li><p>Choose the <strong>Make Orders</strong> action to create the production order.</p>
+<p>On the <strong>Order Planning</strong> page, notice that the planning line for sales order <strong>1001</strong> no longer exists and that the initial sales demand has been covered.</p>
+</li>
+<li><p>Close the <strong>Order Planning</strong> page.</p>
+<p>Now, you could choose to stay in this view and complete all the planning tasks. Instead, you will now take on the Production Planner role by going to the production order that you just created and access the <strong>Order Planning</strong> page.</p>
+</li>
+</ol>
+<p>As a production planner you now must plan a specific production order.</p>
+<h3 id="to-plan-a-specific-production-order">To plan a specific production order</h3>
+<ol>
+<li><p>Open the production order <strong>101001</strong>, for ten bicycles, that you just created by using the <strong>Make Orders</strong> function.</p>
+</li>
+<li><p>Open the <strong>Prod. Order Components</strong> page to check that the extra bell is reflected on the production order.</p>
+</li>
+<li><p>Choose the <strong>Planning</strong> action.</p>
+<p>The <strong>Order Planning</strong> page opens in a view that is always filtered on the specific production demand. Sales demand is not displayed. You must calculate a plan before you can see any additional demand.</p>
+</li>
+<li><p>Choose the <strong>Calculate Plan</strong> action.</p>
+<p>Notice that four new production orders appear as unplanned production demand derived from order <strong>101001</strong>. The new lines represent new production demand from the subassemblies that must be created to produce the order.</p>
+</li>
+<li><p>Choose the <strong>Expand All</strong> action to get an overview of all the production demand for the production orders.</p>
+<p>To provide additional information about the demand lines, you may want to add the <strong>Demand Quantity</strong> and <strong>Demand Qty. Available</strong> fields to your view.</p>
+<p>Now you must supply ten of each component.</p>
+<p>Note that four of the demand lines have replenishment system Prod. Order. These four subassemblies represent the second product level of the bicycle.</p>
+<p>The default replenishment settings are already filled in and you can proceed to make orders.</p>
+</li>
+<li><p>Choose the <strong>Make Orders</strong> action.</p>
+<p>Before you choose the <strong>OK</strong> button, notice the text on the <strong>Order Planning</strong> FastTab. This text is important because you know that the bicycle has several produced components, subassemblies, in its product structure that might be in demand when you create this production order.</p>
+</li>
+<li><p>On the <strong>Make Supply Order</strong> page, in the <strong>Make Orders for</strong> field, choose the <strong>All Lines</strong> option, and then choose the <strong>OK</strong> button to create production orders for the second product level of the order.</p>
+<p>Note that the top-level production demand for production order 101001 no longer exists. This means that the initial production demand for subassemblies has been planned for.</p>
+<p>On the <strong>Order Planning</strong> page, you calculate a plan again in order to plan the bicycle structure.</p>
+</li>
+<li><p>Choose the <strong>Calculate Plan</strong> action to recalculate the plan as instructed by the embedded Help text.</p>
+<p>The two new lines represent additional production demand derived from the subassemblies planned in the previous steps. It is suggested that you make two production orders to supply the wheel hubs, one for 10 front hubs and one for 10 back hubs.</p>
+</li>
+<li><p>Choose the <strong>Expand All</strong> action to get an overview of all the demand for the two production orders.</p>
+<p>The suggested supply plan indicates that a total of four purchase orders will be created for the components. You decide to make the proposed orders.</p>
+</li>
+<li><p>Choose the <strong>Make Orders</strong> action.</p>
+</li>
+<li><p>In the <strong>Make Orders for</strong> field, select the <strong>All Lines</strong> option, and then choose the <strong>OK</strong> button. Check if additional demand exists for the production of the parent item, the bicycle, which is being sold on sales order 1001.</p>
+</li>
+<li><p>Choose the <strong>Calculate Plan</strong> action.</p>
+<p>The message indicates that all required items are now supplied. Verify the firm planned production orders that are created.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Firm Planned Prod. Orders</strong>, and then choose the related link.</p>
+<p>On the <strong>Firm Planned Prod. Orders</strong> page review how start times and end times of individual orders are scheduled according to the product structure. The lowest-level components are produced first. Therefore, you must plan multilevel orders as demonstrated in this planning workflow.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a><br>
+<a href="walkthrough-planning-supplies-automatically.html">Walkthrough: Planning Supplies Automatically</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-planning-supplies-manually.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

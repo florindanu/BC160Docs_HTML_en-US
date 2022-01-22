@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Making Tax Digital - Submitting VAT Returns | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Making Tax Digital - Submitting VAT Returns | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Business Central includes features to manage your VAT and comply with Making Tax Digital. This article describes how to set up and use these features.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="making-tax-digital-in-the-united-kingdom">Making Tax Digital in the United Kingdom</h1>
+
+<p>Her Majesty's Revenue and Customs (HMRC) is implementing the first step of Making Tax Digital, which imposes new requirements on VAT registered businesses above the VAT threshold. Requirements will be implemented in phases. In the first phase, with a deadline in April, 2019, the following requirements will take effect:</p>
+<ul>
+<li>Keeping records digitally - Businesses must now keep all their records digitally. For users of ERP systems this will not have any impact since they already keep their records digitally in these systems.</li>
+<li>Submit VAT return electronically using <a href="https://www.gov.uk/guidance/software-for-sending-income-tax-updates">software recognized by HMRC</a>.</li>
+</ul>
+<p>Business Central already supports submitting VAT returns to HMRC using the GovTalk service. From April, 2019 HMRC is switching to newer technology and communication mechanisms that required changes in Business Central.</p>
+<h2 id="making-tax-digital-for-vat-capabilities-in-dynamics-365-business-central">Making Tax Digital for VAT Capabilities in Dynamics 365 Business Central</h2>
+<p>In Business Central you can use the VAT Return report for creating VAT reports. The Making Tax Digital VAT features extend this capability to communicate with HMRC. For example, the Making Tax Digital VAT extension lets you:</p>
+<ul>
+<li>Retrieve VAT obligations from HMRC</li>
+<li>Get reminded about VAT obligations that are approaching or already past due</li>
+<li>Submit VAT returns to HMRC</li>
+<li>View the VAT return</li>
+<li>View VAT payments with HMRC</li>
+<li>View VAT liabilities with HMRC</li>
+</ul>
+<h2 id="set-up-making-tax-digital-for-vat">Set up Making Tax Digital for VAT</h2>
+<p>The Making Tax Digital feature uses a service connection to communicate with HMRC. To make it easy to establish communications, Business Central provides the <strong>HMRC VAT Setup</strong> service connection, which contains most of the information needed to communicate with HMRC. To finish the connection, you must give the <strong>Dynamics 365 Business Central MTD VAT</strong> application the authority to interact with HMRC on your behalf. Microsoft manages the <strong>Dynamics 365 Business Central MTD VAT</strong> application on the HMRC web site, and the application is a requirement for the connection. You give permission by requesting an authorization code from HMRC, and then copying the code to the service connection. The following steps describe how to set up the service connection.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using an on-premises version, there are some additional steps to set up the features for Making Tax Digital. In the cloud version, these happen automatically. For more information, see the section titled <a href="#additional-setup-requirements-for-on-premises-versions">Additional Setup Requirements for On-Premises Versions</a> below.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Service Connections</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Service Connections</strong> page, choose <strong>HMRC VAT Setup</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use an on-premises version of Business Central you will also need to provide a client ID and client secret. If you are not sure what these are, contact your partner. They can get the information for you on <a href="https://mbs.microsoft.com/partnersource/global/deployment/downloads/tax-regulatory-updates/365dynamicsbctaxdigitsupinfo">PartnerSource</a>.</p>
+</div>
+</li>
+<li><p>To open a GOV.UK website and request an authorizaton code, choose <strong>Process</strong>, then <strong>Request Authorization Code</strong>, and then choose <strong>Continue</strong>.</p>
+</li>
+<li><p>Sign in with your HMRC credentials. To allow the <strong>Dynamics 365 Business Central MTD VAT</strong> application to interact with HMRC on your behalf, choose <strong>Grant authority</strong>.</p>
+</li>
+<li><p>A confirmation page displays &quot;Authorization granted&quot; and an authorization code. To copy the authorization code, choose <strong>Copy</strong>.</p>
+</li>
+<li><p>Return to the service connection you are setting up, and paste the authorization code in the <strong>Enter Authorization Code</strong> field. Then choose <strong>Enter</strong>. Note, that the authorization code is valid for 10 minutes and must be entered into Business Central before expiry in order to set up the connection correctly.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Business Central will use the authorization code to test whether the service connection can communicate with HMRC. If the connection is successful, a confirmation page prompts you to verify your VAT registration number. To open the <strong>Company Information</strong> page and verify the number is correct, and the one you have used to register with HMRC, choose <strong>Yes</strong>.</p>
+</div>
+</li>
+</ol>
+<h3 id="additional-setup-requirements-for-on-premises-versions">Additional Setup Requirements for On-Premises Versions</h3>
+<ol>
+<li><p>You must add a VAT report configuration on the <strong>VAT Reports Configuration</strong> page.</p>
+<p>a. Create a new configuration, and choose the VAT Return type.<br>
+b. Give the configuration a descriptive name, such as <strong>HMRC MTD</strong>.<br>
+c. In the <strong>Suggest Lines Codeunit ID</strong> field, choose codeunit <strong>745</strong>.<br>
+d. In the <strong>Content Coneunit ID</strong> field, choose codeunit <strong>10531</strong>.<br>
+e. In the <strong>Submission Codeunit ID</strong> field, choose codeunit <strong>10532</strong>.<br>
+f. In the <strong>Validate Codeunit ID</strong> field, choose codeunit <strong>10533</strong>.<br>
+g. Fill in the remaining fields as necessary. Hover over a field to read a short description.</p>
+</li>
+<li><p>You must edit the VAT report setup on the <strong>VAT Report Setup</strong> page.</p>
+<p>a. Expand the <strong>Return Period</strong> FastTab.<br>
+b. In the <strong>Report Version</strong> field, choose the VAT report configuration that you created in the previous step.<br>
+c. In the <strong>Manual Receive Codeunit ID</strong> field, choose codeunit <strong>10534</strong>.<br>
+d. In the <strong>Receive Submitted Return Codeunit ID</strong> field, choose codeunit <strong>10536</strong>.<br>
+e. Optional: If you want to automatically update the information about VAT obligations, specify how often to do so in the <strong>Update Period Job Frequency</strong> field, and then specify codeunit <strong>10535</strong> in the <strong>Auto Receive Codeunit ID</strong> field.<br>
+f. Fill in the remaining fields as necessary. Hover over a field to read a short description.</p>
+</li>
+</ol>
+<h2 id="vat-obligations">VAT Obligations</h2>
+<p>HMRC maintains a list of VAT obligations for companies, which are the periods for which they must report VAT and the due date for the report. HMRC exposes this information through their APIs, which enables Business Central to retrieve the obligations. Business Central stores VAT obligations as <strong>VAT Return Periods</strong>, and uses them to:</p>
+<ul>
+<li>Remind you about VAT returns that are due or overdue.</li>
+<li>Automatically enter start and end dates when you create VAT returns.</li>
+</ul>
+<h3 id="to-retrieve-the-vat-return-periods-from-hmrc">To retrieve the VAT return periods from HMRC:</h3>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>VAT Return Periods</strong>, and then choose the related link.</li>
+<li>On the <strong>VAT Return Periods</strong> page, choose <strong>Process</strong>, and then choose <strong>Get VAT Return Periods</strong>.</li>
+<li>Enter the <strong>Start Date</strong> and <strong>End Date</strong> to specify the period for which to get the VAT return periods, and then choose <strong>OK</strong>.</li>
+</ol>
+<p>The VAT obligations are now retrieved from HMRC and you can view them on the <strong>VAT Return Periods</strong> page. A confirmation page shows how many obligations were retrieved.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Do not create VAT return periods manually when submitting VAT Returns to HMRC. VAT return periods must be retrieved from HMRC using the steps above. Creating them manually will result in inability to submit VAT Returns.</p>
+</div>
+<h2 id="vat-returns">VAT Returns</h2>
+<p>Use this report to submit VAT for sales and purchase documents, such as purchase and sales orders,invoices, and credit memos.</p>
+<h3 id="to-create-and-submit-a-vat-return">To create and submit a VAT return:</h3>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>VAT Return Periods</strong>, and then choose the related link.</li>
+<li>On the <strong>VAT Return Periods</strong> page, choose <strong>Process</strong>, and then choose <strong>Create VAT Return</strong>.</li>
+<li>If you want to open the VAT return, on the confirmation page, choose <strong>Yes</strong>.</li>
+<li>On the <strong>VAT Return</strong> page, to calculate and prepare the amounts for the VAT return, choose <strong>Process</strong>, and then choose <strong>Suggest Lines</strong>.</li>
+<li>Fill in the fields as necessary, and choose <strong>OK</strong>. VAT amounts display in the <strong>Report Lines</strong> section on the <strong>VAT Return</strong> page.</li>
+<li>To release the VAT return and prepare it for submission, choose <strong>Process</strong>, and then choose <strong>Release</strong>. After you release a VAT return you cannot edit it. If you need to change something, you must reopen the return. Releasing the VAT return does not submit it.</li>
+<li>To submit the VAT return to HMRC, choose <strong>Process</strong>, and then choose <strong>Submit</strong>.</li>
+</ol>
+<p>A successful submission of the VAT Return will result in a Status = Accepted on the VAT Return. This status is based on the submission result at the HMRC. If the status after submission is not set to Approved a previously submitted VAT Return can be retrieved from the HMRC.</p>
+<h3 id="to-receive-previously-submitted-vat-returns-from-hmrc">To receive previously submitted VAT Returns from HMRC</h3>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>VAT Return Periods</strong>, and then choose the related link.</li>
+<li>On the <strong>VAT Return Periods</strong> page, choose &lt;!-- Go the VAT Return Period Card for the selected VAT Return Period&gt;</li>
+<li>On the <strong>VAT Return Period Card</strong> page, choose &lt;!-- Receive submitted VAT Returns? &gt;</li>
+</ol>
+<h2 id="vat-liabilities-and-payments">VAT Liabilities and Payments</h2>
+<p>If you want to check the status of your VAT, you can retrieve information from HMRC about your VAT liabilities and payments. VAT liabilities are the amounts that you owed to HMRC, and show if there are outstanding amounts to be paid. VAT payments are the actual payments your company has made to HMRC.</p>
+<p>To retrieve VAT liabilities:</p>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>VAT Liabilities</strong>, and then choose the related link.</li>
+<li>On the <strong>VAT Liabilities</strong> page, choose <strong>Process</strong>, and then select <strong>Get Liabilities</strong>.</li>
+<li>Enter the <strong>Start Date</strong> and <strong>End Date</strong> of the period to retrieve VAT liabilities for, and then choose <strong>OK</strong>.</li>
+</ol>
+<p>The VAT liabilities are now retrieved from HMRC and you can view them on the <strong>VAT Liabilities</strong> page. A confirmation page shows how many liabilities were retrieved.</p>
+<p>To retrieve VAT payments from HMRC:</p>
+<ol>
+<li>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>VAT Payments</strong>, and then choose the related link.</li>
+<li>On the <strong>VAT Payments</strong> page, choose <strong>Process</strong>, and then choose <strong>Get Payments</strong>.</li>
+<li>Enter the <strong>Start Date</strong> and <strong>End Date</strong> of the period to retrieve VAT payments for, and then choose <strong>OK</strong>.</li>
+</ol>
+<p>The VAT payments are now retrieved from HMRC and you can view them on the <strong>VAT Payments</strong> page. A confirmation page shows how many VAT payments were retrieved.</p>
+<h2 id="not-in-scope-of-this-feature">Not in scope of this feature</h2>
+<p>This integration to HMRC and support of Making Tax Digital for VAT does not include support for:</p>
+<ul>
+<li>Group VAT scenarios. While it is possible that your Business Central submits VAT on behalf of a group of companies that share a VAT Registration Number (Group VAT) there is no built in mechanism for retreiving VAT entries from other companies in the group. There are currently no plans to support Group VAT and we refer to Microsoft partners to add this functioanlity.</li>
+<li>Agent services. Agents can submit VAT Returns on behalf of their customers and HMRC has solutions for that. This is currently not supported by Business Central.</li>
+</ul>
+<h2 id="connection-errors-with-hmrc">Connection errors with HMRC</h2>
+<p>If you experience &quot;The operation has timed out&quot; errors on an on-premises installation of Business Central please check your firewall settings that may be blocking the communication to and from HMRC.</p>
+<h2 id="testing-the-integration-to-hmrc-in-a-sandbox">Testing the integration to HMRC in a Sandbox</h2>
+<p>Due to a limitation at HMRC, it is not possible to send test submissions of VAT Returns and test the integration in non-production scenarios. You can only send real VAT returns. Certain online documentation at HMRC refers to the term <em>Sandbox</em>. This refers to and environment for software developers such as Microsoft and others for testing their features during development. this environment is not intended for customer testing and is unrelated to Business Central sandboxes.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="united-kingdom-local-functionality.html">United Kingdom Local Functionality</a><br>
+<a href="../../ui-extensions-getaddressio.html">The GetAddress.io UK Postcodes Extension</a><br>
+<a href="../../ui-extensions.html">Customizing Business Central Using Extensions</a><br>
+<a href="../../ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/UnitedKingdom/making-tax-digital-submit-vat-return.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

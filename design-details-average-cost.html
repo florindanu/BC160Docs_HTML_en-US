@@ -1,0 +1,697 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Average Cost | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Average Cost | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The average cost of an item is calculated with a periodic weighted average, based on the average cost period that is set up in Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-average-cost">Design Details: Average Cost</h1>
+
+<p>The average cost of an item is calculated with a periodic weighted average, based on the average cost period that is set up in Business Central.</p>
+<p>The valuation date is set automatically.</p>
+<h2 id="setting-up-average-cost-calculation">Setting Up Average Cost Calculation</h2>
+<p>The following table describes the two fields on the <strong>Inventory Setup</strong> page that must be filled to enable average cost calculation.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Average Cost Period</strong></td>
+<td>Specifies which period the average cost is calculated in. The following options exist:<br><br> -   <strong>Day</strong><br>-   <strong>Week</strong><br>-   <strong>Month</strong><br>-   <strong>Accounting Period</strong><br><br> All inventory decreases that are posted in the average cost period receive the average cost calculated for that period.</td>
+</tr>
+<tr>
+<td><strong>Average Cost Calc. Type</strong></td>
+<td>Specifies how the average cost is calculated. The following options exist:<br><br> -   <strong>Item</strong><br>-   <strong>Item, Variant, and Location</strong><br>     With this option, the average cost is calculated for each item, for each location, and for each variant of the item. This means that the average cost of this item depends on where it is stored and which variant of the item that you have selected, such as color.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only use one average cost period and one average cost calculation type in a fiscal year.</p>
+<p>The <strong>Accounting Periods</strong> page shows which average cost period and which average cost calculation type is in effect during that period, for each accounting period.</p>
+</div>
+<h2 id="calculating-average-cost">Calculating Average Cost</h2>
+<p>When you post a transaction for an item that uses the Average costing method, an entry is created in the <strong>Avg. Cost Adjmt. Entry Point</strong> table. This entry contains the transaction’s item number, variant code, and location code. The entry also contains the <strong>Valuation Date</strong> field, which specifies the last date of the average cost period in which the transaction was posted.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This field should not be confused with the <strong>Valuation Date</strong> field in the <strong>Value Entry</strong> table, which shows the date when the value takes effect and is used to determine the average cost period in which the value entry belongs.</p>
+</div>
+<p>The average cost of a transaction is calculated when the item’s cost is adjusted. For more information, see <a href="design-details-cost-adjustment.html">Design Details: Cost Adjustment</a>. A cost adjustment uses the entries in the <strong>Avg. Cost Adjmt. Entry Point</strong> table to identify which items (or items, locations, and variants) to calculate average costs for. For each entry with a cost that has not been adjusted, the cost adjustment uses the following to determine the average cost:</p>
+<ul>
+<li>Determines the cost of the item at the start of the average cost period.</li>
+<li>Adds the sum of the inbound costs that were posted during the average cost period. These include purchases, sales returns, positive adjustments, and production and assembly outputs.</li>
+<li>Subtracts the sum of the costs of any outbound transactions that were fixed-applied to receipts in the average cost period. These typically include purchase returns and negative outputs.</li>
+<li>Divides by the total inventory quantity for the end of the average cost period, excluding inventory decreases that are being valued.</li>
+</ul>
+<p>The calculated average cost is then applied to the inventory decreases for the item (or item, location, and variant) with posting dates in the average cost period. If any inventory increases exist that were fixed applied to inventory decreases in the average cost period, then the calculated average cost is forwarded from the increase to the decrease.</p>
+<h3 id="example-average-cost-period--day">Example: Average Cost Period = Day</h3>
+<p>The following example shows the effect of calculating the average cost based on an average cost period of one day. The <strong>Average Cost Calc. Type</strong> field on the <strong>Inventory Setup</strong> page is set to <strong>Item</strong>.</p>
+<p>The following table shows item ledger entries for the sample average-cost item, ITEM1, before the <strong>Adjust Cost - Item Entries</strong> batch job has been run.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Posting Date</strong></th>
+<th><strong>Item Ledger Entry Type</strong></th>
+<th><strong>Quantity</strong></th>
+<th><strong>Cost Amount (Actual)</strong></th>
+<th><strong>Entry No.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>20.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>40.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-20.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-40.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>02-02-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>100.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>02-03-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-100.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because cost adjustment has not yet occurred, the values in the <strong>Cost Amount (Actual)</strong> field of the inventory decreases corresponding to the inventory increases that they are applied to.</p>
+</div>
+<p>The following table shows the entries in the <strong>Avg. Cost Adjmt. Entry Point</strong> table that apply to value entries resulting from the item ledger entries in the preceding table.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Item No.</strong></th>
+<th><strong>Variant Code</strong></th>
+<th><strong>Location Code</strong></th>
+<th><strong>Valuation Date</strong></th>
+<th><strong>Cost is Adjusted</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ITEM1</td>
+<td></td>
+<td>BLUE</td>
+<td>01-01-20</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ITEM1</td>
+<td></td>
+<td>BLUE</td>
+<td>02-01-20</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ITEM1</td>
+<td></td>
+<td>BLUE</td>
+<td>02-02-20</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ITEM1</td>
+<td></td>
+<td>BLUE</td>
+<td>02-03-20</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows the same item ledger entries after the <strong>Adjust Cost - Item Entries</strong> batch job has been run. The average cost per day is calculated and applied to the inventory decreases.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Posting Date</strong></th>
+<th><strong>Item Ledger Entry Type</strong></th>
+<th><strong>Quantity</strong></th>
+<th><strong>Cost Amount (Actual)</strong></th>
+<th><strong>Entry No.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>20.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>40.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-30.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-30.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>02-02-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>100.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>02-03-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-100.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-average-cost-period--month">Example: Average Cost Period = Month</h3>
+<p>The following example shows the effect of calculating the average cost based on an average cost period of one month. The <strong>Average Cost Calc. Type</strong> field on the <strong>Inventory Setup</strong> page  is set to <strong>Item</strong>.</p>
+<p>If the average cost period is one month, then only one entry is created for each combination of item number, variant code, location code, and valuation date.</p>
+<p>The following table shows item ledger entries for the sample average-cost item, ITEM1, before the <strong>Adjust Cost - Item Entries</strong> batch job has been run.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Posting Date</strong></th>
+<th><strong>Item Ledger Entry Type</strong></th>
+<th><strong>Quantity</strong></th>
+<th><strong>Cost Amount (Actual)</strong></th>
+<th><strong>Entry No.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>20.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>40.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-20.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-40.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>02-02-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>100.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>02-03-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-100.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Because cost adjustment has not occurred yet, the values in the <strong>Cost Amount (Actual)</strong> field of the inventory decreases corresponding to the inventory increases that they are applied to.</p>
+</div>
+<p>The following table shows the entries in the <strong>Avg. Cost Adjmt. Entry Point</strong> table that apply to value entries resulting from the item ledger entries in the preceding table.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Item No.</strong></th>
+<th><strong>Variant Code</strong></th>
+<th><strong>Location Code</strong></th>
+<th><strong>Valuation Date</strong></th>
+<th><strong>Cost is Adjusted</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ITEM1</td>
+<td></td>
+<td>BLUE</td>
+<td>01-31-20</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ITEM1</td>
+<td></td>
+<td>BLUE</td>
+<td>02-28-20</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The valuation date is set to the last day in the average cost period, which in this case is the last day of the month.</p>
+</div>
+<p>The following table shows the same item ledger entries after the <strong>Adjust Cost - Item Entries</strong> batch job has been run. The average cost per month is calculated and applied to the inventory decreases.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Posting Date</strong></th>
+<th><strong>Item Ledger Entry Type</strong></th>
+<th><strong>Quantity</strong></th>
+<th><strong>Cost Amount (Actual)</strong></th>
+<th><strong>Entry No.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>20.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>40.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-30.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-65.00</td>
+<td>4</td>
+</tr>
+<tr>
+<td>02-02-20</td>
+<td>Purchase</td>
+<td>1</td>
+<td>100.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>02-03-20</td>
+<td>Sale</td>
+<td>-1</td>
+<td>-65.00</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+<p>The average cost of entry number 3 is calculated in the average cost period for January, and the average cost for entries 4 and 6 is calculated in the average cost period for February.</p>
+<p>To get the average cost for February, the average cost of the piece received in inventory (100.00) is added to the average cost at the beginning of the period (30.00). The sum of the two (130.00) is then divided by the total quantity in inventory (2).This gives the resulting average cost of the item in the February period (65.00). The average cost is assigned to the inventory decreases in the period (entries 4 and 6).</p>
+<h2 id="setting-the-valuation-date">Setting the Valuation Date</h2>
+<p>The <strong>Valuation Date</strong> field in the <strong>Value Entry</strong> table is used to determine in which average cost period an inventory decrease entry belongs. This also applies to work in process (WIP) inventory.</p>
+<p>The following table shows the criteria that are used to set the valuation date.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Posting Date</th>
+<th>Valued Quantity</th>
+<th>Revaluation</th>
+<th>Valuation Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+<td>Positive</td>
+<td>No</td>
+<td>Posting date of item ledger entry</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Later than the latest valuation date of applied value entries</td>
+<td>Negative</td>
+<td>No</td>
+<td>Posting date of item ledger entry</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Earlier than the latest valuation date of applied value entries</td>
+<td>Positive</td>
+<td>No</td>
+<td>Latest valuation date of the applied value entries</td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td>Negative</td>
+<td>Yes</td>
+<td>Posting date of the revaluation value entry</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example</h3>
+<p>The following table of value entries illustrates the different scenarios.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Posting Date</th>
+<th>Item Ledger Entry Type</th>
+<th>Valuation Date</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>01-01-20</td>
+<td>2</td>
+<td>20.00</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>01-15-20</td>
+<td>(Item Charge)</td>
+<td>01-01-20</td>
+<td>2</td>
+<td>8.00</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-14.00</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>03-01-20</td>
+<td>(Revaluation)</td>
+<td>03-01-20</td>
+<td>1</td>
+<td>-.4.00</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>3</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In entry number 5 in the preceding table, the user has entered a sales order with a posting date (02-01-20) that comes before the latest valuation date of applied value entries (03-01-20). If the corresponding value in the <strong>Cost Amount (Actual)</strong> field for this date (02-01-20) were used for this entry, then it would be 14.00. This would give a situation where the quantity on inventory is zero, but the inventory value is –4.00.</p>
+<p>To avoid such a quantity-value mismatch, the valuation date is set to equal the latest valuation date of the applied value entries (03-01-20). The value in the <strong>Cost Amount (Actual)</strong> field becomes 10.00 (after revaluation), which means that the quantity on inventory is zero, and the inventory value is also zero.</p>
+</div>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Because the <strong>Inventory Valuation</strong> report is based on posting date, the report will reflect any quantity-value mismatches in scenarios as in the above example. For more information, see <a href="design-details-inventory-valuation.html">Design Details: Inventory Valuation</a>.</p>
+</div>
+<p>If the quantity on inventory is less than zero after posting the inventory decrease, then the valuation date is first set to the posting date of the inventory decrease. This date may be changed later, according to the rules described in the note earlier in this section, when the inventory increase is applied.</p>
+<h2 id="recalculating-average-cost">Recalculating Average Cost</h2>
+<p>Valuing inventory decreases as a weighted average would be straightforward if purchases were always invoiced before sales are invoiced, postings were never backdated, and you never made mistakes. However, the reality is somewhat different from this ideal.</p>
+<p>As illustrated in the examples in this topic, the valuation date is defined as the date from which the value entry is included in the average cost calculation. This gives you the flexibility to do the following for items using the Average costing method:</p>
+<ul>
+<li>Invoice the sale of an item before the purchase of the item has been invoiced.</li>
+<li>Backdate a posting.</li>
+<li>Recover an incorrect posting.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Another reason for this flexibility is fixed application. For more information about fixed application, see <a href="design-details-item-application.html">Design Details: Item Application</a>.</p>
+</div>
+<p>Because of this flexibility, you may have to recalculate the average cost after the related posting has occurred. For example, if you post an inventory increase or decrease with a valuation date that comes before one or more inventory decreases. The recalculation of the average cost will occur automatically when you run the <strong>Adjust Cost - Item Entries</strong> batch job, manually or automatically.</p>
+<p>It is possible to change the inventory valuation base within an accounting period by changing the <strong>Average Cost Period</strong> field and the <strong>Average Cost Calc. Type</strong> field. However, this should be done with care and in agreement with an auditor.</p>
+<h3 id="example-1">Example</h3>
+<p>The following example illustrates how the average cost is recalculated when a late posting is introduced on a date that comes before one or more inventory decreases. The example is based on an average cost period of <strong>Day</strong>.</p>
+<p>The following table shows the value entries that exist for the item before the posting is introduced.</p>
+<table>
+<thead>
+<tr>
+<th>Valuation Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>10.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-02-20</td>
+<td>1</td>
+<td>20.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>02-15-20</td>
+<td>-1</td>
+<td>-15.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-16-20</td>
+<td>-1</td>
+<td>-15.00</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The user posts an inventory increase (entry number 5) with a valuation date (01-03-20) that comes before one or more inventory decreases. To balance the inventory, the average cost must be recalculated and adjusted to 17.00.</p>
+<p>The following table shows the value entries that exist for the item after entry number 5 is introduced.</p>
+<table>
+<thead>
+<tr>
+<th>Valuation Date</th>
+<th>Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>1</td>
+<td>10.00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>01-02-20</td>
+<td>1</td>
+<td>20.00</td>
+<td>2</td>
+</tr>
+<tr>
+<td>01-03-20</td>
+<td>1</td>
+<td>21.00</td>
+<td>5</td>
+</tr>
+<tr>
+<td>02-15-20</td>
+<td>-1</td>
+<td>-17.00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>02-16-20</td>
+<td>-1</td>
+<td>-17.00</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-costing-methods.html">Design Details: Costing Methods</a><br>
+<a href="design-details-cost-adjustment.html">Design Details: Cost Adjustment</a><br>
+<a href="design-details-item-application.html">Design Details: Item Application</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-average-cost.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

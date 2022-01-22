@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Inventory Valuation | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Inventory Valuation | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Inventory valuation XE &quot;Inventory Valuation&quot;  is the determination of the cost that is assigned to an inventory item, as expressed by the following equation.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-inventory-valuation">Design Details: Inventory Valuation</h1>
+
+<p>Inventory valuation XE &quot;Inventory Valuation&quot;  is the determination of the cost that is assigned to an inventory item, as expressed by the following equation.</p>
+<p>Ending inventory = beginning inventory + net purchases – cost of goods sold</p>
+<p>The calculation of inventory valuation uses the <strong>Cost Amount (Actual)</strong> field of the value entries for the item. The entries are classified according to the entry type XE &quot;Entry Type&quot;  that corresponds to the cost components, direct cost, indirect cost, variance, revaluation, and rounding. For more information, see <a href="design-details-cost-components.html">Design Details: Cost Components</a>.</p>
+<p>Entries are applied against each other, either by the fixed application XE &quot;Application; Fixed&quot; , or according to the general cost-flow assumption defined by the costing method XE &quot;Method; Costing&quot;  XE &quot;Costing Method&quot; . One entry of inventory decrease can be applied to more than one increase entry with different posting dates and possibly different acquisition cost XE &quot;Acquisition Cost&quot; s. For more information, see <a href="design-details-item-application.html">Design Details: Item Application</a>. Therefore, calculation of the inventory value XE &quot;Inventory Value&quot;  for a given date is based on summing up positive and negative value entries.</p>
+<h2 id="inventory-valuation-report">Inventory Valuation report</h2>
+<p>To calculate the inventory value in the <strong>Inventory Valuation</strong> report, the report begins by calculating the value of the item’s inventory at a given starting date. It then adds the value of inventory increases and subtracts the value of inventory decreases up to a given ending date. The end result is the inventory value on the ending date. The report calculates these values by summing the values in the <strong>Cost Amount (Actual)</strong> field in the value entries, using the posting dates as filters.</p>
+<p>The printed report always shows actual amounts, that is, the cost of entries that have been posted as invoiced. The report will also print the expected cost of entries that have posted as received or shipped, if you select the Include Expected Cost field on the Options FastTab.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Values in the <strong>Inventory Valuation</strong> report is reconciled with the Inventory account in the general ledger, meaning the value entries in question have been posted to the general ledger.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Amounts in the <strong>Value</strong> columns of the report are based on the posting date of transactions for an item.</p>
+</div>
+<h2 id="inventory-valuation---wip-report">Inventory Valuation - WIP report</h2>
+<p>A manufacturing company needs to determine the value of three types of inventory:</p>
+<ul>
+<li>Raw Materials inventory</li>
+<li>WIP inventory</li>
+<li>Finished Goods inventory</li>
+</ul>
+<p>The value of WIP inventory is determined by the following equation:</p>
+<ul>
+<li>Ending WIP inventory = Beginning WIP inventory + manufacturing costs – cost of goods manufactured</li>
+</ul>
+<p>As for purchased inventory, the value entries provide the basis of the inventory valuation. The calculation is made using the values in the <strong>Cost Amount (Actual)</strong> field of the item and capacity value entries associated with a production order.</p>
+<p>The purpose of WIP inventory valuation is to determine the value of the items whose manufacturing has not yet been completed on a given date. Therefore the WIP inventory value is based on the value entries related to the consumption and capacity ledger entries. Consumption ledger entries must be completely invoiced at the date of the valuation. Therefore, the <strong>Inventory Valuation – WIP</strong> report shows the costs representing the WIP inventory value in two categories: consumption and capacity.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-reconciliation-with-the-general-ledger.html">Design Details: Reconciliation with the General Ledger</a><br>
+<a href="design-details-revaluation.html">Design Details: Revaluation</a><br>
+<a href="design-details-production-order-posting.html">Design Details: Production Order Posting</a>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-inventory-valuation.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

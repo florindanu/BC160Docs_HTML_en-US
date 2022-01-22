@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Routings | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Routings | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="A routing holds master data that captures the process requirements of a given produced item. Once a production order is created for that item, its routing will govern the scheduling of operations as represented on the **Prod. Order Routing** page under the production order.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-routings">Create Routings</h1>
+
+<p>Manufacturing companies use routings to visualize and direct the manufacturing process.</p>
+<p>The routing is the basis of process scheduling, capacity scheduling, scheduled assignment of material needs, and manufacturing documents.</p>
+<p>As for production BOMs, the routings are assigned to the manufacturing end item. A routing holds master data that captures the process requirements of a given produced item. Once a production order is created for that item, its routing will govern the scheduling of operations as represented on the <strong>Prod. Order Routing</strong> page under the production order.</p>
+<p>Before you can set up a routing, the following must be in place:</p>
+<ul>
+<li>Item cards are created for parent items that take part in manufacturing. For more information, see <a href="inventory-how-register-new-items.html">Register New Items</a>.</li>
+<li>Production resources are set up. For more information, see <a href="production-how-to-set-up-work-and-machine-centers.html">Set Up Work Centers and Machine Centers</a>.</li>
+</ul>
+<h2 id="to-create-a-routing">To create a routing</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Routings</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the fields as necessary. Hover over a field to read a short description.</p>
+</li>
+<li><p>In the <strong>Type</strong> field, select <strong>Serial</strong> to calculate the production routing according to the value in the <strong>Operation No.</strong> field.<br>
+Select <strong>Parallel</strong> to calculate the operations according to the value in the <strong>Next Operation No.</strong> field.</p>
+</li>
+<li><p>To edit the routing, set the <strong>Status</strong> field to <strong>New</strong> or <strong>Under Development</strong>. To activate it, set the <strong>Status</strong> field to <strong>Certified</strong>.</p>
+<p>Proceed to fill in the routing lines.</p>
+</li>
+<li><p>In the <strong>Operation No.</strong> field, enter the number of the first operation, for example,  <strong>10</strong>.</p>
+</li>
+<li><p>In the <strong>Type</strong> field, specify which kind of resource is used, for example, <strong>Work Center</strong>.</p>
+</li>
+<li><p>In the <strong>No.</strong> field, select the resource to be used, or type it in the field.</p>
+</li>
+<li><p>In the <strong>Routing Link Code</strong> field, enter a code to connect the component to a specific operation. For more information, see <a href="production-how-to-create-routings.html#to-create-routing-links">To create routing links</a>.</p>
+</li>
+<li><p>In the <strong>Run Time</strong> and <strong>Setup Time</strong> fields, enter the process times needed to perform the operation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Setup time is calculated per production order, whereas run time is calculated per produced item.</p>
+</div>
+</li>
+<li><p>In the <strong>Concurrent Capacities</strong> field, specify how many units of the selected resource are used to perform the operation. For example, two people allocated to one packing operation will halve the run time.</p>
+</li>
+<li><p>Continue to fill in lines for all operations involved in producing the item in question.</p>
+</li>
+<li><p>To copy lines from an existing routing, choose the <strong>Copy Routing</strong> action to select existing lines.</p>
+</li>
+<li><p>Certify the routing.</p>
+</li>
+<li><p>You can now attach the new routing to the card of the production item in question, by filling in the <strong>Routing No.</strong> field. For more information, see <a href="inventory-how-register-new-items.html">Register New Items</a>.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Remember also to recalculate the item’s standard cost from the <strong>Item</strong> card: Choose the <strong>Manufacturing</strong> action, select the <strong>Calc. Standard Cost</strong> action, and then select the <strong>All Levels</strong> action.</p>
+</div>
+<h2 id="to-create-routing-links">To create routing links</h2>
+<p>You can create routing links to connect components to specific operations in order to retain their relationship even though the production BOM or routing is modified. It also facilitates just-in-time flushing of components, namely when the specific linked operation starts, not when the complete production order is released. For more information see <a href="production-how-to-flush-components-according-to-operation-output.html">Flush Components According to Operation Output</a>.</p>
+<p>Another important benefit is that linked components and operations are displayed in a logical process structure when you use the <strong>Production Journal</strong> page for output and consumption posting.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Routings</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the routing that contains the operations that you want to link.</p>
+<p>Make sure the routing status is <strong>Under Development</strong>.</p>
+</li>
+<li><p>On the relevant routing line, in the <strong>Routing Link Code</strong> field, select a code.</p>
+</li>
+<li><p>Proceed to add different routing link codes to other operations in the routing, if relevant.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You should not use the same routing link code in different operations on a routing because you may incorrectly link a component to two different operations, so that it is consumed two times.</p>
+<p>It is a good idea to name the routing link code after the operation in order to ensure operation-specific routing links.</p>
+</div>
+</li>
+<li><p>Set the routing status to <strong>Certified</strong>.</p>
+<p>Routing link codes are now assigned to operations. Next, you must create the actual link by assigning the same codes to specific components in the relevant production BOM.</p>
+</li>
+<li><p>Open the <strong>Production BOM</strong> that contains the components that you want to link to the above operations. For more information, see <a href="production-how-to-create-production-boms.html">Create Production BOMs</a>.</p>
+</li>
+<li><p>Make sure the BOM status is <strong>Under Development</strong>.</p>
+</li>
+<li><p>On the relevant production BOM line, in the <strong>Routing Link Code</strong> field, select the code that you have just assigned to the relevant operation.</p>
+</li>
+<li><p>Proceed to add routing link codes to other components according to the unique operations where they are used.</p>
+</li>
+<li><p>Set the production BOM status to <strong>Certified</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To enable the routing links on an existing production order, you must refresh the productio1n order. For more information, see <a href="production-how-to-create-production-orders.html">Create Production Orders</a>.</p>
+</div>
+</li>
+</ol>
+<p>The selected components will now be linked to the selected operations when you create or refresh a production order using the production BOM and routing in question. This is visible on the <strong>Prod. Order Components</strong> page under the production order, and here you can also remove and add the defined routing link codes at any time.</p>
+<h2 id="to-assign-personnel-tools-and-quality-measures-to-routing-operations">To assign personnel, tools, and quality measures to routing operations.</h2>
+<p>If you require personnel with qualifications, special knowledge, or special authorization for an operation, you can assign these personnel to the operation. In addition, you can assign tools and quality requirements to the operation. This procedure describes how to assign personnel. The steps are similar for other types of operation information.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Routings</strong>, and then choose the related link.</li>
+<li>Open the relevant routing.</li>
+<li>On the <strong>Lines</strong> FastTab, select the line that you want to process, and then choose the <strong>Personnel</strong> action.</li>
+<li>Fill in the fields on the <strong>Routing Personnel</strong> page.</li>
+<li>Choose the <strong>OK</strong> button to exit the page. The entered values are copied and assigned to the operation.</li>
+</ol>
+<h2 id="to-create-a-new-versions-of-a-routing">To create a new versions of a routing</h2>
+<p>The version principle enables you to manage several versions of a routing. The structure of the routing version corresponds to the structure of the routing consisting of the routing version header and the routing version lines. The basic difference is defined by the starting date.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Routings</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the routing to be copied, and then choose the <strong>Versions</strong> action.</p>
+</li>
+<li><p>On the <strong>Routing Versions</strong> page, choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the fields as necessary.</p>
+</li>
+<li><p>In the <strong>Version Code</strong> field, enter the unique identification of the version. Any combination of numbers and letters is permitted.</p>
+<p>The newly created version is automatically assigned the status <strong>New</strong>.</p>
+</li>
+<li><p>To create operation lines, select the first blank line, and then fill in the <strong>Operation No.</strong> field according to the sequence of operations.</p>
+<p>The operation lines are sorted in ascending order by operation numbers. To be able to make changes later, we recommend you to select adequate step widths. The <strong>Next Operation No.</strong> field refers to the following operation. The number of the operation can be entered directly.</p>
+</li>
+<li><p>When the routing version is completed, setting the <strong>Status</strong> field to <strong>Certified</strong>.</p>
+</li>
+</ol>
+<p>The time validity of the version is specified by the <strong>Starting Date</strong> field.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="production-how-to-create-production-boms.html">Create Production BOMs</a><br>
+<a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="production-planning.html">Planning</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-how-to-create-routings.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

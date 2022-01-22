@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Item Tracking Lines Page | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Item Tracking Lines Page | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Read about how to managethe flow of serial and lot numbers in your inventory.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-item-tracking-lines-page">Design Details: Item Tracking Lines Page</h1>
+
+<p>Item tracking records and reservation records are created in the reservation system, and their availability is calculated dynamically. Data that is entered on the <strong>Item Tracking Lines</strong> page is managed in a temporary version of the <strong>Tracking Specification</strong> table. When the page is closed, the active data is committed to the <strong>Reservation Entry</strong> table and the historic data is committed to the <strong>Tracking Specification</strong> table. For more information, see <a href="design-details-active-versus-historic-item-tracking-entries.html">Design Details: Active versus Historic Item Tracking Entries</a>.</p>
+<p>Lookups from the <strong>Serial No.</strong> and <strong>Lot No.</strong> fields show availability based on both the <strong>Item Ledger Entry</strong> table and the <strong>Reservation Entry</strong> table, with no date filter. The matrix of quantity fields on the header of the <strong>Item Tracking Lines</strong> page dynamically displays the quantities and sums of item tracking numbers that are being entered on the lines of the page. The quantities must correspond to those of the document line, which is indicated by <strong>0</strong> in the <strong>Undefined</strong> fields in the header of the page.</p>
+<p>To coordinate the flow of serial and lot numbers through inventory, the following rules exist for entering data on the <strong>Item Tracking Lines</strong> page:</p>
+<ul>
+<li>For both inbound and outbound item tracking lines, you cannot enter a serial number, with or without a lot number, more than once in the same instance of the <strong>Item Tracking Lines</strong> page. If you try to enter any combination of serial or lot numbers that is already present on the page, then an error message blocks the data entry.</li>
+<li>For inbound item tracking lines, you cannot post the related document if an item of the same variant and with the same serial number is already in inventory. If you try to post a positive line for an inventory item with the same variant and serial number, then an error message blocks the posting. However, for both inbound and outbound item tracking lines on open documents, you can have the same combination of serial or lot numbers that relate to different source document lines, that is, existing in different instances of the <strong>Item Tracking Lines</strong> page until the related document is posted.</li>
+<li>If the item is set up for serial number-specific tracking or lot number- specific tracking, then you cannot post an outbound document line unless an item with the defined serial or lot number exists in inventory. If you try to post an outbound document line for an item with a serial lot number that is not in inventory, then an error message blocks the posting.</li>
+</ul>
+<p>The rules for entering data on the <strong>Item Tracking Lines</strong> page also support the coupling principles that govern order tracking, planning, and reservation. For more information, see <a href="design-details-item-tracking-and-planning.html">Design Details: Item Tracking and Planning</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-item-tracking.html">Design Details: Item Tracking</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-item-tracking-lines-window.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

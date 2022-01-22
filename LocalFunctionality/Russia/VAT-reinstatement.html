@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>VAT reinstatement in Russia </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="VAT reinstatement in Russia ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Russian enhancements include VAT reinstatement.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="vat-reinstatement">VAT Reinstatement</h1>
+
+<p>In certain cases, VAT payers are required to reinstate VAT.</p>
+<p>It is known that the organizations acquiring fixed assets, goods, works, services (further – goods), have the right to accept to deduction of the input VAT on them at accomplishment of all conditions for deduction. But if later circumstances change and it becomes clear that there is no right to deduct VAT, the tax will have to be reinstate. In other words, the reinstatement VAT is previously deducted VAT, which in a certain amount must be returned back to the budget.</p>
+<h2 id="vat-accounting-group-settings">VAT accounting group settings</h2>
+<p>VAT reinstatement is possible in case of using transit VAT with manual post through the VAT journal.</p>
+<p>In <strong>VAT posting setup</strong>, settings must be made:</p>
+<ul>
+<li>VAT calculation type – NORMAL VAT.</li>
+<li>The unrealized VAT type is NOT EMPTY (for example Percentage).</li>
+<li>Trans. VAT account – must not be filled.</li>
+<li>Transit VAT Type – should not be filled.</li>
+<li>Manual VAT Settlement checked.</li>
+<li>The template and batch VAT settlement is specified.</li>
+<li>VAT reinstatement template and VAT reinstatement batch – set.</li>
+</ul>
+<h2 id="vat-reinstatement-1">VAT reinstatement</h2>
+<p>To reinstate previously accepted for deduction of VAT used <strong>VAT Reinstatement Worksheet</strong>.</p>
+<ol>
+<li><p>In the <strong>VAT Reinstatement Worksheet</strong> page, you must run the task <strong>Suggest Documents</strong>.</p>
+</li>
+<li><p>You must set a filter by date (usually at the end of the month, as the documents were read).</p>
+<p>And you can specify a filter on VAT Business and VAT product posting groups.</p>
+<p>As a result of the work of the task in the journal, the VAT lines of operations to be restored (a list of purchase documents in which there are VAT operations previously accepted for post).</p>
+<p>The field <strong>Realized VAT Amount</strong> reflects the amount of VAT on the document, which was deducted and which can be reinstate.</p>
+</li>
+<li><p>In this worksheet, select the lines that you want to reinstate and click the &quot;Copy lines to Journal&quot; button. Before that, you need to set a filter by date by right-clicking on the name of any column. Add filter &quot;Filter totals by&quot;.</p>
+</li>
+<li><p>You can reistate the entire transaction (for the entire amount of VAT sold), you can set a factor (for example, 0.5) to reistate part of the amount.</p>
+</li>
+<li><p>The selected line will be transferred to the VAT Reinstatement journal for posting.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="russia-local-functionality.html">Russia Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Russia/VAT-reinstatement.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

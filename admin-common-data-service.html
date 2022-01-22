@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using Common Data Service </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using Common Data Service ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Introduction to Common Data Service and its components.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="integrating-with-common-data-service">Integrating with Common Data Service</h1>
+
+<p>Business apps often use data from more than one source. Common Data Service combines data into a single set of logic that makes it easier to connect other Dynamics 365 applications, such as Dynamics 365 Sales or your own application built on top of Common Data Service, to Business Central. For more information about Common Data Service, see <a href="https://docs.microsoft.com/powerapps/maker/common-data-service/data-platform-intro">What is Common Data Service?</a></p>
+<p>The following steps provide an overview of the steps to integrate Common Data Service with Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>These tasks require the <strong>System Administrator</strong> security role in Common Data Service and Business Central.</p>
+</div>
+<ol>
+<li><p>In the Microsoft 365 admin center, set up a user account for connecting to and synchronizing data with Common Data Service. For more information, see <a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Common Data Service</a>.</p>
+</li>
+<li><p>Assign licenses for Common Data Service to the Business Central users who will use the integrated apps.</p>
+</li>
+<li><p>Set up a connection to Common Data Service. For more information, see <a href="admin-how-to-set-up-a-dynamics-crm-connection.html">Connect to Common Data Service</a>.</p>
+</li>
+<li><p>Synchronize data between the apps. For more information, see <a href="admin-synchronizing-business-central-and-sales.html">Synchronizing Business Central and Common Data Service</a>.</p>
+</li>
+</ol>
+<h2 id="getting-started-with-">Getting Started with Common Data Service</h2>
+<p>To get started with Common Data Service you will need a Microsoft Power Apps account. If you do not already have a Power Apps account, you can get one for free by visiting <a href="https://web.powerapps.com/?utm_source=padocs&amp;utm_medium=linkinadoc&amp;utm_campaign=referralsfromdoc">powerapps.com</a> and choosing the <strong>Get started free</strong> link. To learn more about how to get started with Common Data Service, see the <a href="https://docs.microsoft.com/learn/modules/get-started-with-powerapps-common-data-service/">Integrating with Common Data Service</a> module from Microsft Learn.</p>
+<h2 id="bi-directional-or-uni-directional-data-synchronization">Bi-Directional or Uni-directional Data Synchronization</h2>
+<p>Depending on your business needs, you can set up the integration to synchronize data either to or from one Dynamics 365 business app to another, or in both directions in near-real time through Common Data Service. For example, if you integrate Business Central with Dynamics 365 Sales through Common Data Service, a salesperson can create a sales order in Dynamics 365 Sales and the order will be synchronized to Business Central. Conversely, from Dynamics 365 Sales, the salesperson can view information from Business Central about the availability of the item on the order.</p>
+<h2 id="standard-and-custom-entities">Standard and Custom Entities</h2>
+<p>Common Data Service securely stores data in a set of entities, which are sets of records similar to how a table stores data within a database. Common Data Service includes a base set of standard entities that cover typical scenarios, but you can also create custom entities specific to your organization. In Business Central, you can view standard and custom entities being synchronized on the Integration Table Mappings page.</p>
+<h2 id="about-the-base-cds-integration-solution">About the Base CDS Integration Solution</h2>
+<p>The Base CDS Integration Solution is a key component of the integration. The solution adds the required roles and access levels to the user accounts for the integration, and it creates entities needed to map Business Central company to business unit in Common Data Service.</p>
+<p>By default, the <strong>Set up Common Data Service connection</strong> assisted setup guide will import the solution. To do that, the setup guide uses an administrator user account that you specify. This account must be a valid user in Common Data Service with the following security roles:</p>
+<ul>
+<li>System Administrator</li>
+<li>Solution Customizer</li>
+</ul>
+<p>For more information, see <a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Common Data Service</a> and <a href="/dynamics365/customer-engagement/admin/create-users-assign-online-security-roles.md">Create users in Microsoft Dynamics 365 (online) and assign security roles</a>.</p>
+<p>The administrator account is used only one time during the setup due to configuration changes Base CDS Solution is making in Common Data Service. After the solution is imported the account is no longer needed. Integration will continue to use the user account that was created specifically for the integration.</p>
+<p>In addition to customizing Common Data Service, the solution also creates the following roles in Common Data Service for the integration:</p>
+<ul>
+<li><strong>Integration Administrator</strong> - Allows users to manage the connection between Business Central and Common Data Service. Typically, this is assigned only to the user account for synchronization.</li>
+<li><strong>Integration User</strong> - Allows users to access synchronized data. Typically, this is assigned to the user account for synchronization and other users who need to view or access the synchronized data.</li>
+</ul>
+<p>For details about each role, such as the permissions and access levels, see <a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Common Data Service</a>.</p>
+<p>During connection setup, integration table mappings that are needed to synchronize data, are created. Entities in Common Data Service are mapped to tables and table fields in Business Central through integration tables. For more information, see <a href="admin-synchronizing-business-central-and-sales.html#standard-entity-mapping-for-synchronization">Standard Entity Mapping for Synchronization</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-cds-company-concept.html">Data Ownership Models</a></p>
+<!--needs to be removed as this is moved to dev-itpro docs[Walkthrough: Customizing an Integration with Common Data Service](docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/administration-custom-cds-integration) -->
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-common-data-service.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

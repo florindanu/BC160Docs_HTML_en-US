@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setting Up Workflows | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setting Up Workflows | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can set up and use workflows that connect business-process tasks performed by different users. System tasks, such as automatic posting, can be included as steps in workflows, preceded or followed by user tasks. Requesting and granting approval to create new records are typical workflow steps.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="setting-up-workflows">Setting Up Workflows</h1>
+
+<p>You can set up and use workflows that connect business-process tasks performed by different users. System tasks, such as automatic posting, can be included as steps in workflows, preceded or followed by user tasks. Requesting and granting approval to create new records are typical workflow steps. For more information, see <a href="across-use-workflows.html">Using Workflows</a>.</p>
+<p>Before you begin to use workflows, you must set up workflow users and approval users, specify how users receive notifications about workflow steps, and then create the workflows, potentially preceded by code customization.</p>
+<p>On the <strong>Workflow</strong> page, you create a workflow by listing the involved steps on the lines. Each step consists of a workflow event, moderated by event conditions, and a workflow response, moderated by response options. You define workflow steps by filling fields on workflow lines from fixed lists of event and response values representing scenarios that are supported by the application code.</p>
+<p>If a business scenario requires a workflow event or response that is not supported, a Microsoft partner must implement them by customizing the application code. For more information, see <a href="http://docs.microsoft.com/dynamics-nav/Walkthrough--Implementing-New-Workflow-Events-and-Responses">Walkthrough: Implementing New Workflow Events and Responses</a> in the developer and IT-pro help.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set up workflow users and user groups.</td>
+<td><a href="across-how-to-set-up-workflow-users.html">Set Up Workflow Users</a></td>
+</tr>
+<tr>
+<td>Set up workflow users who take part in approval workflows.</td>
+<td><a href="across-how-to-set-up-approval-users.html">Set Up Approval Users</a></td>
+</tr>
+<tr>
+<td>Specify how workflow users are notified of workflow steps, including approval requests.</td>
+<td><a href="across-setting-up-workflow-notifications.html">Setting Up Workflow Notifications</a></td>
+</tr>
+<tr>
+<td>Specify if users are notified by email or note and how often notifications are sent.</td>
+<td><a href="across-how-to-specify-when-and-how-to-receive-notifications.html">Specify When and How to Receive Notifications</a></td>
+</tr>
+<tr>
+<td>Customize the content of the email notification by modifying report 1320, Notification Email.</td>
+<td><a href="ui-how-create-custom-report-layout.html">Create and Modify Custom Report Layouts</a></td>
+</tr>
+<tr>
+<td>Set up an SMTP server to enable email communication in and out of Business Central</td>
+<td><a href="admin-how-setup-email.html">Set up Email</a></td>
+</tr>
+<tr>
+<td>Specify the different steps of a workflow by connection workflow events with workflow responses.</td>
+<td><a href="across-how-to-create-workflows.html">Create Workflows</a></td>
+</tr>
+<tr>
+<td>Use workflow templates to create new workflows.</td>
+<td><a href="across-how-to-create-workflows-from-workflow-templates.html">Create Workflows from Workflow Templates</a></td>
+</tr>
+<tr>
+<td>Share workflows with other Business Central databases.</td>
+<td><a href="across-how-to-export-and-import-workflows.html">Export and Import Workflows</a></td>
+</tr>
+<tr>
+<td>Learn how to set up a workflow for approving sales documents by following an end-to-end procedure.</td>
+<td><a href="walkthrough-setting-up-and-using-a-purchase-approval-workflow.html">Walkthrough: Setting Up and Using a Purchase Approval Workflow</a></td>
+</tr>
+<tr>
+<td>Add support for a business scenario that requires new workflow events or responses by customizing the application code.</td>
+<td><a href="http://docs.microsoft.com/dynamics-nav/Walkthrough--Implementing-New-Workflow-Events-and-Responses">Walkthrough: Implementing New Workflow Events and Responses</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-of-an-approval-workflow">Example of an Approval Workflow</h2>
+<p>This video shows how to set up an workflow that will require someone to request someone else's approval before they can change information about an existing customer, or create a new customer.<br>
+<br><br></p>
+<div class="embeddedvideo"><iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4jzHI?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-use-workflows.html">Using Workflows</a><br>
+<a href="across-workflow.html">Workflow</a><br>
+<a href="walkthrough-setting-up-and-using-a-purchase-approval-workflow.html">Walkthrough: Setting Up and Using a Purchase Approval Workflow</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-set-up-workflows.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

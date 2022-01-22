@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Correct or Cancel a Posted Sales Invoice | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Correct or Cancel a Posted Sales Invoice | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to correct, undo, or cancel a posted sales invoice and apply a sales credit memo.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="correct-or-cancel-unpaid-sales-invoices">Correct or Cancel Unpaid Sales Invoices</h1>
+
+<p>You can correct or cancel a posted sales invoice. This is useful if you make a mistake or if the customer requests a change.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>After a posted sales invoice has been partially or fully paid, you cannot correct or cancel it from the posted sales invoice itself. Instead, you must manually create a sales credit memo to void the sale and reimburse the customer, optionally managed with a sales return order. For more information, see <a href="sales-how-process-sales-returns-cancellations.html">Process Sales Returns or Cancellations</a>.</p>
+</div>
+<p>On the <strong>Posted Sales Invoice</strong> page, you can choose the <strong>Correct</strong> action or the <strong>Cancel</strong> action to perform the actions that are described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Correct</strong></td>
+<td>The posted sales invoice is canceled. A new sales invoice with the same information is created. You can make the correction and then continue the sales process. The new sales invoice has a different number than the initial sales invoice. A corrective sales credit memo is automatically created and posted to void the initial posted sales invoice. On the initial posted sales invoice, the Canceled and Paid check boxes are selected.</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>The posted sales invoice is canceled. A corrective sales credit memo is automatically created and posted to void the initial posted sales invoice. On the initial posted sales invoice, the Canceled and Paid check boxes are selected.</td>
+</tr>
+</tbody>
+</table>
+<p>When you correct or cancel a posted sales invoice, the corrective sales credit memo is applied to all general ledger and inventory ledger entries that were created when the initial sales invoice was posted. This reverses the posted sales invoice in your financial records and leaves the corrective posted sales credit memo for your audit trail.</p>
+<h2 id="to-correct-a-posted-sales-invoice">To correct a posted sales invoice</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Sales Invoices</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the posted sales invoice that you want to correct.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the <strong>Canceled</strong> check box is selected, then you cannot correct the posted sales invoice because it has already been corrected or canceled.</p>
+</div>
+</li>
+<li><p>On the <strong>Posted Sales Invoice</strong> page, choose the <strong>Correct</strong> action.</p>
+</li>
+<li><p>A new sales invoice with the same information is created where you can make the correction. The <strong>Canceled</strong> field on the initial posted sales invoice is changed to <strong>Yes</strong>.</p>
+<p>A sales credit memo is automatically created and posted to void the initial posted sales invoice.</p>
+</li>
+<li><p>Choose the <strong>Show Corrective Credit Memo</strong> action to view the posted sales credit memo that voids the initial posted sales invoice.</p>
+</li>
+</ol>
+<h2 id="to-cancel-a-posted-sales-invoice">To cancel a posted sales invoice</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Sales Invoices</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the posted sales invoice that you want to cancel.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the <strong>Canceled</strong> check box is selected, then you cannot cancel the posted sales invoice because it has already been canceled or corrected.</p>
+</div>
+</li>
+<li><p>On the <strong>Posted Sales Invoice</strong> page, choose the <strong>Cancel</strong> action.</p>
+<p>A sales credit memo is automatically created and posted to void the initial posted sales invoice. The <strong>Canceled</strong> field on the initial posted sales invoice is changed to <strong>Yes</strong>.</p>
+</li>
+<li><p>Choose <strong>Show Corrective Credit Memo</strong> to view the posted sales credit memo that voids the initial posted sales invoice.</p>
+</li>
+</ol>
+<h3 id="partial-invoice-posting-also-supported">Partial Invoice Posting also Supported</h3>
+<p>If the cancellation is related to a partial invoice posting, then the originating sales order line is updated to reflect the canceled invoiced quantity. The <strong>Qty. to Invoice</strong> and <strong>Qty. Invoiced</strong> fields on the related sales order line are reset to the values before the partial posting.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-manage-sales.html">Sales</a><br>
+<a href="sales-setup-sales.html">Setting Up Sales</a><br>
+<a href="ui-how-send-documents-email.html">Send Documents by Email</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/sales-how-correct-cancel-sales-invoice.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

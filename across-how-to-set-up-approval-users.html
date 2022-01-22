@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Approval Users | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Approval Users | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Before you can create workflows that involve approval steps, you must set up the workflow users who are involved in approval processes. In the Approval User Setup page, you also set amount limits for specific types of requests and define substitute approvers to whom approval requests are delegated when the original approver is absent.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-approval-users">Set Up Approval Users</h1>
+
+<p>Before you can create workflows that involve approval steps, you must set up the workflow users who are involved in approval processes. On the <strong>Approval User Setup</strong> page, you also set amount limits for specific types of requests and define substitute approvers to whom approval requests are delegated when the original approver is absent.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Approval users, both approval requesters and approvers, must first be set up as workflow users on the <strong>Workflow User Group</strong> page. For more information, see <a href="across-how-to-set-up-workflow-users.html">Set Up Workflow Users</a>.</p>
+</div>
+<p>When you have set up approval users, you can use the setup to create workflow responses for approval workflows. For more information, see step 9 in <a href="across-how-to-create-workflows.html">Create Workflows</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To define that an approval request is not approved until multiple approvers in an approval chain have approved it, set up approvers in a hierarchy. For approver type <strong>Approver</strong>, set approvers up on the <strong>Approval User Setup</strong> page. For approver type, <strong>Workflow User Group</strong>, set approvers up on the <strong>Workflow User Groups</strong> page and define the hierarchy by assigning incremental numbers to each approver in the <strong>Sequence No.</strong> field. For more information, see this topic and <a href="across-how-to-set-up-workflow-users.html">Set Up Workflow Users</a>.</p>
+<p>To define that an approval request is not approved until multiple equal approvers have approved it, regardless of a hirarchy, set up a flat workflow user group. For approver type, <strong>Workflow User Group</strong>, set up approvers on the <strong>Workflow User Groups</strong> page and assign the same number to each approver in the <strong>Sequence No.</strong> field. For more information, see <a href="across-how-to-set-up-workflow-users.html">Set Up Workflow Users</a>.</p>
+</div>
+<h2 id="to-set-up-an-approval-user">To set up an approval user</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Approval User Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a new line on the <strong>Approval User Setup</strong> page, and then fill the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User ID</strong></td>
+<td>Select the user ID of the user who is involved in the approval process.</td>
+</tr>
+<tr>
+<td><strong>Salespers./Purch. Code</strong></td>
+<td>Specify the salesperson or purchaser code that applies to the user in the <strong>Salespers./Purch. Code</strong> field.<br><br> You typically fill the <strong>Salespers./Purch. Code</strong> field if the salesperson or purchaser who is responsible for the customer or vendor is also the person who must approve the sales or purchase request in question.</td>
+</tr>
+<tr>
+<td><strong>Approver ID</strong></td>
+<td>Select the user ID of the user who must approve requests made by the user in the <strong>User ID</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Sales Amount Approval Limit</strong></td>
+<td>Specify the maximum sales amount in LCY that the user in the <strong>User ID</strong> field can approve.</td>
+</tr>
+<tr>
+<td><strong>Unlimited Sales Approval</strong></td>
+<td>Specify that the user in the <strong>User ID</strong> field can approve all sales requests regardless of their amount.<br><br> If you select this check box, then you cannot fill the <strong>Sales Amount Approval Limit</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Purchase Amount Approval Limit</strong></td>
+<td>Specify the maximum purchase amount in LCY that the user in the <strong>User ID</strong> field can approve.</td>
+</tr>
+<tr>
+<td><strong>Unlimited Purchase Approval</strong></td>
+<td>Specify that the user in the <strong>User ID</strong> field can approve all purchase requests regardless of their amount.<br><br> If you select this check box, then you cannot fill the <strong>Sales Amount Approval Limit</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Request Amount Approval Limit</strong></td>
+<td>Specify the maximum amount in LCY that the user in the <strong>User ID</strong> field can approve for purchase quotes.<br><br> To use this field, you must select the <strong>Approver Chain</strong> option in the <strong>Approver Limit Type</strong> field on the <strong>Workflow Response</strong> page.</td>
+</tr>
+<tr>
+<td><strong>Unlimited Request Approval</strong></td>
+<td>Specify that the user in the <strong>User ID</strong> field can approve all purchase quotes regardless of their amount.<br><br> If you select this check box, then you cannot fill the <strong>Request Amount Approval Limit</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Substitute</strong></td>
+<td>Select the user ID of the user who must approve requests made by the user in the <strong>User ID</strong> field if the user in the <strong>Approver ID</strong> is not available. <strong>Note:</strong>  The substitute can either be the user in the <strong>Substitute</strong> field, the direct approver, or the approval administrator, in that order of priority. For more information, see <a href="across-how-use-approval-workflows.html">Use Approval Workflows</a>.</td>
+</tr>
+<tr>
+<td><strong>Email</strong></td>
+<td>Specify the email address of the user in the <strong>User ID</strong> field.</td>
+</tr>
+<tr>
+<td><strong>Approval Administrator</strong></td>
+<td>Specify the user who has rights to unblock approval workflows, for example, by delegating approval requests to new substitute approvers and deleting overdue approval requests.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only one person can be the approval administrator.|</p>
+</div>
+</li>
+<li><p>To test the approval user setup, choose the <strong>Approval User Setup Test</strong> action.</p>
+</li>
+<li><p>Repeat steps 2 and 3 for every user who you want to set up as an approval user.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-how-to-set-up-workflow-users.html">Set Up Workflow Users</a><br>
+<a href="across-setting-up-workflow-notifications.html">Setting Up Workflow Notifications</a><br>
+<a href="across-how-to-create-workflows.html">Create Workflows</a><br>
+<a href="across-set-up-workflows.html">Setting Up Workflows</a><br>
+<a href="walkthrough-setting-up-and-using-a-purchase-approval-workflow.html">Walkthrough: Setting Up and Using a Purchase Approval Workflow</a><br>
+<a href="across-workflow.html">Workflow</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-to-set-up-approval-users.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

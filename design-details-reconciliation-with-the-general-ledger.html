@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Reconciliation with the General Ledger | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Reconciliation with the General Ledger | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic describes reconciliation with the general ledger when you post inventory transactions, such as sales shipments, production output, or negative adjustments.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-reconciliation-with-the-general-ledger">Design Details: Reconciliation with the General Ledger</h1>
+
+<p>When you post inventory transactions, such as sales shipments, production output, or negative adjustments, the quantity and value changes to the inventory are recorded in the item ledger entries and the value entries, respectively. The next step in the process is to post the inventory values to the inventory accounts in the general ledger.</p>
+<p>There are two ways to reconcile the inventory ledger with the general ledger:</p>
+<ul>
+<li>Manually, by running the <strong>Post Inventory Cost to G/L</strong> batch job.</li>
+<li>Automatically, every time that you post an inventory transaction.</li>
+</ul>
+<h2 id="post-inventory-cost-to-gl-batch-job">Post Inventory Cost to G/L Batch Job</h2>
+<p>When you run the <strong>Post Inventory Cost to G/L</strong> batch job, the general ledger entries are created based on value entries. You have the option to summarize general ledger entries for each value entry, or create general ledger entries for each combination of posting date, location code, inventory posting group, general business posting group, and general product posting group.</p>
+<p>The posting dates of the general ledger entries are set to the posting date of the corresponding value entry, except when the value entry falls in a closed accounting period. In this case, the value entry is skipped, and you must change either the general ledger setup or the user setup to enable posting in the date range.</p>
+<p>When you run the <strong>Post Inventory Cost to G/L</strong> batch job, you might receive errors because of missing setup or incompatible dimension setup. If the batch job encounters errors in the dimension setup, it overrides these errors and uses the dimensions of the value entry. For other errors, the batch job does not post the value entries and lists them at the end of the report in a section titled, <strong>Skipped Entries</strong>. To post these entries, you must first fix the errors. To see a list of errors before you run the batch job, you can run the <strong>Post Invt. Cost to G/L - Test</strong> report. This report lists all of the errors that are encountered during a test posting. You can fix the errors, and then run the inventory cost posting batch job without skipping any entries.</p>
+<h2 id="automatic-cost-posting">Automatic Cost Posting</h2>
+<p>To set up cost posting to the general ledger to run automatically when you post an inventory transaction, select the <strong>Automatic Cost Posting</strong> check box on the <strong>Inventory Setup</strong> page. The posting date of the general ledger entry is the same as the posting date of the item ledger entry.</p>
+<h2 id="account-types">Account Types</h2>
+<p>During reconciliation, inventory values are posted to the inventory account in the balance sheet. The same amount, but with the reverse sign, is posted to the relevant balancing account. Usually the balancing account is an income statement account. However, when you post direct cost related to consumption or output, the balancing account is a balance sheet account. The type of the item ledger entry and value entry determines which general ledger account to post to.</p>
+<p>The entry type indicates which general ledger account to post to. This is determined either by the sign of the quantity on the item ledger entry or the valued quantity on the value entry, since the quantities always have the same sign. For example, a sales entry with a positive quantity describes an inventory decrease caused by a sale, and a sales entry with a negative quantity describes an inventory increase caused by a sales return.</p>
+<h3 id="example">Example</h3>
+<p>The following example shows a bike chain that is manufactured from purchased links. This example shows how the various general ledger account types are used in a typical scenario.</p>
+<p>The <strong>Expected Cost Posting to G/L</strong> check box on the <strong>Inventory Setup</strong> page is selected, and the following setup is defined.</p>
+<p>The following table shows how the link is set up on the item card.</p>
+<table>
+<thead>
+<tr>
+<th>Setup Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Costing Method</strong></td>
+<td>Standard</td>
+</tr>
+<tr>
+<td><strong>Standard Cost</strong></td>
+<td>LCY 1.00</td>
+</tr>
+<tr>
+<td><strong>Overhead Rate</strong></td>
+<td>LCY 0.02</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows how the chain is set up on the item card.</p>
+<table>
+<thead>
+<tr>
+<th>Setup Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Costing Method</strong></td>
+<td>Standard</td>
+</tr>
+<tr>
+<td><strong>Standard Cost</strong></td>
+<td>LCY 150.00</td>
+</tr>
+<tr>
+<td><strong>Overhead Rate</strong></td>
+<td>LCY 25.00</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows how the work center is set up on the work center card.</p>
+<table>
+<thead>
+<tr>
+<th>Setup Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Direct Unit Cost</strong></td>
+<td>LCY 2.00</td>
+</tr>
+<tr>
+<td><strong>Indirect Cost Percentage</strong></td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h5 id="scenario">Scenario</h5>
+<ol>
+<li><p>The user purchases 150 links and posts the purchase order as received. (Purchase)</p>
+</li>
+<li><p>The user posts the purchase order as invoiced. This creates an overhead amount of LCY 3.00 to be allocated and a variance amount of LCY 18.00. (Purchase)</p>
+<ol>
+<li>The interim accounts are cleared. (Purchase)</li>
+<li>The direct cost is posted. (Purchase)</li>
+<li>The indirect cost is calculated and posted. (Purchase)</li>
+<li>The purchase variance is calculated and posted (only for standard-cost items). (Purchase)</li>
+</ol>
+</li>
+<li><p>The user sells one chain and posts the sales order as shipped. (Sale)</p>
+</li>
+<li><p>The user posts the sales order as invoiced. (Sale)</p>
+<ol>
+<li><p>The interim accounts are cleared. (Sale)</p>
+</li>
+<li><p>Cost of goods sold (COGS) is posted. (Sale)</p>
+<p><img src="media/design_details_inventory_costing_3_gl_posting_sales.png" alt="Results of sales posting to GL accounts" title="Results of sales posting to GL accounts"></p>
+</li>
+</ol>
+</li>
+<li><p>The user posts consumption of 150 links, which is the number of links used to produce one chain. (Consumption, Material)</p>
+<p><img src="media/design_details_inventory_costing_3_gl_posting_material.png" alt="Results of material posting to GL accounts" title="Results of material posting to GL accounts"></p>
+</li>
+<li><p>The work center used 60 minutes to produce the chain. The user posts the conversion cost. (Consumption, Capacity)</p>
+<ol>
+<li><p>The direct costs are posted. (Consumption, Capacity)</p>
+</li>
+<li><p>The indirect costs are calculated and posted. (Consumption, Capacity)</p>
+<p><img src="media/design_details_inventory_costing_3_gl_posting_capacity.png" alt="Results of capacity posting to GL accounts" title="Results of capacity posting to GL accounts"></p>
+</li>
+</ol>
+</li>
+<li><p>The user posts the expected cost of one chain. (Output)</p>
+</li>
+<li><p>The user finishes the production order and runs the <strong>Adjust Cost - Item Entries</strong> batch job. (Output)</p>
+<ol>
+<li><p>The interim accounts are cleared. (Output)</p>
+</li>
+<li><p>The direct cost is transferred from the WIP account to the inventory account. (Output)</p>
+</li>
+<li><p>The indirect cost (overhead) is transferred from the indirect cost account to the inventory account. (Output)</p>
+</li>
+<li><p>This results in a variance amount of LCY 157.00. Variances are only calculated for standard-cost items. (Output)</p>
+<p><img src="media/design_details_inventory_costing_3_gl_posting_output.png" alt="Results of output posting to GL accounts" title="Results of output posting to GL accounts"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For the sake of simplicity, only one variance account is shown. In reality, five different accounts exist:</p>
+<ul>
+<li>Material Variance</li>
+<li>Capacity Variance</li>
+<li>Capacity Overhead Variance</li>
+<li>Subcontracting Variance</li>
+<li>Manufacturing Overhead Variance</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+<li><p>The user revalues the chain from LCY 150.00 to LCY 140.00. (Adjustment/Revaluation/Rounding/Transfer)</p>
+<p><img src="media/design_details_inventory_costing_3_gl_posting_adjustment.png" alt="Results of adjustment posting to GL accounts" title="Results of adjustment posting to GL accounts"></p>
+</li>
+</ol>
+<p>For more information about the relationship between the account types and the different types of value entries, see <a href="design-details-accounts-in-the-general-ledger.html">Design Details: Accounts in the General Ledger</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-expected-cost-posting.html">Design Details: Expected Cost Posting</a><br>
+<a href="design-details-cost-adjustment.html">Design Details: Cost Adjustment</a>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-reconciliation-with-the-general-ledger.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

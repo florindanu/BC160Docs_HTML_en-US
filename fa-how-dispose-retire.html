@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Dispose or Retire FA| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Dispose or Retire FA| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You must post a disposal value when you scrap, sell, or retire a fixed asset.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="dispose-of-or-retire-fixed-assets">Dispose of or Retire Fixed Assets</h1>
+
+<p>When you sell or otherwise dispose of a fixed asset, the disposal value must be posted to calculate and record the gain or loss. A disposal entry must be the last entry posted for a fixed asset. For partially disposed fixed assets, you can post more than one disposal entry. The total of all posted disposal amounts must be a credit amount.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you trade-in a fixed asset for another one, you must record both the sale of the old asset (disposal) and the purchase of the new one (acquisition). For more information, see <a href="fa-how-acquire.html">Acquire Fixed Assets</a>.</p>
+</div>
+<h2 id="to-post-a-disposal-from-the-fixed-asset-gl-journal">To post a disposal from the fixed asset G/L journal</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Asset G/L Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create an initial journal line and fill in the fields as necessary. Hover over a field to read a short description.</p>
+</li>
+<li><p>In the <strong>FA Posting Type</strong> field, select <strong>Disposal</strong>.</p>
+</li>
+<li><p>Choose the <strong>Insert FA Bal. Account</strong> action. A second journal line is created for the balancing account that is set up for disposal posting.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Step 4 only works if you have set up the following: On the <strong>FA Posting Group Card</strong> page for the posting group of the fixed asset, the <strong>Disposal Account</strong> field contains the general ledger debit account and the <strong>Disposal Bal. Account</strong> field contains the general ledger account to which you want to post balancing entries for appreciation. For more information, see <a href="fa-how-setup-general.html#to-set-up-fixed-asset-posting-groups">To set up fixed asset posting groups</a>.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<p>If you sell or dispose of part of a fixed asset, you must split up the asset before you can record the disposal transaction. For more information, see <a href="fa-how-trans-split-combine.html">Transfer, Split, or Combine Fixed Assets</a>.</p>
+<h2 id="to-view-disposal-ledger-entries">To view disposal ledger entries</h2>
+<p>When you sell or dispose of a fixed asset, the disposal value is posted to the general ledger where you can view the result.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</li>
+<li>Select the fixed asset that you want to view entries for, and then choose the <strong>Depreciation Books</strong> action.</li>
+<li>Select the depreciation book that you want to view entries for, and then choose the <strong>Ledger Entries</strong> action.</li>
+<li>Select a line with <strong>Disposal</strong> in the <strong>FA Posting Category</strong> field, and then choose the <strong>Navigate</strong> action.</li>
+<li>On the <strong>Navigate</strong> page, select the general ledger entry line, and then choose the <strong>Show</strong> action.</li>
+</ol>
+<p>The <strong>General Ledger Entries</strong> page opens where you can see the entries that the disposal posting resulted in.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-dispose-retire.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

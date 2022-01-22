@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Prepare Customer Data Migration | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Prepare Customer Data Migration | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="After you import and apply setup data in the new database, you can start migrating the customer&#8217;s existing master data, such as item and customer numbers and names. To make sure that this data is created quickly and accurately in the new company, you should use templates to structure the data.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="prepare-to-migrate-customer-data">Prepare to Migrate Customer Data</h1>
+
+<p>After you import and apply setup data in the new database, you can start migrating the customer’s existing master data, such as item and customer numbers and names. To make sure that this data is created quickly and accurately in the new company, you should use templates to structure the data.</p>
+<p>Typically, you create data templates for the following master data tables:</p>
+<ul>
+<li><strong>Contact</strong></li>
+<li><strong>Customer</strong></li>
+<li><strong>Item</strong></li>
+<li><strong>Vendor</strong></li>
+</ul>
+<p>However, you can create a template structure for and apply it to any table in Business Central.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can also use data templates for daily operations to create new records that are based on templates. These data templates only work for the supported master data tables. For more information, see, for example, <a href="inventory-how-register-new-items.html">Register New Items</a>.</p>
+</div>
+<p>When you import customer data, such as for items, from a file, the mandatory field data that you have specified is taken from the linked data template. When you create a new item, you only enter general information such as item name, description, and price and then collect the rest of the mandatory field data from a selected data template.</p>
+<p>When you create a new master data record, such as a customer card, some fields are mandatory and must be filled in. You can group most mandatory fields, such as posting groups and payment terms, to make creating master data records easier and more stable. For example, you can group mandatory fields for table 18, <strong>Customer</strong>, as <strong>Domestic</strong>, <strong>Foreign</strong>, or <strong>Export</strong> types.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Fields of type Blob cannot be exported/imported using Excel.</p>
+</div>
+<h2 id="to-select-a-data-template">To select a data template</h2>
+<p>When you select an existing data template, you must evaluate if the templates that you created for the new company are sufficient for the customer. Review the provided fields and values to determine which templates are appropriate for a new company.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can also use data templates to create new records quickly. Use them for faster and more accurate data creation. For more information, see <a href="inventory-how-register-new-items.html">Register New Items</a>.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Templates</strong>, and then choose the related link.</li>
+<li>On the <strong>Configuration Templates</strong> page, select a data template from the list, and then choose the <strong>Edit</strong> action.</li>
+</ol>
+<p>If the default templates do not meet your needs, you can create new templates or add fields to an existing template. If the default templates are sufficient, you can use them to create records based on master data templates.</p>
+<h2 id="to-create-a-new-data-template">To create a new data template</h2>
+<p>You can create a new data template if the default templates do not meet the needs of your new company. If you are creating more than one, you may find it useful to adopt a naming convention for the <strong>Code</strong> field.</p>
+<p>Each template consists of a header and lines. When you create a template, you can specify which fields to always apply to data of a certain type. For example, you can create different customer templates to apply to different customer types. When you create the customer using a template, you can use template data to prepopulate certain fields.</p>
+<h3 id="to-copy-an-existing-data-template">To copy an existing data template</h3>
+<p>You can quickly create a new data template by copying information from an existing data template, which you then edit.</p>
+<ol>
+<li>Open the <strong>Configuration Templates</strong> page.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>Fill in the <strong>Code</strong> field.</li>
+<li>Choose the <strong>Copy Config. Template</strong> action.</li>
+<li>On the <strong>Configuration Templates</strong> page, select an existing template to copy, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<p>The table ID, table name, and lines of the existing data template are inserted in the new template.</p>
+<h3 id="to-create-a-data-template-header-manually">To create a data template header manually</h3>
+<ol>
+<li>Open the <strong>Configuration Templates</strong> page.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>Fill in the <strong>Code</strong> field.</li>
+<li>In the <strong>Table ID</strong> field, enter the table to which this template applies. The <strong>Table Name</strong> field is automatically filled in when the <strong>Table ID</strong> field is set.</li>
+</ol>
+<h3 id="to-create-a-data-template-line-manually">To create a data template line manually</h3>
+<ol>
+<li><p>On the first line, select the <strong>Field Name</strong> field. The <strong>Field List</strong> page displays the list of fields in the table.</p>
+</li>
+<li><p>Select a field, and then choose the <strong>OK</strong> button. The <strong>Field Caption</strong> field is filled in with the field name.</p>
+</li>
+<li><p>In the <strong>Default Value</strong> field, enter an appropriate value. In some cases, you may want to use a value that is not a value that is available in the database. In that case, you can select the <strong>Skip Relation Check</strong> check box, to make it possible to apply data without error.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Since the <strong>Default Value</strong> field does not have a look up to the corresponding Business Central field options, you copy and paste the value that you want from the related page into the template.</p>
+</div>
+</li>
+<li><p>Select the <strong>Mandatory</strong> check box if users must fill in the field in question.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The check box is informational only. No business logic is enforced. For example, ushers cannot post an invoice if posting groups have not been set up. You can select the <strong>Mandatory</strong> check box for those fields to have the user fill them in and thereby avoid a posting error later.</p>
+</div>
+</li>
+<li><p>In the <strong>Reference</strong> field, enter information about the field as needed.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button</p>
+</li>
+</ol>
+<h2 id="to-export-to-a-template-in-excel">To export to a template in Excel</h2>
+<p>You can create an Excel workbook to serve as a template that is based on the structure of an existing database table quickly. You can then use the template to gather together customer data in a consistent format for later import into Business Central.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then choose the related link.</li>
+<li>Add a table to the list, or select an existing table. For more information, see <a href="admin-how-to-manage-company-configuration-in-a-worksheet.html">Manage Company Configuration in a Worksheet</a>.</li>
+<li>Define the fields from the table that you want to include in the template.</li>
+<li>Choose the <strong>Export to Template</strong> action.</li>
+<li>Name and save the Excel file. The Excel workbook is automatically opened.</li>
+</ol>
+<p>You can now enter customer data in the Excel worksheet. If you have exported multiple tables, each table will be on its own worksheet. Save the workbook before you continue with the next procedure.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may encounter the following error when you run an English version of Excel, but have your regional settings configured for a non-English language: &quot;Old format or invalid type library.&quot; To fix this error, make sure that the language pack for the non-English language is installed.</p>
+</div>
+<h2 id="to-import-from-a-template-in-excel">To import from a template in Excel</h2>
+<ol>
+<li>On the <strong>Configuration Worksheet</strong> page, and then choose the <strong>Import from Template</strong> action.</li>
+<li>Navigate to the template worksheet that you have created, and then choose the <strong>Open</strong> action.</li>
+<li>To add the collected customer data to the database, choose the <strong>Apply Data</strong> action.</li>
+</ol>
+<p>When you apply data from a template in Excel to a table that also has a configuration template linked to it in the configuration package, the default field values from the configuration template are also applied.</p>
+<p>Any record whose data is applied in this manner is complete, because it consists of data entered by a user in Excel, plus the default values specified by the configuration template.</p>
+<h2 id="to-create-a-record-from-a-configuration-template">To create a record from a configuration template</h2>
+<p>You can use the structure of data that is contained in the data templates to convert your information into records in the database, one-by-one. To do so, you use the <strong>Create Instance</strong> function. This is a miniature version of the data migration process and can be useful for prototyping or treating smaller data creation tasks.</p>
+<p>The following steps illustrate how to create an item card from an item data template. You can create a record from any data template using the same procedure.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Templates</strong>, and then choose the related link.</li>
+<li>Select the <strong>Item</strong> template, and then choose the <strong>Edit</strong> action. For more information, see <a href="admin-use-templates-to-prepare-customer-data-for-migration.html#to-create-a-new-data-template">To create a data template</a>.</li>
+<li>Choose the <strong>Create Instance</strong> action. An item card is created.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+<li>To review the new item card, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the new item card.</li>
+<li>Expand various FastTabs, and verify that the information was created correctly on them.</li>
+</ol>
+<h2 id="to-use-a-configuration-template-on-a-record">To use a configuration template on a record</h2>
+<p>You can apply a data template to any record that is in Business Central and use this technique to change or modify a record. However, when you do this, you overwrite existing values in the record with those of the template. Consequently, you should be careful when you apply a template to existing records.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The <strong>Apply Template</strong> function overwrites existing data in a record. If this function is used in master data migration, it will overwrite the imported data when you create records.</p>
+</div>
+<p>The following procedure is based on a new customer card.</p>
+<ol>
+<li>Create a customer. For more information, see <a href="sales-how-register-new-customers.html">Register New Customers</a>.</li>
+<li>On the <strong>Customer Card</strong> page, choose the <strong>Apply Template</strong> action.</li>
+<li>On the <strong>Customer Templates</strong> page, select one of the templates, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<p>The default values from the chosen customer template are inserted on the customer card.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a><br>
+<a href="sales-how-register-new-customers.html">Register New Customers</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-use-templates-to-prepare-customer-data-for-migration.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the C5 Data Migration Extension | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the C5 Data Migration Extension | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use this extension to migrate customers, vendors, items, and general ledger accounts from Microsoft Dynamics C5 2012 to Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="the-c5-data-migration-extension">The C5 Data Migration Extension</h1>
+
+<p>This extension makes it easy to migrate customers, vendors, items, and your general ledger accounts from Microsoft Dynamcis C5 2012 to Business Central. You can also migrate historical entries for general ledger accounts.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The company in Business Central must not contain any data. Additionally, after you start a migration, do not create customers, vendors, items, or accounts until the migration finishes.</p>
+</div>
+<h2 id="what-data-is-migrated">What Data is Migrated?</h2>
+<p>The following data is migrated for each entity:</p>
+<p><strong>Customers</strong></p>
+<ul>
+<li>Contacts</li>
+<li>Location</li>
+<li>Country</li>
+<li>Customer dimensions (department, center, purpose)</li>
+<li>Shipment method</li>
+<li>Sales Person</li>
+<li>Payment terms</li>
+<li>Payment method</li>
+<li>Customer price group</li>
+<li>Customer invoice discount</li>
+</ul>
+<p>If you migrate accounts, the following data is also migrated:</p>
+<ul>
+<li>Customer posting setup</li>
+<li>General journal batch</li>
+<li>Open transactions (customer ledger entries)</li>
+</ul>
+<p><strong>Vendors</strong></p>
+<ul>
+<li>Contacts</li>
+<li>Location</li>
+<li>Country</li>
+<li>Vendor dimensions (department, center, purpose)</li>
+<li>Invoice discount</li>
+<li>Shipment method</li>
+<li>Purchaser</li>
+<li>Payment terms</li>
+<li>Payment method</li>
+<li>Vendor invoice discount</li>
+</ul>
+<p>If you migrate accounts, the following data is also migrated:</p>
+<ul>
+<li>Vendor posting setup</li>
+<li>General journal batch</li>
+<li>Open transactions (vendor ledger entries)</li>
+</ul>
+<p><strong>Items</strong></p>
+<ul>
+<li>Location</li>
+<li>Country</li>
+<li>Item dimensions (department, center, purpose)</li>
+<li>Sales line discounts</li>
+<li>Customer discount groups</li>
+<li>Item discount groups</li>
+<li>Sales price</li>
+<li>Tariff number</li>
+<li>Units of measure</li>
+<li>Item tracking code</li>
+<li>Customer price group</li>
+<li>Assembly BOMs</li>
+</ul>
+<p>If you migrate accounts, the following data is also migrated:</p>
+<ul>
+<li>Inventory posting setup</li>
+<li>General posting setup</li>
+<li>Item journal batch</li>
+<li>Open transactions (item ledger entries)</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If there are open transactions that use foreign currencies, the exchange rates for those currencies are also migrated. Other exchange rates are not migrated.</p>
+</div>
+<p><strong>Chart of Accounts</strong></p>
+<ul>
+<li>Standard dimensions: Department, Cost Center, Purpose</li>
+<li>Historical G/L transactions</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Historical G/L transactions are treated a little differently. When you migrate data you set a <strong>Current Period</strong> parameter. This parameter specifies how to process G/L transactions. Transactions after this date are migrated individually. Transactions before this date are aggregated per account and migrated as a single amount. For example, let's say there are transactions in 2015, 2016, 2017, 2018, and you specify January 01, 2017 in the Current Period field. For each account, amounts for transactions on or before December 31, 2106, will be aggregated in a single general journal line for each G/L account. All trascations after this date will be migrated individually.</p>
+</div>
+<h2 id="file-size-requirements">File Size Requirements</h2>
+<p>The largest file size you can upload to Business Central is 150 MB. If the file you export from C5 is larger than that, consider migrating data in multiple files. For example, export one or two types of entities from C5, such as customers and vendors, to a file, and then export items to another file, and so on. You can import files individually in Business Central.</p>
+<h2 id="to-migrate-data">To migrate data</h2>
+<p>There are just a few steps to export data from C5, and import it in Business Central:</p>
+<ol>
+<li>In C5, use the <strong>Export Database</strong> feature to export the data. Then send the export folder to a compressed (zipped) folder.</li>
+<li>In Business Central, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Data Migration</strong>, and then choose <strong>Data Migration</strong>.</li>
+<li>Complete the steps in the assisted setup guide. Make sure to choose <strong>Import from Microsoft Dynamcis C5 2012</strong> as the data source.</li>
+</ol>
+<h2 id="viewing-the-status-of-the-migration">Viewing the Status of the Migration</h2>
+<p>Use the <strong>Data Migration Overview</strong> page to monitor the success of the migration. The page shows information such as the number of entities that the migration will include, the status of the migration, and the number of items that have been migrated and whether they were successfull. It also shows the number of errors, lets you investigate what went wrong and, when possible, makes it easy to go to the entity to fix the issues. For more information, see the next section in this topic.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>While you are waiting for the results of the migration, you must refresh the page to display the results.</p>
+</div>
+<h2 id="how-to-avoid-double-posting">How to Avoid Double-Posting</h2>
+<p>To help avoid double-posting to the general ledger, the following balance accounts are used for open transactions:</p>
+<ul>
+<li>For vendors, we use the A/P account from the vendor posting group.</li>
+<li>For customers, we use the A/R account from the customer posting group.</li>
+<li>For items, we create a general posting setup where the adjustment account is the account specified as the inventory account on the inventory posting setup.</li>
+</ul>
+<h2 id="correcting-errors">Correcting Errors</h2>
+<p>If something goes wrong and an error occurs, the <strong>Status</strong> field will show <strong>Completed with Errors</strong>, and the <strong>Error Count</strong> field will show how many. To view a list of the errors, you can open the <strong>Data Migration Errors</strong> page by choosing:</p>
+<ul>
+<li>The number in the <strong>Error Count</strong> field for the entity.</li>
+<li>The entity, and then the <strong>Show Errors</strong> action.</li>
+</ul>
+<p>On the <strong>Data Migration Errors</strong> page, to fix an error you can choose an error message, and then choose <strong>Edit Record</strong> to view the migrated data for the entity. If you have several errors to fix, you can choose <strong>Bulk-Fix Errors</strong> to edit the entities in a list. You still need to open individual records if the error was caused by a related entry though. For example, a vendor will not be migrated if an email address one of their contacts has an invalid format.</p>
+<p>After you fix one or more errors, you can choose <strong>Migrate</strong> to migrate only the entities you fixed, without having to completely restart the migration.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you have fixed more than one error, you can use the <strong>Select More</strong> feature to select multiple lines to migrate. Alternatively, if there are errors that are not important to fix, you can choose them and then choose <strong>Skip Selections</strong>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have items that are included in a BOM, you might need to migrate more than once if the original item is not created before the variants that reference it. If an item variant is created first, the reference to the original item can cause an error message.</p>
+</div>
+<h2 id="verifying-data-after-migrating">Verifying Data After Migrating</h2>
+<p>One way to verify that your data migrated correctly is to look at the following pages in C5 and Business Central.</p>
+<table>
+<thead>
+<tr>
+<th>Microsoft Dynamcis C5 2012</th>
+<th>Business Central</th>
+<th>Batch Job to Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customer Entries</td>
+<td>General Journals</td>
+<td>CUSTMIGR</td>
+</tr>
+<tr>
+<td>Vendor Entries</td>
+<td>General Journals</td>
+<td>VENDMIGR</td>
+</tr>
+<tr>
+<td>Item Entries</td>
+<td>Item Journals</td>
+<td>ITEMMIGR</td>
+</tr>
+<tr>
+<td>G/L Entries</td>
+<td>General Journals</td>
+<td>GLACMIGR</td>
+</tr>
+</tbody>
+</table>
+<h2 id="stopping-data-migration">Stopping Data Migration</h2>
+<p>You can stop migrating data by choosing <strong>Stop All Migrations</strong>. If you do, all pending migrations are also stopped.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-extensions.html">Customizing Business Central Using Extensions</a><br>
+<a href="product-get-started.html">Getting Started</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-c5-data-migration.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

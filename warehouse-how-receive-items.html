@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Receive Items | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Receive Items | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When items arrive at a warehouse that is set up for warehouse receipt processing, you must retrieve the lines of the released source document that triggered their receipt.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="receive-items">Receive Items</h1>
+
+<p>When items arrive at a warehouse that is not set up for warehouse receipt processing, you simply record the receipt on the related business document, such as a purchase order, a sales return order, or an inbound transfer order.</p>
+<p>When items arrive at a warehouse that is set up for warehouse receipt processing, you must retrieve the lines of the released source document that triggered their receipt. If you have bins, you can either accept the default bin that is filled in, or if the item has never been used before in the warehouse, fill in the bin where the item should be put away. You must then fill in the quantities of the items you have received, and post the receipt.</p>
+<h2 id="to-receive-items-with-a-purchase-order">To receive items with a purchase order</h2>
+<p>The following describes how to receive items with a purchase order. The steps are similar for sales return orders and transfer orders.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</li>
+<li>Open an existing purchase order, or create a new one. For more information, see <a href="purchasing-how-record-purchases.html">Record Purchases</a>.</li>
+<li>In the <strong>Qty. to Receive</strong> field, enter the received quantity.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the received quantity is higher than ordered on the purchase order, per the <strong>Quantity</strong> field, and the vendor has been set up to allow over-receipts, then you use the <strong>Over-Receive</strong> field top handle the excess quantity. For more information, see <a href="warehouse-how-receive-items.html#to-receive-more-items-than-ordered">To receive more items than ordered</a>.
+4. Choose the <strong>Post</strong> action.</p>
+</div>
+<p>The value in the <strong>Qty. Received</strong> field is updated. If this is a partial receipt, then the value is lower than the value in the <strong>Quantity</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use a warehouse document to post the receipt, then you cannot use the <strong>Post</strong> action on the purchase order. Instead, a warehouse worker has already posted the purchase order quantity as received. For more information, see <a href="warehouse-how-receive-items.html#to-receive-items-with-a-warehouse-receipt">To receive items with a warehouse receipt</a>.</p>
+</div>
+<h2 id="to-receive-items-with-a-warehouse-receipt">To receive items with a warehouse receipt</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Receipts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+<p>Fill in the fields on <strong>General</strong> FastTab. When you retrieve source document lines, some of the information is copied to each line.</p>
+<p>For warehouse configuration with directed put-away and pick, if the location has a default zone and bin for receipts, the <strong>Zone Code</strong> and <strong>Bin Code</strong> fields are filled in automatically, but you can change them as appropriate.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you wish to receive items with warehouse class codes other than the class code of the bin in the <strong>Bin Code</strong> field on the document header, you must delete the contents of the <strong>Bin Code</strong> field on the header before you retrieve source document lines for the items.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Get Source Documents</strong> action. The <strong>Source Documents</strong> page opens.</p>
+<p>From a new or an open warehouse receipt, you can use the <strong>Filters to Get Source Docs.</strong> page to retrieve the released source document lines that define which items to receive or ship.</p>
+<ol>
+<li>Choose the <strong>Use Filters to Get Src. Docs.</strong> action.</li>
+<li>To set up a new filter, enter a descriptive code in the <strong>Code</strong> field, and then choose the <strong>Modify</strong> action.</li>
+<li>Define the type of source document lines that you want to retrieve by filling in the relevant filter fields.</li>
+<li>Choose the <strong>Run</strong> action.</li>
+</ol>
+<p>All released source document lines that fulfill the filter criteria are now inserted in <strong>Warehouse Receipt</strong> page from which you activated the filter function.</p>
+<p>The filter combinations that you define are saved on the <strong>Filters to Get Source Docs.</strong> page until the next time you need it. You can make an unlimited number of filter combinations. You can change the criteria at any time by choosing the <strong>Modify</strong> action.</p>
+</li>
+<li><p>Select the source documents for which you want to receive items, and then choose the <strong>OK</strong> button.</p>
+<p>The lines of the source documents appear on the <strong>Warehouse Receipt</strong> page. The <strong>Qty. to Receive</strong> field is filled with the quantity outstanding for each line, but you can change the quantity as necessary. If you deleted the contents of the <strong>Bin Code</strong> field on the <strong>General</strong> FastTab before getting the lines, you must fill in an appropriate bin code on each receipt line.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To fill in the <strong>Qty. to Receive</strong> field on all the lines with zero, choose the <strong>Delete Qty. to Receive</strong> action. To fill it in once again with the quantity outstanding, choose the <strong>Autofill Qty. to Receive</strong> action.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot receive more items than the number in the <strong>Qty. Outstanding</strong> field on the source document line. To receive more items, retrieve another source document that contains a line for the item by using the filter function to get source documents with the item.</p>
+</div>
+</li>
+<li><p>Post the warehouse receipt. The quantity fields are updated on the source documents, and the items are recorded as part of company inventory.</p>
+</li>
+</ol>
+<p>If you are using warehouse put-away, the receipt lines are sent to the warehouse put-away function. The items, although received, cannot be picked until they have been put away. The received items are identified as available inventory only when the put-away has been registered.</p>
+<p>If you are not using warehouse put-away but you are using bins, the put-away of the items in the bin specified on the source document line is recorded.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use the <strong>Post and Print</strong> function, you both post the receipt and print a put-away instruction that shows you where to place the items in storage.</p>
+<p>If your location uses directed put-away and pick, then the put-away templates are used to calculate the best place to put the items away. This is then printed on the put-away instruction.</p>
+</div>
+<h2 id="to-receive-more-items-than-ordered">To receive more items than ordered</h2>
+<p>When you receive more goods than you ordered, you may want to receive them instead of canceling the receipt. For example, it may be cheaper to keep the excess on your inventory than returning them or your vendor may offer you a discount for keeping them.</p>
+<h3 id="to-set-up-over-receipts">To set up over-receipts</h3>
+<p>You must define a percentage by which you allow the ordered quantity to be exceeded when receiving. You define this under an over-receipt code, which contains the percentage in the <strong>Over-Receipt Tolerance %</strong> field. You then assign the code to the cards of relevant items and/or vendors.</p>
+<p>The following describes how to set up and assign an over-receipt code to an item. The steps are similar for a vendor.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the card for an item that you suspect may sometimes be delivered with a higher quantity than ordered.</li>
+<li>Choose the look-up button in the <strong>Over-Receipt Code</strong> field.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>On the <strong>Over-Receipt Codes</strong> page, create one or more new lines that define different over-receive policies. Hover over a field to read a short description..</li>
+<li>Select a line, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<p>The over-receipt code is assigned to the item. Any purchase order or warehouse receipt for the item now allows receiving more than the ordered quantity according to the specified over-receipt tolerance percentage.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can set up an approval workflow to require that over-receipts must be approved before they can be handled. In that case, you must select the <strong>Approval Required</strong> check box on the <strong>Over-Receipt Codes</strong> page. A dedicated workflow response, <strong>Approve Over-Receipt</strong> exists in the standard workflow data for this purpose. For more information, see <a href="across-how-to-create-workflows.html">Create Workflows</a>.</p>
+</div>
+<h3 id="to-perform-an-over-receipt">To perform an over-receipt</h3>
+<p>On purchase lines and warehouse receipt lines, the <strong>Over-Receipt Quantity</strong> field is used to record over-received quantities, meaning quantities that exceed the value in the <strong>Quantity</strong> field, the ordered quantity.</p>
+<p>When you handle an over-receipt, you can either increase the value in the <strong>Qty. to Receive</strong> field to the actually received quantity. The <strong>Over-Receipt Quantity</strong> field is then updated to show the excess quantity. Alternatively, you can enter the excess quantity in the <strong>Over-Receipt Quantity</strong> field. The <strong>Qty. to Receive</strong> field is then updated to show the ordered quantity plus the excess quantity. The following procedure described how to fill in the <strong>Qty. to Receive</strong> field.</p>
+<ol>
+<li><p>On a purchase order or a warehouse receipt document where the received quantity is higher than ordered, enter the actually received quantity in the <strong>Qty. to Receive</strong> field.</p>
+<p>If the increase is within the tolerance specified by the assigned over-receipt code, the <strong>Over-Receipt Quantity</strong> field is updated to show the quantity by which the value in the <strong>Quantity</strong> field is exceeded.</p>
+<p>If the increase is above the specified tolerance, the over-receipt is not allowed. In that case, you can investigate if another over-receipt code exists that will allow it. Otherwise, only the ordered quantity can be received, and the excess quantity must be handled otherwise, for example, by returning it to the vendor.</p>
+</li>
+<li><p>Post the receipt as you would for any other receipt.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Business Central does not include functionality to automatically initiate the financial administration of over-receipts. You must manually handle this in agreement with the vendor, for example, by the vendor forwarding a new or updated invoice.</p>
+</div>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/receive-invoice-dynamics-d365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-receive-items.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

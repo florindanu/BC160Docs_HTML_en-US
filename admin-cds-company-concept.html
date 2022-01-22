@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Company and Business Unit Mapping | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Company and Business Unit Mapping | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Companies are both a legal and business constructs, and they are used to secure and visualize business data.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="data-ownership-models">Data Ownership Models</h1>
+
+<p>Common Data Service requires that you specify an owner for the data you store. For more information, see <a href="https://docs.microsoft.com/powerapps/maker/common-data-service/types-of-entities#entity-ownership">Entity ownership</a> in the Power Apps documentation. When you set up integration between Common Data Service and Business Central you must choose one of two ownership models for records that are synchronized:</p>
+<ul>
+<li>Team</li>
+<li>Person (user)</li>
+</ul>
+<p>Actions that can be performed on these records can be controlled on a user level. For more information, see <a href="https://docs.microsoft.com/powerapps/developer/common-data-service/user-team-entities">User and team entities</a>. We recommend the Team ownership model because it makes it easier to manage ownership for multiple people.</p>
+<h2 id="team-ownership">Team Ownership</h2>
+<p>In Business Central, a company is a legal and business entity that offers ways to secure and visualize business data. Users always work in the context of a company. The closest that Common Data Service comes to this concept is the business unit entity, which does not have legal or business implications.</p>
+<p>Because business units lack legal and business implications, you cannot force a one-to-one (1:1) mapping to synchronize data between a company and a business unit, either one-way or bi-directional. To make synchronization possible, when you enable synchronization for a company in Business Central, the following happens in Common Data Service:</p>
+<ul>
+<li>We create a company entity that is equivalent to the company entity in Business Central. The name of the company is suffixed with &quot;BC Company ID.&quot; For example, Cronus International Ltd. (93555b1a-af3e-ea11-bb35-000d3a492db1).</li>
+<li>We create a default business unit that has the same name as the company. For example, Cronus International Ltd. (93555b1a-af3e-ea11-bb35-000d3a492db1).</li>
+<li>We create separate owner team with the same name as the company and associate it with the business unit. The name of the team is prefixed with &quot;BCI -.&quot; For example, BCI - Cronus International Ltd. (93555b1a-af3e-ea11-bb35-000d3a492db1).</li>
+<li>Records that are created and synchronized to Common Data Service are assigned to the &quot;BCI Owner&quot; team that is linked to the business unit.</li>
+</ul>
+<p>The following image shows an example of this data setup in Common Data Service.</p>
+<p><img src="media/cds_bu_team_company.png" alt="The root business unit is on top, the teams are in the center, and then the companies are at the bottom."></p>
+<p>In this configuration, records that are related to the Cronus US company will be owned by a team that is linked to the Cronus US <id> business unit in Common Data Service. Users who can access that business unit through a security role that is set to business unit–level visibility in Common Data Service can now see those records. The following example shows how to use teams to provide access to those records.<p>
+<ul>
+<li>The Sales Manager role is assigned to members of the Cronus US Sales team.</li>
+<li>Users who have the Sales Manager role can access account records for members of the same business unit.</li>
+<li>The Cronus US Sales team is linked to the Cronus US business unit that was mentioned earlier. Members of the Cronus US Sales team can see any account that is owned by the Cronus US <id> user, which would have come from the Cronus US company entity in Business Central.</id></li>
+</ul>
+<p>However, the 1:1 mapping between business unit, company, and team is just a starting point, as shown in the following image.</p>
+<p><img src="media/cds_bu_team_company_2.png" alt="The security role controls data visibility."></p>
+<p>In this example, a new EUR (Europe) root business unit is created in Common Data Service as the parent for both Cronus DE (Gernamy) and Cronus ES (Spain). The EUR business unit is not related to synchronization. However, it can give members of the EUR Sales team access to account data in both Cronus DE and Cronus ES by setting the data visibility to <strong>Parent/Child BU</strong> on the associated security role in Common Data Service.</p>
+<p>Synchronization determines which team should own records. This is controlled by the <strong>Default owning team</strong> field on the BCI - <id> record. When a BCI - <id> record is enabled for synchronization we automatically create the associated business unit and owner team (if it doesn't already exist), and set the <strong>Default owning team</strong> field. When synchronization is enabled for an entity, administrators can change the owning team, but a team must always be assigned.<p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Records become read-only after a company is added and saved, so be sure to choose the correct company.</p>
+</div>
+<h3 id="choosing-a-different-business-unit">Choosing a different business unit</h3>
+<p>You can change the business unit selection. If you choose another unit, for example, one that you created earlier in CDS it will keep its original name. That is, it will not be suffixed with the company ID. We will create a team that does use the naming convention.</p>
+<h2 id="person-ownership">Person Ownership</h2>
+<p>If you choose the Person ownership model you must specify each salesperson who will own new records. The business unit and team are created as described in the previous section.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-common-data-service.html">About Common Data Service</a></p>
+</id></id></id></article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-cds-company-concept.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Verify Automatically Applied Payments, and Reapply Payments Manually | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Verify Automatically Applied Payments, and Reapply Payments Manually | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="After payments are applied automatically, you can review all the entries for a payment and manually reapply those that were applied incorrectly.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="review-or-apply-payments-manually-after-automatic-application">Review or Apply Payments Manually After Automatic Application</h1>
+
+<p>For each journal line representing a payment on the <strong>Payment Reconciliation Journal</strong> page, you can open the <strong>Payment Application</strong> page to see all candidate open entries for the payment and view detailed information for each entry about the data matching that a payment application is based on. Here, you can manually apply payments or reapply payments that were applied automatically to a wrong entry. For more information about automatic application, see <a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When the bank account that you are reconciling payments for is set up for the local currency, then the <strong>Payment Application</strong> page will show all open entries in the local currency, including open entries for documents that were originally invoiced in foreign currencies. Payments applied to entries with converted currencies may therefore be posted with different amounts than on the original document because of the potentially different exchange rates used by the bank and Business Central respectively.</p>
+</div>
+<p>Therefore, we recommend that you look for foreign currency codes in the <strong>Currency Code</strong> field on the <strong>Payment Application</strong> page to check if applications are based on converted currencies. To review the original document amount in the foreign currency and to see the exchange rate used, choose the <strong>Applies-to Entry No.</strong> field, and then, on the shortcut menu, choose the drilldown button to open the <strong>Customer Ledger Entries</strong> or <strong>Vendor Ledger Entries</strong> page.</p>
+<p>Any gains-and-loss adjustment required due to currency conversions is not handled automatically by Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot apply entries with a different sign than the sign on the payment. For example, to close both a negative-sign credit memo and its related positive-sign invoice, you must first apply the credit memo to the invoice, and then apply the payment to the invoice with the reduced remaining amount.</p>
+</div>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you use payment discounts, and if the payment date is before the payment due date, then the <strong>Remaining Amt. Incl. Discount</strong> field on the <strong>Payment Application</strong> page will be used for matching. Otherwise, the value in the <strong>Remaining Amount</strong> field will be used. If the payment was made with a discounted amount after the payment due date, or the full amount was paid but a discount was granted, then the amount will not be matched.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can only apply a payment to one account. If you want to split the application on multiple open entries, for example to apply a lump-sum payment, then the open entries must be for the same account. For more information, see steps 7 and 8 in the procedure in this topic.</p>
+</div>
+<h2 id="to-review-or-apply-payments-after-automatic-application">To review or apply payments after automatic application</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Reconciliation Journals</strong>, and then choose the related link.</li>
+<li>Open the payment reconciliation journal for a bank account that you want to reconcile payments for. For more information, see <a href="receivables-how-reconcile-payments-auto-application.html">Reconcile Payments Using Automatic Application</a>.</li>
+<li>On the <strong>Payment Reconciliation Journal</strong> page, select a payment that you want to review or manually apply to one or more open entries, and then choose the <strong>Apply Manually</strong> action.</li>
+<li>Select the <strong>Applied</strong> check box on the line for the open entry that you want to apply the payment to.</li>
+<li>The payment amount, which is also shown in the <strong>Transaction Amount</strong> field on the <strong>Payment Application</strong> page, is inserted in the <strong>Applied Amount</strong> field, but you can modify the field, for example if you want to apply the amount to several open entries.</li>
+<li>To apply a part of the paid amount to another open entry for the account, for example to apply a lump-sum payment, select the <strong>Applied</strong> check box for the line. The applied amount is automatically deducted from the transactions amount to reflect the distribution on the two open entries.</li>
+<li>To apply a part of a payment to one or more open entries that does not exist in the database, create a new line under the line for the same account. In the <strong>Applied Amount</strong> field, enter the amount to apply on the new line, and then adjust the <strong>Applied Amount</strong> field on the existing line.</li>
+<li>Repeat steps 5, 6, or 7 for other open entries that you want to apply a full or partial payment amount to.</li>
+<li>When you have reviewed a payment application or manually applied to one or more open entries, choose the <strong>Accept Application</strong> action.</li>
+</ol>
+<p>The <strong>Payment Application</strong> page  closes, and on the <strong>Payment Reconciliation Journal</strong> page, the value in the <strong>Match Confidence</strong> field is changed to <strong>Accepted</strong> to indicate to you that you have reviewed or manually applied the payment.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-how-review-apply-payments-auto-application.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

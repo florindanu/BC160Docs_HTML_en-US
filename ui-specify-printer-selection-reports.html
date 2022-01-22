@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setting Up Reports to Print on Specific Printers | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setting Up Reports to Print on Specific Printers | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about specifying a printer for a report and using the Printer Selections page.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-printers">Set Up Printers</h1>
+
+<p>Because Business Central is a cloud service, it cannot reach local printers connected to users' machines. However, it can connect to cloud-enabled printers. In the generic version of Business Central, a cloud printer named <strong>Email Printer</strong> is installed as an extension and is ready to use after initial setup.</p>
+<p>If a cloud printer is not installed and set up, or if an installed printer fails, then printing will default to the printing options for the browser. This is indicated by this value in the <strong>Printer</strong> field on the report request page: <em>(none, handled by the browser)</em>.</p>
+<p>On the <strong>Printer Management</strong> page, you can see the printers that are set up. When you have set up one or more printers, you can open the <strong>Printer Selections</strong> page to set up for your user account which specific reports to print with which printer.</p>
+<p>When a printer is set up and assigned to specific reports, you print a report by choosing the <strong>Print</strong> button on the report request page. For more information, see <a href="ui-work-report.html#PrintReport">Printing a Report</a>.</p>
+<h3 id="sizing-print-jobs">Sizing Print Jobs</h3>
+<p>Cloud printing is designed for documents of a reasonable size. Most cloud services, including PrintNode and HP ePrint, have a limit of 10 MB per job. If you need to print larger reports, you may have to split them in multiple printouts.</p>
+<h2 id="to-set-up-a-printer">To set up a printer</h2>
+<p>On the <strong>Printer Management</strong> page, you can see the printers that are set up and you can access the <strong>Settings</strong> page for each printer to edit an existing setup or set up a new printer.</p>
+<p>The following procedure describes how to set up the existing <strong>Email Printer</strong> printer, which is a preinstalled extension.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To use email printing, email functionality must be set up. For more information, see <a href="admin-how-setup-email.html">Set Up Email</a>.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Printer Management</strong>, and then select the related link.</p>
+</li>
+<li><p>Select the line for the <strong>Email Printer</strong> printer, and then choose the <strong>Edit printer settings</strong> action.</p>
+</li>
+<li><p>On the <strong>Settings</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must manually select the appropriate paper size for a printer as no local printer or user settings can be stored.</p>
+<p>Beware that the Email Printer extension is set to <strong>A4</strong> paper size by default, which is not suited in North America, for example.</p>
+</div>
+</li>
+<li><p>To make a printer your default, On the <strong>Printer Management</strong> page, choose the <strong>Set as my default printer</strong>.</p>
+</li>
+</ol>
+<h3 id="privacy-notice">Privacy Notice</h3>
+<p>If you use the Email Printer extension, then all or some print jobs will be sent to the email address that you provided when configuring the printer. We strongly recommend that a unique email ID be tied to a printer device using only the official services provided by the hardware manufacturer, such as HP ePrint, KonicaMinolta EveryonePrint, or Epson Email Print.</p>
+<p>You must take all necessary privacy precautions, including ensuring that the email printing solution has properly configured permissions, privacy settings, and retention policies. It is your responsibility to provide a correct, verified, and operational email address. For more information, see <a href="https://privacy.microsoft.com/en-us/privacystatement">Microsoft Privacy Statement</a>.</p>
+<h2 id="to-select-which-printers-print-which-reports">To select which printers print which reports</h2>
+<p>On the <strong>Printer Selections</strong> page, you can set up for your user account which reports are printed by which printer. This is useful if you work with different reports that require different printers because of their placement in the company or their output capabilities.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Printer Selections</strong>, and then select the related link. Alternatively, from the <strong>Printer Management</strong> page, select a printer, and then choose the <strong>Printer Selections</strong> action.</li>
+<li>Choose the <strong>New</strong> action to add a printer selection for a specific report.</li>
+<li>Fill in the fields as necessary.</li>
+</ol>
+<p>The specified report is now set up to print to the selected printer by default.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you print the report in question, you can override this setup by selecting another printer on the <strong>Print Settings</strong> request page.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you do not set a report up for a specific printer on the <strong>Printer Selections</strong> page, then it will be printed to the default printer of the company, as defined from the <strong>Printer Management</strong> page.</p>
+</div>
+<p>You or the administrator can also use the <strong>Printer Selections</strong> page to define other variations of printing for users and reports. The following table describes the combination of values to specify different printing setup for a report.</p>
+<table>
+<thead>
+<tr>
+<th>To</th>
+<th>Set the following values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Print a report to a specific printer for all users</td>
+<td>Specify values in the <strong>Report ID</strong> and <strong>Printer Name</strong> fields and leave the <strong>User ID</strong> field blank.</td>
+</tr>
+<tr>
+<td>Print all reports to a specific printer for a specific user</td>
+<td>Specify values in the <strong>User ID</strong> and <strong>Printer Name</strong> fields and leave the <strong>Report ID</strong> field blank.</td>
+</tr>
+<tr>
+<td>Set the default printer for all reports</td>
+<td>Specify a value in the <strong>Printer Name</strong> field and leave the <strong>User ID</strong> and <strong>Report ID</strong> fields blank.</td>
+</tr>
+<tr>
+<td>Print a specific report to the user’s default printer</td>
+<td>Specify a value in the <strong>Report ID</strong> field and leave the <strong>Printer Name</strong> and <strong>User ID</strong> fields blank.</td>
+</tr>
+<tr>
+<td>Print a specific report to a specific printer for a specific user</td>
+<td>Specify values in all three fields.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>More specific printer selections take precedence over a more general printer selections. For example, a printer selection that has values in the <strong>User ID</strong>, <strong>Report ID</strong>, and <strong>Printer Name</strong> fields takes precedence over a printer selection that has blank entries in the <strong>User ID</strong> or <strong>Report ID</strong> fields.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-work-report.html#PrintReport">Printing a Report</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="ui-how-run-batch-jobs.html">Run Batch Jobs</a><br>
+<a href="ui-how-send-documents-email.html">Send Documents by Email</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-specify-printer-selection-reports.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

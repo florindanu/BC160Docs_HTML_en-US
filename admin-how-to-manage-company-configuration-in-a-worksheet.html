@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Manage Company Configuration in a Worksheet | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Manage Company Configuration in a Worksheet | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The configuration worksheet is the central location in which you can plan, track, and perform your configuration work. You can create a worksheet for each company that you are working with or create a standard configuration worksheet that can be used for configuring multiple identical companies.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="manage-company-configuration-in-a-worksheet">Manage Company Configuration in a Worksheet</h1>
+
+<p>The configuration worksheet is the central location in which you can plan, track, and perform your configuration work. You can create a worksheet for each company that you are working with or create a standard configuration worksheet that can be used for configuring multiple identical companies.</p>
+<p>The first step in preparing a configuration package is to select a company that you have already set up and modified to suit most of your solution needs. This company serves as the baseline for your configuration work on new companies. In the worksheet, you designate the tables that you want your configuration to control and handle. Since most tables in Business Central have relationships and dependencies to other tables, you should also include those related tables as necessary. Together, these tables will then serve as the structure around which you will build a new company. Subsequent steps help you package and then deploy your configuration.</p>
+<p>To aide you in tracking and reviewing your work, use the <strong>Config. Package Table</strong> FactBox to see information about records. Use the <strong>Config. Related Tables</strong> FactBox to monitor table relationships.</p>
+<p>The following procedures demonstrate how to add and customize table information for your configuration.</p>
+<h2 id="to-open-the-configuration-worksheet">To open the configuration worksheet</h2>
+<ol>
+<li>In Business Central, open the company that is the baseline for configuration, and then open its RapidStart Services Implementer Role Center.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then choose the related link.</li>
+</ol>
+<h2 id="to-add-a-table-to-the-worksheet">To add a table to the worksheet</h2>
+<ol>
+<li><p>On the <strong>Config. Worksheet</strong> page, choose the <strong>Edit List</strong> action.</p>
+</li>
+<li><p>On the first line, in the <strong>Line Type</strong> field, select <strong>Table</strong>.</p>
+</li>
+<li><p>In the <strong>Table ID</strong> field, select the table that you want to add to your configuration.</p>
+</li>
+<li><p>In the <strong>Page ID</strong> field, enter the ID of the page that is associated with the table. For standard tables, this value is automatically filled in. For custom tables, you must provide the ID.</p>
+</li>
+<li><p>In the <strong>Reference</strong> field, enter the URL of a documentation page, for example in Help, that provides best-practice information or instructions o setting up the table.</p>
+</li>
+<li><p>To add related tables, choose the <strong>Get Related Tables</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Related tables will not be added with the <strong>Get Related Tables</strong> action if either of the following is true:</p>
+<ul>
+<li>The relation is conditional.<br>
+Example: If you get related tables for the <strong>Customer</strong> table, then the <strong>Location</strong> table will not be added, since it is only conditionally related to the <strong>Customer</strong> table, namely if the <strong>Location Code</strong> field in the <strong>Customer</strong> table is filled in.</li>
+<li>The related table is filtered.<br>
+Example: A field in the related table has a WHERE clause. The reason for this is that the involved relations information is stored in the <strong>Field</strong> system table, which is not fully accessible to the application.<br>
+You must add such types of tables manually by following step 4 in this procedure.</li>
+</ul>
+</div>
+</li>
+<li><p>To modify the resulting list of tables, select a table that you want to remove, and then choose the <strong>Delete</strong> action.</p>
+</li>
+<li><p>Repeat the steps for each table that you want to add to the configuration.</p>
+</li>
+<li><p>To remove duplicate table information that can result from using the <strong>Get Related Tables</strong> action, choose the <strong>Delete Duplicate Lines</strong> action. This will remove duplicate tables that have the same package code.</p>
+</li>
+</ol>
+<h2 id="to-add-multiple-tables-to-the-configuration-worksheet">To add multiple tables to the configuration worksheet</h2>
+<ol>
+<li><p>Choose the <strong>Get Tables</strong> action. The <strong>Get Config. Tables</strong> batch job page opens.</p>
+</li>
+<li><p>On the <strong>Options</strong> FastTab, specify the types of tables that you want to add to the configuration, as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Include with Data Only</strong></td>
+<td>Select the check box to include only those tables that contain data. For example, you may want to include a table that already defines the typical payment terms that your solution supports.</td>
+</tr>
+<tr>
+<td><strong>Include Related Tables</strong></td>
+<td>Select the check box to include all related tables. To add a subset of related tables, see step 3 in this procedure.</td>
+</tr>
+<tr>
+<td><strong>Include Dimension Tables</strong></td>
+<td>Select the check box to include dimension tables.</td>
+</tr>
+<tr>
+<td><strong>Include Licensed Tables Only</strong></td>
+<td>Select the check box to include only those tables for which the license under which you are creating the worksheet allows you access.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>Object</strong> FastTab, set filters as appropriate to specify the types of tables you want to include or exclude.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button. Business Central tables are added to the worksheet. Each entry in the list has a line of type <strong>Table</strong>.</p>
+</li>
+<li><p>To remove duplicate table information that can result from using the <strong>Get Tables</strong> action, choose the <strong>Delete Duplicate Lines</strong> action. This will remove duplicate tables that have the same package code.</p>
+</li>
+<li><p>You can add tables to the worksheet that are related to a table you have selected. Review the information in the <strong>Related Tables</strong> FactBox to see whether there are missing tables. To add related tables for a specific table, select the table in the list, and then choose the <strong>Get Related Tables</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Related tables will not be added with the <strong>Get Related Tables</strong> action if either of the following is true:</p>
+<ul>
+<li>The relation is conditional.<br>
+Example: If you get related tables for the <strong>Customer</strong> table, then the <strong>Location</strong> table will not be added, since it is only conditionally related to the <strong>Customer</strong> table, namely if the <strong>Location Code</strong> field in the <strong>Customer</strong> table is filled in.</li>
+<li>The related table is filtered.<br>
+Example: A field in the related table has a WHERE clause. The reason for this is that the involved relations information is stored in the <strong>Field</strong> virtual table and is not available in pages such as the configuration worksheet for performance reasons.<br>
+You must add related tables with such complex relationships manually by following step 4 in <a href="admin-how-to-manage-company-configuration-in-a-worksheet.html#to-add-a-table-to-the-worksheet">To add a table to the worksheet</a>.</li>
+</ul>
+</div>
+</li>
+<li><p>To delete tables in the resulting list of tables, select a table to remove, and then choose the <strong>Delete</strong> action.</p>
+</li>
+</ol>
+<p>Use the next procedure to specify which table fields to include. After you make this specification, you can export the table to Excel, and use the table structure as a template for gathering customer data. For more information, see <a href="admin-use-templates-to-prepare-customer-data-for-migration.html">Prepare to Migrate Customer Data</a>.</p>
+<h2 id="to-specify-a-set-of-fields-and-records-for-a-configuration-table">To specify a set of fields and records for a configuration table</h2>
+<ol>
+<li>Select a table in the list of configuration tables, and then chose the <strong>Edit List</strong> action.</li>
+<li>Select a table for which you want to specify field information, and then choose the <strong>Fields</strong> action.</li>
+<li>To select just the fields that you want to include, choose the <strong>Clear Included</strong> action. To add all fields, choose the <strong>Set Included</strong> action.</li>
+<li>o specify that the field data should not be validated, clear the <strong>Validate Field</strong> check box for the field.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+<li>To filter to a certain set of records to include in the configuration worksheet, choose the <strong>Filters</strong> action, and then specify the appropriate filter values.</li>
+</ol>
+<p>You can create areas of functionality and groups of tables in the worksheet in order to put similar functionality together. For example, in setting up the chart of accounts for your configuration, you may decide to create a group of posting tables. Typically, areas are used to group a set of tables that correspond to a functional area. Each area can contain groups. A group can be used to arrange tables that have a common meaning together.</p>
+<p>The following procedure describes how to add area and group designations, after you have created the initial list of tables. After you have added these categories, you can continue to add and modify your list of tables.</p>
+<h2 id="to-categorize-and-group-functionality-in-the-worksheet">To categorize and group functionality in the worksheet</h2>
+<ol>
+<li>At the beginning of an area, insert a new line in the worksheet.</li>
+<li>In the <strong>Line Type</strong> field, choose <strong>Area</strong>. In the <strong>Name</strong> field, enter a name for the area.</li>
+<li>At the beginning of a grouping of tables, insert a new line in the worksheet.</li>
+<li>In the <strong>Line Type</strong> field, choose <strong>Group</strong>. In the <strong>Name</strong> field, enter a name for the area. The group name is automatically indented.</li>
+<li>To move tables to the appropriate category, select a table to move, and then choose the <strong>Move Up</strong> or <strong>Move Down</strong> action. Alternatively, you can delete a worksheet line and insert the table again in the required location.</li>
+</ol>
+<p>Some Business Central tables are standard and the data in these is not likely to change from implementation to implementation. Consequently, to help your customer focus, you can remove these tables from the worksheet after you have included them in the configuration package. Once added, the tables remain part of the configuration package.</p>
+<h2 id="to-remove-a-standard-table-in-the-worksheet">To remove a standard table in the worksheet</h2>
+<p>After you have added all necessary tables to a configuration package, determine which tables will not require customer attention.</p>
+<ol>
+<li><p>Select the tables, and then delete them by choosing the <strong>Delete</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The tables remain in the package even though they are deleted from the worksheet.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-review-and-customize-existing-database-data">To review and customize existing database data</h2>
+<p>As you create a configuration package for a solution, you can view and customize the available database data to suit your customer needs. The database table has to have an associated page.</p>
+<h2 id="to-customize-data-in-the-database">To customize data in the database</h2>
+<ol>
+<li><p>On the <strong>Configuration Worksheet</strong> page, identify the tables whose data that you want to view or customize.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Make sure that each table has a page ID assigned to it. For standard Business Central tables, this value is automatically filled in. For custom tables, you have to provide the ID.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Database Data</strong> action.</p>
+<p>The Business Central page for the page opens.</p>
+</li>
+<li><p>Review the available information. Modify it as necessary by deleting records that are not relevant or by adding new ones.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-set-up-company-configuration.html">Set Up Company Configuration</a><br>
+<a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-manage-company-configuration-in-a-worksheet.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

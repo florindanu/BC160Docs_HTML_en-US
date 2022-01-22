@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Work with Inventory Periods | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Work with Inventory Periods | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can control the timeframe in which people can post post changes to inventory by defining inventory periods.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-with-inventory-periods">Work with Inventory Periods</h1>
+
+<p>Inventory periods define a period of time in which you can post changes to inventory. An inventory period is defined by the date on which it ends, or the ending date. When you close an inventory period, you cannot post any changes to inventory, either expected or invoiced, before this ending date. You cannot post any new values to inventory before the ending date. If you have open item entries in the closed period, meaning positive quantities that have not yet been applied to outbound transactions, you can still apply outbound quantities to these entries, even if the period is closed.</p>
+<p>The following sections describe how to:</p>
+<ul>
+<li>Create inventory periods.</li>
+<li>Close inventory periods.</li>
+<li>Reopen inventory periods.</li>
+</ul>
+<h2 id="to-create-an-inventory-period">To create an inventory period</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Periods</strong>, and then choose the related link.</li>
+<li>Create a new line.</li>
+<li>In the <strong>Ending Date</strong> field, enter the last date in the inventory period that you want to define. When the period is closed, you will not be able to post inventory changes before this date.</li>
+<li>Enter a descriptive name in the <strong>Name</strong> field. Choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="closing-inventory-periods">Closing Inventory Periods</h2>
+<p>The <strong>Closed</strong> field indicates whether or not the inventory period is closed to inventory value changes. You cannot edit this field.</p>
+<p>You can close any inventory period, provided that the following is true:</p>
+<ul>
+<li>There are no open outbound item ledger entries, meaning negative inventory, in that period.</li>
+<li>The cost of all items has been adjusted using the <strong>Adjust Cost – Item Entries</strong> batch job.</li>
+</ul>
+<p>This means that all outbound transaction quantities, such as those from sales orders, outbound transfers, sales invoices, purchase returns, or purchase credit memos, must be applied to existing quantity in inventory.</p>
+<h3 id="to-close-an-inventory-period">To close an inventory period</h3>
+<ol>
+<li><p>Before closing an inventory period, choose the <strong>Adjust Cost – Item Entries</strong> action to ensure that all cost adjustments are posted.</p>
+<p>Run the <strong>Close Inventory Period – Test</strong> report to determine if there are any open outbound item entries within the inventory period or any items whose cost has not yet been adjusted.</p>
+</li>
+<li><p>Choose the <strong>Close Inventory Period – Test</strong> action.</p>
+<p>Run the <strong>Post Inventory Cost to G/L</strong> batch job to ensure that all costs are posted to the general ledger.</p>
+</li>
+<li><p>Choose the <strong>Post Inventory to G/L</strong> action.</p>
+</li>
+<li><p>On the <strong>Inventory Periods</strong> page, select the inventory period you want to close.</p>
+</li>
+<li><p>Choose the <strong>Close Period</strong> action. After the inventory period has been closed, you cannot post inventory changes before the ending date. The cost of all items must be adjusted with the <strong>Adjust Cost – Item Entries</strong> batch job before you close the inventory period.</p>
+</li>
+<li><p>Choose the <strong>Yes</strong> button to confirm that you want to close the period, or choose <strong>No</strong> to cancel the closing.</p>
+</li>
+<li><p>The inventory period is closed and a confirmation message is displayed when it is finished.</p>
+</li>
+</ol>
+<h2 id="reopening-inventory-periods">Reopening Inventory Periods</h2>
+<p>After you have closed the inventory period, you cannot delete the inventory period. You can, however, reopen it, if you would like to allow posting before the ending date of the inventory period. Reopening a period also reopens all inventory periods with ending dates later than the period you reopen.</p>
+<h3 id="to-reopen-an-inventory-period">To reopen an inventory period</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Periods</strong>, and then choose the related link.</li>
+<li>Select the inventory period you want to reopen.</li>
+<li>Choose the <strong>Reopen Period</strong> period action. Confirm that you want to reopen the period.</li>
+<li>All inventory periods with ending dates later than the period you selected are reopened.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-periods.html">Design Details: Inventory Periods</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="ui-work-product.html">Working with Financials</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-to-work-with-inventory-periods.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Using the QuickBooks Migration Extension | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Using the QuickBooks Migration Extension | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to use the extension to import customers, vendors, items, and accounts from QuickBooks Desktop to Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="the-quickbooks-data-migration-extension">The QuickBooks Data Migration Extension</h1>
+
+<p>This extension makes it easy to migrate customers, vendors, items, and accounts from QuickBooks to Business Central. If your business uses QuickBooks today, you can export the relevant information and then open an assisted setup guide to upload the data to Business Central.<br>
+For more information, see <a href="across-import-data-configuration-packages.html">Importing Business Data from Other Finance Systems</a>.</p>
+<h2 id="data-from-quickbooks-desktop">Data from QuickBooks Desktop</h2>
+<p>You can import the following data from QuickBooks Online to Business Central:</p>
+<ul>
+<li>Customers</li>
+<li>Vendors</li>
+<li>Items</li>
+<li>Chart of Accounts</li>
+<li>Beginning Balance transactions in General Ledger</li>
+<li>On-hand Quantities for Inventory Items</li>
+<li>Open documents for customers and vendors, such as invoices, credit memos and payments</li>
+</ul>
+<p>We migrate only full amounts on sales and purchase documents. We do not update partially paid amounts. For example, if a customer has paid 300 of a total of 500 dollars on a sales invoice, we migrate the full 500. If you have received partial payments, you must update these manually, either before or after you migrate data. We recommend that you apply outstanding transactions before you migrate, just to make things easier afterward.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We do not migrate purchase orders or sales orders.</p>
+</div>
+<h2 id="before-you-start">Before You Start</h2>
+<p>An important part of the migration process is to specify the accounts to migrate transactions to. It's a good idea to plan this mapping before you migrate data. For example, the accounts where you post transactions for:</p>
+<ul>
+<li>The sale of items or services to customers</li>
+<li>The purchase of items or services from vendors</li>
+<li>Adjustments in the general ledger</li>
+</ul>
+<p>Business Central requires that general ledger accounts have account numbers assigned to them. Make sure that account numbers are assigned to your accounts in QuickBooks.
+If transactions in QuickBooks have tax amounts, you must set up a tax account for your tax jurisdictions in Business Central before you can post transactions.</p>
+<p>In order to get your data out of the QuickBooks desktop application you will need to download the Microsoft Data Exporter Tool.  The instructions for the tool are in the Data Migration Wizard in Business Central. The tool will connect to your QuickBooks application and export the applicable data to a .zip file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Currently the data exporter tool only works with QuickBooks 2017 and 2018.</p>
+</div>
+<h2 id="finding-the-quickbooks-data-migration-extension">Finding the QuickBooks Data Migration Extension</h2>
+<p>The QuickBooks Data Migration extension is installed and ready to go as an integrated part of the Data Migration assisted setup guide. If you are ready to get started now, and have exported your data from QuickBooks, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Assisted Setup</strong>, and then choose the related link. Choose <strong>Migrate business data</strong>, and then follow the steps in the guide.</p>
+<h2 id="what-do-i-do-after-i-migrate-data">What do I do after I migrate Data?</h2>
+<p>After you migrate data, transactions have the status Unposted, so you can review them and make adjustments. To review the transactions, go to the page where you would normally find them. For example, to review unposted sales invoices, go to the Sales Invoices page. To review payment journals, go to the Payment Journals page.
+There are a few things in particular that you should do:
+If the transactions in QuickBooks had markup or discount amounts, you must manually add the amounts to the related transactions in Business Central before you post them.
+If you are using value added tax (VAT), you may need to add a business posting group and a product posting group to the posting setup so that you can post VAT amounts.
+Verify the beginning balances for accounts in the general ledger. QuickBooks does not store the current balance for all accounts, so you might need to correct beginning balances.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-import-data-configuration-packages.html">Importing Business Data from Other Finance Systems</a><br>
+<a href="ui-extensions.html">Customizing Business Central Using Extensions </a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-quickbooks-data-migration.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

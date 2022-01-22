@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create and Modify Custom Layouts for Reports and Documents | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create and Modify Custom Layouts for Reports and Documents | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to create your own customized layouts to personalize the appearance of a report when it is viewed, printed, or saved.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-and-modify-custom-report-layouts">Create and Modify Custom Report Layouts</h1>
+
+<p>By default, a report will have a built-in report layout, which can be either an RDLC report layout or Word report layout, or both. You cannot modify built-in layouts. However, you can create your own custom layouts that enable you to change the appearance of report when it is viewed, printed or saved. You can create multiple custom report layouts for the same report, and then switch the layout that is used by a report as needed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In Business Central, the term &quot;report&quot; also covers externally-facing documents, such as sales invoices and order confirmations that you send to customers as PDF files.</p>
+</div>
+<p>To create a custom layout, you can either make a copy of an existing custom layout or add a new custom layout, which in most cases is based on a built-in layout. When you add a new custom layout, you can choose to add an RDLC report layout type, Word report layout type, or both. The new custom layout will automatically be based on the built-in layout for the report if one is available. If there is no built-in layout for the type, then a new blank layout is a created, which you will have to modify and design from scratch. For more information about RDLC and Word report layouts, built-in and custom layouts, and more, see <a href="ui-manage-report-layouts.html">Manage Report Layouts</a>.</p>
+<p>When custom report layouts are defined, you can select them from customer and vendor cards to specify that the selected layouts will be used for documents that you crate for the customer or vendor in question. For more information, see <a href="ui-define-customer-vendor-document-layouts.html">Define Document Layouts for Customers and Vendors</a>.</p>
+<h2 id="to-create-a-custom-layout">To create a custom layout</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Report Layout Selection</strong>, and then choose the related link.</p>
+<p>The <strong>Report Layout Selection</strong> page lists all the reports that are available in the company that is specified in the <strong>Company Name</strong> field at the top of the page.</p>
+</li>
+<li><p>Set the <strong>Company</strong> field to the company in which you want to create the report layout.</p>
+</li>
+<li><p>Select the row for the report that you want to create the layout for, and then choose the <strong>Custom Layouts</strong> action.</p>
+<p>The <strong>Custom Report Layouts</strong> page appears and lists all the custom layouts that are available for the selected report.</p>
+</li>
+<li><p>If you want to create a copy of an existing custom layout, select the existing custom layout in the list, and then choose the <strong>Copy</strong> action.</p>
+<p>The copy of the custom layout appears on the <strong>Custom Report Layouts</strong> page and has the words <em>Copy of</em> in the <strong>Description</strong> field.</p>
+</li>
+<li><p>If you want to add a new custom layout that is based on a built-in layout, do the following:</p>
+<ol>
+<li>Choose the <strong>New</strong> action. The <strong>Insert Built-in Layout for a Report</strong> page appears. The <strong>ID</strong> and <strong>Name</strong> fields are automatically filled in.</li>
+<li>To add a custom Word report layout type, select the <strong>Insert Word Layout</strong> check box.</li>
+<li>To add a custom RDLC report layout type, select the <strong>Insert RDLC Layout</strong> check box.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<p>The new custom layout now appear on the <strong>Custom Report Layouts</strong> page. If a new layout is based on a built-in layout, then it has the words <strong>Copy of a Built-in Layout</strong> in the <strong>Description</strong> field. If there was no built-in layout for the report, then the new layout has the words <strong>New Layout</strong> in the <strong>Description</strong> field, which indicates that custom layout is blank.</p>
+</li>
+<li><p>By default, the <strong>Company Name</strong> field is blank, which means that the custom layout will be available for the report in all companies. To make the custom layout available in a specific company only, choose <strong>Edit</strong>, and then set the <strong>Company Name</strong> field to the company that you want.</p>
+</li>
+</ol>
+<p>The custom layout has been created. You can now modify the custom layout as needed.</p>
+<h2 id="ModifyCustomLayout">Modifying a custom layout</h2>
+<p>To modify a report layout, you must first export the report layout as a file to a location on your computer or network, and then open the exported document and make the changes. When you are finished making the changes, you import the report layout.</p>
+<h3 id="to-modify-a-custom-layout">To modify a custom layout</h3>
+<ol>
+<li><p>You export a custom layout from the <strong>Custom Report Layouts</strong> page. If this page is not already open, search for and open the <strong>Report Layout Selection</strong> page, select the report that has the layout that you want to modify, and then choose the <strong>Custom Layouts</strong> action.</p>
+</li>
+<li><p>On the <strong>Custom Report Layouts</strong> page, select the layout that you want to modify, choose the <strong>Export Layout</strong> action, and then choose <strong>Save</strong> or <strong>Save As</strong> to save the report layout document to a location on your computer or network.</p>
+</li>
+<li><p>Open the report layout document that you just saved, and then make changes.</p>
+<p>If you are changing a Word layout, open the layout document in Word. For editing details, see the next section <a href="ui-how-create-custom-report-layout.html#MakeChangesToLayout">Making Changes to the Report Layout</a>.</p>
+<p>RDLC report layouts are more advanced than Word report layouts. For more information about modifying an RDLC report layout, see <a href="http://docs.microsoft.com/dynamics-nav/Designing-RDLC-Report-Layouts">Designing RDLC Report Layouts</a>.</p>
+<p>Remember to save you changes when done.</p>
+</li>
+<li><p>Return to the <strong>Custom Report Layouts</strong> page, select the report layout that you exported and modified, and then choose the <strong>Import Layout</strong> action.</p>
+</li>
+<li><p>In the <strong>Import</strong> dialog box, select <strong>Choose</strong> to find and select the report layout document, and then choose <strong>Open</strong>.</p>
+</li>
+</ol>
+<h2 id="MakeChangesToLayout"> Create and Modify Custom Report Layouts</h2>
+<p>To make general formatting and layout changes, such as changing text font, adding and modifying a table, or removing a data field, just use the basic editing features of Word, like you do with any Word document.</p>
+<p>If you are designing a Word report layout from scratch or adding new data fields, then start by adding a table that includes rows and columns that will eventually hold the data fields.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Show the table gridlines so that you see the boundaries of table cells. Remember to hide the gridlines when you are done editing. To show or hide table gridlines, select the table, and then under <strong>Layout</strong> on the <strong>Table</strong> tab, choose <strong>View Gridlines</strong>.</p>
+</div>
+<h3 id="embedding-fonts-in-word-layouts-for-consistency">Embedding Fonts in Word Layouts for Consistency</h3>
+<p>To ensure that reports always display and print with the intended fonts, regardless of where users open or print the reports, you can embed the fonts in the Word document. However, be aware that embedding fonts can significantly increase the size of the Word files. For more information about embedding fonts in Word, see <a href="https://support.office.com/article/Embed-fonts-in-Word-PowerPoint-or-Excel-cb3982aa-ea76-4323-b008-86670f222dbc">Embed fonts in Word, PowerPoint, or Excel</a>.</p>
+<h3 id="RemoveField"> Removing Label and Data Fields in Word Layouts</h3>
+<p>Label and data fields of a report are contained in content controls in Word. The following figure illustrates a content control when it is selected in the Word document.</p>
+<p><img src="media/nav_wordreportlayouts_contentcontrol.png" alt="Content control for field in Word report layout" title="NAV_WordReportLayouts_ContentControl"></p>
+<p>The name of the label or data field name displays in the content control. In the example, the field name is CompanyAddr1.</p>
+<h3 id="to-remove-a-label-or-data-field">To remove a label or data field</h3>
+<ol>
+<li><p>Right-click the field that you want to delete, and then choose <strong>Remove Content Control</strong>.</p>
+<p>The content control is removed, but the field name remains as text.</p>
+</li>
+<li><p>Delete the remaining text as needed.</p>
+</li>
+</ol>
+<h3 id="adding-data-fields">Adding data fields</h3>
+<p>Adding data fields from a report dataset is a more advanced and requires some knowledge of the report dataset. For information about adding fields for data, labels, data, and images, see <a href="ui-how-add-fields-word-report-layout.html">Add Fields to a Word Report Layout</a>.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/change-documents-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-manage-report-layouts.html">Managing Report Layouts</a><br>
+<a href="ui-how-change-layout-currently-used-report.html">Change the Current Report Layout</a><br>
+<a href="ui-how-import-and-export-report-layout.html">Import and Export a Custom Report or Document Layout</a><br>
+<a href="ui-work-report.html">Working with Reports, Batch Jobs, and XMLports</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-how-create-custom-report-layout.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

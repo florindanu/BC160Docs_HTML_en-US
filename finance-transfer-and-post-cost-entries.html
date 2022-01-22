@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Transferring and Posting Cost Entries | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Transferring and Posting Cost Entries | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Before you define cost allocations, you must understand where cost entries come from.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="transferring-and-posting-cost-entries">Transferring and Posting Cost Entries</h1>
+
+<p>Before you define cost allocations, you must understand how cost entries come from the following sources:</p>
+<ul>
+<li>Automatic transfer of general ledger entries.</li>
+<li>Manual cost posting for pure cost entries, internal charges, and manual allocations.</li>
+<li>Automatic allocation postings for actual costs.</li>
+<li>Transfer of budget entries to actual.</li>
+</ul>
+<h2 id="criteria-for-transferring-general-ledger-entries-to-cost-entries">Criteria for Transferring General Ledger Entries to Cost Entries</h2>
+<p>It is important to understand the criteria for transferring general ledger entries to cost entries. During the transfer, the <strong>Transfer GL Entries to CA</strong> batch job uses the following criteria to determine if and how the general ledger entries are transferred.</p>
+<p>General ledger entries are transferred if:</p>
+<ul>
+<li>The entries have dimension values corresponding to either a cost center or a cost object.</li>
+<li>The entries have dimension values that correspond to a cost center and a cost object. For these entries, the cost center takes precedence. This helps avoid a situation where a cost type appears in both a cost object and a cost center and is therefore counted twice in the statistics.</li>
+<li>The document number in the entries is empty, so it will appear with a document number of 0000 in the cost entries.</li>
+<li>The entries are transferred to a cost type that allows for combined entries and these entries are transferred as a combined entry either monthly or daily.</li>
+</ul>
+<p>General ledger entries are not transferred if:</p>
+<ul>
+<li>The entries have dimension values that do not correspond to a cost center or a cost object.</li>
+<li>The entries have an amount of zero.</li>
+<li>The entries have a general ledger account that has been deleted.</li>
+<li>The entries have a general ledger account that is not of the type <strong>Income Statement</strong>.</li>
+<li>The entries have a general ledger account that is not assigned a cost type.</li>
+<li>The entries have a posting date before the <strong>Starting Date for G/L Transfer</strong>.</li>
+<li>The entries have been posted with a closing date. These are typically entries that set back the balance of the income statement at the end of the year.</li>
+</ul>
+<h2 id="transferring-general-ledger-entries-to-cost-entries">Transferring General Ledger Entries to Cost Entries</h2>
+<p>You can transfer general ledger entries to cost entries.</p>
+<p>Before you run the process for transferring general ledger entries to cost entries, you must prepare the transfer to avoid manual correction posting.</p>
+<h3 id="to-prepare-the-transfer">To prepare the transfer</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Cost Accounting Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>Cost Accounting Setup</strong> page, verify that the <strong>Starting Date for G/L Transfer</strong> field is set to the correct value.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Cost Types</strong>, and then choose the related link.</li>
+<li>On the <strong>Cost Type Card</strong> page, verify that the <strong>G/L Account Range</strong> field is linked correctly for each cost type to take entries from the general ledger.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Accounts</strong>, and then choose the related link.</li>
+<li>For each relevant general ledger account, on the <strong>G/L Account Card</strong> page, verify that the <strong>Cost Type No.</strong> field is linked correctly to a cost type. For more information, see <a href="finance-set-up-cost-accounting.html">Setting Up Cost Accounting</a>.</li>
+<li>Verify that all relevant general ledger entries have dimension values that correspond to a cost center and a cost object.</li>
+</ol>
+<h3 id="to-transfer-general-ledger-entries-to-cost-entries">To transfer general ledger entries to cost entries</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Transfer GL Entries to CA</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Yes</strong> button to start the transfer. The process transfers all general ledger entries that have not already been transferred.</p>
+<p>During the transfer, the process creates connections in the entries in the <strong>Cost Entry</strong> table and the <strong>Cost Register</strong> table. This makes it possible to trace the source of cost entries.</p>
+</li>
+</ol>
+<h2 id="automatic-transfer-and-combined-entries">Automatic Transfer and Combined Entries</h2>
+<p>In cost accounting, you can transfer general ledger entries to a cost type by using a combined posting. You can specify if a cost type receives combined entries in the <strong>Combine Entries</strong> field in the cost type definition. The following table describes the different options.</p>
+<table>
+<thead>
+<tr>
+<th>Combine Entries</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>None</td>
+<td>Each general ledger entry is transferred individually to the corresponding cost type.</td>
+</tr>
+<tr>
+<td>Day</td>
+<td>General ledger entries with the same posting date are transferred as one entry to the corresponding cost type.</td>
+</tr>
+<tr>
+<td>Month</td>
+<td>All general ledger entries in the same calendar month are transferred as one entry to the corresponding cost type.</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you have selected the <strong>Auto Transfer from G/L</strong> check box on the <strong>Cost Accounting Setup</strong> page, Business Central updates the cost accounting after every posting in the general ledger. Combined entries are not possible.</p>
+</div>
+<h2 id="results-of-transferring-general-ledger-entries-to-cost-entries">Results of Transferring General Ledger Entries to Cost Entries</h2>
+<p>During the transfer of general ledger entries to cost entries, Business Central creates connections in the entries in the <strong>G/L Entry</strong> table, the <strong>Cost Entry</strong> table, and the <strong>Cost Register</strong> table to make it possible to trace the connections between cost entries and general ledger entries.</p>
+<h3 id="general-ledger-entries">General Ledger Entries</h3>
+<p>For each general ledger entry that is transferred to cost accounting, Business Central fills the cost <strong>Entry No.</strong> field.</p>
+<h3 id="cost-entries">Cost Entries</h3>
+<p>For each cost entry, Business Central saves the entry number of the corresponding general ledger entry in the <strong>G/L Entry No.</strong> field in the <strong>Cost Entry</strong> table.</p>
+<p>For combined cost entries, Business Central saves the entry number of the last general ledger entry, which is the entry with the highest entry number.</p>
+<p>The <strong>G/L Account</strong> field in the <strong>Cost Entry</strong> table contains the number of the general ledger account that the cost entry came from.</p>
+<p>For single cost entries, Business Central transfers the posting text from the general ledger entry to the <strong>Description</strong> text field. For combined entries, the text field shows these entries are transferred as combined entries. For example, for a combined entry for the month of October in 2013, the text can be <strong>Combined Entries, October 2013</strong>.</p>
+<h3 id="cost-register">Cost Register</h3>
+<p>In the <strong>Cost Register</strong> table, Business Central creates an entry with the source transfer from general ledger. The entry records the first and last entry numbers of the general ledger entries that are transferred, in addition to the first and last entry numbers of the cost entries that are created.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-about-cost-accounting.html">About Cost Accounting</a><br>
+<a href="finance-set-up-cost-accounting.html">Setting Up Cost Accounting</a><br>
+<a href="finance-define-and-allocate-costs.html">Defining and Allocating Costs</a><br>
+<a href="finance-manage-cost-accounting.html">Accounting for Costs</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-transfer-and-post-cost-entries.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

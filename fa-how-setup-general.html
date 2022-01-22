@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up General Ledger FA| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up General Ledger FA| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Before you work with fixed assets, you must set up default G/L accounts, posting groups, allocation keys, journal templates and batches, and class codes.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-general-fixed-assets-information">Set Up General Fixed Assets Information</h1>
+
+<p>Before you can manage fixed assets, you must set up default G/L accounts, allocation keys, journal templates and batches for fixed asset posting and reclassification, and you can classify fixed assets in classes, such as Tangible and Intangible.</p>
+<h2 id="to-set-up-general-default-values-for-fixed-assets">To set up general default values for fixed assets</h2>
+<p>You define the general behavior or the fixed asset functionality and set up document number series in the  on the <strong>Fixed Assets Setup</strong> page.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets Setup</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-posting-groups">To set up fixed asset posting groups</h2>
+<p>You use posting groups to define groups of fixed assets. Entries for these posting groups are posted to the same general ledger accounts.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Posting Groups</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>FA Posting Group Card</strong> page, fill in the fields as necessary.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To make sure that balancing accounts for different fixed assets postings are automatically inserted when you choose the <strong>Insert FA Bal. Account</strong> action on journal lines, follow the next step, based on appreciation posting.</p>
+</div>
+</li>
+<li><p>On the <strong>Balancing Account</strong> FastTab, in the <strong>Appreciation Bal. Account</strong> field, select the general ledger account to which you want to post balancing entries for appreciation.</p>
+</li>
+</ol>
+<p>For more information about using the <strong>Insert FA Bal. Account</strong> action on fixed asset G/L journal lines, see, for example, <a href="fa-how-revalue.html">Revalue Fixed Assets</a>.</p>
+<h2 id="to-set-up-fixed-asset-allocation-keys">To set up fixed asset allocation keys</h2>
+<p>Transactions can be allocated to various departments or projects, according to user-defined allocation keys. For example, you could set up an allocation key to allocate depreciation costs on cars with 35 percent to the administration department and 65 percent to the sales department. For more information, see <a href="year-allocate-costs-income.html">Allocate Costs and Income</a>.</p>
+<p>Allocation keys apply to fixed asset classes, not to individual assets.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Posting Groups</strong>, and then choose the related link.</li>
+<li>On the <strong>FA Posting Groups</strong> page, choose the <strong>Allocations</strong> action, and then choose a posting type.</li>
+<li>On the <strong>FA Allocations</strong> page, fill in the fields as necessary.</li>
+<li>Repeat steps 2 and 3 for each posting type that you want to define allocation keys for.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-journal-templates">To set up fixed asset journal templates</h2>
+<p>A template is a predefined layout for a journal. The template contains information about trace codes, reports, and number series. For more information, see <a href="ui-work-general-journals.html">Working with General Journals</a>.</p>
+<p>Business Central automatically creates a fixed asset journal template the first time that you open the <strong>Fixed Asset Journal</strong> page, but you can set up additional journal templates.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Journal Templates</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-journal-batches">To set up fixed asset journal batches</h2>
+<p>You can set up multiple journal batches, which are individual journals for each journal template. For example, employees can have their own journal batch that uses the employee’s initials as the journal batch name. For more information, see <a href="ui-work-general-journals.html">Work with General Journals</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Journal Templates</strong>, and then choose the related link.</li>
+<li>Select the relevant journal template, and then choose the <strong>Batches</strong> action.</li>
+<li>On the <strong>FA Journal Batches</strong> page, fill in the fields as necessary.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-reclassification-journal-templates">To set up fixed asset reclassification journal templates</h2>
+<p>You use dedicated reclassification journals when you need to transfer, split, or combine fixed assets. Business Central automatically creates a fixed asset reclassification journal template the first time that you open the <strong>FA Reclass. Journal</strong> page, but you can set up additional reclassification journal templates. For more information, see <a href="ui-work-general-journals.html">Work with General Journals</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Reclass. Journal Templates</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-reclassification-journal-batches">To set up fixed asset reclassification journal batches</h2>
+<p>You can set up multiple journal batches, which are individual journals for each reclassification journal template. For example, employees can have their own reclassification journal batch that uses the employee’s initials as the reclassification journal batch name. For more information, see <a href="ui-work-general-journals.html">Work with General Journals</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Reclass. Journal Templates</strong>, and then choose the related link.</li>
+<li>Select the relevant journal template, and then choose the <strong>Batches</strong> action.</li>
+<li>On the <strong>FA Reclass. Journal Batches</strong> page, fill in the fields as necessary.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-class-codes">To set up fixed asset class codes</h2>
+<p>Fixed asset class codes can be used to group fixed assets, for example, in tangible and intangible assets.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Classes</strong>, and then choose the related link.</li>
+<li>Enter codes and names for the classes that you want to create.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-subclass-codes">To set up fixed asset subclass codes</h2>
+<p>You use fixed asset subclass codes to group your fixed assets into categories, such as buildings, vehicles, furniture, or machinery.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Subclasses</strong>, and then choose the related link.</li>
+<li>Enter codes and names for the classes that you want to create.</li>
+</ol>
+<h2 id="to-set-up-fixed-asset-location-codes">To set up fixed asset location codes</h2>
+<p>You use fixed asset location codes to register the location of the fixed asset, such as sales department, reception, administration, production, or warehouse. This information is useful for insurance and inventory purposes.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA locations</strong>, and then choose the related link.</li>
+<li>Enter codes and names for the fixed asset locations that you want to create.</li>
+</ol>
+<h2 id="to-register-opening-entries">To register opening entries</h2>
+<p>If you are using the fixed assets in Business Central for the first time, you must set up the general ledger application area before you set up fixed assets. How you do this depends on whether fixed assets is integrated with general ledger.</p>
+<p>The following procedure is used if fixed asset transactions are to be posted to the general ledger.</p>
+<ol>
+<li><p>Make sure that you have completed the basic setup procedures for fixed assets.</p>
+</li>
+<li><p>Create a fixed asset card for each existing asset.</p>
+</li>
+<li><p>Create a fixed asset depreciation book for each depreciation purpose (such as tax and financial statements). For each depreciation book, you must define the terms and conditions, such as integration with general ledger.</p>
+<p>Enable general ledger integration by following the next steps. First, make sure that general ledger integration is disabled for all depreciation books, then post the opening entries, and finally, turn on general ledger integration.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Books</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant depreciation book, and then choose the <strong>Edit</strong> action to open the <strong>Depreciation Book Card</strong> page.</p>
+</li>
+<li><p>On the <strong>Integration</strong> FastTab, make sure all fields are blank by clearing all check marks. If you have more than one depreciation book, turn off general ledger integration for each one.</p>
+</li>
+<li><p>In the fixed asset journal, enter the following lines for each asset:</p>
+<ul>
+<li>A line with the acquisition cost.</li>
+<li>A line with the accumulated depreciation to the end of the previous fiscal year.</li>
+<li>A line with the accumulated depreciation from the start of the current fiscal year to the date that Business Central is set to start calculating the depreciation.</li>
+</ul>
+<p>If you have other opening balances you can also enter them now, such as write-down and appreciation.</p>
+</li>
+<li><p>After you have entered and posted the journal lines for each asset, turn on general ledger integration in the
+depreciation books.</p>
+</li>
+</ol>
+<p>If the fixed assets are not integrated with the general ledger, skip step 6 and 8.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="fa-manage.html">Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-setup-general.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

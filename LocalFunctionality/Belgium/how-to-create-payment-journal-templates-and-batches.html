@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Payment Journal Templates and Batches </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Payment Journal Templates and Batches ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In the Belgian version of Business Central, payment suggestions are generated and posted in payment journals. The structure of the payment journal is similar to the structure of other journal types.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-payment-journal-templates-and-batches">Create Payment Journal Templates and Batches</h1>
+
+<p>In Business Central, payment suggestions are generated and posted in payment journals. The structure of the payment journal is similar to the structure of other journal types. However, the payment journal contains some fields that are specific for processing payments. Before you can start generating payment suggestions, you have to set up a payment journal template and a payment journal batch.</p>
+<p>If you assign a bank account to the payment journal template, the bank account will be inserted on all payment journal batches and payment journal lines that are created by using this template. By specifying a bank account for the journal template, you can reduce the time that is required for checking the payment suggestions.</p>
+<h2 id="to-create-a-payment-journal-template">To create a payment journal template</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Payment Journal Templates</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>EB Payment Journal Templates</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Enter the unique name for the payment journal template that you are creating.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Enter a description of the payment journal template.</td>
+</tr>
+<tr>
+<td><strong>Bank Account</strong></td>
+<td>Select the bank account that will be used when you create a payment suggestion.</td>
+</tr>
+<tr>
+<td><strong>Reason Code</strong></td>
+<td>Select the reason code that will be used on all the journal batches and lines that are created by using the journal template. If you want to use a different reason code on a journal line, you can manually change it.</td>
+</tr>
+<tr>
+<td><strong>Source Code</strong></td>
+<td>Select the source code that will be used on all the journal batches and lines that are created by using the journal template.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-add-payment-journal-batches-to-the-journal-template">To add payment journal batches to the journal template</h2>
+<ol>
+<li><p>On the <strong>Payment Journal Templates</strong> page, choose the <strong>Batches</strong> action.</p>
+</li>
+<li><p>On the <strong>Paym. Journal Batch</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Journal Template Name</strong></td>
+<td>Specify a journal template name for the payment journal batch.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>Enter a unique name for the journal batch.<br><br> <strong>NOTE:</strong> To have the journal name update numerically, include a number in the journal batch name. For example, the name KBC1 will increment by one number with every posting to KBC2, KBC3, and so on.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Enter a description for the journal batch.</td>
+</tr>
+<tr>
+<td><strong>Reason Code</strong></td>
+<td>Specifies the reason code that is linked to this journal batch.</td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td>Specifies the status of the batch.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="belgian-electronic-payments.html">Belgian Electronic Payments</a><br>
+<a href="how-to-set-up-electronic-banking.html">Set Up Electronic Banking</a><br>
+<a href="how-to-set-up-iblc-blwi-transaction-codes.html">Set Up IBLC-BLWI Transaction Codes</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Belgium/how-to-create-payment-journal-templates-and-batches.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

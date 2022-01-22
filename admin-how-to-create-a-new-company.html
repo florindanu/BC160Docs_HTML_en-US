@@ -1,0 +1,225 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create a New Company | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create a New Company | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="To use RapidStart Services tables and pages are created, but there is no data in them.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-a-new-company">Create a New Company</h1>
+
+<p>To use RapidStart Services for Business Central, you first create a new company for which you want to perform a customer implementation. When you create a new company, the standard Business Central tables and pages are created, but there is no data in them.</p>
+<p>In addition, you can apply specific setup data to your company after you initialize it. The information is provided in a configuration package, a .rapidstart file, which delivers content in a compressed format.</p>
+<p>Example configuration packages, including country/region-specific files, are included with the CRONUS demonstration company. Use the following procedures to use the example configuration package with a new company.</p>
+<h2 id="to-use-the-sample-basicconfig-configuration-package">To use the sample BASICCONFIG configuration package</h2>
+<ol>
+<li>Open the CRONUS International Ltd. company. For more information, see <a href="ui-change-basic-settings.html">Change Basic Settings</a>.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then choose the related link.</li>
+<li>Choose the BASICCONFIG package from the list, and then choose the <strong>Export Package</strong> action.</li>
+</ol>
+<p>Use the following procedure to create a new company, and use the BASICCONFIG package as part of the process.</p>
+<h2 id="to-create-a-new-company">To create a new company</h2>
+<ol>
+<li>Create a new company. For more information, see <a href="about-new-company.html">Creating New Companies in Business Central</a>.</li>
+<li>From the RapidStart Services Implementer Role Center, you can now import the configuration package that you exported from the CRONUS International Ltd. company.</li>
+</ol>
+<p>After you create a new company, some tables are automatically filled in, even if no company template is applied. For example, you can review the standard codes for posting and batch transactions on the <strong>Source Code</strong> page. If you provide a local version of Business Central, you should review this table and consider any local language issues.</p>
+<h2 id="about-data-tables">About Data Tables</h2>
+<p>Business Central, data tables come in two basic types: Master and Setup. When you are setting up a company configuration, you can use these types to focus your configuration strategy.</p>
+<h3 id="master-data-tables">Master Data Tables</h3>
+<p>The following table lists some of the master data tables. When you initialize a new company, these tables are empty.</p>
+<table>
+<thead>
+<tr>
+<th>Table No.</th>
+<th>Table Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>G/L Account</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Customer</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Vendor</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Item</td>
+</tr>
+<tr>
+<td>5050</td>
+<td>Contact</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setup-data-tables">Setup Data Tables</h3>
+<p>The following table lists some of the setup data tables, in which you capture setup information in the configuration questionnaire. These tables contain baseline information when the company is created.</p>
+<table>
+<thead>
+<tr>
+<th>Table No.</th>
+<th>Table Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>98</td>
+<td>General Ledger Setup</td>
+</tr>
+<tr>
+<td>311</td>
+<td>Sales &amp; Receivables Setup</td>
+</tr>
+<tr>
+<td>312</td>
+<td>Purchases &amp; Payables Setup</td>
+</tr>
+<tr>
+<td>313</td>
+<td>Inventory Setup</td>
+</tr>
+</tbody>
+</table>
+<p>In addition to setup data tables, Business Central also has setup-type data tables that specify core information about the company and its business processes. The following table lists some of them.</p>
+<table>
+<thead>
+<tr>
+<th>Table No.</th>
+<th>Table Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Payment Terms</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Currency</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Customer Price Groups</td>
+</tr>
+<tr>
+<td>5700</td>
+<td>Stockkeeping Unit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-apply-configuration-to-new-companies.html">Apply Configurations to New Companies</a><br>
+<a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-create-a-new-company.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Link a Sales Order to a Purchase Order for Direct Shipment | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Link a Sales Order to a Purchase Order for Direct Shipment | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to create a sales order linked to a purchase order to enable shipment directly from the vendor to the customer.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="make-drop-shipments">Make Drop Shipments</h1>
+
+<p>A drop shipment is the shipment of items from one of your vendors directly to one of your customers.</p>
+<p>When a sales order is marked for drop shipment, and you create a purchase order specifying the customer in the <strong>Ship-to</strong> field, <strong>Customer Address</strong>, you can link the two documents and thereby instruct the vendor to ship directly to the customer.
+<br><br></p>
+<div class="embeddedvideo"><iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4mOyM?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="to-create-a-sales-order-for-drop-shipment">To create a sales order for drop shipment</h2>
+<p>To prepare a drop shipment, you create a sales order for an item as normal, except you must indicate on the sales line that the sale requires drop shipment.</p>
+<ol>
+<li>Create a sales order for an item. For more information, see <a href="sales-how-sell-products.html">Sell Products</a>.</li>
+<li>On the sales order line for the drop shipment, select the <strong>Drop Shipment</strong> check box. Use the <strong>Choose Columns</strong> function if the field is not visible. For more information, see <a href="ui-personalization-user.html">Personalize Your Workspace</a>.</li>
+</ol>
+<h2 id="to-create-the-purchase-order-for-drop-shipment">To create the purchase order for drop shipment</h2>
+<p>To prepare a drop shipment for the item to be sold, you create a purchase order as normal, except you must indicate on the purchase order that it must be shipped to your customer, not to yourself.</p>
+<ol>
+<li>Create a purchase order. Do not fill any fields on the lines. For more information, see <a href="purchasing-how-record-purchases.html">Record Purchases</a>.</li>
+<li>In the <strong>Ship-to</strong> field, select <strong>Customer Address</strong>.</li>
+<li>In the <strong>Customer</strong> field, select the customer that you are selling to.</li>
+<li>Choose the <strong>Drop Shipments</strong> action, and then choose the <strong>Get Sales Order</strong> action.</li>
+<li>On the <strong>Sales List</strong> page, select the sales order that you prepared in <a href="sales-how-drop-shipment.html#to-create-a-sales-order-for-drop-shipment">To create a sales order for drop shipment</a>.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<p>The line information from the sales order is inserted on the purchase order line(s).</p>
+<p>You can now instruct the vendor to ship the items to your customer, for example, by mailing the purchase order as a PDF.</p>
+<h2 id="to-view-the-linked-purchase-order-from-the-sales-order">To view the linked purchase order from the sales order</h2>
+<ul>
+<li>Select the drop-shipment sales order line, choose the <strong>Order</strong> action, choose the <strong>Drop Shipment</strong> action, and then choose the <strong>Purchase Order</strong> action.</li>
+</ul>
+<h2 id="to-post-a-drop-shipment">To post a drop shipment</h2>
+<p>After the vendor ships the items, you can post the sales order as shipped. You can also post the purchase order, but only with the <strong>Receive</strong> option until the sales order has been invoiced.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</li>
+<li>Open the sales order that you created in <a href="">To create a sales order for drop shipment</a>.</li>
+<li>In the <strong>Qty. to Ship</strong> field, specify how many of the order quantity to ship, the full or a partial order quantity.</li>
+<li>Choose the <strong>Post</strong> or <strong>Post and Send</strong> action.</li>
+<li>Choose either the <strong>Ship</strong> option to invoice later, or the <strong>Ship and Invoice</strong> option to invoice immediately.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-how-to-create-special-orders.html">Create Special Orders</a><br>
+<a href="purchasing-how-purchase-products-sale.html">Purchase Items for a Sale</a><br>
+<a href="sales-how-sell-products.html">Sell Products</a><br>
+<a href="purchasing-how-record-purchases.html">Record Purchases</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/sales-how-drop-shipment.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Revaluation | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Revaluation | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can revalue the inventory based on the valuation base that most accurately reflects the inventory value. You can also backdate a revaluation, so that the cost of goods sold (COGS) is correctly updated for items that have already been sold. Items using the Standard costing method that have not been completely invoiced can also be revalued.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-revaluation">Design Details: Revaluation</h1>
+
+<p>You can revalue the inventory based on the valuation base that most accurately reflects the inventory value. You can also backdate a revaluation, so that the cost of goods sold (COGS) is correctly updated for items that have already been sold. Items using the Standard costing method that have not been completely invoiced can also be revalued.</p>
+<p>In Business Central, the following flexibility is supported regarding revaluation:</p>
+<ul>
+<li>The revaluable quantity can be calculated for any date, also back in time.</li>
+<li>For items using Standard costing method, expected cost entries are included in revaluation.</li>
+<li>Inventory decreases affected by revaluation are detected.</li>
+</ul>
+<h2 id="calculating-the-revaluable-quantity">Calculating the Revaluable Quantity</h2>
+<p>The revaluable quantity is the remaining quantity on inventory that is available for revaluation on a given date. It is calculated as the sum total of the quantities of completely invoiced item ledger entries that have a posting date equal to or earlier than the revaluation posting date.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Items using the Standard costing method are treated differently when calculating the revaluable quantity per item, location, and variant. The quantities and values of item ledger entries that are not completely invoiced are included in the revaluable quantity.</p>
+</div>
+<p>After a revaluation has been posted, you can post an inventory increase or decrease with a posting date that comes before the revaluation posting date. However, this quantity will not be affected by the revaluation. To balance the inventory, only the original revaluable quantity is considered.</p>
+<p>Because revaluation can be made on any date, you must have conventions for when an item is considered part of inventory from a financial point of view. For example, when the item is on inventory and when the item is work in process (WIP).</p>
+<h3 id="example">Example</h3>
+<p>The following example illustrates when a WIP item transitions to become part of inventory. The example is based on the production of a chain with 150 links.</p>
+<p><img src="media/design_details_inventory_costing_10_revaluation_wip.png" alt="WIP inventory and revaluation" title="WIP inventory and revaluation"></p>
+<p><strong>1Q</strong>: The user posts the purchased links as received. The following table shows the resulting item ledger entry.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item</th>
+<th>Entry Type</th>
+<th>Quantity</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-01-20</td>
+<td>LINK</td>
+<td>Purchase</td>
+<td>150</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Now an item using the Standard costing method is available for revaluation.</p>
+</div>
+<p><strong>1V</strong>: The user posts the purchased links as invoiced and the links become part of inventory, from a financial point of view. The following table shows the resulting value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Entry Type</th>
+<th>Valuation Date</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-15-20</td>
+<td>Direct Cost</td>
+<td>01-01-20</td>
+<td>150.00</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2Q + 2V</strong>: The user posts the purchased links as consumed for the production of the iron chain. From a financial point of view, the links become part of WIP inventory.  The following table shows the resulting item ledger entry.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item</th>
+<th>Entry Type</th>
+<th>Quantity</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-01-20</td>
+<td>LINK</td>
+<td>Consumption</td>
+<td>-150</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>The following table shows the resulting value entry.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Entry Type</th>
+<th>Valuation Date</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-01-20</td>
+<td>Direct Cost</td>
+<td>02-01-20</td>
+<td>-150.00</td>
+<td>2</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>The valuation date is set to the date of the consumption posting (02-01-20), as a regular inventory decrease.</p>
+<p><strong>3Q</strong>: The user posts the chain as output and finishes the production order. The following table shows the resulting item ledger entry.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Item</th>
+<th>Entry Type</th>
+<th>Quantity</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>02-15-20</td>
+<td>CHAIN</td>
+<td>Output</td>
+<td>1</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>3V</strong>: The user runs the <strong>Adjust Cost - Item Entries</strong> batch job, which posts the chain as invoiced to indicate that all material consumption has been completely invoiced. From a financial point of view, the links are no longer part of WIP inventory when the output is completely invoiced and adjusted. The following table shows the resulting value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Posting Date</th>
+<th>Entry Type</th>
+<th>Valuation Date</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01-15-20</td>
+<td>Direct Cost</td>
+<td>01-01-20</td>
+<td>150.00</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>02-01-20</td>
+<td>Direct Cost</td>
+<td>02-01-20</td>
+<td>-150.00</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>02-15-20</td>
+<td>Direct Cost</td>
+<td>02-15-20</td>
+<td>150.00</td>
+<td>3</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="expected-cost-in-revaluation">Expected Cost in Revaluation</h2>
+<p>The revaluable quantity XE &quot;Revaluable Quantity&quot;  XE &quot;Quantity;Revaluable&quot;  is calculated as the sum of quantity XE &quot;quantity&quot;  for completely invoiced XE &quot;Invoice&quot;  item ledger XE &quot;Item Ledger&quot;  entries with a posting date equal to or earlier than the revaluation XE &quot;Revaluation&quot;  date. This means that when some items are received/shipped but not invoiced, their inventory value cannot be calculated XE &quot;Inventory Value&quot; . Items using the Standard costing method are not limited in this respect. XE &quot;Value&quot;</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Another type of expected cost that can be revalued is WIP inventory, within certain rules. For more information, see the “WIP Inventory Revaluation” section in this topic.</p>
+</div>
+<p>When calculating the revaluable quantity for items using the Standard costing method, item ledger entries that have not been completely invoiced are included in the calculation. These entries are then revalued when you post the revaluation. When you invoice the revalued entry, the following value entries are created:</p>
+<ul>
+<li>The usual invoiced value entry with an entry type of <strong>Direct Cost</strong>. The cost amount on this entry is the direct cost from the source line.</li>
+<li>A value entry with an entry type of <strong>Variance</strong>. This entry records the difference between the invoiced cost and the revalued standard cost.</li>
+<li>A value entry with an entry type of <strong>Revaluation</strong>. This entry records the reversal of the revaluation of the expected cost.</li>
+</ul>
+<h3 id="example-1">Example</h3>
+<p>The following example, which is based on the production of the chain in the previous example, illustrates how the three types of entries are created. It is based on the following scenario:</p>
+<ol>
+<li><p>The user posts the purchased links as received with a unit cost of LCY 2.00.</p>
+</li>
+<li><p>The user then posts a revaluation of the links with a new unit cost of LCY 3.00, updating the standard cost to LCY 3.00.</p>
+</li>
+<li><p>The user posts the original purchase of the links as invoiced, which creates the following:</p>
+<ol>
+<li>An invoiced value entry with an entry type of <strong>Direct Cost</strong>.</li>
+<li>A value entry with an entry type of <strong>Revaluation</strong> to record the reversal of the revaluation of the expected cost.</li>
+<li>A value entry with an entry type of Variance, recording the difference between the invoiced cost and the revalued standard cost.<br>
+The following table shows the resulting value entries.</li>
+</ol>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Posting Date</th>
+<th>Entry Type</th>
+<th>Valuation Date</th>
+<th>Cost Amount (Expected)</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>01-15-20</td>
+<td>Direct Cost</td>
+<td>01-15-20</td>
+<td>300.00</td>
+<td>0.00</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2.</td>
+<td>01-20-20</td>
+<td>Revaluation</td>
+<td>01-20-20</td>
+<td>150.00</td>
+<td>0.00</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3.a.</td>
+<td>01-15-20</td>
+<td>Direct Cost</td>
+<td>01-15-20</td>
+<td>-300.00</td>
+<td>0.00</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3.b.</td>
+<td>01-15-20</td>
+<td>Revaluation</td>
+<td>01-20-20</td>
+<td>-150.00</td>
+<td>0.00</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3.c.</td>
+<td>01-15-20</td>
+<td>Variance</td>
+<td>01-15-20</td>
+<td>0.00</td>
+<td>450.00</td>
+<td>1</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="determining-if-an-inventory-decrease-is-affected-by-revaluation">Determining if an Inventory Decrease Is Affected by Revaluation</h2>
+<p>The date of the posting or the revaluation is used to determine if an inventory decrease is affected by a revaluation.</p>
+<p>The following table shows the criteria that is used for an item that does not use the Average costing method.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Entry No.</th>
+<th>Timing</th>
+<th>Affected by revaluation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Earlier than revaluation entry number</td>
+<td>Earlier than revaluation posting date</td>
+<td>No</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Earlier than revaluation entry no.</td>
+<td>Equal to revaluation posting date</td>
+<td>No</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Earlier than revaluation entry no.</td>
+<td>Later than revaluation posting date</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Later than revaluation entry no.</td>
+<td>Earlier than revaluation posting date</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Later than revaluation entry no.</td>
+<td>Equal to revaluation posting date</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Later than revaluation entry no.</td>
+<td>Later than revaluation posting date</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-2">Example</h3>
+<p>The following example, which illustrates revaluation of an item that uses the FIFO costing method, is based on the following scenario:</p>
+<ol>
+<li>On 01-01-20, the user posts a purchase of 6 units.</li>
+<li>On 02-01-20, the user posts a sale of 1 unit.</li>
+<li>On 03-01-20, the user posts a sale of 1 unit.</li>
+<li>On 04-01-20, the user posts a sale of 1 unit.</li>
+<li>On 03-01-20, the user calculates the inventory value for the item, and posts a revaluation of the item’s unit cost from LCY 10.00 to LCY 8.00.</li>
+<li>On 02-01-20, the user posts a sale of 1 unit.</li>
+<li>On 03-01-20, the user posts a sale of 1 unit.</li>
+<li>On 04-01-20, the user posts a sale of 1 unit.</li>
+<li>The user runs the <strong>Adjust Cost - Item Entries</strong> batch job.</li>
+</ol>
+<p>The following table shows the resulting value entries.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Posting Date</th>
+<th>Entry Type</th>
+<th>Valuation Date</th>
+<th>Valued Quantity</th>
+<th>Cost Amount (Actual)</th>
+<th>Item Ledger Entry No.</th>
+<th>Entry No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>01-01-20</td>
+<td>Purchase</td>
+<td>01-01-20</td>
+<td>6</td>
+<td>60.00</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td></td>
+<td>03-01-20</td>
+<td>Revaluation</td>
+<td>03-01-20</td>
+<td>4</td>
+<td>-8.00</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>A</td>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>02-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>B</td>
+<td>03-01-20</td>
+<td>Sale</td>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>C</td>
+<td>04-01-20</td>
+<td>Sale</td>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td></td>
+<td>04-01-20</td>
+<td>Sale</td>
+<td>04-01-20</td>
+<td>-1</td>
+<td>2.00</td>
+<td>4</td>
+<td>9</td>
+</tr>
+<tr>
+<td>D</td>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td></td>
+<td>02-01-20</td>
+<td>Sale</td>
+<td>03-01-20</td>
+<td>-1</td>
+<td>2.00</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>E</td>
+<td>03-01-20</td>
+<td>Sale</td>
+<td>03-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>6</td>
+<td>7</td>
+</tr>
+<tr>
+<td></td>
+<td>03-01-20</td>
+<td>Sale</td>
+<td>03-01-20</td>
+<td>-1</td>
+<td>2.00</td>
+<td>6</td>
+<td>11</td>
+</tr>
+<tr>
+<td>F</td>
+<td>04-01-20</td>
+<td>Sale</td>
+<td>04-01-20</td>
+<td>-1</td>
+<td>-10.00</td>
+<td>7</td>
+<td>8</td>
+</tr>
+<tr>
+<td></td>
+<td>04-01-20</td>
+<td>Sale</td>
+<td>04-01-20</td>
+<td>-1</td>
+<td>2.00</td>
+<td>7</td>
+<td>12</td>
+</tr>
+</tbody>
+</table>
+<h2 id="wip-inventory-revaluation">WIP Inventory Revaluation</h2>
+<p>Revaluation of WIP inventory implies revaluing components that are registered as part of WIP inventory at the time of the revaluation.</p>
+<p>With this in mind, it is important to establish conventions as to when an item is considered part of the WIP inventory from a financial point of view. In Business Central, the following conventions exist:</p>
+<ul>
+<li>A purchased component becomes part of the raw material inventory from the time of posting a purchase as invoiced.</li>
+<li>A purchased/subassembled component becomes part of the WIP inventory from the time of posting its consumption in connection with a production order.</li>
+<li>A purchased/subassembled component remains part of the WIP inventory until the time when a production order (manufactured item) is invoiced.</li>
+</ul>
+<p>The way the valuation date for the value entry of consumption is set, follows the same rules as for non-WIP inventory. For more information, see the “Determining if an Inventory Decrease Is Affected by Revaluation” section in this topic.</p>
+<p>WIP inventory can be revalued as long as the revaluation date is not later than the posting date of the corresponding item ledger entries of type Consumption and as long as the corresponding production order has not been invoiced yet.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>The <strong>Inventory Valuation - WIP</strong> report shows the value of posted production order entries and may therefore be a little confusing for WIP items that have been revalued.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-costing-methods.html">Design Details: Costing Methods</a><br>
+<a href="design-details-inventory-valuation.html">Design Details: Inventory Valuation</a>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-revaluation.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

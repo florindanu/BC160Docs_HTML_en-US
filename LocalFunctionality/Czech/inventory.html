@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Czech Local Functionality - Inventory | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Czech Local Functionality - Inventory | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This section describes local functionality - Inventory">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="inventory">Inventory</h1>
+
+<h2 id="posting-groups-in-transfer-orders">Posting Groups in Transfer Orders</h2>
+<p>Czech posting rules require location transfers to be posted with the defined Inventory Adjmt. Account different from other item Journal postings.
+In the Transfer Orders functionality, fields for Gen. Bus. Post. Groups for Ship and Receive posting were added. This feature enables you to post different transfer orders with different General Posting Setup and also different from postings in item Journal.</p>
+<p>In Transfer Route, fields for Gen. Bus. Post. Groups for Ship and Receive posting were added. This setup is automatically copied to transfer the order based on the used transfer route.</p>
+<h2 id="rounding-account-in-inventory">Rounding Account in Inventory</h2>
+<p>The Rounding Account in the Inventory feature enables you to post all rounded costs (rounding entries in the Value Entry table) to another General Ledger Account instead of the Inventory Adjustment Account. This feature enables you to post a rounded cost on a different Account than the acquisition cost.</p>
+<h2 id="inventory--gl-reconciliation-enhancements">Inventory – G/L Reconciliation Enhancements</h2>
+<p>According to the Czech specific requirements, the Inventory – G/L Reconciliation matrix form must into account take the Czech specific inventory posting Accounts: Inventory Rounding Account and Intermediate WIP Account. Since the Czech localized application contains modifications in the inventory posting, special Account for rounding functionalities, and special intermediate WIP accounts, must also be included in the Inventory – G/L Reconciliation matrix form.</p>
+<p>These modifications have been introduced to the interface and the calculation procedures have been modified.</p>
+<h2 id="advanced-features-of-the-physical-inventory">Advanced Features of the Physical Inventory</h2>
+<p>To comply with the legislation, companies require differentiation of accounting of deficits and surpluses. Thanks to the setting of default Whse. Net Change Template for these inventory movements in the Inventory Setup, the user can easily change Gen. Business Posting Group depending on the type of inventory movements.</p>
+<p>Companies need to distinguish the posting of inventory movements of the same goods so they require line-break of physical inventory Journal line. Such accounting is required for legal reasons. For example, they need to have a different account for deficits in the limit, and another account for deficits over the limit.</p>
+<h2 id="inventory-operations-document">Inventory Operations Document</h2>
+<p>Users perform inventory operations such as: write down, reclassification and revaluation. They must have the possibility to print documents for these operations with the layout in compliance with the legal requirements.</p>
+<p>Users also want to print a document for posted inventory operations.</p>
+<p>For the reasons above, this feature provides the following reports:</p>
+<ul>
+<li>Inventory Movement Report is used to print documents from inventory Journals.</li>
+<li>Posted Inventory Document Report is used to print posted inventory operations.</li>
+</ul>
+<h2 id="inventory-counting-document">Inventory Counting Document</h2>
+<p>At the end of the period, users perform physical inventory counting to reconcile the actual (physical) value of inventory with the one registered in the system. At the end of the counting process, accounting department needs to archive final Inventory Counting Document containing posted values with names of company officials who under liability confirm with their signature that the quantities and amounts stated in the document correspond to ones physically present in company’s inventory locations.</p>
+<p>For the reasons above, this feature provides the following reports:</p>
+<ul>
+<li>Phys. Inventory List Report is used to print documents from Phys. Inventory Journals (existing report improved).</li>
+<li>Phys. Invt. Counting Document Report is used to print posted Phys. Inventory operations.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="czech-local-functionality.html">Czech Local Functionality</a><br>
+<a href="finance.html">Finance</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Czech/inventory.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

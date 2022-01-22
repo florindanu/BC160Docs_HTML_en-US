@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Migrate Data from Dynamics GP with the Data Migration Extension | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Migrate Data from Dynamics GP with the Data Migration Extension | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use the Dynamics GP Data Migration extension to migrate customers, vendors, inventory items, general ledger accounts, open payables and open receivables transactions from Dynamics GP to Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="the-dynamics-gp-data-migration-extension">The Dynamics GP Data Migration Extension</h1>
+
+<p>This extension makes it easy to migrate customers, vendors, inventory items, general ledger accounts, open payables and open receivables transactions from Dynamics GP to Business Central. If your business uses Dynamics GP today, you can export the relevant records and then open an assisted setup guide to add the data to Business Central. The migration extension works for all supported versions of Microsoft Dynamics GP. For more information, see <a href="across-import-data-configuration-packages.html">Importing Business Data from Other Finance Systems</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This extension will be deprecated in the 15.3 update. We recommend that users who want to migrate from Dynamics GP start using the <strong>Cloud Migration</strong> wizard instead. The <strong>Cloud Migration</strong> extension has more robust functionality and brings more data into Business Central from Dynamics GP.</p>
+</div>
+<h2 id="exporting-data-from-dynamics-gp">Exporting Data from Dynamics GP</h2>
+<p>You must have exported some or all of your existing customers, vendors, inventory items, and general ledger accounts using data export functionality within Dynamics GP. When selecting the data to export the following types can be selected:</p>
+<ul>
+<li>Account</li>
+<li>Customer</li>
+<li>Item</li>
+<li>Vendor</li>
+</ul>
+<p>When the export file is created you will have a zip file that contains several txt files that will be determined by what you selected during the export data process.  There will also be additional txt files that are generated that contain supporting information needed for setup within your new Business Central company.</p>
+<p>The Dynamics GP Data Migration extension automatically maps the exported data so that your data is quickly available to you in your new Business Central company.</p>
+<h2 id="whats-new-in-the-october-2018-release">What's New in the October 2018 Release</h2>
+<p>In this version, we have expanded the amount of data we bring into Business Central from Dynamics GP.</p>
+<p>In the migration wizard, you can now choose how you want to migrate the Dynamics GP chart of accounts. You can migrate the existing chart of accounts, or you can create a new chart of accounts based on the existing chart of accounts.</p>
+<p>If you choose to use the existing chart of accounts, the accounts will be set up as the main account segment from Dynamics GP and the additional segments will be setup as dimensions within Business Central.</p>
+<p>If you choose to create a new chart of accounts, you will get an additional account information page in the wizard so that you can download the workbook, make the relevant changes, and then import the workbook again to change your accounts.</p>
+<p>You will have to download the Excel workbook and map a new account number to each account number in the Excel spreadsheet. Each account will be required to have its own number, or the migration will error. When you have completed the mapping, you can continue through the migration wizard by importing the Excel workbook that you just updated. The wizard will validate that each row has a unique account number and that no rows have an empty new account number in them.</p>
+<p>With the change to the mapping of the chart of account options, you will also note a change to the type of data that comes across into the general journal for the account numbers.</p>
+<ul>
+<li>If you choose to use the existing account numbers, we will bring over the beginning balance of the main segment (new account number) as a summation of the main account number at the time of the migration.</li>
+<li>If you choose to create new account numbers, we will bring summary information for the equivalent of two fiscal years based on the fiscal periods you have set up in Dynamics GP.</li>
+</ul>
+<p>In earlier versions of Business Central, the wizard migrated a summary transaction for the customer/vendor balance in Dynamics GP. Now we bring in the detailed open transactions for customers and vendors at the time of the migration. What does this mean? If your customer has 3 outstanding transactions registered in the Receivables module, the wizard brings those transactions into Business Central with the outstanding amount as the document amount. This is the same for the Payables module for vendors.</p>
+<p>Inventory items are imported with the cost valuation method that was selected when the company setup wizard was run. Service items are automatically assigned the FIFO valuation method. Currently we bring in the Quantity on Hand for the items at the time of migration.  This quantity is brought into the blank location.</p>
+<p>The last option you see in the Data Migration wizard for Dynamics GP is the ability to specify your posting option. This setting specifies if you want to automatically post all transactions in the general journals as soon as the migration moves the data into Business Central, or if you want to post manually so that all transactions will sit in batches inside the General Journal page so you can verify the information before you post. This option is visible on the Chart of Accounts options page.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-import-data-configuration-packages.html">Importing Business Data from Other Finance Systems</a><br>
+<a href="ui-extensions.html">Customizing Business Central Using Extensions </a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-extensions-dynamicsgp-data-migration.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

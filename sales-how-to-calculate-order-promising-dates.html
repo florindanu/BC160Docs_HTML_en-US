@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Calculate Order Promising Dates | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Calculate Order Promising Dates | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The order promising function is a tool for calculating the earliest possible date that an item is available for shipment or delivery. It also creates requisition lines for those dates that you accept.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="calculate-order-promising-dates">Calculate Order Promising Dates</h1>
+
+<p>A company must be able to inform their customers of order delivery dates. The <strong>Order Promising Lines</strong> page enables you to do this from a sales order line.</p>
+<p>Based on an item’s known and expected availability dates, Business Central instantly calculates shipment and delivery dates, which can then be promised to the customer.</p>
+<p>If you specify a requested delivery date on a sales order line, then that date is used as the starting point for the following calculations:</p>
+<ul>
+<li>requested delivery date - shipping time = planned shipment date</li>
+<li>planned shipment date - outbound whse. handling time = shipment date</li>
+</ul>
+<p>If the items are available to pick on the shipment date, then the sales process can continue. If the items are not available to be picked on the shipment date, then a stock-out warning is displayed.</p>
+<p>If you do not specify a requested delivery date on a sales order line, or if the requested delivery date cannot be met, then the earliest date on which that the items are available is calculated. That date is then entered in the <strong>Shipment Date</strong> field on the line, and the date on which you plan to ship the items as well as the date on which they will be delivered to the customer are calculated using the following calculations:</p>
+<ul>
+<li>shipment date + outbound whse. handling time = planned shipment date</li>
+<li>planned shipment date + shipping time = planned delivery date</li>
+</ul>
+<h2 id="about-order-promising">About Order Promising</h2>
+<p>The Order Promising functionality enables you to promise an order to be shipped or delivered on a specific date. The date that an item is available to promise or capable to promise is calculated, and order lines are created for those dates that you accept. The functionality calculates the earliest possible date that an item is available for shipment or delivery. It also creates requisition lines, in case the items must first be purchases, for those dates that you accept.</p>
+<p>Business Central uses two fundamental concepts:</p>
+<ul>
+<li>Available to Promise (ATP)</li>
+<li>Capable to Promise (CTP)</li>
+</ul>
+<h3 id="available-to-promise">Available to Promise</h3>
+<p>Available to promise (ATP) calculates dates based on the reservation system. It performs an availability check of the unreserved quantities in inventory with regard to planned production, purchases, transfers, and sales returns. Based on this information, Business Central automatically calculates the delivery date of the customer’s order because the items are available, either in inventory or on planned receipts.</p>
+<h3 id="capable-to-promise">Capable to Promise</h3>
+<p>Capable to promise (CTP) assumes a “what if” scenario, which only applies to item quantities that are not in inventory or on scheduled orders. Based on this scenario, Business Central calculates the earliest date that the item can be available if it is to be produced, purchased, or transferred.</p>
+<h4 id="example">Example</h4>
+<p>If there is an order for 10 pieces, and 6 pieces are available in inventory or on scheduled orders, then the Capable-to-Promise calculation will be based on 4 pieces.</p>
+<h3 id="calculations">Calculations</h3>
+<p>When Business Central calculates the customer’s delivery date, it performs two tasks:</p>
+<ul>
+<li>Calculates the earliest delivery date when the customer has not requested a specific delivery date.</li>
+<li>Verifies if the delivery date requested by the customer or promised to the customer is realistic.</li>
+</ul>
+<p>If the customer does not request a specific delivery date, the shipment date is set to equal the work date, and availability is then based on that date. If the item is in inventory, Business Central calculates forward in time to determine when the order can be delivered. This is accomplished by the following formulas:</p>
+<ul>
+<li>Shipment Date + Outbound Warehouse Handling Time = Planned Shipment Date</li>
+<li>Planned Shipment Date + Shipping Time = Planned Delivery Date</li>
+</ul>
+<p>Business Central then verifies if the calculated delivery date is realistic by calculating backward in time to determine when the item must be available to meet the promised date. This is accomplished by the following formulas:</p>
+<ul>
+<li>Planned Delivery Date - Shipping Time = Planned Shipment Date</li>
+<li>Planned Shipment Date - Outbound Warehouse Handling = Shipment Date</li>
+</ul>
+<p>The shipment date is used to make the availability check. If the item is available on this date, Business Central confirms that therequested/promised delivery can be met by setting the planned delivery date to equal the requested/promised delivery date. If the item is unavailable, it returns a blank date and the order processor can then use the CTP functionality.</p>
+<p>Based on new dates and times, all related dates are calculated according to the formulas listed earlier in this section. The CTP calculation takes longer but it gives an accurate date when the customer can expect to have the item delivered. The dates that are calculated from CTP are presented in the <strong>Planned Delivery Date</strong> and <strong>Earliest Shipment Date</strong> fields on the <strong>Order Promising Lines</strong> page.</p>
+<p>The order processor finishes the CTP process by accepting the dates. This means that a planning line and a reservation entry are created for the item before the calculated dates to ensure that the order is fulfilled.</p>
+<p>In addition to the external order promising that you can perform on the <strong>Order Promising Lines</strong> page, you can also promise internal or external delivery dates for bill-of-material items. For more information, see <a href="inventory-how-availability-overview.html">View the Availability of Items</a>.</p>
+<h2 id="to-set-up-order-promising">To set up order promising</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Order Promising Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>Enter a number and time unit code in the <strong>Offset(Time)</strong> field. Select one of the following codes.</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>d</strong></td>
+<td>Calendar day</td>
+</tr>
+<tr>
+<td><strong>w</strong></td>
+<td>Week</td>
+</tr>
+<tr>
+<td><strong>m</strong></td>
+<td>Month</td>
+</tr>
+<tr>
+<td><strong>q</strong></td>
+<td>Quarter</td>
+</tr>
+<tr>
+<td><strong>y</strong></td>
+<td>Year</td>
+</tr>
+</tbody>
+</table>
+<p>For example, &quot;3w&quot; indicates that the offset time is three weeks. To indicate the current period, prefix to any of these codes with the letter “c”. For example, if you want the offset time to be the current month, enter <strong>cm</strong>.</p>
+</li>
+<li><p>Enter a number series in the <strong>Order Promising Nos.</strong> field by selecting a line from the list on the <strong>No. Series</strong> page.</p>
+</li>
+<li><p>Enter an order promising template in the <strong>Order Promising Template</strong> field by selecting a line from the list on the <strong>Req. Worksheet Template List</strong> page.</p>
+</li>
+<li><p>Enter a requisition worksheet in the <strong>Order Promising Worksheet</strong> field by selecting a line from the list on the <strong>Req. Wksh. Names</strong> page.</p>
+</li>
+</ol>
+<h3 id="to-enter-inbound-warehouse-handling-time-in-the-inventory-setup-page">To enter inbound warehouse handling time in the inventory setup page</h3>
+<p>If you want to include warehouse handling time in the order promising calculation on the purchase line, you can set it up as a default for the inventory and for your location.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>General</strong> FastTab, in the <strong>Inbound Whse. Handling Time</strong> field, enter the number of days that you want to include in the order promising calculation.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have filled in the <strong>Inbound Whse. Handling Time</strong> field on the <strong>Location Card</strong> for your location this field is used as the default inbound warehouse handling time.</p>
+</div>
+<h3 id="to-enter-inbound-warehouse-handling-time-on-location-cards">To enter inbound warehouse handling time on location cards</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Location</strong>, and then choose the related link.</li>
+<li>Open the relevant location card.</li>
+<li>On the <strong>Warehouse</strong> FastTab, in the <strong>Inbound Whse. Handling Time</strong> field, enter the number of days that you want to be included in the order promising calculation.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you leave the <strong>Inbound Whse. Handling Time</strong> field blank, then the calculation uses the value in the <strong>Inventory Setup</strong>  page.</p>
+</div>
+<h3 id="to-enter-outbound-warehouse-handling-time-in-the-inventory-setup-page">To enter outbound warehouse handling time in the inventory setup page</h3>
+<p>If you want to set up an outbound warehouse handling time to be included in the order promising calculation on the sales line, you can set this up as a default for the inventory.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>General</strong> FastTab, in the <strong>Outbound Whse. Handling Time</strong> field, enter the number of days you want to include in the order promising calculation.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have filled in the <strong>Outbound Whse. Handling Time</strong> field on the Location card for your location, this field is used as the default outbound warehouse handling time.</p>
+</div>
+<h3 id="to-enter-outbound-warehouse-handling-time-on-location-cards">To enter outbound warehouse handling time on location cards</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Open the relevant location card.</li>
+<li>On the <strong>Warehouse</strong> FastTab, in the <strong>Outbound Whse. Handling Time</strong> field, enter the number of days that you want to include in the order promising calculation.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you leave the <strong>Outbound Whse. Handling Time</strong> field blank, then the calculation uses the value in the <strong>Inventory Setup</strong>  page.</p>
+</div>
+<h2 id="to-make-an-item-critical">To make an item critical</h2>
+<p>Before an item can be included in the order promising calculation, it must be marked as critical. This setup ensures that non-critical items do not cause irrelevant order promising calculations.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the relevant item card.</li>
+<li>On the <strong>Planning</strong> FastTab, select the <strong>Critical</strong> field.</li>
+</ol>
+<h2 id="to-calculate-an-order-promising-date">To calculate an order promising date</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Order</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the relevant sales order and select the sales order lines that you want application to calculate.</p>
+</li>
+<li><p>Choose the <strong>Order Promising</strong> action, and then choose the <strong>Order Promising Lines</strong> action.</p>
+</li>
+<li><p>Select a line, and then select one of the following options:</p>
+<ul>
+<li>Select <strong>Available-to-Promise</strong> if you want to calculate the earliest date that the item will be available with respect to inventory, scheduled receipts, and gross requirements.</li>
+<li>Select <strong>Capable-to-Promise</strong> if you know that the item is presently out of stock and you want to calculate the earliest date that the item can be available by issuing new replenishment requisitions.</li>
+</ul>
+</li>
+<li><p>Choose the <strong>Accept</strong> button to accept the earliest shipment date available.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-manage-sales.html">Sales</a><br>
+<a href="purchasing-date-calculation-for-purchases.html">Date Calculation for Purchases</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/sales-how-to-calculate-order-promising-dates.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Depreciate or Amortize FA| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Depreciate or Amortize FA| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You must define how you will write-down, depreciate, or amortize each of your fixed assets.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="depreciate-or-amortize-fixed-assets">Depreciate or Amortize Fixed Assets</h1>
+
+<p>Depreciation is used to allocate the cost of fixed assets, such as machinery and equipment, over their depreciable life. For each fixed asset, you must define how it will be depreciated.</p>
+<p>There are two ways to post depreciation:</p>
+<ul>
+<li>Automatically, by running the <strong>Calculate Depreciation</strong> batch job.</li>
+<li>Manually, by using the fixed asset G/L journal.</li>
+</ul>
+<p>Business Central can calculate daily depreciation, which allows you to calculate depreciation for any period. You can therefore analyze current operating results on, for example, a monthly, quarterly, or annual basis. The calculation uses a standard year of 360 days and a standard month of 30 days. For more information, see <a href="fa-depreciation-methods.html">Depreciation Methods</a>.</p>
+<p>If several departments use a fixed asset, periodic depreciation can be automatically allocated to these departments according to a user-defined allocation table.</p>
+<p>You can cancel incorrect depreciation entries by using the <strong>Cancel FA Ledger Entries</strong> batch job. Afterward, you can post the correct amount by running the <strong>Calculate Depreciation</strong> batch job again. The errors you correct are posted as fixed asset error ledger entries.</p>
+<p>Indexation is used to adjust values for general price-level changes. You can use the <strong>Index Fixed Assets</strong> batch job to recalculate the depreciation amounts.</p>
+<h2 id="to-calculate-depreciation-automatically">To calculate depreciation automatically</h2>
+<p>Once a month, or whenever you choose, you can run the <strong>Calculate Depreciation</strong> batch job. The batch job ignores fixed assets that have been sold, are blocked or inactive, or use the manual depreciation method.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Calculate Depreciation</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the fields as necessary. Hover over a field to read a short description.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+<p>The batch job calculates the depreciation and creates lines in the fixed asset G/L journal.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA G/L Journals</strong>, and then choose the related link.</p>
+<p>On the <strong>Fixed Asset G/L Journal</strong> page, in the <strong>No. of Depreciation Days</strong> field, you can see how many days of depreciation have been calculated.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<h2 id="to-post-depreciation-manually-from-the-fixed-asset-gl-journal">To post depreciation manually from the fixed asset G/L journal</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Asset G/L Journal</strong>, and then choose the related link.</li>
+<li>Create an initial journal line and fill in the fields as necessary.</li>
+<li>In the <strong>FA Posting Type</strong> field, select <strong>Depreciation</strong>.</li>
+<li>Choose the <strong>Insert FA Bal. Account</strong> action. A second journal line is created for the balancing account that is set up for depreciation posting. For more information, see <a href="fa-how-setup-general.html#to-set-up-fixed-asset-posting-groups">To set up fixed asset posting groups</a>.</li>
+<li>Choose the <strong>Post</strong> action to post the journal.</li>
+</ol>
+<p>The <strong>Book Value</strong> field on the <strong>Fixed Asset Card</strong> page is updated accordingly.</p>
+<p>If you have set up fixed asset allocation keys to allocate amounts to different departments or projects, the amounts are allocated during posting. For more information, see <a href="fa-how-setup-general.html">Set Up General Fixed Assets Information</a>.</p>
+<h2 id="to-manage-the-ending-book-value">To manage the ending book value</h2>
+<p>In the <strong>Ending Book Value</strong> field on the <strong>FA Depreciation Books</strong> page, you can specify the book value that you want your fixed asset to have in the current depreciation book after it has been fully depreciated. You can do this manually or you can fill in the <strong>Default Ending Book Value</strong> field on the related <strong>Depreciation Book</strong> page, which will then be used to automatically fill the field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the last depreciation means that the <strong>Book Value</strong> field on the <strong>Fixed Asset Card</strong> page is zero, the last depreciation is automatically reduced by this amount.<br><br>
+If the value in the <strong>Book Value</strong> field is greater than zero after the last depreciation,  for example because of a rounding problem or because a salvage value exists, the value in the <strong>Ending Book Value</strong> field on the <strong>FA Depreciation Books</strong> page is ignored. For more information, see <a href="fa-how-acquire.html#to-post-the-salvage-value-together-with-the-acquisition-cost">To post the salvage value together with the acquisition cost</a>.</p>
+</div>
+<h2 id="to-calculate-allocations-in-the-fixed-asset-gl-journal">To calculate allocations in the fixed asset G/L journal</h2>
+<p>If a fixed asset is used by several departments, periodic depreciation can be automatically allocated to these departments according to a user-defined allocation table.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Asset G/L Journal</strong>, and then choose the related link.</li>
+<li>Create an initial line and fill in the fields as necessary.</li>
+<li>In the <strong>FA Posting Type</strong> field, select <strong>Allocation</strong>.</li>
+<li>Choose the <strong>Insert FA Bal. Account</strong> action. A second journal line is created for the balancing account that is set up for allocation posting.</li>
+<li>Choose the <strong>Post</strong> action to post the journal.</li>
+</ol>
+<h2 id="use-duplication-lists-to-prepare-to-post-to-multiple-depreciation-books">Use duplication lists to prepare to post to multiple depreciation books</h2>
+<p>When you fill in journal lines to post to a depreciation book, you can duplicate the lines in a separate journal so you can post to a different depreciation book. For more information, see To <a href="fa-how-depreciate-amortize.html#to-post-entries-to-different-depreciation-books">post entries to different depreciation books</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Books</strong>, and then choose the related link.</li>
+<li>Open the depreciation book, and then select the <strong>Part of Duplication List</strong> check box.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you have selected the <strong>Use Duplication List</strong> field, do not use number series on the journal. The reason is that the number series for the fixed asset G/L journal does not the number series for the fixed asset journal.</p>
+</div>
+<h2 id="to-post-entries-to-different-depreciation-books">To post entries to different depreciation books</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Asset G/L Journal</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the journal that you want to post depreciation with, select the <strong>Use Duplication List</strong> check box.</p>
+</li>
+<li><p>Fill in the remaining fields as necessary.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>FA Journals</strong>, and then choose the related link.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Fixed Asset Journal</strong> page contains new lines for different depreciation books according to the duplication list.</p>
+</div>
+</li>
+<li><p>Review or edit the lines, and then choose the <strong>Post</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Another way to duplicate an entry in a separate book is to enter a depreciation book code in the <strong>Duplicate in Depreciation Book</strong> field when you fill in a journal line.</p>
+</div>
+</li>
+</ol>
+<p>You can copy entries from one depreciation book to another by using the <strong>Copy Depreciation Book</strong> batch job. The batch job creates journal lines in the journal batch that you have specified on the <strong>FA Journal Setup</strong> page for the depreciation book that you want to copy to. For more information, see the following procedure.</p>
+<h2 id="to-copy-fixed-asset-ledger-entries-between-depreciation-books">To copy fixed asset ledger entries between depreciation books</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Books</strong>, and then choose the related link.</li>
+<li>Open the relevant depreciation book card, and then choose the <strong>Copy Depreciation Book</strong> action.</li>
+<li>On the <strong>Copy Depreciation Book</strong> page, fill in the fields as necessary.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<p>The copied lines are created in either the fixed asset G/L journal or the fixed asset journal, depending on whether the depreciation book that you are copying has integration to the general ledger.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-depreciate-amortize.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

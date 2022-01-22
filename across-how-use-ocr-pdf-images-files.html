@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use OCR to Turn PDF into E-Invoices| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use OCR to Turn PDF into E-Invoices| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how you can use an OCR service to convert incoming PDF or image files to electronic documents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="use-ocr-to-turn-pdf-and-image-files-into-electronic-documents">Use OCR to Turn PDF and Image Files into Electronic Documents</h1>
+
+<p>From PDF or image files that you receive from your trading partners, you can have an external OCR service (Optical Character Recognition) generate electronic documents that can be converted to document records in Business Central. For example, when you receive an invoice in PDF format from your vendor, you can send it to the OCR service from the <strong>Incoming Documents</strong> page. This is described in the first procedure.</p>
+<p>As an alternative to sending the file from the <strong>Incoming Documents</strong> page, you can send the file to the OCR service by email. Then, when you receive the electronic document back, a related incoming document record is created automatically. This is described in the second procedure.</p>
+<p>After some seconds, you receive the file back from the OCR service as an electronic invoice that can be converted to a purchase invoice for the vendor. This is described in the third procedure.</p>
+<p>Because OCR is based on optical recognition, it is likely that the OCR service will interpret characters in your PDF or image files wrongly when it first processes a certain vendor’s documents, for example. It may not interpret the company logo as the vendor’s name or it may misinterpret the total amount on a receipt because of its layout. To avoid these errors going forward, you can correct the errors in a separate version of the <strong>Incoming Document</strong> page. Then you send the corrections back to the OCR service to train it to interpret the specific characters correctly next time it processes a PDF or image document for the same vendor. For more information, see <a href="across-how-use-ocr-pdf-images-files.html#to-train-the-ocr-service-to-avoid-errors">To train the OCR service to avoid errors</a>.</p>
+<p>The traffic of files to and from the OCR service is processed by a dedicated job queue entry, which are created automatically when you enable the related service connection. For more information, see <a href="across-how-setup-income-documents.html">Set Up Incoming Documents</a>.</p>
+<h2 id="to-send-a-pdf-or-image-file-to-the-ocr-service-from-the-incoming-documents-page">To send a PDF or image file to the OCR service from the <strong>Incoming Documents</strong> page</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Incoming Documents</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a new incoming document record and attach the file. For more information, see <a href="across-how-create-income-document-records.html">Create Incoming Document Records</a>.</p>
+</li>
+<li><p>On the <strong>Incoming Documents</strong> page, select one or more lines, and then choose the <strong>Send to Job Queue</strong> action.</p>
+<p>The value in the <strong>OCR Status</strong> field changes to <strong>Ready</strong>. The attached PDF or image file is sent to the OCR service by the job queue according to the schedule, provided that no errors exist.</p>
+</li>
+<li><p>Alternatively, on the <strong>Incoming Documents</strong> page, select one or more lines, and then choose the <strong>Send to OCR Service</strong> action.</p>
+</li>
+</ol>
+<p>The value in the <strong>OCR Status</strong> field changes to <strong>Sent</strong>, provided that no errors exist.</p>
+<h2 id="to-send-a-pdf-or-image-file-to-the-ocr-service-by-email">To send a PDF or image file to the OCR service by email</h2>
+<p>From your email application, you can send an email to the OCR service provider with the PDF or image file attached. For information about the email address to send to, see the OCR service provider’s web site.</p>
+<p>Because no incoming document record exists for the file, a new record will be created automatically on the <strong>Incoming Documents</strong> page when you receive the resulting electronic document from the OCR service. For more information, see <a href="across-how-create-income-document-records.html">Create Incoming Document Records</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you work on a tablet or phone, you can send the file to the OCR service as soon as you have taken a photo of the document, or you can create an incoming document directly. For more information, see <a href="across-how-create-income-document-records.html#to-create-an-incoming-document-record-by-taking-a-photo">To create an incoming document record by taking a photo</a>.</p>
+</div>
+<h2 id="to-receive-the-resulting-electronic-document-from-the-ocr-service">To receive the resulting electronic document from the OCR service.</h2>
+<p>The electronic document that is created by the OCR service from the PDF or image file is automatically received into the <strong>Incoming Documents</strong> page by the job queue entry that is set up when you enable the OCR service.</p>
+<p>If you are not using a job queue, or you want to receive a finished OCR document sooner than per the job queue schedule, you can choose the <strong>Receive from OCR Service</strong> button. This will get any documents that are completed by the OCR service.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the OCR service is set up to require manual verification of processed documents, then the <strong>OCR Status</strong> field will contain <strong>Awaiting Verification</strong>. In that case, perform the following steps to log in to the OCR service website to manually verify an OCR document.</p>
+</div>
+<ol>
+<li><p>In the <strong>OCR Status</strong> field, choose the <strong>Awaiting Verification</strong> hyperlink.</p>
+</li>
+<li><p>On the OCR service website, log in using the credentials of your OCR service account. These are the credentials you also used when setting up the service. For more information, see <a href="across-how-setup-income-documents.html#to-set-up-an-ocr-service">To set up an OCR service</a>.</p>
+<p>Information for the OCR document is displayed, showing both the source content of the PDF or image file and the resulting OCR field values.</p>
+</li>
+<li><p>Review the various field values and manually edit or enter values in fields that the OCR service has tagged as uncertain.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button. The OCR process is completed and the resulting electronic document is sent to the <strong>Incoming Documents</strong> page in Business Central,  according to the job queue schedule.</p>
+</li>
+<li><p>Repeat step 4 for any other OCR document to be verified.</p>
+</li>
+</ol>
+<p>Now you can proceed to create document records for the received electronic documents in Business Central, manually or automatically. For more information, see the next procedure. You can also connect the new incoming document record to existing posted or non-posted document so that the source file is easy to access from Business Central. For more information, see <a href="across-process-income-documents.html">Process Incoming Documents</a>.</p>
+<h2 id="to-create-a-purchase-invoice-from-an-electronic-document-received-from-the-ocr-service">To create a purchase invoice from an electronic document received from the OCR service</h2>
+<p>The following procedure describes how to create a purchase invoice record from a vendor invoice received as an electronic document from the OCR service. The procedure is the same when you create, for example, a general journal line from an expense receipt or a sales return order from a customer.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Description</strong> and <strong>No.</strong> fields on the created document lines will only be filled if you have first mapped text found on the OCR document to the two fields in Business Central. You can do this mapping as item cross-references, for document lines of type Item. For more information, see <a href="inventory-how-use-item-cross-refs.html">Use Item Cross References</a>. You can also use the Text-to-Account Mapping function. For more information, see <a href="across-how-use-ocr-pdf-images-files.html#to-map-text-on-an-incoming-document-to-a-specific-vendor-account">To map text on an incoming document to a specific vendor, G/L, or bank account</a>.</p>
+</div>
+<ol>
+<li>Select the line for the incoming document, and then choose the <strong>Create Document</strong> action.</li>
+</ol>
+<p>A purchase invoice will be created in Business Central based on the information in the electronic vendor document that you received from the OCR service. Information will be inserted in the new purchase invoice based on the mapping that you have defined as a cross-reference or as text-to-account mapping.</p>
+<p>Any validation errors, typically related to wrong or missing master data in Business Central, will be shown on the <strong>Errors and Warnings</strong> FastTab. For more information, see <a href="across-how-use-ocr-pdf-images-files.html#to-handle-errors-when-receiving-electronic-documents">To handle errors when receiving electronic documents</a>.</p>
+<h3 id="to-map-text-on-an-incoming-document-to-a-specific-vendor-account">To map text on an incoming document to a specific vendor account</h3>
+<p>For incoming documents, you typically use the <strong>Map Text to Account</strong> action to define that a certain text on a vendor invoice received from the OCR service is mapped to a certain vendor account. Going forward, any part of the incoming document description that exists as a mapping text means that the <strong>No.</strong> field on resulting document or journal lines of type G/L Account are filled with the vendor in question.</p>
+<p>In addition to mapping to a vendor account or G/L accounts, you can also map to a bank account. This is practical, for example, for electronic documents for expenses that are already paid where you want to create a general journal line that is ready to post to a bank account.</p>
+<ol>
+<li><p>Select the relevant incoming document line, and then choose the <strong>Map Text to Account</strong> action. The <strong>Text-to-Account Mapping</strong> page opens.</p>
+</li>
+<li><p>In the <strong>Mapping Text</strong> field, enter any text that occurs on vendor invoices that you want to create purchase documents or journal lines for. You can enter up to 50 characters.</p>
+</li>
+<li><p>In the <strong>Vendor No.</strong> field, enter the vendor that the resulting purchase document or journal line will be created for.</p>
+</li>
+<li><p>In the <strong>Debit Acc. No.</strong> field, enter the debit-type G/L account that will be inserted on resulting purchase document or journal line of type G/L Account.</p>
+</li>
+<li><p>In the <strong>Credit Acc. No.</strong> field, enter the credit-type G/L account that will be inserted on resulting purchase document or journal line of type G/L Account.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Do not use the <strong>Bal. Source Type</strong> and <strong>Bal. Source No.</strong> fields in connection with incoming documents. They are used for automatic payment reconciliation only. For more information, see <a href="receivables-how-map-text-recurring-payments-accounts-auto-reconcilliation.html">Map Text on Recurring Payments to Accounts for Automatic Reconciliation</a>.</p>
+</div>
+</li>
+<li><p>Repeat steps 2 through 5 for all text on incoming documents that you want to automatically create documents for.</p>
+</li>
+</ol>
+<h2 id="to-handle-errors-when-receiving-electronic-documents">To handle errors when receiving electronic documents</h2>
+<ol>
+<li>On the <strong>Incoming Documents</strong> page, select the line for an electronic document received from the OCR service with errors. This is indicated by the Error value in the <strong>OCR Status</strong> field.</li>
+<li>Choose the <strong>Edit</strong> action to open the <strong>Incoming Document</strong> page.</li>
+<li>On the <strong>Errors and Warnings</strong> FastTab, select the message, and then choose the <strong>Open Related Record</strong> action.</li>
+<li>The page that contains the wrong or missing data, such as a vendor card with a missing field value, opens.</li>
+<li>Correct the error or errors as described in each error message.</li>
+<li>Proceed to process the incoming electronic document by choosing the <strong>Create Manually</strong> action again.</li>
+<li>Repeat steps 5 and 6 for any remaining errors until the electronic document can be received successfully.</li>
+</ol>
+<h2 id="to-train-the-ocr-service-to-avoid-errors">To train the OCR service to avoid errors</h2>
+<p>Because OCR is based on optical recognition, it is likely that the OCR service will interpret characters in your PDF or image files wrongly when it first processes documents from a certain vendor, for example. It may not interpret the company logo as the vendor’s name or it may misinterpret the total amount on an expense receipt because of its layout. To avoid such errors going forward, you can correct data received by the OCR service and then send the feedback to the service.</p>
+<p>The <strong>OCR Data Correction</strong> page, which you open from the <strong>Incoming Document</strong> page, shows the fields from the <strong>Financial Information</strong> FastTab in two columns, one with the OCR data editable and one with the OCR data read-only. When you choose the <strong>Send OCR Feedback</strong> button, the content of the <strong>OCR Data Correction</strong> page is sent to the OCR service. Next time the service processes PDF or image files that contain the data in question, your corrections will be incorporated to avoid the same errors.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Incoming Documents</strong>, and then choose the related link.</li>
+<li>Open an incoming document record that contains data received from OCR service, which you want to correct.</li>
+<li>On the <strong>Incoming Document</strong> page, choose the <strong>Correct OCR Data</strong> action.</li>
+<li>On the <strong>OCR Data Correction</strong> page, overwrite the data in the editable column for each field that has an incorrect value.</li>
+<li>To undo corrections that you have made since you opened the <strong>OCR Data Correction</strong> page, choose the <strong>Reset OCR Data</strong> action.</li>
+<li>To send the corrections to the OCR service, choose the <strong>Send OCR Feedback</strong> action.</li>
+<li>To save the corrections, close the <strong>OCR Data Correction</strong> page.</li>
+</ol>
+<p>The fields on the <strong>Financial Information</strong> FastTab on the <strong>Incoming Document</strong> page are updated with any new values that you entered in step 4.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-process-income-documents.html">Process Incoming Documents</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-use-ocr-pdf-images-files.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

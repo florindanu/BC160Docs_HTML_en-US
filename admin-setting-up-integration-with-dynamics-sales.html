@@ -1,0 +1,223 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setting Up User Accounts for Integrating with Common Data Service | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setting Up User Accounts for Integrating with Common Data Service | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to set up the user accounts that the apps use to exchange data, and that people use to access and synchronize data in the apps.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="setting-up-user-accounts-for-integrating-with-common-data-service">Setting Up User Accounts for Integrating with Common Data Service</h1>
+
+<p>This article provides an overview of how to set up the user accounts that are required to integrate Common Data Service with Business Central.</p>
+<h2 id="setting-up-the-administrator-user-account">Setting Up the Administrator User Account</h2>
+<p>You must add your administrator user account for Business Central as a user in Common Data Service. When you set up the connection between Business Central and Common Data Service we will use this account one time to install and configure some required components. <!--Verify this--></p>
+<h2 id="setting-up-the-user-account-for-the-integration">Setting Up the User Account for the Integration</h2>
+<p>You must create a dedicated user account in your Office 365 subscription that both Business Central and Common Data Service can use to synchronize data. This user account must be able to sign in to Common Data Service, which means this user must have a license for Common Data Service and at least one security role assigned to it in Common Data Service. <!--not sure that this applies as described [here](http://docs.microsoft.com/dynamics365/customer-engagement/admin/create-users-assign-online-security-roles#create-a-user-account). For more information about how to create users in [!INCLUDE[d365fin](includes/cds_long_md.md)], see [Manage security, users, and teams](https://go.microsoft.com/fwlink/?LinkID=616518). --> After the connection is set up, Business Central will assign the user account the security roles that it needs in Business Central.</p>
+<!--![Assisted setup guide showing place to enter synchronization user credentials](media/sync-user-setup.png "Visualization assisted setup wizard page showing place to enter synchronization user credentials")-->
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Do not use the administrator account for Common Data Service for synchronization. Doing so will break the synchronization.</p>
+</div>
+<h2 id="permissions-and-security-roles-for-user-accounts-in-">Permissions and Security Roles for User Accounts in Common Data Service</h2>
+<p>When you install the CDS Base Integration Solution, permissions for the integration user account are configured. If those permissions are changed you might need to reset them. You can do that by reinstalling the CDS Base Integration Solution by choosing <strong>Redeploy Integration Solution</strong> on the <strong>Common Data Service Connection Setup</strong> page. The Business Central CDS Integration security role is deployed.</p>
+<!--
+The following tables list the minimum permissions for the user accounts in [!INCLUDE[d365fin](includes/cds_long_md.md)].
+
+### Minimum Permissions for the Administrator
+The following table displays the minimum permissions on each tab for each security role that is required for the administrator user.
+
+##### Customization
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Model Driven App|Global|||Read|
+|Plugin Assembly|Global|Read|Read|Read|
+|Plugin Type|Global|Read|Read|Read|
+|Relationship|Global|||Read|
+|SDK Message|Global|Read|Read|Read|
+|SDK Message Proessing Step|Global|Read|Read|Read|
+|SDK Message Proessing Step Image|Global|Read|Read|Read|
+|System From|Global|||Write|
+
+##### Custom Entities
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2020|
+|----|----|-----|----|----|
+|Business Central Account Statistics|Global|Read|Read|Read|
+|Business Central Connection|Global|Create, Read, Write, Delete|Create, Read, Write, Delete|Create, Read, Write, Delete|
+|Post Configuration|Global|||Write|
+
+#### Integration User
+The following table displays the minimum permissions on each tab for each security role that is required for the integration user.
+
+##### Core Records
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Account|Global|Create, Read, Write, Append, Append To, Assign|Create, Read, Write, Append, Append To, Assign|Create, Read, Write, Append, Append To, Assign|
+|Action Card|Global||Read|Read|
+|Connection|Global|Read|Read|Read|
+|Contact|Global|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|
+|Note|Global|||Create, Read, Write, Delete Append, Assign|
+|Opportunity|Global||Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|
+|Post|Global|||Create, Read, Append To|
+|User Entity UI|User|Create, Read, Write|Create, Read, Write|Create, Read, Write|
+
+##### Sales
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Invoice|Global|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|
+|Order|Global|Read, Write, Append To|Read, Write, Append To|Read, Write, Append, Append To, Assign|
+|Product|Global|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|
+|Property|Global|Read|Read|Read|
+|Property Association|Global|Read|Read|Read|
+|Property Option Set Item|Global|Read|Read|Read|
+|Quote|Global|Read|Read|Read|
+
+##### Service
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Case|Global|Read|Read|Read|
+
+##### Business Management
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Currency|Global|Create, Read, Write|Create, Read, Write|Create, Read, Write|
+|Organization|Global|Read, Write|Read, Write|Read, Write|
+|Security Role|Global|||Read|
+|User|Global|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|Create, Read, Write, Append, Append To|
+|User Settings|Global|Create, Read, Write, Delete, Append To|Create, Read, Write, Delete, Append To|Create, Read, Write, Delete, Append To|
+|Act on Behalf of Another User|Global|Yes|Yes|Yes|
+
+##### Customization
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Field|Global||Read|Read|
+|Plug-in Assembly|Global|Read|Read|Read|
+|Plug-in Type|Global|Read|Read|Read|
+|SDK Message|Global|Read|Read|Read|
+|SDK Message Processing Step|Global|Read|Read|Read|
+|Web Resource|Global|Read|Read|Read|
+
+##### Custom Entities
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Dynamics 365 Business Central Account Statistics|Global|Create, Read, Write, Append To|Create, Read, Write, Append To|Create, Read, Write, Append To|
+|Dynamics 365 Business Central Connection|Global|Read|Read|Read|
+
+### Product Availability User
+You can allow sales people to view inventory levels for the items they sell by granting them the permissions described in the following table.
+
+##### Custom Entities
+|Security Role|Access Level|Dynamics NAV 2018 and Earlier|Business Central <br> October 2018|Business Central <br> April 2019|
+|----|----|-----|----|----|
+|Dynamics 365 Business Central Account Statistics|Global|Create, Read, Write, Append To|Create, Read, Write, Append To|Create, Read, Write, Append To|
+|Dynamics 365 Business Central Connection|Global|Read|Read|Read|
+
+-->
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-common-data-service.html">Integrating with Common Data Service</a><br>
+<a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Integrating with Dynamics 365 Sales</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-setting-up-integration-with-dynamics-sales.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Base Calendars | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Base Calendars | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can assign a base calendar to your company and its business partners, such as customers, vendors, or locations. Delivery and receipt dates on future sales order, purchase order, transfer order, and production order lines are calculated according to the calendar&#8217;s specified working days.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-base-calendars">Set Up Base Calendars</h1>
+
+<p>You can assign a base calendar to your company and its business partners, such as customers, vendors, or locations. Delivery and receipt dates on future sales order, purchase order, transfer order, and production order lines are calculated according to the calendar’s specified working days. The main task in setting up a new base calendar is to specify and define the non-working days that you want to apply.</p>
+<h2 id="to-set-up-a-base-calendar">To set up a base calendar</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Base Calendar</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the <strong>Code</strong> field.</p>
+</li>
+<li><p>Choose the <strong>Maintain Base Calendar Changes</strong> action.</p>
+</li>
+<li><p>On the <strong>Base Calendar Changes</strong> page, use the <strong>Recurring System</strong> field to mark a particular date or day as a recurring nonworking day. You can select either the <strong>Annual Recurring</strong> or <strong>Weekly Recurring</strong> option.</p>
+<p>If you select <strong>Annual Recurring</strong>, you must also enter the relevant date in the <strong>Date</strong> field.</p>
+<p>If you select <strong>Weekly Recurring</strong>, you must also select the relevant day of the week in the <strong>Day</strong> field. If you leave the field empty, you must fill in the <strong>Date</strong> field. The <strong>Day</strong> field is filled in automatically.</p>
+</li>
+</ol>
+<p>When you make an entry, the <strong>Nonworking</strong> field is selected. You can choose to clear the check mark to make it a working day.<br>
+When you return to the base calendar card, you will observe that the nonworking day entries that you made have been updated. These entries now appear in red and the <strong>Nonworking</strong> field is selected.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When setting up a new base calendar, you can select and copy lines from an existing calendar. You do this in the relevant <strong>Base Calendar Changes</strong> page.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Any base calendar defined for the vendor or the location affects how the dates are calculated and rounded to working days.
+Specifies a date formula for the time that it takes to replenish the item. It is used to calculate the <strong>Planned Receipt Date</strong> field, if calculating forward, and <strong>Order Date</strong> field, if calculating backwards. See <a href="across-how-to-assign-base-calendars.html#lead-time-calculation">Lead Time Calculation</a>.</p>
+</div>
+<h2 id="lead-time-calculation">Lead Time Calculation</h2>
+<p>Any base calendar defined for the vendor or the location affects how the dates are calculated and rounded to working days. Accordingly, the two date fields on purchase order lines are calculated as follows under different conditions.</p>
+<table>
+<thead>
+<tr>
+<th>Calculation Direction</th>
+<th>Vendor Calendar Defined</th>
+<th>Vendor Calendar Not Defined</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forward</td>
+<td>planned receipt date = order date + vendor lead time (per the vendor calendar and rounded to the next working day in first the vendor calendar and then the location calendar)</td>
+<td>planned receipt date = order date + vendor lead time (per the location calendar)</td>
+</tr>
+<tr>
+<td>Backward</td>
+<td>order date = planned receipt date - vendor lead time (per the vendor calendar and rounded to the previous working day in first the vendor calendar and then the location calendar)</td>
+<td>order date = planned receipt date - vendor lead time (per the location calendar)</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In addition to the lead time calculation that affects the planned receipt date and order date, as shown in the above table, warehouse handling time and safety lead time may be added to the formulas to make up the value in the <strong>Expected Receipt Date</strong> field, as follows: Planned Receipt Date + Safety Lead Time + Inbound Warehouse Handling Time = Expected Receipt Date.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If your location uses a significantly different calendar than your vendors do, then it is important that you set up specific calendars for those vendors, to calculate optimal vendor lead times. For information about how to set up vendor calendars, see <a href="across-how-to-assign-base-calendars.html#to-assign-a-base-calendar">To assign a base calendar</a>.</p>
+</div>
+<p>The contents of the <strong>Lead Time Calculation</strong> field is copied from either the item card or the SKU card, if the lead time is defined for the item, or on the <strong>Item Vendor Catalog</strong> page, if the lead time is defined for the vendor.</p>
+<h2 id="to-customize-a-calendar">To customize a calendar</h2>
+<p>The main task in customizing a base calendar for your company, or one of its business partners, is to enter any changes to working and nonworking day status.</p>
+<p>For example, while a base calendar would typically list all Saturdays as non-working days, the customized calendar for a particular location may list all Saturdays during the months of November and December, and leading up to the holiday season, as working days.</p>
+<p>The following procedure uses the case of the location as an example. Note that at this point, you have already assigned a base calendar to the location.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the location that you want to update, and then select the <strong>Customized Calendar</strong> field. Note that a calendar must be selected in the <strong>Base Calendar Code</strong> field.</p>
+</li>
+<li><p>On the <strong>Customized Calendar Entries</strong> page opens, choose the <strong>Maintain Customized Calendar Changes</strong> action.</p>
+</li>
+<li><p>In the <strong>Customized Calendar Changes</strong>, add lines for customized calendar entries.</p>
+<p>When you enter a line, the <strong>Nonworking</strong> check box is selected. You can clear the check box if you want to change the status to a working day.</p>
+<p>You can use the <strong>Recurring System</strong> field to set a particular date or day as a recurring nonworking day. You can select either the <strong>Annual Recurring</strong> or <strong>Weekly Recurring</strong> option.</p>
+<p>If you select <strong>Annual Recurring</strong>, you must also enter the relevant date in the <strong>Date</strong> field. If you select <strong>Weekly Recurring</strong>, you must also select the relevant day of the week in the <strong>Day</strong> field. If you leave the field empty, you must fill in the <strong>Date</strong> field. The <strong>Day</strong> field is then filled in automatically. This could be useful if you want to mark an individual date as a nonworking or working day.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>On the <strong>Customized Calendar Entries</strong> page, you will observe that the date entries are updated with the changes that you made.</p>
+<p>On the Location card, you will observe that the <strong>Customized Calendar</strong> field contains <strong>Yes</strong>, indicating that a customized calendar has been set up.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you do not fill in the <strong>Location Code</strong> field on an order line, your company’s calendar is used.</p>
+</div>
+<p>If you do not fill in the <strong>Shipping Agent Code</strong> field on the order line, your company’s calendar is used.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you make changes to a base calendar for which customized calendar changes exist, all existing customized calendars are updated automatically.</p>
+</div>
+<h2 id="to-assign-a-base-calendar">To assign a base calendar</h2>
+<p>The following procedure schedules delivery dates on sales order lines for a customer as an example.</p>
+<p>Base calendars are assigned to your own company, customers, vendors, locations, and shipping agents as follows:</p>
+<ul>
+<li>On the <strong>Company Information</strong> and <strong>Customer</strong> cards, the base calendar is assigned on the <strong>Shipping</strong> FastTab.</li>
+<li>On the <strong>Vendor</strong> card, the base calendar is assigned on the <strong>Receiving</strong> FastTab.</li>
+<li>On the <strong>Location</strong> card, the base calendar is assigned on the <strong>Warehouse</strong> FastTab.</li>
+<li>On the <strong>Shipping Agents</strong> page, the base calendar is assigned on the <strong>Shipping Agent Services</strong> page.</li>
+</ul>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customers</strong>, and then choose the related link.</li>
+<li>Open the <strong>Customer</strong> card for whom you will assign a base calendar.</li>
+<li>On the <strong>Shipping</strong> FastTab, in the <strong>Base Calendar Code</strong> field, select the base calendar that you want to assign.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<ul>
+<li>If you do not assign a base calendar to a company, all dates are calculated as working days.</li>
+<li>If you enter a blank location on an order line, all dates are calculated as working days.</li>
+<li>Any base calendar defined for the vendor or the location affects how the dates are calculated and rounded to working days.</li>
+</ul>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Before you can make customized calendar entries, you must first assign a base calendar to the company.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-to-assign-base-calendars.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

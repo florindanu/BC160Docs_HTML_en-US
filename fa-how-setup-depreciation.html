@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up FA Depreciation| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up FA Depreciation| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You specify in a depreciation book how you want fixed assets to be depreciated or written-down.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-fixed-asset-depreciation">Set Up Fixed Asset Depreciation</h1>
+
+<p>You can use various methods of depreciation for preparing financial statements and income tax returns. Many large corporations use straight-line depreciation in their financial statements because this generally permits reporting higher earnings. For income tax purposes, however, many businesses use an accelerated depreciation method, such as declining-balance depreciation. You define an asset's depreciation method with the <strong>Depreciation Method</strong> field on the <strong>Fixed Asset Card</strong> page. For more information about what the different methods do, see <a href="fa-depreciation-methods.html">Depreciation Methods</a>.</p>
+<p>In depreciation books you define the different ways depreciation must be calculated for your different fixed assets. In each book, you can specify individual depreciation terms. For example, you can specify that a fixed asset should be depreciated over a period of three years in one book and over a period of five years in another book.</p>
+<p>When you have created the relevant depreciation books, you must assign one or more depreciation books to each fixed asset. A depreciation book that is assigned to a fixed asset is referred to as a fixed asset depreciation book. You can set up an unlimited number of depreciation books for a fixed asset.</p>
+<h2 id="to-create-a-depreciation-book">To create a depreciation book</h2>
+<p>In a fixed asset depreciation book, you specify how fixed assets are depreciated. To accommodate various methods of depreciation, you can set up multiple depreciation books.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Books</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Depreciation Books List</strong> page, choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>Depreciation Book Card</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can record fixed asset transactions on the <strong>Fixed Asset G/L Journal</strong> page or on the <strong>Fixed Asset Journal</strong> page, depending on whether the transactions are for financial reporting or for internal management. Follow the next step to define which type of journal is used for the different fixed asset activities by default.</p>
+</div>
+</li>
+<li><p>On the <strong>Integration</strong> FastTab, select the check box for each fixed asset activity whose transactions you want to post using the <strong>Fixed Asset G/L Journal</strong> page.</p>
+</li>
+<li><p>Repeat steps 2 through 4 for each depreciation method or posting method that you want to assign to fixed assets as a depreciation book.</p>
+</li>
+</ol>
+<h2 id="to-assign-a-depreciation-book-to-a-fixed-asset">To assign a depreciation book to a fixed asset</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the fixed asset that you want to set up a fixed asset depreciation book for.</p>
+</li>
+<li><p>On the <strong>Depreciation Book</strong> FastTab, fill in the fields as necessary.</p>
+</li>
+<li><p>If you need to assign more than one depreciation book to the fixed asset, choose the <strong>Add More Depreciation Books</strong> action.</p>
+</li>
+<li><p>Alternatively, choose the <strong>Depreciation Books</strong> action to specify one or more fixed asset depreciation books.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you use the manual depreciation method, you must enter depreciation manually in the fixed asset G/L journal. The <strong>Calculate Depreciation</strong> function omits fixed assets that use the manual depreciation method. You can use this method for assets that are not subject to depreciation, such as land.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-assign-a-depreciation-book-to-multiple-fixed-assets-with-a-batch-job">To assign a depreciation book to multiple fixed assets with a batch job</h2>
+<p>If you want to assign a depreciation book to several fixed assets, you can use the <strong>Create FA Depreciation Books</strong> batch job to create fixed asset depreciation books.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Fixed Assets</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the fixed asset that you want to set up a assign a depreciation book to, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Depreciation Book Card</strong> page, choose the <strong>Create FA Depreciation Books</strong> action.</p>
+</li>
+<li><p>On the <strong>Create FA Depreciation Books</strong> page, fill in the <strong>Depreciation Book</strong> field.</p>
+</li>
+<li><p>Choose the <strong>Copy from FA No.</strong> field, and then select the fixed asset number that you want to use as the basis for creating new fixed asset depreciation books.</p>
+<p>If you fill in this field, the depreciation fields in the new fixed asset depreciation books will contain the same information as the corresponding fields in the fixed asset depreciation book that you copy from. Leave the field blank if you want to create new fixed asset depreciation books with empty depreciation fields.</p>
+</li>
+<li><p>On the <strong>Fixed Asset</strong> FastTab, you can set a filter to select the assets that you want to create the fixed asset depreciation books for.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-set-up-depreciation-posting-types">To set up depreciation posting types</h2>
+<p>For each depreciation book, you must set up how you want Business Central to handle various posting types. For example, whether posting should be debit or credit and whether the posting type should be included in the depreciable basis.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Books</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the depreciation book that you want to set up, and them choose the <strong>FA Posting Type Setup</strong> action.</p>
+</li>
+<li><p>On the <strong>FA Posting Type Setup</strong> page, fill in the fields as necessary.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot insert or delete lines on the <strong>FA Posting Type Setup</strong> page. You can only modify the existing lines.</p>
+</div>
+</li>
+</ol>
+<p>We recommend that you do not change the setup for depreciation books for entries that have already been posted. Changes will not affect the entries that are already posted, which would make depreciation book statistics misleading.</p>
+<h2 id="to-set-up-default-templates-and-batches-for-fixed-asset-depreciation">To set up default templates and batches for fixed asset depreciation</h2>
+<p>For each depreciation book, you define a default setup of templates and batches. You use these defaults to duplicate lines from one journal to another, create journal lines using the <strong>Calculate Depreciation</strong> or <strong>Index Fixed Assets</strong> batch jobs, duplicate acquisition costs in the insurance journal.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Depreciation Books</strong>, and then choose the related link.</li>
+<li>Select the depreciation book that you want to define default journals for, and then choose the <strong>FA Journal Setup</strong> action.</li>
+<li>If you want to have a default setup for each user, choose the <strong>User ID</strong> field to select from the <strong>Users</strong> page.</li>
+<li>In the other fields, select the journal template or journal batch that must be used by default.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="fa-manage.html">Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-setup-depreciation.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

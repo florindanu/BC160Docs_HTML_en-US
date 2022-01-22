@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Remove and Reapply Item Entries | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Remove and Reapply Item Entries | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can view and manually change certain item application entries that are created automatically during inventory transactions.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="remove-and-reapply-item-ledger-entries">Remove and Reapply Item Ledger Entries</h1>
+
+<p>On the <strong>Application Worksheet</strong> page, you can view and manually change certain item application entries that are created automatically during inventory transactions.</p>
+<p>When you post a transaction where items are moved in or out of inventory, an item application is created between each inventory increase and inventory decrease. These applications determine the flow of costs from the goods that are received in inventory to the cost of goods going out of inventory. Because of the way the unit cost is calculated, an incorrect item application could lead to a skewed average cost and a skewed unit cost. For more information, see Design Details: Item Application.</p>
+<p>The following scenarios might require that you undo an application or reapply item ledger entries:</p>
+<ul>
+<li>You have forgotten to make a fixed application.</li>
+<li>You have made an incorrect fixed application.</li>
+<li>You have to return an item to which a sale has already been applied.</li>
+</ul>
+<p>If possible, use a document to reapply an item ledger entry. For example, if you must make a purchase return of an item to which a sale has already been applied, you can reapply by creating and posting the purchase return document by using the correct application in the <strong>Appl.-to Item Entry</strong> field on the purchase return line. You can use the <strong>Get Posted Document Lines to Reverse</strong> function or the <strong>Copy from Document</strong> function in the purchase return document to make this easier. When you post the document, the item ledger entry is automatically reapplied. For more information, see <a href="purchasing-how-process-purchase-returns-cancellations.html">Process Purchase Returns or Cancellations</a>.</p>
+<p>If you cannot use a document to reapply, such as when you have to correct a fixed application, then use the <strong>Application Worksheet</strong> page to correct an application.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>The following are important considerations to remember when you are working with the application worksheet:
+- You should not leave application entries unapplied for long periods of time because other users cannot process the items until you reapply the application entries or close the <strong>Application Worksheet</strong> page. Users who try to perform actions that involve a manually unapplied application entry receive the following error message: “You cannot perform this action because entries for item XXX are unapplied in the Application Worksheet by user XXX.”
+- You should only reapply item ledger entries during nonworking hours to avoid conflicts with other users who are posting transactions with the same items.
+- When you close the application worksheet, Business Central performs a check to make sure that all entries are applied. For example, if you remove a quantity application but do not create a new application, and then you close the application worksheet, a new application is created. This helps keep the cost intact. However, if you remove a fixed application, a new fixed application is not automatically created when you close the worksheet. You must do this manually by creating a new application in the worksheet.
+- It is possible to remove applications from more than one entry at a time in the application worksheet. However, because applying entries affects the set of entries that are available for application, you cannot create an application for more than one entry at a time.
+- The application worksheet cannot make an application in the following situation: If there is not enough quantity on stock to apply, the application worksheet cannot make an application when you are trying to apply an inventory decrease entry without item tracking information to an inventory increase entry with item tracking information.</p>
+</div>
+<h2 id="to-remove-an-item-application-by-using-the-application-worksheet">To remove an item application by using the Application Worksheet</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Application Worksheet</strong>, and then choose the related link.</li>
+<li>The <strong>Application Worksheet</strong> page opens displaying existing item ledger entries for all items.</li>
+<li>Enter filters on the <strong>General</strong> FastTab to make it easier to find the item ledger entry for which you want to change the application.</li>
+<li>Select the item ledger entry, and then choose the <strong>Applied Entries</strong> action. The <strong>View Applied Entries – Applied Entries</strong> page opens to show the item ledger entry or entries that are currently applied to the selected entry.</li>
+<li>Select the item ledger entry for which you want to remove the application.</li>
+<li>Choose the <strong>Remove Application</strong> action. This removes the item application entry that links the two item ledger entries and moves it to the <strong>View Applied Entries – Unapplied Entries</strong> page.</li>
+<li>Close the <strong>View Applied Entries – Applied Entries</strong> page.</li>
+</ol>
+<p>The <strong>Remaining Quantity</strong> field of the two item ledger entries are increased by the quantity that has been unapplied. The removed item ledger entry is now available for reapplication on the <strong>View Applied Entries – Unapplied Entries</strong> page.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You should not leave application entries unapplied for longer periods of time because other users cannot process the affected items until you reapply the application entries or close the <strong>Application Worksheet</strong> page. The following error message is displayed if you try to perform actions that involve a manually unapplied application entry:</p>
+<p><strong>You cannot perform this action because entries for item <item> are unapplied in the Application Worksheet by user <user>.</user></item></strong></p>
+</div>
+<h2 id="to-reapply-an-item-application-by-using-the-application-worksheet">To reapply an item application by using the Application Worksheet</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Application Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>The <strong>Application Worksheet</strong> page opens displaying existing item ledger entries for all items.</p>
+</li>
+<li><p>To reapply entries that were removed since the worksheet was opened, select the item ledger entry that you want to reapply, and then choose the <strong>Reapply</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This reapplication to the original balance also occurs automatically when you close the <strong>Application Worksheet</strong> page.</p>
+</div>
+</li>
+<li><p>To apply an available open item ledger entry to another entry, select the item ledger entry that you want to apply. Choose the <strong>Unapplied Entries</strong> action. The <strong>View Applied Entries – Unapplied Entries</strong> page opens.</p>
+</li>
+<li><p>Select one or more item ledger entries that you want to apply to the entry selected on the <strong>Application Worksheet</strong> page, and then choose the <strong>OK</strong> button.</p>
+<p>An item application entry is created between the two item ledger entries. The <strong>Remaining Quantity</strong> fields of the two entries are reduced by the applied quantity.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have chosen to make an application that would create an infinite loop in the cost adjustment process, then the application that you proposed is not made. This can occur when the original entries created negative stock. The application is not made. Therefore, you must select a different entry for the application.</p>
+</div>
+</li>
+<li><p>If the <strong>Automatic Cost Adjustment</strong> field in the <strong>Inventory Setup</strong> is set to <strong>Always</strong>, then the cost adjustment batch job is automatically run after you make a reapplication. Otherwise, run the <strong>Adjust Cost - Item Entries</strong> batch job to make sure that all costs are up to date.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-how-to-close-open-item-ledger-entries-resulting-from-fixed-application-in-the-item-journal.html">Close Open Item Ledger Entries Resulting from Fixed Application in the Item Journal</a><br>
+<a href="purchasing-how-process-purchase-returns-cancellations.html">Process Purchase Returns or Cancellations</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="design-details-item-application.html">Design Details: Item Application</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-to-remove-and-reapply-item-entries.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

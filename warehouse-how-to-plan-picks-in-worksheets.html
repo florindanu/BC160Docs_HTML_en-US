@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Plan Picks in Worksheets | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Plan Picks in Worksheets | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="If your warehouse is set up to require both pick and shipment processing, the warehouse can choose to operate so that the lines on shipment documents are not automatically transformed into pick instructions, but are made available instead to the pick worksheet.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="plan-picks-in-worksheets">Plan Picks in Worksheets</h1>
+
+<p>If your warehouse is set up to require both pick and shipment processing, the warehouse can choose to operate so that the lines on shipment documents are not automatically transformed into pick instructions, but are made available instead to the pick worksheet.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If warehouse pick instructions have already been created, and you would like to combine them into one efficient pick instruction, then you must delete the individual warehouse picks. The lines to be picked can now be listed in the worksheet.</p>
+</div>
+<p>In the pick worksheet, you can set up pick lists for employees that minimize the time the employee has to move about the warehouse picking items. There are fields that contain information about the quantities of items available in the cross-dock bins. This is useful in cross docking situations to plan your work assignments, because application will always propose a pick from a cross-dock bin before any other bin, regardless of the unit of measure. The lines in the worksheet can come from a number of source documents and be sorted by item, shelf number, source document, due date, or ship-to address.</p>
+<p>If you sort by due date, you can choose to delete from the worksheet all lines except those that need immediate attention. The less urgent lines are not deleted as such, but just sent back to the <strong>Pick Selection</strong> worksheet. When you create the pick, the lines have already been sorted by due date, and you can choose to assign the pick to a particular employee.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Picking for warehouse shipment of items that are assembled to the sales order being shipped follows the same steps as for regular warehouse picks for shipment, as described in this topic. However, the number of pick lines per quantity to ship may be many to one because you pick the components, not the assembly item.</p>
+<p>The warehouse pick lines are created for the value in the <strong>Remaining Quantity</strong> field on the lines of the assembly order that is linked to the sales order line that is being shipped. This ensures that all components are picked in one action.</p>
+<p>For more information, see “Handling Assemble-to-Order Items in Warehouse Shipments” in Warehouse Shipment.</p>
+<p>For information about picking components for assembly orders generally, including situations where the assembly item is not due on a sales shipment, see <a href="warehouse-how-to-pick-for-internal-operations-in-advanced-warehousing.html">Pick for Assembly or Production in Advanced Warehouse Configurations</a>.</p>
+</div>
+<h2 id="to-plan-picks-in-the-worksheet">To plan picks in the worksheet</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Pick Worksheet</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Get Whse. Documents</strong> action.</li>
+<li>Select the shipments for which you want to prepare a pick. You can now sort the lines to some degree, but the sorting you do here will not be carried through to the pick instruction. You can also delete some of the lines to make a more effective pick. For instance, if there are a number of lines with items in cross-dock bins, you might want to create a pick for all the lines associated with these lines. The cross-docked items will be shipped, along with the other items on the shipments, and the cross-dock bins will have space for more incoming items.</li>
+<li>Choose the <strong>Create Pick</strong> action, and fill in the <strong>Create Pick</strong> request page. The sorting you request here will order the pick lines you create. For example, you can create one pick for each zone and sort the lines by bin ranking within each pick.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Picks</strong>, and then choose the related link. The <strong>Picks</strong> page opens.</li>
+<li>You can now find the pick assignment you just created by selecting the pick with the highest number.</li>
+<li>In the pick, you can still alter, if necessary, the assigned user ID and the way the lines are sorted.</li>
+<li>Choose the <strong>Print</strong> action to print the pick instructions.</li>
+<li>After you have performed the pick, choose the <strong>Register</strong> action.</li>
+</ol>
+<p>If the bins have been numbered in a way that mirrors the physical layout of the warehouse, the lines sorted by bin code allow the picker to pick for a number of shipments in one round of the warehouse. The worker takes the required number of items for each shipment line out of each bin and places them along with the other items for the particular shipment. A picker can save a great deal of time by picking for several shipments in one visit to a bin.</p>
+<p>Another effective sorting option is bin ranking, if the physical layout of the warehouse is more according to bin ranking than bin code.</p>
+<p>In the pick worksheet, you can also sort by ship-to address, enabling you to assemble and ship the orders to far-away customers first.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-plan-picks-in-worksheets.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

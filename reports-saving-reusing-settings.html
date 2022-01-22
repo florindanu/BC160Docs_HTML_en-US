@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Apply and Modify Saved Settings on Reports | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Apply and Modify Saved Settings on Reports | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes using predefined options and filters to customize a report, and to generate the correct data.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="manage-saved-settings-for-reports-and-batch-jobs">Manage Saved Settings for Reports and Batch jobs</h1>
+
+<p>When running reports, users are typically presented with a page that lets them select options and set filters to change the data that is included in the generated report. This page is called the request page. A report can include one or more <em>saved settings</em> that users can apply to the report from the request page. <em>Saved settings</em> are basically predefined options and filters. Using saved settings is a fast and reliable way to consistently generate reports that contain the correct data. For more information, see <a href="ui-work-report.html#SavedSettings">Using Saved Settings</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This topic refers mainly to &quot;report&quot;, but similar information applies to batch jobs.</p>
+</div>
+<p>If you have the proper permissions, you can view, create, and modify the saved settings for all reports for all users in a company. You can assign saved settings for a report to individual users or to all users in the company.</p>
+<!--
+## Apply saved settings to a report
+1. Open the report.
+
+   The request page appears.    
+2. In the **Saved Settings** section of the page, set the **Name** field  to the saved settings that you want to use.
+
+   The **Saved Settings** section only appears if the report has been run before or if there are existing saved settings entries. The saved settings entry called **Last used options and filters** is always available. These settings are the option and filter values that were used the last time you ran the report.
+
+-->
+<h2 id="to-create-and-modify-saved-settings-for-all-users">To create and modify saved settings for all users</h2>
+<p>You manage saved settings on the <strong>Reports Settings</strong> page. There are two ways to open this page:</p>
+<ul>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Report Settings</strong>, and then choose the related link.</li>
+<li>Open a report, choose the lookup in the <strong>Use default values from</strong> field, and then choose the <strong>Select from full list</strong> action.</li>
+</ul>
+<p>The page displays all the existing saved settings entries for all users. If there is a user name in the <strong>Assigned to</strong> field, only that user can use the saved settings for the associated report. If there is a check mark in the <strong>Share with all users</strong> field, all users can use the saved settings for the report.</p>
+<p>From the <strong>Report Settings</strong> page, you can:</p>
+<ul>
+<li>Choose the <strong>New</strong> action to create a new saved settings entry from scratch.</li>
+<li>Select a saved settings entry from the list, and choose the <strong>Copy</strong> action to create a copy.</li>
+<li>Select a saved settings entry from the list, and choose the <strong>Edit</strong> action to modify a saved settings entry.</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Consider the name that you give a saved settings entry. If you create a saved settings entry for all users, and you give it the same name as an existing saved settings entry that is assigned to a specific user only, then that user will not be able to use the saved settings entry that is assigned to everyone.  In the <strong>Saved Settings</strong> section on the request page, the user will see two saved settings entries with the same name. However, no matter which option they choose, the user-specific saved settings entry will be used.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Saved Settings feature is available only on reports where the <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/properties/devenv-savevalues-property">SaveValues property</a> of the report's request page is set to <strong>Yes</strong>. The <strong>SaveValues</strong> property is set in the development environment.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-work-report.html">Working with Reports, Batch Jobs, and XMLports</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/reports-saving-reusing-settings.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

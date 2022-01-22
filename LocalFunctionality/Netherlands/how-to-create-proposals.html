@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Proposals </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Proposals ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Proposals can be generated manually or automatically based on either vendor or customer ledger entries.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-proposals">Create Proposals</h1>
+
+<p>Proposals can be generated manually or automatically based on either vendor or customer ledger entries.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>To create a proposal, you must use the <strong>Owner Information</strong> field in the Vendor Bank Account Card and Customer Bank Account Card pages.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>At any time and at any level, before processing a proposal, the transaction mode and bank account can be modified. At the lowest level on the relevant vendor or customer ledger entries.</p>
+</div>
+<h2 id="to-create-proposals-manually">To create proposals manually</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Telebank - Bank Overview</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant bank account and then choose the <strong>Proposal</strong> action.</p>
+</li>
+<li><p>At a minimum, you must fill in the <strong>Account Type</strong>, <strong>Account No.</strong>, <strong>Transaction Mode</strong>, <strong>Bank Account No.</strong>, and <strong>Amount</strong> fields.</p>
+</li>
+<li><p>If you want to view or adjust the proposal's detail lines, choose the <strong>Detail Information</strong> action. To return to the proposal, close the <strong>Proposal Detail Line</strong> page.</p>
+</li>
+</ol>
+<h2 id="to-create-proposals-automatically-from-sales">To create proposals automatically from sales</h2>
+<ol>
+<li><p>Set up a card for the customer who sent the invoice with appropriate values for the <strong>Currency Code</strong>, <strong>Transaction Mode</strong>, and <strong>Bank Account</strong> fields.</p>
+</li>
+<li><p>Create a sales invoice or credit memo, enter the customer and relevant items and post the invoice.</p>
+</li>
+<li><p>Check whether the <strong>Currency Code</strong>, <strong>Transaction Mode</strong>, and <strong>Bank Account</strong> fields of the invoice/credit memo contain appropriate values. By default, they will be copied from the customer card.</p>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Telebank - Bank Overview</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant bank account, and then choose the <strong>Proposal</strong> action.</p>
+</li>
+<li><p>Choose the <strong>Get Entries</strong> action.</p>
+<p>You can use the Get Proposal Entries Batch Job batch job to generate proposal lines based on relevant customer ledger entries.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only proposal lines will be created for ledger entries that have a transaction mode of account type <strong>Customer</strong> and a link to the active bank account.</p>
+</div>
+</li>
+<li><p>If you want to view or adjust the proposal's detail lines, choose the <strong>Detail Information</strong> action. To return to the proposal, close the <strong>Proposal Detail Line</strong> page.</p>
+</li>
+</ol>
+<h2 id="to-create-proposals-automatically-from-purchases">To create proposals automatically from purchases</h2>
+<ol>
+<li><p>Set up a card for the vendor that sent the invoice with appropriate values for <strong>Currency Code</strong>, <strong>Transaction Mode</strong>, and <strong>Bank Account</strong> fields.</p>
+</li>
+<li><p>Create a purchase invoice or credit memo, enter the vendor and relevant items.</p>
+</li>
+<li><p>Post the invoice.</p>
+</li>
+<li><p>Check whether the <strong>Currency Code</strong>, <strong>Transaction Mode</strong>, and <strong>Bank Account</strong> fields of the invoice/credit memo contain appropriate values. By default, they will be copied from the vendor card.</p>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Telebank - Bank Overview</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant bank account, and then choose the <strong>Proposal</strong> action.</p>
+</li>
+<li><p>Choose the <strong>Get Entries</strong> action.</p>
+<p>You can use the Get Proposal Entries Batch Job batch job to generate proposal lines based on relevant vendor ledger entries.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only proposal lines will be created for ledger entries that have a transaction mode of account type <strong>Vendor</strong> and a link to the active bank account.</p>
+</div>
+</li>
+<li><p>If you want to view or adjust the proposal's detail lines, choose the <strong>Detail Information</strong> action. To return to the proposal, close the <strong>Proposal Detail Line</strong> page.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="../../sales-how-register-new-customers.html">Register New Customers</a><br>
+<a href="../../sales-how-invoice-sales.html">Invoice Sales</a><br>
+<a href="../../purchasing-how-record-purchases.html">Record Purchases</a><br>
+<a href="how-to-create-and-export-payment-history.html">Create and Export Payment History</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Netherlands/how-to-create-proposals.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

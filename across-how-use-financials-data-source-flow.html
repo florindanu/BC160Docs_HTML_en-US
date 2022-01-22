@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Connect Your Data with Power Automate| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Connect Your Data with Power Automate| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can make your Business Central data available as a data source and specify an OData URL of your web services to build an automated workflow.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="using--in-an-automated-workflow">Using Business Central in an Automated Workflow</h1>
+
+<p>You can use your Business Central data as part of a workflow in Microsoft Power Automate.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In addition to Power Automate, you can use the Workflow functionality within Business Central. Note that although they are two separate workflow systems, any workflow template that you create with Power Automate is added to the list of workflows  within Business Central. For more information, see <a href="across-workflow.html">Workflow</a>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must have a valid account with Business Central and with Power Automate.</p>
+</div>
+<h2 id="to-add--as-a-data-source-in-power-automate">To add Business Central as a data source in Power Automate</h2>
+<ol>
+<li><p>In your browser, navigate to <a href="https://flow.microsoft.com">flow.microsoft.com</a>, and then sign in.</p>
+</li>
+<li><p>Choose <strong>My flows</strong> from the ribbon at the top of the page.</p>
+</li>
+<li><p>There are 3 ways to create a flow; <strong>Start from template</strong>, <strong>Start from blank</strong>, and <strong>Start from a connector</strong>. A template is a predefined flow that has been created for you. To use a template, simply select it and create a connection for each service the template uses. With the <strong>Start from blank</strong> and <strong>Start from a connector</strong> options, you can create a new flow completely from scratch.</p>
+</li>
+<li><p>To create from blank, on the <strong>My flows</strong> page, choose the <strong>Start from blank</strong> and <strong>Automated flow</strong> options.</p>
+</li>
+<li><p>Search for <strong>Microsoft Dynamics 365 Business Central</strong> connector.</p>
+</li>
+<li><p>Define a name and choose the trigger you want to use for your flow.</p>
+</li>
+<li><p>From the list of available triggers, select one of the Business Central triggers available:</p>
+<p><em>When a vendor approval is requested</em>,<br>
+<em>When a general journal line approval is requested</em>,<br>
+<em>When a record is deleted</em>,<br>
+<em>When a record is changed</em>,<br>
+<em>When a record is created</em>,<br>
+<em>When a record is modified</em>,<br>
+<em>When a general journal batch approval is requested</em>,<br>
+<em>When a customer approval is requested</em>,<br>
+<em>When an item approval is requested</em>,<br>
+<em>When a purchase document approval is requested</em>, or<br>
+<em>When a sales document approval is requested</em>.</p>
+</li>
+<li><p>Power Automate will prompt you to select an environment and company within your Business Central tenant, as well as any conditions in your data that you want to listen for.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Business Central connector for Power Automate supports multiple production and sandbox environments. If you have not created multiple production or sandbox environments, <strong>Production</strong> is the only available option that you can choose.</p>
+</div>
+<p>At this point, you have successfully connected to your Business CentralBusiness Central data and are ready to begin building your flow.</p>
+</li>
+<li><p>To create from a template, choose the <strong>Start from template</strong> option.</p>
+</li>
+<li><p>Search for <strong>Microsoft Dynamics 365 Business Central</strong> templates.</p>
+</li>
+<li><p>From the list of available templates, select one of the templates, and then choose <strong>Create</strong>.</p>
+<p><em>Request Approval for Microsoft Dynamics 365 Business Central sales order</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central sales quote</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central sales invoice</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central sales credit memo</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central customer</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central purchase order</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central purchase invoice</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central purchase credit memo</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central item</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central vendor</em>,<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central general journal batch</em>, or<br>
+<em>Request Approval for Microsoft Dynamics 365 Business Central general journal lines</em>.</p>
+</li>
+<li><p>Power Automate will display a list of services used in the flow template and will attempt to connect automatically to those services. If you have not previously connected to a service, you will be prompted to sign in to each of the services you need to connect to. A green checkmark will appear next to each service once a connection has been successfully made. Select <strong>Continue</strong>.</p>
+</li>
+<li><p>Power Automate will prompt you to select an environment and company within your Business Central tenant. Because each step in the flow is independent of the next, you may be required to define the environment and company multiple times when using a Business Central Power Automate template.</p>
+</li>
+</ol>
+<p>For more information, see the <a href="http://docs.microsoft.com/power-automate/getting-started">Power Automate Documentation</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="product-get-started.html">Getting Started</a><br>
+<a href="across-workflow.html">Workflow</a><br>
+<a href="across-import-data-configuration-packages.html">Importing Business Data from Other Finance Systems</a><br>
+<a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a><br>
+<a href="across-use-workflows.html">Manage Dynamics 365 Business Central Workflows</a><br>
+<a href="across-how-to-set-up-approval-users.html">Approval User Setup</a><br>
+<a href="setup.html">Setting Up Business Central</a><br>
+<a href="finance.html">Finance</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-use-financials-data-source-flow.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

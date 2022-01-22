@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Czech Local Functionality - Fixed Assets | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Czech Local Functionality - Fixed Assets | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This section describes Czech local functionality - Fixed Assets">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="fixed-assets">Fixed Assets</h1>
+
+<h2 id="fixed-assets-tax-depreciation">Fixed Assets Tax Depreciation</h2>
+<p>The Fixed Assets Tax Depreciation feature calculates and posts tax depreciation in compliance with the Income Tax Act (Law 586/1992 §26 - §33). This feature has a special setup for tax depreciation groups to enable entering rates and coefficients for new depreciation methods with fixed assets tax depreciation.</p>
+<p>Each long-term tangible fixed asset belongs to a depreciation group. These groups determine minimal depreciation periods and parameters used for calculating depreciation. The following depreciation methods are provided for long-term tangible fixed asset (FA) depreciations for tax purposes:</p>
+<ul>
+<li>Regular – This method is based on the acquisition value and percentage (straight line).</li>
+<li>Accelerated – This method is based on the book value and coefficient (declining balance).</li>
+<li>Regular based on the acquisition value and percentage (straight-line intangible).</li>
+</ul>
+<p>Each long-term fixed asset belongs to a depreciation group. These groups determine minimal depreciation periods and parameters that will be used for calculating depreciation.</p>
+<h2 id="calculation-of-depreciation-basis-in-fixed-assets">Calculation of Depreciation Basis in Fixed Assets</h2>
+<p>Due to Czech legislation, it is necessary to calculate tax depreciations from the depreciable basis which can be different from acquisition costs. According to the requirements, a depreciation basis by the Czech declining-balance depreciation method for the second and following years of a fixed asset's life should be calculated by the new formula defined in the Income Tax Act.</p>
+<p>Changes have been made in the calculation of depreciation amounts by the CZ declining-balance depreciation method for the second and following years of a fixed asset's life by the formula stated above. The tax depreciation is calculated annually and the <strong>Force No. of Days</strong> option is recommended for calculating the correct depreciation amount.</p>
+<h2 id="fixed-assets-depreciation-holidays">Fixed Assets Depreciation Holidays</h2>
+<p>The Fixed Asset Depreciation Holidays feature (according to the Income Tax Act – Law 586/1992 §26 part 8) enables user to discontinue depreciation for selected fixed assets and for specified periods. The system determines the depreciation schedule after the break period ends.
+The list of depreciation methods for which the discontinuing of depreciation has been implemented is as follows:</p>
+<ul>
+<li>Straight line</li>
+<li>Regular</li>
+<li>Accelerated</li>
+<li>Straight line for intangible fixed assets</li>
+<li>Enhanced depreciation methods and straight-line methods to pick up the threads of the depreciation schedule end after the break depreciation period.</li>
+</ul>
+<p>Users can open the FA depreciation book and fill in the <strong>Depreciation Interrupt</strong> and <strong>Depreciation Interrupt up to</strong> fields. The <strong>Keep Depr. Ending Date</strong> field defines if you want to maintain the depreciation schedule.</p>
+<h2 id="two-step-fixed-asset-acquisition">Two-Step Fixed Asset Acquisition</h2>
+<p>There are two steps to accomplish when acquiring a fixed asset in Czech accounting. When a company gets an invoice for a fixed asset acquisition, it must be posted. Since the initial use of the fixed asset, the used fixed asset is posted. Both the acquisition and put-to-use steps are required and connected with G/L entries. Fixed assets are not depreciated until they are put to use.</p>
+<p>For this process, use the <strong>Custom 2</strong> fixed asset posting type for the first step (acquisition) and <strong>Acquisition</strong> fixed asset posting type for the second step (put to use). Select the <strong>Fixed Asset Acquisition as Custom2</strong> check box on the <strong>Fixed Asset Setup</strong> page to start using this feature.</p>
+<p>The value <strong>Custom 2</strong> is renamed in Czech language from &quot;Vlastní 2&quot; to &quot;Pořízení&quot; for correct FA purchase identification and better accountant understanding.</p>
+<h2 id="fixed-asset-posting-of-disposal">Fixed Asset Posting of Disposal</h2>
+<p>Czech accounting standards require specific posting when a fixed asset is being disposed of or being sold. After selling or posting fixed assets, the posting of disposal ensures the fixed asset value remains the same as that of the acquired value after depreciation.</p>
+<p>The fixed asset remains unchanged even after it is put to use. When the fixed asset is depreciated periodically, a corresponding sum is debited from the acquired cost at the time of disposal. The balance amount is the current fixed asset value.</p>
+<p>On the <strong>Depreciation Book</strong> page, select the <strong>Corresponding G/L Entries on Disposal</strong> check box to make this feature operational. Also select the <strong>Corresponding FA Entries on Disposal</strong> check box to retain the correspondence between G/L entries and FA entries.</p>
+<h2 id="different-types-of-disposal-and-maintenance">Different Types of Disposal and Maintenance</h2>
+<p>In Czech accounting, it is necessary to post different types of disposal and different types of maintenance of fixed assets to specific G/L accounts. A standard way offers only one method of disposal and maintenance posting.</p>
+<p>A new setup is added for this, namely the <strong>FA Extended Posting Group</strong> table. This table allows to set up each FA posting group:</p>
+<ul>
+<li>Posting disposals to different accounts in combination with <strong>Reason Code</strong> field for disposals</li>
+<li>Posting maintenance in combination with the <strong>Maintenance Code</strong> field for maintenance</li>
+</ul>
+<h2 id="fixed-assets-clasification">Fixed Assets Clasification</h2>
+<h3 id="classification-code">Classification Code</h3>
+<p>The Tax of Income Law 586/1992 insists on sorting fixed assets by production classification marked CZ-CPA and by building operations classification marked CZ-CC. The new <strong>Classification Code</strong> table and the <strong>Classification Code</strong> field are added. The field is used for FA classification to the tax group.</p>
+<h2 id="fixed-asset-locationresponsible-history-report">Fixed Asset Location/Responsible History Report</h2>
+<p>This feature provides users with the ability to track changes to the location and responsible employee for fixed assets.</p>
+<p>With the addition of this feature, users are able to control location history of the fixed asset and the history of employees responsible for the fixed asset.
+This feature also provides reports for company verification where a specific fixed asset is/was located or to whom it is/was assigned.</p>
+<p>To enable FA Location and responsible-employee tracking (FA history), user must first enable this feature by selecting the <strong>Fixed Assets History</strong> check box on the <strong>Fixed Asset Setup</strong> page. User can then start to track changes in fixed assets' location and responsible employees. The changes are stored in the <strong>FA History Entry</strong> table.</p>
+<p>Items of fixed assets:</p>
+<ul>
+<li>Save changes in FA evidence</li>
+<li>Include time and user stamp changes</li>
+</ul>
+<p>New reports for transactions and history documentation added:</p>
+<ul>
+<li>FA Assignment/Discharge</li>
+<li>FA History</li>
+</ul>
+<h2 id="fixed-assets-reporting">Fixed Assets Reporting</h2>
+<p>In order to comply with the requirements in legislation reporting features and local reporting practices of Czech companies, this feature provides the following reports:</p>
+<ul>
+<li><strong>Fixed Asset Card</strong> – combines data from the standard <strong>FA List</strong> and <strong>FA Details</strong> reports, grouping details per FA depreciation book.</li>
+<li><strong>FA Receipt</strong> – is printed when a particular fixed asset is received to be put to use. Such document must be signed by company officials.</li>
+<li><strong>FA Disposal</strong> – is printed when a particular fixed asset is disposed of or damaged.</li>
+<li><strong>FA – Analysis G/L Account</strong> – used to compare it with G/L account.</li>
+<li><strong>Fixed Asset – Analysis 2</strong> – users can define 3 columns for date, 4 columns for amount field, group totals, and export to Excel.</li>
+<li><strong>Fixed Asset – Analys. Dep. Book</strong> – user can choose 2 depreciation books for comparison.</li>
+<li><strong>FA Phys. Inventory List</strong> – companies are obliged to reconcile the physical state of fixed assets and book value in order to prepare the financial statement.</li>
+<li><strong>FA Inventory List</strong> – prints the fixed assets inventory per responsible employee or location code.</li>
+</ul>
+<p>The following standard reports have been adjusted for the Czech Republic (new Group total, etc.):</p>
+<ul>
+<li><strong>Fixed Asset – Analysis</strong></li>
+<li><strong>Fixed Asset – Book Value 01</strong></li>
+<li><strong>Fixed Asset – Book Value 02</strong></li>
+<li><strong>Fixed Asset – Projected Value</strong></li>
+<li><strong>Fixed Asset – G/L Analysis</strong></li>
+<li><strong>Maintenance – Analysis</strong></li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="czech-local-functionality.html">Czech Local Functionality</a><br>
+<a href="finance.html">Finance</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Czech/fixed-assets.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

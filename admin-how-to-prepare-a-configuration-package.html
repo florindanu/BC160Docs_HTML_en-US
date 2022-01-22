@@ -1,0 +1,259 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Prepare a Configuration Package | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Prepare a Configuration Package | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When you configure a new company, table relations are recognized and processed. Data is imported and applied in the correct order. Dimension tables are also imported if they are included in the configuration package.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="prepare-a-configuration-package">Prepare a Configuration Package</h1>
+
+<p>When you configure a new company, table relations are recognized and processed. Data is imported and applied in the correct order. Dimension tables are also imported if they are included in the configuration package. For more information, see <a href="admin-migrate-customer-data.html#to-import-customer-data">To import customer data</a>.</p>
+<p>To help your customer use the configuration package, you may want to add a questionnaire or a set of questionnaires to the package. The questionnaire can help the customer in understanding the various setup options. Typically, questionnaires are created for the major setup tables where a customer may require additional guidance about how to select an appropriate setting. For more information, see <a href="admin-gather-customer-setup-values.html">Gather Customer Setup Values</a>.</p>
+<h2 id="before-you-create-a-configuration-package">Before You Create a Configuration Package</h2>
+<p>There are some things to consider before you create a configuration package because they will impact you or your customer's ability to import it.</p>
+<h3 id="tables-that-contain-posted-entries">Tables That Contain Posted Entries</h3>
+<p>You cannot import data to tables that contain posted entries, such as the tables for customer, vendor, and item ledger entries, so you should not include this data in your configuration package. You can add entries to these tables after you import the configuration package by using journals to post the entries. For more information, see <a href="ui-post-documents-journals.html">Posting Documents and Journals</a>.</p>
+<h3 id="licensing">Licensing</h3>
+<p>Your license must include the tables you are updating. If you are unsure, the <strong>Configuration Worksheet</strong> page can help. If your license includes the table, the <strong>Licensed Table</strong> check box is chosen.</p>
+<h3 id="permissions">Permissions</h3>
+<p>The process of creating and importing a configuration package involves the following effective permissions for all tables in the package:</p>
+<ul>
+<li>The user who exports data for the configuration package must have <strong>Read</strong> effective permissions.</li>
+<li>The user who imports the configuration package must have <strong>Insert</strong> and <strong>Modify</strong> effective permissions.</li>
+</ul>
+<h3 id="database-schema">Database Schema</h3>
+<p>When exporting and importing configuration packages between two company databases, the databases should have the same schema to ensure that all data is transferred successfully. This means that the databases should have the same table and field structure, in which the tables have the same primary keys and fields have the same IDs and data types.</p>
+<p>You can import a configuration package that has been exported from a database that has a different schema than that target database. However, any tables or fields in the configuration package that are missing in the target database will not be imported. Tables with different primary keys and fields with different data types will also not successfully import. For example, if the configuration pack includes table <strong>50000, Customer</strong> that has primary key <strong>Code20</strong> and the database to which you import the pack includes table <strong>50000, Customer Bank Account</strong> that has the primary key <strong>Code20 + Code 20</strong>, then data will not be imported.</p>
+<h2 id="to-create-a-configuration-package">To create a configuration package</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, fill in the fields as appropriate. Hover over a field to read a short description.</p>
+</li>
+<li><p>To exclude the configuration questionnaires, configuration templates, and configuration worksheet tables from the package, select the <strong>Exclude Configuration Tables</strong> check box. Otherwise, these tables will be added to the list of package tables automatically when you export the package.</p>
+</li>
+<li><p>Choose the <strong>Get Tables</strong> action. The <strong>Get Package Tables</strong> batch job page opens.</p>
+</li>
+<li><p>Choose the <strong>Select Tables</strong> field. The <strong>Config. Selection</strong> page opens.</p>
+</li>
+<li><p>Choose the <strong>Select All</strong> action to add all tables to the package, or select the <strong>Selected</strong> check box for each table in the list that you want to add.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button. The count of tables that you have selected is indicated in the <strong>Select Tables</strong> field. Specify additional options, and then choose the <strong>OK</strong> button. Business Central tables are added to the lines of the <strong>Config. Package</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also do this in the configuration worksheet. Select the tables you want to include in the package, and then choose the <strong>Assign Package</strong> action.</p>
+</div>
+</li>
+<li><p>To select the fields that you want to include from a table, select the table, and then, on the <strong>Lines</strong> tab, choose the <strong>Fields</strong> action.
+Specify which fields are included in the package. By default, all fields are included.</p>
+<ul>
+<li>To select just the fields you want to include, choose the <strong>Clear Included</strong> action. To add all fields, choose the <strong>Set Included</strong> action.</li>
+<li>To specify that the field data should not be validated, clear the <strong>Validate Field</strong> check box for the field.</li>
+</ul>
+</li>
+<li><p>Determine whether you have introduced potential errors, by choosing the <strong>Validate Package</strong> action. This can occur when you do not include tables that your configuration relies on.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>After you have refined the list of fields to include from a table, you can check your results in Excel.</p>
+<h3 id="to-filter-and-review-your-dataset">To filter and review your dataset</h3>
+<ol>
+<li>To filter to a certain set of records to include in the package, on the <strong>Lines</strong> tab, choose the <strong>Filters</strong> action, and then specify the appropriate filter values.</li>
+<li>On the package card, on the <strong>Lines</strong> tab, choose the <strong>Export to Excel</strong> action.</li>
+<li>Confirm the messages that enable the export of data to Excel. The named .xlsx file opens. Review the records that have been exported.</li>
+<li>Close Excel.</li>
+</ol>
+<h3 id="to-include-a-template-for-application-to-a-table">To include a template for application to a table</h3>
+<p>For certain tables, such a table that will contain master data, you can specify a template to apply to the data. The template can include the required fields that you want to apply to all master data and that you never want to vary. For example, you can create a template that can be used with customer data. The template can contain all the required fields, which then enables consistent import of standardized information. Information that cannot be standardized, such as customer name, is then treated when you do an import of customer data.</p>
+<ol>
+<li>On the <strong>Config. Package Card</strong> page, select a table, and then choose the <strong>Data Template</strong> field. A list of templates based on the table is displayed.</li>
+<li>Select a template, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<p>After the package is complete, follow the next procedure to save the package to a file. You can then give the package to a customer or partner to use.</p>
+<h3 id="to-save-and-export-a-configuration-package">To save and export a configuration package</h3>
+<ul>
+<li>On the <strong>Config. Package Card</strong> page, choose the <strong>Export Package</strong> action.</li>
+</ul>
+<p>The package is created in a .rapidstart file, which delivers the package contents in a compressed format. Configuration questionnaires, configuration templates, and the configuration worksheet are added to the package automatically unless you specifically decide to exclude them.</p>
+<p>You can save the file with a name that is meaningful to you, but you cannot change the extension of the file. It must be .rapidstart.</p>
+<h3 id="to-copy-a-configuration-package">To copy a configuration package</h3>
+<p>After you have created a package that meets most of your needs, you can use it as a basis for creating similar packages. This can speed up implementation time and enhances the repeatability of RapidStart Services.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Packages</strong>, and then choose the related link.</li>
+<li>Select a package from the list, and then choose the <strong>Copy Package</strong> action.</li>
+<li>In the <strong>New Package Code</strong> field, enter a code for the new package.</li>
+<li>Select the <strong>Copy Data</strong> check box if you also want to copy database data from the existing package.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="to-customize-a-configuration-package">To customize a configuration package</h2>
+<p>Use the configuration worksheet to gather and categorize the information that you want to use to configure a new company, and arrange tables in a logical way. Formatting in the worksheet is based on a simple hierarchy: Areas contain groups, which in turn contain tables. Areas and groups are optional, but are necessary to enable an overview of the configuration process on the RapidStart Services Role Center.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then choose the related link.</li>
+<li>In the <strong>Line Type</strong> field, choose <strong>Area</strong>. In the <strong>Name</strong> field, enter a descriptive name.</li>
+<li>In the <strong>Line Type</strong> field, choose <strong>Group</strong>. In the <strong>Name</strong> field, enter a descriptive name.</li>
+<li>In the <strong>Line Type</strong> field, choose <strong>Table</strong>. In the <strong>Table ID</strong> field, select the table you want to include in the worksheet.</li>
+</ol>
+<p>You can now assign the tables to specific configuration packages that you have created or plan to create. For more information, see <a href="admin-how-to-prepare-a-configuration-package.html#to-assign-a-table-to-a-configuration-package">To assign a table to a configuration package</a>.</p>
+<h2 id="to-work-with-promoted-tables">To work with promoted tables</h2>
+<ol>
+<li>Select the <strong>Promoted Table</strong> check box to indicate a table that is frequently used during the setup process by a typical customer, for example, the <strong>G/L Account</strong> table. When a table has this designation, a customer will be able to easily filter his worksheet to see just the list of promoted tables that require attention.</li>
+<li>To see the filtered view, choose the <strong>Promoted Only</strong> action. The list of tables contains only those tables that have the check box selected.</li>
+</ol>
+<h2 id="to-assign-a-table-to-a-configuration-package">To assign a table to a configuration package</h2>
+<p>After you have defined the tables that you want to treat as part of your configuration, you can easily assign the tables to configuration packages. You can assign a table to one package only. In the following procedure, you assign the package from within configuration worksheet.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also create a package directly, and add tables to it. For more information, see <a href="admin-how-to-prepare-a-configuration-package.html#to-create-a-configuration-package">To create a configuration package</a>.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the configuration worksheet, select a line or group of lines that you want to assign to a configuration package, and then choose the <strong>Assign Package</strong> action.</p>
+</li>
+<li><p>Select a package from the list, or choose the <strong>New</strong> action to create a new package, and then choose the <strong>OK</strong> button.</p>
+<p>If a table is not already included in the package, it will now be added. The package code field on the worksheet line will be filled in with the code of the package that the table is assigned to.</p>
+</li>
+<li><p>If you choose an existing package, you can see how many tables are already in the package by reviewing the information in the <strong>No. of Tables</strong> field.</p>
+</li>
+</ol>
+<h2 id="to-review-or-customize-existing-database-data">To review or customize existing database data</h2>
+<p>As you create a configuration package for a solution, you can view and customize the available database data to suit your customer needs. The database table must have an associated page.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the configuration worksheet, identify the tables whose data that you want to view or customize.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Make sure that each table has a page ID assigned to it. For standard Business Central tables, this value is automatically filled in. For custom tables, you must provide the ID.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Database Data</strong> action. The page for the related page opens.</p>
+</li>
+<li><p>Review the available information. Modify it as necessary by deleting records that are not relevant or by adding new ones.</p>
+</li>
+</ol>
+<h2 id="to-copy-data-from-a-test-environment-to-a-production-environment">To copy data from a test environment to a production environment</h2>
+<p>After you have vetted and tested all your setup information, you can proceed to copy data to your production environment. You create a new company in the same database.</p>
+<ol>
+<li>Open and initialize the new company.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Configuration Worksheet</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Copy Data from the Company</strong> action.</li>
+<li>On the <strong>Copy Company Data</strong> page, choose the <strong>Copy From</strong> field. The <strong>Companies</strong> page opens.</li>
+<li>Select the company from which you want to copy data, and then choose the <strong>OK</strong> button. A list of tables selected on the configuration worksheet opens. Only tables that contain records are included in this list.</li>
+<li>Select the tables that you want to copy data from, and then choose the <strong>Copy Data</strong> action. On the <strong>Copy Company Data</strong> page, choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-gather-customer-setup-values.html">Gather Customer Setup Values</a><br>
+<a href="admin-set-up-company-configuration.html">Set Up Company Configuration</a><br>
+<a href="admin-set-up-a-company-with-rapidstart.html">Setting Up a Company With RapidStart Services</a><br>
+<a href="admin-setup-and-administration.html">Administration</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-prepare-a-configuration-package.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

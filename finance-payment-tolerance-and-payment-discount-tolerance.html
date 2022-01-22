@@ -1,0 +1,974 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Payment Tolerance and Payment Discount Tolerance | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Payment Tolerance and Payment Discount Tolerance | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can set up payment tolerance to close an invoice when the payment does not fully cover the amount on the invoice.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-with-payment-tolerances-and-payment-discount-tolerances">Work with Payment Tolerances and Payment Discount Tolerances</h1>
+
+<p>You can set up a payment tolerance to close an invoice when the payment does not fully cover the amount on the invoice. For example, payment tolerances are typically for small amounts that would cost more to correct than to just accept. You can set up a payment discount tolerance to grant a payment discount after the payment discount date has passed.</p>
+<p>You can use payment tolerances so that every outstanding amount has a set maximum allowed payment tolerance. If the payment tolerance is met, then the payment amount is analyzed. If the payment amount is an underpayment, then the outstanding amount is fully closed by the underpayment. A detailed ledger entry is posted to the payment entry so that no remaining amount is left on the applied invoice entry. If the payment amount is an overpayment, then a new detailed ledger entry is posted to the payment entry so that no remaining amount is left on the payment entry.</p>
+<p>You can use payment discount tolerances so that if you accept a payment discount after the payment discount date, then it is always posted to either the payment discount account or a payment tolerance account.</p>
+<h2 id="applying-payment-tolerance-to-multiple-documents">Applying Payment Tolerance to Multiple Documents</h2>
+<p>A single document has the same payment tolerance whether it is applied on its own or with other documents. Acceptance of a late payment discount when you are applying payment tolerance to multiple documents automatically occurs for each document where the following rule is true:</p>
+<p><em>payment discount date &lt; payment date on the selected entry &lt;= payment tolerance date</em></p>
+<p>This rule also applies to determine whether to display warnings when you apply payment tolerance to multiple documents. The payment discount tolerance warning is displayed for each entry that meets the date criteria. For more information, see <a href="finance-payment-tolerance-and-payment-discount-tolerance.html#example-2---tolerance-calculations-for-multiple-documents">Example 2 - Tolerance Calculations for Multiple Documents</a>.</p>
+<p>You can choose to display a warning that is based on different tolerance situations.</p>
+<ul>
+<li>The first warning is for the payment discount tolerance. You are informed that you can accept a late payment discount. You can then choose whether to accept tolerance on the discount date.</li>
+<li>The second warning is for the payment tolerance. You are informed that all entries can be closed because the difference is in the sum of the maximum payment tolerance for the applied entries. You can then choose whether to accept tolerance on the payment amount.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Enabling the warning message will let choose how to process payments that are within tolerance. If you do not enable the message, and a tolerance level is specified, invoices with amounts that are within tolerance will be automatically closed and you cannot choose to leave the remaining amount.</p>
+</div>
+<p>For more information, see <a href="finance-payment-tolerance-and-payment-discount-tolerance.html#to-enable-or-disable-payment-tolerance-warnings">To enable or disable payment tolerance warning</a>.</p>
+<h2 id="to-set-up-tolerances">To set up tolerances</h2>
+<p>Tolerance on days and amounts allows you to close an invoice even though the payment does not fully cover the amount on the invoice, whether this is because the due date for the payment discount has been exceeded, goods have been deducted or because of a minor error. This also applies to refunds and credit memos.</p>
+<p>To set up tolerance you have to set up various tolerance accounts, specify both payment discount tolerance and payment tolerance posting methods and then run the <strong>Change Payment Tolerance</strong> batch job.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>General Posting Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>General Posting Setup</strong> page, set up a debit and a credit sales payment tolerance account and a debit and a credit purchase payment tolerance account.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customer Posting Groups</strong>, and then choose the related link.</li>
+<li>On the <strong>Customer Posting Groups</strong> page, set up a debit and a credit payment tolerance account. For more information, see <a href="finance-posting-groups.html">Setting Up Posting Groups</a>.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Vendor Posting Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>Vendor Posting Groups</strong> page, set up a debit and a credit payment tolerance account.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</li>
+<li>Open the <strong>General Ledger Setup</strong> page.</li>
+<li>On the <strong>Application</strong> FastTab, fill in the <strong>Pmt. Disc. Tolerance Posting</strong>, <strong>Payment Discount Grace Period</strong> and <strong>Payment Tolerance Posting</strong> fields.</li>
+<li>Choose the <strong>Change Payment Tolerance</strong> action.</li>
+<li>On the <strong>Change Payment Tolerance</strong> page, fill in the <strong>Payment Tolerance %</strong> and <strong>Max Payment Tolerance Amount</strong> fields, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You have now set up tolerance for local currency only. If you want Business Central to handle tolerance on payments, credit memos, and refunds in a foreign currency, you must run the <strong>Change Payment Tolerance</strong> batch job with a value in the <strong>Currency Code</strong> field.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to get a payment tolerance warning every time that you post an application in the tolerance, you must activate the payment tolerance warning. For more information, see <a href="finance-payment-tolerance-and-payment-discount-tolerance.html#to-enable-or-disable-payment-tolerance-warnings">To enable or disable payment tolerance warning</a> section.</p>
+<p>To deactivate tolerance for a customer or vendor, you must block tolerances on the relevant customer or vendor card. For more information, see <a href="finance-payment-tolerance-and-payment-discount-tolerance.html#to-block-payment-tolerance-for-customers">To block payment tolerance for customers</a>.</p>
+<p>When you set up tolerance, Business Central also checks if there are any open entries and calculates the tolerance for these entries.</p>
+</div>
+<h2 id="to-enable-or-disable-payment-tolerance-warnings">To enable or disable payment tolerance warnings</h2>
+<p>The payment tolerance warning appears when you post an application that has a balance in the allowed tolerance. You can then choose how you want to post and document the balance.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>General Ledger Setup</strong>, and then choose the related link.</li>
+<li>On the <strong>General Ledger Setup</strong> page, on the <strong>Application</strong> FastTab, turn on the <strong>Payment Tolerance Warning</strong> toggle to activate the warning. To deactivate the warning, turn off the toggle.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The default option for the <strong>Payment Tolerance Warning</strong> page is <strong>Leave the Balance as Remaining Amount</strong>. The default option for the <strong>Pmt. Disc. Tolerance Warning</strong> page the is <strong>Do Not Accept the Late Payment Discount</strong>.</p>
+</div>
+<h2 id="to-block-payment-tolerance-for-customers">To block payment tolerance for customers</h2>
+<p>The default setting for payment tolerance is allowed. To disallow a certain customer or vendor payment tolerance you need to block tolerance on the respective customer or vendor card. The following describes how to do it for a customer. The steps are similar for a vendor.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customer</strong> or <strong>Vendor</strong>, and then choose the related link.</li>
+<li>On the <strong>Payments</strong> FastTab, select the <strong>Block Payment Tolerance</strong> check box.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the customer or vendor has open entries, you must first remove payment tolerance from entries that are currently open.</p>
+</div>
+<h2 id="example-1---tolerance-calculations-for-a-single-document">Example 1 - Tolerance Calculations for a Single Document</h2>
+<p>The following are some example scenarios showing the expected tolerance calculations and postings occurring in different situations.</p>
+<p>The <strong>G/L Setup</strong> page contains the following setup:</p>
+<ul>
+<li>Payment Discount Grace Period: 5D</li>
+<li>Max Payment Tolerance: 5</li>
+</ul>
+<p>Scenarios with alternative A or B represent the following:</p>
+<ul>
+<li><strong>A</strong> In this case, the payment discount tolerance warning has been turned off OR the user has the warning on and has selected to allow the late payment discount (Post the Balance as Payment Tolerance).</li>
+<li><strong>B</strong> In this case, the user has the warning on and has selected not to allow the late payment discount (Leave the Balance as Remaining Amount).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>—</th>
+<th>Inv.</th>
+<th>Pmt. Disc.</th>
+<th>Max Pmt. Tol.</th>
+<th>Pmt. Disc. Date</th>
+<th>Pmt. Disc. Tol. Date</th>
+<th>Payment Date</th>
+<th>Pmt.</th>
+<th>Tolerance Type</th>
+<th>All Entries closed</th>
+<th>Pmt. Disc. Tol. GL/CL</th>
+<th>Pmt. Tol. G/L</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>&lt;=01/15/03</td>
+<td>985</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>-5</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>1,000</strong></td>
+<td><strong>20</strong></td>
+<td><strong>5</strong></td>
+<td><strong>01/15/03</strong></td>
+<td><strong>01/20/03</strong></td>
+<td><strong>&lt;=01/15/03</strong></td>
+<td><strong>980</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>c</td>
+<td>&lt;=01/15/03</td>
+<td>975</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>4A</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>1005</td>
+<td>Pmt.Disc.Tol.</td>
+<td>No, 25 on the Pmt.</td>
+<td>20/-20</td>
+<td>0</td>
+</tr>
+<tr>
+<td>5A</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>1000</td>
+<td>Pmt.Disc.Tol.</td>
+<td>No, 20 on the Pmt.</td>
+<td>20/-20</td>
+<td>0</td>
+</tr>
+<tr>
+<td>6A</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>995</td>
+<td>Pmt.Disc.Tol.</td>
+<td>No, 15 on the Pmt.</td>
+<td>20/-20</td>
+<td>0</td>
+</tr>
+<tr>
+<td>4B</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>1005</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>-5</td>
+</tr>
+<tr>
+<td><strong>5B</strong></td>
+<td><strong>1,000</strong></td>
+<td><strong>20</strong></td>
+<td><strong>5</strong></td>
+<td><strong>01/15/03</strong></td>
+<td><strong>01/20/03</strong></td>
+<td><strong>01/16/03 01/20/03</strong></td>
+<td><strong>1000</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>6B</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>995</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>7</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>985</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>20/-20</td>
+<td>-5</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>980</td>
+<td>Pmt.Disc.Tol.</td>
+<td>Yes</td>
+<td>20/-20</td>
+<td>0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>01/16/03 01/20/03</td>
+<td>975</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>20/-20</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>&gt;01/20/03</td>
+<td>1005</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>-5</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>1,000</strong></td>
+<td><strong>20</strong></td>
+<td><strong>5</strong></td>
+<td><strong>01/15/03</strong></td>
+<td><strong>01/20/03</strong></td>
+<td><strong>&gt;01/20/03</strong></td>
+<td><strong>1000</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>12</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>&gt;01/20/03</td>
+<td>995</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>&gt;01/20/03</td>
+<td>985</td>
+<td>None</td>
+<td>No, 15 on the invoice</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>14</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>&gt;01/20/03</td>
+<td>980</td>
+<td>None</td>
+<td>No, 20 on the invoice</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1,000</td>
+<td>20</td>
+<td>5</td>
+<td>01/15/03</td>
+<td>01/20/03</td>
+<td>&gt;01/20/03</td>
+<td>975</td>
+<td>None</td>
+<td>No, 25 on the invoice</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<h3 id="payment-range-diagrams">Payment Range Diagrams</h3>
+<p>In relation to the scenario above, the diagrams of payment ranges are as follows:</p>
+<h4 id="1-payment-date-011503-scenarios-1-3">(1) Payment Date &lt;=01/15/03 (Scenarios 1-3)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/singlePmtTolRules%28Pre1503%29.gif" alt="Single payment tolerance rules 1" title="Single payment tolerance rules 1"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h4 id="2-payment-date-is-between-011603-and-012003-scenarios-4-9">(2) Payment Date is between 01/16/03 and 01/20/03 (Scenarios 4-9)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/singlePmtTolRules%28GracePeriod%29.gif" alt="Single payment tolerance rules 2" title="Single payment tolerance rules 2"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h4 id="3-payment-date-is-after-012003-scenarios-10-15">(3) Payment Date is after 01/20/03 (Scenarios 10-15)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/singlePmtTolRules%28Post0120%29.gif" alt="Single payment tolerance rules 3" title="Single payment tolerance rules 3"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h2 id="example-2---tolerance-calculations-for-multiple-documents">Example 2 - Tolerance Calculations for Multiple Documents</h2>
+<p>The following are some example scenarios showing the expected tolerance calculations and postings occurring in different situations. The examples are limited to being only those scenarios that result in all entries in the application being closed.</p>
+<p>The <strong>G/L Setup</strong> page contains the following setup:</p>
+<ul>
+<li>Payment Discount Grace Period 5D</li>
+<li>Max Payment Tolerance 5</li>
+</ul>
+<p>Scenarios with alternative A, B, C, or D represent the following:</p>
+<ul>
+<li><strong>A</strong> In this case the payment discount tolerance warning has been turned off, OR the user has the warning on and has selected to allow the late payment discount (Post as Tolerance) in any invoice.</li>
+<li><strong>B</strong> In this case, the user has the warning on and has selected not to allow the late payment discount on any invoice.</li>
+<li><strong>C</strong> - In this case, the user has the warning on and has selected to allow the late payment discount on the first invoice but not the second.</li>
+<li><strong>D</strong> - In this case, the user has the warning on and has selected not to allow the late payment discount on the first invoice but allowed it on the second.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>—</th>
+<th>Inv.</th>
+<th>Pmt Disc.</th>
+<th>Max Pmt. Tol.</th>
+<th>Pmt. Disc. Date</th>
+<th>Pmt. Disc. Tol. Date</th>
+<th>Payment Date</th>
+<th>Pmt</th>
+<th>Tolerance Type</th>
+<th>All Entries closed</th>
+<th>Pmt. Disc. Tol. GL/CL</th>
+<th>Pmt. Tol. G/L</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>&lt;=01/15/03</td>
+<td>1920</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>-5 <br>-5</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>1,000</strong> <br><strong>1,000</strong></td>
+<td><strong>60</strong> <br><strong>30</strong></td>
+<td><strong>5</strong> <br><strong>5</strong></td>
+<td><strong>01/15/03</strong> <br><strong>01/17/03</strong></td>
+<td><strong>01/20/03</strong> <br><strong>01/22/03</strong></td>
+<td><strong>&lt;=01/15/03</strong></td>
+<td><strong>1910</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong><br><br> <strong>0</strong></td>
+<td>0 <br>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>&lt;=01/15/03</td>
+<td>1900</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>5 <br>5</td>
+</tr>
+<tr>
+<td>4B</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/16/03 01/17/03</td>
+<td>1980</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>-5<br><br> -5</td>
+</tr>
+<tr>
+<td><strong>5B</strong></td>
+<td><strong>1,000</strong> <br><strong>1,000</strong></td>
+<td><strong>60</strong> <br><strong>30</strong></td>
+<td><strong>5</strong> <br><strong>5</strong></td>
+<td><strong>01/15/03</strong> <br><strong>01/17/03</strong></td>
+<td><strong>01/20/03</strong> <br><strong>01/22/03</strong></td>
+<td><strong>01/16/03 01/17/03</strong></td>
+<td><strong>1970</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong><br><br> <strong>0</strong></td>
+<td><strong>0</strong><br><br> <strong>0</strong></td>
+</tr>
+<tr>
+<td>6B</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/16/03 01/17/03</td>
+<td>1960</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>5<br><br> 5</td>
+</tr>
+<tr>
+<td>7A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/16/03 01/17/03</td>
+<td>1920</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>60/60<br><br> 0/0</td>
+<td>-5 <br>-5</td>
+</tr>
+<tr>
+<td>8A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/16/03 01/17/03</td>
+<td>1910</td>
+<td>Pmt.Disc.Tol.</td>
+<td>Yes</td>
+<td>60/60<br><br> 0/0</td>
+<td>0 <br>0</td>
+</tr>
+<tr>
+<td>9A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/16/03 01/17/03</td>
+<td>1900</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>60/60</td>
+<td>5 <br>5</td>
+</tr>
+<tr>
+<td>10B</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>2010</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>-5<br><br> -5</td>
+</tr>
+<tr>
+<td><strong>11B</strong></td>
+<td><strong>1,000</strong> <br><strong>1,000</strong></td>
+<td><strong>60</strong> <br><strong>30</strong></td>
+<td><strong>5</strong> <br><strong>5</strong></td>
+<td><strong>01/15/03</strong> <br><strong>01/17/03</strong></td>
+<td><strong>01/20/03</strong> <br><strong>01/22/03</strong></td>
+<td><strong>01/18/03 01/20/03</strong></td>
+<td><strong>2000</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong><br><br> <strong>0</strong></td>
+<td><strong>0</strong><br><br> <strong>0</strong></td>
+</tr>
+<tr>
+<td>12B</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1990</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>5<br><br> 5</td>
+</tr>
+<tr>
+<td>13D</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1980</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>0/0<br><br> 30/-30</td>
+<td>-5 <br>-5</td>
+</tr>
+<tr>
+<td>14D</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1970</td>
+<td>Pmt.Disc.Tol.</td>
+<td>Yes</td>
+<td>0/0<br><br> 30/-30</td>
+<td>0 <br>0</td>
+</tr>
+<tr>
+<td>15D</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1960</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>0/0<br><br> 30/-30</td>
+<td>5 <br>5</td>
+</tr>
+<tr>
+<td>16D</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1950</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>60/-60<br><br> 0/0</td>
+<td>-5 <br>-5</td>
+</tr>
+<tr>
+<td>17D</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1940</td>
+<td>Pmt.Disc.Tol.</td>
+<td>Yes</td>
+<td>60/-60<br><br> 0/0</td>
+<td>0 <br>0</td>
+</tr>
+<tr>
+<td>18D</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1930</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>60/-60<br><br> 0/0</td>
+<td>5 <br>5</td>
+</tr>
+<tr>
+<td>19A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1920</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>60/-60<br><br> 30/-30</td>
+<td>-5 <br>-5</td>
+</tr>
+<tr>
+<td>20A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1910</td>
+<td>Pmt.Disc.Tol.</td>
+<td>Yes</td>
+<td>60/-60<br><br> 30/-30</td>
+<td>0 <br>0</td>
+</tr>
+<tr>
+<td>21A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/18/03 01/20/03</td>
+<td>1900</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>60/-60<br><br> 30/-30</td>
+<td>5 <br>5</td>
+</tr>
+<tr>
+<td>22B</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/21/03 01/22/03</td>
+<td>2010</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>-5<br><br> -5</td>
+</tr>
+<tr>
+<td><strong>23B</strong></td>
+<td><strong>1,000</strong> <br><strong>1,000</strong></td>
+<td><strong>60</strong> <br><strong>30</strong></td>
+<td><strong>5</strong> <br><strong>5</strong></td>
+<td><strong>01/15/03</strong> <br><strong>01/17/03</strong></td>
+<td><strong>01/20/03</strong> <br><strong>01/22/03</strong></td>
+<td><strong>01/21/03 01/22/03</strong></td>
+<td><strong>2000</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong><br><br> <strong>0</strong></td>
+<td><strong>0</strong><br><br> <strong>0</strong></td>
+</tr>
+<tr>
+<td>24B</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/21/03 01/22/03</td>
+<td>1990</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0<br><br> 0</td>
+<td>5<br><br> 5</td>
+</tr>
+<tr>
+<td>25A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/21/03 01/22/03</td>
+<td>1980</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>0/0<br><br> 30/30</td>
+<td>-5 <br>-5</td>
+</tr>
+<tr>
+<td>26A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/21/03 01/22/03</td>
+<td>1970</td>
+<td>Pmt.Disc.Tol.</td>
+<td>Yes</td>
+<td>0/0<br><br> 30/30</td>
+<td>0 <br>0</td>
+</tr>
+<tr>
+<td>27A</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>01/21/03 01/22/03</td>
+<td>1960</td>
+<td>Pmt.Disc.Tol. &amp; Pmt.Tol.</td>
+<td>Yes</td>
+<td>0/0<br><br> 30/30</td>
+<td>5 <br>5</td>
+</tr>
+<tr>
+<td>28</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>&gt;01/22/03</td>
+<td>2010</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>-5</td>
+</tr>
+<tr>
+<td><strong>29</strong></td>
+<td><strong>1,000</strong> <br><strong>1,000</strong></td>
+<td><strong>60</strong> <br><strong>30</strong></td>
+<td><strong>5</strong> <br><strong>5</strong></td>
+<td><strong>01/15/03</strong> <br><strong>01/17/03</strong></td>
+<td><strong>01/20/03</strong> <br><strong>01/22/03</strong></td>
+<td><strong>&gt;01/22/03</strong></td>
+<td><strong>2000</strong></td>
+<td><strong>None</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>0</strong></td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>30</td>
+<td>1,000 <br>1,000</td>
+<td>60 <br>30</td>
+<td>5 <br>5</td>
+<td>01/15/03 <br>01/17/03</td>
+<td>01/20/03 <br>01/22/03</td>
+<td>&gt;01/22/03</td>
+<td>1990</td>
+<td>Pmt.Tol.</td>
+<td>Yes</td>
+<td>0</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="payment-range-diagrams-1">Payment Range Diagrams</h3>
+<p>In relation to the scenario above, the diagrams of payment ranges are as follows:</p>
+<h4 id="1-payment-date-011503-scenarios-1-3-1">(1) Payment Date &lt;=01/15/03 (Scenarios 1-3)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/multiplePmtTolRules%28Pre1503%29.gif" alt="Multiple payment tolerance rules 1" title="Multiple payment tolerance rules 1"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h4 id="2-payment-date-is-between-011603-and-011703-scenarios-4-9">(2) Payment Date is between 01/16/03 and 01/17/03 (Scenarios 4-9)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/multiplePmtTolRules%28GracePeriodInv1-2%29.gif" alt="Multiple payment tolerance rules 2" title="Multiple payment tolerance rules 2"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h4 id="3-payment-date-is-between-011803-and-012003-scenarios-10-21">(3) Payment Date is between 01/18/03 and 01/20/03 (Scenarios 10-21)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/multiplePmtTolRules%28GracePeriodInv1%29.gif" alt="Multiple payment tolerance rules 3" title="Multiple payment tolerance rules 3"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h4 id="4-payment-date-is-between-012103-and-012203-scenarios-22-27">(4) Payment Date is between 01/21/03 and 01/22/03 (Scenarios 22-27)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/multiplePmtTolRules%28GracePeriodInv2%29.gif" alt="Multiple payment tolerance rules 4" title="Multiple payment tolerance rules 4"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h4 id="5-payment-date-is-after-012203-scenarios-28-30">(5) Payment Date is after 01/22/03 (Scenarios 28-30)</h4>
+<p>Remaining Amount per</p>
+<p>Normal Application Rules</p>
+<p><img src="media/multiplePmtTolRules%28Post0122%29.gif" alt="Multiple payment tolerance rules 5" title="Multiple payment tolerance rules 5"></p>
+<p>(1) If payment falls in these ranges, all application entries can be closed with or without tolerance.</p>
+<p>(2) If payment falls in these ranges, all application entries cannot be closed even with tolerance.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance.html">Finance</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-payment-tolerance-and-payment-discount-tolerance.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

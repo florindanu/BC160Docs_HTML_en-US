@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Calculate Accelerated Depreciation </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Calculate Accelerated Depreciation ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In Business Central, you calculate periodic depreciation for fixed assets by using the Calculate Depreciation batch job. The fixed asset depreciation book that is linked to the fixed asset defines the depreciation method, the starting date for depreciation, and the fixed asset posting group that is used in the batch job.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="calculate-accelerated-depreciation">Calculate Accelerated Depreciation</h1>
+
+<p>In Business Central, you calculate periodic depreciation for fixed assets by using the <strong>Calculate Depreciation</strong> batch job. The fixed asset depreciation book that is linked to the fixed asset defines the depreciation method, the starting date for depreciation, and the fixed asset posting group that is used in the batch job.</p>
+<p>If a fixed asset depreciation book is integrated with the general ledger, then it is called an <em>accounting depreciation book</em>. If a fixed asset depreciation book is not integrated with the general ledger, then it is called a <em>tax depreciation book</em>.</p>
+<p>You can only calculate the accelerated depreciation for fixed assets that have an accounting depreciation book and a tax depreciation book. For more information about setting up tax depreciation books and accounting depreciation books for fixed assets, see <a href="how-to-set-up-accelerated-depreciation.html">Set Up Accelerated Depreciation</a>.</p>
+<p>Entries are transferred to the fixed asset general journal when you select an accounting depreciation book in the batch job. Entries are transferred to the fixed asset journal when you select the tax depreciation book.</p>
+<h2 id="to-calculate-accelerated-depreciation">To calculate accelerated depreciation</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Calculate Depreciation</strong>, and then choose the relevant link.</p>
+</li>
+<li><p>On the <strong>Calculate Depreciation</strong> page, on the <strong>Options</strong> FastTab, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Depreciation Book</strong></td>
+<td>The unique identification code for the accounting depreciation book.</td>
+</tr>
+<tr>
+<td><strong>FA Posting Date</strong></td>
+<td>Specify the ending date for the depreciation calculation, if this is the first depreciation entry for the asset. The depreciation starting date that is defined on the <strong>FA Depreciation Books</strong> page is used as the starting date for the depreciation calculation. If you have already depreciated the asset, the fixed asset posting date of the last depreciation entry is used as the starting date for the depreciation calculation.</td>
+</tr>
+<tr>
+<td><strong>Use Force No. of Days</strong></td>
+<td>Select to use the number of days in the <strong>Force No. of Days</strong> field for the depreciation calculation.</td>
+</tr>
+<tr>
+<td><strong>Force No. of Days</strong></td>
+<td>The number of days for the depreciation calculation. You can only enter a number in this field if the <strong>Use Force No of Days</strong> check box is selected.</td>
+</tr>
+<tr>
+<td><strong>Posting Date</strong></td>
+<td>The posting date for the calculated depreciation.<br><br> You can leave this field blank if the <strong>Use Same FA + G/L Posting Dates</strong> field in the accounting depreciation book is selected. The posting date is copied to the resulting journal lines.</td>
+</tr>
+<tr>
+<td><strong>Document No.</strong></td>
+<td>The document number for the fixed asset journal batch. Leave this field blank if you have set up a numbering series for the fixed asset journal batch on the <strong>No. Series</strong> page. For more information, see No. Series.</td>
+</tr>
+<tr>
+<td><strong>Posting Description</strong></td>
+<td>The posting description for the fixed asset journal entries.</td>
+</tr>
+<tr>
+<td><strong>Insert Bal. Account</strong></td>
+<td>Select to automatically insert balancing accounts in the resulting journal. The <strong>Calculate Depreciation</strong> batch job only uses balancing accounts that are defined in the FA Posting Group.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>Fixed Asset</strong> FastTab, select the appropriate filters.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>The accelerated depreciation for the fixed asset is calculated.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="accelerated-depreciation.html">Accelerated Depreciation</a><br>
+<a href="how-to-set-up-accelerated-depreciation.html">Set Up Accelerated Depreciation</a><br>
+<a href="../../fa-how-setup-depreciation.html">Set Up Fixed Asset Depreciation</a><br>
+<a href="../../fa-manage.html">Fixed Assets</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/France/how-to-calculate-accelerated-depreciation.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

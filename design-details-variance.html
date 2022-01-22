@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Variance | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Variance | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Variance is defined as the difference between the actual cost and the standard cost, as described in the following formula.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-variance">Design Details: Variance</h1>
+
+<p>Variance is defined as the difference between the actual cost and the standard cost, as described in the following formula.</p>
+<p>actual cost – standard cost = variance</p>
+<p>If the actual cost changes, for example, because you post an item charge on a later date, then the variance is updated accordingly.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Revaluation does not affect the variance calculation, because revaluation only changes the inventory value.</p>
+</div>
+<h2 id="example">Example</h2>
+<p>The following example illustrates how variance is calculated for purchased items. It is based on the following scenario:</p>
+<ol>
+<li>The user purchases an item at LCY 90.00, but the standard cost is LCY 100.00. Accordingly, the purchase variance is LCY –10.00.</li>
+<li>LCY 10.00 is credited to the purchase variance account.</li>
+<li>The user posts an item charge of LCY 20.00. Accordingly, the actual cost is increased to LCY 110.00, and the value of the purchase variance becomes LCY 10.00.</li>
+<li>LCY 20.00 is debited to the purchase variance account. Accordingly, the net purchase variance becomes LCY 10.00.</li>
+<li>The user revalues the item from LCY 100.00 to LCY 70.00. This does not affect the variance calculation, only the inventory value.</li>
+</ol>
+<p>The following table shows the resulting value entries.</p>
+<p><img src="media/design_details_inventory_costing_11_purchase_variance.png" alt="Purchase variance calculation" title="Purchase variance calculation"></p>
+<h2 id="determining-the-standard-cost">Determining the Standard Cost</h2>
+<p>The standard cost is used when calculating variance and the amount to capitalize. Since the standard cost can be changed over time because of manual update calculation, you need a point in time when the standard cost is fixed for variance calculation. This point is when the inventory increase is invoiced. For produced or assembled items, the point when standard cost is determined is when the cost is adjusted.</p>
+<p>The following table shows how different cost shares are calculated for produced and assembled items when you use the Calculate Standard Cost function.</p>
+<table>
+<thead>
+<tr>
+<th>Cost Share</th>
+<th>Purchased Item</th>
+<th>Produced/Assembled Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Standard Cost</strong></td>
+<td></td>
+<td>Single-Level Material Cost + Single-Level Capacity Cost + Single-Level Subcontrd. Cost + Single-Level Cap. Ovhd. Cost + Single-Level Mfg. Ovhd. Cost</td>
+</tr>
+<tr>
+<td><strong>Single-Level Material Cost</strong></td>
+<td>Unit Cost</td>
+<td><img src="media/design_details_inventory_costing_11_equation_1.png" alt="Equation 1" title="Equation 1"></td>
+</tr>
+<tr>
+<td><strong>Single-Level Capacity Cost</strong></td>
+<td>Not applicable</td>
+<td><img src="media/design_details_inventory_costing_11_equation_2.png" alt="Equation 2" title="Equation 2"></td>
+</tr>
+<tr>
+<td><strong>Single-Level Subcontrd. Cost</strong></td>
+<td>Not applicable</td>
+<td><img src="media/design_details_inventory_costing_11_equation_3.png" alt="Equation 3" title="Equation 3"></td>
+</tr>
+<tr>
+<td><strong>Single-Level Cap. Ovhd Cost</strong></td>
+<td>Not applicable</td>
+<td><img src="media/design_details_inventory_costing_11_equation_4.png" alt="Equation 4" title="Equation 4"></td>
+</tr>
+<tr>
+<td><strong>Single-Level Mfg. Ovhd Cost</strong></td>
+<td>Not applicable</td>
+<td>(Single-Level Material Cost + Single-Level Capacity Cost + Single-Level Subcontrd. Cost) * Indirect Cost % / 100 + Overhead Rate</td>
+</tr>
+<tr>
+<td><strong>Rolled-up Material Cost</strong></td>
+<td>Unit Cost</td>
+<td><img src="media/design_details_inventory_costing_11_equation_5.png" alt="Equation 5" title="Equation 5"></td>
+</tr>
+<tr>
+<td><strong>Rolled-up Capacity Cost</strong></td>
+<td>Not applicable</td>
+<td><img src="media/design_details_inventory_costing_11_equation_6.png" alt="Equation 6" title="Equation 6"></td>
+</tr>
+<tr>
+<td><strong>Rolled-Up Subcontracted Cost</strong></td>
+<td>Not applicable</td>
+<td><img src="media/design_details_inventory_costing_11_equation_7.png" alt="Equation 7" title="Equation 7"></td>
+</tr>
+<tr>
+<td><strong>Rolled-up Capacity Ovhd. Cost</strong></td>
+<td>Not applicable</td>
+<td><img src="media/design_details_inventory_costing_11_equation_8.png" alt="Equation 8" title="Equation 8"></td>
+</tr>
+<tr>
+<td><strong>Rolled-up Mfg. Ovhd. Cost</strong></td>
+<td>Not applicable</td>
+<td><img src="media/design_details_inventory_costing_11_equation_9.png" alt="Equation 9" title="Equation 9"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-costing-methods.html">Design Details: Costing Methods</a>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-variance.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

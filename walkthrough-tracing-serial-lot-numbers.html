@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough - Tracing Serial-Lot Numbers | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough - Tracing Serial-Lot Numbers | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When product defects occur, the errors must be identified and affected items must be prevented from leaving the company. If defective items have already been shipped, you must trace who received them and, if you need to, recall the items.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-tracing-seriallot-numbers">Walkthrough: Tracing Serial/Lot Numbers</h1>
+
+<p><strong>Note</strong>: This walkthrough must be performed on a demonstration company with the <strong>Full Evaluation - Complete Sample Data</strong> option, which is available in the Sandbox environment. For more information, see <a href="across-how-create-sandbox-environment.html">Creating a Sandbox Environment</a>.</p>
+<p>When product defects occur, the errors must be identified and affected items must be prevented from leaving the company. If defective items have already been shipped, you must trace who received them and, if you need to, recall the items.</p>
+<p>The first task of defects management is to investigate where the defective items came from and where they were used. This investigation is based on historic data and is made easier by searching through item tracking entries using the <strong>Item Tracing</strong> page.</p>
+<p>The second task of defects management is to determine whether the traced items are planned for in open documents, such as non-posted sales orders or consumption journals. This work is performed on the <strong>Navigate</strong> page. You can use the Navigate feature to search all kinds of database records.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>This walkthrough demonstrates how to identify which items are defective, which vendor supplied them, and where they are used so that those orders can be stopped or recalled.</p>
+<p>This walkthrough illustrates the following tasks:</p>
+<ul>
+<li>Tracing usage to origin.</li>
+<li>Tracing origin to usage.</li>
+<li>Searching for all current records which hold the traced serial/lot number.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<p>This walkthrough demonstrates tasks that are performed by the following user roles:</p>
+<ul>
+<li>Quality Controller</li>
+<li>Warehouse Manager</li>
+<li>Order Processor</li>
+<li>Purchasing Agent</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To complete this walkthrough, you will need:</p>
+<ul>
+<li>The Business Central company.</li>
+<li>To create new items and several business transactions by following the <a href="walkthrough-tracing-serial-lot-numbers.html#prepare-sample-data">Prepare Sample Data</a>..</li>
+</ul>
+<h2 id="story">Story</h2>
+<p>Ricardo, the quality controller, is acting on a sales return of item 1002, Racing Bike. The customer, Selangorian Ltd., complained that the frame has cracked welding seams. Quality control engineers have confirmed that the racing frame of the returned bike is defective. The quality controller must now determine:</p>
+<ul>
+<li>Which lot of racing frames was faulty.</li>
+<li>On which purchase order the faulty lot was received.</li>
+</ul>
+<p>From the sales department, the quality controller knows that the returned racing bike, item 1002, had the serial number SN1. By using this basic information, he must determine where the finished racing bike was last used, and then he must trace backward to the earliest origin to establish which lot number the faulty component, the racing frame, came from.</p>
+<p>The results of this first item tracking task identify which racing frames were defective and which vendor supplied them. Afterward, but in the same overall tracking process, the quality controller must find all the sold racing bikes that contain racing frames from the faulty lot so that those orders can be stopped or recalled. Lastly, the quality controller must find any open documents where the faulty lot is used so that no additional transactions are made.</p>
+<p>The first two defects-management tasks are performed on the <strong>Item Tracing</strong> page. The last task is performed on the <strong>Navigate</strong> page in integration with the <strong>Item Tracing</strong> page.</p>
+<h2 id="prepare-sample-data">Prepare Sample Data</h2>
+<p>You must create the following new items:</p>
+<ul>
+<li>2000, Racing Frame: lot-specific tracking, component of 1002</li>
+<li>1002, Racing Bike: serial number-specific tracking</li>
+</ul>
+<p>Then you must create various purchase, production, and sales transactions with the two items.</p>
+<h3 id="to-create-the-items">To create the items</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>In the <strong>No.</strong> field, enter <strong>2000</strong>, and then proceed to fill in the following fields.</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Base Unit of Measure</th>
+<th>Gen. Prod. Posting Group</th>
+<th>VAT Prod. Posting Group</th>
+<th>Inventory Posting Group</th>
+<th>Item Tracking Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Racing Frame</td>
+<td>PCS</td>
+<td>RAW MAT</td>
+<td>VAT25</td>
+<td>RAW MAT</td>
+<td>LOTALL</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To enter the base unit of measure, choose the <strong>New</strong> button, and then select <strong>PSC</strong> on the <strong>Item Units of Measure</strong> page.</p>
+</div>
+</li>
+<li><p>All other fields have acceptable default data or do not have to be filled in.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to create the first new item card, 2000.</p>
+</li>
+<li><p>Choose <strong>New</strong>.</p>
+</li>
+<li><p>In the <strong>No.</strong> field, enter <strong>1002</strong>, and then proceed to fill in the following fields.</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Base Unit of Measure</th>
+<th>Gen. Prod. Posting Group</th>
+<th>VAT Prod. Posting Group</th>
+<th>Inventory Posting Group</th>
+<th>Replenishment System</th>
+<th>Item Tracking Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Racing Bike</td>
+<td>PCS</td>
+<td>RETAIL</td>
+<td>VAT25</td>
+<td>FINISHED</td>
+<td>Prod. Order</td>
+<td>SNALL</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To enter the base unit of measure, choose the <strong>New</strong> button, and then select <strong>PSC</strong> on the <strong>Item Units of Measure</strong> page.</p>
+</div>
+<p>Next, define the item's manufacturing setup.</p>
+</li>
+<li><p>On the <strong>Replenishment</strong> FastTab, in the <strong>Routing No.</strong> field, enter <strong>1000</strong>.</p>
+</li>
+<li><p>Choose the <strong>Production BOM No.</strong> field, and then choose <strong>Advanced</strong>.</p>
+</li>
+<li><p>On the <strong>Production BOM List</strong> page, choose the first line, <strong>1000</strong>, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Production BOM</strong> page, change the value in the <strong>Status</strong> field to <strong>Under Development</strong>.</p>
+</li>
+<li><p>Go to an empty line, enter <strong>2000</strong> in the <strong>No.</strong> field, and then enter <strong>1</strong> in the <strong>Quantity Per</strong> field.</p>
+</li>
+<li><p>Change the value in the <strong>Status</strong> field back to <strong>Certified</strong>.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to insert the production BOM on the item card and close the <strong>Production BOM</strong> page.</p>
+<p>Next, purchase racing frames from Custom Metals Incorporated.</p>
+</li>
+</ol>
+<h3 id="to-purchase-components">To purchase components</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Create a purchase order for vendor, Custom Metals Incorporated, by filling in the following line fields.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Quantity</th>
+<th>Lot No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2000</td>
+<td>10</td>
+<td>LOT1</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>To enter the lot number, choose the <strong>Item Tracking Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Tracking Lines</strong> page, fill in the <strong>Lot No.</strong> and <strong>Quantity (Base)</strong> fields, and then close the page.</p>
+</li>
+<li><p>In the <strong>Vendor Invoice No.</strong> field, enter any value.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action, select the <strong>Receive and Invoice</strong> option, and then choose the <strong>OK</strong> button.</p>
+<p>Next, purchase racing frames from Coolwood Technologies.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Create a purchase order for vendor, Coolwood Technologies, by filling in the following line fields.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Quantity</th>
+<th>Lot No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2000</td>
+<td>11</td>
+<td>LOT2</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>To enter the lot number, on the <strong>Lines</strong> FastTab, in the <strong>Line</strong> group, choose the <strong>Item Tracking Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Tracking Lines</strong> page, fill in the <strong>Lot No.</strong> and <strong>Quantity (Base)</strong> fields, and then close the page.</p>
+</li>
+<li><p>In the <strong>Vendor Invoice No.</strong> field, enter any value.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action, select the <strong>Receive and Invoice</strong> option, and then choose the <strong>OK</strong> button.</p>
+<p>Next, produce two racing bikes, SN1 and SN2.</p>
+</li>
+</ol>
+<h3 id="to-produce-end-items">To produce end items</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Released Prod. Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> group.</p>
+</li>
+<li><p>Create a new released production order by filling in the following fields.</p>
+<p>|-|-|-|<br>
+|Source No.|Quantity|Serial No.|<br>
+|1002|2|SN1|<br>
+|1002|2|SN2|</p>
+</li>
+<li><p>Choose the <strong>Refresh Production Order</strong> action, and then choose the <strong>OK</strong> button to fill the line.</p>
+</li>
+<li><p>To enter the serial numbers, choose the <strong>Item Tracking Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Tracking Lines</strong> page, fill in the <strong>Serial No.</strong> and <strong>Quantity (Base)</strong> fields, and then close the page.</p>
+<p>Next, post consumption of racing frames from LOT1.</p>
+</li>
+<li><p>On the <strong>Released Production Order</strong> page, choose the <strong>Production Journal</strong> action.</p>
+</li>
+<li><p>On the <strong>Production Journal</strong> page, select the consumption line for item 2000, choose the <strong>Item Tracking Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Tracking Lines</strong> page, choose the <strong>Lot No.</strong> field, choose <strong>LOT1</strong>, and then choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>Leave all other defaults on the <strong>Production Journal</strong> page, and then choose the <strong>Post</strong> action.</p>
+<p>Next, produce two more racing bikes, SN3 and SN4.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Released Prod. Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Create a new released production order by filling in the following fields on the header.</p>
+<table>
+<thead>
+<tr>
+<th>Source No.</th>
+<th>Quantity</th>
+<th>Serial No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1002</td>
+<td>2</td>
+<td>SN3</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>2</td>
+<td>SN4</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Refresh Production Order</strong> action to fill the line.</p>
+</li>
+<li><p>To enter the serial numbers, choose the <strong>Item Tracking Lines</strong> action, and then the numbers on two lines in the <strong>Serial No.</strong> field on the <strong>Item Tracking Lines</strong> page.</p>
+<p>Next, post more consumption of racing frames from LOT1.</p>
+</li>
+<li><p>On the <strong>Released Production Order</strong> page, choose the <strong>Production Journal</strong> action.</p>
+</li>
+<li><p>On the <strong>Production Journal</strong> page, select the consumption line for item 2000, choose the <strong>Item Tracking Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Item Tracking Lines</strong> page, choose the <strong>Lot No.</strong> field, choose <strong>LOT1</strong>, and then choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>Leave all other defaults on the <strong>Production Journal</strong> page, and then choose the <strong>Post</strong> action.</p>
+<p>You have produced four racing bikes, SN1 to SN4, and consumed four of the ten racing frames from LOT1, two frames in each production order.</p>
+</li>
+<li><p>Close the production journal and the production orders.</p>
+<p>Next, sell racing bikes. First sell the racing bike with SN1 to Selangorian Ltd..</p>
+</li>
+</ol>
+<h3 id="to-sell-the-end-items">To sell the end items</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action, and then, create a sales order by filling in the following fields.</p>
+<table>
+<thead>
+<tr>
+<th>Customer</th>
+<th>Item</th>
+<th>Qty.</th>
+<th>Serial No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selangorian Ltd.</td>
+<td>1002</td>
+<td>1</td>
+<td>SN1</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>To enter the serial number, choose the <strong>Item Tracking Lines</strong> action, and then the number in the <strong>Serial No.</strong> field on the <strong>Item Tracking Lines</strong> page.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action, select the <strong>Ship and Invoice</strong> option, and then choose the <strong>OK</strong> button.</p>
+<p>Next, sell the racing bike with SN2 to The Cannon Group PLC.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action, and then, create a sales order by filling in the following fields.</p>
+<table>
+<thead>
+<tr>
+<th>Customer</th>
+<th>Item</th>
+<th>Qty.</th>
+<th>Serial No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cannon Group PLC.</td>
+<td>1002</td>
+<td>1</td>
+<td>SN2</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>To enter the serial number, choose the <strong>Item Tracking Lines</strong> action, and then the number in the <strong>Serial No.</strong> field on the <strong>Item Tracking Lines</strong> page.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action, select the <strong>Ship and Invoice</strong> option, and then choose the <strong>OK</strong> button.</p>
+<p>Finally, sell some racing frames separately. The Cannon Group PLC. also orders four separate racing frames for their own assembly line.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action, and then, create a sales order by filling in the following fields.</p>
+<table>
+<thead>
+<tr>
+<th>Customer</th>
+<th>Item</th>
+<th>Qty.</th>
+<th>Serial No.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cannon Group PLC.</td>
+<td>2000</td>
+<td>5</td>
+<td>LOT1</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>To enter the serial number, on the <strong>Lines</strong> FastTab, in the <strong>Line</strong> group, choose the <strong>Item Tracking Lines</strong> action, and then the number in the <strong>Serial No.</strong> field on the <strong>Item Tracking Lines</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Do not post the last sales order for five racing frames.</p>
+</div>
+<p>This completes the preparation of data to demonstrate the Item Tracing and Navigate features.</p>
+</li>
+</ol>
+<h2 id="tracing-from-usage-to-origin">Tracing from Usage to Origin</h2>
+<p>From the sales department, the quality controller knows that the returned racing bike, item 1002, has the serial number SN1. By using this basic information, he can determine where the finished racing bike was last used, in this case, on the sales shipment to Selangorian Ltd.. Then, the quality controller must trace backward to the earliest origin to establish which lot number the faulty racing frame came from and which vendor supplied it.</p>
+<h3 id="to-determine-which-lot-included-the-faulty-frame-and-who-supplied-it">To determine which lot included the faulty frame and who supplied it</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item Tracing</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Item Tracing</strong> page, enter <strong>SN1</strong> in the <strong>Serial No. Filter</strong> field, and then enter <strong>1002</strong> in the <strong>Item Filter</strong> field.</p>
+</li>
+<li><p>Keep the default setting of <strong>Item-Tracked Only</strong> in the <strong>Show Components</strong> field, and keep the default trace method of <strong>Usage – Origin</strong> in the <strong>Trace Method</strong>.</p>
+</li>
+<li><p>Choose the <strong>Trace</strong> action.</p>
+<p>Note that one sales shipment header matches the search criteria. Before you continue the trace, verify that the shipment is the one that shipped the faulty racing bike to Selangorian Ltd.</p>
+</li>
+<li><p>Select the trace line, and then choose the <strong>Show Document</strong> action.</p>
+<p>Now continue to trace the origin of the sales shipment of the racing bike with number SN1.</p>
+</li>
+<li><p>Choose the + icon on the trace lines to gradually expand and trace backward in the chain of transactions that the sales shipment originates from.</p>
+<p>You can trace the following transaction history:</p>
+<ul>
+<li>The first posted document backward in the chain of transactions is the output posting of SN1 from the first released production order.</li>
+<li>The next posted document backward after that is the consumption posting from the first released production order. Here the quality controller sees that a racing frame from LOT1 was used.</li>
+<li>The lowest posted document in this chain is the posted purchase receipt on which racing frames with LOT1 entered inventory.</li>
+</ul>
+<p>The quality controller has now established which lot of racing frames was faulty and he can search for the last trace line to see which vendor supplied them, namely Custom Metals Incorporated.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Do not make any additional modifications to the trace result, as you will use it in the next section.</p>
+</div>
+<p>This completes the first defects-management task using the <strong>Item Tracing</strong> page. The quality controller must now determine whether other posted documents have processed racing frames from LOT1.</p>
+</li>
+</ol>
+<h2 id="tracing-from-origin-to-usage">Tracing from Origin to Usage</h2>
+<p>The quality controller has established that the faulty racing frames came from LOT1. He must now find any other racing bikes that contain racing frames from the faulty lot so that those bikes can be stopped or recalled.</p>
+<p>One way to prepare this trace task on the <strong>Item Tracing</strong> page is to manually enter LOT1 in the <strong>Lot No. Filter</strong> field and 2000 in the <strong>Item Filter</strong> field. However, this walkthrough will use the <strong>Trace Opposite - from Line</strong> function.</p>
+<h3 id="to-find-all-usage-of-the-faulty-lot">To find all usage of the faulty lot</h3>
+<ol>
+<li><p>On the <strong>Item Tracing</strong> page, select the line of the purchase receipt, the last trace line, and then choose <strong>Trace Opposite – from Line</strong>.</p>
+<p>The trace result is now based on the filters of the trace line for the purchase receipt, LOT1 and item 2000, and the result is based on trace method <strong>Origin - Usage</strong>.</p>
+<p>To obtain an overview of all usage of item 2000 with LOT1, continue to expand all trace lines.</p>
+</li>
+<li><p>Choose the <strong>Expand All</strong> action.</p>
+<p>The first four trace lines refer to the sales shipment to Selangorian Ltd., which is already resolved. The last line indicates that one more racing bike, SN2, was produced in the same released production order and then sold and shipped on another sales shipment.</p>
+<p>The quality controller immediately informs the sales department so that they can initiate a recall of the defective racing bike from the customer, Cannon Group PLC.</p>
+<p>At the same time, he can see from the last three trace lines that another two items, SN3 and SN4, have been produced based on racing frames from LOT1. He takes action to block these end items in inventory.</p>
+<p>This completes the second defects management task using the <strong>Item Tracing</strong> page for defects management. Since the <strong>Item Tracing</strong> page is based on posted entries only, the quality controller must continue to the <strong>Navigate</strong> page to make sure that LOT1 is not used in non-posted documents.</p>
+</li>
+</ol>
+<h2 id="finding-all-records-of-a-seriallot-number">Finding All Records of a Serial/Lot Number</h2>
+<p>With the <strong>Item Tracing</strong> page, the quality controller learned that LOT1 contained the faulty racing frames, which vendor supplied them, and in which posted transaction they have been used. He must now determine whether LOT1 is in any open documents by integrating from the trace result to the <strong>Navigate</strong> page where he can perform a search through all database records.</p>
+<h3 id="to-find-all-occurrences-of-lot1-in-non-posted-records-such-as-open-orders">To find all occurrences of LOT1 in non-posted records, such as open orders</h3>
+<ol>
+<li><p>On the <strong>Item Tracing</strong> page, select the first trace line, the purchase receipt of LOT1.</p>
+</li>
+<li><p>Choose the <strong>Navigate</strong> action.</p>
+<p>The <strong>Navigate</strong> page is preset with search filters based on the trace result for LOT1. The quality controller recognizes most of the records as pertaining to documents already identified on the <strong>Item Tracing</strong> page. For example, the last Navigate line of type Production Order refers to the two released production orders that consumed racing frames from LOT1.</p>
+<p>However, the second Navigate line of type <strong>Sales Line</strong> is a non-posted document line, so the quality controller proceeds to investigate.</p>
+</li>
+<li><p>To open the sales line record, select the second Navigate line, choose the <strong>Show</strong> action. Alternatively, choose the value in the <strong>No. of Records</strong> field.</p>
+<p>Here the quality controller sees one open sales line for the faulty racing frames. He immediately suggests to the sales department that this order be canceled and a new production order, based on good racing frames, be initiated.</p>
+</li>
+</ol>
+<p>This completes the walkthrough of how to use the <strong>Navigate</strong> page for defects management in integration with the <strong>Item Tracing</strong> page.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-how-work-item-tracking.html">Work with Serial and Lot Numbers</a><br>
+<a href="inventory-how-to-trace-item-tracked-items.html">Trace Item-Tracked Items</a><br>
+<a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-tracing-serial-lot-numbers.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

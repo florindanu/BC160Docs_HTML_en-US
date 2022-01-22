@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Allocation Status and Repair Status | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Allocation Status and Repair Status | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about the relationship between the repair status of service items and the allocation status of the allocation entries for them.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="allocation-status-and-repair-status-of-service-items">Allocation Status and Repair Status of Service Items</h1>
+
+<p>The repair status of service items and the allocation status of the allocation entries for the service items have a certain relationship in Service Management. The allocation status changes when you change the repair status of the service item to <strong>Finished</strong> or <strong>Partly Serviced</strong> and when you convert a service quote to a service order. The repair status of the service item changes when you cancel the service item allocation or reallocate the service item to another resource. You can view the repair status of service items on the <strong>Service Tasks</strong> page and you can update the repair status in the <strong>Repair Status Code</strong> field on the <strong>Service Item Worksheet</strong> page. You can view the allocation status in the <strong>Status</strong> field on the <strong>Resource Allocations</strong> page.</p>
+<h2 id="changing-repair-status">Changing Repair Status</h2>
+<p>When you change the repair status of a service item on a service item line, there is a search for a corresponding allocation entry for this service item that has the status <strong>Active</strong>. If such an allocation entry is found, the status is updated in one of the following ways:</p>
+<ul>
+<li>If you change the repair status to <strong>Finished</strong>, the allocation status is changed from <strong>Active</strong> to <strong>Finished</strong>.</li>
+<li>If you change the repair status to <strong>Partly Serviced</strong>, that is, some of the service has been completed, or <strong>Referred</strong>, that is, no service has been done, the allocation status is changed from <strong>Active</strong> to <strong>Reallocation Needed</strong>.</li>
+<li>When a service order allocation entry is created that indicates that no resource has been allocated, the <strong>Status</strong> field on the <strong>Resource Allocation</strong> page is set to <strong>Nonactive</strong>.</li>
+<li>The allocation entry status is set to <strong>Canceled</strong> when you reallocate the referred service item in the service order allocation entry, which indicates that the allocated resource or resource group has not attempted the service task.</li>
+</ul>
+<p>The allocation status reflects when the service process is finished, or when another resource is necessary in order to finish the service of the service item.</p>
+<h2 id="converting-service-quotes-to-service-orders">Converting Service Quotes to Service Orders</h2>
+<p>When you convert a service quote to a service order, the service order, the service items in the order and their allocation entries are updated in the following ways:</p>
+<ul>
+<li>The repair status of the service items is changed to <strong>Initial</strong>.</li>
+<li>The service order status is changed to <strong>Pending</strong>.</li>
+<li>There is a search for allocation entries for all the service items in the service order that have the status <strong>Active</strong>. If such allocation entries are found, their allocation status is changed from <strong>Active</strong> to <strong>Reallocation Needed</strong>.</li>
+</ul>
+<h2 id="canceling-allocations">Canceling Allocations</h2>
+<p>When you cancel an allocation for a service item, Business Central updates the allocation status of the corresponding allocation entry from <strong>Active</strong> to <strong>Reallocation Needed</strong>.</p>
+<p>The repair status of the service item in the allocation entry is updated in the following ways:</p>
+<ul>
+<li>If the repair status is <strong>Initial</strong>, the repair status is changed to <strong>Referred</strong> (no service has been started).</li>
+<li>If the repair status is <strong>In Process</strong>, the repair status is changed to <strong>Partly Serviced</strong> (some service has been completed).</li>
+</ul>
+<h2 id="reallocating-an-active-allocation-entry">Reallocating an Active Allocation Entry</h2>
+<p>When you reallocate a service item in an allocation entry that is <strong>Active</strong>, the allocation entry is updated in the following ways:</p>
+<ul>
+<li>If service was started when the allocation was <strong>Active</strong> (that is, if the repair status of the service item in the entry was changed to <strong>In Process</strong>), the allocation status is changed from <strong>Active</strong> to <strong>Finished</strong>.</li>
+<li>If service was not started when the allocation was <strong>Active</strong>, the allocation status is changed from <strong>Active</strong> to <strong>Canceled</strong>.</li>
+</ul>
+<p>The repair status of the service item in the allocation entry is updated in the same way as if you had canceled the allocation:</p>
+<ul>
+<li>If the repair status is <strong>Initial</strong>, the repair status is changed to <strong>Referred</strong> (no service has been started).</li>
+<li>If the repair status is <strong>In Process</strong>, the repair status is changed to <strong>Partly Serviced</strong> (some service has been completed).</li>
+</ul>
+<p>A new allocation entry that contains the new resource is created that has the status <strong>Active</strong>.</p>
+<h2 id="reallocating-a-service-item">Reallocating a Service Item</h2>
+<p>When you reallocate a service item in an allocation entry that has the status <strong>Reallocation Needed</strong>, the allocation entry is updated in the following ways:</p>
+<ul>
+<li>If service was started when the allocation was <strong>Active</strong> (that is, if the repair status of the service item in the entry was changed to <strong>In Process</strong>), the allocation status is changed from <strong>Reallocation Needed</strong> to <strong>Finished</strong>.</li>
+<li>If service was not started when the allocation was <strong>Active</strong>, the allocation status is changed from <strong>Reallocation Needed</strong> to <strong>Canceled</strong>.</li>
+</ul>
+<p>A new allocation entry that contains the new resource is created that has the status <strong>Active</strong>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-setup-resource-allocation.html">Set Up Resource Allocations</a><br>
+<a href="service-how-to-allocate-resources.html">Allocate Resources</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-allocation-status-and-repair-status.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

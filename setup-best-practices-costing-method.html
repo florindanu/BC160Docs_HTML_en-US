@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Setup Best Practices - Costing Method | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Setup Best Practices - Costing Method | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The Costing Method on the item card defines item&#8217;s cost flow is recorded and whether an actual or budgeted value is capitalized and used in the cost calculation.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="setup-best-practices-costing-method">Setup Best Practices: Costing Method</h1>
+
+<p>The <strong>Costing Method</strong> on the item card defines item’s cost flow is recorded and whether an actual or budgeted value is capitalized and used in the cost calculation.</p>
+<p>Setting the correct costing method according to item type and business environment is important to ensure economical inventories.</p>
+<p>The following table provides best practices on how to set up the <strong>Costing Method</strong> field. For more information, see <a href="design-details-costing-methods.html">Design Details: Costing Methods</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Setup option</th>
+<th>Best practice</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FIFO</td>
+<td>Use where the product cost is stable.<br><br> Use for items with a limited shelf life, because the oldest goods need to be sold before they pass their sell-by date.</td>
+<td>An item’s unit cost is the actual value of any receipt of the item, selected by the FIFO rule.<br><br> In inventory valuation, it is assumed that the first items placed in inventory are sold first. <strong>Note:</strong>  When prices are rising, the balance sheet shows greater value. This means that tax liabilities increase, but credit scores and the ability to borrow cash improve.</td>
+</tr>
+<tr>
+<td>LIFO</td>
+<td>Use where levels of inventories are consistently maintained or increased over time.</td>
+<td>An item’s unit cost is the actual value of any receipt of the item, selected by the LIFO rule.<br><br> In inventory valuation, it is assumed that the last items placed in inventory are sold first. <strong>Note:</strong>  When prices are rising, the value on the income statement decreases. This means that tax liabilities decrease, but the ability to borrow cash deteriorates. <strong>Important:</strong>  Disallowed in many countries/regions, as it can be used to depress profit.</td>
+</tr>
+<tr>
+<td>Average</td>
+<td>Use where the product cost is unstable.<br><br> Use where inventories are piled or mixed together and cannot be differentiated, such as chemicals.</td>
+<td>An item’s unit cost is the exact cost at which the particular unit was received.</td>
+</tr>
+<tr>
+<td>Specific</td>
+<td>Use in production or trade of easily identifiable items with fairly high unit costs.<br><br> Use for items that are subject to regulation.<br><br> Use for items with serial numbers.</td>
+<td>An item’s unit cost is calculated as the average unit cost at each point in time after a purchase.<br><br> For inventory valuation, it is assumes that all inventories are sold simultaneously.</td>
+</tr>
+<tr>
+<td>Standard</td>
+<td>Use where cost control is critical.<br><br> Use in repetitive manufacturing, to value the costs of direct material, direct labor, and manufacturing overhead.<br><br> Use where there is discipline and staff to maintain standards.</td>
+<td>An item’s unit cost is preset based on estimated.<br><br> When the actual cost is realized later, the standard cost must be adjusted to the actual cost through variance values.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-costing-methods.html">Design Details: Costing Methods</a><br>
+<a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="set-up-complex-application-areas-using-best-practices.html">Set Up Complex Application Areas Using Best Practices</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/setup-best-practices-costing-method.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

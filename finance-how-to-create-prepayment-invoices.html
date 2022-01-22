@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Create Prepayment Invoices | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Create Prepayment Invoices | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to handle situations where you require prepayment, or your vendor does.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-prepayment-invoices">Create Prepayment Invoices</h1>
+
+<p>If you require your customers to submit payment before you ship an order to them, or if your vendor requires you to submit payment before they ship an order to you, you can use the prepayment functionality.</p>
+<p>After you create a sales or purchase order, you can create a prepayment invoice. You can use the default percentages for each sales or purchase line, or you can adjust the amount as necessary. For example, you can specify a total amount for the entire order.</p>
+<p>The following procedure describes how to invoice a prepayment for a sales orders. The steps are similar for purchase orders.</p>
+<h2 id="to-create-a-prepayment-invoice">To create a prepayment invoice</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a new sales order. For more information, see <a href="sales-how-sell-products.html">sell Products</a>.</p>
+<p>On the <strong>Prepayment</strong> FastTab, the <strong>Prepayment %</strong> field will be filled in automatically if there is a default prepayment percentage on the customer card. You can change the contents of the field. The prepayment percentage is only copied from the header to lines that do not copy the default prepayment percentage from the item.</p>
+<p>If the <strong>Compress Prepayment</strong> field is selected, lines will be combined on the invoice if:</p>
+<ul>
+<li>They have the same general ledger account for prepayments as determined by the general posting setup.</li>
+<li>They have the same dimensions.</li>
+</ul>
+<p>Leave the field blank if you want to specify a prepayment invoice with one line for each sales order line that has a prepayment percentage.</p>
+</li>
+<li><p>Fill in the sales lines.</p>
+<p>If default prepayment percentages have been set up for your items, they are automatically copied to the <strong>Prepayment %</strong> field on the line. Otherwise, the prepayment percentage is copied from the header. You can change the contents of the <strong>Prepayment %</strong> field on the line.</p>
+</li>
+<li><p>If you want to apply one prepayment percentage to the entire order, change the <strong>Prepayment %</strong> field on the header after filling in the lines.</p>
+</li>
+<li><p>To view the total prepayment amount, choose the <strong>Statistics</strong> action.</p>
+<p>If you want to adjust the total prepayment amount for the order, you can change the contents of the <strong>Prepayment Amount</strong> field on the <strong>Sales Order Statistics</strong> page.</p>
+<p>If the <strong>Prices Including VAT</strong> field is selected, the <strong>Prepayment Amount Incl. VAT</strong> field is editable.</p>
+<p>If you change the contents of the <strong>Prepayment Amount</strong> field, the amount will be distributed proportionately between all lines, except those that have <strong>0</strong> in the <strong>Prepayment %</strong> field.</p>
+</li>
+<li><p>To print a test report before posting the prepayment invoice, choose the <strong>Prepayment</strong> action, and then choose the <strong>Prepayment Test Report</strong> action.</p>
+</li>
+<li><p>To post the prepayment invoice, choose the <strong>Prepayment</strong> action, and then choose the <strong>Post Prepayment Invoice</strong> action.</p>
+<p>To post and print the prepayment invoice, choose the <strong>Post and Print Prepmt. Invoice</strong> action.</p>
+</li>
+</ol>
+<p>You can issue additional prepayment invoices for the order. To do this, increase the prepayment amount on one or more lines, adjust the document date if necessary, and post the prepayment invoice. A new invoice will be created for the difference between the prepayment amounts invoiced so far and the new prepayment amount.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are located in North America, you cannot change the prepayment percentage after the prepayment invoice has been posted. This is prevented in the North American version of Business Central because the calculation of sales tax will otherwise be incorrect.</p>
+</div>
+<p>When you are ready to post the rest of the invoice, post it as you would post any invoice, and the prepayment amount will automatically be deducted from the amount due.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-invoice-prepayments.html">Invoicing Prepayments</a><br>
+<a href="walkthrough-setting-up-and-invoicing-sales-prepayments.html">Walkthrough: Setting Up and Invoicing Sales Prepayments</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-to-create-prepayment-invoices.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

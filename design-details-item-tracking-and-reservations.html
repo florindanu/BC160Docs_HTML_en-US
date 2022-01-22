@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Item Tracking and Reservations | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Item Tracking and Reservations | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic talks about item tracking and reservations, and describes the concepts behind the two.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-item-tracking-and-reservations">Design Details: Item Tracking and Reservations</h1>
+
+<p>Simultaneous use of reservation and specific item tracking is uncommon, because they both create a coupling between supply and demand. Except for situations where a customer or production planner requests a specific lot, it rarely makes sense to reserve inventory items that already carry item tracking numbers for specific application. Although it is possible to reserve items that require specific item tracking, special functionality is needed to avoid availability conflicts between order processors that request the same item-tracked items.</p>
+<p>The concept of Late Binding ensures that a nonspecific reservation of a serial number or a lot number remains loosely coupled until posting. At posting time, the reservation system can reshuffle nonspecific reservations to ensure that fixed application is possible against the serial or lot number that is actually picked. Meanwhile, the serial or lot number is made available for specific reservation in other documents that request that particular serial or lot number.</p>
+<p>A nonspecific reservation is one in which the user does not care which specific item is picked, and a specific reservation is one in which the user does care.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Late Binding functionality relates only to items that are set up with specific item tracking, and it applies only to reservations against inventory, not against inbound supply orders.</p>
+</div>
+<p>Reservation of item tracking numbers falls into two categories, as shown in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Reservation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Specific</td>
+<td>You select a specific serial or lot number when you reserve the inventory item from a demand, such as a sales order.<br><br> This is a regular reservation. It is a rigid link between supply and demand that both carry serial or lot numbers. <strong>Note:</strong>  The demand carries serial or lot numbers. <br><br> For example, you want to reserve a can of blue paint from Lot A, because the customer requests it. A can of blue paint from Lot A is shipped to the customer.</td>
+</tr>
+<tr>
+<td>Nonspecific</td>
+<td>You do not select a specific serial or lot number when you reserve the inventory item from a demand, such as a sales order.<br><br> This is a state that is imposed on a reservation entry for serial or lot numbers that are not selected specifically. <strong>Note:</strong>  The demand does not carry serial or lot numbers. <br><br> For example, you want to reserve a can of blue paint from any lot for your sales order. A can of blue paint from a random serial or lot number is shipped to the customer.</td>
+</tr>
+</tbody>
+</table>
+<p>The main difference between specific and nonspecific reservation is defined by the existence of serial or lot numbers on the demand side, as shown in the following table.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Supply</strong></td>
+<td><strong>Demand</strong></td>
+</tr>
+<tr>
+<td><strong>Specific</strong></td>
+<td>Serial or lot number.</td>
+<td>Serial or lot number.</td>
+</tr>
+<tr>
+<td><strong>Nonspecific</strong></td>
+<td>Serial or lot number.</td>
+<td>No serial or lot number.</td>
+</tr>
+</tbody>
+</table>
+<p>When you reserve inventory quantities from an outbound document line for an item that has item tracking numbers assigned and is set up for specific item tracking, the <strong>Reservation</strong> page leads you through different workflows depending on your need for the serial or lot numbers.</p>
+<h2 id="specific-reservation">Specific Reservation</h2>
+<p>When you choose <strong>Reserve</strong> from the outbound document line, a dialog box appears that asks you if you want to reserve specific serial or lot numbers. If you choose <strong>Yes</strong>, then a list is displayed with all the serial or lot numbers that are assigned to the document line. The <strong>Reservation</strong> page opens after you select one of the serial or lot numbers, and you can then reserve among the selected serial or lot numbers in a typical fashion.</p>
+<p>If some of the specific item tracking numbers that you are trying to reserve are held in nonspecific reservations, then a message at the bottom of the <strong>Reservation</strong> page informs you how many of the total reserved quantity are held in nonspecific reservations and whether they are still available.</p>
+<h2 id="nonspecific-reservation">Nonspecific Reservation</h2>
+<p>If you choose <strong>No</strong> in the dialog box that appears, the <strong>Reservation</strong> page opens and allows you to reserve among all serial or lot numbers in inventory.</p>
+<p>Because of the structure of the reservation system, when you place a nonspecific reservation on an item-tracked item, the system must select specific item ledger entries to reserve against. Because the item ledger entries carry the item tracking numbers, the reservation indirectly reserves specific serial or lot numbers, even though you did not intend to. To handle this situation, the reservation system tries to reshuffle nonspecific reservation entries before posting.</p>
+<p>The system actually still reserves against specific entries, but then it uses a reshuffling mechanism whenever there is specific demand for the lot or serial number in the nonspecific reservation. This can be the case when you post a demand transaction, such as a sales order, consumption journal, or transfer order, for the serial or lot number, or when you try to specifically reserve the serial or lot number. The system reshuffles the reservations to make the lot or serial number available to the demand or to the specific reservation, thereby placing a different lot or serial number in the nonspecific reservation. If there is insufficient quantity in inventory, the system reshuffles as much as possible, and you receive an availability error if there is still insufficient quantity at the time of posting.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On a nonspecific reservation the lot number or serial number field is blank in the reservation entry that points at the demand, such as the sale.</p>
+</div>
+<h2 id="reshuffle">Reshuffle</h2>
+<p>When a user posts an outbound document after picking the wrong serial or lot number, other nonspecific reservations are reshuffled to reflect the actual serial or lot number that is picked. This satisfies the posting engine with a fixed application between supply and demand.</p>
+<p>For all supported business scenarios, reshuffling  is possible only against positive item ledger entries that carry reservation and serial or lot numbers but without defined serial or lot numbers on the demand side.</p>
+<h2 id="supported-business-scenarios">Supported Business Scenarios</h2>
+<p>The Late Binding functionality supports the following business scenarios:</p>
+<ul>
+<li>Entering a specific serial or lot number on an outbound document with nonspecific reservation of a wrong serial or lot number.</li>
+<li>Reserving a specific serial or lot number.</li>
+<li>Posting an outbound document with nonspecific reservation of a serial or lot number.</li>
+</ul>
+<h3 id="entering-serial-or-lot-numbers-on-an-outbound-document-with-wrong-nonspecific-reservation">Entering Serial or Lot Numbers on an Outbound Document with Wrong Nonspecific Reservation</h3>
+<p>This is the most common of the three supported scenarios. In this case, the Late Binding functionality ensures that a user can enter a serial or lot number, which is actually picked, on an outbound document that already has a nonspecific reservation of another serial or lot number.</p>
+<p>For example, the need arises when an order processor has first made a nonspecific reservation of any serial or lot number. Later when the item is actually picked from inventory, the picked serial or lot number must be entered on the order before it is posted. The nonspecific reservation is reshuffled at posting time to ensure that the picked serial or lot number can be entered without losing the reservation and to ensure that the picked serial or lot number can be fully applied and posted.</p>
+<h3 id="reserve-specific-serial-or-lot-numbers">Reserve Specific Serial or Lot Numbers</h3>
+<p>In this business scenario, Late Binding functionality ensures that a user who is trying to reserve a particular serial or lot number that is currently nonspecifically reserved can do so. A nonspecific reservation is reshuffled at the time of reservation to free the serial or lot number for the specific request.</p>
+<p>The reshuffle happens automatically, but embedded Help is displayed at the bottom of the <strong>Reservation</strong> page and shows the following text:</p>
+<p><strong>XX of the Total Reserved Quantity are nonspecific and may be available.</strong></p>
+<p>In addition, the <strong>Nonspecific Reserved Qty.</strong> field shows how many reservation entries are nonspecific. By default, this field is not visible to users.</p>
+<h3 id="posting-an-outbound-document-with-nonspecific-reservation-of-serial-or-lot-numbers">Posting an Outbound Document with Nonspecific Reservation of Serial or Lot Numbers</h3>
+<p>This business scenario is supported with Late Binding functionality that enables fixed application and outbound posting of what is actually picked by reshuffling another nonspecific reservation of a serial or lot number. If reshuffling is not possible, then the following standard error message appears when the user tries to post the shipment:</p>
+<p><strong>Item XX cannot be fully applied.</strong></p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-item-tracking.html">Design Details: Item Tracking</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-item-tracking-and-reservations.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

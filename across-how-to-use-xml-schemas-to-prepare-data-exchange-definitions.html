@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create XMLports based on XML schemas | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create XMLports based on XML schemas | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Use XML schemas to set yup the document exchange framework.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="use-xml-schemas-to-prepare-data-exchange-definitions">Use XML Schemas to Prepare Data Exchange Definitions</h1>
+
+<p>To enable import/export of data in XML files through the data exchange framework in Business Central, you can use XML schemas to define which data elements you want to exchange with Business Central. You perform this work on the <strong>XML Schema Viewer</strong> page by loading the XML schema file, selecting the relevant data elements, and then initializing either a data exchange definition or an XMLport.</p>
+<p>When you have defined which data elements to include based on the XML schema, you can use the <strong>Generate XMLport</strong> action to create the XMLport object.</p>
+<p>Alternatively, you can use the <strong>Generate Data Exchange Definition</strong> action to initialize a data exchange definition based on the selected data elements, which you then complete in the Data Exchange Framework. This creates a record on the <strong>Posting Exchange Definition</strong> page where you continue by defining which elements in the file map to which fields in Business Central. For more information, see <a href="across-how-to-set-up-data-exchange-definitions.html">Set Up Data Exchange Definitions</a>.</p>
+<p>This topic contains the following procedures:</p>
+<ul>
+<li><p>To load an XML schema file</p>
+</li>
+<li><p>To select or clear nodes in an XML schema</p>
+</li>
+<li><p>To generate a data exchange definition that is based on an XML schema</p>
+</li>
+<li><p>To generate an XMLport for the file that is based on an XML schema</p>
+</li>
+<li><p>To import an XMLport into the Object Designer</p>
+</li>
+</ul>
+<h3 id="to-load-an-xml-schema-file">To load an XML schema file</h3>
+<ol>
+<li><p>Make sure that the relevant XML schema file is available. The file extension is .xsd.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>XML Schemas</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>Specify a code to identify the XML schema.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Specify a description of the XML schema.</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Target Namespace</strong> field specifies any namespace in the XML schema file that has been loaded for the line.</p>
+</li>
+<li><p>Choose the <strong>Load Schema</strong> action, and then select the XML schema file.</p>
+<p>When the file is loaded, the rest of the fields on the line are filled with information from the file, and the <strong>Schema is Loaded</strong> check box is selected.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The tree of the loaded XML schema is collapsed by default. You expand each node by choosing the <strong>+</strong> button on the node. To expand all nodes, choose <strong>Expand All</strong> on the ribbon.</p>
+</div>
+</li>
+</ol>
+<h3 id="to-select-or-clear-nodes-in-an-xml-schema">To select or clear nodes in an XML schema</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>XML Schema Viewer</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill the fields on the header as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>XML Schema Code</strong></td>
+<td>Specify the XML schema file that you loaded in step 5 in the “To load an XML schema file” section.</td>
+</tr>
+<tr>
+<td><strong>New XMLport No.</strong></td>
+<td>Specify the number of the XMLport that is created from this XML schema when you choose the <strong>Generate XMLport</strong> action.</td>
+</tr>
+</tbody>
+</table>
+<p>The lines are now filled with nodes representing all elements in the XML schema. Nodes for elements that are mandatory according to the XML schema are selected by default.</p>
+</li>
+<li><p>On the first line, in the <strong>Node Name</strong> column, expand the <strong>Document</strong> node, and then gradually expand underlying nodes that you want to review.</p>
+<p>Alternatively, right-click on a node and then choose <strong>Expand All</strong>.</p>
+</li>
+<li><p>Choose either of the following actions to change which nodes are displayed.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Action</strong></th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Show All</strong></td>
+<td>All nodes are shown.</td>
+</tr>
+<tr>
+<td><strong>Hide Non-Mandatory</strong></td>
+<td>Only nodes representing elements that are required according to the XML schema are shown. These nodes are typically indicated by a <strong>1</strong> in the <strong>MinOccurs</strong> field.<br><br> Choose <strong>Show All</strong> to reverse the view.</td>
+</tr>
+<tr>
+<td><strong>Hide Non-Selected</strong></td>
+<td>Only nodes where the <strong>Selected</strong> check box is selected are shown.<br><br> Choose <strong>Show All</strong> to reverse the view.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>In the <strong>Selected</strong> check box, specify for each node if you want the element to be supported in the data exchange definition for the related SEPA bank file.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you select a mandatory child node, all parent nodes above it are also selected.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Select All Mandatory Elements</strong> action to reselect all nodes that represent elements that are mandatory according to the XML schema.</p>
+</li>
+<li><p>Choose the <strong>Deselect All</strong> action to clear all selections.</p>
+<p>The <strong>Choice</strong> field specifies that the node has two or more sibling nodes that function as options.</p>
+</li>
+</ol>
+<h3 id="to-generate-a-data-exchange-definition-that-is-based-on-an-xml-schema">To generate a data exchange definition that is based on an XML schema</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter  <strong>XML Schemas</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant XML schema, and then choose the <strong>Open XML Schema Viewer</strong> action.</p>
+</li>
+<li><p>Make sure the relevant nodes are selected. For more information, see the “To select or clear nodes in an XML schema” section.</p>
+</li>
+<li><p>On the <strong>XML Schema Viewer</strong> page, choose the <strong>Generate Data Exchange Definition</strong> action.</p>
+</li>
+</ol>
+<p>A data exchange definition is created on the <strong>Posting Exchange Definition</strong> page, which you can complete by specifying which elements in the file map to which fields in Business Central. For more information, see <a href="across-how-to-set-up-data-exchange-definitions.html">Set Up Data Exchange Definitions</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also use the <strong>Get File Structure</strong> function from the <strong>Posting Exchange Definition</strong> page, which uses the functionality of the <strong>XML Schema Viewer</strong> page to prefill the <strong>Column Definitions</strong> TastTab.</p>
+</div>
+<h3 id="to-generate-an-xmlport-that-is-based-on-an-xml-schema">To generate an XMLport that is based on an XML schema</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter  <strong>XML Schemas</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant XML schema, and then choose the <strong>Open XML Schema Viewer</strong> action.</p>
+</li>
+<li><p>In the <strong>New XMLport No.</strong> field, specify the number that the new XMLport object will be given when it is generated.</p>
+</li>
+<li><p>Make sure the relevant nodes are selected. For more information, see the “To select or clear nodes in an XML schema” section.</p>
+</li>
+<li><p>Choose the <strong>Generate XMLport</strong> action, and then save the object as a .txt file in an appropriate location.</p>
+</li>
+<li><p>Import the new XMLport into the Business Central development environment and compile it.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-how-to-set-up-data-exchange-definitions.html">Set Up Data Exchange Definitions</a><br>
+<a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#exporting-payments-to-a-bank-file">Export Payments to a Bank File</a><br>
+<a href="finance-collect-payments-with-sepa-direct-debit.html">Collect Payments with SEPA Direct Debit</a><br>
+<a href="across-about-the-data-exchange-framework.html">About the Data Exchange Framework</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-to-use-xml-schemas-to-prepare-data-exchange-definitions.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

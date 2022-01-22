@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Picking and Shipping in Basic Warehouse Configurations | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Picking and Shipping in Basic Warehouse Configurations | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In Business Central, the outbound processes for picking and shipping can be performed in four ways using different functionalities depending on the warehouse complexity level.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-picking-and-shipping-in-basic-warehouse-configurations">Walkthrough: Picking and Shipping in Basic Warehouse Configurations</h1>
+
+<p><strong>Note</strong>: This walkthrough must be performed on a demonstration company with the <strong>Full Evaluation - Complete Sample Data</strong> option, which is available in the Sandbox environment. For more information, see <a href="across-how-create-sandbox-environment.html">Creating a Sandbox Environment</a>.</p>
+<p>In Business Central, the outbound processes for picking and shipping can be performed in four ways using different functionalities depending on the warehouse complexity level.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Inbound process</th>
+<th>Bins</th>
+<th>Picks</th>
+<th>Shipments</th>
+<th>Complexity level (See <a href="design-details-warehouse-setup.html">Design Details: Warehouse Setup</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Post pick and shipment from the order line</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Post pick and shipment from an inventory pick document</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>3</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Post pick and shipment from a warehouse shipment document</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>4/5/6</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Post pick from a warehouse pick document and post shipment from a warehouse shipment document</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>4/5/6</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, see <a href="design-details-outbound-warehouse-flow.html">Design Details: Outbound Warehouse Flow</a>.</p>
+<p>The following walkthrough demonstrates method B in the previous table.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>In basic warehouse configurations where your location is set up to require pick processing but not ship processing, you use the <strong>Inventory Pick</strong> page to record and post pick and ship information for your outbound source documents. The outbound source document can be a sales order, purchase return order, outbound transfer order, or a production order with component need.</p>
+<p>This walkthrough demonstrates the following tasks:</p>
+<ul>
+<li>Setting up SILVER location for inventory picks.</li>
+<li>Creating a sales order for customer 10000 for 30 loudspeakers.</li>
+<li>Releasing the sales order for warehouse handling.</li>
+<li>Creating an inventory pick based on a released source document.</li>
+<li>Registering the warehouse movement from the warehouse and at the same time posting the sales shipment for the source sales order.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<p>This walkthrough demonstrates tasks that are performed by the following user roles:</p>
+<ul>
+<li>Warehouse Manager</li>
+<li>Order Processor</li>
+<li>Warehouse Worker</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To complete this walkthrough, you will need:</p>
+<ul>
+<li><p>CRONUS International Ltd. installed.</p>
+</li>
+<li><p>To make yourself a warehouse employee at SILVER location by following these steps:</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Employees</strong>, and then choose the related link.</li>
+<li>Choose the <strong>User ID</strong> field, and select your own user account on the <strong>Users</strong> page.</li>
+<li>In the <strong>Location Code</strong> field, enter SILVER.</li>
+<li>Select the <strong>Default</strong> field.</li>
+</ol>
+</li>
+<li><p>Make item LS-81 available at SILVER location by following these steps:</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Item Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the default journal, and then create two item journal lines with the following information about the work date (January 23).</p>
+<table>
+<thead>
+<tr>
+<th>Entry Type</th>
+<th>Item Number</th>
+<th>Location Code</th>
+<th>Bin Code</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Positive Adjmt.</td>
+<td>LS-81</td>
+<td>SILVER</td>
+<td>S-01-0001 <strong>Note:</strong>  The item’s default bin in CRONUS</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Positive Adjmt.</td>
+<td>LS-81</td>
+<td>SILVER</td>
+<td>S-01-0002</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Post</strong> action, and then select the <strong>Yes</strong> button.</p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="story">Story</h2>
+<p>Ellen, the warehouse manager at CRONUS, sets up SILVER warehouse for basic pick handling where warehouse workers process outbound orders individually. Susan, the order processor, creates a sales order for 30 units of item LS-81 to be shipped to customer 10000 from the SILVER Warehouse. John, the warehouse worker must make sure that the shipment is prepared and delivered to the customer. John manages all involved tasks on the <strong>Inventory Pick</strong> page, which automatically points to the bins where LS-81 is stored.</p>
+<h2 id="setting-up-the-location">Setting Up the Location</h2>
+<p>The setup of the <strong>Location Card</strong> page defines the company’s warehouse flows.</p>
+<h3 id="to-set-up-the-location">To set up the location</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Open the SILVER location card.</li>
+<li>Select the <strong>Require Pick</strong> check box.</li>
+</ol>
+<h2 id="creating-the-sales-order">Creating the Sales Order</h2>
+<p>Sales orders are the most common type of outbound source document.</p>
+<h3 id="to-create-the-sales-order">To create the sales order</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Create a sales order for customer 10000 on the work date (January 23) with the following sales order line.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Location Code</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LS_81</td>
+<td>SILVER</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<p>Proceed to notify the warehouse that the sales order is ready for warehouse handling.</p>
+</li>
+<li><p>Choose the <strong>Release</strong> action.</p>
+<p>John proceeds to pick and ship the sold items.</p>
+</li>
+</ol>
+<h2 id="picking-and-shipping-items">Picking and Shipping Items</h2>
+<p>On the <strong>Inventory Pick</strong> page, you can manage all outbound warehouse activities for a specific source document, such as a sales order.</p>
+<h3 id="to-pick-and-ship-items">To pick and ship items</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Picks</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Select the <strong>Source Document</strong> field, and then select <strong>Sales Order</strong>.</p>
+</li>
+<li><p>Select the <strong>Source No.</strong> field, select the line for the sale to customer 10000, and then choose the <strong>OK</strong> button.</p>
+<p>Alternatively, choose the <strong>Get Source Document</strong> action, and then select the sales order.</p>
+</li>
+<li><p>Choose the <strong>Autofill Qty. to Handle</strong> action.</p>
+<p>Alternatively, in the <strong>Qty. to Handle</strong> field, enter 10 and 30 respectively on the two inventory pick lines.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action, select <strong>Ship</strong>, and then choose the <strong>OK</strong> button.</p>
+<p>The 30 loudspeakers are now registered as picked from bins S-01-0001 and S-01-0002, and a negative item ledger entry is created reflecting the posted sales shipment.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-how-to-pick-items-with-inventory-picks.html">Pick Items with Inventory Picks</a><br>
+<a href="warehouse-how-to-pick-items-for-warehouse-shipment.html">Pick Items for Warehouse Shipment</a><br>
+<a href="warehouse-how-to-set-up-basic-warehouses-with-operations-areas.html">Set Up Basic Warehouses with Operations Areas</a><br>
+<a href="warehouse-how-to-move-components-to-an-operation-area-in-basic-warehousing.html">Move Components to an Operation Area in Basic Warehouse Configurations</a><br>
+<a href="warehouse-how-to-pick-for-production.html">Pick for Production or Assembly</a><br>
+<a href="warehouse-how-to-move-items-ad-hoc-in-basic-warehousing.html">Move Items Ad Hoc in Basic Warehouse Configurations</a><br>
+<a href="design-details-outbound-warehouse-flow.html">Design Details: Outbound Warehouse Flow</a><br>
+<a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-picking-and-shipping-in-basic-warehousing.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

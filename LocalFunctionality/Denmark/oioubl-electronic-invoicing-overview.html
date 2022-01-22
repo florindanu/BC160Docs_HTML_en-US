@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>OIOUBL Electronic Invoicing Overview | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="OIOUBL Electronic Invoicing Overview | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Companies must send sales invoices, credit memos, finance charge memos, and reminders to the Danish public sector electronically in the Offentlig Information Online UBL (OIOUBL) format. If a company does not send these documents electronically, the authorities can deny payment.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="oioubl-electronic-invoicing-overview">OIOUBL Electronic Invoicing Overview</h1>
+
+<p>Companies must send sales invoices, credit memos, finance charge memos, and reminders to the Danish public sector electronically in the Offentlig Information Online UBL (OIOUBL) format. If a company does not send these documents electronically, the authorities can deny payment.</p>
+<p>For more information about OIOUBL electronic invoicing, see <a href="http://www.oioubl.info/classes/da/index.html">oioubl.info</a>.</p>
+<h2 id="implementation-in-">Implementation in Business Central</h2>
+<p>The current requirements for sending electronic invoices are based on OIOUBL, which is based on the Universal Business Language (UBL) version 2.0 standard. For more information, see the <a href="https://aka.ms/OasisUblSite">OASIS UBL</a> web site. The generated XML documents can then be sent to the customer.</p>
+<p>To send documents electronically, you must assign European Article Numbering (EAN) location numbers and account codes to the relevant customers on the <strong>Customer Card</strong> page. For more information, see <a href="how-to-set-up-customers-for-oioubl.html">Set Up Customers for OIOUBL</a>. These numbers are the included when you create documents, and post or issue them. After the documents have been posted or issued, you can create electronic versions to be sent to the customer. You can submit the following types of documents:</p>
+<ul>
+<li>Sales invoice</li>
+<li>Service invoice</li>
+<li>Sales credit memo</li>
+<li>Service credit memo</li>
+<li>Finance charge memo</li>
+<li>Reminder</li>
+</ul>
+<p>The electronic documents are stored in the locations that are defined in the Sales &amp; Receivables Setup.</p>
+<h2 id="oioubl-profiles">OIOUBL Profiles</h2>
+<p>Your customers can use a profile that is based on the Danish OIOUBL definitions, or they can use a profile that is based on the OIOUBL implementation of the Northern European Subset (NES) definitions. Some profiles require responses to be sent when an electronic document is received. You can set up which profile most of your customers use. If a customer uses a different profile, you can change that in the customer card. For example, you can specify that the default profile is Procurement-OrdSim-BilSim-1.0, but that customer 10000 requires profile urn:www.nesubl.eu:profiles:profile5:ver2.0. For more information, see <a href="how-to-set-up-oioubl.html">Set Up OIOUBL</a>.</p>
+<p>For more information, see the entry on OIOUBL profiles in the frequently asked questions section at <a href="https://aka.ms/Digitaliseringsstyrelsen">Digitaliseringsstyrelsen</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="denmark-local-functionality.html">Denmark Local Functionality</a><br>
+<a href="how-to-set-up-oioubl.html">Set Up OIOUBL</a><br>
+<a href="how-to-set-up-customers-for-oioubl.html">Set Up Customers for OIOUBL</a><br>
+<a href="how-to-create-electronic-documents-by-using-oioubl.html">Create Electronic Documents by Using OIOUBL</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Denmark/oioubl-electronic-invoicing-overview.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Insure Fixed Assets| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Insure Fixed Assets| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="insure-fixed-assets">Insure Fixed Assets</h1>
+
+<p>An insurance policy for a fixed asset is represented by an insurance card. You can assign one fixed asset to one insurance policy or multiple fixed assets to one insurance policy.</p>
+<p>You assign a fixed asset to an insurance policy by posting to the insurance coverage ledger from the <strong>Insurance Journal</strong> page.</p>
+<p>In addition, you can assign a fixed asset to an insurance policy and create coverage ledger entries when you post its acquisition cost. You do this by posting an acquisition cost from the fixed asset journal with the <strong>Insurance No.</strong> field filled in. The <strong>Automatic Insurance Posting</strong> check box on the <strong>Fixed Asset Setup</strong> page must be selected. For more information, see <a href="fa-how-acquire.html#to-post-a-fixed-asset-acquisition-manually-with-the-fixed-asset-gl-journal">To post a fixed asset acquisition manually with the fixed asset G/L journal</a>.</p>
+<p>If the <strong>Automatic Insurance Posting</strong> check box on the <strong>Fixed Asset Setup</strong> page is not selected, then posting acquisitions from the fixed asset journal will create lines on the <strong>Insurance Journal</strong> page, which you must then post manually.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you do not select the <strong>Automatic Insurance Posting</strong> check box on the <strong>Fixed Asset Setup</strong> page, then your insurance journal should be based on a journal template without a number series. This is because the inserted document numbers from the fixed asset journal line will otherwise conflict with the number series of the insurance journal. For more information about journal templates and batches, see <a href="fa-how-setup-general.html">Set Up General Fixed Assets Information</a>.</p>
+</div>
+<p>After you have assigned a fixed asset to an insurance policy, the <strong>Insured</strong> check box is selected on the fixed asset card. When you sell the fixed asset, the check box is automatically deselected.</p>
+<h2 id="to-create-or-modify-an-insurance-card">To create or modify an insurance card</h2>
+<p>An insurance policy for a fixed asset must be represented by an insurance card.</p>
+<p>When you receive information about changes in the coverage amount, you must enter the new information on the <strong>Insurance Card</strong> page to ensure that you analyze insurance policy coverage correctly.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Insurance</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action to create a new card for an insurance policy. Hover over a field to read a short description.</li>
+<li>Alternatively, select the insurance policy that you want to change, and then choose the <strong>Edit</strong> action.</li>
+</ol>
+<h2 id="to-assign-a-fixed-asset-to-an-insurance-policy-by-posting-from-the-insurance-journal">To assign a fixed asset to an insurance policy by posting from the insurance journal</h2>
+<p>You assign a fixed asset to an insurance policy by posting to the insurance coverage ledger.</p>
+<p>The following procedure explains how to create an insurance journal line manually. If the <strong>Automatic Insurance Posting</strong> check box is selected on the <strong>FA Setup</strong> page, then insurance journal lines are automatically created when you post acquisition costs. In that case, all you have to do is to post the journal.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Insurance Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the relevant journal, and fill in the journal lines as necessary.</p>
+</li>
+<li><p>To assign multiple fixed assets to one insurance policy, create journal lines with the same value in the <strong>Insurance No.</strong> field and different values in the <strong>FA No.</strong> field.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The entries from an insurance journal are only posted to the insurance coverage ledger.</p>
+</div>
+</li>
+</ol>
+<h2 id="to-update-the-insurance-value-of-a-fixed-asset">To update the insurance value of a fixed asset</h2>
+<p>You can use the <strong>Index Insurance</strong> batch job to update the value of the fixed assets that are covered.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Index Insurance</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the fields as necessary.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the <strong>Index Figure</strong> field, you enter a decrease of 5%, for example, as 95, whereas you enter an increase of 2% as 102.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+<p>The batch job calculates the new amount as a percentage of the total value insured, as stated on the <strong>Insurance Statistics</strong> page, and then creates a line in the insurance journal.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Insurance Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the relevant insurance journal, review the created values, and then post them to the insurance coverage ledger.</p>
+</li>
+</ol>
+<h2 id="to-monitor-insurance-coverage">To monitor insurance coverage</h2>
+<p>Business Central provides dedicated reports and statistics pages for use in analyzing insurance policies and whether your fixed assets are over- or under-insured.</p>
+<h3 id="overview-of-insurance-policies">Overview of Insurance Policies</h3>
+<p>To get an overview of your insurance policies, preview or print the <strong>Insurance - List</strong> report. The report shows all the policies and the most important fields from the insurance cards.</p>
+<h3 id="insurance-coverage">Insurance Coverage</h3>
+<p>To see which insurance policies cover each asset and by which amount, you can preview or print the <strong>Insurance - Tot. Value Insured</strong> report.</p>
+<h3 id="overunder-coverage">Over/Under Coverage</h3>
+<p>You can check if fixed assets are over- or under-insured in the following ways:</p>
+<ul>
+<li>The <strong>Insurance Statistics</strong> page. A positive amount in the <strong>Over/Under Insured</strong> field means that the fixed asset is over-insured. A negative amount means that it is underinsured.</li>
+<li>The <strong>Fixed Asset Statistics</strong> page. Choose the <strong>Total Value Insured</strong> field to view the <strong>Ins. Coverage Ledger Entries</strong> page.</li>
+<li>The <strong>Over/Under Coverage</strong> report.</li>
+<li>The <strong>Insurance Analysis</strong> report.</li>
+</ul>
+<h3 id="uninsured-fixed-assets">Uninsured Fixed Assets</h3>
+<p>To check if you have forgotten to assign a fixed asset to an insurance policy, you can print or preview the <strong>Insurance - Uninsured FAs</strong> report. This report displays fixed assets for which amounts have not been posted to the insurance coverage ledger.</p>
+<h2 id="to-view-insurance-coverage-ledger-entries">To view insurance coverage ledger entries</h2>
+<p>You can view the entries that you have made in the insurance coverage ledger.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Insurance</strong>, and then choose the related link.</li>
+<li>Select the relevant insurance policy, and then choose the <strong>Coverage Ledger Entries</strong> action.</li>
+</ol>
+<h2 id="to-view-the-total-insurance-value-of-fixed-assets">To view the total insurance value of fixed assets</h2>
+<p>A dedicated matrix page shows the insurance values that are registered for each insurance policy for each fixed asset as a result of insurance-related amounts that you have posted.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Insurance</strong>, and then choose the related link.</li>
+<li>Select the relevant insurance policy, and then choose the <strong>Total Value Insures per FA</strong> action.</li>
+<li>Fill in the fields as necessary.</li>
+<li>Choose the <strong>Show Matrix</strong> action.</li>
+<li>To see the underlying insurance coverage ledger entries, choose a value in the matrix.</li>
+</ol>
+<h2 id="to-correct-insurance-coverage-entries">To correct insurance coverage entries</h2>
+<p>If a fixed asset has been attached to the wrong insurance policy, you can correct it by creating two reclassification entries from the insurance journal.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Insurance Journals</strong>, and then choose the related link.</li>
+<li>Create one journal line for the fixed asset and the correct insurance policy where the value in the <strong>Amount</strong> field is positive.</li>
+<li>Create another journal line for the fixed asset and the incorrect insurance policy where the value in the <strong>Amount</strong> field is negative.</li>
+<li>Choose the <strong>Post</strong> action.</li>
+</ol>
+<p>The fixed asset will be detached from the incorrect insurance policy, on the second line, and attached to the correct insurance policy, on the first line.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="fa-manage.html">Fixed Assets</a><br>
+<a href="fa-setup.html">Setting Up Fixed Assets</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/fa-how-insure.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

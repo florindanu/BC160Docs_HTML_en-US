@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Add Fields to a Word Report Layout | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Add Fields to a Word Report Layout | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to add fields of a report dataset to an existing Word report layout for a report.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="add-fields-to-a-word-report-layout">Add Fields to a Word Report Layout</h1>
+
+<p>A report dataset can consist of fields that display labels, data, and images. This topic describes the procedure for adding fields of a report dataset to an existing Word report layout for a report. You add fields by using the Word custom XML part for the report and adding content controls that map to the fields of the report dataset. Adding fields requires that you have some knowledge of the report's dataset so that you can identify the fields that you want to add to the layout.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot modify built-in report layouts<!--Onprem. Built-in layouts can only be modified by using the development environment-->.</p>
+</div>
+<h2 id="OpenXMLPart"> To open the Custom XML part for the Report in Word</h2>
+<ol>
+<li><p>If not already open, then open the Word report layout document in Word.</p>
+<p>For more information, see <a href="ui-how-create-custom-report-layout.html">Create and Modify a Custom Report Layout</a>.</p>
+</li>
+<li><p>Show the <strong>Developer</strong> tab in the ribbon of Microsoft Word.</p>
+<p>By default, the <strong>Developer</strong> tab is not shown in the ribbon. For more information, see <a href="https://go.microsoft.com/fwlink/?LinkID=389631">Show the Developer Tab on the Ribbon</a>.</p>
+</li>
+<li><p>On the <strong>Developer</strong> tab, choose <strong>XML Mapping Pane</strong>.</p>
+</li>
+<li><p>In the <strong>XML Mapping</strong> pane, in the <strong>Custom XML Part</strong> dropdown list, choose the custom XML part for ADD INCLUDE<!--[!INCLUDE[d365fin](../../includes/d365fin_md.md)]--> report, which is typically last in the list. The name of the custom XML part has the following format:</p>
+<p>urn:microsoft-dynamics-nav/reports/<em>report_name</em>/<em>ID</em></p>
+<p><em>report_name</em> is the name that is assigned to the report<!--OnPrem as specified by the report's [Name Property-duplicate](../FullExperience/nav_dev_long_md.md)]-->.</p>
+<p><em>ID</em> is the identification number of the report.</p>
+<p>After you select the custom XML part, the XML Mapping pane displays the labels and field controls that are available for the report.</p>
+</li>
+</ol>
+<h3 id="to-add-a-label-or-data-field">To add a label or data field</h3>
+<ol>
+<li><p>Place your cursor in the document where you want to add the control.</p>
+</li>
+<li><p>In the <strong>XML Mapping</strong> pane, right-click the control that you want to add, choose <strong>Insert Content Control</strong>, and then choose <strong>Plain Text</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot add a field by manually typing the dataset field name in the content control. You must use the <strong>XML Mapping</strong> pane to map the fields.</p>
+</div>
+</li>
+</ol>
+<h3 id="to-add-repeating-rows-of-data-fields-to-create-a-list">To add repeating rows of data fields to create a list</h3>
+<ol>
+<li><p>In a table, add a table row that includes a column for each field that you want repeated.</p>
+<p>This row will act as a placeholder for the repeating fields.</p>
+</li>
+<li><p>Select the entire row.</p>
+</li>
+<li><p>In the <strong>XML Mapping</strong> pane, right-click the control that corresponds to the report data item that contains the fields that you want repeated, choose <strong>Insert Content Control</strong>, and then choose <strong>Repeating</strong>.</p>
+</li>
+<li><p>Add the repeating fields to the row as follows:</p>
+<ol>
+<li><p>Place your pointer in a column.</p>
+</li>
+<li><p>In the <strong>XML Mapping</strong> pane, right-click the control that you want to add, choose <strong>Insert Content Control</strong>, and then choose <strong>Plain Text</strong>.</p>
+</li>
+<li><p>For each field, repeat steps a and b.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="adding-image-fields">Adding Image Fields</h2>
+<p>A report dataset can include a field that contains an image, such as a company logo or a picture of an item. To add an image from the report dataset, you insert a <strong>Picture</strong> content control.</p>
+<p>Images align in the top-left corner of the content control and resize automatically in proportion to fit the boundary of the content control.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You can only add images that have a format that is supported by Word, such as .bmp, .jpeg, and .png file types. If you add an image that has a format that is not supported by Word, you will get an error when you run the report from the ADD INCLUDE<!--[!INCLUDE[d365fin](../../includes/d365fin_md.md)]--> client.</p>
+</div>
+<h4 id="to-add-an-image">To add an image</h4>
+<ol>
+<li><p>Place your pointer in the document where you want to add the control.</p>
+</li>
+<li><p>In the <strong>XML Mapping</strong> pane, right-click the control that you want to add, choose <strong>Insert Content Control</strong>, and then choose <strong>Picture</strong>.</p>
+</li>
+<li><p>To increase or decrease the image size, drag a sizing handle away from or towards the center of the content control.</p>
+</li>
+</ol>
+<h2 id="custom-xml-part-overview">Custom XML Part Overview</h2>
+<p>Word report layouts are built on <em>custom XML parts</em>. A custom XML part for a report consists of elements that correspond to the data items, columns, and labels that comprise the report's dataset. <!--OnPrem The data as defined in the Report Dataset Designer in Microsoft Dynamics NAV Development Environment. -->The custom XML part is used to map the data into a report when the report is run.</p>
+<h3 id="xml-structure-of-custom-xml-part">XML Structure of Custom XML Part</h3>
+<p>The following table provides a simplified overview of the XML of a custom XML part.</p>
+<table>
+<thead>
+<tr>
+<th>XML Elements</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;</code></td>
+<td>Header</td>
+</tr>
+<tr>
+<td><code>&lt;WordReportXmlPart xmlns=&quot;urn:microsoft-dynamics-365/report/&lt;reportname&gt;/&lt;id&gt;/&quot;</code></td>
+<td>XML namespace specification. <code>&lt;reportname&gt;</code> is the name that is assigned to the report. <code>&lt;id&gt;</code> is the ID that is assigned to the report.</td>
+</tr>
+<tr>
+<td><code>..&lt;Labels&gt;</code><br><br> <code>....&lt;ColumnNameCaption&gt;ColumnNameCaption&lt;/ColumnNameCaption&gt;</code><br><br> <code>....&lt;LabelName&gt;LabelCaption&lt;/LabelName&gt;</code><br><br> <code>..&lt;/Labels&gt;</code></td>
+<td>Contains all the labels for the report.<!--OnPren The element includes labels that are related to columns that have the [IncludeCaption Property](../FullExperience/Name%20Property-duplicate.md).--><br>-   Label elements that are related to columns have the format <code>&lt;ColumnNameCaption&gt;ColumnNameCaption&lt;/ColumnNameCaption&gt;</code><!--OnPrem where `ColumnName` is determined by the column's Name Property.-->.<br>-  Label elements have the format <code>&lt;LabelName&gt;LabelName&lt;/LabelName</code><!--OnPrem where LabelName is determined by the label's Name Property.-->.<br>-   Labels are listed in alphabetical order.</td>
+</tr>
+<tr>
+<td><code>..&lt;DataItem1&gt;</code><br><br> <code>....&lt;DataItem1Column1&gt;DataItem1Column1&lt;/DataItem1Column1&gt;</code></td>
+<td>Top-level data item and columns. Columns are listed in alphabetical order.<!--OnPrem <br /><br /> The element names and values are determined by the [Name Property-duplicate](../FullExperience/Name%20Property-duplicate.md) of the data item or column.--></td>
+</tr>
+<tr>
+<td><code>....&lt;DataItem2&gt;</code><br><br> <code>......&lt;DataItem2Column1&gt;DataItem2Column1&lt;/DataItem2Column1&gt;</code><br><br> <code>....&lt;/DataItem2&gt;</code><br><br> <code>....&lt;DataItem3&gt;</code><br><br> <code>......&lt;DataItem3Column1&gt;DataItem3Column1&lt;/DataItem3Column1&gt;</code><br><br> <code>....&lt;/DataItem3&gt;</code></td>
+<td>Data items and columns that are nested in the top-level data item. Columns are listed in alphabetical order under the respective data item.</td>
+</tr>
+<tr>
+<td><code>..&lt;/DataItem1&gt;</code><br><br> <code>&lt;/WordReportXmlPart&gt;</code></td>
+<td>Closing element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="custom-xml-part-in-word">Custom XML Part in Word</h3>
+<p>In Word, you open the custom XML part in the <strong>XML Mapping</strong> pane, and then use the pane to map elements to content controls in the Word document. The <strong>XML Mapping</strong> pane is accessible from the <strong>Developer</strong> tab (for more information, see <a href="https://go.microsoft.com/fwlink/?LinkID=389631">Show the Developer Tab on the Ribbon</a>).</p>
+<p>The elements in the <strong>XML Mapping</strong> pane appear in a structure that is similar to the XML source. Label fields are grouped under a common <strong>Labels</strong> element and data item and columns are arranged in a hierarchal structure that corresponds to the XML source, with columns listed in alphabetical order. Elements are identified by their name as defined by the Name property in Report Dataset Designer in ADD INCLUDE<!--[!INCLUDE[nav_dev_short](../../includes/nav_dev_short_md.md)]-->.</p>
+<p>The following figure illustrates the simple custom XML part from the previous section in the <strong>XML Mapping</strong> pane of a Word document.</p>
+<p><img src="media/nav_reportlayout_xmlmappingpane.png" alt="Clip of the XML Mapping pane in word" title="NAV_ReportLayout_XMLMappingPane"></p>
+<ul>
+<li><p>To add a label or field to the layout, you insert a content control that maps to the element in the <strong>XML Mapping</strong> pane.</p>
+</li>
+<li><p>To create repeating rows of columns, insert a <strong>Repeating</strong> content control for the parent data item element, and then add content control for the columns.</p>
+</li>
+<li><p>For labels, the actual text that appears in the generated report is the value of the <strong>Caption</strong> property for the field in the data item table (if the label is related to the column in the report dataset) or a label in the Report Label Designer (if the label is not related to a column in the dataset).</p>
+</li>
+<li><p>The language of the label that is displayed when you run the report depends on the language setting of the report object. <!--OnPrem For more information, see [Multiple Document Languages](../FullExperience/Viewing%20the%20Application%20in%20Different%20Languages.md).--></p>
+</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-how-create-custom-report-layout.html">Create and Modify a Custom Report Layout</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-how-add-fields-word-report-layout.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

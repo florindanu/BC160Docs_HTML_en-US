@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set up data exchange | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set up data exchange | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Set up the data exchange framework in Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="setting-up-data-exchange">Setting Up Data Exchange</h1>
+
+<p>Before you can send and receive electronic documents or import and export bank files, you must set up the data exchange framework to process the involved files. In addition, you must set up related areas, such as the customers that you send electronic invoices to, or the AMC Banking 365 Fundamentals extension if you use the external service provider to convert your bank files. For more information, see <a href="across-data-exchange.html">Exchanging Data Electronically</a>.</p>
+<p>When Business Central is set up to exchange data with external files, users can use the setup in common business tasks, such as sending and receiving electronic documents and importing and exporting bank files.</p>
+<p>The following table describes a sequence of tasks, with links to the topics that describe them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>To</strong></th>
+<th><strong>See</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set up the preconfigured document exchange service to enable sending and receiving electronic documents from and to Business Central.</td>
+<td><a href="across-how-to-set-up-a-document-exchange-service.html">Set Up a Document Exchange Service</a></td>
+</tr>
+<tr>
+<td>Set up the preconfigured OCR service to turn PDF or image files into electronic documents that can be converted to document records in Business Central</td>
+<td><a href="across-how-setup-income-documents.html">Set Up Incoming Documents</a></td>
+</tr>
+<tr>
+<td>Set up one of two preconfigured services for updated exchange rates to get the latest currency exchange rates into the <strong>Currencies</strong> page.</td>
+<td><a href="finance-how-update-currencies.html">Update Currency Exchange Rates</a></td>
+</tr>
+<tr>
+<td>Set up various master data, such as company information, customers, vendors, items, and units of measure, related to mapping data in Business Central</td>
+<td><a href="across-how-to-set-up-electronic-document-sending-and-receiving.html">Set Up Electronic Document Sending and Receiving</a></td>
+</tr>
+<tr>
+<td>Set up a bank account, a vendor, and a payment journal for SEPA credit transfer.</td>
+<td><a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#setting-up-sepa-credit-transfer">Set Up SEPA Credit Transfer</a></td>
+</tr>
+<tr>
+<td>Prepare bank account formats, payment methods, and customer agreements for SEPA direct debit.</td>
+<td><a href="finance-collect-payments-with-sepa-direct-debit.html">Collect Payments with SEPA Direct Debit</a></td>
+</tr>
+<tr>
+<td>Set up user authentication and the URL of the AMC Banking 365 Fundamentals extension provider that is required to have bank files converted to your bank’s format.</td>
+<td><a href="ui-extensions-amc-banking.html">Using the AMC Banking 365 Fundamentals extension</a></td>
+</tr>
+<tr>
+<td>Set up and enable an external service that enables you to import bank statements directly as bank feeds.</td>
+<td><a href="bank-how-setup-bank-statement-service.html">Set Up the Bank Statement Service</a></td>
+</tr>
+<tr>
+<td>After the Bank Statement service is enabled, link bank accounts in Business Central</td>
+<td><a href="bank-how-setup-bank-accounts.html">Set Up Bank Accounts</a></td>
+</tr>
+<tr>
+<td>Prepare to set up a new data exchange definition for a data file or stream by using the file’s XML schema to prefill the <strong>Column Definitions</strong> FastTab on the <strong>Posting Exchange Definition</strong> page.</td>
+<td><a href="across-how-to-use-xml-schemas-to-prepare-data-exchange-definitions.html">Use XML Schemas to Prepare Data Exchange Definitions</a></td>
+</tr>
+<tr>
+<td>Set up the Data Exchange Framework to enable users to receive a new purchase document format, send a new sales document format, import a new bank file, or other data exchange.</td>
+<td><a href="across-how-to-set-up-data-exchange-definitions.html">Set Up Data Exchange Definitions</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-data-exchange.html">Exchanging Data Electronically</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-set-up-data-exchange.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

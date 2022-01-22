@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Types of Payment Returns Files </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Types of Payment Returns Files ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Norwegian enhancements include two types of payment return files that can be imported.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="types-of-payment-returns-files">Types of Payment Returns Files</h1>
+
+<p>Business Central includes two types of payment return files that can be imported:</p>
+<ul>
+<li>Receipt returns</li>
+<li>Settlement returns</li>
+</ul>
+<p>You can also choose to not use return files by selecting the <strong>Return File Is Not In Use</strong> field in the <strong>Remittance Agreement</strong> table. For more information, see <a href="how-to-set-up-remittance-agreements.html">Set Up Remittance Agreements</a>.</p>
+<h2 id="receipt-returns">Receipt Returns</h2>
+<p>The receipt return is received from the bank after you have sent the remittance file to the bank. When data is imported, information about the number of invoices that are received correctly and the number that are received with error is displayed. After you import a receipt return, the status of the payments in the <strong>Waiting Journal</strong> table is set to <strong>Approved</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You may also receive a rejected return from the bank. If the remittance is rejected, the settlement return will not be received.</p>
+</div>
+<h2 id="settlement-returns">Settlement Returns</h2>
+<p>The settlement return is received from the bank after the payment is executed. When data is imported, information about the number of settled invoices is displayed.</p>
+<p>The following occurs when the settlement return is imported:</p>
+<ul>
+<li>Payment status in the <strong>Waiting Journal</strong> table is set to <strong>Settled</strong>.</li>
+<li>Information will be transferred from the <strong>Waiting Journal</strong> page to the payment journal.</li>
+<li>A balancing account will be created for each transaction.</li>
+<li>Document numbers will be inserted for each transaction.</li>
+</ul>
+<h2 id="exchange-rates-by-settlement">Exchange Rates by Settlement</h2>
+<p>For a payment, the exchange rates are managed in the following ways:</p>
+<ul>
+<li><p>Payment from an account in local currency - If a payment in another currency is from an account in LCY, the bank will flag the settlement return with a warning about the exchange rate between LCY and the currency that is used as payment.</p>
+</li>
+<li><p>Payment from a currency account - If payment is made from a currency account, the exchange rate for this currency and LCY is used. This is because the bank does not inform the system about the exchange rate.</p>
+</li>
+</ul>
+<h2 id="warnings-on-settlement-returns">Warnings on Settlement Returns</h2>
+<p>When the settlement return is imported, warnings can occur. Payment journal lines with warnings are marked with a symbol. To view the information about the warning, you can open the <strong>Settlement Info</strong> page.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="electronic-payments-to-vendors-in-norway.html">Electronic Payments to Vendors in Norway</a><br>
+<a href="how-to-set-up-remittance-agreements.html">Set Up Remittance Agreements</a><br>
+<a href="how-to-create-remittance-accounts.html">Create Remittance Accounts</a><br>
+<a href="how-to-set-up-vendors-for-remittance.html">Set Up Vendors for Remittance</a><br>
+<a href="recipient-reference-codes.html">Recipient Reference Codes</a><br>
+<a href="how-to-create-remittance-suggestions.html">Create Remittance Suggestions</a><br>
+<a href="how-to-create-manual-remittance-payments.html">Create Manual Remittance Payments</a><br>
+<a href="how-to-set-up-payment-line-information.html">Set Up Payment Line Information</a><br>
+<a href="how-to-test-remittance-payments.html">Test Remittance Payments</a><br>
+<a href="how-to-export-remittance-payments.html">Export Remittance Payments</a><br>
+<a href="how-to-import-payment-return-data.html">Import Payment Return Data</a><br>
+<a href="how-to-delete-remittance-payment-orders.html">Delete Remittance Payment Orders</a><br>
+<a href="remittance-errors.html">Remittance Errors</a><br>
+<a href="how-to-view-remittance-error-codes.html">View Remittance Error Codes</a><br>
+<a href="how-to-cancel-payments.html">Cancel Payments</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Norway/types-of-payment-returns-files.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

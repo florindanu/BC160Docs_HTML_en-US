@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Use Your Data to Create an App| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Use Your Data to Create an App| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can make your Business Central data available as a data source and specify an OData URL of your web services to build a business app using Power Apps.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="connecting-to-your-business-central-data-to-build-a-business-app-using-power-apps">Connecting to Your Business Central Data to Build a Business App Using Power Apps</h1>
+
+<p>You can make your Business Central data available as a data source in Power Apps.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must have a valid account with Business Central and with Power Apps.</p>
+</div>
+<h2 id="to-add--as-a-data-source-in-power-apps">To add Business Central as a data source in Power Apps</h2>
+<ol>
+<li><p>In your browser, navigate to <a href="https://powerapps.microsoft.com/">powerapps.microsoft.com</a>, and then sign in.</p>
+</li>
+<li><p>On the Home page, choose the <strong>Apps</strong>, <strong>Create an app</strong> and <strong>Canvas</strong> to create a new canvas app. This app will be designed for use on a mobile device, but you can also choose to use another template.</p>
+<p>The next step to create a Power App is to select your data. Choose the Arrow icon then choose the <strong>New connection</strong> option in the upper left side of the page.</p>
+</li>
+<li><p>In the list of available connections, choose <strong>Business Central</strong>, and then choose the <strong>Create</strong> button.</p>
+<p>Power Apps will connect to your Business Central using the credentials that you are signed in with. If you are not an administrator of your Business Central, you may have to sign in with another account.</p>
+</li>
+<li><p>Power Apps will display a list of <em>Environments and companies</em> that are available from Business Central. Choose the environment and company that contains the data you want to connect to. Next, you will be presented with a list of APIs. Select the <strong>API</strong> you want to connect to.</p>
+</li>
+</ol>
+<p>These so-called tables are part of the Business Central API. You do not have to configure the end points yourself - the Business Central connector for Power Apps does it for you.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to include data from other tables in Business Central in your app, then you must work with a developer to define a custom API in Business Central and then consume that custom API through a custom connector in Power Apps. For more information, see <a href="http://docs.microsoft.com/connectors/custom-connectors/define-blank">Create a custom connector from scratch</a>.</p>
+</div>
+<p>At this point, you have successfully connected to your Business Central data and are ready to begin building your PowerApp. You can add additional screens and connect to additional data from your Business Central. For more information, see <a href="http://docs.microsoft.com/powerapps/maker/canvas-apps/get-started-test-drive">Create a canvas app from a template in Power Apps</a>.</p>
+<p>When you have designed and built your app, you can share it with your colleagues. For more information, see <a href="http://docs.microsoft.com/powerapps/maker/canvas-apps/save-publish-app">Save and publish a canvas app in Power Apps</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to connect to Business Central on-premises, then you must choose the <strong>Business Central (on-premises)</strong> connector in step 3.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="http://docs.microsoft.com/powerapps/maker/canvas-apps/get-started-test-drive">Create a canvas app from a template in Power Apps</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="across-import-data-configuration-packages.html">Importing Business Data from Other Finance Systems</a><br>
+<a href="setup.html">Setting Up Business Central</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/devenv-develop-connect-apps">Getting Started Developing Connect Apps for Dynamics 365 Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-use-financials-data-source-powerapps.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Check Purchase Amounts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Check Purchase Amounts ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Before posting a purchase invoice or credit memo, application checks if the amount including VAT and the VAT amount stated on the purchase document is equal to the total amount of the inserted purchase lines.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="check-purchase-amounts">Check Purchase Amounts</h1>
+
+<p>Before posting a purchase invoice or credit memo, application checks if the amount including VAT and the VAT amount stated on the purchase document is equal to the total amount of the inserted purchase lines. To do this, the <strong>Doc. Amount Incl. VAT</strong> and <strong>Doc. Amount VAT</strong> fields must be filled in in the <strong>Purchase Invoice</strong> or <strong>Purchase Credit Memo</strong> page.</p>
+<p>In case there is only one purchase line or in case all lines are subject to the same VAT %, the correct <strong>Doc. Amount VAT Field</strong> will be calculated automatically when you have inserted the purchase lines and the <strong>Doc. Amount Incl. VAT Field</strong>. In case several lines exist with different VAT percentages, the <strong>Doc. Amount VAT Field</strong> must be changed manually.</p>
+<p>Default application will check the purchase document total amounts, but you can switch it off by deselecting the <strong>Check Doc. Total Amounts</strong> check box on the <strong>Purchases &amp; Payables Setup</strong> page.</p>
+<p>To determine the reason of the difference between the document total amounts and the total amounts of the inserted purchase lines, you have the possibility to let application calculate the total amount, total base amount, total VAT amount and total amount including VAT of the inserted purchase lines and show them at the bottom of the purchase invoice or purchase credit memo page.</p>
+<p>Default application will not show these total amounts, but you can switch it on by selecting the <strong>Show Totals on Purch. Inv.-CM.</strong> check box on the <strong>Purchases &amp; Payables Setup</strong> page.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you activate this field, totals on all purchase invoices and credit memos must be recalculated. This can be a time-consuming process depending on the number of documents that must be recalculated. You can not activate this field in case purchase invoices and/or credit memos exist without any purchase lines or in case you have purchase invoices and/or purchase credit memos with no quantity specified on the lines.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="how-to-set-up-validation-of-purchase-amounts.html">Set Up Validation of Purchase Amounts</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Netherlands/check-purchase-amounts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Shop Calendars | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Shop Calendars | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="A work center calendar specifies the working days and hours, shifts, holidays, and absences that determine the work center&#8217;s gross available capacity, measured in time, according to its defined efficiency and capacity values. Creating and enabling a work center calendar involves several preparatory tasks.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-shop-calendars">Set Up Shop Calendars</h1>
+
+<p>A work center or machine calendar specifies the working days and hours, shifts, holidays, and absences that determine the center’s gross available capacity, measured in time, according to its defined efficiency and capacity values.</p>
+<p>As a foundation for calculating a specific work or machine center calendar, you must first set up one or more general shop calendars. A shop calendar defines a standard work week according to start and end times of each working day and the work shift relation. In addition, the shop calendar defines the fixed holidays during a year.</p>
+<p>The following describes how to set up work center calendars. The steps are similar when setting up machine center calendars.</p>
+<h2 id="to-create-work-shifts">To create work shifts</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Work Shifts</strong>, and then choose the related link.</li>
+<li>On a blank line, enter a number in the <strong>Code</strong> field to identify the work shift, for example, <strong>1</strong>.</li>
+<li>Describe the work shift in the <strong>Description</strong> field, for example, <strong>1st shift</strong>.</li>
+<li>Optionally, fill in lines for a second or third work shift.</li>
+</ol>
+<p>Even if your work centers do not work in different work shifts, enter at least one work shift code.</p>
+<h2 id="to-set-up-a-shop-calendar">To set up a shop calendar</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Shop Calendars</strong>, and then choose the related link.</p>
+</li>
+<li><p>On a blank line, enter a number in the <strong>Code</strong> field to identify the shop calendar.</p>
+</li>
+<li><p>Describe the shop calendar in the <strong>Description</strong> field.</p>
+</li>
+<li><p>Choose the <strong>Working Days</strong> action.</p>
+</li>
+<li><p>On the <strong>Shop Calendar Working Days</strong> page, define a complete work week, with the start and end times for each day.</p>
+<p>In the <strong>Work Shift Code</strong> field, select one of the shifts that you previously defined. Add a line for every working day and every shift. For example:</p>
+<p>Monday  07:00 15:00 1<br>
+Tuesday 07:00 15:00 1</p>
+<p>If you need a shop calendar with two work shifts, you must fill it in in this manner:</p>
+<p>Monday 07:00 15:00 1<br>
+Monday 15:00 23:00 2<br>
+Tuesday 07:00 15:00 1<br>
+Tuesday 15:00 23:00 2</p>
+<p>Any week days that you do not define in the shop calendar, such as Saturday and Sunday, are considered non-working days and will have zero available capacity in a work center calendar.</p>
+<p>When all the working days of a week are defined, you can close the <strong>Shop Calendar Working Days</strong> page and proceed to enter holidays.</p>
+</li>
+<li><p>On the <strong>Shop Calendars</strong> page, select the shop calendar, and then choose the <strong>Holidays</strong> action.</p>
+</li>
+<li><p>On the <strong>Shop Calendar Holidays</strong> page, define the holidays of the year by entering the start date and time, the end time, and description of each holiday on individual lines. For example:</p>
+<p>04/07/14 0:00:00 23:59:00 Summer Holiday<br>
+05/07/14 0:00:00 23:59:00 Summer Holiday<br>
+06/07/14 0:00:00 23:59:00 Summer Holiday</p>
+</li>
+</ol>
+<p>The defined holidays will have zero available capacity in a work center calendar.</p>
+<p>The shop calendar can now be assigned to a work center to calculate the work shop calendar that will govern all operation scheduling at that work center.</p>
+<h2 id="to-calculate-a-work-center-calendar">To calculate a work center calendar</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Work Centers</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the work center that you want to update.</p>
+</li>
+<li><p>In the <strong>Shop Calendar Code</strong> field, select which shop calendar to use as the foundation for a work center calendar.</p>
+</li>
+<li><p>Choose the <strong>Calendar</strong> action.</p>
+</li>
+<li><p>On the <strong>Work Center Calendar</strong> page, choose the <strong>Show Matrix</strong> action.</p>
+<p>The left side of the matrix page lists the work centers that are set up. The right side shows a calendar displaying the available capacity values for each working day in the defined unit of measure, for example, <strong>480</strong> minutes. Each line represents the calendar of one work center.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also select to view the capacity values for each week or month by changing the selection in the <strong>View By</strong> field on the <strong>Work Center Calendar</strong> page.</p>
+</div>
+<p>To reflect the new shop calendar as a line on the selected work center, it must first be calculated.</p>
+</li>
+<li><p>Choose the <strong>Calculate</strong> action.</p>
+</li>
+<li><p>On the <strong>Work Center</strong> FastTab, you can set a filter to only calculate for one work center. If you do not set a filter, all existing work center calendars will be calculated.</p>
+</li>
+<li><p>Define the starting and ending dates of the calendar period that should be calculated, for example, one year from 01/01/14 to 31/12/14.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button to calculate capacity.</p>
+</li>
+</ol>
+<p>Calendar entries are now created or updated displaying the available capacity for each period according to the following three sets of master data:</p>
+<ul>
+<li>The working days and shift defined in the assigned shop calendar.</li>
+<li>The value in the <strong>Capacity</strong> field on the work center card.</li>
+<li>The value in the <strong>Efficiency</strong> field on the work center card.</li>
+</ul>
+<p>The calculated work center calendar will now define when and how much capacity is available at this work center. This controls the detailed scheduling of operations performed at the work center.</p>
+<h2 id="to-record-work-center-absence">To record work center absence</h2>
+<ol>
+<li><p>On the <strong>Work Center Calendar</strong> page, choose the <strong>Show Matrix</strong> action.</p>
+</li>
+<li><p>On the <strong>Work Center Calendar Matrix</strong> page, select the work center and calendar day when the absence time should be recorded, and then choose the <strong>Absence</strong> action.</p>
+</li>
+<li><p>On the <strong>Absence</strong> page, define the starting time, ending time, and description of that day’s absence. For example:</p>
+<p>25/01/01 08:00 10:00 Maintenance</p>
+</li>
+<li><p>Choose the <strong>Update</strong> action, and then close the <strong>Absence</strong> page.</p>
+</li>
+</ol>
+<p>The capacity of the selected day has now decreased by the recorded absence time.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-how-to-assign-base-calendars.html">Set Up Base Calendars</a><br>
+<a href="production-how-to-set-up-work-and-machine-centers.html">Set Up Work Centers and Machine Centers</a><br>
+<a href="production-configure-production-processes.html">Setting Up Manufacturing</a><br>
+<a href="production-manage-manufacturing.html">Manufacturing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/production-how-to-create-work-center-calendars.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

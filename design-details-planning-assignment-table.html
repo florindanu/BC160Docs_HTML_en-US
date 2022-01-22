@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Planning Assignment Table | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Planning Assignment Table | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic provides insight into what happens when you change how you plan for an item.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-planning-assignment-table">Design Details: Planning Assignment Table</h1>
+
+<p>All items should be planned for, however, there is no reason to calculate a plan for an item unless there has been a change in the demand or supply pattern since the last time a plan was calculated.</p>
+<p>If the user has entered a new sales order or changed an existing one, there is reason to recalculate the plan. Other reasons include a change in forecast or the desired safety stock quantity. Changing a bill of material by adding or removing a component would most likely indicate a change, but for the component item only.</p>
+<p>For multiple locations, the assignment takes place at the level of item per location combination. If, for example, a sales order has been created at only one location, application will assign the item at that specific location for planning.</p>
+<p>The reason for selecting items for planning is a matter of system performance. If no change in an item’s demand-supply pattern has occurred, the planning system will not suggest any actions to be taken. Without the planning assignment, the system would have to perform the calculations for all items in order to find out what to plan for, and that would drain system resources.</p>
+<p>The <strong>Planning Assignment</strong> table monitors demand and supply events and assigns the appropriate items for planning. The following events are monitored:</p>
+<ul>
+<li>A new sales order, forecast, component, purchase order, production order, assembly order, or transfer order.</li>
+<li>Change of item, quantity, location, variant, or date on a sales order, forecast, component, purchase order, production order, assembly order, or transfer order.</li>
+<li>Cancellation of a sales order, forecast, component, purchase order, production order, assembly order, or transfer order.</li>
+<li>Consumption of items other than planned.</li>
+<li>Output of items other than planned.</li>
+<li>Unplanned changes in inventory.</li>
+</ul>
+<p>For these direct supply-demand displacements, the order tracking and action messaging system maintains the Planning Assignment table and states a planning reason as an action message.</p>
+<p>The following changes in master data can also cause a planning imbalance:</p>
+<ul>
+<li>Change of status to Certified in the production BOM header (for all items using that header).</li>
+<li>Deleted line (child item).</li>
+<li>Change of status to Certified in the routing header (for all items using that routing).</li>
+<li>Changes in the following item card fields.</li>
+<li>Safety Stock Quantity or Safety Lead Time.</li>
+<li>Lead Time Calculation.</li>
+<li>Reorder Point.</li>
+<li>Production BOM No. (and all children of old BOM reference).</li>
+<li>Routing No.</li>
+<li>Reordering Policy.</li>
+</ul>
+<p>In these cases, a new function, Planning Assignment Management, maintains the table and states the planning reason as Net Change.</p>
+<p>The following changes do not cause a planning assignment:</p>
+<ul>
+<li>Calendars</li>
+<li>Other planning parameters on the item card</li>
+</ul>
+<p>When calculating an MPS or an MRP, the following restrictions apply:</p>
+<ul>
+<li>MPS: The planning system checks that the item carries a demand forecast or a sales order. If not, the item is not included in the plan.</li>
+<li>MRP: If the planning system detects that the item is being replenished by an MPS planning line or MPS supply order, the item will be left out of the planning. However, any demand from relevant components is included.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-balancing-demand-and-supply.html">Design Details: Balancing Demand and Supply</a><br>
+<a href="design-details-handling-reordering-policies.html">Design Details: Handling Reordering Policies</a><br>
+<a href="design-details-transfers-in-planning.html">Design Details: Transfers in Planning</a><br>
+<a href="design-details-planning-parameters.html">Design Details: Planning Parameters</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-planning-assignment-table.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

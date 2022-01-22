@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Working with Accounting Periods and Fiscal Years | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Working with Accounting Periods and Fiscal Years | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to work with accounting periods to define when your company reports financial performance.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="working-with-accounting-periods-and-fiscal-years">Working with Accounting Periods and Fiscal Years</h1>
+
+<p>Accounting periods, which are also known as reporting periods, are periods of time for which a company or organization reports financial performance, for example, by generating their income statement or balance sheet. Typically, accounting periods refer to the company's fiscal year, which can contain several accounting periods, such as months or quarters.</p>
+<p>For many companies the fiscal year does not align with the calendar year. For example, the fiscal year might end on June 30th rather than December 31st. For newly created companies, the fiscal might actually be longer than 12 months.</p>
+<p>Business Central only requires accounting periods only if you want to close an income statement, or run data compression tasks.</p>
+<p>You can use accounting periods in reporting. For example, when you are reviewing posted entries on the <strong>Balance/Budget</strong> page where the reporting interval can be specified. One of the options you may specify to report by accounting period. You can also build an account schedule that compares results for different accounting periods.</p>
+<h2 id="creating-a-new-fiscal-year">Creating a new fiscal year</h2>
+<p>You can create accounting periods in bulk, by using eh <strong>Create Fiscal Year</strong> batch job, or manually.</p>
+<h3 id="how-to-create-accounting-periods-in-bulk">How to create accounting periods in-bulk</h3>
+<p>Use the <strong>Create Fiscal Year</strong> batch job to divide a fiscal year into periods of equal length.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Accounting Periods</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Create Year</strong> action.  <!--What about the Scheduling option? Should we mention that? There's also the Report Output Type field...--></li>
+<li>In the <strong>Starting Date</strong> field, enter the date on which the fiscal year starts.</li>
+<li>In the <strong>No. of Periods</strong> field, enter the number of accounting periods to divide the fiscal year into. There can be up to 365 periods in a year.</li>
+<li>In the <strong>Period Length</strong> field, enter a duration for each period. For example, 1M for one month, 1Q for one quarter, and 1Y for one year.</li>
+<li>Choose <strong>OK</strong>.</li>
+</ol>
+<h3 id="how-to-create-accounting-periods-manually">How to create accounting periods manually</h3>
+<p>If the accounting periods in your fiscal year have different durations, like the 4-4-5 calendar used in retail, you can manually set it up.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Accounting Periods</strong>, and then choose the related link.</li>
+<li>In the <strong>Starting Date</strong> field, enter the date on which the fiscal year starts. The <strong>Name</strong> field will show the name of the month.</li>
+<li>Choose the <strong>New Fiscal Year</strong> check box to indicate that this is the first period in the year. Business Central will use this period to determine which periods to close at year-end.</li>
+<li>Repeat steps 2 and 3 for each remaining period.</li>
+</ol>
+<h2 id="closing-a-fiscal-year">Closing a Fiscal Year</h2>
+<p>Closing the fiscal year is one of the tasks for closing the books. After you close a fiscal year, the <strong>Closed</strong> and <strong>Date Locked</strong> check boxes are selected for all periods in the year. You cannot reopen a year or clear the check boxes.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You must always have at least one open fiscal year. When closing a year, ensure that a new year has been created. Also, note that after you close one year, you cannot change the starting date of the following year.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Accounting Periods</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Close Year</strong> action.</li>
+</ol>
+<h2 id="posting-entries-to-a-closed-fiscal-year">Posting Entries to a Closed Fiscal Year</h2>
+<p>Although a fiscal year is closed, you can still post general ledger entries to it. When you do, the entries are marked as posted to a closed fiscal year and the <strong>Prior Year Entry</strong> check box is selected. By default, the check box is not displayed on the page, but you can add it. The next steps are to close the income statement accounts and transfer the year's results to an account in the balance sheet. Repeat these steps each time you post entries to a closed fiscal year.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="year-close-books.html">Closing the Books</a><br>
+<a href="year-close-years-periods.html">Closing Years and Periods</a><br>
+<a href="bi-how-work-account-schedule.html">How to Work with Account Schedules</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-accounting-periods-and-fiscal-years.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

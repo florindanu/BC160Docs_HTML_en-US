@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Service Contracts | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Service Contracts | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to set up service contracts.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-service-contracts">Set Up Service Contracts</h1>
+
+<p>Before you can work with contracts, you must set up the following:</p>
+<ul>
+<li><strong>Service contract groups</strong>, which gather service contracts that are related in some way.</li>
+<li><strong>Service contract account groups</strong>, which are used to group the service contract accounts together for service invoices created for service contracts. You assign these groups to service contracts.</li>
+<li><strong>Contract templates</strong> that define contract layouts of contracts that include the most commonly used service contract details. When you create service contract quotes, you can create them by using templates. When you create a contract quote, the fields automatically contain the contents of the template fields.</li>
+<li><strong>Customer templates</strong> that let you create quotes for contacts or potential customers who are not registered as customers in Business Central.</li>
+</ul>
+<h2 id="to-set-up-a-service-contract-group">To set up a service contract group</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Contract Groups</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Choose the <strong>Disc. on Contr. Orders Only</strong> check box if you want contract or service discounts to be valid only for contract service orders, such as maintenance.</li>
+</ol>
+<h2 id="to-set-up-a-service-contract-account-group">To set up a service contract account group</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Serv. Contract Account Groups</strong>, and then choose the related link.</li>
+<li>Create a new service contract account group.</li>
+<li>Fill in the <strong>Code</strong> and <strong>Description</strong> fields. These fields describe the service account group.</li>
+<li>Fill in the <strong>Non-Prepaid Contract Acc.</strong> field, choose general ledger account number for the non-prepaid account.</li>
+<li>In the <strong>Prepaid Contract Acc.</strong> field, choose the general ledger account number for the prepaid account.</li>
+</ol>
+<h2 id="to-set-up-a-contract-template">To set up a contract template</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Contract Templates</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a new service contract template.</p>
+</li>
+<li><p>In the <strong>No.</strong> field, enter a number for the contract template.</p>
+<p>Alternatively, if you have set up number series for contract templates on the <strong>Service Mgt. Setup</strong> page, you can press the Enter key to enter the next available contract template number. Fill in the other fields if appropriate.</p>
+</li>
+<li><p>On the <strong>Invoice</strong> FastTab, fill in the <strong>Serv. Contract Acc. Group Code</strong> field, the <strong>Invoice Period</strong>, and so on. Fill in the other fields if appropriate.</p>
+</li>
+<li><p>Choose the <strong>Service Discounts</strong> action to add contract discounts.</p>
+</li>
+</ol>
+<h2 id="to-set-up-a-customer-template">To set up a customer template</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customer Templates</strong>, and then choose the related link.</li>
+<li>Create a new customer template card.</li>
+<li>On the <strong>General</strong> FastTab, enter a code and a description for the customer template in the <strong>Code</strong> and <strong>Description</strong> fields respectively.</li>
+<li>To define search criteria, fill in the other fields, such as <strong>Country/Region Code</strong>, <strong>Territory Code</strong>, and <strong>Language Code</strong>.</li>
+<li>Fill in the <strong>Gen. Bus. Posting Group</strong> and <strong>Customer Posting Group</strong> fields.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-setup-service.html">Setting Up Service Management</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-setup-service-contracts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

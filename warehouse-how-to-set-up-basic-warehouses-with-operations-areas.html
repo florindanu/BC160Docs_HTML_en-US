@@ -1,0 +1,237 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Basic Warehouses with Operations Areas | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Basic Warehouses with Operations Areas | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="If internal operation areas such as production or assembly exist in basic warehouse configurations where locations use the **Bin Mandatory** setup field and possibly the **Require Pick** and **Require Put-away** setup fields, then you use three basic warehouse documents to record your warehouse activities for internal operation areas.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-basic-warehouses-with-operations-areas">Set Up Basic Warehouses with Operations Areas</h1>
+
+<p>If internal operation areas such as production or assembly exist in basic warehouse configurations where locations use the <strong>Bin Mandatory</strong> setup field and possibly the <strong>Require Pick</strong> and <strong>Require Put-away</strong> setup fields, then you can use the following basic warehouse documents to record your warehouse activities for internal operation areas:</p>
+<ul>
+<li><strong>Inventory Movement</strong> page.</li>
+<li><strong>Inventory Pick</strong> page.</li>
+<li><strong>Inventory Put-away</strong> page.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Even though the settings are called <strong>Require Pick</strong> and <strong>Require Put-away</strong>, you can still post receipts and shipments directly from the source business documents at locations where you select these check boxes.</p>
+</div>
+<p>To use these pages with internal operations, such as to pick and move components to production, you must make some or all the following setup steps depending on how much control you need:</p>
+<ul>
+<li>Enable the inventory pick, move, and put-away documents.</li>
+<li>Define default bin structures for components and end items flowing to and from operation resources.</li>
+<li>Make to- and from- bins that are dedicated to specific operation resources to prevent the items from being picked for outbound documents.</li>
+</ul>
+<p>Bin codes that are set up on location cards define a default warehouse flow for certain activities, such as components in an assembly department. Additional functionality exists to make sure that when items are placed in a certain bin, they cannot be moved or picked to other activities. For more information, see <a href="warehouse-how-to-set-up-basic-warehouses-with-operations-areas.html#to-create-dedicated-component-bins">To create dedicated component bins</a>.</p>
+<p>The following procedures are based on setting up basic warehouse activities around a production area. The steps are similar for other operation areas, such as assembly, service management, and jobs.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the following procedure, the <strong>Bin Mandatory</strong> setup field on location cards is selected as a precondition because that is considered the foundation for any level of warehouse management.</p>
+</div>
+<h2 id="to-enable-inventory-documents-for-internal-operation-activities">To enable inventory documents for internal operation activities</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Open the location card you want to set up.</li>
+<li>On the <strong>Warehouse</strong> FastTab, select the <strong>Require Put-away</strong> check box to indicate that, when an inbound or internal source document with a bin code is released, an inventory put-away or an inventory movement document can be created.</li>
+<li>Select the <strong>Require Pick</strong> check box to indicate that when an outbound or internal source document with a bin code is created, an inventory pick or an inventory movement document must be created.</li>
+</ol>
+<h2 id="to-define-a-default-bin-structure-in-the-production-area">To define a default bin structure in the production area</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the Location you want to set up.</p>
+</li>
+<li><p>On the <strong>Bins</strong> FastTab, in the <strong>Open Shop Floor Bin Code</strong> field, enter the code of the bin in the production area with plenty of components that the machine operator can consume from without requesting a warehouse activity to bring them to the bin. Items that are placed in this bin are typically set up for automatic posting, or flushing. This means that the <strong>Flushing Method</strong> field contains <strong>Forward</strong> or <strong>Backward</strong>.</p>
+</li>
+<li><p>In the <strong>To-Production Bin Code</strong> field, enter the code of the bin in the production area where components that are picked for production at this location are placed by default before they can be consumed. Items that are placed in this bin are typically set up for manual consumption posting. This means that the <strong>Flushing Method</strong> field contains <strong>Manual</strong> or <strong>Pick + Forward</strong> or <strong>Pick + Backward</strong> for warehouse picks and inventory movements.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you use inventory picks, the <strong>Bin Code</strong> field on a production order component line defines the <em>take</em> bin from where components are decreased when posting consumption. When you use inventory movements, the <strong>Bin Code</strong> field on production order component lines defines the <em>place</em> bin in the operation area where the warehouse worker must place the components.</p>
+</div>
+</li>
+<li><p>On the <strong>Bins</strong> FastTab, in the <strong>From-Production Bin Code</strong> field, enter the code of the bin in the production area where finished end items are taken from by default when the process involves a warehouse activity. In basic warehouse configurations, the activity is recorded as an inventory put-away or an inventory movement.</p>
+</li>
+</ol>
+<p>Now, production order component lines with the default bin code require that forward-flushed components are placed there. However, until the components are consumed from that bin, other component demands may pick or consume from that bin because they are still considered available bin contents. To make sure that bin content is only available to component demand that uses that to-production bin, you must select the <strong>Dedicated</strong> field on the line for that bin code on the <strong>Bins</strong> page that you open from the location card.</p>
+<p>This flow chart shows how the <strong>Bin Code</strong> field on production order component lines is filled according to your setup.</p>
+<p><img src="media/binflow.png" alt="Bin flow chart" title="BinFlow"></p>
+<h2 id="to-define-a-default-bin-structure-in-the-assembly-area">To define a default bin structure in the assembly area</h2>
+<p>Components for assembly orders cannot be picked or posted with inventory picks. Instead, use the <strong>Inventory Movement</strong> page. For more information, see <a href="warehouse-how-to-move-components-to-an-operation-area-in-basic-warehousing.html">Move Components to an Operation Area in Basic Warehousing</a>.</p>
+<p>When picking and shipping sales line quantities that are assembled to the order, you must follow certain rules when creating the inventory pick lines. For more information, see the “Handling Assemble-to-Order Items in Inventory Picks” section in <a href="warehouse-how-to-pick-items-with-inventory-picks.html">Pick Items with Inventory Picks</a>.</p>
+<p>For more information, see <a href="assembly-assemble-items.html">Assembly Management</a>.</p>
+<h3 id="to-set-up-that-an-inventory-movement-is-automatically-created-when-the-inventory-pick-for-the-assembly-item-is-created">To set up that an inventory movement is automatically created when the inventory pick for the assembly item is created</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Assembly Setup</strong>, and then choose the related link.</li>
+<li>Select the <strong>Create Movements Automatically</strong> check box.</li>
+</ol>
+<h3 id="to-set-up-the-bin-in-the-assembly-area-where-components-are-placed-by-default-before-they-can-be-consumed-in-assembly">To set up the bin in the assembly area where components are placed by default before they can be consumed in assembly</h3>
+<p>The value in this field is automatically inserted in the <strong>Bin Code</strong> field on assembly order lines when this location is entered in the <strong>Location Code</strong> field on the assembly order line.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Open the Location you want to set up.</li>
+<li>Fill in the <strong>To-Assembly Bin Code</strong> field.</li>
+</ol>
+<h3 id="to-set-up-the-bin-in-the-assembly-area-where-finished-assembly-items-are-posted-to-when-they-are-assembled-to-stock">To set up the bin in the assembly area where finished assembly items are posted to when they are assembled to stock</h3>
+<p>The value in this field is automatically inserted in the <strong>Bin Code</strong> field on assembly order headers when this location code is filled into the <strong>Location Code</strong> field on the assembly order header.</p>
+<p>Bin codes that are set up on location cards define a default warehouse flow for specific warehouse activities, such as consumption of components in an assembly area. Additional functionality exists to make sure that when items are placed in a default bin, they cannot be moved or picked to other activities.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This setup is only possible for locations where the Bin Mandatory field is selected.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Open the Location you want to set up.</li>
+<li>Fill in the <strong>From-Assembly Bin Code</strong> field.</li>
+</ol>
+<h3 id="to-set-up-the-bin-where-finished-assembly-items-are-posted-to-when-they-are-assembled-to-a-linked-sales-order">To set up the bin where finished assembly items are posted to when they are assembled to a linked sales order</h3>
+<p>From this bin, the assembly items are shipped immediately, via an inventory pick, to fulfill the sales order.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This field cannot be used if the location is set up to use directed pick and put-away.</p>
+</div>
+<p>The bin code is copied from the sales order line to the assembly order header to communicate to assembly workers where to place the output to ready it for shipping. It is also copied to the inventory pick line to communicate to warehouse workers where to take it from to ship it.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Assemble-to-Order Shipment bin is always empty. When you post an assemble-to-order sales line, then the bin content is first positively adjusted with the assembly output. Immediately after, it is negatively adjusted with the shipped quantity.</p>
+</div>
+<p>The value in this field is automatically inserted in the Bin Code field on sales order lines that contain a quantity in the <strong>Qty. to Assemble to Order</strong> field or if the item to be sold has <strong>Assemble-to-Order</strong> in the <strong>Replenishment System</strong> field.</p>
+<p>If the <strong>Asm.-to-Order Shpt. Bin Code</strong> is blank, then the <strong>From-Assembly Bin Code</strong> field is used instead. If both setup fields are blank, then the last used bin with content is used in the <strong>Bin Code</strong> field on sales order lines.</p>
+<p>The same bin code is in turn copied to the <strong>Bin Code</strong> field on the inventory pick line that manages the shipment of the assemble-to-order quantity. For more information, see the “Handling Assemble-to-Order Items in Inventory Picks” section in <a href="warehouse-how-to-pick-items-with-inventory-picks.html">Pick Items with Inventory Picks</a>.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Open the Location you want to set up.</li>
+<li>Fill in the <strong>Asm.-to-Order Shpt. Bin Code</strong> field.</li>
+</ol>
+<h2 id="to-create-dedicated-component-bins">To create dedicated component bins</h2>
+<p>You can specify that quantities in a bin are protected from being picked for other demands than demand from their current purpose.</p>
+<p>Quantities in dedicated bins can still be reserved. Accordingly, the quantities in dedicated bins are included in the <strong>Total Available Quantity</strong> field on the <strong>Reservation</strong> page.</p>
+<p>For example, is a work center is set up with a bin code in the <strong>To-Production Bin Code</strong> field. Production order component lines with that bin code require that forward-flushed components are placed there. However, until the components are consumed from that bin, other component demands may pick or consume from that bin because they are still considered available bin contents. To make sure that bin content is only available to component demand that uses that to-production bin, you must select the <strong>Dedicated</strong> field on the line for that bin code on the <strong>Bins</strong> page that you open from the location card.</p>
+<p>Making a bin dedicated provides similar functionality to using bin types, which is only available in advanced warehousing. For more information, see <a href="warehouse-how-to-set-up-bin-types.html">Set Up Bin Types</a>.</p>
+<div class="CAUTION">
+<h5>Caution</h5>
+<p>Items in dedicated bins are not protected when they are picked and consumed as production components with the Inventory Pick page.</p>
+</div>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link. Select the location that you want to update.</li>
+<li>Choose the <strong>Bins</strong> action.</li>
+<li>Select the <strong>Dedicated</strong> field for each bin that you want to use exclusively for certain internal operations and where you want quantities to be reserved for that internal operation once placed there.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The bin must be empty before you can select or clear the <strong>Dedicated</strong> field.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-set-up-basic-warehouses-with-operations-areas.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

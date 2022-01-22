@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Demand and Supply | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Demand and Supply | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic introduces the concept of demand, which is the common term used for any kind of gross demand, such as a sales order and component need from a production order.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-demand-at-blank-location">Design Details: Demand at Blank Location</h1>
+
+<p>When a user creates a demand event, such as a sales order line, the program allows the user to sometimes specify a location code and other times not, that is, use blank location.</p>
+<p>For demand with or without location codes, the planning system operates in a straight forward way when:</p>
+<ul>
+<li>Demand lines always carry location codes and the system fully uses SKUs, including the relevant location setup.</li>
+<li>Demand lines never carry location codes, and the system does not use SKUs or any location setup (see the last scenario in the following section).</li>
+</ul>
+<p>However, if demand events sometimes have location codes and other times do not, the planning system will follow certain rules depending on setup.</p>
+<h2 id="demand-at-location">Demand at Location</h2>
+<p>When the planning system detects demand at a location, it will behave in different ways depending on three critical setup values. During a planning run, the system checks for three setup values in sequence and plans accordingly.</p>
+<ol>
+<li><p>Is there a check mark in the <strong>Location Mandatory</strong> field?</p>
+<p>If yes, then:</p>
+</li>
+<li><p>Does SKU exist for the item?</p>
+<p>If yes, then:</p>
+<p>The item is planned according to planning parameters on the SKU card.</p>
+<p>If no, then:</p>
+</li>
+<li><p>Does the Components at Location field contain the demanded location code?</p>
+</li>
+</ol>
+<p>If yes, then:</p>
+<p>The item is planned according to planning parameters on the item card.</p>
+<p>If no, then:</p>
+<p>The item is planned according to: Reordering Policy = Lot-for-Lot, Include Inventory = Yes, all other planning parameters = Empty, items using Reordering Policy = Order will remain using Order along with the other settings.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The exceptional planning setup that is output as the last reaction in step 3 above is referred to in the following as the “minimal alternative”. This planning setup only covers the exact demand, and all other planning parameters are ignored.</p>
+</div>
+<p>For information about variations of this planning logic, see the Scenarios section below.</p>
+<h2 id="demand-at-blank-location">Demand at Blank Location</h2>
+<p>Even if the <strong>Location Mandatory</strong> field is selected, the program will allow demand lines to be created without a location code, also referred to as blank location. This is a deviation for the system because it has various setup values tuned to dealing with locations (see above) and as a result, the planning engine will not create a planning line for such a demand line.</p>
+<p>If the <strong>Location Mandatory</strong> field is not selected but any of the location setup values exist, it is also considered a deviation, and the planning system will react by using the “minimal alternative”: The item is planned according to: Reordering Policy = Lot-for-Lot (Order remains Order), Include Inventory = Yes, all other planning parameters = Empty.</p>
+<h2 id="scenarios">Scenarios</h2>
+<p>The following scenarios describe variations of demand at blank location and how the planning system resolves to the “minimal alternative.”</p>
+<h3 id="setup-1">Setup 1:</h3>
+<p>Location Mandatory = Yes</p>
+<p>SKU is set up for RED</p>
+<p>Components at Location = BLUE</p>
+<h4 id="case-11-demand-is-at-red-location">Case 1.1: Demand is at RED location</h4>
+<p>The item is planned according to planning parameters on the SKU card.</p>
+<h4 id="case-12-demand-is-at-blue-location">Case 1.2: Demand is at BLUE location</h4>
+<p>The item is planned according to: Reordering Policy = Lot-for-Lot (Order remains Order), Include Inventory = Yes, all other planning parameters = Empty.</p>
+<h4 id="case-13-demand-is-at-green-location">Case 1.3: Demand is at GREEN location</h4>
+<p>The item is planned according to: Reordering Policy = Lot-for-Lot (Order remains Order), Include Inventory = Yes, all other planning parameters = Empty.</p>
+<h4 id="case-14-demand-is-at-blank-location">Case 1.4: Demand is at BLANK location</h4>
+<p>The item is not planned because no location is defined on the demand line.</p>
+<h3 id="setup-2">Setup 2:</h3>
+<p>Location Mandatory = Yes</p>
+<p>No SKU exists</p>
+<p>Components at Location = BLUE</p>
+<h4 id="case-21-demand-is-at-red-location">Case 2.1: Demand is at RED location</h4>
+<p>The item is planned according to: Reordering Policy = Lot-for-Lot (Order remains Order), Include Inventory = Yes, all other planning parameters = Empty.</p>
+<h4 id="case-22-demand-is-at-blue-location">Case 2.2: Demand is at BLUE location</h4>
+<p>The item is planned according to planning parameters on the item card.</p>
+<h3 id="setup-3">Setup 3:</h3>
+<p>Location Mandatory = No</p>
+<p>No SKU exists</p>
+<p>Components at Location = BLUE</p>
+<h4 id="case-31-demand-is-at-red-location">Case 3.1: Demand is at RED location</h4>
+<p>The item is planned according to: Reordering Policy = Lot-for-Lot (Order remains Order), Include Inventory = Yes, all other planning parameters = Empty.</p>
+<h4 id="case-32-demand-is-at-blue-location">Case 3.2: Demand is at BLUE location</h4>
+<p>The item is planned according to planning parameters on the item card.</p>
+<h4 id="case-33-demand-is-at-blank-location">Case 3.3: Demand is at BLANK location</h4>
+<p>The item is planned according to: Reordering Policy = Lot-for-Lot (Order remains Order), Include Inventory = Yes, all other planning parameters = Empty.</p>
+<h3 id="setup-4">Setup 4:</h3>
+<p>Location Mandatory = No</p>
+<p>No SKU exists</p>
+<p>Components at Location = BLANK</p>
+<h4 id="case-41-demand-is-at-blue-location">Case 4.1: Demand is at BLUE location</h4>
+<p>The item is planned according to: Reordering Policy = Lot-for-Lot (Order remains Order), Include Inventory = Yes, all other planning parameters = Empty.</p>
+<h4 id="case-42-demand-is-at-blank-location">Case 4.2: Demand is at BLANK location</h4>
+<p>The item is planned according to planning parameters on the item card.</p>
+<p>As illustrated in the last scenario, the only way to get a correct result for a demand line without a location code is to disable all setup values relating to locations. Similarly, the only way to get stable planning results for demand at locations is to use SKUs. Therefore, if companies often plan for demand at locations, they are strongly advised to use the Stockkeeping Units granule.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-balancing-demand-and-supply.html">Design Details: Balancing Demand and Supply</a><br>
+<a href="design-details-central-concepts-of-the-planning-system.html">Design Details: Central Concepts of the Planning System</a><br>
+<a href="design-details-supply-planning.html">Design Details: Supply Planning</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-demand-at-blank-location.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

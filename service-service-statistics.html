@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Service Statistics | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Service Statistics | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Get a quick overview of the contents of service documents such as orders, quotes, invoices, or credit memos, the details on the specific service lines, and the service items.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="viewing-service-statistics">Viewing Service Statistics</h1>
+
+<p>You can use statistics to analyze service documents and determine how well you are managing your service processes. You can analyze service contracts, items, quotes, orders, invoices, and credit memos by choosing the <strong>Statistics</strong> action. For service items and contracts, you can also use the <strong>Service Item Trendscape</strong> or <strong>Contract Trendscape</strong> to view a summary of service ledger entries for a specific service item.</p>
+<h2 id="viewing-statistics-for-service-orders">Viewing Statistics for Service Orders</h2>
+<p>The service order statistics feature gives you a quick overview of the contents of the entire service order, the details on the specific service lines, and information related to invoicing, shipping and consuming, and the customer's balance.</p>
+<p>The statistical data is displayed for a service order on the <strong>Service Order Statistics</strong> page for the relevant order. You can open the relevant statistics page from a service order. On the <strong>Service Orders</strong> page, choose <strong>Statistics</strong>. The FastTabs in this page show information such as quantity, amount, VAT, cost, profit, and customer credit limit. The amounts on the page are in the currency of the service order, unless otherwise indicated.</p>
+<h3 id="view-totals-for-a-service-order">View totals for a service order</h3>
+<p>You can view the total amount on the service lines, including and excluding VAT, VAT part, cost, and profit on the service lines. The page also displays item-specific information, such as weight, volume, and the quantity of parcels.</p>
+<h3 id="view-shipping-information">View shipping information</h3>
+<p>You can see information about the items, resources, or costs to be shipped. To provide the information, the values specified in the <strong>Qty. to Ship</strong> field are used on each service line in the order.</p>
+<h3 id="view-order-details">View order details</h3>
+<p>You can view information about the items, resource hours, and costs to be invoiced and consumed. The following table describes this information.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Invoicing</strong></td>
+<td>Displays amounts that are to be posted as invoiced from the service order.</td>
+</tr>
+<tr>
+<td><strong>Consuming</strong></td>
+<td>Displays the quantity and cost of items, or resources that will be posted as consumed.</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td>Displays the total amounts on the service order that result from adding the invoicing amounts to the consuming amounts.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analyze-service-order-lines">Analyze service order lines</h3>
+<p>You can analyze the information by the types of service lines included in the service order. The amounts are shown separately for:</p>
+<ul>
+<li>Items</li>
+<li>Resources</li>
+<li>Costs and general ledger accounts</li>
+</ul>
+<h3 id="view-customer-information">View customer information</h3>
+<p>See the balance on the customer's account, in addition to the maximum credit that can be endued to the customer who you created the service document for.</p>
+<h2 id="viewing-service-item-statistics">Viewing Service Item Statistics</h2>
+<p>On the <strong>Service Item Statistics</strong> page, you can see up-to-date information about a service item based the following service ledger entry types:</p>
+<ul>
+<li>Resources</li>
+<li>Items</li>
+<li>Service cost</li>
+<li>Service contracts</li>
+<li>Total</li>
+</ul>
+<p>For each entry type, you can see the invoiced amount, usage (amount), cost amount, quantity, quantity invoiced and quantity consumed, profit amount and profit percentage. The profit percentage is calculated according to the following formula:</p>
+<ul>
+<li>(Invoiced Amount - Usage (Cost)) x 100 / Invoiced Amount</li>
+</ul>
+<h2 id="using-trendscapes">Using Trendscapes</h2>
+<p>For service items and service contracts, the <strong>Service Item Trendscape</strong> or <strong>Service Contract Trendscape</strong> pages provides a scrollable summary of service ledger entries in a period of time for a specific service item or contract. To view the trendscape, open the service item or service contract, choose the <strong>Statistics</strong> action, and then choose <strong>Trendscape</strong>.</p>
+<p>When you scroll the list, the amounts are calculated in the local currency according to the specified time interval. All amounts are calculated from service ledger entries, which are entries that are created when you post service orders or service invoices.</p>
+<p>You can filter the list by specifing the service items to include.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you have set the time interval to <strong>Day</strong> and you want to scroll over a long period, you can do it faster by shifting to a larger interval such as <strong>Quarter</strong>. When you have found the desired period, you can shift back to the original interval to see the data in more detail.</p>
+</div>
+<h2 id="viewing-gains-and-losses-on-contracts">Viewing Gains and Losses on Contracts</h2>
+<p>A contract gain or loss entry is generated when a contract quote is converted to a service contract, when contract lines are added or removed from a service contract, or when a contract is canceled. You can view contract gains or losses on the following pages.</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Contract Gain/Loss (Contracts)</strong></td>
+<td>To view the contract gain/loss by service contract.</td>
+</tr>
+<tr>
+<td><strong>Contract Gain/Loss (Groups)</strong></td>
+<td>To view the contract gain/loss by service contract group.</td>
+</tr>
+<tr>
+<td><strong>Contract Gain/Loss (Customers)</strong></td>
+<td>To view the contract gain/loss by customer.</td>
+</tr>
+<tr>
+<td><strong>Contract Gain/Loss (Reasons)</strong></td>
+<td>To view the contract gain/loss by reason code.</td>
+</tr>
+<tr>
+<td><strong>Contract Gain/Loss (Resp.Ctr)</strong></td>
+<td>To view the contract gain/loss by responsibility center.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter the name of the page to display, and then choose the related link.</li>
+<li>Fill in the filter criteria you want to apply. For example, on the <strong>Contract Gain/Loss (Reasons)</strong> page, choose a value for <strong>Reason Code Filter</strong>.</li>
+<li>Choose the <strong>Show Matrix</strong> action.</li>
+</ol>
+<h2 id="viewing-statistics-for-posted-service-documents">Viewing Statistics for Posted Service Documents</h2>
+<p>The service statistics feature lets you gain a statistical overview of the contents of posted service documents, such as a posted shipment, posted invoice, and posted credit memo.</p>
+<p>The statistical information is displayed in the statistics page for the corresponding posted service document. You can open the relevant statistics page from posted service shipment, posted service invoice, or posted service credit memo documents. For each of these document types, choose the <strong>Statistics</strong> action. For example, from the <strong>Posted Service Invoices</strong> page, choose the <strong>Statistics</strong> action.</p>
+<h3 id="posted-service-shipment-statistics">Posted Service Shipment Statistics</h3>
+<p>The <strong>Service Shipment Statistics</strong> page provides an overview of a posted service shipment. This includes information about the physical contents of the shipment, such as quantity of the shipped items, resource hours or costs, and weight and volume of the shipped items.</p>
+<h3 id="posted-service-invoice-statistics">Posted Service Invoice Statistics</h3>
+<p>You can see a statistical summary on a posted service invoice on the <strong>Service Invoice Statistics</strong> page. You can view the totals of the posted service invoice. The data includes total amount on the service lines (including and excluding VAT) that has been posted as invoiced, VAT part, cost, and profit on the posted invoice. The page also displays information about the following:</p>
+<ul>
+<li>The items on the service invoice lines, such as weight, volume, and the quantity of parcels.</li>
+<li>The balance on the customer's account, and the maximum credit that you can extend the customer.</li>
+</ul>
+<h3 id="posted-service-credit-memo-statistics">Posted Service Credit Memo Statistics</h3>
+<p>You can use the <strong>Service Credit Memo Statistics</strong> page to get a statistical overview of the lines in a posted service credit memo. The overview can include:</p>
+<ul>
+<li>The total amounts on the posted credit memo, displayed as quantity, amount, VAT, cost and profit. There is also information about the items on the service lines of the posted credit memo, such as quantity, weight, and volume.</li>
+<li>General information about the customer, such as the customer's credit limit and balance on the account.</li>
+</ul>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-to-create-service-orders.html">Create Service Orders</a><br>
+<a href="service-how-to-create-service-items.html">Create Service Items</a><br>
+<a href="service-plan-service.html">Planning Service</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-service-statistics.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

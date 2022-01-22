@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create Number Series | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create Number Series | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to set up number series that assign unique ID codes to accounts and documents in Business Central .">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-number-series">Create Number Series</h1>
+
+<p>For each company that you set up, you need to assign unique identification codes to things such as general ledger accounts, customer and vendor accounts, invoices, and other documents. Numbering is important not only for identification. A well-designed numbering system also makes the company more manageable and easy to analyze, and can reduce the number of errors that occur in data entry.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>By default, gaps are not allowed in number series because the exact history of financial transactions must be available for auditing, by law, and therefore must follow an unbroken sequence with no deleted numbers.<br><br>
+If you want to allow gaps in certain number series, then first consult with your auditor or accounting manager to ensure that you adhere to the legal requirements in your country/region. For more information, see <a href="ui-create-number-series.html#gaps-in-number-series">Gaps in Number Series</a>.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>We recommend that you use the same number series codes as you see listed on the <strong>No. Series List</strong> page in the CRONUS demonstration company. Codes such as <em>P-INV+</em> might not make immediate sense to you, but Business Central has a number of default settings that depend on these number series codes.</p>
+</div>
+<p>You create a numbering system by setting up one or more codes for each type of master data or document. For example, you can set up one code for numbering customers, another code for numbering sales invoices, and another code for numbering documents in general journals. After you have set up a code, you must set up at least one number series line. The number series line contains information such as the first and last number in the series and the starting date. You can set up more than one number series line per number series code, with a different starting date for each line. The series will be used consecutively, starting each series on the respective starting date.</p>
+<p>You typically set up your number series to automatically insert the next consecutive number on new cards or documents that you create. However, you can also set a number series up to allow that you manually enter the new number. You specify this with the <strong>Manual Nos.</strong> check box.</p>
+<p>If you want to use more than one number series code for one type of master data - for example, if you want to use different number series for different categories of items - you can use number series relationships.</p>
+<h2 id="gaps-in-number-series">Gaps in Number Series</h2>
+<p>Not all records that you create in Business Central are financial transactions that must use sequential numbering. Customer cards, sales quotes, and warehouse activities are examples of records that are assigned a number from a number series, but are not subject to financial auditing and/or can be deleted. For such number series, you can select the <strong>Allow Gaps in Nos.</strong> check box on the <strong>No. Series Lines</strong> page. This setting can also be changed after creating the number series. For more information, see <a href="ui-create-number-series.html#to-create-a-new-number-series">To create a new number series</a>.</p>
+<h2 id="behavior-of-the-no-field-on-documents-and-cards">Behavior of the No. field on Documents and Cards</h2>
+<p>On sales, purchase, and transfer documents and on all cards, the <strong>No.</strong> can be filled in automatically from a number series or manually, and it can be set up to be invisible.</p>
+<p>The <strong>No.</strong> field can be filled in three ways:</p>
+<ol>
+<li><p>If only one number series for the type of document or card exists where the <strong>Default Nos.</strong> check box is selected and the <strong>Manual Nos.</strong> check box is not selected, then the field is automatically filled with the next number in the series, and the <strong>No.</strong> field will not be visible.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the number series does not function, for example because it has run out of numbers, then the <strong>No.</strong> field will be visible and you can manually enter a number or resolve the issues on the <strong>No. Series</strong> page.</p>
+</div>
+</li>
+<li><p>If more than one number series for the type of document or card exist, and the <strong>Default Nos.</strong> check box is not selected for the number series that is currently assigned, then the <strong>No.</strong> field is visible, and you can look up to the <strong>No. Series</strong> page and select the number series you want to use. The next number in the series is then inserted in the <strong>No.</strong> field.</p>
+</li>
+<li><p>If you have not set up a number series for the type of document or card, or if the <strong>Manual Nos.</strong> field is selected for the number series, then the <strong>No.</strong> field is visible and you must enter any number manually. You can enter a maximum of 20 characters, both numbers and letters.</p>
+</li>
+</ol>
+<p>When you open a new document or card that a number series exists for, then the relevant <strong>No. Series Setup</strong> page opens so that you can set up a number series for that type of document or card before you proceed with other data entry.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you need to enable manual numbering on, for example, new item cards that have been created with a data migration process that has hidden the <strong>No.</strong> by default, then go to the <strong>Inventory Setup</strong> page and choose the <strong>Item Nos.</strong> field to open and set the related number series to <strong>Manual Nos.</strong>.</p>
+</div>
+<h2 id="to-create-a-new-number-series">To create a new number series</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>No. Series</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>On the new line, fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Choose the <strong>Lines</strong> action.</li>
+<li>On the <strong>No. Series Lines</strong> page, fill in the fields to define the actual use and content of the number series that you created in step 2.</li>
+<li>Repeat step 5 for as many different uses of the number series that you need. The <strong>Starting Date</strong> field defines which number series line is active.</li>
+</ol>
+<h2 id="to-set-up-where-a-number-series-is-used">To set up where a number series is used</h2>
+<p>The following procedure shows how to set number series up for the Sales area. The steps are similar for other areas.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales &amp; Receivables</strong>, and then choose the related link.</li>
+<li>On the <strong>Sales &amp; Receivables</strong> page, on the <strong>Number Series</strong> FastTab, select the desired number series for each sales card or document.</li>
+</ol>
+<p>The selected number will now be used to fill in the <strong>No.</strong> field on the card or document in question, according to the settings you made on the number series line.</p>
+<h2 id="to-create-relationships-between-number-series">To create relationships between number series</h2>
+<p>If you have set up more than one number series code for the same kind of basic information or transactions, you can create relationships between the codes. This feature can assist you in deciding among the codes when you use a number.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>No. Series</strong>, and then choose the related link.</li>
+<li>Select the line with the number series you want to create relationships for and then choose <strong>Relationships</strong>.</li>
+<li>In the <strong>Series Code</strong> field, enter the code for the number series that you want to relate to the series you selected in step 2.</li>
+<li>Add a line for each code that you want to relate to the selected number series.</li>
+<li>Close the page.</li>
+</ol>
+<p>Now when you set up something that requires a number, you can use the relationships you created to select among the related number series.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/number-series-trail-codes-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="setup.html">Setting Up Business Central</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-create-number-series.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

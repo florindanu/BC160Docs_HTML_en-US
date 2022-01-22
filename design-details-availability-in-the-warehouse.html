@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Availability in the Warehouse | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Availability in the Warehouse | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The system must keep a constant control of item availability in the warehouse, so that outbound orders can flow efficiently and provide optimal deliveries.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-availability-in-the-warehouse">Design Details: Availability in the Warehouse</h1>
+
+<p>The system must keep a constant control of item availability in the warehouse, so that outbound orders can flow efficiently and provide optimal deliveries.</p>
+<p>Availability varies depending on allocations at the bin level when warehouse activities such as picks and movements occur and when the inventory reservation system imposes restrictions to comply with. A rather complex algorithm verifies that all conditions are met before allocating quantities to picks for outbound flows.</p>
+<p>If one or more conditions are not met, different error messages can be shown, including the generic &quot;Nothing to handle.&quot; message. The &quot;Nothing to handle.&quot; message can occur for many different reasons, both in outbound and inbound flows, where a directly or indirectly involved document line contains the <strong>Qty. to Handle</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Information will soon be published here about possible reasons and solutions for the &quot;Nothing to handle.&quot; message.</p>
+</div>
+<h2 id="bin-content-and-reservations">Bin Content and Reservations</h2>
+<p>In any installation of warehouse management, item quantities exist both as warehouse entries, in the Warehouse application area, and as item ledger entries, in the Inventory application area. These two entry types contain different information about where items exist and whether they are available. Warehouse entries define an item’s availability by bin and bin type, which is called bin content. Item ledger entries define an item’s availability by its reservation to outbound documents.</p>
+<p>Special functionality in the picking algorithm exists to calculate the quantity that is available to pick when bin content is coupled with reservations.</p>
+<h2 id="quantity-available-to-pick">Quantity Available to Pick</h2>
+<p>If, for example, the picking algorithm does not consider item quantities that are reserved for a pending sales order shipment, then those items might be picked for another sales order that is shipped earlier, which prevents the first sales from being fulfilled. To avoid this situation, the picking algorithm subtracts quantities that are reserved for other outbound documents, quantities on existing pick documents, and quantities that are picked but not yet shipped or consumed.</p>
+<p>The result is displayed in the <strong>Available Qty. to Pick</strong> field on the <strong>Pick Worksheet</strong> page, where the field is calculated dynamically. The value is also calculated when users create warehouse picks directly for outbound documents. Such outbound documents could be sales orders, production consumption, or outbound transfers, where the result is reflected in the related quantity fields, such as <strong>Qty. to Handle</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Concerning the priority of reservations, the quantity to reserve is subtracted from the quantity available to pick. For example, if the quantity available in pick bins is 5 units, but 100 units are in put-away bins, then when you try to reserve more than 5 units for another order, an error message is displayed because the additional quantity must be available in pick bins.</p>
+</div>
+<h3 id="calculating-the-quantity-available-to-pick">Calculating the Quantity Available to Pick</h3>
+<p>The quantity available to pick is calculated as follows:</p>
+<p>quantity available to pick = quantity in pick bins - quantity on picks and movements – (reserved quantity in pick bins + reserved quantity on picks and movements)</p>
+<p>The following diagram shows the different elements of the calculation.</p>
+<p><img src="media/design_details_warehouse_management_availability_2.png" alt="Available to pick with reservation overlap" title="Available to pick with reservation overlap"></p>
+<h2 id="quantity-available-to-reserve">Quantity Available to Reserve</h2>
+<p>Because the concepts of bin content and reservation co-exist, the quantity of items that are available to reserve must be aligned with allocations to outbound warehouse documents.</p>
+<p>It should be possible to reserve all items in inventory, except those that have started outbound processing. Accordingly, the quantity that is available to reserve is defined as the quantity on all documents and all bin types, except the following outbound quantities:</p>
+<ul>
+<li>Quantity on unregistered pick documents</li>
+<li>Quantity in shipment bins</li>
+<li>Quantity in to-production bins</li>
+<li>Quantity in open shop floor bins</li>
+<li>Quantity in to-assembly bins</li>
+<li>Quantity in adjustment bins</li>
+</ul>
+<p>The result is displayed in the <strong>Total Available Quantity</strong> field on the <strong>Reservation</strong> page.</p>
+<p>On a reservation line, the quantity that cannot be reserved, because it is allocated in the warehouse, is displayed in the <strong>Qty. Allocated in Warehouse</strong> field on the <strong>Reservation</strong> page.</p>
+<h3 id="calculating-the-quantity-available-to-reserve">Calculating the Quantity Available to Reserve</h3>
+<p>The quantity available to reserve is calculated as follows:</p>
+<p>quantity available to reserve = total quantity in inventory - quantity on picks and movements for source documents - reserved quantity - quantity in outbound bins</p>
+<p>The following diagram shows the different elements of the calculation.</p>
+<p><img src="media/design_details_warehouse_management_availability_3.png" alt="Avaliable to reserve per warehouse allocation" title="Avaliable to reserve per warehouse allocation"></p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="inventory-how-availability-overview.html">View the Availability of Items</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-availability-in-the-warehouse.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

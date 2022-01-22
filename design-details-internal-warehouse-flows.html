@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Internal Warehouse Flows | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Internal Warehouse Flows | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The flow of items between bins at a company location centers on picking components and putting away end items for assembly or production orders and ad-hoc movements, such as bin replenishments, without a relation to source documents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-internal-warehouse-flows">Design Details: Internal Warehouse Flows</h1>
+
+<p>The flow of items between bins at a company location centers on picking components and putting away end items for assembly or production orders and ad-hoc movements, such as bin replenishments, without a relation to source documents. The scope and nature of the involved activities vary between basic and advanced warehousing.</p>
+<p>Some internal flows overlap with inbound or outbound flows. Some of this overlap is shown as steps 4 and 5 in the graphical diagrams for advanced inbound and outbound flows respectively. For more information, see <a href="design-details-outbound-warehouse-flow.html">Design Details: Inbound Warehouse Flow</a>.</p>
+<h2 id="internal-flows-in-basic-warehousing">Internal Flows in Basic Warehousing</h2>
+<p>In basic warehouse configuration, the flow of items between bins inside the company centers on picking component and putting away end items for production or assembly orders and ad-hoc movements, such as bin replenishments, without relation to source documents.</p>
+<h3 id="flows-to-and-from-production">Flows to and from Production</h3>
+<p>The main integration between production orders and basic warehouse activities is represented by the ability to pick production components with the <strong>Inventory Pick</strong> or the <strong>Inventory Movement</strong> pages.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On the <strong>Inventory Pick</strong> page, the component consumption is posted together with the pick posting. By using the <strong>Inventory Movement</strong> page, only bin adjustments are registered, no item ledger posting occurs.</p>
+</div>
+<p>In addition to component handling, the integration is represented by the ability to put produced items away with the <strong>Inventory Put-away</strong> page.</p>
+<p>The <strong>To-Production Bin Code</strong>, <strong>From-Production Bin Code</strong>, and <strong>Open Shop Floor Bin Code</strong> fields on the location card or the machine/work center cards define default flows to and from production areas.</p>
+<p>For more information about how component consumption is flushed from the To-Production or Open Shop Floor bins, see the “Flushing Production Components in the Warehouse” section in this topic.</p>
+<h3 id="flows-to-and-from-assembly">Flows to and from Assembly</h3>
+<p>The main integration between assembly orders and basic warehouse activities is represented by the ability to move assembly components to the assembly area.</p>
+<p>While no specific warehouse functionality exists for putting assembly items away, the bin code on the assembly order header may be set to a default put-away bin. Posting the assembly order then functions like posting a put-away. The warehouse activity to move assembly items into the warehouse can be managed on the <strong>Internal Movement</strong> page, with no relation to the assembly order.</p>
+<p>The following assembly flows exist.</p>
+<table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assemble-to-stock</td>
+<td>The components are needed on an assembly order where the output is stored in the warehouse.<br><br> This warehouse flow is managed on the <strong>Inventory Movement</strong> page. One take line specifies where to take the components. One place line specifies where to place the components.</td>
+</tr>
+<tr>
+<td>Assemble-to-order</td>
+<td>The components are needed on an assembly order that is linked to a sales order that is shipped when the sold item is assembled.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If items are assembled to order, then the inventory pick of the linked sales order triggers an inventory movement for all the involved assembly components, not just for the sold item as when shipping inventory items.</p>
+</div>
+<p>The <strong>To-Assembly Bin Code</strong>, <strong>From-Assembly Bin Code</strong>, and <strong>Asm.-to-Order Shpt. Bin Code</strong> fields on the location card define default flows to and from assembly areas.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Asm.-to-Order Shpt. Bin Code</strong> field functions as the from-assembly bin in assemble-to-order scenarios.</p>
+</div>
+<h3 id="ad-hoc-movements">Ad-Hoc Movements</h3>
+<p>In basic warehousing, the movement of items from bin to bin without relation to source documents is performed on the <strong>Internal Movement</strong> page, which functions together with the <strong>Inventory Movement</strong> page.</p>
+<p>Another way to move items ad hoc between bins is to post positive entries in the <strong>New Bin Code</strong> field on the <strong>Item Reclass. Journal</strong> page.</p>
+<h2 id="internal-flows-in-advanced-warehousing">Internal Flows in Advanced Warehousing</h2>
+<p>In advanced warehouse configurations, the flow of items between bins inside the company centers on picking component and putting away end items for production orders and picking components for assembly orders. In addition, internal flows occur as ad-hoc movements, such as bin replenishments, without relation to source documents.</p>
+<h3 id="flows-to-and-from-production-1">Flows To and From Production</h3>
+<p>The main integration between production orders and advanced warehouse activities is represented by the ability to pick production components, on the <strong>Warehouse Pick</strong> page and the <strong>Pick Worksheet</strong> page, and the ability to put produced items away with the <strong>Whse. Internal-Put-away</strong> page.</p>
+<p>Another integration point in production is provided with the <strong>Warehouse Movement</strong> page, together with the Movement Worksheet page, which enables you to place components and take produced items for released production orders.</p>
+<p>The <strong>To-Production Bin Code</strong>, <strong>From-Production Bin Code</strong>, and <strong>Open Shop Floor Bin Code</strong> fields on the location card or the machine/work center cards define default flows to and from production areas.</p>
+<p>For more information about how component consumption is flushed from the To-Production or Open Shop Floor Bins, see the “Flushing Production Components in the Warehouse” section in this topic.</p>
+<h3 id="flows-to-and-from-assembly-1">Flows to and from Assembly</h3>
+<p>The main integration between assembly orders and advanced warehouse activities is represented by the ability to pick assembly components, both with the <strong>Warehouse Pick</strong> page and the <strong>Pick Worksheet</strong> page. This functionality works just like when picking components for production orders.</p>
+<p>While no specific warehouse functionality exists for putting assembly items away, the bin code on the assembly order header may be set to a default put-away bin. Posting the assembly order then functions like posting a put-away. The warehouse activity to move assembly items into the warehouse can be managed on the <strong>Movement Worksheet</strong> page or the <strong>Whse. Internal Put-away</strong> page, with no relation to the assembly order.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If items are assembled to order, then the warehouse shipment of the linked sales order triggers a warehouse pick for all the involved assembly components, not just for the sold item as when shipping inventory items.</p>
+</div>
+<p>The <strong>To-Assembly Bin Code</strong> and <strong>From-Assembly Bin Code</strong> fields on the location card define default flows to and from assembly areas.</p>
+<h3 id="ad-hoc-movements-1">Ad-Hoc Movements</h3>
+<p>In advanced warehousing, the movement of items from bin to bin without relation to source documents is managed on the <strong>Movement Worksheet</strong> page and registered in the Warehouse Movement page.</p>
+<h2 id="flushing-production-components-in-the-warehouse">Flushing Production Components in the Warehouse</h2>
+<p>If set up on the item card, components picked with warehouse picks are posted as consumed by the production order when the warehouse pick is registered. By using the <strong>Pick + Forward</strong> method and the <strong>Pick + Backward</strong> flushing method, the pick registration triggers the related consumption posting when the first operation starts or when the last operation finishes, respectively.</p>
+<p>Consider the following scenario based on the Business Central demonstration database, WHITE location.</p>
+<p>A production order for 15 PCS of item LS-100 exists. Some of the items on the component list must be flushed manually in a consumption journal, and other items on the list can be picked and flushed automatically using the <strong>Pick + Backward</strong> flushing method.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p><strong>Pick + Forward</strong> only works if the second production routing line operation uses a routing link code. Releasing a planned production order initiates forward flushing of components set to <strong>Pick + Forward</strong>. However, the flushing cannot take place until the pick of the components is registered, which again can only take place when the order is released.</p>
+</div>
+<p>The following steps describe the involved actions by different users and the related response:</p>
+<ol>
+<li><p>The shop floor supervisor releases the production order. Items with <strong>Forward</strong> flushing method and no routing link code are deducted from the open shop floor bin.</p>
+</li>
+<li><p>The shop floor supervisor chooses the <strong>Create Warehouse Pick</strong> button on the production order. A warehouse pick document is created pick for items with <strong>Manual</strong>, <strong>Pick + Backward</strong>, and <strong>Pick + Forward</strong> flushing methods. These items are placed in the To-Production bin.</p>
+</li>
+<li><p>The warehouse manager assigns the picks to a warehouse worker.</p>
+</li>
+<li><p>The warehouse worker picks the items from appropriate bins and places them in the To-Production bin or in the bin specified on the warehouse pick, which may be a work center or machine center bin.</p>
+</li>
+<li><p>The warehouse worker registers the pick. The quantity is subtracted from the pick bins and added to the consumption bin. The <strong>Qty. Picked</strong> field on the component list for all picked items is updated.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Only the quantity that is picked can be consumed.</p>
+</div>
+</li>
+<li><p>The machine operator informs the production manager that the end items are finished.</p>
+</li>
+<li><p>The shop floor supervisor uses the consumption journal or production journal to post the consumption of component items that use either <strong>Manual</strong> flushing method or <strong>Forward</strong> or <strong>Pick + Forward</strong> flushing methods together with routing link codes.</p>
+</li>
+<li><p>The production manager posts the output of the production order and changes status to <strong>Finished</strong>. The quantity of component items that use <strong>Backward</strong> flushing method is deducted from the open shop floor bin, and the quantity of component items that use <strong>Pick + Backward</strong> flushing method is deducted from the To-Production bin.</p>
+</li>
+</ol>
+<p>The following illustration shows when the <strong>Bin Code</strong> field on the component list is filled according to your location or machine/work center setup.</p>
+<p><img src="media/binflow.png" alt="Overview of when/how the Bin Code field is filled in" title="Overview of when/how the Bin Code field is filled in"></p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-internal-warehouse-flows.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

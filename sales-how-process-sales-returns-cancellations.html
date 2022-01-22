@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Process Sales Returns or Cancellations | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Process Sales Returns or Cancellations | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to create a sales credit memo, directly or through a sales return order, to process a return, cancellation, or reimbursement for items or services you have been received payment for.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="process-sales-returns-or-cancellations">Process Sales Returns or Cancellations</h1>
+
+<p>If a customer wants to return items or be reimbursed for items or services that you have sold and received payment for, you must create and post a sales credit memo that specifies the requested change. To include the correct sales invoice information, you can create the sales credit memo directly from the posted sales invoice or you can create a new sales credit memo with copied invoice information.</p>
+<p>If you need more control of the sales return process, such as warehouse documents for the item handling or better overview when receiving items from multiple sales documents with one sales return, then you can create sales return orders. A sales return order automatically issues the related sales credit memo and other return-related documents, such as a replacement sales order, if needed. For more information, see <a href="sales-how-process-sales-returns-cancellations.html#to-create-a-sales-return-order-based-on-one-or-more-posted-sales-documents">To create a sales return order based on one or more posted sales documents</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If a posted sales invoice has not yet been paid, then you can use the <strong>Correct</strong> or <strong>Cancel</strong> functions on the posted sales invoice to reverse transactions. These functions work only for unpaid invoices, and they do not support partial returns or cancellations. For more information, see <a href="sales-how-correct-cancel-sales-invoice.html">Correct or Cancel Unpaid Sales Invoices</a>.</p>
+</div>
+<p>A return or reimbursement may relate to only some of the items or services on the original sales invoice. In that case, you must edit information on the lines on the sales credit memo or sales return order. When you post the sales credit memo or sales return order, the sales documents that are affected by the change are reversed and a refund payment can be created for the customer. For more information, see <a href="payables-make-payments.html">Making Payments</a>.</p>
+<p>In addition to the original posted sales invoice, you can apply the sales credit memo or sales return order to other sales documents, for example another posted sales invoice because the customer is also returning items delivered with that invoice.</p>
+<p>You can send the posted sales credit memo to the customer to confirm the return or cancellation and communicate that the related value will be reimbursed, for example when the items are returned.</p>
+<p>The credit memo posting will also revert any item charges that were assigned to the posted document, so that the item’s value entries are the same as before the item charge was assigned.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The bookkeeping aspects of sales returns, such as the payments to customers as reimbursement, is considered bookkeeping work and not described here. For more information, see <a href="payables-manage-payables.html">Managing Payables</a>.</p>
+</div>
+<h2 id="inventory-costing">Inventory Costing</h2>
+<p>To preserve correct inventory valuation, you typically want to put returned items back in inventory at the unit cost that they were sold at, not at their current unit cost. This is referred to as exact cost reversing.</p>
+<p>Two functions exist to assign exact cost reversing automatically.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Get Posted Document Lines to Reverse</strong> function on the <strong>Sales Return Order</strong> page</td>
+<td>Copies lines of one or more posted documents to be reversed into the sales return order. For more information, see <a href="sales-how-process-sales-returns-cancellations.html#to-create-a-sales-return-order-based-on-one-or-more-posted-sales-documents">To create a sales return order based on one or more posted sales documents</a>.</td>
+</tr>
+<tr>
+<td><strong>Copy from Document</strong> function in the <strong>Sales Credit Memo</strong> and <strong>Sales Return Order</strong> pages</td>
+<td>Copies both the header and lines of one posted document to be reversed.<br><br> Requires that the <strong>Exact Cost Reversing Mandatory</strong> check box is selected on the <strong>Sales &amp; Receivables Setup</strong> page.</td>
+</tr>
+</tbody>
+</table>
+<p>To assign exact cost reversing manually, you must choose the <strong>Appl.-from Item Entry</strong> field on any type of return document line, and then select the number of the original sales entry. This links the sales credit memo or sales return order to the original sales entry and ensures that the item is valued at the original unit cost.</p>
+<p>For more information, see <a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a>.</p>
+<h2 id="to-create-a-sales-credit-memo-from-a-posted-sales-invoice">To create a sales credit memo from a posted sales invoice</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Sales Invoices</strong>, and the choose the related link.</p>
+</li>
+<li><p>On the <strong>Posted Sales Invoices</strong> page, select the posted sales invoice that you want to reverse, and then choose the <strong>Create Corrective Credit Memo</strong> action.</p>
+<p>The sales credit memo header contains some information from the posted sales invoice. You can edit this, for example, with new information that reflects the return agreement.</p>
+</li>
+<li><p>Edit information on the lines according to the agreement, such as the number of returned items or the amount to reimburse.</p>
+</li>
+<li><p>Choose the <strong>Apply Entries</strong> action.</p>
+</li>
+<li><p>On the <strong>Apply Customer Entries</strong> page, select the line with the posted sales document that you want to apply the sales credit memo to, and then choose the <strong>Applies-to ID</strong> action.</p>
+<p>The identifier of the sales credit memo displays in the <strong>Applies-to ID</strong> field.</p>
+</li>
+<li><p>In the <strong>Amount to Apply</strong> field, enter the amount that you want to apply if it's smaller than the original amount.</p>
+<p>At the bottom of the <strong>Apply Customer Entries</strong> page, you can see the total amount to apply to reverse all involved entries, namely when the value in the <strong>Balance</strong> field is zero.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button. When you post the sales credit memo, it is applied to the posted sales documents.</p>
+<p>After you create or edit sales credit memo lines, and the single or multiple applications are specified, you can post the sales credit memo.</p>
+</li>
+<li><p>Choose the <strong>Post and Send</strong> action.</p>
+</li>
+</ol>
+<p>The <strong>Post and Send Confirmation</strong> dialog box opens showing the preferred sending method for the customer. You can change the sending method by choosing the lookup button for the <strong>Send Document</strong> to field. For more information, see <a href="sales-how-setup-document-send-profiles.html">Set Up Document Sending Profiles</a>.</p>
+<p>The posted sales documents that you applied the credit memo to are now reversed, and a refund payment can be created for the customer. The sales credit memo is removed and replaced with a new document in the list of posted sales credit memos.</p>
+<h2 id="to-create-a-sales-credit-memo-by-copying-a-posted-sales-invoice">To create a sales credit memo by copying a posted sales invoice</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Credit Memos</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action to open a new empty sales credit memo.</li>
+<li>In the <strong>Customer</strong> field, enter the name of an existing customer.</li>
+<li>Choose the <strong>Copy from Document</strong> action.</li>
+<li>On the <strong>Copy Sales Document</strong> page, in the <strong>Document Type</strong> field, select <strong>Posted Invoice</strong>.</li>
+<li>Choose the <strong>Document No.</strong> field to open the <strong>Posted Sales Invoices</strong> page, and then select the posted sales invoice that contains lines that you want to reverse.</li>
+<li>Select the <strong>Recalculate Lines</strong> check box if you want the copied posted sales invoice lines to be updated with any changes in item price and unit cost since the invoice was posted.</li>
+<li>Choose the <strong>OK</strong> button. The copied invoice lines are inserted in the sales credit memo.</li>
+<li>Complete the sales credit memo as explained in <a href="sales-how-process-sales-returns-cancellations.html#to-create-a-sales-credit-memo-from-a-posted-sales-invoice">To create a sales credit memo from a posted sales invoice</a>.</li>
+</ol>
+<h2 id="to-create-a-sales-return-order-based-on-one-or-more-posted-sales-documents">To create a sales return order based on one or more posted sales documents</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Return Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Fill in the fields on the <strong>General</strong> FastTab as necessary.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, fill the lines manually, or copy information from other documents to fill the lines automatically:</p>
+<ul>
+<li>Use the <strong>Get Posted Document Lines to Reverse</strong> function to copy one or more posted document lines from one or more posted documents. This function always exactly reverses the costs from the posted document line. This function is described in the following steps.</li>
+<li>Use the <strong>Copy from Document</strong> function to copy an existing document to the return order. Use this function to copy the entire document. It can be either a posted document or a document that is not yet posted. This function only enables exact cost reversing when the <strong>Exact Cost Reversing Mandatory</strong> check box is selected on the <strong>Sales and Receivables Setup</strong> page.</li>
+</ul>
+</li>
+<li><p>Choose the <strong>Get Posted Document Lines to Reverse</strong> action.</p>
+</li>
+<li><p>At the top of the <strong>Posted Sales Document Lines</strong> page, select the <strong>Show Reversible Lines Only</strong> check box if you want to see only lines that have quantities that have not yet been returned. For example, if a posted sales invoice quantity has already been returned, you may not want to return that quantity on a new sales return document.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This field only works for posted shipments and posted invoice lines, not for posted return or posted credit memo lines.</p>
+</div>
+<p>At the left side of the page, the different document types are listed, and the number in brackets shows the number of documents available of each document type.</p>
+</li>
+<li><p>In the <strong>Document Type Filter</strong> field, select the type of posted document lines you would like to use.</p>
+</li>
+<li><p>Select the lines that you would like to copy to the new document.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use Ctrl+A to select all lines, all lines within the filter you have set are copied, but the <strong>Show Reversible Quantity Only</strong> filter is ignored. For example, suppose you have filtered the lines to a particular document number with two lines, one of which has already been returned. Even if the <strong>Show Reversible Quantity Only</strong> field is selected, if you press Ctrl+A to copy all lines, both lines are copied, instead of only the one that has not yet been reversed.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button to copy the lines to the new document.</p>
+<p>The following processes occur:</p>
+<ul>
+<li><p>For posted document lines of the type <strong>Item</strong>, a new document line is created that is a copy of the posted document line, with the quantity that has not yet been reversed. The <strong>Appl.-from Item Entry</strong> field is filled in as appropriate with the number of the item ledger entry of the posted document line.</p>
+</li>
+<li><p>For posted document lines that are not of the type <strong>Item</strong>, such as item charges, a new document line is created that is a copy of the original posted document line.</p>
+</li>
+<li><p>Calculates the <strong>Unit Cost (LCY)</strong> field on the new line from the costs on the corresponding item ledger entries.</p>
+</li>
+<li><p>If the copied document is a posted shipment, posted receipt, posted return receipt, or posted return shipment, the unit price is calculated automatically from the item card.</p>
+</li>
+<li><p>If the copied document is a posted invoice or credit memo, the unit price, invoice discounts, and line discounts from the posted document line are copied.</p>
+</li>
+<li><p>If the posted document line contains item tracking lines, the <strong>Appl.-from Item Entry</strong> field on the item tracking lines is filled with the appropriate item ledger entry numbers from the posted item tracking lines.</p>
+</li>
+</ul>
+<p>When you copy from a posted invoice or posted credit memo, application copies any relevant invoice discounts and line discounts as valid at the time of posting that document from the posted document line to the new document line. Be aware, however, that if the <strong>Calc. Inv. Discount</strong> option is activated on the <strong>Sales &amp; Receivables Setup</strong> page, then the invoice discount will be newly calculated when you post the new document line. The line amount for the new line may therefore be different than the line amount for the posted document line, depending on the new calculation of the invoice discount.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If part of the quantity of the posted document line has already been reversed or sold or consumed, a line is created for only the quantity that remains in inventory or that has not been returned. If the full quantity of the posted document line has already been reversed, a new document line is not created.</p>
+<p>If the flow of goods in the posted document is the same as the flow of goods in the new document, a copy of the original posted document line in the new document is created. The <strong>Appl.-from Item Entry</strong> field is not filled in because, in this case, exact cost reversing is not possible. For example, if you use the <strong>Get Posted Document Lines to Reverse</strong> function to get a posted sales credit memo line for a new sales credit memo, only the original posted credit memo line is copied to the new credit memo.</p>
+</div>
+</li>
+<li><p>On the <strong>Sales Return Order</strong> page, in the <strong>Return Reason Code</strong> field on each line, select the reason for the return.</p>
+</li>
+<li><p>Choose the <strong>post</strong> action.</p>
+</li>
+</ol>
+<h2 id="to-create-a-replacement-sales-order-from-a-sales-return-order">To create a replacement sales order from a sales return order</h2>
+<p>You may decide to compensate a customer for an item that you have sold them by replacing the item. You can make a replacement with the same item or a different item. This situation could occur if you mistakenly shipped the wrong item to the customer, for example.</p>
+<ol>
+<li>On the <strong>Sales Return Order</strong> page for an active return process, on an empty line, make a negative entry for the replacement item by inserting a negative amount in the <strong>Quantity</strong> field.</li>
+<li>Choose the <strong>Move Negative Lines</strong> action.</li>
+<li>On the <strong>Move Negative Sales Lines</strong> page, fill in the fields as necessary.</li>
+<li>Choose the <strong>OK</strong> button. The negative line for the replacement item is deleted from the sales return order and inserted in a new <strong>Sales Order</strong> page. For more information, see <a href="sales-how-sell-products.html">Sell Products</a>.</li>
+</ol>
+<h2 id="to-create-return-related-documents-from-a-sales-return-order">To create return-related documents from a sales return order</h2>
+<p>You can have replacement sales orders, purchase return orders, and replacement purchase orders created automatically during the sales return process. This is useful, for example, in situations where you want to handle items with warranties provided by vendors.</p>
+<ol>
+<li>On the <strong>Sales Return Order</strong> page for an active return process, choose the <strong>Create Return-Related Documents</strong> action.</li>
+<li>In the <strong>Vendor No.</strong> field, enter the number of a vendor if you want to create vendor documents automatically.</li>
+<li>If a returned item must be returned to the vendor, select the <strong>Create Purch. Ret. Order</strong> check box.</li>
+<li>If a returned item must be ordered from the vendor, select the <strong>Create Purchase Order</strong> check box.</li>
+<li>If a replacement sales order must be created, select the <strong>Create Sales Order</strong> check box.</li>
+</ol>
+<h2 id="to-create-a-restock-charge">To create a restock charge</h2>
+<p>You may decide to charge your customer a restock fee to cover the physical handling costs of returning an item. This could occur if the customer mistakenly ordered the wrong item or changed their mind after receiving the item you sold them, for example.</p>
+<p>You can post this increased cost as an item charge in a credit memo or a return order and assign it to the posted shipment. The following describes it for a sales return order, but the same steps apply to a sales credit memo.</p>
+<ol>
+<li>Open the <strong>Sales Return Order</strong> page for an active return process.</li>
+<li>On a new line, in the <strong>Type</strong> field, select <strong>Charge (Item)</strong>.</li>
+<li>Fill in the fields as for any item charge line. For more information, see <a href="payables-how-assign-item-charges.html">Use Item Charges to Account for Additional Trade Costs</a>.</li>
+</ol>
+<p>When you post the sales return order, the restock charge is added to the relevant sales entry amount. In this way, you can maintain accurate inventory valuation.</p>
+<h2 id="to-create-a-sales-allowance">To create a sales allowance</h2>
+<p>You can send a customer a credit memo with a price reduction if the customer has received slightly damaged items or received the items late.<br>
+You can post this reduced price as an item charge in a credit memo or a return order and assign it to the posted shipment. The following describes it for a sales credit memo, but the same steps apply to a sales return order.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Credit Memos</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action to open a new empty sales credit memo.</li>
+<li>Fill in the credit memo header with relevant information about the customer that you want to give the sales allowance to.</li>
+<li>On the <strong>Lines</strong> FastTab, in the <strong>Type</strong> field, select <strong>Charge (Item)</strong>.</li>
+<li>In the <strong>No.</strong> field, select the appropriate item charge value.<br>
+You may want to create a special item charge number to cover sales allowances.</li>
+<li>In the <strong>Quantity</strong> field, enter <strong>1</strong>.</li>
+<li>In the <strong>Unit Price</strong> field, enter the amount of the sales allowance.</li>
+<li>Assign the sales allowance as an item charge to the items in the posted shipment. For more information, see <a href="payables-how-assign-item-charges.html">Use Item Charges to Account for Additional Trade Costs</a>. When you have assigned the allowance, return to the <strong>Sales Credit Memo</strong> page.</li>
+</ol>
+<p>When you post the sales return order, the sales allowance is added to the relevant sales entry amount. In this way, you can maintain accurate inventory valuation.</p>
+<h2 id="to-combine-return-receipts">To combine return receipts</h2>
+<p>You can combine return receipts if your customer returns several items that are covered by different sales return orders.</p>
+<p>When you receive the items into your warehouse, post the relevant sales return orders as received. This creates posted return receipts.</p>
+<p>When you are ready to invoice this customer, instead of invoicing each sales return order separately, you can create a sales credit memo and automatically copy the posted return receipt lines to this document. Then you can post the sales credit memo and conveniently invoice all the open sales return orders at once.</p>
+<p>To combine return receipts, the <strong>Combine Shipments</strong> check box must be selected on the <strong>Customer Card</strong> page.</p>
+<h3 id="to-manually-combine-return-receipts">To manually combine return receipts</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales Credit Memo</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, fill in the fields as necessary.</p>
+</li>
+<li><p>Choose the <strong>Get Return Receipt Lines</strong> action.</p>
+</li>
+<li><p>Select the return receipt lines that you want to include in the credit memo:</p>
+<ul>
+<li><p>To insert all lines, select all lines, and then choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>To insert specific lines, select the lines, and then choose the <strong>OK</strong> button.</p>
+</li>
+</ul>
+</li>
+<li><p>If an incorrect shipment line was selected or you want to start over, you can simply delete the lines on the credit memo and re-run the <strong>Get Return Receipt Lines</strong> function.</p>
+</li>
+<li><p>Post the invoice.</p>
+</li>
+</ol>
+<h3 id="to-automatically-combine-return-receipts">To automatically combine return receipts</h3>
+<p>You can automatically combine return receipts and have the option of automatically posting the credit memos using the  <strong>Combine Return Receipts</strong> function.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Combine Return Receipts</strong>, and then choose the related link.</li>
+<li>On the <strong>Combine Return Receipts</strong> page, fill in the fields to select the relevant return receipts.</li>
+<li>Select the <strong>Post Credit Memos</strong> check box. If not, you must manually post the resulting purchase credit memos.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<h3 id="to-remove-a-received-and-invoiced-return-order">To remove a received and invoiced return order</h3>
+<p>When you invoice return receipts in this way, the return orders from which the return receipts were posted still exist, even if they have been fully received and invoiced.</p>
+<p>When return receipts are combined on a credit memo and posted, a posted sales credit memo is created for the credited lines. The <strong>Quantity Invoiced</strong> field on the originating sales return order is updated based on the invoiced quantity.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Delete Invoiced Sales Return Orders</strong>, and then select the link.</li>
+<li>Specify in the <strong>No.</strong> filter field which return orders to delete.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<p>Alternatively, delete individual sales return orders manually.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/return-items-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-manage-sales.html">Sales</a><br>
+<a href="sales-setup-sales.html">Setting Up Sales</a><br>
+<a href="payables-manage-payables.html">Managing Payables</a><br>
+<a href="ui-how-send-documents-email.html">Send Documents by Email</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/sales-how-process-sales-returns-cancellations.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Approve or Reject Documents in Workflows| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Approve or Reject Documents in Workflows| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Request, reject, or delegate an approval of, for example, a purchase or sales document, as part of a workflow.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="use-approval-workflows">Use Approval Workflows</h1>
+
+<p>When a record, such as a purchase document or a customer card, needs to be approved by someone in your organization, you send an approval request as part of a workflow. Based on how the workflow is set up, the appropriate approver is then notified that the record requires their approval.</p>
+<p>You set up approval workflows on the <strong>Workflow</strong> page. For more information, see <a href="across-set-up-workflows.html">Setting Up Workflows</a>.</p>
+<p>In addition to approval workflows described in this topic, you can perform various other workflow tasks. For more information, <a href="across-use-workflows.html">Using Workflows</a>.</p>
+<p>Core approval workflows for purchases documents, sales documents, payment journals, customer cards, and item cards are ready to start as guides. For more information, see <a href="product-get-started.html">Getting Started</a>.</p>
+<h2 id="to-request-approval-of-a-record">To request approval of a record</h2>
+<p>The following task is performed by an approval user.</p>
+<ol>
+<li>on the page that presents the record, choose the <strong>Send Approval Request</strong> action.</li>
+<li>To see all your approval requests, choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Approval Request Entries</strong>, and then choose the related link.</li>
+</ol>
+<p>The status of the approval entry is updated from <strong>Created</strong> to <strong>Open</strong>. The status of the record, for example a purchase invoice, is updated from <strong>Open</strong> to <strong>Pending Approval</strong> and remains locked for processing until all approvers have approved the record.</p>
+<p>When the approver has approved the record, the status changes to <strong>Released</strong>. You can then continue your tasks with the record.</p>
+<h2 id="to-cancel-requests-for-approval">To cancel requests for approval</h2>
+<p>The following task is performed by an approval user with approver rights.</p>
+<p>A customer may want to change an order after it has been submitted for approval. In this case, you can cancel the approval process and make the necessary changes to the order before you request approval again.</p>
+<ul>
+<li>on the page that displays the record, choose the <strong>Cancel Approval Request</strong> action.</li>
+</ul>
+<p>When the approval request has been canceled, the status of the related approval entry is changed to <strong>Canceled</strong>. The status of the record is updated from <strong>Pending Approval</strong> to <strong>Open</strong>. The approval process can then start again.</p>
+<h2 id="to-approve-or-reject-requests-for-approval">To approve or reject requests for approval</h2>
+<p>The following task is performed by an approval user with approver rights.</p>
+<p>You can process approval requests on the <strong>Requests to Approve</strong> page, for example to approve multiple requests at a time. Alternatively, you can process each request on the related record, such as the <strong>Purchase Invoice</strong> page, by choosing the link in the notification that you receive.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Requests to Approve</strong>, and then choose the related link.</li>
+<li>Select one or more lines for the record or records that you want to approve or reject.</li>
+<li>Choose the <strong>Approve</strong>, <strong>Reject</strong>, or <strong>Delegate</strong> actions.</li>
+</ol>
+<p>When a record has been approved or rejected, the approval status in the <strong>Status</strong> field changes to <strong>Approved</strong> or <strong>Rejected</strong>.</p>
+<p>If an approver hierarchy is set up, the record status will be <strong>Pending Approval</strong> until all approvers have approved the record. Then the record status will change to <strong>Released</strong>.</p>
+<p>At the same time, the approval status changes from <strong>Created</strong> to <strong>Open</strong> as soon as an approval request for the record is created. If the request is rejected, the approval status changes to <strong>Rejected</strong>. The status remains <strong>Open</strong> or <strong>Rejected</strong> until all approvers have approved the request.</p>
+<h2 id="to-delegate-requests-for-approval">To delegate requests for approval</h2>
+<p>The following task is performed by an approval user with approver rights.</p>
+<p>To prevent documents from piling up or otherwise block the workflow, the approver and the approval administrator can delegate an approval request to a substitute approver. The substitute can either be a designated substitute, the direct approver, or the approval administrator, in that order of priority. You typically use this feature if an approver is out of office and is unable to approve requests before the due date.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Requests to Approve</strong>, and then choose the related link.</li>
+<li>Select one or more lines for the approval requests that you want to delegate to a substitute approver, and then choose the <strong>Delegate</strong> action.</li>
+</ol>
+<p>A notification to approve the request is sent to the substitute approver.</p>
+<h2 id="to-manage-overdue-approval-requests">To manage overdue approval requests</h2>
+<p>The following task is performed by an approval user with approver rights.</p>
+<p>At regular intervals, you must remind approval workflow users of overdue approval requests that they must react on. You use the <strong>Send Overdue Approval Notifications</strong> function for this.</p>
+<p>The <strong>Send Overdue Approval Notifications</strong> function checks for all open approval requests that are currently overdue. Each approver that has at least one overdue approval entry receives a notification with the list of all their overdue approval requests. The notification is also sent to their approver and all the requesters of the overdue approvals. This helps if the overdue approval entry must be delegated to a substitute.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Overdue Approval Requests</strong>, and then choose the related link.</li>
+<li>On the <strong>Overdue Approval Requests</strong> page, choose the <strong>Send Overdue Approval Notifications</strong> action.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="sales-manage-sales.html">Sales</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-use-approval-workflows.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

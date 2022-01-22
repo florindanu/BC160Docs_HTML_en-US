@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Swiss General Ledger Accounts </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Swiss General Ledger Accounts ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Swiss enhancements include special general ledger account features.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="swiss-general-ledger-accounts">Swiss General Ledger Accounts</h1>
+
+<p>Business Central includes Swiss enhancements to general ledger accounts.</p>
+<ul>
+<li>Maintain the foreign currency balances of a bank account in the general ledger.</li>
+<li>Sort general ledger account numbers on the <strong>Chart of Accounts</strong> page.</li>
+<li>Preview the effects that posting general journals would have on the balances of certain general ledger accounts before actually posting them.</li>
+</ul>
+<h2 id="general-ledger-accounts-and-general-journals">General Ledger Accounts and General Journals</h2>
+<p>Companies often have different bank accounts for foreign currencies, and have a general ledger account for each bank account. In Business Central, you can set up currency code and foreign currency balance information on the <strong>Chart of Accounts</strong> page. This allows you to maintain the original foreign currency balance of a bank account. For more information, see <a href="../../finance-general-ledger.html">Understanding the General Ledger and the COA</a>.</p>
+<p>For example, a company has two bank accounts: one for local currency (LCY) and one for euros (EUR). You must create a general ledger account for each bank account. For the EUR account, define the currency code as <strong>EUR</strong> and post journals in EUR or LCY.</p>
+<p>When the exchange rate for EUR and LCY changes, you can update and adjust the local currency balance for the EUR general ledger account using the adjust exchange rates batch job. This batch job creates and posts currency adjustment entries to the general ledger and updates the LCY balance.</p>
+<h2 id="data-type-for-general-ledger-accounts">Data Type for General Ledger Accounts</h2>
+<p>The data type is set to text for the general ledger account number or account code to support the sorting requirements for the standardized Swiss Kontenrahmen Käfer (KMU) common chart of accounts. The account numbers list is sorted based on the text data type. The KMU chart of accounts contains the following account numbers:</p>
+<ul>
+<li>1176</li>
+<li>119.0</li>
+<li>1190</li>
+</ul>
+<h2 id="viewing-temporary-balances-in-general-journals">Viewing Temporary Balances in General Journals</h2>
+<p>Before posting a general journal you can preview the effect that posting would have on the balances of certain general ledger accounts. You can open a statistics page that shows the balances of the accounts, and the balances of the active lines that included the unposted values for the current journal. For more information, see <a href="how-to-view-temporary-balances-in-general-ledger-journals.html">View Temporary Balances in General Ledger Journals</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="how-to-view-temporary-balances-in-general-ledger-journals.html">View Temporary Balances in General Ledger Journals</a><br>
+<a href="switzerland-local-functionality.html">Switzerland Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Switzerland/swiss-general-ledger-accounts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

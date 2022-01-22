@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Walkthrough - Receiving and Putting Away in Basic Warehouse Configurations | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Walkthrough - Receiving and Putting Away in Basic Warehouse Configurations | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In Business Central, the inbound processes for receiving and putting away can be performed in four ways using different functionalities depending on the warehouse complexity level.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="walkthrough-receiving-and-putting-away-in-basic-warehouse-configurations">Walkthrough: Receiving and Putting Away in Basic Warehouse Configurations</h1>
+
+<p><strong>Note</strong>: This walkthrough must be performed on a demonstration company with the <strong>Full Evaluation - Complete Sample Data</strong> option, which is available in the Sandbox environment. For more information, see <a href="across-how-create-sandbox-environment.html">Creating a Sandbox Environment</a>.</p>
+<p>In Business Central, the inbound processes for receiving and putting away can be performed in four ways using different functionalities depending on the warehouse complexity level.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Inbound process</th>
+<th>Bins</th>
+<th>Receipts</th>
+<th>Put-aways</th>
+<th>Complexity level (See <a href="design-details-warehouse-setup.html">Design Details: Warehouse Setup</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Post receipt and put-away from the order line</td>
+<td>X</td>
+<td></td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Post receipt and put-away from an inventory put-away document</td>
+<td></td>
+<td></td>
+<td>X</td>
+<td>3</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Post receipt and put-away from a warehouse receipt document</td>
+<td></td>
+<td>X</td>
+<td></td>
+<td>4/5/6</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Post receipt from a warehouse receipt document and post put-away from a warehouse put-away document</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>4/5/6</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, see <a href="design-details-inbound-warehouse-flow.html">Design Details: Inbound Warehouse Flow</a>.</p>
+<p>The following walkthrough demonstrates method B in the previous table.</p>
+<h2 id="about-this-walkthrough">About This Walkthrough</h2>
+<p>In basic warehouse configurations where your location is set up to require put-away processing but not receive processing, you use the <strong>Inventory Put-away</strong> page to record and post put-away and receipt information for your inbound source documents. The inbound source document can be a purchase order, sales return order, inbound transfer order, or production order with output that is ready to be put away.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Even though the settings are called <strong>Require Pick</strong> and <strong>Require Put-away</strong>, you can still post receipts and shipments directly from the source business documents at locations where you select these check boxes.</p>
+</div>
+<p>This walkthrough demonstrates the following tasks.</p>
+<ul>
+<li>Setting up SILVER location for inventory put aways.</li>
+<li>Setting up SILVER location for bin handling.</li>
+<li>Defining a default bin for item LS-81. (LS-75 is already set up in CRONUS.)</li>
+<li>Creating a purchase order for vendor 10000 for 40 loudspeakers.</li>
+<li>Verifying that the put-away bins are preset by setup.</li>
+<li>Releasing the purchase order for warehouse handling.</li>
+<li>Creating an inventory put-away based on a released source document.</li>
+<li>Verifying that the put-away bins are inherited from the purchase order.</li>
+<li>Registering the warehouse movement into the warehouse and at the same time posting the purchase receipt for the source purchase order.</li>
+</ul>
+<h2 id="roles">Roles</h2>
+<p>This walkthrough demonstrates tasks that are performed by the following user roles:</p>
+<ul>
+<li>Warehouse Manager</li>
+<li>Purchasing Agent</li>
+<li>Warehouse Worker</li>
+</ul>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To complete this walkthrough, you will need:</p>
+<ul>
+<li><p>CRONUS International Ltd. installed.</p>
+</li>
+<li><p>To make yourself a warehouse employee at SILVER location by following these steps:</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Employees</strong>, and then choose the related link.</li>
+<li>Choose the <strong>User ID</strong> field, and select your own user account on the <strong>Users</strong> page.</li>
+<li>In the <strong>Location Code</strong> field, enter SILVER.</li>
+<li>Select the <strong>Default</strong> field.</li>
+</ol>
+</li>
+</ul>
+<h2 id="story">Story</h2>
+<p>Ellen, the warehouse manager at CRONUS International Ltd., creates a purchase order for 10 units of item LS-75 and 30 units of item LS-81 from vendor 10000 to be delivered to SILVER Warehouse. When the delivery arrives at the warehouse, John, the warehouse worker, puts the items away in default bins defined for the items. When John posts the put-away, the items are posted as received into inventory and available for sale or other demand.</p>
+<h2 id="setting-up-the-location">Setting up the Location</h2>
+<p>The setup of the <strong>Location Card</strong> page defines the company’s warehouse flows.</p>
+<h3 id="to-set-up-the-location">To set up the location</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the SILVER location card.</p>
+</li>
+<li><p>Select the <strong>Require Put-away</strong> check box.</p>
+<p>Proceed to set up a default bin for the two item numbers to control where they are put away.</p>
+</li>
+<li><p>Choose the <strong>Bins</strong> action.</p>
+</li>
+<li><p>Select the first row, for bin S-01-0001, and then choose the <strong>Contents</strong> action.</p>
+<p>Notice on the <strong>Bin Content</strong> page that item LS-75 is already set up as content in bin S-01-0001.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Select the <strong>Fixed</strong> and the <strong>Default</strong> fields.</p>
+</li>
+<li><p>In the <strong>Item No.</strong> field, enter LS-81.</p>
+</li>
+</ol>
+<h2 id="creating-the-purchase-order">Creating the Purchase Order</h2>
+<p>Purchase orders are the most common type of inbound source document.</p>
+<h3 id="to-create-the-purchase-order">To create the purchase order</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Create a purchase order for vendor 10000 on the work date (January 23) with the following purchase order lines.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Location code</th>
+<th>Bin code</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LS_75</td>
+<td>SILVER</td>
+<td>S-01-0001</td>
+<td>10</td>
+</tr>
+<tr>
+<td>LS-81</td>
+<td>SILVER</td>
+<td>S-01-0001</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The bin code is entered automatically according to the setup that you performed in the “Setting up the Location” section.</p>
+</div>
+<p>Proceed to notify the warehouse that the purchase order is ready for warehouse handling when the delivery arrives.</p>
+</li>
+<li><p>Choose the <strong>Release</strong> action.</p>
+<p>The delivery of loudspeakers from vendor 10000 has arrived at SILVER warehouse, and John proceeds to put them away.</p>
+</li>
+</ol>
+<h2 id="receiving-and-putting-the-items-away">Receiving and Putting the Items Away</h2>
+<p>On the <strong>Inventory Put-away</strong> page, you can manage all inbound warehouse activities for a specific source document, such as a purchase order.</p>
+<h3 id="to-receive-and-put-the-items-away">To receive and put the items away</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Inventory Put-aways</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Select the <strong>Source Document</strong> field, and then select <strong>Purchase Order</strong>.</p>
+</li>
+<li><p>Select the <strong>Source No.</strong> field, select the line for the purchase from vendor 10000, and then choose the <strong>OK</strong> button.</p>
+<p>Alternatively, choose the <strong>Get Source Document</strong> action, and then select the purchase order.</p>
+</li>
+<li><p>Choose the <strong>Autofill Qty. to Handle</strong> action.</p>
+<p>Alternatively, in the <strong>Qty. to Handle</strong> field, enter 10 and 30 respectively on the two inventory put-away lines.</p>
+</li>
+<li><p>Choose the <strong>Post</strong> action, select the <strong>Receive</strong> action, and then choose the <strong>OK</strong> button.</p>
+<p>The 40 loudspeakers are now registered as put away in bin S-01-0001, and a positive item ledger entry is created reflecting the posted purchase receipt.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-how-to-put-items-away-with-inventory-put-aways.html">Put Items Away with Inventory Put-aways</a><br>
+<a href="warehouse-how-to-set-up-basic-warehouses-with-operations-areas.html">Set Up Basic Warehouses with Operations Areas</a><br>
+<a href="warehouse-how-to-move-components-to-an-operation-area-in-basic-warehousing.html">Move Components to an Operation Area in Basic Warehouse Configurations</a><br>
+<a href="warehouse-how-to-pick-for-production.html">Pick for Production or Assembly</a><br>
+<a href="warehouse-how-to-move-items-ad-hoc-in-basic-warehousing.html">Move Items Ad Hoc in Basic Warehouse Configurations</a><br>
+<a href="design-details-inbound-warehouse-flow.html">Design Details: Inbound Warehouse Flow</a><br>
+<a href="walkthrough-business-process-walkthroughs.html">Business Process Walkthroughs</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/walkthrough-receiving-and-putting-away-in-basic-warehousing.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

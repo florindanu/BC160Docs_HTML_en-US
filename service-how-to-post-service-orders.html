@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Post Service Orders | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Post Service Orders | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When you have created a service order, filled in all the necessary information and made any modifications, you can post the service order. The order must contain at least one service item line and one service line before you can post it. Should the order contain more than one service line, all the lines are posted at one time.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="post-service-orders-and-credit-memos">Post Service Orders and Credit Memos</h1>
+
+<p>When you have created a service order, filled in all the necessary information and made any modifications, you can post the service order. The order must contain at least one service item line and one service line before you can post it. Should the order contain more than one service line, all the lines are posted at one time.</p>
+<p>If you have a large number of service orders, you can save time by using a batch job to post them at the same time. You can run the batch job from any service order.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Before you post a service document, it's a good idea to use the <strong>Test Report</strong> action to to check for any errors or missing information. If there are errors, you must correct the problem. You can print a new test report to verify the fix, and then post the document.</p>
+</div>
+<h2 id="to-post-a-service-order">To post a service order</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the relevant service order.</p>
+</li>
+<li><p>On the <strong>Service Order</strong> page, choose one of the following actions.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Action</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Test Report</strong></td>
+<td>Checks all parts of the document and presents the result in a report. If the report indicates any errors or a lack of information, you must correct the problem. You can then print a new test report.</td>
+</tr>
+<tr>
+<td><strong>Post</strong></td>
+<td>Posts the order without printing a shipment or an invoice.</td>
+</tr>
+<tr>
+<td><strong>Post and Print</strong></td>
+<td>Posts the order and prints a shipment (if you ship the order without invoicing it) or an invoice (if you invoice the order).</td>
+</tr>
+<tr>
+<td><strong>Post Batch</strong></td>
+<td>Posts multiple service orders at one time once.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>When you post the order, you must specify one of the following options for how you want to post the order.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Posting Option</strong></th>
+<th><strong>Result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ship</strong></td>
+<td>Posts shipment of the items.</td>
+</tr>
+<tr>
+<td><strong>Invoice</strong></td>
+<td>Invoices items that have already been shipped.</td>
+</tr>
+<tr>
+<td><strong>Ship and Invoice</strong></td>
+<td>Invoices and ships the items.</td>
+</tr>
+<tr>
+<td><strong>Ship and Consume</strong></td>
+<td>Posts shipment and consumption on the order. It updates the relevant quantities on the service lines of the order and on the previously posted service shipment document.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>You can post consumption only if the line contains a quantity that has shipped but not invoiced or consumed.</p>
+<p>When posting the order, the corresponding ledger entries and posted documents are created. The relevant fields are updated in the service order document.</p>
+<h2 id="to-batch-post-service-orders">To batch post service orders</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Post Batch</strong> action.</li>
+<li>You can set a filter to select specific service order numbers or an interval of order numbers for the batch job to process.</li>
+<li>Choose <strong>OK</strong> to start the batch job.</li>
+</ol>
+<h2 id="to-post-a-service-credit-memo">To post a service credit memo</h2>
+<p>When you have created a service credit memo and filled it in, you can post the credit memo. If there are errors or a lack of information on the credit memo while posting, the process will be interrupted by an error message.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Credit Memos</strong>, and then choose the related link.</li>
+<li>Create a new service credit memo. Choose the <strong>New</strong> action.</li>
+<li>Fill in the necessary fields.</li>
+<li>Choose the <strong>Post</strong> action. If you want to print the credit memo at the same time as you post, choose the <strong>Post and Print</strong> action instead.</li>
+<li>To test credit memos before you post them, choose <strong>Test Report</strong>. When you run the report, the posting dates specified in the document are verified.</li>
+<li>To post several service credit memos at the same time. run the <strong>Batch Post Service Cr. Memos</strong> batch job. This can be an advantage if you have a large number of credit memos that must be posted.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is important to enter all the necessary information on the credit memos before they are batch posted. Otherwise, it is possible that they will not be posted. When the batch job has finished posting, a message is displayed that shows how many of the service credit memos have been posted.</p>
+</div>
+<h2 id="to-post-consumption-from-a-service-order">To post consumption from a service order</h2>
+<p>The following procedure describes how to post the items, resource hours, and or costs used for a specific service operation for which you will not charge your customer. Note that you can post consumed items, hours, or costs only for a posted shipment that has no posted invoices or consumption.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the service order to post consumption for.</p>
+</li>
+<li><p>Choose the service item. Choose the <strong>Service Lines</strong> action.</p>
+</li>
+<li><p>Find the required entries, and specify the quantities for which you will post consumption in the <strong>Qty. to Consume</strong> field. The quantity cannot be larger than the quantity already shipped and the quantity remaining but not invoiced after partial invoicing of this shipment.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To register consumption with respect to a job, fill in the <strong>Job No.</strong>, <strong>Job Task No.</strong>, and the <strong>Job Line Type</strong> fields on the service line.</p>
+</div>
+</li>
+<li><p>Choose the lines to post, and then choose the <strong>Post</strong> action. On the page that opens, select <strong>Ship and Consume</strong>.</p>
+</li>
+</ol>
+<p>The service is posted as consumed either partially or fully, depending on the value in the <strong>Qty. to Consume</strong> field, and the relevant ledger entries are created. In addition,previously posted service shipment documents are updated chronologically with the consumed quantities. The relevant quantities will be updated on the service lines of the order.</p>
+<h2 id="to-post-shipments-from-service-orders">To post shipments from service orders</h2>
+<p>After specifying the details of a service, you can adjust and post the quantities of items used, time spent, and costs incurred. As a result, Business Central makes the necessary changes to reflect the new state of your inventory and current status of the specific order processing.</p>
+<p>The following procedure shows how to post shipment of service line items in locations that are not set up to require warehouse handling.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Order</strong>, and then choose the related link. 2. on the page for the selected service order, choose <strong>Actions</strong>, <strong>Order</strong>, <strong>Service Lines</strong>.</p>
+</li>
+<li><p>On the <strong>Service Lines</strong> page, find the required entries and specify the quantity to be posted in the <strong>Qty. to Ship</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The quantity to ship value depends on whether you want to post shipment fully or partially. If you choose to ship fully, the value in the <strong>Qty. to Ship</strong> field must be equal to the value in the <strong>Quantity</strong> field. When you post a partial shipment, you must specify the quantity you want to ship initially. If you have already shipped part of the service on the order, make a note of the value in the <strong>Quantity Shipped</strong> field. The maximum quantity you can enter in the <strong>Quantity to Ship</strong> field is the number of units that have not yet been shipped.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Post</strong> action. on the page that appears, choose the <strong>Ship</strong> button.</p>
+</li>
+</ol>
+<p>Business Central creates ledger entries (in the warranty ledger, item ledger, service ledger, or G/L), produces the posted service shipment document, and updates the relevant fields on the service lines of the service order.</p>
+<p>If the location is set up to require warehouse handling, then the shipping and moving of service line items function in the same ways as for other source documents. The only difference is that service line items can be consumed either externally or internally and therefore require two different release functions.</p>
+<p>For information about shipping service line items in advanced warehouse configurations, see <a href="warehouse-pick-items.html">Picking Items for Warehouse Shipment</a>.</p>
+<h2 id="to-undo-posted-consumption">To undo posted consumption</h2>
+<p>You can cancel the consumption on the service orders. For example, because it was posted by mistake.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Service Shipments</strong>, and then choose the related link.</li>
+<li>Open the posted service shipment for which the erroneous consumption was posted.</li>
+<li>Choose the <strong>Service Shipment Lines</strong> action.</li>
+<li>Choose the lines that contain the incorrect consumption, and then choose the <strong>Undo Consumption</strong> action.</li>
+</ol>
+<p>A balancing service shipment line is inserted with negative values in the quantity fields for the selected lines.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot undo service consumption if:</p>
+</div>
+<blockquote>
+<ul>
+<li>The service order has been closed.</li>
+<li>It has been posted to the Jobs area, so there are job ledger entries linked to it.</li>
+</ul>
+</blockquote>
+<h2 id="to-post-service-lines">To post service lines</h2>
+<p>If you have to work on a service order for a considerable time without posting it, you may want to post some of the service lines linked to it as a way, for example, of keeping your inventory updated. You can post by specifying the relevant quantities on the lines to be posted. You may choose to post the lines one by one or by selecting several lines at a time.</p>
+<p>The following procedure describes shipment posting directly from a service order in locations without warehouse handling set up. If the location is set up to require warehouse handling, then shipment posting happens in a different warehouse document, depending on the location setup.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</li>
+<li>Open the service order, and then choose the <strong>Service Lines</strong> action.</li>
+<li>On the lines you are going to post, fill in the <strong>Qty. to Ship</strong>, <strong>Qty. to Invoice</strong>, and <strong>Qty. to Consume</strong> fields, depending on how you will post the lines.</li>
+<li>Choose the <strong>Post</strong> action.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-service-posting.html">Posting in Service Management</a><br>
+<a href="service-how-to-create-service-orders.html">Create a Service Order</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-to-post-service-orders.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

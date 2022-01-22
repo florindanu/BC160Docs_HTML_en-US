@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Manage database access intent in Business Central | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Manage database access intent in Business Central | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Change the database access intent for reports, API pages, and queries.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="managing-database-access-intent">Managing Database Access Intent</h1>
+
+<p>As a super user or administrator, you can change the database access intent on reports, pages of the type API, and queries to improve performance of the service.</p>
+<h2 id="overview">Overview</h2>
+<p>Business Central can be set up to use read-only replicas of the primary (read-write) database. Using the database replica reduces the load on the primary database. In some cases, it will also improve the performance when viewing data in the client. Replicas are beneficial for objects, like reports, queries, and API pages, that are used for viewing data only, not modifying data.</p>
+<p>When objects run, the database access intent determines whether to use a read-only replica, if one is available, or the primary database. Reports, API pages, and queries are developed with a predefined database access intent (see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/developer/properties/devenv-dataaccessintent-property">DatabaseAccessIntent property</a>).</p>
+<p>The <strong>Database Access Intent List</strong> page lets you override the predefined database access intent for objects when they're run.</p>
+<p>In database terms, this feature is commonly known as <em>read scale-out</em>. For more information about read-scale out and data access intent in Business Central, see <a href="https://review.docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/administration/database-read-scale-out-overview?branch=tfs337368-readscaleout">Utilizing Read Scale-Out for Better Performance</a> in the Business Central Developer and IT Pro help.</p>
+<h2 id="to-change-the-database-access-intent">To change the database access intent</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Database Access Intent List</strong>, and then choose the related link.</p>
+<p>The page lists all reports, pages, and queries. The <strong>Access Intent</strong> column includes one of the following values:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Setting</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default</strong></td>
+<td>Indicates that the object uses the predefined database access intent.</td>
+</tr>
+<tr>
+<td><strong>Allow Write</strong></td>
+<td>Sets the object to use the primary database, allowing the user to modify data.</td>
+</tr>
+<tr>
+<td><strong>Read Only</strong></td>
+<td>Sets the object to use the database replica, which means that the user can only view data, not change data.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Edit List</strong> action.</p>
+</li>
+<li><p>On the <strong>Edit - Database Access Intent List</strong> page, change the <strong>Access Intent</strong> field for the objects.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If an object that is editable, like the Customer Card, is set to <strong>Read Only</strong>, the primary database will still be used, regardless of the access intent, allowing users to make changes as normal.</p>
+</div>
+</li>
+</ol>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/deploy-configure-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-business-functionality.html">Business Functionality</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="product-get-started.html">Getting Started</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-data-access-intent.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

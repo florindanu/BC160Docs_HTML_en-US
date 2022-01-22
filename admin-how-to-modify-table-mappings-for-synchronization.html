@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Mapping the Tables and Fields to Synchronize | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Mapping the Tables and Fields to Synchronize | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to map tables and fields for synchronizing data between Business Central and Common Data Service.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="mapping-the-tables-and-fields-to-synchronize">Mapping the Tables and Fields to Synchronize</h1>
+
+<p>The basis of synchronizing data in Business Central with data in Common Data Service is mapping the tables and fields that contain the data to each other. Mapping happens through integration tables.</p>
+<h2 id="mapping-integration-tables">Mapping Integration Tables</h2>
+<p>An integration table is a table in the Business Central database that represents an entity, such as an account, in Common Data Service. Integration tables include fields that correspond to the fields in the table for the Common Data Service entity. For example, the Account integration table connects to the Accounts entity in Common Data Service. There must be a integration table mapping for each entity in CDS that you want to synchronize with data in Business Central.</p>
+<p>When you create the connection between the apps, Business Central sets up some default table and field mappings. You can change the table mappings if you want. For more information, see <a href="admin-synchronizing-business-central-and-sales.html#standard-entity-mapping-for-synchronization">Standard Entity Mapping for Synchronization</a>. If you have changed the default mappings and want to revert your changes, on the <strong>Common Data Service Connection Setup</strong> page, choose <strong>Use Default Synchronization Setup</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using an on-premises version of Business Central, the integration table mappings are stored in table 5335 Integration Table Mappings, and can be viewed and modified from page 5335 Integration Table Mappings. Complex mappings and synchronization rules are defined in codeunit 5341.</p>
+</div>
+<h3 id="synchronization-rules">Synchronization Rules</h3>
+<p>An integration table mapping also includes rules that control how integration synchronization jobs synchronize records in a Business Central table and an entity in Common Data Service. <!--For examples of rules for an integration with Sales, see [Synchronization Rules](admin-synchronizing-business-central-and-sales.md#synchronization-rules). need to verify link --></p>
+<h2 id="mapping-integration-fields">Mapping Integration Fields</h2>
+<p>Mapping tables is only the first step. You must also map the fields on the tables. Integration field mappings link fields in Business Central tables with corresponding fields in Common Data Service, and determine whether to synchronize data in each table. The standard table mapping that Business Central provides includes field mappings, but you can change those if you want. For more information, see <a href="admin-synchronizing-business-central-and-sales.html#tip-for-admins-viewing-entity-mappings">Viewing Entity Mappings</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using an on-premises version of Business Central, Integration field mappings are defined in table 5336 Integration Field Mapping.</p>
+</div>
+<h3 id="handling-differences-in-field-values">Handling Differences in Field Values</h3>
+<p>Sometimes the values in the fields that you want to map are different. For example, in Dynamics 365 Sales the language code for the United States is &quot;U.S.,&quot; but in Business Central it's &quot;US.&quot; That means you must transform the value when you synchronize data. This happens through transformation rules that you define for the fields. You define transformation rules on the <strong>Integration Table Mappings</strong> page by choosing <strong>Mapping</strong>, and then <strong>Fields</strong>. Predefined rules are provided, but you can also create your own. For more information, see <a href="across-how-to-set-up-data-exchange-definitions.html#transformation-rules">Transformation Rules</a>.</p>
+<h3 id="handling-missing-option-values-in-mapping">Handling Missing Option Values in Mapping</h3>
+<p>Common Data Service contains option set fields that provide values that you can map to Business Central fields of the type <strong>Option</strong> for automatic synchronization. During synchronization, non-mapped options are ignored and the missing options are appended to the related Business Central table and added to the <strong>CDS Option Mapping</strong> system table to be handled manually later. For example, by adding the missing options in either product and then updating the mapping. For more information, see <a href="admin-cds-missing-option-values.html">Handling Missing Option Values</a>.</p>
+<h2 id="coupling-records">Coupling Records</h2>
+<p>Coupling links records in Common Data Service to records in Business Central. For example, accounts in Common Data Service are typically coupled with customers in Business Central. Coupling records offers the following benefits:</p>
+<ul>
+<li>It makes synchronization possible.</li>
+<li>Users can open records in one business app from the other. This requires that the apps are already integrated.</li>
+</ul>
+<p>Couplings can be set up automatically by using the synchronization jobs, or manually by editing the record in Business Central. For more information, see <a href="admin-synchronizing-business-central-and-sales.html">Synchronizing Data in Business Central and Common Data Service</a> and <a href="admin-manual-synchronization-of-table-mappings.html#synchronize-individual-table-mappings">Couple and Synchronize Records Manually</a>.</p>
+<h2 id="filtering-records">Filtering Records</h2>
+<p>If you do not want to synchronize all records for a specific entity in Common Data Service or table in Business Central, you can set up filters to limit the records that are synchronized. You set up filters on the <strong>Integration Table Mappings</strong> page.</p>
+<h4 id="to-filter-records-for-synchronization">To filter records for synchronization</h4>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Integration Table Mappings</strong>, and then choose the related link.</p>
+</li>
+<li><p>To filter the Business Central records, set the <strong>Table Filter</strong> field.</p>
+</li>
+<li><p>To filter the Common Data Service records, set the <strong>Integration Table Filter</strong> field.</p>
+</li>
+</ol>
+<h2 id="creating-new-records">Creating New Records</h2>
+<p>By default, only records in Business Central and Common Data Service that are coupled will be synchronized by the integration synchronization jobs. You can set up table mappings so that new records will be created in the destination (for example, Business Central) for each record in the source (for example, Common Data Service) that is not already coupled.</p>
+<p>For example, the SALESPEOPLE - Dynamics 365 Sales synchronization job uses the table mapping SALESPEOPLE. The synchronization job copies data from user records in Common Data Service to salesperson records in Business Central. If you set up the table mapping to create new records, for every user in Common Data Service that is not already coupled to a salesperson in Business Central, a new salesperson record is created in Business Central.</p>
+<h4 id="to-create-new-records-during-synchronization">To create new records during synchronization</h4>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Integration Table Mappings</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the table mapping entry in the list, clear the <strong>Synch. Only Coupled Records</strong> field.</p>
+</li>
+</ol>
+<h2 id="using-configuration-templates-on-table-mappings">Using Configuration Templates on Table Mappings</h2>
+<p>You can assign configuration templates to table mappings to use for new records that are created in Business Central or Common Data Service. For each table mapping, you can specify a configuration template to use for new Business Central records and another template to use new Common Data Service records.</p>
+<p>If you install the default synchronization setup, most of the time, two configuration templates will be automatically created and used on the table mapping for Business Central customers and Dynamics 365 Sales accounts: <strong>CDSCUST</strong> and <strong>CDSACCOUNT</strong>.</p>
+<ul>
+<li><p><strong>CDSCUST</strong> is used to create and synchronize new customers in Business Central based on an account in Dynamics 365 Sales.</p>
+<p>This template is created by copying an existing configuration template for customers in the application. The <strong>CDSCUST</strong> is created only if there is an existing configuration template and the <strong>Currency Code</strong> field in the template is blank. If a field in the configuration template contains a value, the value will be used instead of the value in the mapped field for the Common Data Service account. For example, if the <strong>Country/Region</strong> field in an account in Common Data Service contains <em>U.S.</em> and the <strong>Country/Region</strong> field in the configuration template is <em>GB</em>, then <em>GB</em> is used as the <strong>Country/Region</strong> for the customer in Business Central.</p>
+</li>
+<li><p><strong>CDSACCOUNT</strong> creates and synchronizes new accounts in Common Data Service based on an account in Business Central.</p>
+</li>
+</ul>
+<h4 id="to-specify-configuration-templates-on-a-table-mapping">To specify configuration templates on a table mapping</h4>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Integration Table Mappings</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the table mapping entry in the list, in the <strong>Table Config Template Code</strong> field, choose to the configuration template to use for new records in Business Central.</p>
+</li>
+<li><p>Set the <strong>Int. Tbl. Config Template Code</strong> field to the configuration template to use for new records in Common Data Service.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-prepare-dynamics-365-for-sales-for-integration.html">About Integrating Dynamics 365 Business Central with Common Data Service</a><br>
+<a href="admin-synchronizing-business-central-and-sales.html">Synchronizing Business Central and Common Data Service</a><br>
+<a href="admin-scheduled-synchronization-using-the-synchronization-job-queue-entries.html">Schedule a Synchronization</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-how-to-modify-table-mappings-for-synchronization.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

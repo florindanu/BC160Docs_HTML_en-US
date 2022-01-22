@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Troubleshooting Synchronization Errors | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Troubleshooting Synchronization Errors | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Provides some guidance for identifying and resolving synchronization errors.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="troubleshooting-synchronization-errors">Troubleshooting Synchronization Errors</h1>
+
+<p>There are lots of moving parts involved in integrating Business Central with Common Data Service, and sometimes things go wrong. This topic points out some of the typical errors that occur and gives some pointers for how to fix them.</p>
+<p>Errors often occur either because of something that a user has done to coupled records or something is wrong with how the integration is set up. For errors related to coupled records, users can resolve those themselves. These errors are caused by actions such as deleting a record in one, but not both, business apps and then synchronizing. For more information, see <a href="admin-how-to-view-synchronization-status.html">View the Status of a Synchronization</a>.</p>
+<h2 id="example">Example</h2>
+<p>This video shows an example of how to troubleshoot errors that happened while synchronizating with Sales. The process will be the same for all integrations.</p>
+<div class="embeddedvideo"><iframe src="https://go.microsoft.com/fwlink/?linkid=2097304" frameborder="0" allowfullscreen="true"></iframe></div>
+<p>Errors that are related to how the integration is set up typically require an administrator's attention. You can view these errors on the <strong>Integration Synchronization Errors</strong> page. Examples of some typical issues include:</p>
+<ul>
+<li>The permissions and roles assigned to users are not correct.</li>
+<li>The administrator account was specified as the integration user.</li>
+<li>The integration user's password is set to require a change when the user signs in.</li>
+<li>The exchange rates for currencies are not specified in one or the other app.</li>
+</ul>
+<p>You must manually resolve the errors, but there are a few ways in which the page helps you. For example:</p>
+<ul>
+<li>The <strong>Source</strong> and <strong>Destination</strong> fields may contain links to the record where the error was found. Click the link to open the record and investigate the error.</li>
+<li>The <strong>Delete Entries Older than 7 Days</strong> and the <strong>Delete All Entries</strong> actions will clean up the list. Typically, you use these actions after you have resolved the cause of an error that affects many records. Use caution, however. These actions might delete errors that are still relevant.</li>
+</ul>
+<p>Sometimes the timestamps on records can cause conflicts. The &quot;CDS Integration Record&quot; table keeps the timestamps &quot;Last Synch. Modified On&quot; and &quot;Last Synch. CDS Modified On&quot; for the last integration done in both directions for a record. These timestamps are compared to timestamps on Business Central and Sales records. In Business Central, the timestamp is in the Integration Record table.</p>
+<p>You can filter on records that are to be synched by comparing record timestamps in the table &quot;Integration Table Mapping&quot; fields &quot;Synch. Modified On Filter&quot; and &quot;Synch. Int. Tbl. Mod. On Fltr.&quot;.</p>
+<p>The conflict error message &quot;Cannot update the Customer record because it has a later modified date than the Account record&quot; or &quot;Cannot update the Account record because it has a later modified date than the Customer record&quot; can happen if a record has a timestamp that is bigger than IntegrationTableMapping.&quot;Synch. Modified On Filter&quot; but it is not more recent than the timestamp on Sales Integration Record. It means that the source record was synced manually, not by the job queue entry.</p>
+<p>The conflict happens because the destination record was also changed  - the record timestamp is more recent than Sales Integration Record's timestamp. The destination check happens only for bi-directional tables.</p>
+<p>These records are now moved to the &quot;Skipped Synch. Records&quot; page, which you open from the Microsoft Dynamics Connection Setup page in Business Central. There you can specify the changes to keep, and then synchronize the records again.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-prepare-dynamics-365-for-sales-for-integration.html">Integrating with Common Data Service</a><br>
+<a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Common Data Service</a><br>
+<a href="admin-how-to-set-up-a-dynamics-crm-connection.html">Set Up a Connection to Common Data Service</a><br>
+<a href="admin-how-to-couple-and-synchronize-records-manually.html">Couple and Synchronize Records Manually</a><br>
+<a href="admin-how-to-view-synchronization-status.html">View the Status of a Synchronization</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-troubleshoot-sales-synchronization.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enabling Your Business Data for Power BI| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enabling Your Business Data for Power BI| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Getting insight, business intelligence, and KPIs from your Business Central data is easy with the Business Central apps for Power BI.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="enabling-your-business-data-for-power-bi">Enabling Your Business Data for Power BI</h1>
+
+<p>Getting insights into your Business Central data is easy with the Business Central apps for Power BI. Power BI retrieves your data and then builds an out-of-the-box dashboard and reports based on that data.</p>
+<p>You must have a valid account with Business Central and with Power BI. Also, you must download <a href="https://powerbi.microsoft.com/desktop/">Power BI Desktop</a> if you wish to create your own Power BI reports. Power BI apps require permissions to the tables where data is retrieved from. More details on the requirements are described below.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>The Power BI Apps that are described in this article are designed to use Azure Active Directory as the authentication mechanism unless otherwise specified. Also, you need a <a href="http://docs.microsoft.com/power-bi/service-features-license-type">Power BI Pro license</a> to share your content, and the people you share it with do too, or the content must be in a workspace in a <a href="http://docs.microsoft.com/power-bi/service-premium-what-is">Premium capacity</a>. For more information, see <a href="http://docs.microsoft.com/power-bi/service-how-to-collaborate-distribute-dashboards-reports">Ways to share your work in Power BI</a>.</p>
+</div>
+<p>Dynamics 365 Business Central has published the following apps for Power BI:</p>
+<ul>
+<li>Dynamics 365 Business Central - CRM</li>
+<li>Dynamics 365 Business Central - Finance</li>
+<li>Dynamics 365 Business Central - Sales</li>
+</ul>
+<h2 id="using-the--dashboards-in-power-bi">Using the Business Central dashboards in Power BI</h2>
+<p>Each app provides reports that you can drill into:</p>
+<ul>
+<li>Choose any visual on the dashboard to bring up one of the underlying reports.</li>
+<li>Filter the report or add fields that you want to monitor.</li>
+<li>Pin this customized view to the dashboard to continue tracking.<br>
+You can refresh data manually, and you can set up a refresh schedule. For more information, see <a href="http://docs.microsoft.com/power-bi/refresh-scheduled-refresh">Configuring scheduled refresh</a>.</li>
+</ul>
+<p>The apps are designed to work with data from any company that you have in your Business Central. When you install the Power BI app, you specify one or more parameters to connect to your Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also build your own reports and dashboards in Power BI based on your Business Central data. For more information, see <a href="across-how-use-financials-data-source-powerbi.html">Connecting Your Business Data to Power BI</a>.</p>
+</div>
+<h3 id="to-connect-your-data-in-power-bi">To connect your data in Power BI</h3>
+<ol>
+<li><p>Open your browser, navigate to <a href="https://powerbi.microsoft.com">https://powerbi.microsoft.com</a>, and sign into your account.</p>
+</li>
+<li><p>Select <strong>Get Data</strong> at the bottom of the left navigation pane.</p>
+<p><img src="media/across-how-to-connect-powerbi-d365-content-packs/powerbi-get-data.png" alt="Navigating to Get Data"></p>
+<p>You can also get starting from within Business Central. From your Home page, navigate to <strong>Report Selection</strong> in the Power BI section. Select either <strong>Service</strong> or <strong>My Organization</strong> from the ribbon. When either of these actions are selected, you will be taken to either the Organization gallery in Power BI or to Microsoft AppSource, which will also be filtered to only display apps related to Business Central.</p>
+</li>
+<li><p>In the <strong>Services</strong> box, select <strong>Get</strong>. This will open a page displaying <strong>AppSource</strong> and <strong>Apps for Power BI</strong>.</p>
+</li>
+</ol>
+<!--    ![Choose apps from online services that you use.](./media/across-how-to-connect-powerbi-d365-content-packs/powerbi-online-services-get.png)-->
+<ol start="4">
+<li>Select <strong>Apps</strong> from the <strong>Apps for Power BI</strong> tab, choose the <strong>Microsoft Dynamics 365 Business Central</strong> app that you want to use, and then select <strong>Get it now</strong>.</li>
+</ol>
+<!--    ![Select Dynamics 365 Business Central and select Get it now](./media/across-how-to-connect-powerbi-d365-content-packspowerbi-dynamics365-for-financials-get-it-now.png)/-->
+<ol start="5">
+<li><p>When prompted, enter the name of the environment and company in your Business Central app that you want to connect to. If you have not created multiple environments, enter <strong>Production</strong>. For the company parameter, ensure you are entering the name and not the the display name. You can find the company name in the <strong>Companies</strong> page in your Business Centralinstance.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you connect to Business Central on-premises, you must specify the <em>Web Service URL</em> parameter. Find this in the <strong>Web Services</strong> page in Business Central. Your Business Central Server instance must be configured for Basic authentication, and you must specify a user and the Web Access Key of that user as their password. In the following example, replace <em>myserver:7048</em> with your Business Central Server name and <em>CRONUS%20US</em> with your company name.<br>
+<code>https://myserver:7048/BC140/ODataV4/Company('CRONUS%20US')/</code></p>
+</div>
+</li>
+<li><p>Once connected, a dashboard and reports are added to your Power BI workspace. When completed, the tiles show data from your Business Central company.</p>
+<p><img src="media/across-how-to-connect-powerbi-d365-content-packs/powerbi-workspace-dashboard-report-dataset.png" alt="Select Dynamics 365 Business Central  and select Get it now"></p>
+</li>
+</ol>
+<h3 id="what-now">What Now?</h3>
+<ul>
+<li>Try <a href="http://docs.microsoft.com/power-bi/service-q-and-a-tips">asking a question in the Q&amp;A box</a> at the top of the dashboard.</li>
+<li><a href="http://docs.microsoft.com/power-bi/service-dashboard-edit-tile">Change the tiles</a> in the dashboard.</li>
+<li><a href="http://docs.microsoft.com/power-bi/service-dashboard-tiles">Select a tile</a> to open the underlying report.</li>
+<li>By default, your dataset is not scheduled to refresh. You can change the refresh schedule or try refreshing it on demand using           <strong>Refresh Now</strong>. For more information, see <a href="http://docs.microsoft.com/power-bi/refresh-scheduled-refresh">Configuring scheduled refresh</a>.</li>
+</ul>
+<h2 id="power-bi-in-">Power BI in Business Central</h2>
+<p>Your Home page in Business Central can include a Power BI control element that can be configured to display Power BI reports on your Home page.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must have a valid account with Business Central and with Power BI. Also, if you want to modify any reports, you must you must download Power BI Desktop. For more information, see <a href="across-how-use-financials-data-source-powerbi.html">Using Business Central as a Power BI Data Source</a>.</p>
+</div>
+<h3 id="on-first-login">On first login</h3>
+<p>When you first sign into Business Central, you will notice an empty Power BI part on your Home page. In order to view the reports, you must first connect to Power BI by selecting the <em>Get Started with Power BI</em> link.</p>
+<p>Business Central then communicates with the Power BI service to determine if you have a valid Power BI account. Once your license is verified, the default Power BI reports display on your Home page.</p>
+<h3 id="selecting-power-bi-reports">Selecting Power BI reports</h3>
+<p>The Power BI control on your Home page can display any Power BI report. To view an existing report, choose the <strong>Select Report</strong> action from the Power BI drop down command list.</p>
+<p>The reports selection page shows a list of all the Power BI reports that you have access to. This list is retrieved from your Power BI workspace. Enable each report that you want to display on the Home page, and then choose OK. You will be returned to your Home page, and the last report you enabled will appear. Using the drop-down command list, use the previous and next command to navigate between reports.</p>
+<h3 id="get-reports">Get reports</h3>
+<p>If you do not see any reports on the Select Reports page, or do not see the report you want. You can choose to get reports from <em>My Organization</em> or from <em>Services</em>.
+Choose <em>My Organization</em> to go to the Power BI services where you can view the reports within your organization that you have been rights to view and add them to your workspace. Choose <em>Services</em> to go to Microsoft AppSource where you can install Power BI apps.</p>
+<p>You can also choose to create new Power BI reports. Once those reports are published to your Power BI workspace, they will appear on this page.</p>
+<h3 id="managing-reports">Managing Reports</h3>
+<p>In the Power BI section on your Home page, you can choose the <strong>Manage Report</strong> action from the drop down command list so that you can modify the report that was in focus on the role center.</p>
+<p>Modifications can be made to the report and saved.  Any changes made to the report will be changed for any user that this report is shared with since you are modifying the report that is stored in the Power BI service.</p>
+<p>Once you have completed your changes, select Save. If this is a shared report, you may want to select Save As to avoid making this change for all users.
+Return to the role center and the updated report will appear. If you did a Save As command, you will need to open the select report page and enable the new report.</p>
+<h3 id="uploading-reports">Uploading reports</h3>
+<p>You can upload new Power BI reports and share them with all users of your Business Central. The reports are shared within each company in Business Central.</p>
+<p>To upload a report, select the <strong>Upload Report</strong> action from the drop-down command list. You can then upload a .pbix file that defines the reports that you want to share. You can change the default name of the file.</p>
+<p>Once the report has been uploaded to your Power BI workspace, it automatically uploads to the Power BI workspaces of all other users in that company upon their next sign in to Business Central.</p>
+<h2 id="system-requirements">System Requirements</h2>
+<p>To import your Business Central data into Power BI, you must have permissions to the web services used to retrieve data. The web services required for each Power BI app include:</p>
+<h3 id="microsoft-dynamics-365-business-central--crm">Microsoft Dynamics 365 Business Central – CRM</h3>
+<ul>
+<li>Sales Opportunities</li>
+<li>Excel Template View Company Information</li>
+<li>Power BI Report Labels</li>
+</ul>
+<h3 id="microsoft-dynamics-365-business-central--finance">Microsoft Dynamics 365 Business Central – Finance</h3>
+<ul>
+<li>PowerBIFinance</li>
+<li>Excel Template View Company Information</li>
+<li>Power BI Report Labels</li>
+</ul>
+<h3 id="microsoft-dynamics-365-business-central---sales">Microsoft Dynamics 365 Business Central - Sales</h3>
+<ul>
+<li>Item Sales by Customer</li>
+<li>Sales Dashboard</li>
+<li>Excel Template View Company</li>
+<li>Power BI Report Labels</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Business Central on-premises uses the same web service end points as Business Central online.</p>
+</div>
+<h2 id="web-services">Web Services</h2>
+<p>An easy way to find the web services is to search for <em>web services</em> in Business Central. In the <strong>Web Services</strong> page, make sure that the <strong>Publish</strong> field is selected for the web services listed above.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>The Power BI dashboard relies on the published web services that are listed above, and it will show data from the demonstration company or your own company if you import data from your current finance solution. However, if something goes wrong, this section provides a workaround for the most typical issues.</p>
+<h3 id="you-do-not-have-a-power-bi-account">You do not have a Power BI account</h3>
+<p>A Power BI account has not been set up. In order to have a valid Power BI account, you must have a license, and you must have previously signed into Power BI, in order for your Power BI workspace to have been created.</p>
+<h3 id="message-there-are-no-enabled-reports-choose-select-report-to-see-a-list-of-reports-that-you-can-display">Message: There are no enabled reports. Choose Select Report to see a list of reports that you can display.</h3>
+<p>This message will appear if the default report failed to deploy to your Power BI workspace, or the report deployed but did not successfully refresh. If this happens, navigate to the report in your Power BI workspace, select <strong>Dataset</strong>, <strong>Settings</strong>, and then manually update the credentials. Once the dataset successfully refreshes, navigate back to Business Central and manually select the report from the <strong>Select Reports</strong> page.</p>
+<h3 id="you-need-a-power-bi-pro-license-to-install-the--app-in-power-bi">You need a Power BI Pro license to install the Business Central app in Power BI</h3>
+<p>You need a <a href="http://docs.microsoft.com/power-bi/service-features-license-type">Power BI Pro license</a> to share your content, and the people you share it with do too, or the content must be in a workspace in a <a href="http://docs.microsoft.com/power-bi/service-premium-what-is">Premium capacity</a>. For more information, see <a href="http://docs.microsoft.com/power-bi/service-how-to-collaborate-distribute-dashboards-reports">Ways to share your work in Power BI</a>.</p>
+<h3 id="parameter-validation-failed-please-make-sure-all-parameters-are-valid">&quot;Parameter validation failed, please make sure all parameters are valid&quot;</h3>
+<p>This error indicates that the one more of the parameters are not valid.</p>
+<ul>
+<li>The specified environment parameter does not match any existing Business Central production or sandbox environment.</li>
+<li>The specified company parameter does not match any existing Business Central companies. Verify the company name in the <strong>Companies</strong> page in Business Central.</li>
+<li>If connecting to Business Central on-premises. you have entered a URL that is not valid. You can verify the URL in the <strong>Web Services</strong> page in Business Central</li>
+<li>A port is not open to allow the request to go through your firewall.</li>
+</ul>
+<h3 id="cannot-sign-in">Cannot sign in</h3>
+<p>If you get a &quot;login failed&quot; error after using your Business Central user credentials to sign in, then you are probably experiencing one of the following issues:</p>
+<ul>
+<li>The account that you are using does not have permissions to retrieve the Business Central data from your account. Verify that you have permissions to the required data in Business Central and try again.</li>
+<li>You have selected an authentication type other than Basic if connecting to Business Central on-premises.</li>
+<li>You have not entered a valid user name or password.</li>
+</ul>
+<h3 id="incorrect-company-name">Incorrect company name</h3>
+<p>A common mistake is to enter the company display name instead of the company name. To find the company name search for <strong>Companies</strong>. Then use the <strong>Name</strong> field when entering your company name.</p>
+<h3 id="the-key-didnt-match-any-rows-in-the-table">The key didn't match any rows in the table</h3>
+<p>If you enter a non-valid company name during the connection process, you may get the error message &quot;The key didn't match any rows in the table&quot;. Provide the correct company name and try connecting again.</p>
+<h3 id="historical-data-appears-to-be-missing">Historical data appears to be missing</h3>
+<p>Once the Power BI app is installed and your data shows up in Power BI, you may notice that not all your data displays. The datasets are filtered to only return the previous 365 days of data. This default is in place to help make the reports faster.</p>
+<h3 id="i-only-see-data-for-a-single-company">I only see data for a single company</h3>
+<p>The Power BI app will only display data from the Business Central company that was defined when the Power BI app was installed. Data from additional companies can be added to the reports by adding new queries that use different companies as the data source.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/configure-powerbi-excel-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="http://docs.microsoft.com/power-bi/consumer/end-user-consumer">Power BI for consumers</a><br>
+<a href="http://docs.microsoft.com/power-bi/service-new-look">The 'new look' of the Power BI service</a><br>
+<a href="http://docs.microsoft.com/power-bi/desktop-quickstart-connect-to-data">Quickstart: Connect to data in Power BI Desktop</a><br>
+<a href="http://docs.microsoft.com/power-bi/">Power BI documentation</a><br>
+<a href="bi.html">Business Intelligence</a><br>
+<a href="product-get-started.html">Getting Started</a><br>
+<a href="across-import-data-configuration-packages.html">Importing Business Data from Other Finance Systems</a><br>
+<a href="setup.html">Setting Up Business Central</a><br>
+<a href="across-how-use-financials-data-source-powerbi.html">Using Business Central as a Power BI Data Source</a><br>
+<a href="across-how-use-financials-data-source-powerapps.html">Using Business Central as a Power Apps Data Source</a><br>
+<a href="across-how-use-financials-data-source-flow.html">Using Business Central in Power Automate</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-powerbi.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

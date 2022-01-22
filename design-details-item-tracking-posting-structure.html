@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Item Tracking Posting Structure | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Item Tracking Posting Structure | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to use item ledger entries as the primary carrier of item tracking numbers.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-item-tracking-posting-structure">Design Details: Item Tracking Posting Structure</h1>
+
+<p>To align with inventory costing functionality and to obtain a simpler and more robust solution, item ledger entries are used as the primary carrier of item tracking numbers.</p>
+<p>Item tracking numbers on order network entities and non-order network entities are specified in the <strong>Reservation Entry</strong> table (T337). Item tracking numbers that are related to historical information are retrieved directly from the item ledger entries that are related to the transaction in question. This means that item ledger entries reflect the item tracking specification of the posted order line.</p>
+<p>The <strong>Item Tracking Lines</strong> page retrieves the information from T337 and the item ledger entries and shows it through the temporary table, <strong>Tracking Specification</strong> (T336). T336 also hold the temporary data in the <strong>Item Tracking Lines page</strong> for item tracking quantities that remain to be invoiced.</p>
+<h2 id="one-to-many-relation">One-to-Many Relation</h2>
+<p>The <strong>Item Entry Relation</strong> table, which is used to link a posted document line with its related item ledger entries, consists of two main parts:</p>
+<ul>
+<li>A pointer to the posted document line, the <strong>Order Line No.</strong> field.</li>
+<li>An entry number pointing to an item ledger entry, the <strong>Item Entry No.</strong> field.</li>
+</ul>
+<p>The functionality of the existing <strong>Entry No.</strong> field, which relates an item ledger entry to a posted document line, handles the typical one-to-one relation when no item tracking numbers exist on the posted document line. If item tracking numbers exist, then the <strong>Entry No.</strong> field is left blank, and the one-to-many relation is handled by the <strong>Item Entry Relation</strong> table. If the posted document line carries item tracking numbers but only relates to a single item ledger entry, then the <strong>Entry No.</strong> field handles the relation, and the no record is created in the <strong>Item Entry Relation</strong> table.</p>
+<h2 id="codeunits-80-and-90">Codeunits 80 and 90</h2>
+<p>To split the item ledger entries during posting, the code in codeunit 80 and codeunit 90, is encircled by loops that run through global temporary record variables. This code calls codeunit 22 with an item journal line. These variables are initialized when item tracking numbers exist for the document line. To keep the code simple, this looping structure is always used. If no item tracking numbers exist for the document line, then a single record is inserted, and the loop runs only once.</p>
+<h2 id="posting-the-item-journal">Posting the Item Journal</h2>
+<p>Item tracking numbers are transferred via the reservation entries that relate to the item ledger entry, and the looping through item tracking numbers occurs in codeunit 22. This concept works in the same way when an item journal line is used indirectly to post a sale or purchase order as when an item journal line is used directly. When the item journal is used directly, the <strong>Source Row ID</strong> field points to the item journal line itself.</p>
+<h2 id="code-unit-22">Code Unit 22</h2>
+<p>Codeunits 80 and 90 loop the call of codeunit 22 during the invoice posting of item tracking numbers and during the invoicing of existing shipments or receipts.</p>
+<p>During quantity posting of item tracking numbers, codeunit 22 retrieves item tracking numbers from the entries in T337 that relate to the posting. These entries are placed directly on the item journal line.</p>
+<p>Codeunit 22 loops through the item tracking numbers and splits the posting into the respective item ledger entries that carry the item tracking numbers. Information about which item ledger entries are created is returned to T337 by using a temporary T336 record, which is called by a procedure in codeunit 22. This procedure is triggered when codeunit 22 has finished its run because at that point, the codeunit 22 object contains the information. When the temporary T336 record is retrieved, codeunits 80 and 90 create records in the <strong>Item Entry Relation</strong> table to link the created item ledger entries to the created shipment or receipt line. Codeunits 80 or codeunit 90 then converts the temporary T336 records to real T336 records that are related to the line in question. However, this conversion occurs only if the posted document line is not deleted, because it is only partially posted.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-item-tracking.html">Design Details: Item Tracking</a><br>
+<a href="design-details-item-tracking-design.html">Design Details: Item Tracking Design</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-item-tracking-posting-structure.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

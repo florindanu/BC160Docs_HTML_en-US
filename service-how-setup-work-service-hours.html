@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Set Up Work Hours and Service Hours | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Set Up Work Hours and Service Hours | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can specify the usual service working hours in your company. These service hours are used to calculate the response date and time for service orders and quotes, and to send response time warnings.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-work-hours-and-service-hours">Set Up Work Hours and Service Hours</h1>
+
+<p>Typically, a service management system tracks resource hours and service order status in order to forecast workloads and service needs. Business Central has built-in tools that you can customize to record this kind of information.</p>
+<p>After you set the default service hours of your company, you can calculate response times for service orders or send warnings or alerts when service calls come in. The alert feature is implemented together with the job scheduler.</p>
+<p>As you work on a service order, you will want to update it's status so that you can monitor progress. The service order status reflects the repair status of all the service items in the service order. For more information, see <a href="service-order-repair-status.html">Understanding Service Order and Repair Status</a>.</p>
+<h2 id="to-set-up-default-service-hours">To set up default service hours</h2>
+<p>You use the <strong>Default Service Hours</strong> page to set up the usual service working hours in your company. These service hours are used to calculate the response date and time for service orders and quotes and to send response time warnings. The default service hours are used for service contracts unless you specify special service hours for a contract.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Default Service Hours</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you leave the lines on the <strong>Default Service Hours</strong> page empty, the default value is 24 hours, valid only for calendar working days.</p>
+</div>
+<h2 id="to-set-up-work-hour-templates">To set up work-hour templates</h2>
+<p>You can use the <strong>Work-Hour Template</strong> page to set up templates that contain the typical working hours in your company. For example, you can create templates for full time technicians and part time technicians. You can use work-hour templates when you add capacity to resources.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Work Hour Templates</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>After you enter work hours for each day, the value in the <strong>Total per Week</strong> field is calculated automatically.</p>
+</div>
+<h2 id="to-set-up-contract-specific-service-hours">To set up contract specific service hours</h2>
+<p>You can use the <strong>Service Hours</strong> page to set up specific service hours for the customer that owns the service contract. Service hours are used to calculate the response date and time for service orders and quotes that belong to the service contract.</p>
+<p>If you do not set up specific service hours for the service contract, the default service hours for service contracts are used.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Contracts</strong>, and then choose the related link.</li>
+<li>Open the service contract you want to set up specific service hours for, and choose <strong>Service Hours</strong>.</li>
+<li>To set up service hours based on default service hours, choose the <strong>Copy Default Service Hours</strong> action.</li>
+<li>Edit the fields in the service hours entries. Insert or delete entries to set up the service hours for the contract. Note that the fields <strong>Day</strong>, <strong>Starting Time</strong> and <strong>Ending Time</strong> are required for each line.</li>
+<li>If you want the service hours to be valid from a specific date, fill in the <strong>Starting Date</strong> field.</li>
+<li>If you want the service hours to be valid on holidays, select the check box in the <strong>Valid on Holidays</strong> field.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-allocation-status-and-repair-status.html">Understanding Allocation Status and Repair Status</a><br>
+<a href="service-setup-service.html">Setting Up Service Management</a><br>
+<a href="service-order-repair-status.html">Understanding Service Order and Repair Status</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-setup-work-service-hours.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

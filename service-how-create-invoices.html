@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create Invoices or Credit Memos for Services | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create Invoices or Credit Memos for Services | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn how to create invoices, so you can get paid for your service.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="create-service-invoices-or-credit-memos">Create Service Invoices or Credit Memos</h1>
+
+<p>Ease in invoicing your service orders is a key feature of Business Central. You can send an invoice to your customers at any time, or create invoices periodically.</p>
+<p>To create an invoice directly, you can use the <strong>Service Contract</strong> page. You can also set up your system so that a service technician in the field can create an invoice for service that is not connected to a contract or order.</p>
+<h2 id="to-invoice-a-service-contract-from-the-service-contract-page">To invoice a service contract from the Service Contract page</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Create Service Contract Invoices</strong>, and then choose the related link.</li>
+<li>Set the filters you want to apply.</li>
+<li>In the <strong>Posting Date</strong> field, enter the date to use as the posting date on the service invoices.</li>
+<li>In the <strong>Invoice to Date</strong> field, enter the date up to which you want to invoice contracts. The batch job will include the contracts with the next invoice dates, up to this date.</li>
+<li>In the <strong>Action</strong> field, choose <strong>Create Invoices</strong>.</li>
+<li>Choose <strong>OK</strong> to create the service invoices.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot create service invoices for the service contract when the <strong>Change Status</strong> field value is set to <strong>Open</strong>.</p>
+</div>
+<h2 id="to-post-an-invoice-from-a-service-order">To post an invoice from a service order</h2>
+<p>The following procedure describes how to define the part of service that you will charge the customer for.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the service order to invoice, and open the order card.</p>
+</li>
+<li><p>Choose the <strong>Service Lines</strong> action.</p>
+</li>
+<li><p>Find the required entries, and then specify the quantities for which you will charge the customer in the <strong>Qty. to Invoice</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can invoice the customer for the registered service either fully or in parts. If you choose to invoice the customer fully, the value in the <strong>Qty. to Invoice</strong> field must be equal to the value in the <strong>Quantity</strong> field. You can post a full invoice together with a full shipment, and you can post a full invoice for an already posted full shipment that has been neither invoiced nor consumed previously.</p>
+<p>When you post a partial invoice, there are two ways of specifying the quantity to invoice. If you are going to post the service with <strong>the Ship and Invoice</strong> option, the value in the <strong>Qty. to Invoice</strong> field must be equal to that in the <strong>Qty. to Ship</strong> field. If you want to invoice an already posted shipment, the quantity to invoice must be no larger than the value in the <strong>Quantity Shipped</strong> field.</p>
+</div>
+</li>
+<li><p>Choose <strong>Post</strong>, and then either <strong>Invoice</strong> or <strong>Ship and Invoice</strong>. For more information about these options, see <a href="service-service-posting.html">Posting in Service Management</a>.</p>
+</li>
+</ol>
+<p>The service line you have selected is posted. You can post several service lines at once by selecting them all and choosing <strong>Post</strong>. If you do this, make sure you have filled in all the necessary information on the lines you want to post.</p>
+<p>When you post the order with the <strong>Invoice</strong> option, a posted service invoice is created along with the corresponding ledger entries and updates to the relevant fields on the service lines of the order. In addition, previously posted shipment documents are updated with the quantities that have been invoiced. If you select the <strong>Ship and Invoice</strong> posting option, a posted shipment is created.</p>
+<h2 id="to-create-a-service-invoice-manually">To create a service invoice manually</h2>
+<p>Typically, after you post a service order with the <strong>Invoice</strong> or <strong>Ship and Invoice</strong> option, a service invoice is posted automatically. Yet, you may need to issue an invoice that is not linked either to a service contract or to a service order. This procedure explains how to issue an invoice at the same time that the customer receives the service.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Invoices</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a new service invoice.</p>
+</li>
+<li><p>Fill in the <strong>No.</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have set up number series for service invoices on the <strong>Service Mgt. Setup</strong> page, you can press Enter to select the next available service invoice number.</p>
+</div>
+</li>
+<li><p>In the <strong>Customer No.</strong> field, enter the number of a customer. Select the relevant customer from the list.</p>
+<p>The customer fields are filled in with information from the <strong>Customer</strong> card.</p>
+</li>
+<li><p>Enter a date in the <strong>Posting Date</strong> field. This date will appear on the posted entries. This field is filled with the current working date, but you can change it manually.</p>
+</li>
+<li><p>Fill in the <strong>Document Date</strong> field. The date you enter here will appear on the printed invoice and will be used to calculate the due date.</p>
+</li>
+<li><p>Fill in the service lines of the invoice. Fill in the <strong>Type</strong>, <strong>No.</strong>, and <strong>Quantity</strong> fields to register items, resources and costs that have been used in servicing.</p>
+</li>
+</ol>
+<h2 id="to-invoice-posted-shipment-lines">To invoice posted shipment lines</h2>
+<p>You might need to create a service invoice for the service that has already been shipped, either from one or several service orders, but not yet invoiced or consumed. You can fill in the invoice lines automatically with the selected posted shipment lines for a specific customer.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Invoices</strong>, and then choose the related link.</li>
+<li>Fill in the fields on the line as necessary. Hover over a field to read a short description.</li>
+<li>Create invoice lines for services shipped but not invoiced. Alternatively, you can use the <strong>Get Shipment Lines</strong> action to add posted shipment lines to the invoice.</li>
+<li>Post the service invoice.</li>
+</ol>
+<p>The posted service invoice and the corresponding ledger entries are created. Previously posted shipment documents are updated with the invoiced quantities and the relevant quantities on the service lines of the source orders.</p>
+<h2 id="to-create-a-combined-invoice">To create a combined invoice</h2>
+<p>You can invoice the customer for services provided on different service orders. Invoice lines are created for items, resource hours, or costs that have already been shipped from different service orders but not yet invoiced.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Invoices</strong>, and then choose the related link.</li>
+<li>Fill in the fields on the line as necessary. Hover over a field to read a short description.</li>
+<li>Choose the <strong>Get Shipment Lines</strong> action. The <strong>Get Service Shipment Lines</strong> page displays all lines that are shipped but not invoiced for the customer.</li>
+<li>Choose the lines for the service to invoice, and then choose <strong>OK</strong> to add the service shipment lines to the invoice.</li>
+</ol>
+<h2 id="to-create-a-service-credit-memo">To create a service credit memo</h2>
+<p>A service credit memo document is typically used when a customer returns an item, but it can also be used to give a customer some compensation or to correct an erroneous invoice.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Credit Memos</strong>, and then choose the related link.</li>
+<li>Fill in the fields on the line as necessary. Hover over a field to read a short description.</li>
+<li>The <strong>Posting Date</strong> and <strong>Document Date</strong> fields display the work date. If needed, you can change it.</li>
+<li>On the credit memo lines, enter information about the items that have been returned or removed, or the compensation that will be given to the customer.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-to-post-service-orders.html">Post Service Invoices</a><br>
+<a href="service-setup-service.html">Setting Up Service Management</a><br>
+<a href="service-service-posting.html">Service Posting</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-create-invoices.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

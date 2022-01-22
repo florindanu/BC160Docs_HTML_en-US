@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Manual Synchronization of Table Mappings | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Manual Synchronization of Table Mappings | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The synchronization copies data between Common Data Service entities and Business Central to keep both systems up-to-date.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="manually-synchronize-table-mappings">Manually Synchronize Table Mappings</h1>
+
+<p>An integration table mapping associates a Business Central table (record type), such as customer, with a Common Data Service entity, such as an account. Synchronizing an integration table mapping enables you to synchronize data in all records of the Business Central table and Common Data Service entity that are coupled. Additionally, depending on the configuration of the table mapping, synchronization can create and couple new records in the destination solution for uncoupled records in the source.</p>
+<p>Manually synchronizing integration table mappings can be useful during the initial set up of an integration, and when diagnosing synchronization errors.</p>
+<p>This article describes three methods for manually synchronizing integration table mappings. Each method provides a different level of synchronization.</p>
+<h2 id="run-a-full-synchronization">Run a Full Synchronization</h2>
+<p>A full synchronization runs all the default integration synchronization jobs for synchronizing Business Central records and Common Data Service entities, as defined on the <strong>Integration Table Mappings</strong> page.</p>
+<p>A full synchronization performs the following operations For Business Central or Common Data Service records that are:</p>
+<ul>
+<li><p>Not coupled, a new matching record will be created and coupled in the opposing solution.
+Whether and where a record gets created depends on the synchronization direction. For example, when synchronizing data from Business Central customers to Common Data Service accounts, if there is a customer that is not coupled to an account, then a new account will be automatically added in Common Data Service and coupled to the customer in Business Central. The opposite holds true when the synchronization direction is from Common Data Service to Business Central. For each account that is not already coupled to a customer, a new matching customer will be created in Business Central and coupled to the account in Common Data Service.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To achieve this, the full synchronization operation temporarily clears the <strong>Synch. Only Coupled Records</strong> option on the integration table mapping that is used by the synchronization job. At the end of the full synchronization process, you will be prompted whether you want to keep this option cleared for all jobs.</p>
+</div>
+</li>
+<li><p>Coupled, the synchronization direction (for example, from Business Central to Common Data Service or from Common Data Service to Business Central) is predetermined by the integration table mappings. For more information, see <a href="admin-synchronizing-business-central-and-sales.html#standard-entity-mapping-for-synchronization">Standard Entity Mapping for Synchronization</a>.</p>
+</li>
+</ul>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You typically only use the full synchronization when you initially set up integration between Business Central and Common Data Service and only one of solutions contains data, which you want to copy to the other solution. A full synchronization can be useful in a demonstration environment. Because the full synchronization automatically creates and couples records between the solutions, it makes it faster to start working with synchronizing data between records. On the other hand, you should only run a full synchronization if you want a record in Business Central for each record in Common Data Service for the given table mappings. Otherwise, you can have unwanted or duplicate records in either Business Central or Common Data Service.</p>
+</div>
+<h3 id="to-run-a-full-synchronization">To run a full synchronization</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Common Data Service Connection Setup</strong>, and then choose the related link.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to run a full synchronization for entities through Dynamics 365 Sales, use the <strong>Microsoft Dynamics 365 Sales Connection Setup</strong> page instead.</p>
+</div>
+</li>
+<li><p>Choose the <strong>Run Full Synchronization</strong> action, and then choose the <strong>Yes</strong> button.</p>
+</li>
+<li><p>When the full synchronization is completed, you can specify whether to allow scheduled synchronization jobs to create new records.</p>
+<p>If you want all synchronization jobs to create new records in the destination for uncoupled records in the source, choose <strong>Yes</strong>. This sets the <strong>Synch. Only Coupled Records</strong> field on the table mappings that are used by the synchronization jobs.</p>
+<p>If you want synchronization jobs to run as they did before the full synchronization with regard to creating new records, choose <strong>No</strong>. This sets the <strong>Synch. Only Coupled Records</strong> field to the setting it had before the full synchronization.</p>
+</li>
+</ol>
+<p>You can view the results of the full synchronization on the <strong>Integration Synchronization Jobs</strong> page. For more information, see <a href="admin-how-to-view-synchronization-status.html">View the Status of a Synchronization</a>.</p>
+<h2 id="synchronizing-all-modified-records">Synchronizing All Modified Records</h2>
+<p>You can use the <strong>CDS Connection Setup</strong> page to synchronize changes to data in all integration table mappings. This is similar to a full synchronization. It will synchronize data in all coupled records in the Business Central tables and Common Data Service entities that are defined in the table mappings. By default, only records that have been modified since the last time they were synchronized will be synchronized. Synchronization jobs synchronize table mappings in the following order to avoid coupling dependencies between the entities:</p>
+<ol>
+<li>CURRENCY</li>
+<li>SALESPEOPLE</li>
+<li>VENDOR</li>
+<li>CUSTOMER</li>
+<li>CONTACTS</li>
+</ol>
+<p>You can view the results of the synchronization on the <strong>Integration Synchronization Jobs</strong> page. For more information, see <a href="admin-how-to-view-synchronization-status.html">View the Status of a Synchronization</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>By modifying the integration table mapping in advance, you can configure the synchronization with filters to control which records are synchronized, or configure it to create new records in the destination solution for uncoupled records in the source. For more information, see <a href="admin-how-to-modify-table-mappings-for-synchronization.html">Modify Table Mappings for Synchronization</a>.</p>
+</div>
+<h3 id="to-synchronize-records-for-all-tables">To synchronize records for all tables</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Microsoft Dynamics 365 Sales Connection Setup</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Synchronize Modified Records</strong> action, and then choose <strong>Yes</strong>.</li>
+</ol>
+<h2 id="synchronize-individual-table-mappings">Synchronize Individual Table Mappings</h2>
+<p>You can use the <strong>Integration Table Mappings</strong> page to run a synchronization job specific table mappings. This will synchronize data in all coupled records in the Business Central table and Common Data Service entity that are defined by the table mapping. By default, only records that have been modified since the last time they were synchronized will be synchronized.</p>
+<p>By modifying the integration table mapping in advance, you can configure the synchronization job to create new records in the destination solution for uncoupled records in the source.</p>
+<h3 id="to-synchronize-records-of-an-integration-table-mapping">To synchronize records of an integration table mapping</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Integration Table Mappings</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Synchronize Modified Records</strong> action, and then choose <strong>Yes</strong>.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="admin-synchronizing-business-central-and-sales.html">Synchronizing Business Central and Dynamics 365 Sales</a><br>
+<a href="admin-setting-up-integration-with-dynamics-sales.html">Setting Up User Accounts for Integrating with Dynamics 365 Sales</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/admin-manual-synchronization-of-table-mappings.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

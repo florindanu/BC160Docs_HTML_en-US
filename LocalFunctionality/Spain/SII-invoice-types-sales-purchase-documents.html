@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Overview of SII Invoice Types in Sales and Purchase Documents </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Overview of SII Invoice Types in Sales and Purchase Documents ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Shows the output of the various types that are used for invoices and credit memos in connection with SII and how they are implemented.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="sii---invoice-and-credit-memo-types-in-sales-and-purchase-documents">SII - Invoice and Credit Memo Types in Sales and Purchase Documents</h1>
+
+<p>Business Central supports the Spanish SII requirements for VAT reporting (Immediate Information Supply). For more information, see <a href="https://aka.ms/SIISetup">Setup and user guide for electronic VAT information under SII in the Spanish version of Dynamics NAV</a>.</p>
+<p>The following table shows the output of the various types that are used for invoices and credit memos in connection with SII and how they are implemented in Business Central.</p>
+<h2 id="sales-invoices">Sales Invoices</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>Invoice</td>
+<td>Normal invoice</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Simplified invoice (ticket)</td>
+<td>Implemented as for F1, except a non-existing block is called “Contraparte” and additional nodes are called “ImporteTotal” and “Macrodato”.</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Invoice issued to replace simplified invoices issued and filed</td>
+<td>Same as Normal invoice</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>Invoice summary entry</td>
+<td>Possible, but the XML file is same as for F1 because Business Central does not support Summary invoices. <br><br>Submissions will result in known error: Missing “NumSerieFacturaEmisorResumenFin” element.</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>Corrected invoice (Error based on Art. 80.1, 80.2, and 80.6 LIVA)</td>
+<td>Not supported. Only used for credit memos.</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Corrected invoice (Art. 80.3)</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Corrected invoice (Art. 80.4)</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Corrected invoice (other)</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>Corrected invoice in simplified invoices</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sales-credit-memos">Sales Credit Memos</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>Invoice</td>
+<td>Same structure as sales invoice, type F1, but with negative values</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Simplified invoice (ticket)</td>
+<td>Same structure as sales invoice type F2, but with negative values</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Invoice issued to replace simplified invoices issued and filed</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>Invoice summary entry</td>
+<td>Not supported</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>Corrected invoice (Error based on Art. 80.1, 80.2, and 80.6 LIVA)</td>
+<td>Normal credit memo</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Corrected invoice (Art. 80.3)</td>
+<td>Same as normal credit memo</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Corrected invoice (Art. 80.4)</td>
+<td>Same as normal credit memo</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Corrected invoice (other)</td>
+<td>Same as normal credit memo</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>Corrected invoice in simplified invoices</td>
+<td>Same as normal credit memo except the block is called “Contraparte”.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="purchase-invoices">Purchase Invoices</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>Invoice</td>
+<td>Normal invoice</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Simplified invoice (ticket)</td>
+<td>Implemented as for F1, except a non-existing block is called “Contraparte” and additional nodes are called “ImporteTotal” and “Macrodato”.</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Invoice issued to replace simplified invoices issued and filed</td>
+<td>Sames as for Normal invoice</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>Invoice summary entry</td>
+<td>Possible, but the XML file is same as for F1 because Business Central does not support Summary invoices. <br><br>Submissions will result in known error: Missing “NumSerieFacturaEmisorResumenFin” element.</td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Imports (DUA)</td>
+<td>Same as for Normal invoice</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Accounting support material</td>
+<td>Sames as for Normal invoice</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>Corrected invoice (Error based on Art. 80.1, 80.2, and 80.6 LIVA)</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Corrected invoice (Art. 80.3)</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Corrected invoice (Art. 80.4)</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Corrected invoice (other)</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>Corrected invoice in simplified invoices</td>
+<td>Not supported. Only used for credit memos</td>
+</tr>
+</tbody>
+</table>
+<h2 id="purchase-credit-memos">Purchase Credit Memos</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>Invoice</td>
+<td>Same structure as for purchase invoice, type F1, but with negative values</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Simplified invoice (ticket)</td>
+<td>Same structure as for purchase invoice, type F1, but with negative values</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Invoice issued to replace simplified invoices issued and filed</td>
+<td>Not possible</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>Invoice summary entry</td>
+<td>Not possible</td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Imports (DUA)</td>
+<td>Not possible</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Accounting support material</td>
+<td>Not possible</td>
+</tr>
+<tr>
+<td>R1</td>
+<td>Corrected invoice (Error based on Art. 80.1, 80.2, and 80.6 LIVA)</td>
+<td>Normal credit memo</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Corrected invoice (Art. 80.3)</td>
+<td>Same as normal credit memo</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Corrected invoice (Art. 80.4)</td>
+<td>Same as normal credit memo</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Corrected invoice (other)</td>
+<td>Same as normal credit memo</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>Corrected invoice in simplified invoices</td>
+<td>Same as for normal credit memo except the block is called “Contraparte”</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="spain-local-functionality.html">Spain Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Spain/SII-invoice-types-sales-purchase-documents.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

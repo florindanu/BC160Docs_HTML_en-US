@@ -1,0 +1,168 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Convert Service Contracts | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Convert Service Contracts | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Because the VAT rate change tool cannot convert service contracts, these contracts must be converted manually. This topic describes several alternative methods that you can use for service contract conversion.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="convert-service-contracts-that-include-vat-amounts">Convert Service Contracts that Include VAT Amounts</h1>
+
+<p>Because the VAT rate change tool cannot convert service contracts, these contracts must be converted manually. This topic describes several alternative methods that you can use for service contract conversion.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This topic provides a high-level workflow.</p>
+</div>
+<p>The following procedure describes how to correct an invoice for a prepaid service contract that has been created a year in advance.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For this example, you must change your work date to 01.01.2017.</p>
+</div>
+<h3 id="to-correct-an-invoice-for-a-prepaid-service-contract">To correct an invoice for a prepaid service contract</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Contract Management</strong>, and then choose the related link.</li>
+<li>Under <strong>Lists</strong>, choose <strong>Service Contracts</strong>.</li>
+<li>Create a new prepaid service contract. Enter a start date of <strong>01.01.2017</strong> and an invoice period year for customer <strong>20000</strong>.</li>
+<li>To sign the contract, choose the <strong>Sign Contract</strong> action.</li>
+<li>Create a service invoice.</li>
+<li>The invoice is listed as an unposted service invoice. To view the service invoice, choose the <strong>Service</strong> action, choose the <strong>Contract Management</strong> action, and then choose the <strong>Service Invoices</strong> action.</li>
+<li>Post the service invoice.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Do not change the unposted service invoice. Since the service ledger entries are created when the invoice is created, a change in the unposted invoice will not change the already created service ledger entries. However, the VAT entries are created when the invoice is posted. This lets you change the general product posting group and the GSP product posting group on the unposted service invoice.</p>
+</div>
+<h3 id="to-create-a-credit-memo-for-vat-difference">To create a credit memo for VAT difference</h3>
+<p>The following procedure describes how to create a credit memo that only includes the VAT difference for the already invoiced period starting on <strong>01.07.2017</strong>. In this example, the VAT amount is only posted to the Financial Management module, not to the Service Management module. The VAT entries that are linked to the service ledger entry will not be corrected.</p>
+<ol>
+<li>Create a new general ledger account for the VAT difference. This account will be used for direct posting of the VAT correction.</li>
+<li>Add a new line to the VAT posting setup.</li>
+</ol>
+<h3 id="to-create-contract-expiration-dates-in-contract-lines">To create contract expiration dates in contract lines</h3>
+<p>The following procedure describes how to create new contracts by working with contract expiration dates in service contract lines.</p>
+<ol>
+<li>On the <strong>Service Contract</strong> page, set the contract expiration date to <strong>30.06.2017</strong>.</li>
+<li>Choose the <strong>Create Credit Memo</strong> action to automatically create a credit memo for July 2017 to December 2017.</li>
+<li>Because the contract has expired, you need to create a new contract for the period with the new VAT rate for July 1, 2017 to December 31, 2017.</li>
+</ol>
+<h3 id="to-create-a-new-credit-memo">To create a new credit memo</h3>
+<p>The following procedure describes how to create a new credit memo using the <strong>Get Prepaid Contract Entries</strong> batch job. Entries that you do not want to correct from January 2017 to June 2017 will be deleted.</p>
+<ol>
+<li>Run the VAT rate change tool on July 1, 2017. The general product posting group or the VAT product posting group is changed. For more information, see <a href="finance-work-with-vat.html">Work with VAT on Sales and Purchases</a>.</li>
+<li>After running the VAT rate change tool, enter a contract expiration date for the service contract. You can now delete the service contract line and create a new line that is identical to the old one.</li>
+<li>Create a new invoice for the period of January 2017 to December 2012 using the new VAT rate.</li>
+<li>To create another credit memo, on the <strong>Service Credit Memos</strong> page, choose the <strong>New</strong> action to create a new service credit memo.</li>
+<li>Choose the <strong>Get Prepaid Contract Entries</strong> action.</li>
+<li>After the conversion is complete, VAT and service ledger entries will be correct.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-to-create-service-contracts-and-service-contract-quotes.html">Work with Service Contracts and Service Contract Quotes</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="finance-how-report-vat.html">Report VAT to Tax Authorities</a><br>
+<a href="finance-work-with-vat.html">Work with VAT on Sales and Purchases</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-to-convert-service-contracts.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

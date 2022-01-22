@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>VAT settlement in Russia </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="VAT settlement in Russia ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Russian enhancements include VAT on purchase orders.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="vat-settlement">VAT Settlement</h1>
+
+<p>It is possible to settlement full VAT or part of VAT.</p>
+<h2 id="setup">Setup</h2>
+<p>You must set up VAT posting groups in the <strong>VAT posting setup</strong> page. You can specify a VAT Business posting group and VAT product posting group.</p>
+<ul>
+<li>Type of VAT calculation – normal VAT</li>
+<li>Type of transit VAT – Amount and tax</li>
+<li>You can specify a VAT transit account</li>
+<li>In the field &quot;Type of unrealized VAT&quot; - percentage</li>
+<li>Specify the VAT Account</li>
+<li>Checked the &quot;VAT manual&quot; installed</li>
+<li>The VAT settlement template and VAT settlement batch is specified</li>
+<li>Specified Account Unreal. VAT</li>
+</ul>
+<h2 id="vat-settlement-1">VAT settlement</h2>
+<p>For manual settlement of VAT it is necessary to use the VAT settlement worksheet.</p>
+<p>The working date must be set to the current month in which VAT is to be settlement.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Before calculating VAT, you must check the data of the VAT document. If you see that the data is empty, you must fill in the fields and use the -&gt; Change Vendor VAT Invoices function.
+An additional way to change the VAT invoice data is to use this function in the vendor Ledger.</p>
+</div>
+<p>Click &quot;Suggest documents&quot; and get a list of documents to settlement VAT.</p>
+<p>Next, click on the &quot;Copy lines to journal&quot; button to transfer the lines (which are selected) to the VAT settlement journal.</p>
+<p>After posting the journal – formed transaction in the VAT register.</p>
+<h3 id="vat-allocation">VAT allocation</h3>
+<p>It is possible to consider only part of the amount of the VAT and write off the other part.</p>
+<ol>
+<li><p>You must use the <strong>VAT Allocation</strong> function in the <strong>VAT settlement Journal</strong>.</p>
+</li>
+<li><p>Fill the fields:</p>
+</li>
+</ol>
+<ul>
+<li>Type of VAT, you can select whether this allocation of VAT, write-off or charge.</li>
+<li>Account No. - account for VAT allocation.</li>
+<li>Specify the percentage or amount of the allocation.</li>
+</ul>
+<ol start="3">
+<li>Click OK. Post the journal.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="russia-local-functionality.html">Russia Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Russia/Settlement-VAT.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Accounts in the General Ledger | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Accounts in the General Ledger | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="To reconcile inventory and capacity ledger entries with the general ledger, the related value entries are posted to different accounts in the general ledger.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-accounts-in-the-general-ledger">Design Details: Accounts in the General Ledger</h1>
+
+<p>To reconcile inventory and capacity ledger entries with the general ledger, the related value entries are posted to different accounts in the general ledger. For more information, see <a href="design-details-reconciliation-with-the-general-ledger.html">Design Details: Reconciliation with the General Ledger</a>.</p>
+<h2 id="from-the-inventory-ledger">From the Inventory Ledger</h2>
+<p>The following table shows the relationship between different types of inventory value entries and the accounts and balancing accounts in the general ledger.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Item Ledger Entry Type</strong></th>
+<th><strong>Value Entry Ttype</strong></th>
+<th><strong>Variance Type</strong></th>
+<th><strong>Expected Cost</strong></th>
+<th><strong>Account</strong></th>
+<th><strong>Balancing Account</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purchase</td>
+<td>Direct Cost</td>
+<td></td>
+<td>Yes</td>
+<td>Inventory  (Interim)</td>
+<td>Invt. Accrual Acc. (Interim)</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Direct Cost Applied</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td>Indirect Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Overhead Applied</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td>Variance</td>
+<td>Purchase</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Purchase Variance</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td>Revaluation</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Purchase</td>
+<td>Rounding</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Sale</td>
+<td>Direct Cost</td>
+<td></td>
+<td>Yes</td>
+<td>Inventory  (Interim)</td>
+<td>COGS (Interim)</td>
+</tr>
+<tr>
+<td>Sale</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>COGS</td>
+</tr>
+<tr>
+<td>Sale</td>
+<td>Revaluation</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Sale</td>
+<td>Rounding</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Positive Adjmt.,Negative Adjmt., Transfer</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Positive Adjmt.,Negative Adjmt., Transfer</td>
+<td>Revaluation</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Positive Adjmt.,Negative Adjmt., Transfer</td>
+<td>Rounding</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>(Production) Consumption</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>WIP</td>
+</tr>
+<tr>
+<td>(Production) Consumption</td>
+<td>Revaluation</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>(Production) Consumption</td>
+<td>Rounding</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Assembly Consumption</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Assembly Consumption</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Direct Cost Applied</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Assembly Consumption</td>
+<td>Indirect Cost</td>
+<td></td>
+<td>No</td>
+<td>Overhead Applied</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Direct Cost</td>
+<td></td>
+<td>Yes</td>
+<td>Inventory  (Interim)</td>
+<td>WIP</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>WIP</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Indirect Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Overhead Applied</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Variance</td>
+<td>Material</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Material Variance</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Variance</td>
+<td>Capacity</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Capacity Variance</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Variance</td>
+<td>Subcontracted</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Subcontracted Variance</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Variance</td>
+<td>Capacity Overhead</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Cap. Overhead Variance</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Variance</td>
+<td>Manufacturing Overhead</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Mfg. Overhead Variance</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Revaluation</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>(Production) Output</td>
+<td>Rounding</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Direct Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Revaluation</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Indirect Cost</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Overhead Applied</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Variance</td>
+<td>Material</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Material Variance</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Variance</td>
+<td>Capacity</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Capacity Variance</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Variance</td>
+<td>Capacity Overhead</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Cap. Overhead Variance</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Variance</td>
+<td>Manufacturing Overhead</td>
+<td>No</td>
+<td>Inventory</td>
+<td>Mfg. Overhead Variance</td>
+</tr>
+<tr>
+<td>Assembly Output</td>
+<td>Rounding</td>
+<td></td>
+<td>No</td>
+<td>Inventory</td>
+<td>Inventory Adjmt.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="from-the-capacity-ledger">From the Capacity Ledger</h2>
+<p>The following table shows the relationship between different types of capacity value entries and the accounts and balancing accounts in the general ledger. Capacity ledger entries represent labor time consumed in assembly or production work.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Work Type</strong></th>
+<th><strong>Capacity Ledger Entry Type</strong></th>
+<th><strong>Value Entry Type</strong></th>
+<th><strong>Account</strong></th>
+<th><strong>Balancing Account</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assembly</td>
+<td>Resource</td>
+<td>Direct Cost</td>
+<td>Direct Cost Applied</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Assembly</td>
+<td>Resource</td>
+<td>Indirect Cost</td>
+<td>Overhead Applied</td>
+<td>Inventory Adjmt.</td>
+</tr>
+<tr>
+<td>Production</td>
+<td>Machine Center/Work Center</td>
+<td>Direct Cost</td>
+<td>WIP Account</td>
+<td>Direct Cost Applied</td>
+</tr>
+<tr>
+<td>Production</td>
+<td>Machine Center/Work Center</td>
+<td>Indirect Cost</td>
+<td>WIP Account</td>
+<td>Overhead Applied</td>
+</tr>
+</tbody>
+</table>
+<h2 id="assembly-costs-are-always-actual">Assembly Costs are Always Actual</h2>
+<p>As shown in the table above, assembly postings are not represented in interim accounts. This is because the concept of work in process (WIP) does not apply in assembly output posting, unlike in production output posting. Assembly costs are only posted as actual cost, never as expected cost.</p>
+<p>For more information, see <a href="design-details-assembly-order-posting.html">Design Details: Assembly Order Posting</a>.</p>
+<h2 id="calculating-the-amount-to-post-to-the-general-ledger">Calculating the Amount to Post to the General Ledger</h2>
+<p>The following fields in the <strong>Value Entry</strong> table are used to calculate the expected cost amount that is posted to the general ledger:</p>
+<ul>
+<li>Cost Amount (Actual)</li>
+<li>Cost Posted to G/L</li>
+<li>Cost Amount (Expected)</li>
+<li>Expected Cost Posted to G/L</li>
+</ul>
+<p>The following table shows how the amounts to post to the general ledger are calculated for the two different cost types.</p>
+<table>
+<thead>
+<tr>
+<th>Cost Type</th>
+<th>Calculation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Actual Cost</td>
+<td>Cost Amount (Actual) – Cost Posted to G/L</td>
+</tr>
+<tr>
+<td>Expected Cost</td>
+<td>Cost Amount (Expected) –  Expected Cost Posted to G/L</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-inventory-posting.html">Design Details: Inventory Posting</a><br>
+<a href="design-details-expected-cost-posting.html">Design Details: Expected Cost Posting</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-accounts-in-the-general-ledger.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

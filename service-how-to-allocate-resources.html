@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Allocate Resources | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Allocate Resources | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can change the annual amount of the service contract or contract quote to correct the amount that will be invoiced annually.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="allocate-resources">Allocate Resources</h1>
+
+<p>The key element to service management is the people who supply service. You can set up Business Central to assign the appropriate people to the appropriate jobs. Assignments can be based on service zones where the people are located or where the service occurs. In addition, you can group resources together when responding to service requests. For more information, see <a href="service-how-setup-resource-allocation.html">Set Up Resource Allocation</a>.</p>
+<p>You can allocate resources, for example, technicians, by using the <strong>Dispatch Board</strong>, or from a service order. You can use resource availability to allocate resources to perform the service tasks in the orders or quotes.</p>
+<p>You can allocate the same resource, for example, a technician, or resource group to all the service items in a service order. Allocation entries are created for the other service items in the order with the same resource number and allocation date as the line you allocated. The allocated hours are the hours you allocated divided by the number of service items in the order. The <strong>Status</strong> field is automatically set to <strong>Active</strong> for all the entries that were created.</p>
+<h2 id="to-see-an-overview-of-service-orders-and-service-quotes">To see an overview of service orders and service quotes</h2>
+<p>You may often need to see the list of service orders or service quotes that meet certain requirements to be able to perform specific actions with them one by one. For example,you may need to allocate resources to service orders that belong to a specific customer.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Dispatch Board</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the <strong>Document Filter</strong> field, choose the type of the documents you want to see.</p>
+</li>
+<li><p>To get a list of documents that contain service tasks a certain resource or resource group is allocated to, fill in the <strong>Resource Filter</strong> and <strong>Resource Group Filter</strong> fields and press Enter.</p>
+</li>
+<li><p>To get a list of documents with a certain response date or response dates within a certain date period, fill in the <strong>Response Date Filter</strong> field and press <strong>Enter</strong>.</p>
+</li>
+<li><p>To get a list of documents with a specified allocation state or document status, fill in the <strong>Allocation Filter/Status Filter</strong> field and press <strong>Enter</strong>.</p>
+</li>
+<li><p>To get a list of documents that belong to a certain contract, customer, or zone, fill in the <strong>Contract Filter/Customer Filter/Zone Filter</strong> field and press <strong>Enter</strong>.</p>
+</li>
+<li><p>Choose a line that corresponds to a service order or service quote, and then choose the <strong>Show Document</strong> action.</p>
+<p>The <strong>Service Order</strong> or <strong>Service Quote</strong> page opens, and you can work with the document. To return to the <strong>Dispatch Board</strong> page, choose <strong>OK</strong>.</p>
+</li>
+</ol>
+<h2 id="to-allocate-a-resource-using-resource-or-resource-group-availability">To allocate a resource using resource or resource group availability</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Dispatch Board</strong>, and choose the related link.</p>
+</li>
+<li><p>Choose the service order, and then choose the <strong>Resource Allocations</strong> action.</p>
+</li>
+<li><p>Choose the entry with the service task to which you want to allocate a resource.</p>
+</li>
+<li><p>Choose either the <strong>Resource Availability</strong> or <strong>Res. Group Availability</strong> action.</p>
+</li>
+<li><p>On the <strong>Res. Availability (Service)</strong> page, choose <strong>Show Matrix</strong>.</p>
+</li>
+<li><p>Choose a resource to allocate. You can base your selection on whether the resource is skilled for the task, whether it is located in the customer zone, and/or whether it is preferred by the customer.</p>
+</li>
+<li><p>Specify a date on which the resource has enough available hours for the task, and which is close to the response date of the service order.</p>
+</li>
+<li><p>In the <strong>Qty. to Allocate</strong> field, enter the number of hours you want to allocate the resource to the service task for.</p>
+</li>
+<li><p>Choose the <strong>Allocate</strong> action to allocate the selected resource on the selected date.</p>
+<p>The <strong>Status</strong> field is automatically set to <strong>Active</strong>.</p>
+</li>
+</ol>
+<p>Repeat these steps for each date that you want to allocate the resource to the service task.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For a service item in a service order, there can only be <strong>Active</strong> allocation entries with one resource or resource group at a time.</p>
+</div>
+<h2 id="to-allocate-a-resource-using-a-service-order">To allocate a resource using a service order</h2>
+<p>After you have created and filled in a service order or service quote, you can allocate resources, for example, technicians, to perform service tasks registered as service item lines in the document.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</li>
+<li>Choose the service order, and then choose <strong>Edit</strong>.</li>
+<li>Choose the service item line corresponding to the service task you want to allocate a resource to.</li>
+<li>Choose <strong>Resource Allocations</strong>.</li>
+<li>On the <strong>Resource Allocations</strong> page, choose a nonactive allocation entry with the service task you want to allocate the resource to. If the allocation entry does not exist, you can create a new one by choosing <strong>New</strong>.</li>
+<li>Specify the service task by filling in the <strong>Service Item No.</strong> field on the same line.</li>
+<li>In the <strong>Resource No.</strong> field, choose the resource. If the resource is a member of a resource group, the number of the resource group is entered automatically into the <strong>Resource Group No.</strong> field.</li>
+<li>Fill in the <strong>Allocation Date</strong> and <strong>Allocated Hours</strong> fields. The <strong>Status</strong> field is set to <strong>Active</strong>. This means that the resource is allocated to the service task.</li>
+<li>Optionally, to assign the resource to all items, choose <strong>Allocate to All Service Items</strong>.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For a service item in a service order, there can only be active allocation entries with one resource or resource group at a time.</p>
+</div>
+<h2 id="to-reallocate-resources-on-a-service-order">To reallocate resources on a service order</h2>
+<p>You can reallocate resources directly from a service order or service quote when you are working with it. The original entry will still exist, but its status is updated as follows:</p>
+<ul>
+<li>If service was started while the allocation was <strong>Active</strong>, that is, if the repair status of the service item in the entry was changed to <strong>In Process</strong>, the allocation status changes from <strong>Reallocation Needed</strong> to <strong>Finished</strong>.</li>
+<li>If service was not started while the allocation was <strong>Active</strong>, allocation status changes from <strong>Reallocation Needed</strong> to <strong>Canceled</strong>.</li>
+<li>If you are reallocating a service order that you have converted from a quote, the status of the allocation entries registered for the quote always changes to <strong>Finished</strong> when you reallocate the service items in the service order.</li>
+</ul>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</li>
+<li>Open the relevant service order.</li>
+<li>Select the service item line corresponding to the service task you want to allocate a resource to, and then choose the <strong>Resource Allocations</strong> action.</li>
+<li>On the <strong>Resource Allocations</strong> page, select an allocation entry with the service task you want to reallocate the resource to. In the <strong>Resource No.</strong> field, select the relevant resource. This overwrites the resource number already in the field.</li>
+<li>Press the Enter key. A dialog box opens, asking whether you want to reallocate this entry. Fill in the <strong>Reason Code</strong> field if appropriate and choose the <strong>Yes</strong> button to confirm the reallocation.</li>
+<li>Fill in the <strong>Allocation Date</strong> and <strong>Allocated Hours</strong> fields. The entry now contains the new resource and its status is <strong>Active</strong>.</li>
+</ol>
+<h2 id="to-reallocate-a-resource-using-the-dispatch-board">To reallocate a resource using the dispatch board</h2>
+<p>If the resource allocated to a service task cannot accomplish the work, it means that this service task needs reallocation. Usually you reallocate resources to a service task by using the <strong>Dispatch Board</strong>.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Dispatch Board</strong>, and then choose the related link.</p>
+</li>
+<li><p>In the <strong>Allocation Filter</strong> field, select <strong>Reallocation Needed</strong>. The <strong>Dispatch Board</strong> page now shows the list of service orders that include service tasks that need reallocation.</p>
+</li>
+<li><p>Select the relevant service order, and then choose the <strong>Resource Allocations</strong> action. The <strong>Resource Allocations</strong> page opens.</p>
+</li>
+<li><p>Select the allocation entry with the service task you want to reallocate a resource to.</p>
+</li>
+<li><p>In the <strong>Resource No.</strong> field, select the relevant resource. It overwrites the resource number already in the field.</p>
+</li>
+<li><p>Press Enter. The <strong>Reallocation Entry Reasons</strong> dialog box opens, asking whether you want to reallocate this entry. Fill in the <strong>Reason Code</strong> field if appropriate and choose the <strong>Yes</strong> button to confirm the reallocation.</p>
+</li>
+<li><p>Fill in the <strong>Allocation Date</strong> and <strong>Allocated Hours</strong> fields. The entry now contains the new resource and its status is <strong>Active</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The old entry still exists but the status is updated in the following ways:</p>
+<ul>
+<li>If service was started while the allocation was <strong>Active</strong>, that is, if the repair status of the service item in the entry was changed to <strong>In Process</strong>, the allocation status changes from <strong>Reallocation Needed</strong> to <strong>Finished</strong>.</li>
+<li>If service was not started while the allocation was <strong>Active</strong>, the allocation status changes from <strong>Reallocation Needed</strong> to <strong>Canceled</strong>.</li>
+<li>If you are reallocating a service order that you have converted from a quote, the status of the allocation entries registered for the quote always changes to <strong>Finished</strong> when you reallocate the service items in the service order.</li>
+</ul>
+</div>
+</li>
+</ol>
+<h2 id="to-register-resource-hours">To register resource hours</h2>
+<p>When working on service items in service orders, you need to register the resource hours used for the service. The following procedure shows how to register the resource hours on the <strong>Service Item Worksheet</strong> page.</p>
+<p>You can use the same procedure to register the hours on the <strong>Service Lines</strong> page, which you can open from the Service Order page. Open the relevant service card, and then choose the <strong>Service Lines</strong> action.</p>
+<p>If the same resource works on all the service items in the service order, you can register the total resource hours for one service item only and then split the resource line to assign the resource hours to the other service items.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Tasks</strong>, and then choose the related link.</li>
+<li>Select the line that includes the relevant service item, and then choose the <strong>Item Worksheet</strong> action.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<h2 id="to-assign-a-resource-to-all-service-items-in-an-order">To assign a resource to all service items in an order</h2>
+<p>If the same resource, for example a technician, works on all the service items in the service order, you can register the total resource hours for one service item only and then split the resource line to divide the resource hours onto the resource lines for the other service items.</p>
+<p>The following procedure shows how to split resource lines on the <strong>Service Invoice Lines</strong> page.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the relevant service order.</p>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, choose the <strong>Service Lines</strong> action. The <strong>Service Lines</strong> page opens.</p>
+</li>
+<li><p>Select the resource line you want to split. The contents of the <strong>Quantity</strong> field is divided between all the service items in the order.</p>
+</li>
+<li><p>Choose the <strong>Split Resource Line</strong> action. Choose <strong>Yes</strong> to confirm.</p>
+<p>Resource lines for the other service items in the order are created with the same resource number as the line you split. The quantity is the quantity for the line you split divided by the number of service items in the order.</p>
+</li>
+</ol>
+<h2 id="to-cancel-an-allocation">To cancel an allocation</h2>
+<p>You can cancel resource allocations for service tasks without reallocating the tasks.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Dispatch Board</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the service order, and then choose the <strong>Resource Allocations</strong> action.</p>
+</li>
+<li><p>Choose the allocation entry with the service task that you want to cancel allocation for.</p>
+</li>
+<li><p>Choose the <strong>Cancel Allocation</strong> action.</p>
+</li>
+<li><p>In the <strong>Reason Code</strong> field, select the appropriate reason code.</p>
+</li>
+<li><p>Choose <strong>Yes</strong> to confirm the cancellation.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the <strong>Status</strong> field, the <strong>Reallocation Needed</strong> option is automatically selected. If the repair status of the service item in the entry is <strong>Initial</strong>, the repair status is changed to <strong>Referred</strong>, that is, no service has been started. If the repair status is <strong>In Process</strong>, it is changed to <strong>Partly Serviced</strong>, that is, some service has been completed.</p>
+</div>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-setup-resource-allocation.html">Set Up Resource Allocation</a><br>
+<a href="service-allocation-status-and-repair-status.html">Allocation Status and Repair Status</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-to-allocate-resources.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

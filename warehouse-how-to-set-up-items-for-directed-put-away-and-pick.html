@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Directed Put-away and Pick | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Directed Put-away and Pick | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="When you set up a warehouse location for directed put-away and pick, you have new functionality available to you to help run the warehouse in the most efficient way possible.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-items-and-locations-for-directed-put-away-and-pick">Set Up Items and Locations for Directed Put-away and Pick</h1>
+
+<p>When you set up a warehouse location for directed put-away and pick, you have new functionality available to you to help run the warehouse in the most efficient way possible. In order to make full use of this functionality, you provide additional information about the items, which in turn helps to make the calculations necessary to suggest the most efficient and effective ways to conduct warehouse activities. For more information, see <a href="design-details-warehouse-setup.html">Design Details: Warehouse Setup</a>.</p>
+<h2 id="to-set-up-an-item-for-directed-put-away-and-pick">To set up an item for directed put-away and pick</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Open the card for the item that you want to set up for directed put-away and pick.</li>
+<li>On the <strong>Warehouse</strong> FastTab of the item card, fill in the fields to define how the item should be handled in the warehouse.</li>
+<li>Choose the <strong>Units of Measure</strong> action.</li>
+<li>On the <strong>Item Units of Measure</strong> page, fill in the fields to define the different units of measure in which the item may be transacted, including the height, width, length, cubage, and weight for the unit of measure.</li>
+<li>Choose the <strong>Bin Contents</strong> action.</li>
+<li>On the <strong>Bin Contents</strong> page, define the location and bin to which the item should be associated. The <strong>Default</strong> field is not used when the location is set up for directed put-away and pick.</li>
+</ol>
+<h2 id="to-activate-directed-put-away-and-pick-functionality">To activate directed put away and pick functionality</h2>
+<p>Directed put-away and pick gives you access to advanced warehouse configuration features that can greatly enhance your efficiency and data reliability. In order to use this functionality, you must first set up a number of parameters in your warehouse location.</p>
+<p>To use the directed put-away and pick functionality, you must activate the functionality on the location card.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Select the location where you want to use directed put-away and pick, and then choose the <strong>Edit</strong> action.</li>
+<li>On the <strong>Warehouse</strong> FastTab, select the <strong>Directed Put-away and Pick</strong> check box.</li>
+</ol>
+<p>You do not need to fill in any other fields on the location card until later in the setup process.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot set up the warehouse to use bins when the location has open item ledger entries.</p>
+</div>
+<p>The next step is to define the type of bins you want to operate. For more information, see <a href="warehouse-how-to-set-up-bin-types.html">Set Up Bin Types</a>. The bin type defines how to use a given bin when processing the flow of items through the warehouse. You can assign a bin type to both a zone and to a bin.</p>
+<p>You can also define warehouse class codes, if the warehouse carries items that need various storage conditions. Warehouse class codes are used when suggesting item placement in bins. You assign the warehouse class codes to product groups, which are then assigned to items and SKUs, or to zones and bins that can accommodate the storage conditions required by the warehouse class codes.</p>
+<p>You are now ready to set up zones, if you want to operate zones in your warehouse. Using zones reduces the number of fields you need to fill in when you set up your bins, because bins created within zones inherit several properties from the zone. Zones can also make it easier for new or temporary employees to orient themselves in your warehouse. Note that flow is controlled by bins, therefore it is possible to operate with bins and only one zone.</p>
+<h2 id="to-set-up-a-zone-in-your-warehouse">To set up a zone in your warehouse</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Locations</strong>, and then choose the related link.</li>
+<li>Select the location where you want to set up zone and open the location card, and then choose the <strong>Zones</strong> action.</li>
+<li>On the <strong>Zones</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<p>When you change a zone parameter, all bins created thereafter in that zone will have the new characteristics, but the original bins will not be changed.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you want to operate without zones, you must still create one zone code that is undefined except for the code.</p>
+</div>
+<p>The next step in setting up the warehouse is to define bins. For more information, see <a href="warehouse-how-to-set-up-locations-to-use-bins.html">Set Up Locations to Use Bins</a>.</p>
+<p>In addition, you must create put-away templates and counting periods. For more information, see <a href="warehouse-how-to-set-up-put-away-templates.html">Set Up Put-away Templates</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-set-up-items-for-directed-put-away-and-pick.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

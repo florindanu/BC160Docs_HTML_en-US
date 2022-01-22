@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Apply CODA Statements </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Apply CODA Statements ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="After a CODA statement has been imported, the statement lines can be accessed from the Bank Account Card page. The application status on each line will be blank because the statement amounts have not been applied to outstanding ledger entries.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="apply-coda-statements">Apply CODA Statements</h1>
+
+<p>After a CODA statement has been imported, the statement lines can be accessed from the <strong>Bank Account Card</strong> page. The application status on each line will be blank because the statement amounts have not been applied to outstanding ledger entries.</p>
+<p>Statement amounts can be applied to outstanding ledger entries by:</p>
+<ul>
+<li>Manually applying CODA statement lines.</li>
+<li>Automatically applying CODA statement amounts to the appropriate ledger entries and accounts. Automatic processing of CODA statement lines is recommended.</li>
+</ul>
+<h2 id="to-manually-apply-the-coda-statement-lines">To manually apply the CODA statement lines</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the bank account, and then choose the <strong>CODA Statements</strong> action.</p>
+</li>
+<li><p>Select the CODA statement, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>For each statement line, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Account No.</strong></td>
+<td>Enter the number of the general ledger account, bank, customer, vendor, or fixed asset that the bank account statement line is linked to.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Business Central automatically retrieves the description from the imported CODA file, but you can modify the contents of this field.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-automatically-apply-the-coda-statement-lines">To automatically apply the CODA statement lines</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the bank account, and then choose the <strong>CODA Statements</strong> action.</p>
+</li>
+<li><p>Select the CODA statement, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>Choose the <strong>Process CODA Statement Lines</strong> action.</p>
+</li>
+<li><p>Fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default Posting</strong></td>
+<td>Select if you want the batch job to post statement amounts that cannot be linked to existing ledger entries.</td>
+</tr>
+<tr>
+<td><strong>Print List</strong></td>
+<td>Select to print a list of statement amounts that cannot be linked automatically.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+<p>When you start the batch job, statement amounts will be applied to existing ledger entries based on the transaction codes. For more information, see <a href="how-to-set-up-bank-accounts-for-coda.html">Set Up Bank Accounts for CODA</a>.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="coda-bank-statements.html">CODA Bank Statements</a><br>
+<a href="how-to-set-up-bank-accounts-for-coda.html">Set Up Bank Accounts for CODA</a><br>
+<a href="how-to-set-up-iblc-blwi-transaction-codes.html">Set Up IBLC-BLWI Transaction Codes</a><br>
+<a href="how-to-import-coda-statements.html">Import CODA Statements</a><br>
+<a href="how-to-create-financial-journals.html">Create Financial Journals</a><br>
+<a href="how-to-automatically-transfer-and-post-coda-statements.html">Automatically Transfer and Post CODA Statements</a><br>
+<a href="how-to-manually-transfer-and-post-coda-statements.html">Manually Transfer and Post CODA Statements</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Belgium/how-to-apply-coda-statements.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

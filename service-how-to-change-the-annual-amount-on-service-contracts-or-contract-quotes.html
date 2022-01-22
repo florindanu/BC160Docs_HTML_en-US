@@ -1,0 +1,574 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Change the Annual Amount on Service Contracts or Contract Quotes | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Change the Annual Amount on Service Contracts or Contract Quotes | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can change the amount that will be invoiced annually on service contracts or service contract quotes.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="change-the-annual-amount-on-service-contracts-or-contract-quotes">Change the Annual Amount on Service Contracts or Contract Quotes</h1>
+
+<p>You can change the annual amount of the service contract or contract quote to correct the amount that will be invoiced annually.</p>
+<h2 id="to-change-the-annual-amount-of-the-service-contract-or-contract-quote">To change the annual amount of the service contract or contract quote</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Contracts</strong> or <strong>Service Contract Quotes</strong>,and then choose the related link.</li>
+<li>Choose the contract or contract quote.</li>
+<li>Choose the <strong>Open Contract</strong> action to open the contract or contract quote for editing.</li>
+<li>Choose the <strong>Allow Unbalanced Amounts</strong> check box if you want to change the annual amount and distribute the annual amount difference manually on the contract lines. Otherwise, clear the check box to automatically distribute the annual amount difference on the contract lines after you change the annual amount.</li>
+<li>Change the contents of the <strong>Annual Amount</strong> field. You cannot sign, that is, convert into a service contract if you are working on a contract quote, or lock a service contract that has a negative annual amount. If you set the annual amount to zero, the contents of the <strong>Invoice Period</strong> field must be <strong>None</strong> when either signing or locking the service contract.</li>
+<li>Depending on whether the <strong>Allow Unbalanced Amounts</strong> check box is selected, run either the manual or automatic distribution of the annual amount difference. The contract lines will be updated so that the <strong>Calcd. Annual Amount</strong> field value is equal to the new annual amount.</li>
+</ol>
+<h2 id="distributing-differences-between-new-and-calculated-annual-amounts">Distributing Differences Between New and Calculated Annual Amounts</h2>
+<p>If you change the annual amount of a service contract or contract quote, you may want to distribute the difference between its new and calculated ammual amounts on the contract lines. There are three ways to distribute amounts:</p>
+<ul>
+<li>Even distribution</li>
+<li>Distribution based on line amounts</li>
+<li>Distribution based on Profit</li>
+</ul>
+<h3 id="even-distribution">Even Distribution</h3>
+<p>If you change the annual amount of the service contract or contract quote, you may want to distribute the difference between its new and calculated annual amounts on the contract lines. Even distribution is one of the automatic distribution methods that can help you spread equally the new and calculated annual amounts difference between line amounts on the contract lines. The following list of distribution procedure steps describe the main idea of this method:</p>
+<ol>
+<li>The difference between the new <strong>Annual Amount</strong> and <strong>Calcd. Annual Amount</strong> field values is divided by the number of the contract lines in the service contract or contract quote.</li>
+<li>The <strong>Line Amount</strong> field value is updated by adding the result of the previous operation.</li>
+<li>The contents in the <strong>Line Discount Amount</strong>, <strong>Line Discount %</strong>, and <strong>Profit</strong> fields are updated with regard to the new value in the <strong>Line Amount</strong> field in the following way:
+<ul>
+<li>Line Discount Amount = Line Value - Line Amount.</li>
+<li>Line Discount % = Line Discount Amount / Line Value * 100.</li>
+<li>Profit = Line Amount - Line Cost.</li>
+</ul>
+</li>
+</ol>
+<p>The steps are repeated for each contract line.</p>
+<h4 id="example">Example</h4>
+<p>The <strong>Allow Unbalanced Amounts</strong> check box is not selected in the service contract that contains three contract lines with such information.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>30.00</td>
+<td>40.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>40.00</td>
+<td>10.00</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>40.00</td>
+<td>50.00</td>
+<td>10.00</td>
+<td>5.00</td>
+<td>45.00</td>
+<td>5.00</td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>50.00</td>
+<td>70.00</td>
+<td>10.00</td>
+<td>7.00</td>
+<td>63.00</td>
+<td>13.00</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Annual Amount</strong> field value is equal to the contents of the <strong>Calcd. Annual Amount</strong> field, which is always set to the sum of the line amounts. In this case, it is equal to the following:  40 + 45 + 63 = 148.</p>
+<p>If you change the <strong>Annual Amount</strong> to 139, the amount is calculated that should be added to each <strong>Line Amount</strong> field value. This amount is calculated by subtracting the <strong>Calcd. Annual Amount</strong> from the new <strong>Annual Amount</strong> field value and dividing the result by the number of the contract lines in the service contract. In this case, it will be equal to the following: (139 - 148) / 3 = -3. Then, the last calculated figure is added to each <strong>Line Amount</strong> field value and the <strong>Line Discount %</strong>, <strong>Line Discount Amount</strong>, and <strong>Profit</strong> field values are updated using the formulas in the procedure described above.</p>
+<p>Finally, the contract lines will contain this data.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>30.00</td>
+<td>40.00</td>
+<td>7.50</td>
+<td>3.00</td>
+<td>37.00</td>
+<td>7.00</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>40.00</td>
+<td>50.00</td>
+<td>16.00</td>
+<td>8.00</td>
+<td>42.00</td>
+<td>2.00</td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>50.00</td>
+<td>70.00</td>
+<td>14.29</td>
+<td>10.00</td>
+<td>60.00</td>
+<td>10.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distribution-based-on-line-amount">Distribution Based on Line Amount</h3>
+<p>If you change the annual amount of the service contract or contract quote, you may want to distribute the difference between its new and calculated annual amounts on the contract lines. Distribution Based on Line Amount is an automatic method that can help you spread the new and calculated annual amounts difference between the line amounts on the contract lines. This distribution will be performed proportionally to their line amount shares in the calculated annual amount. The following list of distribution procedure steps for each contract line describe the main idea of this method:</p>
+<ol>
+<li><p>The line amount percentage contribution is calculated as follows: the contents of the <strong>Line Amount</strong> field is divided by the <strong>Calcd. Annual Amount</strong> field values on all contract lines.</p>
+</li>
+<li><p>The <strong>Line Amount</strong> field value is updated by adding to it the difference between the new and calculated annual amounts, which is multiplied by the line amount percentage contribution.</p>
+</li>
+<li><p>The contents in the <strong>Line Discount Amount</strong>, <strong>Line Discount %</strong>, and <strong>Profit</strong> fields are updated with regard to the new value in the <strong>Line Discount Amount</strong> field in the following way:</p>
+<ul>
+<li>Line Discount Amount = Line Value - Line Amount</li>
+<li>Line Discount % = Line Discount Amount / Line Value * 100</li>
+<li>Profit = Line Amount - Line Cost</li>
+</ul>
+</li>
+</ol>
+<h3 id="distribution-based-on-line-amount-1">Distribution Based on Line Amount</h3>
+<p>If you change the annual amount of the service contract or contract quote, you may want to distribute the difference between its new and calculated annual amounts on the contract lines. Distribution Based on Line Amount is an automatic method that can help you spread the new and calculated annual amounts difference between the line amounts on the contract lines. This distribution will be performed proportionally to their line amount shares in the calculated annual amount. The following list of distribution procedure steps for each contract line describe the main idea of this method:</p>
+<ol>
+<li><p>The line amount percentage contribution is calculated as follows: the contents of the <strong>Line Amount</strong> field is divided by the <strong>Calcd. Annual Amount</strong> field values on all contract lines.</p>
+</li>
+<li><p>The <strong>Line Amount</strong> field value is updated by adding to it the difference between the new and calculated annual amounts, which is multiplied by the line amount percentage contribution.</p>
+</li>
+<li><p>The contents in the <strong>Line Discount Amount</strong>, <strong>Line Discount %</strong>, and <strong>Profit</strong> fields are updated with regard to the new value in the <strong>Line Discount Amount</strong> field in the following way:</p>
+<ul>
+<li>Line Discount Amount = Line Value - Line Amount</li>
+<li>Line Discount % = Line Discount Amount / Line Value * 100</li>
+<li>Profit = Line Amount - Line Cost</li>
+</ul>
+</li>
+</ol>
+<p>The steps are repeated for each contract line.</p>
+<h4 id="example-1">Example</h4>
+<p>The <strong>Allow Unbalanced Amounts</strong> check box is not selected in the service contract that contains three contract lines with such information.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>15.00</td>
+<td>17.00</td>
+<td>3.00</td>
+<td>0.51</td>
+<td>25.00</td>
+<td>1.49</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>20.00</td>
+<td>23.00</td>
+<td>None</td>
+<td>0.00</td>
+<td>55.10</td>
+<td>3.00</td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>24.00</td>
+<td>27.00</td>
+<td>3.00</td>
+<td>0.81</td>
+<td>112.70</td>
+<td>2.19</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Annual Amount</strong> field value is equal to the contents of the <strong>Calcd. Annual Amount</strong> field which is always set to the sum of the line amounts. In this case, it is equal to the following: 16.49 + 23.00 + 26.19 = 65.68.</p>
+<p>If you change the <strong>Annual Amount</strong> to 60, the profit percentage contributions for each contract line is calculated:</p>
+<ul>
+<li>Item 1 – 5 / (5 + 5.1 +12.7) = 0.2193 %</li>
+<li>Item 2 – 5.1 / (5 + 5.1 + 12.7) = 0.2237</li>
+<li>Item 3 – 12.7 / (5 + 5.1 + 12.7) = 0.557</li>
+</ul>
+<p>The <strong>Line Amount</strong> field value is updated on each contract line using the following formula: Line Amount = Line Amount + difference between the new and calculated annual amounts * Percentage Contribution. After that, the <strong>Line Discount Amount</strong>, <strong>Line Discount %</strong>, and <strong>Profit</strong> field values are updated using the formulas described in the procedure above.</p>
+<p>Finally, the contract lines will contain this data.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>15.00</td>
+<td>17.00</td>
+<td>11.41</td>
+<td>1.94</td>
+<td>15.06</td>
+<td>0.06</td>
+<td></td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>20.00</td>
+<td>23.00</td>
+<td>8.65</td>
+<td>1.99</td>
+<td>21.01</td>
+<td>1.01</td>
+<td></td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>24.00</td>
+<td>27.00</td>
+<td>11.37</td>
+<td>3.07</td>
+<td>23.93</td>
+<td>-0.07</td>
+<td>-   Line Discount % = Line Discount Amount / Line Value * 100</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-2">Example</h4>
+<p>The <strong>Allow Unbalanced Amounts</strong> check box is not selected in the service contract that contains three contract lines with such information.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>15.00</td>
+<td>17.00</td>
+<td>3.00</td>
+<td>0.51</td>
+<td>25.00</td>
+<td>1.49</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>20.00</td>
+<td>23.00</td>
+<td>None</td>
+<td>0.00</td>
+<td>55.10</td>
+<td>3.00</td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>24.00</td>
+<td>27.00</td>
+<td>3.00</td>
+<td>0.81</td>
+<td>112.70</td>
+<td>2.19</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Annual Amount</strong> field value is equal to the contents of the <strong>Calcd. Annual Amount</strong> field which is always set to the sum of the line amounts. In this case, it is equal to the following: 16.49 + 23.00 + 26.19 = 65.68.</p>
+<p>If you change the <strong>Annual Amount</strong> to 60, the profit percentage contributions for each contract line is calculated:</p>
+<ul>
+<li>Item 1 – 5 / (5 + 5.1 +12.7) = 0.2193 %</li>
+<li>Item 2 – 5.1 / (5 + 5.1 + 12.7) = 0.2237</li>
+<li>Item 3 – 12.7 / (5 + 5.1 + 12.7) = 0.557</li>
+</ul>
+<p>The <strong>Line Amount</strong> field value is updated on each contract line using the following formula: Line Amount = Line Amount + difference between the new and calculated annual amounts * Percentage Contribution. After that, the <strong>Line Discount Amount</strong>, <strong>Line Discount %</strong>, and <strong>Profit</strong> field values are updated using the formulas described in the procedure above.</p>
+<p>Finally, the contract lines will contain this data.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>15.00</td>
+<td>17.00</td>
+<td>11.41</td>
+<td>1.94</td>
+<td>15.06</td>
+<td>0.06</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>20.00</td>
+<td>23.00</td>
+<td>8.65</td>
+<td>1.99</td>
+<td>21.01</td>
+<td>1.01</td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>24.00</td>
+<td>27.00</td>
+<td>11.37</td>
+<td>3.07</td>
+<td>23.93</td>
+<td>-0.07</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distribution-based-on-profit">Distribution Based on Profit</h3>
+<p>If you change the annual amount of the service contract or contract quote, you may want to distribute the difference between its new and calculated annual amounts on the contract lines. Distribution Based on Profit is one of the automatic methods that can help you spread the new and calculated annual amounts difference between the line amounts on the contract lines. This distribution will be performed proportionally to their profit shares in the total contract or contract quote profit. The following list of distribution procedure steps for each contract line describe the main idea of this method:</p>
+<ol>
+<li><p>The profit percentage contribution is calculated as follows: the contents of the <strong>Profit</strong> field is divided by the sum of <strong>Profit</strong> field values on all contract lines.</p>
+</li>
+<li><p>The <strong>Line Amount</strong> field value is updated by adding to it the difference between the new and calculated annual amounts, which is multiplied by the profit percentage contribution.</p>
+</li>
+<li><p>The contents in the Line Discount Amount, Line Discount %, and Profit fields are updated with regard to the new value in the <strong>Line Amount</strong> field in the following way:</p>
+<ul>
+<li>Line Discount Amount = Line Value - Line Amount</li>
+<li>Line Discount % = Line Discount Amount / Line Value * 100</li>
+<li>Profit = Line Amount - Line Cost</li>
+</ul>
+</li>
+</ol>
+<h4 id="example-3">Example</h4>
+<p>The <strong>Allow Unbalanced Amounts</strong> check box is not selected in the service contract that contains three contract lines with such information.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>20.00</td>
+<td>25.00</td>
+<td>0.00</td>
+<td>0.00</td>
+<td>25.00</td>
+<td>5.00</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>50.00</td>
+<td>58.00</td>
+<td>5.00</td>
+<td>2.90</td>
+<td>55.10</td>
+<td>5.10</td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>100.00</td>
+<td>115.00</td>
+<td>2.00</td>
+<td>2.30</td>
+<td>112.70</td>
+<td>12.70</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Annual Amount</strong> field value is equal to the contents of the <strong>Calcd. Annual Amount</strong> field, which is always set to the sum of the line amounts. In this case, it is equal to the following:  25.00 + 55.10 + 112.70 = 192.80.</p>
+<p>If you change the <strong>Annual Amount</strong> to 180, the profit percentage contributions for each contract line are calculated:</p>
+<ul>
+<li>Item 1 – 5 / (5 + 5.1 +1 2.7) = 0.2193 %</li>
+<li>Item 2 – 5.1 / (5 + 5.1 + 12.7) = 0.2237</li>
+<li>Item 3 – 12.7 / (5 + 5.1 + 12.7) = 0.557</li>
+</ul>
+<p>The <strong>Line Amount</strong> field value is updated on each contract line using the following formula: Line Amount = Line Amount + difference between the new and calculated annual amounts * Percentage Contribution. After that, the <strong>Line Discount Amount</strong>, <strong>Line Discount %</strong>, and <strong>Profit</strong> field values are updated using the formulas in the step 3 of the procedure described above.</p>
+<p>Finally, the contract lines will contain this data.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Line Cost</th>
+<th>Line Value</th>
+<th>Line Discount %</th>
+<th>Line Discount Amount</th>
+<th>Line Amount</th>
+<th>Profit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item 1</td>
+<td>20.00</td>
+<td>25.00</td>
+<td>11.24</td>
+<td>2.81</td>
+<td>22.19</td>
+<td>2.19</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>50.00</td>
+<td>58.00</td>
+<td>9.93</td>
+<td>5.76</td>
+<td>52.24</td>
+<td>2.24</td>
+</tr>
+<tr>
+<td>Item 3</td>
+<td>100.00</td>
+<td>115.00</td>
+<td>8.20</td>
+<td>9.43</td>
+<td>105.57</td>
+<td>5.57</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-to-create-service-contracts-and-service-contract-quotes.html">Create Service Contracts and Service Contract Quotes</a><br>
+<a href="service-setup-service.html">Setting Up Service Management</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-to-change-the-annual-amount-on-service-contracts-or-contract-quotes.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

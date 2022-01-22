@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Assembly Order Posting | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Assembly Order Posting | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Assembly order posting is based on the same principles as when posting the similar activities of sales orders and production consumption/output. However, the principles are combined in that assembly orders have their own posting UI, like that for sales orders, while the actual entry posting happens in the background as direct item and resource journal postings, like that for production consumption, output, and capacity.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-assembly-order-posting">Design Details: Assembly Order Posting</h1>
+
+<p>Assembly order posting is based on the same principles as when posting the similar activities of sales orders and production consumption/output. However, the principles are combined in that assembly orders have their own posting UI, like that for sales orders, while the actual entry posting happens in the background as direct item and resource journal postings, like that for production consumption, output, and capacity.</p>
+<p>Similarly to production order posting, the consumed components and the used resources are converted and output as the assembly item when the assembly order is posted. For more information, see <a href="design-details-production-order-posting.html">Design Details: Production Order Posting</a>. However, the cost flow for assembly orders is less complex, especially because assembly cost posting only occurs once and therefore does not generate work-in-process inventory.</p>
+<p>The following journal postings occur during assembly order posting:</p>
+<ul>
+<li>The item journal posts positive item ledger entries, representing output of the assembly item, from the assembly order header</li>
+<li>The item journal posts negative item ledger entries, representing consumption of assembly components, from the assembly order lines.</li>
+<li>The resource journal posts usage of assembly resources (time units), from the assembly order lines.</li>
+<li>The capacity journal posts value entries relating to the resource usage, from the assembly order lines.</li>
+</ul>
+<p>The following diagram shows the structure of item and resource ledger entries that result from assembly order posting.</p>
+<p><img src="media/design_details_assembly_posting_1.png" alt="Item, resource, and capacity ledger entries resulting from assembly order posting" title="Item, resource, and capacity ledger entries resulting from assembly order posting"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Machine and work centers are included to illustrate that capacity ledger entries are created from both production and assembly.</p>
+</div>
+<p>The following diagram shows how assembly data flows into ledger entries during posting:</p>
+<p><img src="media/design_details_assembly_posting_2.png" alt="Assembly-related entry flow during posting" title="AAssembly-related entry flow during posting"></p>
+<h2 id="posting-sequence">Posting Sequence</h2>
+<p>The posting of an assembly order occurs in the following order:</p>
+<ol>
+<li>The assembly order lines are posted.</li>
+<li>The assembly order header is posted.</li>
+</ol>
+<p>The following table outlines the sequence of actions.</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Initialize Posting</td>
+<td>1.  Make preliminary checks.<br>2.  Add posting number and modify the assembly order header.<br>3.  Release the assembly order.</td>
+</tr>
+<tr>
+<td>Post</td>
+<td><ol><li>Create the posted assembly order header.</li><li>Copy comment lines.</li><li>Post assembly order lines (consumption):<br><br> <ol><li>Create a status page to calculate assembly consumption.</li><li>Get the remaining quantity on which the item journal line will be based.</li><li>Reset the consumed and remaining quantities.</li><li>For assembly order lines of type Item:<br><br> <ol><li>Populate fields on the item journal line.</li><li>Transfer reservations to the item journal line.</li><li>Post the item journal line to create the item ledger entries.</li><li>Create warehouse journal lines and post them.</li></ol></li><li>For assembly order lines of type Resource:<br><br> <ol><li>Populate fields on the item journal line.</li><li>Post the item journal line. This creates capacity ledger entries.</li><li>Create and post resource journal line.</li></ol></li><li>Transfer field values from the assembly order line into a newly created posted assembly order line.</li></ol></li><li>Post the assembly order header (output):<br><br> <ol><li>Populate fields on the item journal line.</li><li>Transfer reservations to the item journal line.</li><li>Post the item journal line to create the item ledger entries.</li><li>Create warehouse journal lines and post them.</li><li>Reset the assembly quantities and remaining quantities.</li></ol></li></ol></td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Unlike for production output, which is posted at expected cost, assembly output is posted at actual cost.</p>
+</div>
+<h2 id="cost-adjustment">Cost Adjustment</h2>
+<p>Once an assembly order is posted, meaning that components (material) and resources are assembled into a new item, then it should be possible to determine the actual cost of that assembly item, and the actual inventory cost of the components involved. This is achieved by forwarding costs from the posted entries of the source (the components and resources) to the posted entries of the destination (the assembly item). The forwarding of costs is done by calculating and generating new entries, called adjustment entries that become associated with the destination entries.</p>
+<p>The assembly costs to be forwarded are detected with the Order Level detection mechanism. For information about other adjustment detection mechanisms, see <a href="design-details-cost-adjustment.html">Design Details: Cost Adjustment</a>.</p>
+<h3 id="detecting-the-adjustment">Detecting the Adjustment</h3>
+<p>The order Level detection function is used in conversion scenarios, production and assembly. The function works as follows:</p>
+<ul>
+<li>Cost adjustment is detected by marking the order whenever a material/resource is posted as consumed/used.</li>
+<li>Cost is forwarding by applying the costs from material/resource to the output entries associated with the same order.</li>
+</ul>
+<p>The following graphic shows the adjustment entry structure and how assembly costs are adjusted.</p>
+<p><img src="media/design_details_assembly_posting_3.png" alt="Assembly-related entry flow during cost adjustment" title="Assembly-related entry flow during posting"></p>
+<h3 id="performing-the-adjustment">Performing the Adjustment</h3>
+<p>The spreading of detected adjustments from material and resource costs onto the assembly output entries is performed by the <strong>Adjust Cost – Item Entries</strong> batch job. It contains the Make Multilevel Adjustment function, which consists of the following two elements:</p>
+<ul>
+<li>Make Assembly Order Adjustment – which forwards cost from material and resource usage to the assembly output entry. Lines 5 and 6 in the algorithm below are responsible for that.</li>
+<li>Make Single Level Adjustments – which forwards costs for individual items using their costing method. Lines 9 and 10 in the algorithm below are responsible for that.</li>
+</ul>
+<p><img src="media/design_details_assembly_posting_4.jpg" alt="Summary of the cost adjustment algorithm for assembly posting" title="Summary of the cost adjustment algorithm for assembly posting"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Make WIP Adjustments element, in lines 7 and 8, is responsible for forwarding production material and capacity usage to the output of unfinished production orders. This is not used when adjusting assembly order costs as the concept of WIP does not apply to assembly.</p>
+</div>
+<p>For information about how costs from assembly and production are posted to the general ledger, see <a href="design-details-inventory-posting.html">Design Details: Inventory Posting</a>.</p>
+<h2 id="assembly-costs-are-always-actual">Assembly Costs are Always Actual</h2>
+<p>The concept of work in process (WIP) does not apply in assembly order posting. Assembly costs are only posted as actual cost, never as expected cost. For more information, see <a href="design-details-expected-cost-posting.html">Design Details: Expected Cost Posting</a>.</p>
+<p>This is enabled by the following data structure.</p>
+<ul>
+<li>In the <strong>Type</strong> field on item journal lines, in the <strong>Capacity Ledger Entry</strong> and <strong>Value Entry</strong> tables, <em>Resource</em> is used to identify assembly resource entries.</li>
+<li>In the <strong>Item Ledger Entry Type</strong> field on item journal lines, in the <strong>Capacity Ledger Entry</strong> and <strong>Value Entry</strong> tables, <em>Assembly Output</em> and <em>Assembly Consumption</em> are used to identify the output assembly item entries and the consumed assembly component entries respectively.</li>
+</ul>
+<p>In addition, posting group fields on the assembly order header and assembly order lines are populated by default as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Type</th>
+<th>Posting Group</th>
+<th>Gen. Prod. Posting Group</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assembly Order Header</td>
+<td>Item</td>
+<td>Inventory Posting Group</td>
+<td>Gen. Prod. Posting Group</td>
+</tr>
+<tr>
+<td>Assembly Order Line</td>
+<td>Item</td>
+<td>Inventory Posting Group</td>
+<td>Gen. Prod. Posting Group</td>
+</tr>
+<tr>
+<td>Assembly Order Line</td>
+<td>Resource</td>
+<td></td>
+<td>Gen. Prod. Posting Group</td>
+</tr>
+</tbody>
+</table>
+<p>Accordingly, only actual costs are posted to the general ledger, and no interim accounts are populated from assembly order posting. For more information, see <a href="design-details-accounts-in-the-general-ledger.html">Design Details: Accounts in the General Ledger</a></p>
+<h2 id="assemble-to-order">Assemble to Order</h2>
+<p>The item ledger entry that results from posting an assemble-to-order sale is fixed applied to the related item ledger entry for the assembly output. Accordingly, the cost of an assemble-to-order sale is derived from the assembly order that it was linked to.</p>
+<p>Item ledger entries of type Sale that result from posting assemble-to-order quantities are marked with <strong>Yes</strong> in the <strong>Assemble to Order</strong> field.</p>
+<p>Posting sales order lines where a part is inventory quantity and another part is assemble-to-order quantity results in separate item ledger entries, one for the inventory quantity and one for the assemble-to-order quantity.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-production-order-posting.html">Design Details: Production Order Posting</a><br>
+<a href="design-details-costing-methods.html">Design Details: Costing Methods</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-assembly-order-posting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Update Currency Exchange Rates| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Update Currency Exchange Rates| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Track amounts in different currencies using currency codes, and let Business Central help you adjust exchange rates of posted entries with an external service.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="update-currency-exchange-rates">Update Currency Exchange Rates</h1>
+
+<p>As companies operate in increasingly more countries/regions, it becomes more important that they be able to trade and report financials in more than one currency. You must set up a code for each currency you use if you buy or sell in currencies other than your local currency, have receivables or payables in other currencies, or record G/L transactions in different currencies.</p>
+<p>Your general ledger is set up to use your local currency (LCY), but you can set it up to also use another currency with a current exchange rate assigned. By designating a second currency as a so-called additional reporting currency, Business Central will automatically record amounts in both LCY and this additional reporting currency on each G/L entry and other entries, such as VAT entries. For more information, see <a href="finance-how-setup-additional-currencies.html">Set Up an Additional Reporting Currency</a>.</p>
+<h2 id="adjusting-exchange-rates">Adjusting Exchange Rates</h2>
+<p>Because exchange rates fluctuate constantly, additional currency equivalents in your system must be adjusted periodically. If these adjustments are not done, amounts that have been converted from foreign (or additional) currencies and posted to the general ledger in LCY may be misleading. In addition, daily entries posted before a daily exchange rate is entered into application must be updated after the daily exchange rate information is entered.</p>
+<p>The <strong>Adjust Exchange Rates</strong> batch job is used to manually adjust the exchange rates of posted customer, vendor and bank account entries. It can also update additional reporting currency amounts on G/L entries. You can also have the exchange rates adjusted automatically by using a service. For more information, see <a href="finance-how-update-currencies.html#to-set-up-a-currency-exchange-rate-service">To set up a currency exchange rate service</a>.</p>
+<h3 id="effect-on-customers-and-vendors">Effect on Customers and Vendors</h3>
+<p>For customer and vendor accounts, the batch job adjusts the currency by using the exchange rate that is valid on the posting date that is specified in the batch job. The batch job calculates the differences for the individual currency balances and posts the amounts to the general ledger account that is specified in the <strong>Unrealized Gains Acc.</strong> field or the <strong>Unrealized Losses Acc.</strong> field on the <strong>Currencies</strong> page. Balancing entries are automatically posted to the receivables/payables account in the general ledger.</p>
+<p>The batch job processes all open customer ledger entries and vendor ledger entries. If there is an exchange rate difference for an entry, the batch job creates a new detailed customer or vendor ledger entry which reflects the adjusted amount on the customer or vendor ledger entry.</p>
+<h4 id="dimensions-on-customer-and-vendor-ledger-entries">Dimensions on Customer and Vendor Ledger Entries</h4>
+<p>The adjustment entries are assigned the dimensions from the customer/vendor ledger entries, and the adjustments are posted per combination of dimension values.</p>
+<h3 id="effect-on-bank-accounts">Effect on Bank Accounts</h3>
+<p>For bank accounts, the batch job adjusts the currency by using the exchange rate that is valid on the posting date specified in the batch job. The batch job calculates the differences for each bank account that has a currency code and posts the amounts to the general ledger account that is specified in the <strong>Realized Gains Acc.</strong> field or the <strong>Realized Losses Acc.</strong> field on the <strong>Currencies</strong> page. Balancing entries are automatically posted to the general ledger bank accounts that are specified in the bank account posting groups. The batch job calculates one entry per currency per posting group.</p>
+<h4 id="dimensions-on-bank-account-entries">Dimensions on Bank Account Entries</h4>
+<p>The adjustment entries for the bank account's general ledger account and for the gain/loss account are assigned the bank account's default dimensions.</p>
+<h3 id="effect-on-gl-accounts">Effect on G/L Accounts</h3>
+<p>If you post in an additional reporting currency, you can have the batch job create new general ledger entries for currency adjustments between LCY and the additional reporting currency. The batch job calculates the differences for each general ledger entry and adjusts the general ledger entry depending on the contents of the <strong>Exchange Rate Adjustment</strong> field for each general ledger account.</p>
+<h5 id="dimensions-on-gl-account-entries">Dimensions on G/L Account Entries</h5>
+<p>The adjustment entries are assigned the default dimensions from the accounts they are posted to.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Before you can use the batch job, you must enter the adjustment exchange rates that are used to adjust the foreign currency balances. You do so on the <strong>Currency Exchange Rates</strong> page.<br><br></p>
+</div>
+<div class="embeddedvideo"><iframe src="https://www.microsoft.com/videoplayer/embed/RE3Q24s?rel=0" frameborder="0" allowfullscreen="true"></iframe></div>
+<h2 id="to-set-up-a-currency-exchange-rate-service">To set up a currency exchange rate service</h2>
+<p>You can use an external service to keep your currency exchange rates up to date, such as FloatRates.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Currency Exchange Rate Services</strong>, and then choose the related link.</li>
+<li>Choose the <strong>New</strong> action.</li>
+<li>On the <strong>Currency Exchange Rate Service</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Choose the <strong>Enabled</strong> check box to enable the service.</li>
+</ol>
+<h2 id="to-update-currency-exchange-rates-through-a-service">To update currency exchange rates through a service</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Currencies</strong>, and then choose the related link.</li>
+<li>Choose the <strong>Update Exchange Rates</strong> action.</li>
+</ol>
+<p>The value in the <strong>Exchange Rate</strong> field on the <strong>Currencies</strong> page is updated with the latest currency exchange rate.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/use-multiple-currencies-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-how-setup-additional-currencies.html">Set Up an Additional Reporting Currency</a><br>
+<a href="year-close-years-periods.html">Closing Years and Periods</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-how-update-currencies.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

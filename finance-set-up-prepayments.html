@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Prepayments | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Prepayments | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Prepayments are payments that are invoiced and posted to a sales or purchase prepayment order before final invoicing. You might require a deposit before you manufacture items to order, or you might require payment before you ship items to a customer. The prepayments functionality enables you to invoice and collect deposits required from customers or to remit deposits to vendors. Thus, you can ensure that all payments are posted against an invoice.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-prepayments">Set Up Prepayments</h1>
+
+<p>If you require your customers to submit payment before you ship an order to them, or if your vendor requires you to submit payment before they ship an order to you, you can use the Prepayment functionality. The functionality enables you to invoice and collect deposits required from customers or to remit deposits to vendors, and to ensure that all partial payments are posted against an invoice. For more information, see <a href="finance-how-to-create-prepayment-invoices.html">Create Prepayment Invoices</a>.</p>
+<p>Before you can post prepayment invoices, you have to set up the posting accounts in the general ledger, and you have to set up number series for prepayment documents. You must specify an account for prepayments related to sales and an account for prepayments related to purchasing. You can specify the same posting accounts to be used for all prepayments related to all general business posting groups or general product posting groups, or you can specify specific accounts for specific posting groups for sales and purchasing, respectively. This depends on your company's requirements for tracking prepayments.</p>
+<p>You can define the percentage of the line amount that will be invoiced for prepayment, for a customer or vendor, for all items or selected items. After you complete the setup, you can generate prepayment invoices from sales and purchase orders. You can use the default percentages for each sales or purchase line, or you can change the amounts on the invoice as needed. For example, you can specify a total amount for the entire order.</p>
+<p>Because the prepaid amount belongs to the buyer until they have received the goods or services, you need to set up general ledger accounts to hold the prepayment amounts until the final invoice is posted. Sales prepayments must be recorded in a liabilities account until the items are shipped. Purchase prepayments must be recorded in an assets account until the items are received. In addition, you must set up a separate general ledger account for each VAT identifier.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Depending on your country or region, additional setup may be required. For more information, see the list of related articles in the <a href="#see-also">See Also</a> section.</p>
+</div>
+<h2 id="to-add-prepayment-accounts-to-the-general-posting-setup">To add prepayment accounts to the general posting setup</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>General Posting Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>General Posting Setup</strong> page, fill in the following fields:</p>
+<ul>
+<li><strong>Sales Prepayments Account</strong></li>
+<li><strong>Purch. Prepayments Account</strong></li>
+</ul>
+</li>
+</ol>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you cannot see the fields in the <strong>General Posting Setup</strong> page, then use the horizontal scroll bar at the bottom of the page to scroll to the right.</p>
+</div>
+<p>If you have not already set up general ledger accounts for prepayments, you can open the <strong>G/L Account List</strong> page from the relevant account field.</p>
+<h2 id="to-set-up-number-series-for-prepayment-documents">To set up number series for prepayment documents</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sales &amp; Receivables Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Sales &amp; Receivables Setup</strong> page, fill in the following fields:</p>
+<ul>
+<li><strong>Posted Prepmt. Inv. Nos.</strong></li>
+<li><strong>Posted Prepmt. Cr. Memo Nos.</strong></li>
+</ul>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchases &amp; Payables Setup</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Purchases &amp; Payables Setup</strong> page, fill in the following fields:</p>
+<ul>
+<li><strong>Posted Prepmt. Inv. Nos.</strong></li>
+<li><strong>Posted Prepmt. Cr. Memo Nos.</strong></li>
+</ul>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can use the same number series for prepayment invoices and regular invoices, or you can use different number series. If you use different series, they must not overlap because there must not be any numbers that exist in both series.</p>
+</div>
+<h2 id="to-set-up-prepayment-percentages-for-items-customers-and-vendors">To set up prepayment percentages for items, customers, and vendors</h2>
+<p>For an item, you can set up a default prepayment percentage for all customers, a specific customer, or a customer price group.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</li>
+<li>Select an item, and then choose the <strong>Prepayment Percentages</strong> action.</li>
+<li>On the <strong>Sales Prepayment Percentages</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</li>
+</ol>
+<p>For a customer or vendor, you can set up one default prepayment percentage for all items and all types of sales lines. You enter this on the customer or vendor card.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customers</strong>, and then choose the related link.</li>
+<li>Open the card for a customer.</li>
+<li>Fill in the <strong>Prepayment %</strong> field.</li>
+<li>Repeat the steps for other customers or for vendors.</li>
+</ol>
+<h3 id="to-determine-which-prepayment-percentage-has-first-priority">To determine which prepayment percentage has first priority</h3>
+<p>An order may have a prepayment percentage on the sales header, and a different percentage for the items on the lines. To determine which prepayment percentage applies to each sale line, the system looks for the prepayment percentage in the following order and will apply the first default that it finds:</p>
+<ol>
+<li>A prepayment percentage for the item on the line and the customer that the order is for.</li>
+<li>A prepayment percentage for the item on the line and the customer price group that the customer belongs to.</li>
+<li>A prepayment percentage for the item on the line for all customers.</li>
+<li>The prepayment percentage on the sales or purchase header.</li>
+</ol>
+<p>In other words, the prepayment percentage on the customer card will only apply if there is no prepayment percentage set up for the item. However, if you change the contents of the <strong>Prepayment Percentage</strong> field on the sales or purchase header after you create the lines, the prepayment percentage on all of the lines will be updated. This makes it easy to create an order with a fixed prepayment percentage, regardless of the percentage set up on items.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-invoice-prepayments.html">Invoicing Prepayments</a><br>
+<a href="walkthrough-setting-up-and-invoicing-sales-prepayments.html">Walkthrough: Setting Up and Invoicing Sales Prepayments</a><br>
+<a href="LocalFunctionality/Australia/how-to-calculate-goods-and-services-tax-on-prepayments.html">Calculate Goods and Services Tax on Prepayments in Australia</a><br>
+<a href="LocalFunctionality/NewZealand/how-to-calculate-goods-and-services-tax-on-prepayments.html">Calculate Goods and Services Tax on Prepayments in New Zealand</a><br>
+<a href="finance-general-ledger.html">Understanding the General Ledger and the COA</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-set-up-prepayments.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

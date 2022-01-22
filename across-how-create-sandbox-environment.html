@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create a Sandbox Environment| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create a Sandbox Environment| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Create an environment for exploring, learning, demoing, developing, and testing.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="creating-a-sandbox-environment-in-">Creating a Sandbox Environment in Business Central</h1>
+
+<p>With Business Central, you can easily create a safe environment where you can test, train, or troubleshoot without disturbing your company's work processes or business data. Such a non-production environment is called a <em>sandbox</em>. Isolated from production, a sandbox environment is the place to safely explore, learn, demo, develop, and test the service without the risk of affecting the data and settings of your production environment.</p>
+<p>Your administrator can create sandbox environments in the <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-environments?toc=/dynamics365/business-central/toc.json">administration center</a>, but if you want to quickly test something, you can create a sandbox environment from inside Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Technically, sandbox environments are very different from production environments, even if your administrator creates a sandbox that includes production data. You cannot use a sandbox for benchmarking, and you cannot request a database export, for example. If you want to create a sandbox for benchmarking, your administrator can create a dedicated production environment in the administration center. For more information, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-environments#types-of-environments">Types of environments</a>.</p>
+</div>
+<h2 id="to-create-a-sandbox-environment-in-your-">To create a sandbox environment in your Business Central</h2>
+<ol>
+<li><p>Sign in to your production instance of Business Central.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Sandbox Environment</strong>, and then choose the related link.</p>
+ <!-- ![Sandbox Environment Setup](./media/across-sandbox/sandbox-environment-setup.png) -->
+</li>
+<li><p>Choose the <strong>Create</strong> button.</p>
+<p>Another tab with Business Central opens where you can finish the setup of your sandbox environment.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have pop-up blocker enabled in your browser, change it to allow URLs from the *.businesscentral.dynamics.com address.</p>
+</div>
+</li>
+</ol>
+<p>When the sandbox environment is ready, you will be redirected to sandbox environment's Welcome wizard.</p>
+<!-- ![Sandbox Welcome Wizard](./media/across-sandbox/sandbox-wizard.png) -->
+<p>You can choose the <strong>Learn more</strong> button to read about developer scenarios that you can try in a sandbox environment or choose the <strong>Close</strong> button to continue to the Role Center of your Business Central sandbox instance.</p>
+<p>At the top of the Role Center, a notification appears to inform you that this is a sandbox environment. You can also see the type of the environment in the title bar of the client.
+<!-- ![Sandbox RoleCenter Notification](./media/across-sandbox/sandbox-rolecenter-notification.png) --></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>A sandbox environment created in this way only contains the default demonstration data for the CRONUS company. No data is copied or otherwise transferred from the production environment.<br><br>
+You can also create a sandbox environment containing the production data. You must do this through the administration center. For more information, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-environments">Managing Environments</a> in the Developer and IT-Pro help.</p>
+</div>
+<p>At any time, you can return to the <strong>Sandbox Environment</strong> page, and reset the sandbox environment.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Resetting the sandbox environment will remove it completely, and then create it again with the default demonstration data.</p>
+</div>
+<!--To switch between your production and sandbox environments, you can use the Business Central app launcher.
+    ![Sandbox Dynamics365 Menu](./media/across-sandbox/sandbox-dynamics365-menu.png) -->
+<p>An administrator can limit or even block access for some users to the sandbox environment. This can be done by using the standard security features of the product, such as the User card, user groups, and permission sets. For more information, see <a href="ui-define-granular-permissions.html">Assign Permissions to Users and Groups</a>.</p>
+<!-- ![Sandbox Permission Sets](./media/across-sandbox/sandbox-permission-sets.png) -->
+<h2 id="advanced-functionality-in-the-sandbox-environment">Advanced Functionality in the Sandbox Environment</h2>
+<p>The sandbox environment is not least useful because it includes a couple of handy features.</p>
+<h3 id="designer">Designer</h3>
+<p>In a sandbox environment, you will find the <strong>Designer</strong> enabled. You can activate Designer by selecting the design icon <img src="media/across-sandbox/sandbox-inclient-design-icon.png" alt="Designer"> on a page, or by choosing the <strong>Design</strong> menu item in the <img src="media/ui-experience/settings_icon_small.png" alt="Settings"> Settings menu.</p>
+<!-- ![In-client Designer](./media/across-sandbox/sandbox-inclient-designer.png) -->
+<h3 id="to-enable-the-advanced-user-experience">To enable the advanced user experience</h3>
+<p>It is possible to enable and try the full functionality of the standard version of Business Central in a sandbox tenant by setting the <strong>Experience</strong> field on the <strong>Company Information</strong> page.</p>
+<!-- ![Sandbox Environment Advanced](./media/across-sandbox/sandbox-advanced.png) -->
+<!-- ![Sandbox Production](./media/across-sandbox/sandbox-production.png) -->
+<p>After you have enabled the <em>Premium</em> user experience, you get access to all the standard profiles (roles) and Role Centers in the standard version. You can also create an evaluation company that is fully set up, including demonstration data and access to the advanced areas of the product. Alternatively, contact a reselling partner for a demonstration of the capabilities. For more information, see <a href="across-faq.html#findpartner">How do I find a reselling partner?</a>.</p>
+<!-- ![Sandbox New Company](./media/across-sandbox/sandbox-newcompany.png) -->
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="across-preview.html">Dynamics 365 Business Central Trials and Subscriptions</a><br>
+<a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/administration/tenant-admin-center-environments">Managing Environments in the Business Central administration center</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/across-how-create-sandbox-environment.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

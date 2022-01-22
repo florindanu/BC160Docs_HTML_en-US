@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Create a Job Sales Invoice to Invoice a Job| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Create a Job Sales Invoice to Invoice a Job| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to invoice customers for job expenses as a project progresses.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="invoice-jobs">Invoice Jobs</h1>
+
+<p>During the project, job costs from resource usage, materials, and job-related purchases can accumulate. As the job progresses, these transactions get posted to the job journal. It is important that all costs get recorded in the job journal before you invoice the customer.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can also purchase external resources unrelated to a job, for example, to invoice a vendor for work delivered. For more information, see <a href="purchasing-how-record-purchases.html">Record Purchases</a>.</p>
+</div>
+<p>You can invoice the whole job from the <strong>Job Task Lines</strong> page or only invoice selected billable lines from the <strong>Planning Lines</strong> page. Invoicing can be done after the job is finished or at certain intervals during the job's progress based on an invoicing schedule.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you select <strong>Billable</strong> in the <strong>Job Line Type</strong> field on the purchase documents for job-related purchases, then job planning lines that are ready to be invoiced to the customer are created. For more information, see <a href="projects-how-manage-project-supplies.html">Manage Project Supplies</a>.</p>
+</div>
+<h2 id="to-create-and-post-a-job-sales-invoice">To create and post a job sales invoice</h2>
+<p>You can create an invoice for a job or for one or more job tasks for a customer when either the work to be invoiced is complete or the date for invoicing based on an invoicing schedule has been reached.</p>
+<p>From the <strong>Jobs</strong> page, you can invoice a customer by selecting the job, and then choosing the <strong>Create Job Sales Invoice</strong> action. The following procedure shows how to use a batch job to invoice multiple jobs.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Job Create Sales Invoice</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Set filters if you want to limit the jobs that the batch job will process.</li>
+<li>Choose the <strong>OK</strong> button to create the invoices.</li>
+</ol>
+<h2 id="to-create-multiple-job-sales-invoices-from-job-planning-lines">To create multiple job sales invoices from job planning lines</h2>
+<p>You can create an invoice from a job planning lines, and indicate at that time the quantity of the item, resource, or general ledger account that you want to invoice.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Jobs</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open a relevant job.</p>
+</li>
+<li><p>Select a job task for which the <strong>Job Task Type</strong> field contains <strong>Posting</strong>, and then choose the <strong>Job Planning Lines</strong> action.</p>
+</li>
+<li><p>On a job planning line, in the <strong>Qty. To Transfer to Invoice</strong> field, enter the quantity of the item, resource, general ledger account type that you want to invoice.</p>
+</li>
+<li><p>Choose the <strong>Create Sales Invoice</strong> action.</p>
+</li>
+<li><p>On the <strong>Job Create Sales Invoice</strong> page, enter the posting date and whether you want to create a new invoice or append this invoice to an existing one.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+<p>On the job planning line, in the <strong>Qty. Transferred to Invoice</strong> field, you can see the quantity.</p>
+</li>
+<li><p>On the <strong>Job Planning Lines</strong> page, choose the <strong>Sales Invoices/Credit Memos</strong> action.</p>
+<p>The <strong>Sales Invoice</strong> page opens, showing the quantity that you have transferred to the invoice.</p>
+</li>
+<li><p>Make any additional changes, and then choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The above procedure is similar for creating, reviewing, and posting a job-related sales credit memo.</p>
+</div>
+<h2 id="to-calculate-and-post-job-completion-entries">To calculate and post job completion entries</h2>
+<p>When you have completed all activities for a job, including usage posting and invoicing, you must update the job to have a <strong>Status</strong> of <strong>Completed</strong>. Then, you must reverse any WIP that has been posted to the general ledger.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Jobs</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select an open job, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>In the <strong>Status</strong> field, select <strong>Completed</strong>.</p>
+</li>
+<li><p>Follow the assistance steps to calculate and post WIP. Alternatively, follows steps 5 and 6 to do so manually.</p>
+</li>
+<li><p>Choose the <strong>Calculate WIP</strong> action.</p>
+</li>
+<li><p>On the <strong>Job Calculate WIP</strong> page, fill in the fields as necessary.</p>
+<p>The job WIP entries created by running the batch job will have the <strong>Job Complete</strong> check box selected to show that they are completion entries.</p>
+</li>
+<li><p>Choose the <strong>Job Post WIP to G/L</strong> action.</p>
+</li>
+<li><p>On the <strong>Job Post WIP to G/L</strong> page, fill in the fields as necessary.</p>
+<p>The job WIP general ledger entries created by running the batch job will have the <strong>Job Complete</strong> check box selected to show they are completion entries.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="projects-manage-projects.html">Managing Projects</a><br>
+<a href="finance.html">Finance</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/projects-how-invoice-jobs.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

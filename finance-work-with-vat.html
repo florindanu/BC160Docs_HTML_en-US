@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to work With VAT on Sales and Purchases | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to work With VAT on Sales and Purchases | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic describes how perform tasks such as correcting posted VATIn EU countries/regions, every sales and purchase transaction is subject to VAT calculations. This topic describes how.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="work-with-vat-on-sales-and-purchases">Work with VAT on Sales and Purchases</h1>
+
+<p>If your country or region requires you to calculate value-added tax (VAT) on sales and purchase transactions so that you can report the amounts to a tax authority, you can set up Business Central to calculate VAT automatically on sales and purchase documents. For more information, see <a href="finance-setup-vat.html">Setting Up to Calculations and Posting Methods for Value-Added Tax</a>.</p>
+<p>There are, however, some VAT-related tasks that you can do manually. For example, you might need to correct a posted amount if you discover that a vendor uses a different rounding method.</p>
+<h2 id="calculating-and-displaying-vat-amounts-in-sales-and-purchase-documents">Calculating and Displaying VAT Amounts in Sales and Purchase Documents</h2>
+<p>You can calculate and display VAT amounts in sales and purchase documents differently, depending on the type of customer or vendor that you are dealing with. You can also override the calculated VAT amount to match the VAT amount calculated by your vendor on a given transaction.</p>
+<h3 id="unit-price-and-line-amount-includingexcluding-vat-on-sales-documents">Unit Price and Line Amount Including/Excluding VAT on Sales Documents</h3>
+<p>When you choose an item number in the <strong>No.</strong> field on a sales document, Business Central fills in the <strong>Unit Price</strong> field. The unit price comes from either the <strong>Item</strong> card or the item prices allowed for the item and customer. Business Centralcalculates the <strong>Line Amount</strong> when you enter a quantity for the line.</p>
+<p>If you are selling to retail consumers, you may want prices on sales documents to include VAT. To do this, choose the <strong>Prices Including VAT</strong> check box on the document.</p>
+<h3 id="including-or-excluding-vat-on-prices">Including or Excluding VAT on Prices</h3>
+<p>If the <strong>Prices Including VAT</strong> check box is chosen on a sales document, the <strong>Unit Price</strong> and <strong>Line Amount</strong> fields include VAT, and the field names will also reflect this. By default, VAT is not included in these fields.</p>
+<p>If the field is not selected, application will fill in the <strong>Unit Price</strong> and <strong>Line Amount</strong> field excluding VAT and the field names will reflect this.</p>
+<p>You can set up the default setting of the <strong>Prices Including VAT</strong> for all sales documents for a customer in the <strong>Prices Including VAT</strong> field on the <strong>Customer</strong> card. You can also set up item prices to include or exclude VAT. Normally, item prices contained in the Item Card will be the price excluding VAT. The application uses the information from the <strong>Price Includes VAT</strong> field on the <strong>Item</strong> card to determine the unit price amount for sales documents.</p>
+<p>The following table provides an overview of how application calculates the unit price amounts for a sales document when you have not set up prices on the <strong>Sales Prices</strong> page:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Price Includes VAT field on Item Card</strong></th>
+<th><strong>Prices Including VAT field in Sales Header</strong></th>
+<th><strong>Action Performed</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No check mark</td>
+<td>No check mark</td>
+<td>The <strong>Unit Price</strong> on the Item Card is copied to <strong>Unit Price Excl. VAT</strong> field on the sales lines.</td>
+</tr>
+<tr>
+<td>No check mark</td>
+<td>Check mark</td>
+<td>The application calculates the VAT amount per unit and adds to the <strong>Unit Price</strong> on the Item Card. This total Unit Price is then entered in the <strong>Unit Price Incl. VAT field</strong> on the sales lines.</td>
+</tr>
+<tr>
+<td>Check mark</td>
+<td>No check mark</td>
+<td>The application calculates the VAT amount included in the <strong>Unit Price</strong> on the Item Card using the VAT% related to the VAT Bus. Posting Gr. (Price) and the VAT Prod. Posting Group combination. The <strong>Unit Price</strong> on the Item Card, reduced by the VAT amount, is then entered in the <strong>Unit Price Excl. VAT</strong> field in the sales lines.</td>
+</tr>
+<tr>
+<td>Check mark</td>
+<td>Check mark</td>
+<td>The <strong>Unit Price</strong> on the Item Card is copied to <strong>Unit Price Incl. VAT</strong> field on the sales lines.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="correcting-vat-amounts-manually-in-sales-and-purchase-documents">Correcting VAT Amounts Manually in Sales and Purchase Documents</h2>
+<p>You can make corrections to posted VAT entries. This allows you to change the total sales or purchase VAT amounts without changing the VAT base. You may need to do this, for example, if you receive an invoice from a vendor that has calculated VAT incorrectly.</p>
+<p>Although you may have set up one or more combinations to handle import VAT, you must set up at least one VAT product posting group. For example, you can name it <strong>CORRECT</strong> for correction purposes, unless you can use the same general ledger account in the <strong>Purchase VAT Account</strong> field on the VAT posting setup line. For more information, see <a href="finance-setup-vat.html">Setting Up to Calculations and Posting Methods for Value-Added Tax</a>.</p>
+<p>If a payment discount has been calculated on the basis of an invoice amount that includes VAT, you revert the payment discount part of the VAT amount when the payment discount is granted. Note that you must activate the <strong>Adjust for Payments Disc.</strong> field in both the general ledger setup in general and the VAT posting setup for specific combinations of a VAT business posting group and a VAT product posting group.</p>
+<h3 id="to-set-the-system-up-for-manual-vat-entry-in-sales-documents">To set the system up for manual VAT entry in sales documents</h3>
+<p>The following describes how to enable manual VAT changes on sales documents. The steps are similar on the <strong>Purchases &amp; Payables Setup</strong> page.</p>
+<ol>
+<li>On the <strong>General Ledger Setup</strong> page, specify a <strong>Max. VAT Difference Allowed</strong> between the amount calculated by application and the manual amount.</li>
+<li>On the <strong>Sales &amp; Receivables Setup</strong> page, place a check mark in the <strong>Allow Vat Difference</strong> field.</li>
+</ol>
+<h3 id="to-adjust-vat-for-a-sales-document">To adjust VAT for a sales document</h3>
+<ol>
+<li>Open the relevant sales order.</li>
+<li>Choose the <strong>Statistics</strong> action.</li>
+<li>On the <strong>Invoicing</strong> FastTab, choose the value in the <strong>No. of Tax Lines</strong> field.</li>
+<li>Edit the <strong>VAT Amount</strong> field.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The total VAT amount for the invoice, grouped by VAT identifier, is displayed in the lines. You can manually adjust the amount in the <strong>VAT Amount</strong> field on the lines for each VAT identifier. When you modify the <strong>VAT Amount</strong> field, application checks to ensure that you have not changed the VAT by more than the amount you have specified as the maximum difference allowed. If the amount is outside the range of the <strong>Max. VAT Difference Allowed</strong>, a warning will be displayed stating the maximum allowed difference. You will be unable to proceed until the amount is adjusted to within the acceptable parameters. Click <strong>OK</strong> and enter another <strong>VAT Amount</strong> that is within the allowed range. If the VAT difference is equal to or lower than the maximum allowed, the VAT will be divided proportionally among the document lines that have the same VAT identifier.</p>
+</div>
+<h2 id="calculating-vat-manually-using-journals">Calculating VAT Manually Using Journals</h2>
+<p>You can also adjust VAT amounts in general, sales, and purchase journals. For example, you might need to do this when you enter a vendor invoice in your journal and there is a difference between the VAT amount that Business Central calculated and the VAT amount on the vendor's invoice.</p>
+<h3 id="to-set-the-system-up-for-manual-vat-entry-in-a-general-journals">To set the system up for manual VAT entry in a general journals</h3>
+<p>You must perform the following steps before you manually enter VAT in a general journal.</p>
+<ol>
+<li>On the <strong>General Ledger Setup</strong> page, specify a <strong>Max. VAT Difference Allowed</strong> between the amount calculated by application and the manual amount.</li>
+<li>On the <strong>General Journal Templates</strong> page, choose the <strong>Allow VAT Difference</strong> check box for the relevant journal.</li>
+</ol>
+<h3 id="to-set-the-system-up-for-manual-vat-entry-in-a-sales-and-purchase-journals">To set the system up for manual VAT entry in a sales and purchase journals</h3>
+<p>You must perform the following steps before you manually enter VAT in a sales or purchase journal.</p>
+<ol>
+<li><p>On the <strong>Purchases &amp; Payables Setup</strong> page, choose the <strong>Allow VAT Difference</strong> check box.</p>
+</li>
+<li><p>Repeat step 1 for the <strong>Sales &amp; Receivables Setup</strong> page.</p>
+</li>
+<li><p>After you complete the setup described above, you can adjust the <strong>VAT Amount</strong> field on the general journal line, or the <strong>Bal. VAT Amount</strong> field on the sales or purchase journal line. Business Central will check that the difference is not greater than the specified maximum.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the difference is greater, a warning will be displayed stating the maximum allowed difference. To continue, you must adjust the amount. Choose <strong>OK</strong> and then enter an amount that is within the allowed range. If the VAT difference is equal to or lower than the maximum allowed, Business Central will show the difference in the <strong>VAT Difference</strong> field.</p>
+</div>
+</li>
+</ol>
+<h2 id="posting-import-vat-with-purchase-invoices">Posting Import VAT with Purchase Invoices</h2>
+<p>Instead of using journals to post an import VAT invoice, you can use a purchase invoice.</p>
+<h3 id="to-set-up-purchasing-for-posting-import-vat-invoices">To set up purchasing for posting import VAT invoices</h3>
+<ol>
+<li>Set up a vendor card for the import authority that sends you the import VAT invoice. The <strong>Gen. Bus. Posting Group</strong> and <strong>VAT Bus. Posting Group</strong> must be set up in the same way as the general ledger account for the import VAT.</li>
+<li>Create a <strong>Gen. Product Posting Group</strong> for the import VAT and set up an import VAT <strong>Def. VAT Product Posting Group</strong> for the related <strong>Gen. Product Posting Group</strong>.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Chart of Accounts</strong>, and then choose the related link.</li>
+<li>Select the import VAT general ledger account, and then choose the <strong>Edit</strong> action.</li>
+<li>On the <strong>Posting</strong> FastTab, select the <strong>Gen. Prod. Posting Group</strong> setup for import VAT. Business Central automatically fills in the <strong>VAT Prod. Posting Group</strong> field.</li>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>General Posting Setup</strong>, and then choose the related link.</li>
+<li>Create a combination of the <strong>Gen. Bus. Posting Group</strong> for the VAT authority and the <strong>Gen. Prod. Posting Group</strong> for import VAT. For this new combination, in the <strong>Purchase Account</strong> field, choose the import VAT general ledger account.</li>
+</ol>
+<h3 id="to-create-a-new-invoice-for-the-import-authority-vendor-once-you-have-completed-the-setup">To create a new invoice for the import authority vendor once you have completed the setup</h3>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Invoices</strong>, and then choose the related link.</li>
+<li>Create a new purchase invoice.</li>
+<li>In the <strong>Buy-from Vendor No.</strong> field, choose the import authority vendor, and then choose the <strong>OK</strong> button.</li>
+<li>In the purchase line, in the <strong>Type</strong> field, choose <strong>G/L Account</strong>, and in the <strong>No.</strong> field, choose the import VAT general ledger account.</li>
+<li>In the <strong>Quantity</strong> field, type <strong>1</strong>.</li>
+<li>In the <strong>Direct Unit Cost Excl. VAT</strong> field, specify the VAT amount.</li>
+<li>Post the invoice.</li>
+</ol>
+<h2 id="processing-certificates-of-supply">Processing Certificates of Supply</h2>
+<p>When you sell goods to a customer in another EU country/region, you must send the customer a certificate of supply that the customer must sign and return to you. The following procedures are for processing certificates of supply for sales shipments, but the same steps apply for service shipments of items, and return shipments to vendors.</p>
+<h3 id="to-view-certificate-of-supply-details">To view certificate of supply details</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Sales Shipments</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the relevant sales shipment to a customer in another EU country/region.</p>
+</li>
+<li><p>Choose <strong>Certificate of Supply Details</strong>.</p>
+</li>
+<li><p>By default, if the <strong>Certificate of Supply Required</strong> check box is selected for VAT Posting Group setup for the customer, the <strong>Status</strong> field is set to <strong>Required</strong>. You can update the field to indicate whether the customer has returned the certificate.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If the VAT Posting Group setup does not have the <strong>Certificate of Supply Required</strong> check box selected, then a record is created and the <strong>Status</strong> field is set to <strong>Not Applicable</strong>. You can update the field to reflect the correct status information. You can manually change the status from <strong>Not Applicable</strong> to <strong>Required</strong>, and from <strong>Required</strong> to <strong>Not Applicable</strong> as needed.</p>
+</div>
+<p>When you update the <strong>Status</strong> field to <strong>Required</strong>, <strong>Received</strong>, or <strong>Not Received</strong>, a certificate is created.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use the <strong>Certificates of Supply</strong> page to get a view of the status of all posted shipments for which a certificate of supply has been created.</p>
+</div>
+</li>
+<li><p>Choose <strong>Print Certificate of Supply</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can preview or print the document. When you choose <strong>Print Certificate of Supply</strong> and print the document, the <strong>Printed</strong> check box is automatically selected. In addition, if not already specified, the status of the certificate is updated to <strong>Required</strong>. If needed, you include the printed certificate with the shipment.</p>
+</div>
+</li>
+</ol>
+<h3 id="to-print-a-certificate-of-supply">To print a certificate of supply</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Sales Shipments</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the relevant sales shipment to a customer in another EU country/region.</p>
+</li>
+<li><p>Choose the <strong>Print Certificate of Supply</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Alternatively, you can print a certificate from the <strong>Certificate of Supply</strong> page.</p>
+</div>
+</li>
+<li><p>To include information from the lines on the shipment document in the certificate, select the <strong>Print Line Details</strong> check box.</p>
+</li>
+<li><p>Choose the <strong>Create Certificates of Supply if Not Already Created</strong> check box to have Business Central create certificates for posted shipments that do not have one at the moment of execution. When you choose the check box, new certificates will be created for all posted shipments that do not have certificates within the selected range.</p>
+</li>
+<li><p>By default, the filter settings are for the shipment document that you have selected. Fill in the filter information to select a specific certificate of supply that you want to print.</p>
+</li>
+<li><p>On the <strong>Certificate of Supply</strong> page, choose the <strong>Print</strong> action to print the report, or choose the <strong>Preview</strong> action to view it on the screen.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>Certificate of Supply Status</strong> field and the <strong>Printed</strong> field are updated for the shipment on the <strong>Certificates of Supply</strong> page.</p>
+</div>
+</li>
+<li><p>Send the printed certificate of supply to the customer for signature.</p>
+</li>
+</ol>
+<h3 id="to-update-the-status-of-a-certificate-of-supply-for-a-shipment">To update the status of a certificate of supply for a shipment</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Posted Sales Shipments</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the relevant sales shipment to a customer in another EU country/region.</p>
+</li>
+<li><p>In the <strong>Status</strong> field, choose the relevant option.</p>
+<p>If the customer has returned the signed certificate of supply, choose <strong>Received</strong>. The <strong>Receipt Date</strong> field is updated. By default, the receipt date is set to the current work date.</p>
+<p>You can modify the date to reflect the date that you received the customer's signed certificate of supply. You can also add a link to the signed certificate using standard Business Central linking.</p>
+<p>If the customer does not return the signed certificate of supply, choose <strong>Not Received</strong>. You must then send the customer a new invoice that includes VAT, because the original invoice will not be accepted by the tax authority.</p>
+</li>
+</ol>
+<p>To view a group of certificates, you start from the <strong>Certificates of Supply</strong> page, and then update the information about the status of outstanding certificates as you receive them back from your customers. This can be useful when you want to search for all certificates that have a certain status, for example, <strong>Required</strong>, for which you want to update their status to <strong>Not Received</strong>.</p>
+<h3 id="to-update-the-status-of-a-group-of-certificates-of-supply">To update the status of a group of certificates of supply</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Certificates of Supply</strong>, and choose the related link.</p>
+</li>
+<li><p>Filter the <strong>Status</strong> field to the value that you want in order to create the list of certificates that you want to manage.</p>
+</li>
+<li><p>To update the status information, choose <strong>Edit List</strong>.</p>
+</li>
+<li><p>In the <strong>Status</strong> field, choose the relevant option.</p>
+<p>If the customer has returned the signed certificate of supply, choose <strong>Received</strong>. The <strong>Receipt Date</strong> field is updated. By default, the receipt date is set to the current work date.</p>
+<p>You can modify the date to reflect the date that you received the signed the certificate of supply. You can also add a link to the signed certificate using standard Business Central document linking.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You cannot create a new certificate of supply on the <strong>Certificate of Supply</strong> page when you navigate to it using this procedure. To create a certificate for a shipment that was not set up to require one, open the posted sales shipment, and use either of two procedures described above:</p>
+<ul>
+<li>To manually create a certificate of supply certificate</li>
+<li>To print a certificate of supply.</li>
+</ul>
+</div>
+</li>
+</ol>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/process-vat-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="finance-setup-vat.html">Setting Up to Calculations and Posting Methods for Value-Added Tax</a><br>
+<a href="finance-how-report-vat.html">Report VAT to a Tax Authority</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-work-with-vat.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Payment Management </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Payment Management ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can manage bills of exchange, electronic payments, and vendor payments using the payment management function.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="payment-management">Payment Management</h1>
+
+<p>Business Central allows you to manage bills of exchange, electronic payments, and vendor payments using the payment management function.</p>
+<p>You can manage customer and vendor payments using payment slips. Before you create a payment slip, you must set up the following prerequisites:</p>
+<ul>
+<li><p>Payment class – The type of payment that you want to perform, for example, bill of exchange, electronic payment, or check. For more information, see <a href="how-to-set-up-payment-classes.html">Set Up Payment Classes</a>.</p>
+</li>
+<li><p>Payment status – The progress level of a payment document. You must define a set of statuses for each payment class. For more information, see <a href="how-to-set-up-payment-statuses.html">Set Up Payment Statuses</a>.</p>
+</li>
+<li><p>Payment steps – A payment that is executed at a specified time. After a payment step is completed, you can move the payment document from one status to another. If a step involves posting debit or credit entries, you must define additional actions in the <strong>Payment Step Ledger</strong> table. For more information, see <a href="how-to-set-up-payment-steps.html">Set Up Payment Steps</a>.</p>
+</li>
+<li><p>Payment address for vendors and customers – The address that is used for a vendor or a customer at the time of settlement. The payment address can be different from the vendor’s or customer's default address. For more information, see <a href="how-to-set-up-payment-addresses.html">Set Up Payment Addresses</a>.</p>
+</li>
+</ul>
+<p>You can also transfer your payment management setup information to an external disk so that you can use the same parameters for another company with similar requirements. You can export the payment data in the following formats:</p>
+<ul>
+<li>ETEBAC – To create a bill of exchange remittance.</li>
+<li>Withdraw – To create a customer payment withdrawal (direct debit).</li>
+<li>Transfer – To create a vendor payment transfer (credit transfer).</li>
+</ul>
+<h2 id="managing-payment-slips-and-files">Managing Payment Slips and Files</h2>
+<p>You can create payment slips to manage customer payments and vendor payments. After creating the payment slip, you must post it.</p>
+<p>These payment slips can then be converted into payment files, which can be sent to the bank electronically.</p>
+<p>For more information, see <a href="how-to-create-payment-slips.html">Create Payment Slips</a>.</p>
+<h2 id="archiving-payment-slips">Archiving Payment Slips</h2>
+<p>You can separate a fully processed payment slip from the active payment slips by archiving it. You can manually archive an individual payment slip or you can automatically archive a batch of payment slips. For more information, see <a href="how-to-archive-payment-slips.html">Archive Payment Slips</a>.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="how-to-set-up-payment-classes.html">Set Up Payment Classes</a><br>
+<a href="how-to-set-up-payment-statuses.html">Set Up Payment Statuses</a><br>
+<a href="how-to-set-up-payment-steps.html">Set Up Payment Steps</a><br>
+<a href="how-to-set-up-payment-addresses.html">Set Up Payment Addresses</a><br>
+<a href="how-to-create-payment-slips.html">Create Payment Slips</a><br>
+<a href="how-to-post-payment-slips.html">Post Payment Slips</a><br>
+<a href="how-to-archive-payment-slips.html">Archive Payment Slips</a><br>
+<a href="how-to-export-or-import-payment-management-setup-parameters.html">Export or Import Payment Management Setup Parameters</a><br>
+<a href="france-local-functionality.html">France Local Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/France/payment-management.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

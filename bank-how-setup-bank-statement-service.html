@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Yodlee Bank Feeds| Microsoft Docs' </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Yodlee Bank Feeds| Microsoft Docs' ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can convert payment information to any data format that your bank requires and enable the export or import of bank files.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-the-envestnet-yodlee-bank-feeds-service">Set Up the Envestnet Yodlee Bank Feeds Service</h1>
+
+<p>You can import electronic bank statements from your bank to quickly fill on the <strong>Payment Reconciliation Journal</strong> page so you can apply payments and reconcile the bank account. For more information, see <a href="receivables-apply-payments-auto-reconcile-bank-accounts.html">Applying Payments Automatically and Reconciling Bank Accounts</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Due to the new Payment Services Directive in Europe (PSD2), after September 14, 2019, you will no longer be able to automatically import bank statements from banks in the United Kingdom into Business Central. We are looking into the possibility of offering this feature again in the future.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The Envestnet Yodlee Bank Feeds service is only supported in the online version of Business Central. To use this functionality on-premises, you must obtain a cobrand account from Envestnet Yodlee.<br><br>
+The Envestnet Yodlee Bank Feeds service is only supported in the United States and Canada.
+Only banks residing in these countries are supported, even though banks from other countries may appear in the Envestnet Yodlee Bank Feeds bank selection window in Business Central.</p>
+</div>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>For technical assistance with the Envestnet Yodlee functionality, contact Microsoft Support. Do not contact Envestnet Yodlee. For more information, see <a href="http://docs.microsoft.com/dynamics365/business-central/dev-itpro/technical-support">Configuring Technical Support for Dynamics 365 Business Central</a>.</p>
+</div>
+<p>The Envestnet Yodlee Bank Feeds service is installed as an extension to Business Central online and is ready to be enabled in the supported countries. For more information, see <a href="ui-extensions.html">Customizing Business Central Using Extensions</a>.</p>
+<p>After you enable the bank feed service, you must link a bank account to the online bank account that the feed will come from. You link bank accounts to online bank accounts in the following different scenarios:</p>
+<ul>
+<li>A bank account does not exist in Business Central for your online bank account. Therefore, you create the bank account by linking from the online bank account.</li>
+<li>A bank account exists in Business Central, which you want to link to an online bank account.</li>
+<li>A linked bank account must be unlinked because you want to stop using the bank feed service for the account.</li>
+<li>Online bank accounts have changed and you want to update the information on bank accounts in Business Central.</li>
+</ul>
+<p>When the bank feed service is enabled, you can set a bank account up to automatically import new bank statements into the <strong>Payment Reconciliation Journal</strong> page every two hour. Transactions for payments that have already been posted as applied and/or reconciled on the <strong>Payment Reconciliation Journal</strong> page will not be imported. For more information, see the “To enable automatic import of bank statements” section.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use the Set Up Company assisted setup guide, some of the steps in the following procedures happen automatically when you get to the company bank account setup. For more information, see <a href="product-get-started.html">Getting Started</a>.</p>
+</div>
+<h2 id="to-enable-the-bank-feed-service">To enable the bank feed service</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</li>
+<li>Open the bank account that you will use for the bank feed service.</li>
+<li>On the <strong>Bank Account</strong> page, in the <strong>Bank Statement Import Format</strong> field, select YODLEEBANKFEED.</li>
+</ol>
+<p>The bank feed service will be enabled when you link a bank account to its related online bank account. See the next procedure.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you use the <strong>Company Setup</strong> assisted setup guide, then you enable the service by selecting the <strong>Use a bank feed service</strong> check box. For more information, see <a href="about-new-company.html">Creating New Companies in Business Central</a>.</p>
+</div>
+<h2 id="to-create-a-new-linked-bank-account">To create a new linked bank account</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the relevant bank account, and then choose the <strong>Create New Linked Bank Account</strong>. The <strong>Bank Account Linking</strong> page opens after a few moments.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This page shows the actual web page of the Envestnet Yodlee Bank Feeds service. Terminology and functionality on the page may not match instructions provided in this topic.</p>
+</div>
+</li>
+<li><p>On the <strong>Online Bank Account Linking</strong> page, in the <strong>Link Account</strong> pane, use the Search function to find the bank where you have one or more online bank accounts.</p>
+</li>
+<li><p>Choose the bank name. The <strong>Log In</strong> pane opens.</p>
+</li>
+<li><p>Enter the username and password that you use to log on to the online bank, and then choose the <strong>Next</strong> button.</p>
+</li>
+<li><p>The bank feed service prepares to link the first online bank account at the specified bank to a new bank account in Business Central.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you have more than one online bank account at the bank, you must create additional bank accounts in Business Central for them. See steps 8 through 10.</p>
+</div>
+<p>After the process completes, the bank name will appear in the <strong>My Accounts</strong> pane on the <strong>Linked</strong> tab. The number in brackets indicates how many online bank accounts were linked.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+<p>If you are only linking one online bank account, the <strong>Bank Account Card</strong> page opens and displays the name of the online bank account. In this case, the bank account linking task is completed. All that's left to do is to set up the bank account. For more information, see <a href="bank-how-setup-bank-accounts.html">Set Up Bank Accounts</a>.</p>
+<p>If you are linking more than one online bank accounts, the <strong>Bank Account Linking</strong> page opens and lists the online bank accounts that are not yet linked to bank accounts in Business Central. In that case, follow the next step.</p>
+</li>
+<li><p>On the <strong>Bank Account Linking</strong> page, select the line for an online bank account, and then choose the <strong>Link to New Bank Account</strong> action.</p>
+<p>The <strong>Bank Account Card</strong> page for a new bank account opens and displays the name of the online bank account.</p>
+<p>If a bank account already exists in Business Central that you want to link the additional online bank account to, follow the next step.</p>
+</li>
+<li><p>On the <strong>Bank Account Linking</strong> page, select the line for an online bank account, and then choose the <strong>Link to Existing Bank Account</strong> action.</p>
+</li>
+<li><p>On the <strong>Bank Account List</strong> page, select the bank account that you want to link to, and then choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-link-a-bank-account-to-an-online-bank-account">To link a bank account to an online bank account</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the line for a bank account that is not linked to an online bank account, and then choose the <strong>Link to Online Bank Account</strong> action. The <strong>Online Bank Account Linking</strong> page opens with the name of the bank prefilled in the <strong>Link Account</strong> pane.</p>
+</li>
+<li><p>Choose the bank name. The <strong>Log In</strong> pane opens.</p>
+</li>
+<li><p>Enter the username and password that you use to log on to the online bank, and then choose the <strong>Next</strong> button.</p>
+<p>The bank feed service prepares to link your bank account in Business Central to the related online bank account.</p>
+<p>When the process has completed successfully, the bank name will appear in the <strong>My Accounts</strong> pane on the <strong>Linked</strong> tab. If the bank has more than one bank account, only the bank account that you selected in step 2 is linked.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>On the <strong>Bank Account List</strong> page, the <strong>Linked</strong> check box is selected.</p>
+<h2 id="to-unlink-a-bank-account">To unlink a bank account</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</li>
+<li>Select the line for a linked bank account that you want to unlink from its related online bank account, and the choose the <strong>Unlink Online Bank Account</strong> action.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you choose <strong>Yes</strong> on the confirmation dialog, the link to the online bank account is removed, and the log-in details are cleared. To link the bank account to the online bank account again, you must log on to the bank again. For more information, see the “To link a bank account to an online bank account“ section.</p>
+</div>
+<h2 id="to-update-bank-account-linking">To update bank account linking</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</li>
+<li>Select the relevant bank account, and then choose the <strong>Update Bank Account Linking</strong> action.</li>
+</ol>
+<p>If issues exist for any of the linked bank accounts on the <strong>Bank Account List</strong> page, the <strong>Bank Account Linking</strong> page opens specifying which bank accounts have issues. Issues can best be resolved by unlinking the online bank account and then re-creating the link. For more information, see the “To link a bank account to an online bank account“ section.</p>
+<h2 id="to-enable-automatic-import-of-bank-statements">To enable automatic import of bank statements</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Bank Accounts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the line for a linked bank account, and then choose the <strong>Automatic Bank Statement Import Setup</strong> action.</p>
+</li>
+<li><p>On the <strong>Automatic Bank Statement Import Setup</strong> page, in the <strong>Number of Days Included</strong> field, specify how far back in time to get new bank transactions for.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It is recommended that you set this value to 7 days or more.</p>
+</div>
+</li>
+<li><p>Select the <strong>Enabled</strong> check box.</p>
+</li>
+</ol>
+<p>Every hour, the <strong>Payment Reconciliation Journal</strong> page will display new payments that are made on the online bank account.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Transactions for payments that have already been posted as applied and/or reconciled on the <strong>Payment Reconciliation Journal</strong> page will not be imported.</p>
+</div>
+<h2 id="see-also">See Also</h2>
+<p><a href="bank-setup-banking.html">Setting Up Banking</a><br>
+<a href="bank-manage-bank-accounts.html">Reconciling Bank Accounts</a><br>
+<a href="receivables-apply-payments-auto-reconcile-bank-accounts.html">Applying Payments Automatically and Reconciling Bank Accounts</a><br>
+<a href="ui-extensions.html">Customizing Business Central Using Extensions </a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/bank-how-setup-bank-statement-service.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

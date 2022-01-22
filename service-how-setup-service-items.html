@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up for Service Items and Service Item Components | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up for Service Items and Service Item Components | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about the things you must set up before you can use service items, including default values such as response time, contract discount percent, and service price group.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-service-items-and-service-item-components">Set Up Service Items and Service Item Components</h1>
+
+<p>To work with service items, you must set up the following</p>
+<ul>
+<li>Service item groups.</li>
+<li>Optional</li>
+</ul>
+<h2 id="to-set-up-service-item-groups">To set up service item groups</h2>
+<p>You can set up groups of items that are related in terms of repair and maintenance. You can define default values for service items in a service item group, such as response time, contract discount percent, and service price group. For items in a service item group, you can select whether you want them to be automatically registered as service items when they are sold.</p>
+<p>You assign service item groups to items on the <strong>Item</strong> card, and to service items on the <strong>Service Item</strong> card.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Item Groups</strong>, and then choose the related link.</li>
+<li>Create a new service item group.</li>
+<li>Fill in the <strong>Code</strong> and <strong>Description</strong> fields.</li>
+<li>In the <strong>Default Contract Discount %</strong> field, enter the default contract discount percentage that you want the service items in the group to have.</li>
+<li>In the <strong>Default Serv. Price Group Code</strong> field, enter the default service price group code that you want the service items in the group to have.</li>
+<li>In the <strong>Default Response Time (Hours)</strong> field, enter the default response time in hours that you want the service items in the group to have.</li>
+<li>If you want to register the items in the group as service items when they are sold, select the <strong>Create Service Item</strong> field.</li>
+</ol>
+<h2 id="to-set-up-service-item-components">To set up service item components</h2>
+<p>A service item can consist of several components, which can be replaced with spare parts when the item is serviced. These components are set up on the <strong>Service Item Component List</strong> page. Additionally, if you want to set up components for service items that are BOMs, you can copy the BOM items and create them as service item components.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Items</strong>, and then choose the related link.</li>
+<li>Open the service item for which you want to set up components.</li>
+<li>Choose the <strong>Components</strong> action. The <strong>Service Item Component List</strong> page opens.</li>
+<li>Add a new component.</li>
+<li>In the <strong>Type</strong> field, choose <strong>Service Item</strong> if the component itself is a registered service item. Otherwise, select <strong>Item</strong>.</li>
+<li>In the <strong>No.</strong> field, choose the item or service item that is a component of the service item.</li>
+</ol>
+<h2 id="to-set-up-service-item-components-from-a-bom">To set up service item components from a BOM</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the service item for which you want to set up components from a BOM.</p>
+</li>
+<li><p>Choose the <strong>Components</strong> action. The <strong>Service Item Component List</strong> page opens.</p>
+</li>
+<li><p>Choose the <strong>Copy from BOM</strong> action.</p>
+<p>If the item that the service item is linked to is a BOM, the components for all the items in the BOM are created automatically.</p>
+</li>
+</ol>
+<h2 id="to-set-up-a-service-shelf">To set up a service shelf</h2>
+<p>You can set up service shelves that identify where you store your service items. You assign service shelves to service items on the <strong>Service Order</strong> and <strong>Service Item Worksheet</strong> pages.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Service Shelves</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="service-how-setup-service-coding.html">Set Up Codes for Standard Services</a><br>
+<a href="service-how-setup-troubleshooting.html">Set Up Troubleshooting</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/service-how-setup-service-items.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

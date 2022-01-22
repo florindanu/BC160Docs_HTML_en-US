@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Remind or Fine Customers of Overdue Payments| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Remind or Fine Customers of Overdue Payments| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to send a reminder to a customer about a payment that is due and add charges, or fees to the payment because of the delay.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="collect-outstanding-balances">Collect Outstanding Balances</h1>
+
+<p>Managing receivables includes checking whether amounts due are paid on time. If customers have overdue payments, you can begin by sending the Customer Statement report as a reminder. Alternatively, you can issue reminders.</p>
+<p>You can use reminders to remind customers about overdue amounts. You can also use reminders to calculate finance charges, such as interest or fees and include them on the reminder. Use finance charge memos if you want to debit customers for interest or fees without reminding them of overdue amounts.</p>
+<h2 id="reminders">Reminders</h2>
+<p>Before you can create reminders, you must set up reminder terms and assign them to your customers. Each reminder term has predefined reminder levels. Each reminder level includes rules about when the reminder will be issued, for example, how many days after the invoice due date or the date of the previous reminder. The contents of the <strong>Finance Charge Terms</strong> page determines whether interest is calculated on the reminder.</p>
+<p>You can periodically run the <strong>Create Reminders</strong> batch job to create reminders for all customers with overdue balances, or you can manually create a reminder for a specific customer and have the lines calculated and filled in automatically.</p>
+<p>After you create the reminders, you can modify them. The text that appears at the beginning and end of a reminder is determined by the reminder level terms, and can be seen in the <strong>Description</strong> column. If a calculated amount has been inserted automatically in the beginning or ending text, the text will not be adjusted if you delete lines. Then you must use the <strong>Update Reminder Text</strong> function.</p>
+<p>A customer ledger entry with the <strong>On Hold</strong> field filled in will not prompt the creation of a reminder. However, if a reminder is created on the basis of another entry, an overdue entry marked on hold will also be included on the reminder. Interest is not calculated on lines with these entries.</p>
+<p>After you have created reminders and made any needed modifications, you can either print test reports or issue the reminders, typically as email.</p>
+<h2 id="finance-charges">Finance Charges</h2>
+<p>When a customer does not pay by the due date, you can have finance charges calculated automatically and add them to the overdue amounts on the customer's account. You can inform customers of the added charges by sending finance charge memos.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You use finance charge memos to calculate interest and finance charges and to inform your customers about interest and finance charges without reminding them of overdue payments. Alternatively, you can calculate interest on overdue payments when you create reminders.</p>
+</div>
+<p>You can manually create a finance charge memo for an individual customer, and fill in the lines automatically. Alternatively, you can use the <strong>Create Finance Charge Memos</strong> function job to create finance charge memos for all or selected customers with overdue balances.</p>
+<p>After you create the finance charge memos, you can modify them. The text that appears at the beginning and end of the finance charge memo is determined by the finance charge terms, and can be seen in the <strong>Description</strong> column on the lines. If a calculated amount has been inserted automatically in the beginning or ending text, the text will not be adjusted if you delete lines. Then you must use the <strong>Update Finance Charge Text</strong> function.</p>
+<p>After you have created finance charge memos and made any needed modifications, you can either print test reports or issue the finance charge memos, typically as email.</p>
+<h2 id="multiple-interest-rates">Multiple Interest rates</h2>
+<p>When you set up finance charge terms and reminder terms, for delayed payment penalty, you can specify multiple interest rates so that the penalty fee is calculated from different interest rates in different periods. If multiple interest rates are not set up, then the interest rate and period that is defined in the <strong>Finance Charge Terms</strong> and <strong>Reminder Terms</strong> pages for the whole period of calculation will be used. For more information, see <a href="finance-how-to-set-up-multiple-interest-rates.html">Set Up Multiple Interest Rates</a>.</p>
+<h2 id="to-send-the-customer-statement-report">To send the Customer Statement report</h2>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customer Statement</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary. Hover over a field to read a short description.</li>
+<li>Under <strong>Output Options</strong>, select how to send the report to the customer.</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you are using multiple currencies, the Customer Statement report is always printed in the customer's currency. The last date in a statement period is also used as the statement date and the aging date, if aging is included.</p>
+</div>
+<h2 id="to-set-up-reminder-terms">To set up reminder terms</h2>
+<p>If customers have overdue payments, you must decide when and how to send them a reminder. In addition, you may want to debit their accounts for interest or fees. You can set up any number of reminder terms. For each reminder terms code, you can define an unlimited number of reminder levels.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Reminder Terms</strong>, and then choose the related link.</li>
+<li>Fill in the fields as necessary.</li>
+<li>To use more than one combination of reminder terms, set up a code for each one.</li>
+</ol>
+<h2 id="to-set-up-reminder-levels">To set up reminder levels</h2>
+<p>The first time a reminder is created for a customer, the setting from level 1 is used. When the reminder is issued, the level number is registered on the reminder entries that are created and linked to the individual customer ledger entries. If it is necessary to remind the customer again, all reminder entries linked to open customer ledger entries are checked to locate the highest level number. The conditions from the next level number will then be used for the new reminder.</p>
+<p>If you create more reminders than you have defined levels for, the conditions for the highest level will be used. You can create as many reminders as are allowed by the <strong>Max. No of Reminders</strong> field in the reminder terms.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Reminder Terms</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Reminder Terms</strong> page, select the line with the terms you want to set up levels for, and then choose <strong>Levels</strong> action.</p>
+</li>
+<li><p>Fill in the fields as necessary.</p>
+<p>For each reminder level, you can specify individual conditions, which can include additional fees in both LCY and in foreign currency. You can define many additional fees in foreign currencies for each code on the <strong>Reminder Levels</strong> page.</p>
+</li>
+<li><p>Choose the <strong>Currencies</strong> action.</p>
+</li>
+<li><p>On the <strong>Currencies for Reminder Levels</strong> page, define for each reminder level code and corresponding reminder level number a currency code and an additional fee.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you create reminders in a foreign currency, the foreign currency conditions that you set up here will be used to create reminders. If there are no foreign currency reminder conditions set up, the LCY reminder conditions that are set up on the <strong>Reminder Levels</strong> page will be used and then converted to the relevant currency.</p>
+</div>
+<p>For each reminder level, you can specify text that will be printed before (<strong>Beginning Text</strong>) or after (<strong>Ending Text</strong>) on the entries on the reminder.</p>
+</li>
+<li><p>Choose the <strong>Beginning Text</strong> or <strong>Ending Text</strong> actions respectively, and fill on the <strong>Reminder Text</strong> page.</p>
+</li>
+<li><p>To automatically insert related values in the resulting reminder text, enter the following placeholders in the <strong>Text</strong> field .</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%1</td>
+<td>Content of the <strong>Document Date</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%2</td>
+<td>Content of the <strong>Due Date</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%3</td>
+<td>Content of the <strong>Interest Rate</strong> field on the related finance charge terms</td>
+</tr>
+<tr>
+<td>%4</td>
+<td>Content of the <strong>Remaining Amount</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%5</td>
+<td>Content of the <strong>Interest Amount</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%6</td>
+<td>Content of the <strong>Additional Fee</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%7</td>
+<td>The total amount of the reminder</td>
+</tr>
+<tr>
+<td>%8</td>
+<td>Content of the <strong>Reminder Level</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%9</td>
+<td>Content of the <strong>Currency Code</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%10</td>
+<td>Content of the <strong>Posting Date</strong> field on the reminder header</td>
+</tr>
+<tr>
+<td>%11</td>
+<td>The company name</td>
+</tr>
+<tr>
+<td>%12</td>
+<td>Content of the <strong>Add. Fee per Line</strong> field on the reminder header</td>
+</tr>
+</tbody>
+</table>
+<p>For example, if you write <strong>You owe %9 %7 due on %2.</strong>, then the resulting reminder will contain the following text: <strong>You owe USD 1.200,50 due on 02-02-2014.</strong>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The due date is calculated according to the date formula that you enter. For more information, see <a href="ui-enter-date-ranges.html#using-date-formulas">Using Date Formulas</a>.</p>
+</div>
+<p>After you have set up the reminder terms, with additional levels and text, enter one of the codes on each of the customer cards. For more information, see <a href="sales-how-register-new-customers.html">Register New Customers</a>.</p>
+<h2 id="to-create-a-reminder-automatically">To create a reminder automatically</h2>
+<p>A reminder is similar to an invoice. When you create a reminder, a reminder header as well as one or more reminder lines must be filled in. You can use a function to create reminders for all customers automatically.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Reminders</strong>, and then choose the related link.</li>
+<li>On the <strong>Reminder</strong> page, choose the <strong>Create Reminders</strong> action.</li>
+<li>On the <strong>Create Reminders</strong> page, fill in the fields to define how and to whom the reminders are created.</li>
+<li>Choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="to-create-a-reminder-manually">To create a reminder manually</h2>
+<p>On the <strong>Reminder</strong> page, you can fill in the <strong>General</strong> FastTab manually and then have the lines filled in automatically.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Reminders</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, fill in the fields as necessary.</p>
+</li>
+<li><p>Choose the <strong>Suggest Reminder Lines</strong> action.</p>
+</li>
+<li><p>In the <strong>Suggest Reminder Lines</strong> batch job, fill in the fields to define how and to whom the reminders are created.</p>
+</li>
+<li><p>Select the <strong>Include Entries On Hold</strong> check box if you want the reminders to contain overdue open entries that are on hold.</p>
+</li>
+<li><p>Select the <strong>Only Entries with Overdue Amounts</strong> check box if you want the reminders to contain only overdue open entries. Only invoices and payments will be shown as these are the entries for which your customers' payments may be overdue.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Open entries that are on hold will be inserted, irrespective of the setting in the <strong>Only Entries with Overdue Amounts</strong> check box.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<h2 id="to-replace-reminder-texts">To replace reminder texts</h2>
+<p>There are several ways you can determine the text that appears on the printed reminder. In some cases, you may want to replace the beginning and ending texts that have been defined for the current level with those from a different level.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Reminders</strong>, and then choose the related link.</li>
+<li>Open the relevant reminder, and then choose the <strong>Update Reminder Text</strong> action.</li>
+<li>On the <strong>Update Reminder Text</strong> page, enter the required level in the <strong>Reminder Level</strong> field.</li>
+<li>Choose the <strong>OK</strong> button to update the beginning and ending texts.</li>
+</ol>
+<h2 id="to-issue-a-reminder">To issue a reminder</h2>
+<p>After you have created reminders and made any needed modifications, you can either print test reports or issue the reminders.</p>
+<p>When you issue a reminder, the data is transferred to a separate page for issued reminders. At the same time, reminder entries are posted. If interest or an additional fee has been calculated, entries are posted to the customer ledger and the general ledger.</p>
+<p>When a reminder is issued, the entries are posted according to your specifications on the <strong>Reminder Terms</strong> page. This specification determines whether interest and/or additional fees are posted to the customer's account and the general ledger. Setup on the <strong>Customer Posting Groups</strong> page determines which accounts are posted to.</p>
+<p>For each customer ledger entry on the finance charge memo, an entry is created on the <strong>Reminder/Fin. Charge Entries</strong> page.</p>
+<p>If the <strong>Post Interest</strong> or the <strong>Post Additional Fee</strong> check boxes are selected on the <strong>Reminder Terms</strong> page, then the following entries are also created:</p>
+<ul>
+<li>One entry on the <strong>Cust. Ledger Entries</strong> page</li>
+<li>One receivables entry in the relevant G/L account</li>
+<li>One interest and/or one additional fee entry in the relevant G/L account</li>
+</ul>
+<p>In addition, issuing the reminder may result in VAT entries.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Reminders</strong>, and then choose the related link.</li>
+<li>Select the relevant reminder, and then choose the <strong>Issue</strong> action.</li>
+<li>On the <strong>Issue Reminders</strong> page, fill in the fields as necessary.</li>
+<li>Choose the <strong>OK</strong> button</li>
+</ol>
+<p>The reminder is either printed for sent to an specified email as a PDF attachment.</p>
+<h3 id="to-cancel-an-issued-reminder">To cancel an issued reminder</h3>
+<p>If reminders were issued in error, you can cancel them before they are sent out. You can do this either one by one or as a batch.</p>
+<ol>
+<li>On the <strong>Issued Reminders</strong> page, select one or more lines for issued reminders that you want to cancel, and then choose the <strong>Cancel</strong> action.</li>
+<li>On the <strong>Cancel Issued Reminders</strong> page, fill in the fields as necessary, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="to-set-up-finance-charge-terms">To set up finance charge terms</h2>
+<p>You must set up a code representing each finance charge calculation. Then you can enter this code in the <strong>Fin. Charge Terms Code</strong> field on customer or vendor cards.</p>
+<p>Finance charges can be calculated using either the average daily balance method or the balance due method.</p>
+<ul>
+<li><p>Balance due method</p>
+<p>The finance charge is simply a percentage of the overdue amount:<br>
+<em>Balance Due method</em> - <em>Finance Charge</em> = <em>Overdue Amount</em> x <em>(Interest Rate / 100)</em></p>
+</li>
+<li><p>Average daily balance method</p>
+<p>The number of days the payment is overdue is taken into account:<br>
+<em>Average Daily Balance method</em> - <em>Finance Charge</em> = <em>Overdue Amount</em> x <em>(Days Overdue / Interest Period)</em> x <em>(Interest Rate/100)</em></p>
+</li>
+</ul>
+<p>In addition, each code in the Finance Charge Terms table is linked to a subtable, the Finance Charge Text table. For each set of finance charge terms, you can define a beginning and/or an ending text to be included on the finance charge memo.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Finance Charge Terms</strong>, and then choose the related link.</p>
+</li>
+<li><p>Fill in the fields as necessary.</p>
+</li>
+<li><p>To use more than one combination of finance charge terms, set up a code for each one.</p>
+<p>For each finance charge term, you can specify individual conditions, which can include additional fees in both LCY and in foreign currency. You can define many additional fees in foreign currencies for each code on the <strong>Finance Charge Terms</strong> page.</p>
+</li>
+<li><p>Choose the <strong>Currencies</strong> action.</p>
+</li>
+<li><p>On the <strong>Currencies for Fin. Chrg. Terms</strong> page, define for each term a currency code and an additional fee.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you create finance charges in a foreign currency, the foreign currency conditions that you set up here will be used to create finance charge memos. If there are no foreign currency finance charge conditions set up, then the LCY finance charge conditions that are set up on the <strong>Finance Charge Terms</strong> page will be used and then converted to the relevant currency.</p>
+</div>
+<p>For each finance charge term, you can specify text that will be printed before (<strong>Beginning Text</strong>) or after (<strong>Ending Text</strong>) on the entries on the finance charge memo.</p>
+</li>
+<li><p>Choose the <strong>Beginning Text</strong> or <strong>Ending Text</strong> actions respectively, and fill on the <strong>Finance Charge Text</strong> page.</p>
+</li>
+<li><p>To automatically insert related values in the resulting finance charge text, enter the following placeholders in the <strong>Text</strong> field.</p>
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Placeholder</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%1</td>
+<td>Content of the <strong>Document Date</strong> field on the finance charge memo header</td>
+</tr>
+<tr>
+<td>%2</td>
+<td>Content of the <strong>Due Date</strong> field on the finance charge memo header</td>
+</tr>
+<tr>
+<td>%3</td>
+<td>Content of the <strong>Interest Rate</strong> field on the related finance charge terms</td>
+</tr>
+<tr>
+<td>%4</td>
+<td>Content of the <strong>Remaining Amount</strong> field on the finance charge memo header</td>
+</tr>
+<tr>
+<td>%5</td>
+<td>Content of the <strong>Interest Amount</strong> field on the finance charge memo header</td>
+</tr>
+<tr>
+<td>%6</td>
+<td>Content of the <strong>Additional Fee</strong> field on the finance charge memo header</td>
+</tr>
+<tr>
+<td>%7</td>
+<td>The total amount of the reminder</td>
+</tr>
+<tr>
+<td>%8</td>
+<td>Content of the <strong>Currency Code</strong> field on the finance charge memo header</td>
+</tr>
+<tr>
+<td>%9</td>
+<td>Content of the <strong>Posting Date</strong> field on the finance charge memo header</td>
+</tr>
+</tbody>
+</table>
+<h2 id="to-create-a-finance-charge-memo-manually">To create a finance charge memo manually</h2>
+<p>A finance charge memo is similar to an invoice. You can fill in a header manually and have the lines filled in for you, or you can create finance charge memos for all customers automatically.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Finance Charge Memos</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action, and then fill in the fields as necessary.</p>
+</li>
+<li><p>Choose <strong>Suggest Fin. Charge Memo Lines</strong> action.</p>
+</li>
+<li><p>On the <strong>Suggest Finance Charge Memo Lines</strong> page, set a filter on the <strong>Cust. Ledger Entry</strong> FastTab if you want to create finance charge memos only for specific entries.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although they are listed, selecting <strong>Payment</strong> and <strong>Credit Memo</strong> as <strong>Document Type</strong> filters will not have any effect because the <strong>Suggest Finance Charge Memo Lines</strong> function only handles positive amounts.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button to start the batch job.</p>
+</li>
+</ol>
+<h2 id="to-update-finance-charge-memo-texts">To update finance charge memo texts</h2>
+<p>In some cases, you may want to modify the beginning and ending text that you have set up for the finance charge terms. If you do this at a time when you have created, but not yet issued, finance charge memos, you can update the memos with the modified text.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Finance Charge Memo</strong>, and then choose the related link.</li>
+<li>open the finance charge memo that you want to change text for, and then choose the <strong>Update Finance Charge Text</strong> action.</li>
+<li>On the <strong>Update Finance Charge Text</strong> page, you can set a filter if you want to update several memos.</li>
+<li>Choose the <strong>OK</strong> button to update the beginning and ending texts.</li>
+</ol>
+<h2 id="to-issue-finance-charge-memos">To issue finance charge memos</h2>
+<p>After you have created finance charge memos and made any needed modifications, you can either print test reports or issue the finance charge memos.</p>
+<p>When a reminder is issued, the entries are posted according to your specifications on the <strong>Finance Charge Terms</strong> page. This specification determines whether interest and/or additional fees are posted to the customer's account and the general ledger. Setup on the <strong>Customer Posting Groups</strong> page determines which accounts are posted to.</p>
+<p>For each customer ledger entry on the finance charge memo, an entry is created on the <strong>Reminder/Fin. Charge Entries</strong> page.</p>
+<p>If the <strong>Post Interest</strong> or the <strong>Post Additional Fee</strong> check boxes are selected on the <strong>Finance Charge Terms</strong> page, then the following entries are also created:</p>
+<ul>
+<li>One entry on the <strong>Cust. Ledger Entries</strong> page</li>
+<li>One receivables entry in the relevant G/L account</li>
+<li>One interest and/or one additional fee entry in the relevant G/L account</li>
+</ul>
+<p>In addition, issuing the finance charge memo may result in VAT entries.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Finance Charge Memos</strong>, and then choose the related link.</li>
+<li>Select the relevant memo, and then choose the <strong>Issue</strong> action.</li>
+<li>On the <strong>Issue Finance Charge Memos</strong> page, fill in the fields as necessary.</li>
+<li>Choose the <strong>OK</strong> button</li>
+</ol>
+<p>The finance charge memo is either printed for sent to an specified email as a PDF attachment.</p>
+<h3 id="to-cancel-an-issued-finance-charge-memo">To cancel an issued finance charge memo</h3>
+<p>If finance charge memos were issued in error, you can cancel them before they are sent out. You can do this either one by one or as a batch.</p>
+<ol>
+<li>On the <strong>Issued Finance Charge Memos</strong> page, select one or more lines for issued finance charge memos that you want to cancel, and then choose the <strong>Cancel</strong> action.</li>
+<li>On the <strong>Cancel Issued Fin. Charge Memos</strong> page, fill in the fields as necessary, and then choose the <strong>OK</strong> button.</li>
+</ol>
+<h2 id="to-view-reminder-and-finance-charge-entries">To view reminder and finance charge entries</h2>
+<p>When you issue a reminder, a reminder entry is created on the <strong>Reminder/Fin. Charge Entries</strong> page for each reminder line that contains a customer ledger entry. You can then get an overview of the created reminder entries for a specific customer.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Customers</strong>, and then choose the related link.</li>
+<li>Open the relevant customer card, and then choose the <strong>Ledger Entries</strong> action.</li>
+<li>On the <strong>Customer Ledger Entries</strong> page, select the line with the ledger entry you want to see the reminder entries for, and then choose the <strong>Reminder/Fin. Charge Entries</strong> action.</li>
+</ol>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/paths/process-financial-periodic-activities-dynamics-365-business-central/">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="receivables-manage-receivables.html">Managing Receivables</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/receivables-collect-outstanding-balances.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

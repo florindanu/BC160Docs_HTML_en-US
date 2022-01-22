@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Get an Availability Overview| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Get an Availability Overview| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can get information about the availability of items or stock across locations, per sales or purchase events, by a time period, or by the item's position on an assembly or production BOM.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="view-the-availability-of-items">View the Availability of Items</h1>
+
+<p>From the context of a business task, you can get advanced information about when and where an item is available, such as when talking to a customer about a delivery date.</p>
+<p>You can view the availability of all items per location, and you can view the availability of each item by event, by period, or by location. An event is any scheduled item transaction, such as a sales shipment or an inbound transfer receipt.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Availability views by location require that you maintain inventory at more than one location. For more information, see <a href="inventory-how-setup-locations.html">Set Up Locations</a>.</p>
+</div>
+<p>If you use warehousing functionality, availability varies depending on allocations at the bin level when warehouse activities such as picks and movements occur and when the inventory reservation system imposes restrictions to comply with. A rather complex algorithm verifies that all conditions are met before allocating quantities to picks for outbound flows. For more information see <a href="design-details-availability-in-the-warehouse.html">Design Details: Availability in the Warehouse</a>.</p>
+<p>In Business Central, availability figures are typically shown in two different fields, each with a different definition:</p>
+<ul>
+<li>The <strong>Quantity on Hand</strong> field, in some places named <strong>Inventory</strong>, shows the actual quantity today according to posted item ledger entries.</li>
+<li>The <strong>Projected Available Balance</strong> field is calculated and shows the quantity on hand plus scheduled receipts minus gross requirements. (In Business Central, scheduled receipts include quantities on purchase orders and inbound transfer orders. Gross requirements include quantities on sales orders and outbound transfer orders.)</li>
+</ul>
+<div class="TIP">
+<h5>Tip</h5>
+<p>The projected available balance is especially relevant to view in the <strong>Item Availability by Periods</strong> and <strong>Item Availability by Event</strong> pages as they contain the date dimension.</p>
+</div>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The following procedures describe how to view advanced availability information from the items list and item card. You can also access the information from sales document lines, for the item on the line. For more information, see <a href="sales-how-sell-products.html">Sell Products</a>.</p>
+</div>
+<h2 id="to-view-the-availability-of-an-item-according-to-when-it-will-be-received-or-shipped">To view the availability of an item according to when it will be received or shipped</h2>
+<p>You view the availability of an item according to scheduled item transactions on the <strong>Availability by Event</strong> page.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the card of an item that you want to view availability for.</p>
+</li>
+<li><p>Choose the <strong>Item Availability by</strong> action, and then choose the <strong>Event</strong> action.</p>
+<p>The <strong>Item Availability by Event</strong> page shows how the inventory quantity of the item will develop over time according scheduled shipment and receipt events. The page gives a condensed view that shows one line of accumulated information per time interval in which inventory quantities change. Time intervals where no events occurred are not shown. You can expand each line to show details about the event or events that caused the accumulated quantity on the line.</p>
+</li>
+<li><p>Choose the value in the <strong>Projected Available Balance</strong> field to view the item ledger entries or open documents that make up the value.</p>
+</li>
+</ol>
+<h2 id="to-view-the-availability-of-an-item-in-different-periods">To view the availability of an item in different periods</h2>
+<p>You view the availability of an item over time for specified time periods on the <strong>Item Availability by Periods</strong> page.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the card of an item that you want to view availability for.</p>
+</li>
+<li><p>Choose the <strong>Item Availability by</strong> action, and then choose the <strong>Period</strong> action.</p>
+<p>The <strong>Item Availability by Periods</strong> page shows how the inventory quantity of the item will develop over time, shown for a period that you select, such as Day, Week, or Quarter.</p>
+</li>
+<li><p>Choose the value in the <strong>Projected Available Balance</strong> field to view the item ledger entries or open documents that make up the value.</p>
+</li>
+</ol>
+<h2 id="to-view-the-availability-of-an-item-at-the-locations-where-it-is-stored">To view the availability of an item at the locations where it is stored</h2>
+<p>You view the availability of an item at the different places where it is stored on the <strong>Item Availability by Location</strong> page.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the card of an item that you want to view availability for.</p>
+</li>
+<li><p>Choose the <strong>Item Availability by</strong> action, and then choose the <strong>Location</strong> action.</p>
+<p>The <strong>Item Availability by Location</strong> page shows how the inventory quantity of the item will develop in the future, shown for each location where it is stored.</p>
+</li>
+<li><p>Choose the value in the <strong>Qty. on Hand</strong> field to view the item ledger entries that make up the value.</p>
+</li>
+<li><p>Choose the value in the <strong>Projected Available Balance</strong> field to view the item ledger entries or open documents that make up the value.</p>
+</li>
+</ol>
+<h2 id="to-view-the-availability-of-all-items-by-the-location-where-they-are-stored">To view the availability of all items by the location where they are stored</h2>
+<p>You view the availability of all your items across all your locations on the <strong>Items by Location</strong> page.</p>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Items</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>Items by Location</strong> action.</p>
+<p>The <strong>Items by Location</strong> page shows for all your items how many are available at each location.</p>
+</li>
+<li><p>Choose the value in the <strong>Qty. on Hand</strong> field to view the item ledger entries that make up the value.</p>
+</li>
+</ol>
+<h2 id="to-view-the-availability-of-an-item-by-its-use-in-assembly-or-production-boms">To view the availability of an item by its use in assembly or production BOMs</h2>
+<p>If an item exists in assembly or production BOMs, either as a parent item or as a component, then you can view how many units of its are required on the <strong>Item Availability by BOM Level</strong> page. The page shows how many units of a parent you can make based on the availability of child items on underlying lines. Any item that has an assembly or production BOM is shown on the page as a collapsible line. You can expand this line to see the underlying components and lower-level subassemblies with their own BOMs.</p>
+<p>You can use the page to find out whether you can fulfill a sales order for an item on a specified date by looking at its current availability and the quantities that can be supplied by its components. You can also use the page to identify bottlenecks in related BOMs.</p>
+<p>On each line on the page for both parent items and child items, the following key fields specify the availability figures. You can use these figures to promise how many units of a parent you can supply if you start the related assembly process.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Able to Make Parent</strong></td>
+<td>Shows how many units of any subassembly in the top item you can make. The field specifies how many immediate parent units you can assemble. The value is based on availability of the item on the line.</td>
+</tr>
+<tr>
+<td><strong>Able to Make Top Item</strong></td>
+<td>Shows how many units of the top item you can make. The field specifies how many units of the top-line BOM item you can assemble. The value is based on availability of the item on the line.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="to-view-the-availability-of-an-item-according-to-demand-for-its-parent">To view the availability of an item according to demand for its parent</h3>
+<p>The <strong>Item Availability by BOM Level</strong> page shows information for the item on the card or document line that the page is opened for. The item is always shown on the top line. You can view information for other items or for all items by changing the value in the <strong>Item Filter</strong> field.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>By default, availability figures on the lines show the total availability of all items under the top item. These figures are displayed in the <strong>Available Quantity</strong> field, and the focus is on the top item. However, information about how many subassemblies you can make may be skewed. To get a true indication of how many of the shown subassemblies you can make, you must clear the <strong>Show Total Availability</strong> check box and then see the figure in the <strong>Able to Make Parent</strong> field.</p>
+</div>
+<p>The <strong>Bottleneck</strong> field specifies which item in the BOM structure restricts you from making a larger quantity than the quantity that is shown in the <strong>Able to Make Top Item</strong> field. For example, the bottleneck item can be a purchased component with an expected receipt date that is too late to make additional units of the top item by the date in the <strong>Needed by Date</strong> field.</p>
+<h3 id="to-view-the-availability-of-an-item-by-its-units-of-measure">To view the availability of an item by its units of measure</h3>
+<p>The <strong>Item Availability by Unit of Measure</strong> page shows an items availability broken down in the different units of measure that it is stored in.</p>
+<h2 id="assembly-availability-page">Assembly Availability Page</h2>
+<p>The <strong>Assembly Availability</strong> page shows detailed availability information for the assembly item. It opens:</p>
+<ul>
+<li>Automatically from a sales order line in assemble-to-order scenarios when you enter a quantity that causes a component availability issue.</li>
+<li>Automatically from an assembly order header when you enter a value in the Quantity field that causes a component availability issue.</li>
+<li>Manually when you open it from an assembly order. On the Actions tab, in the Functions group, click Show Availability.</li>
+</ul>
+<p>The <strong>Details</strong> FastTab shows detailed availability information for the assembly item, including how many of the assembly order quantity can be assembled by the due date based on availability of the required components. This is shown in the Able to Assemble field on the Details FastTab.</p>
+<p>The value in the <strong>Able to Assemble</strong> field is shown in red font if the quantity is lower than the quantity in the <strong>Remaining Quantity</strong> field, indicating that there are not enough components available to assemble the full quantity.</p>
+<p>The <strong>Lines</strong> FastTab shows detailed availability information for the assembly components.</p>
+<p>If one or more assembly components are not available, then this is reflected in the <strong>Able to Assemble</strong> field on the line in question as a quantity less than the quantity in the <strong>Remaining Quantity</strong> field on the <strong>Details</strong> FastTab.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="inventory-manage-inventory.html">Manage Inventory</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="inventory-how-work-BOMs.html">Work with Bills of Materials</a><br>
+<a href="inventory-how-setup-locations.html">Set Up Locations</a><br>
+<a href="inventory-how-transfer-between-locations.html">Transfer Inventory Between Locations</a><br>
+<a href="sales-how-sell-products.html">Sell Products</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/inventory-how-availability-overview.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

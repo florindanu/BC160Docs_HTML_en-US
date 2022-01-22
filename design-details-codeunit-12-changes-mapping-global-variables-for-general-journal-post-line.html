@@ -1,0 +1,550 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Codeunit 12 Changes in Mapping Global Variables for General Journal Post Line | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Codeunit 12 Changes in Mapping Global Variables for General Journal Post Line | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The following changes have been implemented in this release of Business Central.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="codeunit-12-changes-mapping-global-variables-for-general-journal-post-line">Codeunit 12 Changes: Mapping Global Variables for General Journal Post Line</h1>
+
+<p>The following changes have been implemented in this release of Business Central.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Microsoft Dynamics NAV 2009 R2</strong></th>
+<th><strong>Microsoft Dynamics NAV 2013 R2</strong></th>
+<th><strong>Comment</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GLSetup@1009 : Record 98;</td>
+<td>GLSetup@1009 : Record 98;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>SalesSetup@1010 : Record 311;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>PurchSetup@1011 : Record 312;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>AccountingPeriod@1012 : Record 50;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>GLAcc@1013 : Record 15;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>GLEntry@1014 : Record 17;</td>
+<td>GlobalGLEntry@1014 : Record 17;</td>
+<td>Renamed</td>
+</tr>
+<tr>
+<td>GLEntryTmp@1015 : TEMPORARY Record 17;</td>
+<td>TempGLEntryBuf@1010 : TEMPORARY Record 17;</td>
+<td>Renamed</td>
+</tr>
+<tr>
+<td>TempGLEntryVAT@1016 : TEMPORARY Record 17;</td>
+<td>TempGLEntryVAT@1016 : TEMPORARY Record 17;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>OrigGLEntry@1017 : Record 17;</td>
+<td></td>
+<td>Deleted</td>
+</tr>
+<tr>
+<td>VATPostingSetup@1019 : Record 325;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>Cust@1020 : Record 18;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>Vend@1021 : Record 23;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>GenJnlLine@1022 : Record 81;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>GLReg@1029 : Record 45;</td>
+<td>GLReg@1029 : Record 45;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>CustPostingGr@1030 : Record 92;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>VendPostingGr@1031 : Record 93;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>Currency@1032 : Record 4;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>AddCurrency@1033 : Record 4;</td>
+<td>AddCurrency@1033 : Record 4;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>ApplnCurrency@1034 : Record 4;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>CurrExchRate@1035 : Record 330;</td>
+<td>CurrExchRate@1035 : Record 330;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>VATEntry@1038 : Record 254;</td>
+<td>VATEntry@1038 : Record 254;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>BankAcc@1039 : Record 270;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>BankAccLedgEntry@1040 : Record 271;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>CheckLedgEntry@1041 : Record 272;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>CheckLedgEntry2@1042 : Record 272;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>BankAccPostingGr@1043 : Record 277;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>GenJnlTemplate@1044 : Record 80;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>TaxJurisdiction@1045 : Record 320;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>TaxDetail@1046 : Record 322;</td>
+<td>TaxDetail@1046 : Record 322;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>FAGLPostBuf@1047 : TEMPORARY Record 5637;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>UnrealizedCustLedgEntry@1084 : Record 21;</td>
+<td>UnrealizedCustLedgEntry@1084 : Record 21;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>UnrealizedVendLedgEntry@1085 : Record 25;</td>
+<td>UnrealizedVendLedgEntry@1085 : Record 25;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>GLEntryVATEntryLink@1087 : Record 253;</td>
+<td>GLEntryVATEntryLink@1087 : Record 253;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>TempVATEntry@1088 : TEMPORARY Record 254;</td>
+<td>TempVATEntry@1088 : TEMPORARY Record 254;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>ReversedGLEntryTemp@1089 : TEMPORARY Record 17;</td>
+<td></td>
+<td>Moved to Codeunit17</td>
+</tr>
+<tr>
+<td>CostAccSetup@1092 : Record 1108;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>GenJnlCheckLine@1048 : Codeunit 11;</td>
+<td>GenJnlCheckLine@1001 : Codeunit 11;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>ExchAccGLJnlLine@1049 : Codeunit 366;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>FAJnlPostLine@1050 : Codeunit 5632;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>SalesTaxCalculate@1051 : Codeunit 398;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>GenJnlApply@1052 : Codeunit 225;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>DimMgt@1053 : Codeunit 408;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>JobPostLine@1028 : Codeunit 1001;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>TransferGlEntriesToCA@1091 : Codeunit 1105;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td></td>
+<td>PaymentToleranceMgt@1002 : Codeunit 426;</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>AddCurrencyCode@1117 : Code[10];</td>
+<td>Added</td>
+</tr>
+<tr>
+<td>FiscalYearStartDate@1054 : Date;</td>
+<td>FiscalYearStartDate@1011 : Date;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>NextEntryNo@1055 : Integer;</td>
+<td>NextEntryNo@1022 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>BalanceCheckAmount@1056 : Decimal;</td>
+<td>BalanceCheckAmount@1056 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>BalanceCheckAmount2@1057 : Decimal;</td>
+<td>BalanceCheckAmount2@1057 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>BalanceCheckAddCurrAmount@1058 : Decimal;</td>
+<td>BalanceCheckAddCurrAmount@1058 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>BalanceCheckAddCurrAmount2@1059 : Decimal;</td>
+<td>BalanceCheckAddCurrAmount2@1059 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>CurrentBalance@1060 : Decimal;</td>
+<td>CurrentBalance@1060 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>SalesTaxBaseAmount@1061 : Decimal;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>TotalAddCurrAmount@1062 : Decimal;</td>
+<td>TotalAddCurrAmount@1062 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>TotalAmount@1063 : Decimal;</td>
+<td>TotalAmount@1063 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>UnrealizedRemainingAmountCust@1086 : Decimal;</td>
+<td>UnrealizedRemainingAmountCust@1086 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>UnrealizedRemainingAmountVend@1074 : Decimal;</td>
+<td>UnrealizedRemainingAmountVend@1074 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>NextVATEntryNo@1064 : Integer;</td>
+<td>NextVATEntryNo@1064 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>FirstNewVATEntryNo@1065 : Integer;</td>
+<td>FirstNewVATEntryNo@1065 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>NextTransactionNo@1066 : Integer;</td>
+<td>NextTransactionNo@1066 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>NextConnectionNo@1067 : Integer;</td>
+<td>NextConnectionNo@1067 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>InsertedTempGLEntryVAT@1068 : Integer;</td>
+<td>InsertedTempGLEntryVAT@1027 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>LastDocNo@1069 : Code[20];</td>
+<td>LastDocNo@1023 : Code[20];</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>LastLineNo@1070 : Integer;</td>
+<td></td>
+<td>Deleted</td>
+</tr>
+<tr>
+<td>LastDate@1071 : Date;</td>
+<td>LastDate@1021 : Date;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>LastDocType@1072 : ' ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder';</td>
+<td>LastDocType@1025 : ' ,Payment,Invoice,Credit Memo,Finance Charge Memo,Reminder';</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>NextCheckEntryNo@1073 : Integer;</td>
+<td>NextCheckEntryNo@1028 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>AddCurrGLEntryVATAmt@1075 : Decimal;</td>
+<td>AddCurrGLEntryVATAmt@1017 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>CurrencyDate@1076 : Date;</td>
+<td>CurrencyDate@1020 : Date;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>CurrencyFactor@1077 : Decimal;</td>
+<td>CurrencyFactor@1019 : Decimal;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>UseCurrFactorOnly@1078 : Boolean;</td>
+<td>UseCurrFactorOnly@1078 : Boolean;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>NonAddCurrCodeOccured@1079 : Boolean;</td>
+<td>NonAddCurrCodeOccured@1079 : Boolean;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>FADimAlreadyChecked@1080 : Boolean;</td>
+<td>FADimAlreadyChecked@1080 : Boolean;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>AllApplied@1081 : Boolean;</td>
+<td></td>
+<td>Changed to Local</td>
+</tr>
+<tr>
+<td>OverrideDimErr@1018 : Boolean;</td>
+<td>OverrideDimErr@1018 : Boolean;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>JobLine@1036 : Boolean;</td>
+<td>JobLine@1036 : Boolean;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>Prepayment@1037 : Boolean;</td>
+<td></td>
+<td>Deleted</td>
+</tr>
+<tr>
+<td>CheckUnrealizedCust@1082 : Boolean;</td>
+<td>CheckUnrealizedCust@1082 : Boolean;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>CheckUnrealizedVend@1083 : Boolean;</td>
+<td>CheckUnrealizedVend@1083 : Boolean;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td>GLEntryNo@1090 : Integer;</td>
+<td>GLEntryNo@1026 : Integer;</td>
+<td>Unchanged</td>
+</tr>
+<tr>
+<td></td>
+<td>GLSetupRead@1015 : Boolean;</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>AmountRoundingPrecision@1012 : Decimal;</td>
+<td>Added</td>
+</tr>
+<tr>
+<td></td>
+<td>CrCardTransactionEntryNo@1013 : Integer;</td>
+<td>Added</td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-codeunit-12-changes-changes-in-general-journal-post-procedures.html">Design Details: Codeunit 12 Changes: Changes in General Journal Post Procedures</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-codeunit-12-changes-mapping-global-variables-for-general-journal-post-line.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

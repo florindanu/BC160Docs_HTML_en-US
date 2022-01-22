@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Apply Payments to Related Documents and Post Them| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Apply Payments to Related Documents and Post Them| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to record payments that you make to vendors and refunds that you make to customers.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="record-payments-and-refunds-in-the-payment-journal">Record Payments and Refunds in the Payment Journal</h1>
+
+<p>On the <strong>Payment Journal</strong> page, you record payments that you make to vendors and refunds that you make to customers. When you post a payment journal line, the paid amount is recorded on the specified system bank account. You must then take steps to perform the actual money transfer from the related bank account.</p>
+<p>The payment journal is a general journal that is optimized for making payments. You can quickly add lines manually, you can let Business Central suggest vendor payments, and you can apply the payment to posted documents. Even though you are making payments, you enter a positive amount in the <strong>Document Amount</strong> field. Depending on the document type for the journal line, this amount is then converted to a negative amount in the underlying transactions. This way, it's faster for you to add journal lines manually. If you prefer to enter negative amounts, you can personalize the payment journal to show the <strong>Amount</strong> field instead.</p>
+<ul>
+<li><p>Applying payments to invoices or credit memos</p>
+<p>If you fill in the <strong>Applies-to Doc. No.</strong> field with the invoice or credit memo that must be paid or refunded, then the document in question is set to paid when you post the journal. This is referred to as &quot;applied&quot;. As an alternative to applying during payment posting, you can use the <strong>Apply Vendor Entries</strong> and <strong>Apply Customer Entries</strong> page after you have made the payment posting. For more information, see, for example, <a href="payables-how-apply-purchase-transactions-manually.html">Reconcile Vendor Payments with the Payment Journal or from Vendor Ledger Entries</a>.</p>
+</li>
+<li><p>Get suggested payments to vendors or employees</p>
+<p>The <strong>Suggest Vendor Payments</strong> and <strong>Suggest Employee Payments</strong> functions can help you fill payment journal lines automatically according to vendor prioritization and due dates. For more information, see <a href="payables-how-suggest-vendor-payments.html">Suggest Vendor Payments</a>. With this function, the <strong>Applies-to Doc. No.</strong> field is always filled in.</p>
+</li>
+<li><p>Print checks and submit payments electronically to your bank</p>
+<p>In addition to recording that the payment is made, you can also use the <strong>Payment Journal</strong> page to output the payment for further processing by your bank. For more information, see <a href="payables-how-work-checks.html">Make Check Payments</a> and <a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#exporting-payments-to-a-bank-file">Make Electronic Payments</a>.</p>
+</li>
+</ul>
+<h2 id="to-make-payments-in-the-payment-journal">To make payments in the payment journal</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Payment Journals</strong>, and then choose the related link.</p>
+</li>
+<li><p>Open the journal batch that is dedicated to payments.</p>
+</li>
+<li><p>If you know who to pay or refund, fill in the fields manually. Hover over a field to read a short description.</p>
+</li>
+<li><p>To also apply the payment to the related invoice or credit memo, choose the <strong>Applies-to Doc No.</strong> field, on the <strong>Apply Vendor Entries</strong> page, select the relevant invoice or credit memo, and then choose the <strong>OK</strong> button.</p>
+<p>Many fields, such as the <strong>Document Amount</strong> and <strong>Due Date</strong> fields, are now filled in with information from the selected document.</p>
+</li>
+<li><p>Alternatively, use the <strong>Suggest Vendor Payments</strong> function. All the applies-to information and amounts are then also entered on the journal lines. For more information, see <a href="payables-how-suggest-vendor-payments.html">Suggest Vendor Payments</a>.</p>
+<p>Messages will guide you to fill in the required fields correctly.</p>
+</li>
+<li><p>When all payment journal lines are completed, choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="payables-how-work-checks.html">Make Check Payments</a><br>
+<a href="finance-make-payments-with-bank-data-conversion-service-or-sepa-credit-transfer.html#exporting-payments-to-a-bank-file">Make Electronic Payments</a><br>
+<a href="payables-manage-payables.html">Managing Payables</a><br>
+<a href="bank-setup-banking.html">Setting Up Banking</a><br>
+<a href="finance-how-positive-pay.html">Export a Positive Pay file</a><br>
+<a href="ui-work-general-journals.html">Working with General Journals</a><br>
+<a href="ui-personalization-user.html">Personalize Your Workspace</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/payables-how-post-payments-refunds.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

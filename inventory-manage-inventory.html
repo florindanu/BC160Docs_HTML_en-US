@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Managing Inventory| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Managing Inventory| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Describes how to manage the physical products that you trade in, for example, handling the stock in your warehouse.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="inventory">Inventory</h1>
+
+<p>For each physical product that you trade in, you must create an item card of type <strong>Inventory</strong>. Items that you offer to customers but do not keep in inventory you can register as catalog items, which you can convert to inventory items when necessary. You can increase or decrease the quantity of an item in inventory by posting directly to the item ledger entries, for example, after a physical count or if you do not record purchases.</p>
+<p>Inventory increases and decreases are naturally also recorded when you post purchase and sales documents respectively. For more information, see <a href="purchasing-how-record-purchases.html">Record Purchases</a>, <a href="sales-how-sell-products.html">Sell Products</a>, and <a href="sales-how-invoice-sales.html">Invoice Sales</a>. Transfers between locations changes inventory quantities across your company's warehouses.</p>
+<p>To increase your overview of items and to help you find them, you can categorize items and give them attributes to search and sort by.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The physical handling of items is referred to as warehouse activities. For more information, see <a href="warehouse-manage-warehouse.html">Warehouse Management</a>.</p>
+</div>
+<p>Planning for items to fulfil demand is covered as part of supply planning functionality. For more information, see <a href="production-planning.html">Planning</a>.</p>
+<h2 id="inventory-reconciliation">Inventory Reconciliation</h2>
+<p>When you post inventory transactions, such as sales shipments, purchase invoices, or inventory adjustments, the changed item costs are recorded in item value entries. To reflect this change of inventory value in your financial books, the inventory costs are automatically posted to the related inventory accounts in the general ledger. For each inventory transaction that you post, the appropriate values are posted to the inventory account, adjustment account, and COGS account in the general ledger. For more information, see <a href="finance-how-to-post-inventory-costs-to-the-general-ledger.html">Reconcile Inventory Costs with the General Ledger</a>.</p>
+<p>Even though inventory costs are automatically posted to the general ledger, it is still necessary to ensure that the costs of goods are forwarded to the related outbound sales transaction, especially in situations where you sell goods before you invoice the purchase of those goods. This is referred to as cost adjustment. Item costs are automatically adjusted when you post item transactions, but you can also adjust item costs manually. For more information, see <a href="inventory-how-adjust-item-costs.html">Adjust Item Costs</a>.</p>
+<table>
+<thead>
+<tr>
+<th>To</th>
+<th>See</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create item cards for inventory items that you trade in.</td>
+<td><a href="inventory-how-register-new-items.html">Register New Items</a></td>
+</tr>
+<tr>
+<td>Structure parent items that you sell as kits consisting of the parent's components or that you assemble to order or to stock.</td>
+<td><a href="inventory-how-work-BOMs.html">Work with Bills of Material</a></td>
+</tr>
+<tr>
+<td>Maintain an overview of items and help you find and sort items by organizing them in categories.</td>
+<td><a href="inventory-how-categorize-items.html">Categorize Items</a></td>
+</tr>
+<tr>
+<td>Assign item attributes of different value types to your items to help you sort and find items.</td>
+<td><a href="inventory-how-work-item-attributes.html">Work with Item Attributes</a></td>
+</tr>
+<tr>
+<td>Create special item cards for items that you offer to customers but do not maintain inventory for.</td>
+<td><a href="inventory-how-work-nonstock-items.html">Work with Catalog Items</a></td>
+</tr>
+<tr>
+<td>Perform physical counting of your inventory with the <strong>Physical Inventory Order</strong> and <strong>Physical Inventory Recording</strong> pages.</td>
+<td><a href="inventory-how-count-inventory-with-documents.html">Count Inventory Using Documents</a></td>
+</tr>
+<tr>
+<td>Perform physical counting, make negative or positive adjustments, and change information, such as location or lot number, on item ledger entries.</td>
+<td><a href="inventory-how-count-adjust-reclassify.html">Count, Adjust, and Reclassify Inventory Using Journals</a></td>
+</tr>
+<tr>
+<td>View the availability of items per location, by period, by sales or purchase event, or by their use on assembly or production BOMs.</td>
+<td><a href="inventory-how-availability-overview.html">View the Availability of Items</a></td>
+</tr>
+<tr>
+<td>Transfer inventory items between locations with transfer orders, to manage warehouse activities, or with the item reclassification journal.</td>
+<td><a href="inventory-how-transfer-between-locations.html">Transfer Inventory Between Locations</a></td>
+</tr>
+<tr>
+<td>Reserve inventory or inbound items for sales orders, purchase orders, service orders, assembly orders, or production orders.</td>
+<td><a href="inventory-how-to-reserve-items.html">Reserve Items</a></td>
+</tr>
+<tr>
+<td>Set up a vendor's or customer's own description for an item, so that you can easily insert their item description on trade documents.</td>
+<td><a href="inventory-how-use-item-cross-refs.html">Use Item Cross References</a></td>
+</tr>
+<tr>
+<td>Assign serial numbers or lot numbers to any outbound or inbound document or journal line, for example to track items in case of recalls.</td>
+<td><a href="inventory-how-work-item-tracking.html">Work with Serial and Lot Numbers</a></td>
+</tr>
+<tr>
+<td>Set up a vendor's or customer's own item description on your item card so that you can quickly insert their item description on trade documents.</td>
+<td><a href="inventory-how-use-item-cross-refs.html">Use Item Cross-References</a></td>
+</tr>
+<tr>
+<td>Find where any serial or lot number was used in its supply chain, for example in recall situations.</td>
+<td><a href="inventory-how-to-trace-item-tracked-items.html">Trace Item-Tracked Items</a></td>
+</tr>
+<tr>
+<td>Block items from being entered on sales or purchase lines or from being posted in any transaction.</td>
+<td><a href="inventory-how-block-items.html">Block Items</a></td>
+</tr>
+<tr>
+<td>Manage business operations in sales offices, a purchasing departments, or plant planning offices across multiple locations.</td>
+<td><a href="inventory-responsibility-centers.html">Work with Responsibility Centers</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="sales-manage-sales.html">Sales</a><br>
+<a href="ui-work-product.html">Working with Business Central</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+<h2 id="section">Start a <a href="https://go.microsoft.com/fwlink/?linkid=847861">free trial!</a></h2>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/inventory-manage-inventory.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

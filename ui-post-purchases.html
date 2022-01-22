@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Understanding How To Post Purchase Documents | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Understanding How To Post Purchase Documents | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Learn about the different posting functions to post purchase documents, and how you can update posted documents.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="posting-purchases">Posting Purchases</h1>
+
+<p>On a purchase document, you can choose between the following posting actions:</p>
+<ul>
+<li><strong>Post</strong></li>
+<li><strong>Preview Posting</strong></li>
+<li><strong>Post and Print</strong></li>
+<li><strong>Test Report</strong></li>
+<li><strong>Post Batch</strong></li>
+</ul>
+<p>When a purchase document is posted, the vendor's account, the general ledger, the item ledger entries, and the resource ledger entries  are updated.</p>
+<p>For each purchase document, a purchase entry is created in the <strong>G/L Entry</strong> table. An entry is also created in the vendor's account in the <strong>Vendor Ledger Entry</strong> table and a G/L entry is created in the relevant payables account. In addition, posting the purchase may result in a VAT entry and a G/L entry for the discount amount. Whether an entry for the discount is posted depends on the contents of the <strong>Discount Posting</strong> field on the <strong>Purchases &amp; Payables Setup</strong> page.</p>
+<p>For each purchase line, the following entries will be created:</p>
+<ul>
+<li>An entry in the <strong>Item Ledger Entry</strong> table if the purchase line is of type <strong>Item</strong>.</li>
+<li>An entry in the <strong>G/L Entry</strong> table if the purchase lines is of type <strong>G/L Account</strong></li>
+<li>An entry in the <strong>Resource Ledger Entry</strong> table if the purchase line is of type <strong>Resource</strong>.</li>
+</ul>
+<p>In addition, purchase documents are always recorded in the <strong>Purch. Recpt. Header</strong> and <strong>Purch. Inv. Header</strong> tables.</p>
+<p>Before you start to post, you can print a test report that contains all the information in the purchase order and indicates any errors there. To print the report, choose <strong>Posting</strong>, and then choose <strong>Test Report</strong>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>When you post a purchase order for items, you can create both a receipt and an invoice. These can be done simultaneously or independently. You can also create a partial receipt and a partial invoice by completing the <strong>Qty. to Receive</strong> and <strong>Qty. to Invoice</strong> fields on the individual purchase order lines before you post. Note that you cannot create an invoice for something that has not been received. That is, before you can invoice, you must have recorded a receipt, or you must choose to receive and invoice at the same time.</p>
+</div>
+<p>You can either post or post and print. If you choose to post and print, a report is printed when the order is posted. You can also choose the <strong>Post Batch</strong> function, which lets you post several orders at the same time. For more information, see <a href="ui-batch-posting.html">Post Multiple Documents at the Same Time</a>.</p>
+<h2 id="viewing-ledger-entries">Viewing Ledger Entries</h2>
+<p>When the posting is completed, the posted purchase lines are removed from the order. A message tells you when the posting is completed. After this, you will be able to see the posted entries in the various pages that contain posted entries, such as the <strong>Vendor Ledger Entries</strong>, <strong>G/L Entries</strong>, <strong>Item Ledger Entries</strong>, <strong>resource ledger entries</strong>, <strong>Purchase Receipts</strong>, and <strong>Posted Purchase Invoices</strong> pages.</p>
+<p>In most cases, you can open ledger entries from the affected card or document. For example, on the <strong>Vendor Card</strong> page, choose the <strong>Entries</strong> action.</p>
+<h2 id="editing-ledger-entries">Editing Ledger Entries</h2>
+<p>You can edit certain fields on posted purchase documents, such as the <strong>Payment Reference</strong> field. For more information, see <a href="across-edit-posted-document.html">Edit Posted Documents</a>. For more critical fields that affect the auditing trail, you must reverse or undo posting. For more information, see <a href="finance-how-reverse-journal-posting.html">Reverse Journal Postings and Undo Receipts/Shipments</a>.</p>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/receive-invoice-dynamics-d365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="across-edit-posted-document.html">Edit Posted Documents</a><br>
+<a href="ui-batch-posting.html">Post Multiple Documents at the Same Time</a><br>
+<a href="purchasing-manage-purchasing.html">Purchasing</a><br>
+<a href="ui-post-documents-journals.html">Posting Documents and Journals</a><br>
+<a href="purchasing-how-correct-cancel-unpaid-purchase-invoices.html">Correct or Cancel Unpaid Purchase Invoices</a><br>
+<a href="ui-search.html">Finding Pages and Information with Tell Me</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-post-purchases.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

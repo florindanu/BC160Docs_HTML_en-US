@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Cross-Dock Items | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Cross-Dock Items | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Cross-docking functionality is available to you if you have set up your location to require warehouse receive and put-away processing.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="cross-dock-items">Cross-Dock Items</h1>
+
+<p>Cross-docking functionality is available to you if you have set up your location to require warehouse receive and put-away processing.</p>
+<p>When you cross-dock items, you process items in receiving and shipping without ever placing them in storage, thereby expediting the item through the put-away and pick processes and limiting the physical handling of items. You can cross-dock items for both shipments and for production orders. When you prepare a shipment or pick items for production and you are using bins, the item is automatically picked from a cross-dock bin before any other bin. You must look in the cross-dock area to see if the items you need are available there before you get the items in their usual storage area.</p>
+<p>If you have calculated cross-dock quantities, put-away lines to the cross-dock bin for cross-dock calculations are created when you post the receipt. Other put-away lines are created as usual.</p>
+<p>If you want to post the cross-dock items right away to make them available for picking, you must also register a put-away for the other items originating from the receipt line, namely those that need to be stored. If only some items on a receipt line are being cross-docked, you must therefore make an effort to put away the remaining items as quickly as possible. Alternatively, your warehouse policy could be to encourage cross-docking of entire receipt lines whenever possible.</p>
+<p>In the put-away instruction, you can to your advantage delete both Take and Place instruction lines for each receipt line that concern receipts that are to be fully put away in storage. These lines can later be created as put-away lines from the put-away worksheet or the posted receipt. When they are deleted, you can then put away and register the lines that concern cross-dock items.</p>
+<p>If you have selected the <strong>Use Put-away Worksheet</strong> field on the location card and have posted your receipt with calculated cross-docks, all the receipt lines become available in the worksheet. The cross-dock information is lost and cannot be recreated. Therefore, if you wish to use cross-dock functionality, you should relay lines to the put-away worksheet by deleting put-away instructions rather than using the automatic relay function provided in the <strong>Use Put-away Worksheet</strong> field.</p>
+<p>If you post the warehouse receipt and you do not have the <strong>Use Put-away Worksheet</strong> field selected, the items to be cross-docked appear as separate lines on the put-away instruction. The <strong>Cross-Dock Information</strong> field on each put-away line shows whether the line contains cross-dock items, items from the same receipt that all need to be stored, or items that need to be stored originating from a receipt line where some of the items are to be cross-docked. With this field, employees can easily see why the full receipt quantity is not being placed in storage.</p>
+<p>The application does not keep separate records about items that have been cross-docked, but registers them as ordinary put-away instructions.</p>
+<h2 id="to-set-up-the-warehouse-for-cross-docking">To set up the warehouse for cross-docking</h2>
+<ol>
+<li><p>Set up at least one cross-dock bin, if you are using bins. Set up a cross-dock zone, if you are using directed put-away and pick.</p>
+<p>A cross-dock bin has the <strong>Cross-Dock Bin</strong> field selected and must have both <strong>Receive</strong> and <strong>Pick</strong> bin types selected. For more information, see <a href="warehouse-how-to-create-individual-bins.html">Create Bins</a> and <a href="warehouse-how-to-set-up-bin-types.html">Set Up Bin Types</a>.</p>
+<p>If you are using zones, create a zone for your cross-dock bins, and select the <strong>Cross-Dock Bin Zone</strong> field. For more information, see <a href="warehouse-how-to-set-up-locations-to-use-bins.html">Set Up Locations to Use Bins</a>.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Location</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Location</strong> page, select the location that you want to set up the warehouse for cross-docking, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Warehouse</strong> FastTab, select the <strong>Use Cross-Docking</strong> check box and fill in the <strong>Cross-Dock Due Date Calc.</strong> field with the time to search for cross-dock opportunities.</p>
+<p>The <strong>Use Cross-Docking</strong> option is only available if the <strong>Require Receive</strong>, <strong>Require Shipment</strong>, <strong>Require Pick</strong>, and <strong>Require Put-away</strong> fields are selected.</p>
+</li>
+<li><p>If you are using bins, on the <strong>Bins</strong> FastTab, fill in the <strong>Cross-Dock Bin Code</strong> field with the code of the bin you would like to use as the default cross-dock bin.</p>
+</li>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Stockkeeping Unit</strong>, and select the related link.</p>
+</li>
+<li><p>For each item or stockkeeping unit that you want to be able to cross-dock, select the item, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Stockkeeping Unit Card</strong> page, select the <strong>Use Cross-Docking</strong> check box.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Cross-docking is only possible if your location is set up to require warehouse receive and put-away processing.</p>
+</div>
+<h2 id="to-cross-dock-items-without-viewing-the-opportunities">To cross-dock items without viewing the opportunities</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Receipts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a warehouse receipts for an item that has arrived and can perhaps be cross-docked. For more information, see <a href="warehouse-how-receive-items.html">Receive Items</a>.</p>
+</li>
+<li><p>Fill in the <strong>Qty. to Receive</strong> field, and then choose the <strong>Calculate Cross-Dock</strong> action.</p>
+<p>Outbound source documents requesting the items that are scheduled to leave the warehouse within the date formula time period are identified.  Business Central calculates quantities so that you can cross-dock as much as possible and avoid having to put items away, without piling up too many items in the cross-dock area. The value in the <strong>Qty. to Cross-Dock</strong> field is thus the sum of all the outbound lines requesting the item within the look-ahead period minus the quantity of the items that have already been placed in the cross-dock area, or it is the value in the <strong>Qty. to Receive</strong> field on the receipt line, whichever is smaller. You cannot cross-dock more than you have received.</p>
+</li>
+<li><p>If you want to cross-dock the quantity as suggested, post the receipt. You can also decide to change the quantity to cross-dock to a higher or lower value and then post the receipt.</p>
+<p>The amounts to be cross-docked now appear as lines in the put-away instruction, assuming the <strong>Use Put-away Worksheet</strong> field is cleared. The quantities not cross-docked also become lines in the put-away instruction.</p>
+<p>If you have bins, the cross-docked items have been assigned to the default cross-dock bin defined on the location card.</p>
+</li>
+<li><p>Delete the <strong>Take</strong> and <strong>Place</strong> lines for items that are not going to be cross-docked at all.</p>
+</li>
+<li><p>Print the put-away instruction for the remaining lines, and place the quantities of the receipt that need to be stored in the appropriate bins or in the appropriate area of the warehouse. Place the cross-dock items in the area or bin designated for them by warehouse policy. Sometimes, warehouse policy might require that you to just leave them in the receiving area.</p>
+</li>
+<li><p>To register the cross-docked items as being put-away and available for picking, choose the <strong>Register</strong> action.</p>
+</li>
+</ol>
+<h2 id="to-cross-dock-items-after-viewing-the-opportunities">To cross-dock items after viewing the opportunities</h2>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Warehouse Receipts</strong>, and then choose the related link.</p>
+</li>
+<li><p>Create a warehouse receipts for an item that has arrived and can perhaps be cross-docked. For more information, see <a href="warehouse-how-receive-items.html">Receive Items</a>.</p>
+<p>You want to view the source document lines that are requesting the item before you post the receipt.</p>
+</li>
+<li><p>Choose the <strong>Calculate Cross-Dock</strong> action.</p>
+<p>On the <strong>Cross-Dock Opportunities</strong> page you can see the most important details about the lines requesting the item, such as type of document, quantity requested, and due date. This information might help you to decide how much to cross-dock, where to place the items in the cross-dock area, or how to group them.</p>
+</li>
+<li><p>Choose <strong>Autofill Qty. to Cross-Dock</strong> action to see how the quantities on the receipt lines are calculated. When you change the number of items in the <strong>Qty. to Cross-Dock</strong> field on each line, the calculation is updated as you make changes. This does not mean that the particular shipment or production order will actually receive the items being suggested for cross-docking, because these manipulations are for testing purposes only. The process can be informative, however, if more than one unit of measure is involved.</p>
+</li>
+<li><p>If you want to reserve a quantity of the item for a particular order line, place your cursor on that line, and then choose the <strong>Reserve</strong> action. On the <strong>Reservation</strong> page, you can now reserve any available quantity of the item for this specific order. This reservation is like any other reservation and does not have higher priority because it was created in connection with cross-docking. For more information, see <a href="inventory-how-to-reserve-items.html">Reserve Items</a>.</p>
+</li>
+<li><p>When you are finished recalculating or reserving, choose the <strong>OK</strong> button to bring the calculation as you have revised it into the <strong>Qty. to Cross-Dock</strong> field on the receipt line, or choose the <strong>Cancel</strong> button if you want to return to the warehouse receipt, where you can calculate the cross-dock again if you wish.</p>
+</li>
+<li><p>Now post the receipt, and you can continue in the put-away instruction as described in steps 3 through 7 in the “To cross-dock items without viewing the opportunities” section.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the warehouse put-away, you can continue to change the quantities that are being put away in storage or cross-docked, as necessary. For example, you might decide to cross-dock an extra quantity to expedite the cross-dock registration.</p>
+</div>
+<h2 id="to-view-cross-docked-items-in-a-shipment-or-pick-worksheet">To view cross-docked items in a shipment or pick worksheet</h2>
+<p>If you are using bins, you can see, each time you open a shipment or the pick worksheet, an updated calculation of the quantity of each item in the cross-dock bins. This is valuable information if you are waiting for an item to come in. When you see that the item is available in the cross-dock bin, you can then quickly create a pick for all the items on the shipment. In the pick worksheet, you can modify the lines as appropriate and then create a pick.</p>
+<p>You have to look for items in the cross-dock area first when you pick items for shipment. If you have noted during the receipt process the source documents that were the basis for cross-docking, you have a better idea of whether the item can be found in the cross-dock area or not.</p>
+<p>When a production order has been released, the lines are available in the pick worksheet, and you can see in the <strong>Qty. on Cross-Dock Bin</strong> field whether the items you are waiting for have arrived and been placed in the cross-dock bins. When you create a pick instruction, application suggests that you first pick the cross-docked items and will only later search for the item in storage bins.</p>
+<p>If you are not using bins, you must remember to check the cross-dock area from time to time, or rely on notifications from receipts that items for production have arrived.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="warehouse-manage-warehouse.html">Warehouse Management</a><br>
+<a href="inventory-manage-inventory.html">Inventory</a><br>
+<a href="warehouse-setup-warehouse.html">Setting Up Warehouse Management</a><br>
+<a href="assembly-assemble-items.html">Assembly Management</a><br>
+<a href="design-details-warehouse-management.html">Design Details: Warehouse Management</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/warehouse-how-to-cross-dock-items.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

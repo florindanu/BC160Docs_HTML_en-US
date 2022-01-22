@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Receive and Convert Electronic Documents | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Receive and Convert Electronic Documents | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You can receive electronic documents directly from trading partners or from an OCR service.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="receive-and-convert-electronic-documents">Receive and Convert Electronic Documents</h1>
+
+<p>The generic version of Business Central supports receiving electronic invoices and credit memos in the PEPPOL format, which is supported by the largest providers of document exchange services. To receive an invoice from a vendor as an electronic PEPPOL document, you process the document in the Incoming Documents page to convert it to a purchase invoice or general journal line in Business Central.</p>
+<p>In addition to receiving electronic documents directly from trading partners, you can receive electronic documents from an OCR service that has turned your PDF or image files into electronic documents.</p>
+<p>Before you can receive electronic documents through the document exchange service, you must set up various master data, such as company information, vendors, items, and units of measure. These are used to identify the business partners and items when converting data in elements in the incoming document file to fields in Business Central. For more information, see <a href="across-how-to-set-up-a-document-exchange-service.html">Set Up a Document Exchange Service</a>.</p>
+<p>Before you can receive electronic documents through the OCR service, you must set up and enable the preconfigured service connection. For more information, see <a href="across-how-setup-income-documents.html">Set Up Incoming Documents</a>.</p>
+<p>The traffic of electronic documents in and out of Business Central is managed by the Job Queue feature. Before you can receive electronic documents, the relevant job queue must be started.</p>
+<p>You can either start the conversion of electronic documents manually, as described in this procedure, or you can enable a workflow to convert electronic documents automatically when they are received. The generic version of Business Central includes a workflow template, <em>From Incoming Electronic through OCR to Open Purchase Invoice Workflow</em>, which is ready to be copied to a workflow and enabled. For more information, see <a href="across-workflow.html">Workflow</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When you convert electronic documents received from the OCR service to documents or journal lines in Business Central, multiple lines on the source document will be summed on one line. The single line will be of type G/L Account and the <strong>Description</strong> and (G/L account) <strong>No.</strong> fields will be empty. The value in the <strong>Amount</strong> field will equal the total amount excluding VAT of all lines in the source document.</p>
+<p>To make sure that the <strong>Description</strong> and <strong>No.</strong> fields are filled, you can choose the <strong>Map Text to Account</strong> button on the <strong>Incoming Documents</strong> page to define that a certain invoice text is always mapped to a certain debit or credit account in the general ledger. Going forward, the <strong>Description</strong> field on document or journal lines created from an electronic document for that vendor or customer will be filled with the text in question and the (G/L account) <strong>No.</strong> field with the account in question.</p>
+<p>Instead of mapping to a G/L account, you can also map to a bank account. This is practical, for example, for electronic documents for expenses that are already paid where you want to create a general journal line that is ready to post to a bank account.</p>
+</div>
+<p>The following procedure describes how to receive a vendor invoice and convert it to a purchase invoice in Business Central. The procedure is the same when you convert a vendor invoice to a general journal line.</p>
+<h3 id="to-receive-and-convert-an-electronic-invoice-to-a-purchase-invoice">To receive and convert an electronic invoice to a purchase invoice</h3>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Incoming Documents</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the line for the incoming document record that represents a new incoming electronic invoice, and then choose the <strong>Edit</strong> action.</p>
+<p>On the <strong>Incoming Document Card</strong> page, the related XML file is attached, and most of the fields are prefilled with information from the electronic invoice. For more information, see <a href="across-how-create-income-document-records.html">Create Incoming Document Records</a>.</p>
+</li>
+<li><p>In the <strong>Data Exchange Type</strong> field, choose <strong>PEPPOL - Invoice</strong> or <strong>OCR – Invoice</strong> depending on the source of the electronic document.</p>
+</li>
+<li><p>To map text on the vendor invoice to a specific debit account, on the <strong>Actions</strong> tab, in the <strong>General</strong> group, choose <strong>Map Text to Account</strong>, and then fill the <strong>Text-to-Account Mapping Worksheet</strong> page.</p>
+</li>
+<li><p>Choose the <strong>Create Document</strong> action.</p>
+<p>A purchase invoice will be created in Business Central based on the information in the electronic document.</p>
+<p>Any validation errors, typically related to wrong or missing master data in Business Central will be shown on the <strong>Error Messages</strong> FastTab.</p>
+</li>
+</ol>
+<h2 id="see-related-training-at-microsoft-learn">See Related Training at <a href="http://docs.microsoft.com/learn/modules/electronic-documents-dynamics-365-business-central/index">Microsoft Learn</a></h2>
+<h2 id="see-also">See Also</h2>
+<p><a href="payables-manage-payables.html">Managing Payables</a><br>
+<a href="across-income-documents.html">Incoming Documents</a><br>
+<a href="across-how-to-set-up-electronic-document-sending-and-receiving.html">Set Up Electronic Document Sending and Receiving</a><br>
+<a href="across-data-exchange.html">Exchanging Data Electronically</a><br>
+<a href="ui-across-business-areas.html">General Business Functionality</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/purchasing-how-to-receive-and-convert-electronic-documents.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

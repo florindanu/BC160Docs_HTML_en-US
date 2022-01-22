@@ -1,0 +1,224 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Posting Group Setup| Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Posting Group Setup| Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Overview of the posting groups you can use to save time and avoid mistakes when you post transactions.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="setting-up-posting-groups">Setting Up Posting Groups</h1>
+
+<p>Posting groups map entities like customers, vendors, items, resources, and sales and purchase documents to general ledger accounts. They save time and help avoid mistakes when you post transactions. The transaction values go to the accounts specified in the posting group for that particular entity. The only requirement is that you have a chart of accounts. For more information, see <a href="finance-setup-chart-accounts.html">Set Up the Chart of Accounts</a>.</p>
+<p>Posting groups are covered under three umbrellas:</p>
+<ul>
+<li>General - Define who you sell to and buy from, and what you sell and what you buy. You can also combine groups to specify things like the income statement accounts to post to, or use groups to filter reports.</li>
+<li>Specific - Use sales documents, for example, instead of posting directly to the general ledger. When you create entries in the customer ledger, corresponding entries are made in the general ledger.</li>
+<li>Tax - Define the tax percentages and calculation types that apply to who you sell to and buy from, and what you sell and what you buy.</li>
+</ul>
+<p>The following tables describe the posting groups under each umbrella.</p>
+<table>
+<thead>
+<tr>
+<th>General Posting Groups</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General Business Posting Groups</td>
+<td>Assign this group to customers and vendors to specify who you sell to, and who you buy from. Set these up on the <strong>Gen. Business Posting Groups</strong> page. When you do, think about how many groups you'll need to break down sales and purchases. For example, group customers and vendors by geographical area, or by the type of business.</td>
+</tr>
+<tr>
+<td>General Product Posting Groups</td>
+<td>Assign this group to items and resources to specify what you sell, and what you buy. Set these up on the <strong>Gen. Product Posting Groups</strong> page. When you do, consider the number of groups you'll need to break down sales by product (items and resources) and purchases by items. For example, divide these groups by raw materials, retail, resources, capacity, and so on.</td>
+</tr>
+<tr>
+<td>General Posting Setups</td>
+<td>Combine business and product posting groups and choose the accounts to post to. For each combination of business and product posting groups, you can assign a set of general ledger accounts. For example, this means you can post the sale of the same item to different sales accounts in the general ledger because customers are assigned to different business posting groups. Set these up on the <strong>General Posting Setup</strong> page.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Specific Posting Groups</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Customer Posting Groups</td>
+<td>Define the accounts to use when you post accounts receivable transactions. If you use inventory with receivables, the general business posting group assigned to your customer, and the general product posting group assigned to the inventory item determine the accounts that the sales order lines post to. See &quot;General Business Posting Groups&quot; and &quot;General Product Posting Groups&quot; under <strong>General Posting Groups</strong> above. Set these up on the <strong>Customer Posting Groups</strong> page.</td>
+</tr>
+<tr>
+<td>Vendor Posting Groups</td>
+<td>Define where to post transactions for payables accounts, service charge accounts, and payment discount accounts. This is similar to customer posting groups. Set these up on the <strong>Vendor Posting Groups</strong> page.</td>
+</tr>
+<tr>
+<td>Inventory Posting Groups</td>
+<td>Define inventory posting groups that you then assign to the relevant item accounts on the <strong>Inventory Posting Setup</strong> page. This way, when you post entries concerning an item, the system will post to the G/L account that is set up for the combination of inventory posting group and location that is linked to the item. Inventory posting groups also provide a good way to organize your inventory, so you can separate items by their posting group when you generate reports. Set these up on the <strong>Inventory Posting Groups</strong> page.</td>
+</tr>
+<tr>
+<td>Bank Account Posting Groups</td>
+<td>Define accounts for bank accounts. For example, this can simplify the processes of tracing transactions and reconciling bank accounts. Set these up on the <strong>Bank Account Posting Groups</strong> page.</td>
+</tr>
+<tr>
+<td>Fixed Assets Posting Groups</td>
+<td>Define accounts for different types of expenses and costs, such as acquisition costs, accumulated depreciation amounts, acquisition costs on disposal, accumulated depreciation on disposal, gains on disposal, losses on disposal, maintenance expenses, and depreciation expenses. Set these up on the <strong>FA Posting Groups</strong> page.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Tax Posting Group</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tax Business Posting Groups</td>
+<td>Determine how to calculate and post sales tax for customers and vendors. Set these up on the <strong>Tax Business Posting Groups</strong> page. When you do, think about how many groups you need. For example, this can depend on factors like local legislation, and whether you trade both domestically and internationally.</td>
+</tr>
+<tr>
+<td>Tax Product Posting Groups</td>
+<td>Indicate the tax calculations needed for the types of items or resources you buy or sell.</td>
+</tr>
+<tr>
+<td>Tax Posting Setup</td>
+<td>Combine tax business posting groups and tax product posting groups. When you fill in a general journal line, purchase line, or sales line, we'll look at the combination to identify the accounts to use.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-of-linking-posting-groups">Example of linking posting groups</h2>
+<p>Here's a scenario.</p>
+<p>These posting groups are chosen on the customer card:</p>
+<ul>
+<li>General business posting group</li>
+<li>Customer posting group</li>
+</ul>
+<p>These posting groups are chosen on the item card:</p>
+<ul>
+<li>General product posting group</li>
+<li>Inventory posting group</li>
+</ul>
+<p>When you create a sales document, the sales header uses the customer card information, and the sales lines use the item card information.</p>
+<ul>
+<li>The revenue posting (income statement) is determined by the combination of the general business posting group and the general product posting group.</li>
+<li>The accounts receivable posting (balance sheet) is determined by the customer posting group.</li>
+<li>The inventory posting (balance sheet) is determined by the inventory posting group.</li>
+<li>The cost of goods sold posting (income statement) is determined by the combination of general business posting group and general product posting group.</li>
+</ul>
+<p>Your setup determines when posting happens. For example, the timing is affected by when you do periodic activities, such as posting inventory cost or adjusting cost item entries.</p>
+<h2 id="copying-posting-setup-lines">Copying posting setup lines</h2>
+<p>The more product and business posting groups you have, the more lines you see in the General Posting Setup page. This can mean a lot of data entry to set up the general posting setup for the company. While there may be many different combinations of business and product posting groups, different combinations may still post to the same general ledger accounts. To limit the amount of manual entry, copy the general ledger accounts from an existing line on the <strong>General Posting Setup</strong> page.</p>
+<h2 id="see-also">See also</h2>
+<p><a href="finance-general-ledger.html">The General Ledger and the Chart of Accounts</a><br>
+<a href="finance-setup-finance.html">Setting Up Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/finance-posting-groups.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

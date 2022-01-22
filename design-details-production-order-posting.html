@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Production Order Posting | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Production Order Posting | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Similar to assembly order posting, the consumed components and the used machine time are converted and output as the produced item when the production order is finished.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-production-order-posting">Design Details: Production Order Posting</h1>
+
+<p>Similar to assembly order posting, the consumed components and the used machine time are converted and output as the produced item when the production order is finished. For more information, see <a href="design-details-assembly-order-posting.html">Design Details: Assembly Order Posting</a>. However, the cost flow for assembly orders is less complex, especially because assembly cost posting only occurs once and therefore does not generate work-in-process inventory.</p>
+<p>Transactions that occur during the manufacturing process can be tracked through the following stages:</p>
+<ol>
+<li>Purchase of materials and other manufacturing inputs.</li>
+<li>Conversion into work in process.</li>
+<li>Conversion into finished goods inventory.</li>
+<li>Sale of finished goods.</li>
+</ol>
+<p>Therefore, apart from regular inventory accounts, a manufacturing company must establish three separate inventory accounts to record transactions at various stages of production.</p>
+<table>
+<thead>
+<tr>
+<th>Inventory Account</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Raw Materials account</strong></td>
+<td>Includes the cost of raw materials that are purchased but not yet transferred to production. The balance in the Raw Materials account indicates the cost of raw materials on hand.<br><br> When raw materials move into the production department, the cost of the materials is transferred from the Raw Materials account to the WIP account.</td>
+</tr>
+<tr>
+<td><strong>Work in Process (WIP) account</strong></td>
+<td>Accumulates the costs that are incurred during production in the accounting period. The WIP account is debited for the cost of raw materials that are transferred from the raw materials warehouse, the cost of direct labor performed, and the manufacturing overhead costs that are incurred.<br><br> The WIP account is credited for the total manufacturing cost of units that are completed in the factory and transferred to the finished goods warehouse.</td>
+</tr>
+<tr>
+<td><strong>Finished Goods account</strong></td>
+<td>This account includes the total manufacturing cost of units that are completed but not yet sold. At the time of sale, the cost of units sold is transferred from the Finished Goods account to the Cost of Goods Sold account.</td>
+</tr>
+</tbody>
+</table>
+<p>The inventory value is calculated by tracking the costs of all increases and decreases, as expressed by the following equation:</p>
+<ul>
+<li>inventory value = beginning balance of inventory + value of all increases - value of all decreases</li>
+</ul>
+<p>Depending on the type of inventory, increases and decreases are represented by different transactions.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Increases</th>
+<th>Decreases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Raw material inventory</strong></td>
+<td>-   Net purchases of material<br>-   Output of subassemblies<br>-   Negative consumption</td>
+<td>Material consumption</td>
+</tr>
+<tr>
+<td><strong>WIP inventory</strong></td>
+<td>-   Material consumption<br>-   Capacity consumption<br>-   Manufacturing overhead</td>
+<td>Output of end items (cost of goods manufactured)</td>
+</tr>
+<tr>
+<td><strong>Finished goods inventory</strong></td>
+<td>Output of end items (cost of goods manufactured)</td>
+<td>-   Sales (cost of goods sold)<br>-   Negative output</td>
+</tr>
+<tr>
+<td><strong>Raw material inventory</strong></td>
+<td>-   Net purchases of material<br>-   Output of subassemblies<br>-   Negative consumption</td>
+<td>Material consumption</td>
+</tr>
+</tbody>
+</table>
+<p>The values of increases and decreases are recorded in the different types of manufactured inventory in the same way as for purchased inventory. Every time a transaction of inventory increase or decrease takes place, an item ledger entry and a corresponding general ledger entry are created for the amount. For more information, see <a href="design-details-inventory-posting.html">Design Details: Inventory Posting</a>.</p>
+<p>Although values of transactions that are related to purchased goods are posted only as item ledger entries with related value entries, transactions that are related to produced items are posted as capacity ledger entries with related value entries, in addition to the item ledger entries.</p>
+<h2 id="posting-structure">Posting Structure</h2>
+<p>Posting production orders to WIP inventory involves output, consumption, and capacity.</p>
+<p>The following diagram shows the involved posting routines in codeunit 22.</p>
+<p><img src="media/design_details_inventory_costing_14_production_posting_1.png" alt="Production order posting routines" title="Production order posting routines"></p>
+<p>The following diagram shows the associations between the resulting entries and the cost objects.</p>
+<p><img src="media/design_details_inventory_costing_14_production_posting_2.png" alt="Production entry flow" title="Production entry flow"></p>
+<p>The capacity ledger entry describes the capacity consumption in terms of time units, whereas the related value entry describes the value of the specific capacity consumption.</p>
+<p>The item ledger entry describes the material consumption or output in terms of quantities, whereas the related value entry describes the value of this specific material consumption or output.</p>
+<p>A value entry that describes WIP inventory value can be associated with one of the following combinations of cost objects:</p>
+<ul>
+<li>A production order line, a work or machine center, and a capacity ledger entry.</li>
+<li>A production order line, an item, and an item ledger entry.</li>
+<li>Only a production order line</li>
+</ul>
+<p>For more information about how costs from production and assembly are posted to the general ledger, see <a href="design-details-inventory-posting.html">Design Details: Inventory Posting</a>.</p>
+<h2 id="capacity-posting">Capacity Posting</h2>
+<p>Posting output from the last production order routing line results in a capacity ledger entry for the end item, in addition to its inventory increase.</p>
+<p>The capacity ledger entry is a record of the time that was spent to produce the item. The related value entry describes the increase of the WIP inventory value, which is the value of the conversion cost. For more information, see “From the Capacity Ledger” in <a href="design-details-accounts-in-the-general-ledger.html">Design Details: Accounts in the General Ledger</a>.</p>
+<h2 id="production-order-costing">Production Order Costing</h2>
+<p>To control inventory and production costs, a manufacturing company must measure the cost of production orders, because the predetermined standard cost of each produced item is capitalized in the balance sheet. For information about why produced items use the Standard costing method, see <a href="design-details-costing-methods.html">Design Details: Costing Methods</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In environments that do not use the Standard costing method, the actual rather than the standard cost of produced items is capitalized on the balance sheet.</p>
+</div>
+<p>The actual cost of a production order consists of the following cost components:</p>
+<ul>
+<li>Actual material cost</li>
+<li>Actual capacity cost or subcontractor cost</li>
+<li>Manufacturing overhead</li>
+</ul>
+<p>These actual costs are posted to the production order and compared to the standard cost to calculate variances. Variances are calculated for each of the item cost components: raw materials, capacity, subcontractor, capacity overhead, and manufacturing overhead. The variances can be analyzed to determine problems, such as excessive waste in processing.</p>
+<p>In standard-cost environments, the costing of a production order is based on the following mechanism:</p>
+<ol>
+<li><p>When the last routing operation is posted, the production order cost is posted to the item ledger and set to the expected cost.</p>
+<p>This cost equals the output quantity that is posted in the output journal multiplied by the standard cost that is copied from the item card. The cost is treated as expected cost until the production order is finished. For more information, see <a href="design-details-expected-cost-posting.html">Design Details: Expected Cost Posting</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>This differs from assembly order posting, which always posts actual costs. For more information, see <a href="design-details-assembly-order-posting.html">Design Details: Assembly Order Posting</a>.</p>
+</div>
+</li>
+<li><p>When the production order is set to <strong>Finished</strong>, the order is invoiced by running the <strong>Adjust Cost-Item Entries</strong> batch job. As a result, the total cost of the order is calculated based on the standard cost of the consumed materials and capacity. The variances between the calculated standard costs and the actual production costs are calculated and posted.</p>
+</li>
+</ol>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-inventory-costing.html">Design Details: Inventory Costing</a><br>
+<a href="design-details-assembly-order-posting.html">Design Details: Assembly Order Posting</a><br>
+<a href="finance-manage-inventory-costs.html">Managing Inventory Costs</a>
+<a href="finance.html">Finance</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-production-order-posting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

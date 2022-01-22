@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Enter and Post Cash and Bank or Giro Journals </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Enter and Post Cash and Bank or Giro Journals ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="In Business Central, you can use the cash and bank journals to enter the transactions that affect the cash and bank accounts by using Cash Book and Bank Book.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="enter-and-post-cash-and-bankgiro-journals">Enter and Post Cash and Bank/Giro Journals</h1>
+
+<p>The cash journal and the bank/giro journal help you post transactions into the system in an easier and more direct way than using the general journal.</p>
+<p>In conjunction with Telebanking, they allow you to import electronic bank statements into the <strong>Bank/Giro Journal</strong> page. The system can automatically reconcile these statements during the import process and determine whether a statement can be applied to open ledger entries for the relevant vendor/customer.</p>
+<p>In Business Central, you can use the cash and bank journals to enter the transactions that affect the cash and bank accounts by using the <strong>Cash Book</strong> and <strong>Bank Book</strong> types.</p>
+<p>You can enter increases or decreases to the cash account on the <strong>Cash Journal</strong> page. For example, you can use this journal for paying out petty cash or receiving transfers from a different bank account.</p>
+<p>The <strong>Bank/Giro Journal</strong> page records the inflow or outflow of the cash to a specific bank account. This journal forms the basis for bank reconciliation. The layout of this journal resembles the paper bank statement, so you can transpose the required fields from the paper statement to the journal, or you can import an electronic bank statement file. The transactions can be customer payments or vendor payments.</p>
+<p>You can apply the payments from customers to the open invoices from accounts receivables. You can also enter general ledger transactions to capture miscellaneous amounts, such as bank charges or interest income. VAT codes can also be applied to these transaction lines. You can define a journal for every bank account.</p>
+<h2 id="to-post-cash-journals">To post cash journals</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Cash Journal</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>Cash Journal</strong> page, on the <strong>Lines</strong> FastTab, fill in the required fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Date</strong></td>
+<td>The journal entry date.</td>
+</tr>
+<tr>
+<td><strong>Document No.</strong></td>
+<td>The document number for which journal entry is created.</td>
+</tr>
+<tr>
+<td><strong>Account Type</strong></td>
+<td>The account type to which the entry is to be posted.</td>
+</tr>
+<tr>
+<td><strong>Account No.</strong></td>
+<td>The account number to which the entry is to be posted.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The description of the entry. This field automatically populates the description of the account number selected in the <strong>Account No.</strong> field.</td>
+</tr>
+<tr>
+<td><strong>VAT Prod. Posting Group</strong></td>
+<td>The VAT product posting group code used to post the entry. You can select a code in this field only if the <strong>Account Type</strong> is <strong>G/L Account</strong>. For more information, see VAT Product Posting Groups.</td>
+</tr>
+<tr>
+<td><strong>Amount</strong></td>
+<td>The total amount that the statement line consists of. You must enter the debit amount without a plus or minus sign and the credit amount with a minus sign.<br><br> If this amount includes the VAT amount, then select the <strong>Amount incl. VAT</strong> check box.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If there is a difference between the opening balance and the closing balance, you must change the closing balance before posting the entry.</p>
+</div>
+<p>The entries are posted to the general ledger. For more information, see General Ledger Entries.</p>
+</li>
+</ol>
+<h2 id="to-post-bank-or-giro-journals">To post bank or giro journals</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Bank/Giro Journal</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>Select the relevant journal template, and then choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>On the <strong>Bank/Giro Journal</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Opening Balance</strong></td>
+<td>The current balance of the bank or giro account. It equals the closing balance of previously posted entries for the journal.</td>
+</tr>
+<tr>
+<td><strong>Closing Balance</strong></td>
+<td>The new closing balance of the journal.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>On the <strong>Lines</strong> FastTab, fill in the required fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Date</strong></td>
+<td>The journal entry date.</td>
+</tr>
+<tr>
+<td><strong>Account Type</strong></td>
+<td>The account type to which the journal entry is to be posted.</td>
+</tr>
+<tr>
+<td><strong>Account No.</strong></td>
+<td>The account number to which the journal entry is to be posted.</td>
+</tr>
+<tr>
+<td><strong>Identification</strong></td>
+<td>The identification number that links the statement line to a payment history line.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>The description of the entry.</td>
+</tr>
+<tr>
+<td><strong>VAT Prod. Posting Group</strong></td>
+<td>The VAT product posting group code that will be used when you post the entry on the statement line.</td>
+</tr>
+<tr>
+<td><strong>Amount</strong></td>
+<td>The total amount that the statement line consists of. You must enter the debit amount without a plus or minus sign and the credit amount with a minus sign.<br><br> If this amount includes the VAT amount, then select the <strong>Amount incl. VAT</strong> check box.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Choose the <strong>Post</strong> action.</p>
+</li>
+</ol>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If there is a difference between the opening balance and the closing balance, you must change the closing balance before posting the entry.</p>
+</div>
+<p>The entries are posted to the general ledger. For more information, see General Ledger Entries.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="how-to-print-the-test-reports-for-cash-and-bank-or-giro-journals.html">Print the Test Reports for Cash and Bank or Giro Journals</a><br>
+<a href="telebanking.html">Telebanking</a><br>
+<a href="how-to-enter-and-post-cash-and-bank-or-giro-journals.html">Enter and Post Cash and Bank or Giro Journals</a><br>
+<a href="../../receivables-apply-payments-auto-reconcile-bank-accounts.html">Applying Payments Automatically and Reconciling Bank Accounts</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Netherlands/how-to-enter-and-post-cash-and-bank-or-giro-journals.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

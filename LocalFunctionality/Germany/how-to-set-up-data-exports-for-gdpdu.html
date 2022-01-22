@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Set Up Data Exports for a Digital Audit </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Set Up Data Exports for a Digital Audit ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="You must set up data export record sources to be able to export data for a digital audit.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="set-up-data-exports-for-a-digital-audit">Set Up Data Exports for a Digital Audit</h1>
+
+<p>You must set up data export record sources to be able to export data for a digital audit. For each data export type, you must define one or more record sources, where each source is a table from which you want to export data.</p>
+<h2 id="to-set-up-a-data-export">To set up a data export</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Data Exports</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>Data Exports</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code</strong></td>
+<td>Specify the unique code for the data export, such as <strong>Export-1</strong>.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Specify the description for the data export.</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p>You must add record definitions to the data export. Each record definition represents a set of data that will be exported.</p>
+<h2 id="to-add-a-record-definition-to-a-digital-audit-definition-group">To add a record definition to a digital audit definition group</h2>
+<ol>
+<li><p>On the <strong>Data Exports</strong> page, choose the <strong>Record Definitions</strong> action.</p>
+</li>
+<li><p>On the <strong>Data Export Record Definitions</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Export Code</strong></td>
+<td>Select the data export code.<br><br> If no data export code exists, you can create a new one.</td>
+</tr>
+<tr>
+<td><strong>Description</strong></td>
+<td>Specify the description for the record definition.</td>
+</tr>
+<tr>
+<td><strong>Export Path</strong></td>
+<td>Specify the path where the exported files will be stored.</td>
+</tr>
+</tbody>
+</table>
+<p>Next, you must add the relevant .dtd file that is required according to the GDPdU, such as <strong>gdpdu-01-08-2002.dtd</strong>. If you must import a new DTD file to replace an existing file, you must first export the existing DTD file.</p>
+</li>
+<li><p>Choose the <strong>Import</strong> action.</p>
+</li>
+<li><p>On the <strong>Import</strong> page, navigate to the location of the relevant DTD file, and then choose the <strong>Open</strong> button.</p>
+</li>
+</ol>
+<p>Next, you must specify the source for the data that will be exported.</p>
+<h2 id="to-add-source-tables-to-a-data-export">To add source tables to a data export</h2>
+<ol>
+<li><p>On the <strong>Data Export Record Definitions</strong> page, choose the <strong>Record Source</strong> action.</p>
+</li>
+<li><p>On the <strong>Data Export Record Source</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Table No.</strong></td>
+<td>Select the number of the main table to export data from.<br><br> When you enter a value in the <strong>Table No.</strong> field, the <strong>Table Name</strong> field is updated.</td>
+</tr>
+<tr>
+<td><strong>Export Table Name</strong></td>
+<td>Optional. Change the suggested name of the table to be used in the INDEX.XML file during the export.<br><br> The value of the <strong>Export Table Name</strong> field is used to generate the INDEX.XML file during the GDPdU data export. The default name is the name of the table without special characters due to the requirements of the auditors’ tool.<br><br> <strong>Tip:</strong> In most cases, the <strong>Export Table Name</strong> and <strong>Export File Name</strong> fields are based on the same value.<br><br> There may be cases where you specify exporting the same table more than once. You can choose different Export Table Names for each table entry, and the Export File Name will be automatically adjusted to match. You can then change the Export File Name as long as it is unique.<br><br> Business Central automatically names the files as follows.<br><br> <strong>Table Name:</strong> G/L Account<br><br> <strong>Export Table Name</strong>: GLAccount<br><br> <strong>Export File Name:</strong> GLAccount.txt<br><br> <strong>Table Name:</strong> G/L Account<br><br> <strong>Export Table Name:</strong> GLAccount1<br><br> <strong>Export File Name:</strong> GLAccount1.txt</td>
+</tr>
+<tr>
+<td><strong>Period Field No.</strong></td>
+<td>Specify a filter for which date field will be used in setting the start date and end date of the report.<br><br> For example, if you select the <strong>G/L Entry</strong> table as your data export source, you can select one of the date fields that are available in that table.</td>
+</tr>
+<tr>
+<td><strong>Table Filter</strong></td>
+<td>Specify a field on which you want to set a filter.<br><br> On the <strong>Table Filter</strong> page, enter filter settings in the <strong>Field Filter</strong> column.<br><br> For example, you can specify a field that conveys information about the amount. You can also specify a date field and set a filter for it if you want to filter on a time period other than Start Date .. End Date. However, you cannot specify a date field and set a filter for it if the same field is already used in the Period Field No.</td>
+</tr>
+<tr>
+<td><strong>Date Filter Field No.</strong></td>
+<td>Specify a date filter field if the table has one.<br><br> If the table has more than one date filter, do not specify one in this field.</td>
+</tr>
+<tr>
+<td><strong>Date Filter Handing</strong></td>
+<td>Specify how the date filter is to be handled:<br><br> * <blank>: No filter is set.<br><br> * Period: Use the specified Start Date and End Date.<br><br> * End Date Only: Use the batch job's End Date.<br><br> * Start Date Only: Use the batch job's Start Date - 1.</blank></td>
+</tr>
+<tr>
+<td><strong>Export File Name</strong></td>
+<td>Specify the name of the file that data from this table will be exported to.<br><br> For example, if the table is the <strong>G/L Account</strong> table, the value of the <strong>Export Table Name</strong> can be <strong>GLAccount</strong>, and the value of the <strong>Export File Name</strong> field can be <strong>GLAccount.txt</strong>.</td>
+</tr>
+<tr>
+<td><strong>Key No.</strong></td>
+<td>Optional. Specify the key field.</td>
+</tr>
+</tbody>
+</table>
+<p>For more information, see <a href="gdpdu-filter-examples.html">GDPdU Filter Examples</a>.</p>
+<p>Next, you must specify the fields that data will be exported from.</p>
+</li>
+<li><p>In the <strong>Fields</strong> pane, choose the <strong>Add</strong> action.</p>
+</li>
+<li><p>On the <strong>Data Exp. Field List</strong> page, select one or more fields that you want to export, and then choose the <strong>OK</strong> button.</p>
+<ol>
+<li>To change the order of the fields, choose the <strong>Move Up</strong> or the <strong>Move Down</strong> action.</li>
+<li>To remove a field from the list of selected fields, choose the <strong>Delete</strong> action.</li>
+</ol>
+</li>
+</ol>
+<p>You have added the main table from which to export. Optionally, you can add one or more related tables.</p>
+<h2 id="to-add-related-tables-to-a-data-export-source">To add related tables to a data export source</h2>
+<ol>
+<li><p>On the <strong>Data Export Record Source</strong> page, in the line below the line for the main table, add the related table.</p>
+</li>
+<li><p>Choose the <strong>Indent</strong> action.</p>
+</li>
+<li><p>Select the indented table, and then choose the <strong>Relationships</strong> action.</p>
+</li>
+<li><p>On the <strong>Data Export Table Relation</strong> page, fill in the fields as described in the following table.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>From Field No.</strong></td>
+<td>Contains the number of the field in the parent table. You can specify that this field is related to a field in the subordinate table.</td>
+</tr>
+<tr>
+<td><strong>To Field No.</strong></td>
+<td>Contains the number of the field in the subordinate table. You can specify that a field in the parent table is related to this field.</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<p>The <strong>From Field Name</strong> and the <strong>To Field Name</strong> fields are populated automatically.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+</ol>
+<p>After you have added tables and fields, you must validate that the structure of the data export source is correct.</p>
+<h2 id="to-validate-the-data-export-source">To validate the data export source</h2>
+<p>On the <strong>Data Exp. Record Source</strong> page, choose the <strong>Validate</strong> action.</p>
+<p>This validates the list of fields against the keys for the tables. If you select a primary key after you select a secondary key, an error message displays, and you must change the order of the fields in the <strong>Fields</strong> pane.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="process-for-digital-audits.html">Process for Digital Audits (GoBD/GDPdU)</a><br>
+<a href="how-to-export-data-for-a-digital-audit.html">Export Data for a Digital Audit</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Germany/how-to-set-up-data-exports-for-gdpdu.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

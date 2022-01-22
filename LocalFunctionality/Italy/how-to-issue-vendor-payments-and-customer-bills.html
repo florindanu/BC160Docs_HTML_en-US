@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Issue Vendor Payments and Customer Bills </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Issue Vendor Payments and Customer Bills ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="The vendor and customer bill pay feature supports SEPA-based formats in addition to Italian file formats.">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../TOC.html">
+    <meta property="docfx:tocrel" content="../../TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="issue-vendor-payments-and-customer-bills">Issue Vendor Payments and Customer Bills</h1>
+
+<p>The vendor and customer bill pay feature supports SEPA-based formats in addition to Italian file formats. You can pay vendors according to the SEPA Credit Transfer standard and collect payment from customers according to the SEPA Direct Debit standard. The following procedure describes the process for sending a SEPA-based payment to a vendor. The steps are similar for collecting payment from a customer.</p>
+<p>Before starting the following procedure, make sure that information for your company's bank has been provided on the <strong>Bank Account Card</strong> page. On the card, include information for the following fields:</p>
+<ul>
+<li>IBAN</li>
+<li>SWIFT Code (optional)</li>
+<li>Payment Export Format</li>
+<li>SEPA CT Msg. ID No. Series</li>
+</ul>
+<p>In addition, there must be a posted purchased invoice against which you can send a payment.</p>
+<h2 id="to-issue-payment-to-a-vendor">To issue payment to a vendor</h2>
+<ol>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Vendors</strong>, and then choose the related link.</p>
+</li>
+<li><p>Select the vendor to which you want to send payment. On the <strong>Payment</strong> FastTab, in the <strong>Payment Method Code</strong> field, choose the <strong>TRASFBANC</strong> option.</p>
+</li>
+<li><p>Choose the <strong>Bank Accounts</strong> action.</p>
+</li>
+<li><p>In the <strong>Vendor Bank Account List</strong>, select the vendor's bank account, and then choose the <strong>Edit</strong> action.</p>
+</li>
+<li><p>On the <strong>Transfer</strong> FastTab, specify information for the <strong>IBAN</strong> field.</p>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Vendor Bill Card</strong>, and then choose the related link.</p>
+</li>
+<li><p>Choose the <strong>New</strong> action.</p>
+</li>
+<li><p>On the <strong>General</strong> FastTab, enter information in the following fields: <strong>Bank Account No.</strong> of the vendor and <strong>Payment Method Code</strong>.</p>
+</li>
+<li><p>Choose the <strong>Suggest Payment</strong> action.</p>
+</li>
+<li><p>Set filters, as appropriate, and then choose the <strong>OK</strong> button to run the batch job.</p>
+</li>
+<li><p>Choose the <strong>Create List</strong> action.</p>
+</li>
+<li><p>Choose the <strong>Yes</strong> button to send the bill payment.</p>
+</li>
+<li><p>Choose the <img src="../../media/ui-search/search_small.png" alt="Search for Page or Report" title="Search for Page or Report icon"> icon, enter <strong>Vendor Bill List Issued</strong>, and choose the related link.</p>
+</li>
+<li><p>Select the bill payment that you issued from the list, and then choose the <strong>Edit</strong> action. The <strong>Vendor Bill List Sent Card</strong> page opens.</p>
+</li>
+<li><p>To export the payment information, choose the <strong>Export Bill List to File</strong> action. You can review the xml file that was sent.</p>
+<ol>
+<li>Export to File (for standard SEPA format files)</li>
+<li>Export Bill List to File</li>
+</ol>
+</li>
+</ol>
+<p>You can review the .xml file before sending it. To review and fix errors, you can refer to the <strong>File Export Errors</strong> FactBox.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="../../finance-collect-payments-with-sepa-direct-debit.html#creating-sepa-direct-debit-collection-entries-and-export-to-a-bank-file">Create SEPA Direct Debit Collection Entries and Export to a Bank File</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/LocalFunctionality/Italy/how-to-issue-vendor-payments-and-customer-bills.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

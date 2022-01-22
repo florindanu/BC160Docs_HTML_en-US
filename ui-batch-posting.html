@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>How to Post Multiple Documents at the Same Time | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="How to Post Multiple Documents at the Same Time | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="Instead of posting individual documents one by one, you can select multiple non-posted documents in a list for batch posting, either for immediate posting or scheduled to, for example, the end of the day.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="post-multiple-documents-at-the-same-time">Post Multiple Documents at the Same Time</h1>
+
+<p>Instead of posting individual documents one by one, you can select multiple non-posted documents in a list for immediate posting or for batch posting according to a schedule, such as at the end of the day. This may be useful if only a supervisor can post documents created by other users or to avoid system performance issues from posting during work hours.</p>
+<h2 id="to-post-multiple-purchase-orders-immediately">To post multiple purchase orders immediately</h2>
+<p>The following procedure explains how to post multiple purchase orders immediately. The steps are similar for all purchase and sales documents.</p>
+<ol>
+<li>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</li>
+<li>On the <strong>Purchase Orders</strong> page, proceed to select all orders to be posted:</li>
+<li>In the <strong>No.</strong> field, choose the three vertical dots to open the context menu, and then choose the <strong>Select More</strong> action.</li>
+<li>Select the check box for all the lines representing orders that you want to post at the same time.</li>
+<li>Choose the <strong>Posting</strong> action, and then choose the <strong>Post</strong> action.</li>
+<li>Choose the <strong>Yes</strong> button on the confirmation message.</li>
+</ol>
+<h2 id="to-batch-post-multiple-purchase-orders">To batch post multiple purchase orders</h2>
+<p>The following procedure explains how to batch post purchase orders. The steps are similar for all purchase and sales documents where the <strong>Batch Post</strong> action is available.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Batch posting of documents happens in the background as defined by a job queue entry, which must first be set up. For more information, see <a href="admin-job-queues-schedule-tasks.html">Use Job Queues to Schedule Tasks</a>.</p>
+</div>
+<ol>
+<li><p>Choose the <img src="media/ui-search/search_small.png" alt="Lightbulb that opens the Tell Me feature" title="Tell me what you want to do"> icon, enter <strong>Purchase Orders</strong>, and then choose the related link.</p>
+</li>
+<li><p>On the <strong>Purchase Orders</strong> page, proceed to select all orders to be posted:</p>
+</li>
+<li><p>In the <strong>No.</strong> field, choose the three vertical dots to open the context menu, and then choose the <strong>Select More</strong> action.</p>
+</li>
+<li><p>Select the check box for all the lines representing orders that you want to post at the same time.</p>
+</li>
+<li><p>Choose the <strong>Posting</strong> action, and then choose the <strong>Post Batch</strong> action.</p>
+</li>
+<li><p>On the <strong>Batch Post Purchase Order</strong> page, fill in the fields as necessary. Hover over a field to read a short description.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>To print related reports when posting, such as the <strong>Order Confirmation</strong> report for sales orders, select the <strong>Print</strong> check box.<br><br> In the <strong>Report Output Type</strong> field on the <strong>Sales and Receivables Setup</strong> page or <strong>Purchases and Payables Setup</strong> page, you define if the report will be printed or output as a PDF.<br><br> Note also that direct printing to a selected printer is only possible in on-premises installations.</p>
+</div>
+</li>
+<li><p>Choose the <strong>OK</strong> button.</p>
+</li>
+<li><p>To view potential issues that occurred during batch posting of documents, open the <strong>Error Message Register</strong> page.</p>
+</li>
+</ol>
+<p>The purchase orders will now be added to a dedicated job queue entry, which defines when the documents are posted. For more information, see <a href="admin-job-queues-schedule-tasks.html">Use Job Queues to Schedule Tasks</a>.</p>
+<p>If you select <strong>PDF</strong> in the <strong>Report Output Type</strong> field, successfully posted purchase orders will be available in the <strong>Report Inbox</strong> part on your Role Center.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="ui-post-documents-journals.html">Posting Documents and Journals</a><br>
+<a href="admin-job-queues-schedule-tasks.html">Use Job Queues to Schedule Tasks</a><br>
+<a href="across-edit-posted-document.html">Edit Posted Documents</a><br>
+<a href="purchasing-how-correct-cancel-unpaid-purchase-invoices.html">Correct or Cancel Unpaid Purchase Invoices</a><br>
+<a href="ui-search.html">Finding Pages and Information with Tell Me</a><br>
+<a href="ui-work-product.html">Working with Business Central</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/ui-batch-posting.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

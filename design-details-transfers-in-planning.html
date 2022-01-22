@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Design Details - Transfers in Planning | Microsoft Docs </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Design Details - Transfers in Planning | Microsoft Docs ">
+    <meta name="generator" content="docfx 2.40.0.0">
+    <meta name="description" content="This topic describes how to use transfer orders as a source of supply when planning inventory levels.">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="TOC.html">
+    <meta property="docfx:tocrel" content="TOC.html">
+    <meta name="searchOption" content="noindex">
+    
+    
+    <meta name="robots" content="NOINDEX, NOFOLLOW">
+    
+    
+    
+    
+    <meta name="ms.locale" content="en-us">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="row">
+          <div class="col-sm-12">
+            
+            <div class="row">
+              
+              <div class="col-sm-12 col-md-9">
+                <article class="article" id="_content" data-uid="">
+<h1 id="design-details-transfers-in-planning">Design Details: Transfers in Planning</h1>
+
+<p>Transfer orders are also a source of supply when working at the SKU level. When using multiple locations (warehouses), the SKU replenishment system can be set to Transfer, implying that the location is replenished by transferring goods from another location. In a situation with more warehouses, companies might have a chain of transfers where supply to GREEN location is transferred from YELLOW, and supply to YELLOW is transferred from RED and so on. In the beginning of the chain, there is a replenishment system of Prod. Order or Purchase.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers1.png" alt="Example of transfer flow" title="Example of transfer flow"></p>
+<p>When comparing the situation where a supply order is directly facing a demand order to a situation where the sales order is supplied through a chain of SKU transfers, it is obvious that the planning task in the latter situation can become very complex. If demand changes, it might cause a ripple effect through the chain, because all transfer orders plus the purchase/production order in the opposite end of the chain will have to be manipulated to reestablish balance between demand and supply.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers2.png" alt="Example of supply/demand balance in transfers" title="Example of supply/demand balance in transfers"></p>
+<h2 id="why-is-transfer-a-special-case">Why is Transfer a Special Case?</h2>
+<p>A transfer order looks much like any other order in application. However, behind the scene it is very different.</p>
+<p>One fundamental aspect that makes transfers in planning different from purchase and production orders is that a transfer line represents demand and supply at the same time. The outbound part, which is shipped from the old location, is demand. The inbound part, which is to be received at the new location, is supply at that location.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers3.png" alt="Content of the Transfer Order page" title="Content of the Transfer Order page"></p>
+<p>This means that when the system manipulates the supply side of the transfer, it must make a similar change on the demand side.</p>
+<h2 id="transfers-are-dependent-demand">Transfers are Dependent Demand</h2>
+<p>The related demand and supply has some resemblance with components of a production order line, but the difference is that components will be on the next planning level and with a different item, whereas the two parts of the transfer is situated on the same level, for the same item.</p>
+<p>An important similarity is that just as components are dependent demand, so is the transfer demand. The demand from a transfer line is dictated by the supply side of the transfer in the sense that if the supply is changed, the demand is directly affected.</p>
+<p>Unless the planning flexibility is None, a transfer line should never be treated as independent demand in planning.</p>
+<p>In the planning procedure, the transfer demand should only be taken into account after the supply side has been processed by the planning system. Before this, the actual demand is not known. The sequence of the changes made is therefore very important when it comes to transfer orders.</p>
+<h2 id="planning-sequence">Planning Sequence</h2>
+<p>The following illustration shows what a string of transfers could look like.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers4.png" alt="Example of simple transfer flow" title="Example of simple transfer flow"></p>
+<p>In this example, a customer orders the item at location GREEN. Location GREEN is supplied through transfer from the central warehouse RED. The central warehouse RED is supplied by transfer from production on location BLUE.</p>
+<p>In this example, the planning system will start at the customer demand and work its way backwards through the chain. The demands and supplies will be processed one location at a time.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers5.png" alt="Supply planning with transfers" title="Supply planning with transfers"></p>
+<h2 id="transfer-level-code">Transfer Level Code</h2>
+<p>The sequence in which the locations are processed in the planning system is determined by the transfer level code of the SKU.</p>
+<p>The transfer level code is an internal field which is automatically calculated and stored on the SKU when SKU is created or modified. The calculation runs across all SKUs for a given combination of Item/Variant and uses the location code and the transfer-from code to determine the route the planning will have to use when traversing through the SKUs to ensure that all demands are processed.</p>
+<p>The transfer level code will be 0 for SKUs with replenishment system Purchase or Prod. Order and will be -1 for the first transfer level, -2 for the second and so on. In the transfer chain described above, the levels would therefore be -1 for RED and -2 for GREEN, as shown in the following illustration.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers6.gif" alt="Content of SKU Card page" title="Content of SKU Card page"></p>
+<p>When updating a SKU, the planning system will detect if SKUs with replenishment system Transfer are set up with circular references.</p>
+<h2 id="planning-transfers-without-sku">Planning Transfers without SKU</h2>
+<p>Even if the SKU feature is not used, it is possible to use locations and make manual transfers between locations. For companies with less advanced warehouse setup, the planning system supports scenarios where existing inventory is transferred manually to another location, for example to cover a sales order at that location. At the same time, the planning system should react to changes in the demand.</p>
+<p>To support manual transfers, the planning will analyze existing transfer orders and then plan the order in which the locations should be processed. Internally, the planning system will operate with temporary SKUs carrying transfer level codes.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers7.png" alt="Transfer level code" title="Transfer level code"></p>
+<p>If more transfers to a given location exist, the first transfer order will define the planning direction. Transfers running in the opposite direction will be canceled.</p>
+<h2 id="changing-quantity-with-reservations">Changing Quantity with Reservations</h2>
+<p>When changing quantities on existing supply, the planning system takes reservations into account in the sense that the reserved quantity represents the lower limit for how much the supply can be reduced.</p>
+<p>When changing the quantity on an existing transfer order line, keep in mind that the lower limit will be defined as the highest reserved quantity of the outbound and inbound transfer line.</p>
+<p>For example, if a transfer order line of 117 pieces is reserved against a sales line of 46 and a purchase line of 24, it is not possible to reduce the transfer line below 46 pieces even though this might represent excess supply on the inbound side.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers8.png" alt="Reservations in transfer planning" title="Reservations in transfer planning"></p>
+<h2 id="changing-quantity-in-a-transfer-chain">Changing Quantity in a Transfer Chain</h2>
+<p>In the following example, the starting point is a balanced situation with a transfer chain supplying a sales order of 27 on location RED with a corresponding purchase order on location BLUE, transferred via location PINK. Therefore, apart from sales and purchase, there are two transfer orders: BLUE-PINK and PINK-RED.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers9.png" alt="Changing the quantity in transfer planning 1" title="Changing the quantity in transfer planning 1"></p>
+<p>Now the planner at PINK location chooses to reserve against the purchase.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers10.png" alt="Changing the quantity in transfer planning 2" title="Changing the quantity in transfer planning 2"></p>
+<p>This usually means that the planning system will ignore the purchase order and the transfer demand. As long as there is balance, there is no problem. But what happens when the customer at RED location partly regrets his order and changes it to 22?</p>
+<p><img src="media/nav_app_supply_planning_7_transfers11.png" alt="Changing the quantity in transfer planning 3" title="Changing the quantity in transfer planning 3"></p>
+<p>When the planning system runs again, it should get rid of excess supply. However, the reservation will lock the purchase and the transfer to a quantity of 27.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers12.png" alt="Changing the quantity in transfer planning 4" title="Changing the quantity in transfer planning 4"></p>
+<p>The PINK-RED transfer has been reduced to 22. The inbound part of the BLUE-PINK transfer is not reserved, but because the outbound part is reserved it is not possible to reduce the quantity below 27.</p>
+<h2 id="lead-time-calculation">Lead Time Calculation</h2>
+<p>When calculating the due date of a transfer order different kinds of lead time will be taken into account.</p>
+<p>The lead times that are active when planning a transfer order are:</p>
+<ul>
+<li>Outbound Warehouse Handling Time</li>
+<li>Shipping Time</li>
+<li>Inbound Warehouse Handling Time</li>
+<li>On the planning line, the following fields are used to provide information about the calculation.</li>
+<li>Transfer Shipment Date</li>
+<li>Starting Date</li>
+<li>Ending Date</li>
+<li>Due Date</li>
+</ul>
+<p>The shipment date of the transfer line will be shown in the Transfer Shipment Date field, and the receipt date of the transfer line will be shown in the Due Date field.</p>
+<p>The starting and ending dates will be used to describe the actual transportation period.</p>
+<p>The following illustration shows the interpretation of the starting date-time and ending date-time on planning lines related to transfer orders.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers13.png" alt="Central date-times in transfer planning" title="Central date-times in transfer planning"></p>
+<p>In this example, it means that:</p>
+<ul>
+<li>Shipment date + Outbound handling = Starting Date</li>
+<li>Starting Date + Shipping time = Ending Date</li>
+<li>Ending Date + Inbound Handling = Receipt Date</li>
+</ul>
+<h2 id="safety-lead-time">Safety Lead Time</h2>
+<p>The Default Safety Lead Time field in the Manufacturing Setup page and the related Safety Lead Time field on the item card will not be taken into account in the calculation of a transfer order. However, the safety lead time will still influence the total plan like it will affect the replenishment order (purchase or production) in the beginning of the transfer chain when the items are put on the location from which they will be transferred.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers14.png" alt="Elements of the transfer due date" title="Elements of the transfer due date"></p>
+<p>On the production order line, the Ending Date + Safety Lead Time + Inbound Warehouse Handling Time = Due Date.</p>
+<p>On the purchase order line, the Planned Receipt Date + Safety Lead Time + Inbound Warehouse Handling Time = Expected Receipt Date.</p>
+<h2 id="reschedule">Reschedule</h2>
+<p>When rescheduling an existing transfer line, the planning system must look up the outbound part and change the date-time on this. It is important to note that if lead time has been defined, there will be a gap between the shipment and the receipt. As mentioned, the lead time can consist of more elements, such as transportation time and warehouse handling time. On a time line, the planning system will move back in time while it balances the elements.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers15.png" alt="Changing the due date in transfer planning" title="Changing the due date in transfer planning"></p>
+<p>Therefore, when changing the due date on a transfer line, the lead time must be calculated in order to update the outbound side of the transfer.</p>
+<h2 id="seriallot-numbers-in-transfer-chains">Serial/Lot Numbers in Transfer Chains</h2>
+<p>If the demand carries serial/lot numbers, and the planning engine is run, it will give rise to some directly created transfer orders. For more information about this concept, see Item Attributes. If, however, serial/lot numbers are removed from the demand, the created transfer orders in the chain will still carry the serial/lot numbers and will therefore be ignored by planning (not deleted).</p>
+<h2 id="order-to-order-links">Order-to-Order Links</h2>
+<p>In this example, BLUE SKU is set up with the Order reordering policy, while PINK and RED use Lot-for-Lot. When a sales order of 27 is created on location RED, it will lead to a chain of transfers with the last joint at location BLUE being reserved with binding. In this example, the reservations are not hard reservations created by the planner at PINK location, but bindings created by the planning system. The important difference is that the planning system can change the latter.</p>
+<p><img src="media/nav_app_supply_planning_7_transfers16.png" alt="Order-to-order links in transfer planning" title="Order-to-order links in transfer planning"></p>
+<p>If demand is changed from 27 to 22, the system will lower the quantity down through the chain, with the binding reservation also being reduced.</p>
+<h2 id="see-also">See Also</h2>
+<p><a href="design-details-planning-parameters.html">Design Details: Planning Parameters</a><br>
+<a href="design-details-planning-assignment-table.html">Design Details: Planning Assignment Table</a><br>
+<a href="design-details-handling-reordering-policies.html">Design Details: Handling Reordering Policies</a><br>
+<a href="design-details-demand-at-blank-location.html">Design Details: Demand at Blank Location</a><br>
+<a href="design-details-central-concepts-of-the-planning-system.html">Design Details: Central Concepts of the Planning System</a><br>
+<a href="design-details-balancing-demand-and-supply.html">Design Details: Balancing Demand and Supply</a><br>
+<a href="design-details-supply-planning.html">Design Details: Supply Planning</a></p>
+</article>
+              </div>
+              
+<div class="hidden-sm col-md-3" role="complementary">
+  <div class="sideaffix">
+    <div class="contribution">
+      <ul class="nav">
+        <li>
+          <a href="https://github.com/florindanu/BC160Docs_MD_en-US/blob/main/business-central/design-details-transfers-in-planning.md/#L1" class="contribution-link">Improve this Doc</a>
+        </li>
+      </ul>
+    </div>
+    <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+    <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+    </nav>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright � 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>
